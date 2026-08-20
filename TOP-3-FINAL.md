@@ -18,7 +18,81 @@ Critérios aplicados, nesta ordem de peso:
 
 ---
 
-## 🥇 1º — Rastreadores e soberania de dados em aplicativos móveis governamentais
+> **Atualização de 20/08/2026 — o ranking mudou.** O acesso acadêmico ao Shodan foi
+> aprovado. Esse era o único portão do tema de infraestrutura crítica, que passa a **1º
+> lugar**. Os apps móveis governamentais caem para 2º. Justificativa na seção de cada tema.
+
+## 🥇 1º — Superfície de ataque exposta da infraestrutura crítica brasileira
+
+**EN:** *Exposed by Default: Measuring Internet-Facing Industrial Control Systems in
+Brazilian Critical Infrastructure*
+
+**Objetivo.** **Medir e caracterizar** a exposição de sistemas de controle industrial
+atribuíveis à infraestrutura crítica brasileira, **comparando** a distribuição setorial com
+as linhas de base publicadas para outros países.
+
+**Hipótese central.** A exposição concentra-se desproporcionalmente em setores sob menor
+supervisão regulatória (saneamento, automação predial) frente aos fortemente regulados
+(energia elétrica, financeiro); e a proporção de dispositivos com vulnerabilidade conhecida
+é significativamente maior que nas linhas de base europeias publicadas.
+
+**Por que subiu para primeiro.** Estava em segundo unicamente pelo risco de acesso aos
+dados. Com o acesso acadêmico aprovado, sobram só as vantagens:
+
+- **Maior afinidade com o orientador de toda a lista.** Proteção de infraestrutura crítica
+  foi o trabalho dele por 15 anos no GSI/PR e é tema de publicações dele na ECCWS 2019 e
+  ICCWS 2021. A Aula 05/06 estabelece compatibilidade com o orientador como critério.
+- **Menor risco científico.** Método revisado por pares e replicado em três países
+  (Países Baixos, Itália, Hong Kong) mais o EuroS&P 2025, com o Brasil ainda não estudado.
+  Você replica um desenho validado numa população inédita.
+- **Resultado mais impactante numa defesa.** "Esta é a linha de base da infraestrutura
+  crítica brasileira exposta na internet" é uma frase que a banca não esquece.
+- **Tem substância técnica real**, ao contrário do que "só consultar uma base" sugere: o
+  pipeline de atribuição IP→ASN→organização→setor e a **filtragem de honeypots** são
+  problemas de classificação com literatura própria.
+
+**Pitch de 30 segundos.** *"Existem estudos medindo quantos sistemas de controle industrial
+estão expostos na internet na Holanda, na Itália e em Hong Kong. Não existe nenhum para o
+Brasil. Quero produzir essa linha de base, quebrada por setor, e comparar com os números
+europeus — usando apenas bases de varredura de terceiros, sem tocar em nada."*
+
+**Limite ético inegociável.** Nenhuma varredura ativa, nenhuma conexão, nenhuma tentativa
+de autenticação. Resultados agregados por setor, jamais identificando o operador. Achado
+crítico e atribuível → notificar o CTIR Gov antes de publicar.
+
+**Riscos que restam.** A atribuição IP→setor é imprecisa e exige validação manual
+documentada — é o trabalho braçal deste tema, o análogo da rotulagem manual do T1. E os
+créditos de consulta são finitos: veja a seção de coleta abaixo.
+
+### Primeiros passos concretos com o acesso já aprovado
+
+1. **Não gaste créditos contando.** O endpoint `/shodan/host/count` retorna o total de
+   resultados **sem consumir crédito de consulta** — é feito exatamente para levantamento
+   de viabilidade. Confirme na documentação e use-o para todo o dimensionamento inicial.
+2. **Levante o N do corpus** com consultas de contagem por protocolo industrial:
+
+   | Protocolo | Consulta |
+   |---|---|
+   | Genérico ICS | `country:BR tag:ics` |
+   | Modbus | `country:BR port:502` |
+   | S7comm (Siemens) | `country:BR port:102` |
+   | DNP3 | `country:BR port:20000` |
+   | BACnet (automação predial) | `country:BR port:47808` |
+   | EtherNet/IP | `country:BR port:44818` |
+   | IEC 60870-5-104 | `country:BR port:2404` |
+   | Niagara Fox | `country:BR port:1911,4911` |
+
+3. **Salve o JSON bruto de tudo, sempre.** Os resultados mudam com o tempo e os créditos não
+   voltam. Consultou uma vez, guardou para sempre — e registre a data de cada coleta, que
+   vira dado de reprodutibilidade.
+4. **Verifique sua cota real** no Developer Dashboard antes de desenhar a coleta completa.
+   O desenho amostral tem que caber na cota, não o contrário.
+5. **Nunca versione a API key.** Ela vai em variável de ambiente ou arquivo local
+   ignorado pelo git — jamais dentro do repositório do TCC.
+
+---
+
+## 🥈 2º — Rastreadores e soberania de dados em aplicativos móveis governamentais
 
 **EN:** *Who Else Is in the App? Third-Party Tracking and Data Sovereignty in Brazilian
 Government Mobile Applications*
@@ -32,13 +106,18 @@ comportamento com o de aplicativos comerciais pareados.
 submetidos a regime jurídico distinto — e parte relevante desses SDKs não está declarada na
 política de privacidade.
 
-**Por que é o primeiro.** É o mais técnico entre os temas que este orientador consegue
-orientar: análise estática, engenharia reversa leve, interceptação de tráfego, estatística.
-Tem grupo de controle embutido, o que o coloca direto no nível 4 de maturidade. O método
-está validado em muitos domínios (apps de terapia, saúde mental, fitness, controle
-parental) e **nunca foi aplicado ao parque governamental brasileiro**. E carrega duas
-camadas de relevância — LGPD e soberania de dados —, sendo a segunda exatamente o que o
-orientador publica sobre poder cibernético e Sul Global.
+**Por que é o segundo.** Continua sendo **o mais técnico da lista** — análise estática,
+engenharia reversa leve, interceptação de tráfego, estatística — e o único com grupo de
+controle embutido, o que o coloca direto no nível 4 de maturidade. O método está validado
+em muitos domínios (apps de terapia, saúde mental, fitness, controle parental) e **nunca foi
+aplicado ao parque governamental brasileiro**. Carrega duas camadas de relevância — LGPD e
+soberania de dados —, sendo a segunda exatamente o que o orientador publica sobre poder
+cibernético e Sul Global.
+
+Perdeu o primeiro lugar apenas porque a afinidade do 1º com a trajetória profissional do
+orientador é maior, e porque o 1º replica um desenho já revisado por pares. Se o corpus de
+aplicativos vier grande e o de ICS vier pequeno, os dois trocam de lugar de novo — decida
+pelos números dos testes de viabilidade, não por esta ordem.
 
 **Pitch de 30 segundos.** *"Quero medir quantos rastreadores de terceiros existem dentro dos
 aplicativos oficiais do governo brasileiro, inclusive os que lidam com dado de saúde e
@@ -53,43 +132,6 @@ análise estática cobre a hipótese principal. Reporte como limitação declara
 **Teste de viabilidade desta semana.** Contar quantos aplicativos governamentais oficiais
 existem de fato (federais, estaduais, municipais) e conseguir baixar os APKs de uma dúzia.
 Se passar de ~60 apps, o tema está de pé.
-
----
-
-## 🥈 2º — Superfície de ataque exposta da infraestrutura crítica brasileira
-
-**EN:** *Exposed by Default: Measuring Internet-Facing Industrial Control Systems in
-Brazilian Critical Infrastructure*
-
-**Objetivo.** **Medir e caracterizar** a exposição de sistemas de controle industrial
-atribuíveis à infraestrutura crítica brasileira, **comparando** a distribuição setorial com
-as linhas de base publicadas para outros países.
-
-**Hipótese central.** A exposição concentra-se desproporcionalmente em setores sob menor
-supervisão regulatória (saneamento, automação predial) frente aos fortemente regulados
-(energia elétrica, financeiro); e a proporção de dispositivos com vulnerabilidade conhecida
-é significativamente maior que nas linhas de base europeias publicadas.
-
-**Por que é o segundo.** **A maior afinidade com o orientador de toda a lista** — proteção
-de infraestrutura crítica foi o trabalho dele por 15 anos no GSI/PR e é tema de publicações
-dele na ECCWS 2019 e ICCWS 2021. Existem estudos nacionais publicados para Países Baixos,
-Itália e Hong Kong, mais um paper no EuroS&P 2025, e **nenhum para o Brasil**: método
-validado por pares, população inédita. É também o de resultado mais impactante numa defesa.
-
-**Pitch de 30 segundos.** *"Existem estudos medindo quantos sistemas de controle industrial
-estão expostos na internet na Holanda, na Itália e em Hong Kong. Não existe nenhum para o
-Brasil. Quero produzir essa linha de base, quebrada por setor, e comparar com os números
-europeus — usando apenas bases de varredura de terceiros, sem tocar em nada."*
-
-**Risco decisivo.** Depende de **acesso acadêmico ao Shodan ou Censys**. Sem isso, o tema
-não existe.
-
-**Limite ético inegociável.** Nenhuma varredura ativa, nenhuma conexão, nenhuma tentativa
-de autenticação. Resultados agregados por setor, jamais identificando o operador. Achado
-crítico e atribuível → notificar o CTIR Gov antes de publicar.
-
-**Teste de viabilidade desta semana.** Solicitar o acesso acadêmico. É literalmente o que
-decide se este tema entra ou sai.
 
 ---
 
@@ -146,9 +188,18 @@ ele se empolgar, você descobre na hora, e ainda tem três alternativas sólidas
 
 | Prioridade | Ação | Decide |
 |---|---|---|
-| 1 | Solicitar acesso acadêmico ao Shodan/Censys | se o N1 existe |
-| 2 | Contar os apps governamentais e baixar uma dúzia de APKs | se o N3 se sustenta |
-| 3 | Rodar consulta DNS num punhado de domínios `.gov.br` | nada — só confirma que o N2 é trivial de começar |
+| ~~1~~ | ~~Solicitar acesso acadêmico ao Shodan~~ | ✅ **aprovado em 20/08/2026** |
+| 1 | Rodar as consultas de contagem da tabela do 1º lugar e anotar o N por protocolo | o tamanho real do corpus de ICS |
+| 2 | Verificar a cota de créditos no Developer Dashboard | se a coleta completa cabe |
+| 3 | Contar os apps governamentais e baixar uma dúzia de APKs | se o 2º se sustenta |
 | 4 | Ler 2–3 artigos de cada tema | qual deles te prende |
+
+**O número que decide tudo:** se as consultas de contagem devolverem alguns milhares de
+dispositivos, o 1º lugar está confirmado e você já tem material de conversa para 25/08.
+Se devolverem algumas centenas, a análise setorial fica frágil e o 2º lugar reassume.
+
+Leve o número, seja ele qual for, para a conversa com o orientador. Chegar dizendo *"rodei
+as consultas, o Brasil tem N dispositivos industriais expostos, e não existe estudo disso"*
+é uma abertura completamente diferente de chegar com uma ideia.
 
 O critério de leitura não é "entendi tudo". É **"fiquei com vontade de ver o resultado"**.

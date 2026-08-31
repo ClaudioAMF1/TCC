@@ -125,6 +125,53 @@ def contar(chave, saida):
     return total_modbus
 
 
+def facetar(chave, saida):
+    """Agregações via /shodan/host/count. Não consome crédito de consulta.
+
+    Se funcionar no seu plano, isto resolve a distribuição organizacional
+    inteira de graça — sem baixar host nenhum.
+    """
+    print("\n" + "=" * 62)
+    print("PARTE A2 — Facetas (agregações; não consome crédito)")
+    print("=" * 62)
+
+    # Consultas mais confiáveis: portas específicas de protocolo + tag oficial.
+    alvos = {
+        "tag ICS (confirmado)": "country:BR tag:ics",
+        "Modbus":               "country:BR port:502",
+        "IEC 60870-5-104":      "country:BR port:2404",
+        "EtherNet/IP":          "country:BR port:44818",
+    }
+    facetas = "org:200,asn:100,product:50,city:50"
+    saida_dados = {}
+
+    for nome, q in alvos.items():
+        r = buscar("/shodan/host/count", chave, query=q, facets=facetas)
+        if "__erro__" in r:
+            print(f"\n  {nome}: ERRO — {r['__erro__'][:90]}")
+            print("    (se for erro de plano, facetas não estão liberadas; siga sem elas)")
+            saida_dados[nome] = {"query": q, "erro": r["__erro__"]}
+            time.sleep(PAUSA)
+            continue
+
+        saida_dados[nome] = {"query": q, "total": r.get("total"), "facets": r.get("facets", {})}
+        orgs = r.get("facets", {}).get("org", [])
+        print(f"\n  {nome} — total {r.get('total', 0):,} | {len(orgs)} organizações distintas")
+        for item in orgs[:12]:
+            print(f"      {item['count']:>6,}  {item['value'][:55]}")
+        time.sleep(PAUSA)
+
+    saida.write_text(json.dumps(saida_dados, indent=2, ensure_ascii=False))
+    print(f"\n  Bruto salvo em: {saida}")
+    print("""
+  LEITURA:
+    Se a lista de organizações vier populada, a atribuição organização->setor
+    pode ser feita quase toda a partir daqui, sem gastar crédito. Olhe os nomes:
+    reconhece concessionárias, saneamento, indústrias? Ou é só provedor de
+    banda larga e hospedagem? Essa resposta vale mais que a contagem total.
+""")
+
+
 def amostrar(chave, n_alvo, saida_json, saida_csv):
     print("\n" + "=" * 62)
     print(f"PARTE B — Amostra para atribuição (consome ~1 crédito)")
@@ -192,6 +239,8 @@ def main():
     p.add_argument("--apenas-contagem", action="store_true",
                    help="só a Parte A; não gasta crédito algum")
     p.add_argument("--info", action="store_true", help="mostra a cota e sai")
+    p.add_argument("--facetas", action="store_true",
+                   help="só a Parte A2 (agregações por organização); não gasta crédito")
     p.add_argument("--n", type=int, default=20, help="tamanho da amostra (padrão 20)")
     p.add_argument("--dir", default="dados", help="diretório de saída")
     args = p.parse_args()
@@ -215,7 +264,12 @@ def main():
     if args.info:
         return
 
+    if args.facetas:
+        facetar(chave, d / f"facetas_{hoje}.json")
+        return
+
     contar(chave, d / f"contagens_{hoje}.json")
+    facetar(chave, d / f"facetas_{hoje}.json")
 
     if not args.apenas_contagem:
         amostrar(chave, args.n,

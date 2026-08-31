@@ -1,0 +1,14 @@
+# Nunca versionar credenciais
+.env
+*.key
+secrets*
+
+# Dados coletados (podem ser grandes; versione só o que for artefato final)
+scripts/dados/
+dados/
+
+# Python
+__pycache__/
+*.pyc
+venv/
+.venv/

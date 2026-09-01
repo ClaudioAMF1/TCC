@@ -21,6 +21,18 @@ USO
 Só biblioteca padrão. Consulta o crt.sh, que é público e gratuito.
 NÃO visita nenhum domínio suspeito — apenas lê o log.
 
+NOTA SOBRE A FONTE DE DADOS
+---------------------------
+O crt.sh é um serviço COMUNITÁRIO e cai com frequência; erros 502/503 são dele,
+não do seu script nem do tema. Ele serve bem para ESTE teste (consulta ao
+acervo histórico), mas NÃO é a fonte do estudo final.
+
+No estudo real, a coleta correta é acompanhar os logs de CT AO VIVO, porque a
+variável dependente é temporal: você precisa do instante da emissão, não de um
+retrato do passado. Isso se faz assinando o fluxo de certificados novos
+(certstream e equivalentes) ou lendo os logs pela API de CT diretamente.
+Vantagem adicional: coleta ao vivo não depende da saúde do crt.sh.
+
 SAÍDA
 -----
     dados/ct_candidatos_AAAAMMDD.csv   suspeitos, para revisão manual
@@ -77,15 +89,44 @@ def dominio_registravel(host: str) -> str:
     return ".".join(p[-2:])
 
 
-def consultar_crtsh(marca: str):
-    q = urllib.parse.quote(f"%{marca}%")
-    url = f"https://crt.sh/?q={q}&output=json&exclude=expired"
+def _pedir(url: str):
     req = urllib.request.Request(url, headers={
         "User-Agent": "pesquisa-academica-tcc-idp",
         "Accept": "application/json",
     })
     with urllib.request.urlopen(req, timeout=TIMEOUT) as r:
-        return json.loads(r.read().decode("utf-8", "replace"))
+        corpo = r.read().decode("utf-8", "replace").strip()
+    return json.loads(corpo) if corpo else []
+
+
+def consultar_crtsh(marca: str, tentativas=4):
+    """crt.sh é serviço comunitário e cai com frequência.
+
+    Estratégia: curinga duplo (caro, mas é o que acha imitação) com recuo
+    exponencial. Erros 5xx são do servidor, não da consulta — insistir resolve
+    na maioria das vezes.
+    """
+    url = f"https://crt.sh/?q={urllib.parse.quote(f'%{marca}%')}&output=json&exclude=expired"
+    espera = 8
+    ultimo = None
+
+    for n in range(1, tentativas + 1):
+        try:
+            return _pedir(url)
+        except urllib.error.HTTPError as e:
+            ultimo = f"HTTP {e.code}"
+            if e.code not in (502, 503, 504, 429):
+                raise
+        except Exception as e:
+            ultimo = type(e).__name__
+
+        if n < tentativas:
+            print(f"      ({ultimo}; nova tentativa em {espera}s — {n}/{tentativas - 1})",
+                  flush=True)
+            time.sleep(espera)
+            espera *= 2
+
+    raise RuntimeError(f"{ultimo} após {tentativas} tentativas")
 
 
 def analisar(marca, legitimos, registros, corte):
@@ -188,6 +229,26 @@ def main():
 
     total_susp = len(todos)
     total_rec = sum(v.get("recentes", 0) for v in resumo.values() if "recentes" in v)
+    falhas = sum(1 for v in resumo.values() if "erro" in v)
+
+    if falhas == len(resumo):
+        print(f"""
+{'=' * 68}
+SERVIÇO INDISPONÍVEL — este NÃO é um resultado sobre o tema
+{'=' * 68}
+  As {falhas} consultas falharam. O crt.sh é mantido pela comunidade e cai com
+  frequência; consultas com curinga duplo são o pior caso dele.
+
+  NÃO conclua nada sobre a viabilidade do tema a partir disto.
+
+  O que fazer:
+    1. Abra https://crt.sh no navegador. Se também não responder, é o serviço.
+    2. Tente de novo daqui a algumas horas, ou com uma marca só:
+         python3 scripts/teste_viabilidade_ct.py --marcas itau
+    3. Se persistir por mais de um dia, trocamos de fonte — veja a nota sobre
+       leitura direta dos logs de CT no cabeçalho deste arquivo.
+""")
+        return
 
     print("\n" + "=" * 68)
     print("RESULTADO")

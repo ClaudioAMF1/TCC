@@ -48,13 +48,82 @@ LISTA_LOGS = "https://www.gstatic.com/ct/log_list/v3/log_list.json"
 LOTE = 256          # a maioria dos logs limita o tamanho do lote; o servidor corta
 TIMEOUT = 60
 
-# Marcas-alvo. Termos curtos ou ambíguos geram ruído — mantenha específico.
+# Marcas-alvo. Casamento por TOKEN do rótulo, não por substring: buscar "pix"
+# em qualquer posição casa com "capixaba" e "pixel". Ver combina().
 MARCAS = [
     "itau", "bradesco", "santander", "nubank", "bancodobrasil",
-    "caixa", "inss", "receitafederal", "serpro", "detran",
-    "mercadolivre", "mercadopago", "gov-br", "govbr", "sefaz",
-    "correios", "pix",
+    "caixa", "inss", "receita", "serpro", "detran", "sefaz",
+    "mercadolivre", "mercadopago", "correios", "pix", "govbr",
 ]
+
+# Palavras que, junto de uma marca, elevam muito a suspeita.
+ISCAS = {
+    "seguranca", "segura", "acesso", "login", "entrar", "conta", "cliente",
+    "atualizar", "atualizacao", "recadastro", "recadastramento", "validar",
+    "validacao", "desbloqueio", "desbloquear", "token", "senha", "app",
+    "central", "atendimento", "suporte", "consulta", "beneficio", "saque",
+    "restituicao", "regularizar", "pendencia", "notificacao", "aviso",
+}
+
+# Marcas curtas demais para casar por distância de edição sem gerar ruído.
+CURTAS = {"pix", "caixa", "inss"}
+
+# Substituição de letra por dígito/símbolo é técnica clássica de imitação.
+LEET = str.maketrans({"0": "o", "1": "i", "3": "e", "4": "a", "5": "s",
+                      "7": "t", "$": "s", "@": "a"})
+
+
+def _distancia(a: str, b: str, teto: int = 1) -> int:
+    """Levenshtein com poda: só interessa saber se é <= teto."""
+    if abs(len(a) - len(b)) > teto:
+        return teto + 1
+    ant = list(range(len(b) + 1))
+    for i, ca in enumerate(a, 1):
+        atual = [i]
+        for j, cb in enumerate(b, 1):
+            atual.append(min(ant[j] + 1, atual[j - 1] + 1, ant[j - 1] + (ca != cb)))
+        if min(atual) > teto:
+            return teto + 1
+        ant = atual
+    return ant[-1]
+
+
+def combina(nome: str):
+    """Decide se um nome DNS é candidato a imitação de marca.
+
+    Regras, em ordem de força:
+      1. um token do rótulo É a marca              -> forte
+      2. um token está a 1 edição da marca         -> forte (só marcas longas)
+      3. a marca aparece colada e há isca no nome  -> médio
+
+    Substring solta NÃO conta: é o que produzia 'capixaba' e 'pixel'.
+    Devolve (marca, motivo) ou (None, None).
+    """
+    limpo = nome.lstrip("*.").lower()
+
+    # Todos os rótulos, não só o primeiro: 'www.itau-seguranca.xyz' precisa
+    # casar. Dígitos NÃO são separadores — '1tau' é substituição deliberada.
+    tokens = [t for t in re.split(r"[-_.]+", limpo) if t]
+    conj = set(tokens) | {t.translate(LEET) for t in tokens}
+
+    for marca in MARCAS:
+        if marca in conj:
+            return marca, "token exato"
+
+    for marca in MARCAS:
+        if marca in CURTAS or len(marca) < 5:
+            continue
+        for t in conj:
+            if len(t) >= 4 and _distancia(t, marca) <= 1:
+                return marca, f"1 edicao de '{marca}' ({t})"
+
+    iscas_no_nome = conj & ISCAS
+    if iscas_no_nome:
+        for marca in MARCAS:
+            if marca in limpo:
+                return marca, f"marca + isca ({'/'.join(sorted(iscas_no_nome))})"
+
+    return None, None
 
 # Domínios legítimos, para não contar o próprio dono como suspeito.
 LEGITIMOS = re.compile(
@@ -220,10 +289,9 @@ def main():
         limpo = nome.lstrip("*.")
         if LEGITIMOS.search(limpo):
             continue
-        for marca in MARCAS:
-            if marca in limpo:
-                achados.setdefault(limpo, marca)
-                break
+        marca, motivo = combina(limpo)
+        if marca:
+            achados.setdefault(limpo, {"marca": marca, "motivo": motivo})
 
     horas = ((ts_max - ts_min) / 3_600_000) if (ts_min and ts_max) else 0
 
@@ -245,11 +313,11 @@ def main():
         print("  vários. O número real difere — sirva-se dele como ORDEM DE GRANDEZA.")
 
     if achados:
-        print("\n  Amostra do que foi encontrado:")
-        for dom, marca in list(achados.items())[:25]:
-            print(f"      [{marca:<14}] {dom[:60]}")
+        print("\n  Candidatos encontrados:")
+        for dom, info in list(achados.items())[:30]:
+            print(f"      [{info['marca']:<13}] {dom[:52]:<52} {info['motivo']}")
         print("\n  Marcas mais atingidas:")
-        for marca, n in Counter(achados.values()).most_common(10):
+        for marca, n in Counter(i["marca"] for i in achados.values()).most_common(10):
             print(f"      {n:>5}  {marca}")
 
     d = Path(args.dir); d.mkdir(parents=True, exist_ok=True)

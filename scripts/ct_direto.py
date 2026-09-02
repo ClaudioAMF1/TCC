@@ -45,7 +45,7 @@ except ImportError:
     sys.exit("Falta a dependência. Rode:\n    pip3 install cryptography")
 
 LISTA_LOGS = "https://www.gstatic.com/ct/log_list/v3/log_list.json"
-LOTE = 256          # a maioria dos logs limita o tamanho do lote; o servidor corta
+LOTE = 1024         # pedimos generoso; o servidor corta no limite dele
 TIMEOUT = 60
 
 # Marcas-alvo. Casamento por TOKEN do rótulo, não por substring: buscar "pix"
@@ -193,22 +193,28 @@ def nomes_do_certificado(leaf_b64, extra_b64):
         return ts_ms, []
 
 
-def amostrar_log(log, alvo):
-    """Baixa as entradas mais recentes de um log. Devolve (nomes, ts_min, ts_max, erros)."""
+def amostrar_log(log, alvo, achados):
+    """Baixa as entradas mais recentes de um log.
+
+    Avalia cada nome NA HORA e imprime o candidato assim que aparece — numa
+    coleta longa, esperar o fim para ver qualquer coisa é inútil. Preenche
+    `achados` no lugar, para que Ctrl+C preserve o que já foi encontrado.
+    """
     base = log["url"].rstrip("/")
     sth = pegar(f"{base}/ct/v1/get-sth", timeout=30)
     tamanho = sth["tree_size"]
 
-    nomes, ts_min, ts_max, erros, obtidas = [], None, None, 0, 0
+    nomes_vistos, ts_min, ts_max, erros, obtidas = 0, None, None, 0, 0
     fim = tamanho - 1
 
     while obtidas < alvo and fim > 0:
         inicio = max(0, fim - LOTE + 1)
         try:
             r = pegar(f"{base}/ct/v1/get-entries?start={inicio}&end={fim}")
-        except Exception:
+        except Exception as e:
             erros += 1
-            if erros > 3:
+            if erros > 5:
+                print(f"    interrompido após {erros} erros ({type(e).__name__})")
                 break
             time.sleep(2)
             fim = inicio - 1
@@ -224,12 +230,25 @@ def amostrar_log(log, alvo):
             if ts:
                 ts_min = ts if ts_min is None else min(ts_min, ts)
                 ts_max = ts if ts_max is None else max(ts_max, ts)
-            nomes.extend(dns)
+            for nome in dns:
+                nomes_vistos += 1
+                limpo = nome.lstrip("*.")
+                if LEGITIMOS.search(limpo) or limpo in achados:
+                    continue
+                marca, motivo = combina(limpo)
+                if marca:
+                    achados[limpo] = {"marca": marca, "motivo": motivo,
+                                      "ts": ts, "log": log["nome"]}
+                    print(f"      >> [{marca}] {limpo[:58]}  ({motivo})", flush=True)
 
+        print(f"    {obtidas:>6,} entradas | {nomes_vistos:>7,} nomes | "
+              f"{len(achados):>3} candidatos", end="\r", flush=True)
         fim = inicio - 1
-        time.sleep(0.4)
+        time.sleep(0.3)
 
-    return nomes, ts_min, ts_max, obtidas
+    print(f"    {obtidas:>6,} entradas | {nomes_vistos:>7,} nomes | "
+          f"{len(achados):>3} candidatos")
+    return nomes_vistos, ts_min, ts_max, obtidas
 
 
 def main():
@@ -264,34 +283,27 @@ def main():
     for l in escolhidos:
         print(f"  - {l['nome']} ({l['operador']})")
 
-    todos_nomes, ts_min, ts_max, total = [], None, None, 0
-    for l in escolhidos:
-        print(f"\n  Baixando de {l['nome']}...", flush=True)
-        try:
-            nomes, tmin, tmax, n = amostrar_log(l, args.entradas)
-        except Exception as e:
-            print(f"    ERRO: {str(e)[:60]}")
-            continue
-        print(f"    {n} entradas, {len(nomes)} nomes DNS")
-        todos_nomes.extend(nomes)
-        total += n
-        if tmin:
-            ts_min = tmin if ts_min is None else min(ts_min, tmin)
-        if tmax:
-            ts_max = tmax if ts_max is None else max(ts_max, tmax)
+    achados = {}
+    nomes_total, ts_min, ts_max, total = 0, None, None, 0
+    try:
+        for l in escolhidos:
+            print(f"\n  {l['nome']}", flush=True)
+            try:
+                nv, tmin, tmax, n = amostrar_log(l, args.entradas, achados)
+            except Exception as e:
+                print(f"    ERRO: {str(e)[:60]}")
+                continue
+            nomes_total += nv
+            total += n
+            if tmin:
+                ts_min = tmin if ts_min is None else min(ts_min, tmin)
+            if tmax:
+                ts_max = tmax if ts_max is None else max(ts_max, tmax)
+    except KeyboardInterrupt:
+        print("\n\n  [interrompido] Reportando o que foi coletado até aqui.")
 
     if not total:
         sys.exit("\nNenhuma entrada obtida. Tente de novo ou reduza --entradas.")
-
-    # Filtra por marca, descartando os domínios legítimos.
-    achados = {}
-    for nome in todos_nomes:
-        limpo = nome.lstrip("*.")
-        if LEGITIMOS.search(limpo):
-            continue
-        marca, motivo = combina(limpo)
-        if marca:
-            achados.setdefault(limpo, {"marca": marca, "motivo": motivo})
 
     horas = ((ts_max - ts_min) / 3_600_000) if (ts_min and ts_max) else 0
 
@@ -299,7 +311,7 @@ def main():
     print("RESULTADO")
     print("=" * 68)
     print(f"  Entradas amostradas ..................... {total:,}")
-    print(f"  Nomes DNS extraídos ..................... {len(todos_nomes):,}")
+    print(f"  Nomes DNS extraídos ..................... {nomes_total:,}")
     print(f"  Janela temporal coberta ................. {horas:.2f} horas")
     print(f"  Candidatos (marca BR, não legítimo) ..... {len(achados):,}")
 
@@ -326,7 +338,7 @@ def main():
     saida.write_text(json.dumps({
         "coleta": datetime.now(timezone.utc).isoformat(),
         "logs": [l["nome"] for l in escolhidos],
-        "entradas": total, "nomes_dns": len(todos_nomes),
+        "entradas": total, "nomes_dns": nomes_total,
         "horas_cobertas": horas,
         "candidatos": achados,
     }, indent=2, ensure_ascii=False))

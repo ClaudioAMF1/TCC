@@ -9,7 +9,10 @@ verificar é apenas o tamanho do corpus.
 
 DEPENDÊNCIA
 -----------
-    pip3 install google-play-scraper
+    python3 -m venv .venv && source .venv/bin/activate
+    pip install google-play-scraper
+
+  (macOS com Python do Homebrew bloqueia instalação no sistema — PEP 668.)
 
 USO
 ---
@@ -34,7 +37,17 @@ from pathlib import Path
 try:
     from google_play_scraper import search, app as get_app
 except ImportError:
-    sys.exit("Falta a dependência. Rode:\n    pip3 install google-play-scraper")
+    sys.exit(
+        "Falta a dependência 'google-play-scraper'.\n\n"
+        "No macOS com Python do Homebrew, instalar no sistema é bloqueado\n"
+        "(PEP 668). Use o ambiente virtual do projeto:\n\n"
+        "    cd ~/Documents/TCC\n"
+        "    python3 -m venv .venv\n"
+        "    source .venv/bin/activate\n"
+        "    pip install google-play-scraper cryptography\n\n"
+        "Depois rode o script de novo. Em terminal novo, reative com\n"
+        "    source .venv/bin/activate"
+    )
 
 PAUSA = 1.5
 

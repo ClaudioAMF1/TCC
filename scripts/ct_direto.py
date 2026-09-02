@@ -15,7 +15,10 @@ amostra, extrapola a TAXA SEMANAL — o número que decide o tema.
 
 DEPENDÊNCIA
 -----------
-    pip3 install cryptography
+    python3 -m venv .venv && source .venv/bin/activate
+    pip install cryptography
+
+  (macOS com Python do Homebrew bloqueia instalação no sistema — PEP 668.)
 
 USO
 ---
@@ -42,7 +45,17 @@ from pathlib import Path
 try:
     from cryptography import x509
 except ImportError:
-    sys.exit("Falta a dependência. Rode:\n    pip3 install cryptography")
+    sys.exit(
+        "Falta a dependência 'cryptography'.\n\n"
+        "No macOS com Python do Homebrew, instalar no sistema é bloqueado\n"
+        "(PEP 668). Use o ambiente virtual do projeto:\n\n"
+        "    cd ~/Documents/TCC\n"
+        "    python3 -m venv .venv\n"
+        "    source .venv/bin/activate\n"
+        "    pip install cryptography google-play-scraper\n\n"
+        "Depois rode o script de novo. Em terminal novo, reative com\n"
+        "    source .venv/bin/activate"
+    )
 
 LISTA_LOGS = "https://www.gstatic.com/ct/log_list/v3/log_list.json"
 LOTE = 1024         # pedimos generoso; o servidor corta no limite dele

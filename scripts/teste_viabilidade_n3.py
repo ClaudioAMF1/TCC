@@ -27,6 +27,7 @@ SAÍDA
     dados/apps_gov_AAAAMMDD.json  bruto
 """
 
+import argparse
 import csv
 import json
 import sys
@@ -76,7 +77,51 @@ def parece_oficial(dev: str) -> bool:
     return any(s in d for s in SINAIS_DEV)
 
 
+def expandir(achados):
+    """Enumera todos os apps de cada publicador já identificado como oficial.
+
+    A busca por termo genérico encontra uma amostra; buscar pelo NOME DO
+    PUBLICADOR encontra o catálogo dele. É o que transforma 87 num corpus real.
+    """
+    devs = sorted({a["dev"] for a in achados.values() if parece_oficial(a["dev"])})
+    print(f"\n  Enumerando o catálogo de {len(devs)} publicadores oficiais...\n")
+
+    novos_total = 0
+    for i, dev in enumerate(devs, 1):
+        try:
+            res = search(f'"{dev}"', lang="pt", country="br", n_hits=30)
+        except Exception as e:
+            print(f"  [{i:>2}/{len(devs)}] {dev[:44]:<44} ERRO: {str(e)[:22]}")
+            time.sleep(PAUSA)
+            continue
+
+        novos = 0
+        for r in res:
+            # só o que é REALMENTE do mesmo publicador
+            if (r.get("developer") or "").strip() != dev:
+                continue
+            aid = r.get("appId")
+            if aid and aid not in achados:
+                achados[aid] = {
+                    "appId": aid, "titulo": r.get("title", ""),
+                    "dev": r.get("developer", ""),
+                    "instalacoes": r.get("installs", "") or r.get("realInstalls", ""),
+                    "score": r.get("score"), "termo": f"catalogo:{dev}"[:60],
+                }
+                novos += 1
+        novos_total += novos
+        print(f"  [{i:>2}/{len(devs)}] {dev[:44]:<44} +{novos}")
+        time.sleep(PAUSA)
+
+    print(f"\n  Expansão adicionou {novos_total} aplicativos.")
+
+
 def main():
+    ap = argparse.ArgumentParser(description="Viabilidade do corpus de apps governamentais.")
+    ap.add_argument("--expandir", action="store_true",
+                    help="após a busca por termos, enumera o catálogo de cada publicador oficial")
+    args = ap.parse_args()
+
     d = Path("dados")
     d.mkdir(parents=True, exist_ok=True)
     hoje = datetime.now(timezone.utc).strftime("%Y%m%d")
@@ -111,6 +156,9 @@ def main():
                 novos += 1
         print(f"  {termo:<28} {len(res):>3} resultados, {novos:>3} novos")
         time.sleep(PAUSA)
+
+    if args.expandir:
+        expandir(achados)
 
     provaveis = [a for a in achados.values() if parece_oficial(a["dev"])]
     provaveis.sort(key=lambda a: (a["dev"].lower(), a["titulo"].lower()))

@@ -30,6 +30,7 @@ SAÍDA
 import argparse
 import csv
 import json
+import re
 import sys
 import time
 from datetime import datetime, timezone
@@ -63,18 +64,62 @@ TERMOS = [
     "polícia militar", "corpo de bombeiros", "procon",
 ]
 
-# Sinais de que o publicador é de fato órgão público. Usados só para ordenar
-# a planilha — a decisão final é sua, na coluna OFICIAL.
-SINAIS_DEV = [
-    "gov", "governo", "ministerio", "ministério", "prefeitura", "estado",
-    "secretaria", "tribunal", "serpro", "dataprev", "inss", "sus",
-    "detran", "municipio", "município", "federal", "estadual", "distrito",
-]
+# Sinais de que o publicador é órgão público. Casamento por TOKEN, não por
+# substring: 'sus' dentro de 'Direct CURSUS' trouxe o Yandex Maps para dentro,
+# e 'serpro' dentro de 'SERPROS' trouxe um fundo de pensão. Mesmo erro que o
+# coletor de CT cometia com 'pix' em 'capixaba'.
+SINAIS_DEV = {
+    "gov", "governo", "governos", "ministerio", "ministério", "prefeitura",
+    "prefeituras", "estado", "secretaria", "tribunal", "serpro", "dataprev",
+    "inss", "sus", "detran", "municipio", "município", "federal", "estadual",
+    "distrital", "defensoria", "procuradoria", "camara", "câmara", "senado",
+    "conselho", "autarquia", "instituto", "agencia", "agência", "policia",
+    "polícia", "bombeiros", "justica", "justiça", "datasus", "datasp",
+}
+
+# Publicadores oficiais cujo NOME não contém nenhum sinal acima. Sem esta
+# lista, o publicador do gov.br federal — o mais importante do corpus — fica
+# de fora, junto das empresas estaduais de tecnologia, que são o braço de TI
+# dos governos e portanto órgãos públicos.
+OFICIAIS_CONHECIDOS = {
+    "serviços e informações do brasil",   # gov.br federal: Meu INSS, Meu SUS, CNH...
+    "justiça eleitoral brasileira",       # e-Título, Mesário, Resultados
+    "justiça do trabalho",
+    "celepar",                            # Paraná
+    "prodam sp",                          # São Paulo capital
+    "procempa",                           # Porto Alegre
+    "ciasc - centro de inform. autom. de santa catarina",
+    "prodap - centro de gestão da tec. da informação ap",
+    "empro tecnologia e informação",      # Rio Preto
+    "companhia de informática de jundiaí - cijun",
+    "inova pmsc",                         # PM de Santa Catarina
+    "dgti sedec",                         # Defesa Civil RJ
+    "cbmsc - diti",
+    "divisão de tic - corpo de bombeiros",
+    "corpo de bombeiros militar de minas gerais",
+    "corpo de bombeiros militar do maranhão",
+    "hospital das clínicas da fmusp",
+    "instituto de identificação ricardo gumbleton daunt",
+}
+
+# Publicadores que os sinais acima capturam por engano.
+FALSOS_CONHECIDOS = {
+    "direct cursus computer systems trading llc",  # Yandex ('cursus' contém 'sus')
+    "serpros fundo multipatrocinado",              # fundo de pensão, não o SERPRO
+    "tribunal superior electoral",                 # República Dominicana
+}
 
 
 def parece_oficial(dev: str) -> bool:
-    d = (dev or "").lower()
-    return any(s in d for s in SINAIS_DEV)
+    d = (dev or "").strip().lower()
+    if not d:
+        return False
+    if d in FALSOS_CONHECIDOS:
+        return False
+    if d in OFICIAIS_CONHECIDOS:
+        return True
+    tokens = set(re.split(r"[^a-zà-ÿ]+", d)) - {""}
+    return bool(tokens & SINAIS_DEV)
 
 
 def expandir(achados):

@@ -3,8 +3,8 @@
 **Título provisório (EN):** *Does a Stricter Legal Regime Change Anything? Measuring
 Third-Party Tracking on Brazilian Health Websites Under LGPD Article 11*
 
-Documento de trabalho para levar ao orientador. Complementa `TEMAS-PROPOSTOS-TCC1.md` e
-`ESTADO-DA-ARTE-TEMAS.md`.
+Documento de trabalho para levar ao orientador. Complementa `../temas/01-catalogo-inicial.md` e
+`../temas/02-estado-da-arte.md`.
 
 ---
 

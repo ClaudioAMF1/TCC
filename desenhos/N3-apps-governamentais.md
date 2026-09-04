@@ -20,7 +20,7 @@ viabilidade sem precisar de reformulação.
 As três esferas estão representadas, com o publicador identificado **na origem** — o campo
 de desenvolvedor diz "Prefeitura Municipal de Curitiba", "Tribunal de Justiça de
 Pernambuco", "SERPRO". **Não há trabalho de atribuição a fazer**, que é exatamente o que
-inviabilizou o tema N1 (ver `N1-RESULTADO-TESTE-VIABILIDADE.md`).
+inviabilizou o tema N1 (ver `../descartados/N1-infraestrutura-critica.md`).
 
 Subconjunto de dado sensível confirmado e substancial: Meu SUS Digital (50 mi+), família
 e-SUS, Meu INSS (50 mi+), Saúde Já Curitiba, e-saudeSP, Portal do Paciente HC, Carteira
@@ -244,7 +244,7 @@ orientação disponível.
 Três coisas, nesta ordem:
 
 1. **Este desenho**, com o número de corpus verificado.
-2. **O resultado negativo do N1** (`N1-RESULTADO-TESTE-VIABILIDADE.md`) — um tema testado e
+2. **O resultado negativo do N1** (`../descartados/N1-infraestrutura-critica.md`) — um tema testado e
    rejeitado com evidência quantitativa, na área de especialidade do próprio orientador.
 3. **O registro do teste de CT** — segundo tema descartado, por teto de recall estrutural.
 

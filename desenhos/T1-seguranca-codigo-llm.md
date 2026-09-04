@@ -3,8 +3,8 @@
 **Título provisório (EN):** *Does Security Prompting Actually Work? A Replication Study on
 LLM-Generated Code Security and the Validity of Static-Analysis Oracles*
 
-Documento de trabalho para levar ao orientador. Complementa `TEMAS-PROPOSTOS-TCC1.md` e
-`ESTADO-DA-ARTE-TEMAS.md`.
+Documento de trabalho para levar ao orientador. Complementa `../temas/01-catalogo-inicial.md` e
+`../temas/02-estado-da-arte.md`.
 
 ---
 

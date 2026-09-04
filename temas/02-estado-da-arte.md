@@ -1,6 +1,6 @@
 # Estado da Arte dos Temas Propostos — Checagem de Viabilidade
 
-Documento complementar a `TEMAS-PROPOSTOS-TCC1.md`. Para cada tema proposto, foi feita
+Documento complementar a `01-catalogo-inicial.md`. Para cada tema proposto, foi feita
 uma busca na literatura recente para responder a três perguntas:
 
 1. O que **já foi feito** (e, portanto, não pode ser a sua contribuição)?

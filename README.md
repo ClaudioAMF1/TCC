@@ -26,6 +26,7 @@ dados/          Saída bruta das coletas (não versionado — ver .gitignore)
 | `Plano de Ensino - Projeto Capstone I.pdf` | Cronograma, avaliação, prazos |
 | `Regulamento TCC CIC v.2026-05 -- VIGENTE.pdf` | Regras formais: modalidades, orientação, banca |
 | `aulas/` | Slides 01 a 08 — metodologia científica, maturidade em pesquisa, revisão bibliográfica |
+| `listas/` | Listas de exercícios da disciplina e guias de estudo correspondentes |
 
 ### `temas/`
 | Arquivo | Conteúdo |
@@ -132,7 +133,7 @@ python3 scripts/teste_viabilidade_n1.py --apenas-contagem
 
 | Data | Marco |
 |---|---|
-| 10/09 | Entrega da Lista de Exercícios 01 (impressa) |
+| 10/09 | Entrega da **Lista de Exercícios 01** (impressa) — enunciado e guia de estudo em `disciplina/listas/` |
 | 29/09 e 01/10 | Seminário de análise de artigo científico |
 | Out–Nov | 5 encontros de orientação, com ficha assinada e entregue mensalmente |
 | 24/11 a 01/12 | Simulação de defesa |

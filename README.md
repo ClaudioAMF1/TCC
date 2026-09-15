@@ -42,7 +42,7 @@ dados/          Saída bruta das coletas (não versionado — ver .gitignore)
 [Seminário de análise de artigo científico — setembro/outubro de 2026](seminarios/2026-09-analise-artigo/README.md):
 apresentação de 15 slides, roteiro de aproximadamente 13 minutos, análise crítica e fontes.
 O recorte provisório é priorização de vulnerabilidades; o tema definitivo do TCC continua em aberto.
-A versão de preparação registra as pendências de comprovação via CAFe, h5 atual e anexos da atividade.
+A busca na ACM via CAFe está documentada. A versão de preparação registra as pendências de h5 atual e anexos da atividade.
 
 ### `desenhos/`
 Desenhos experimentais completos — problema de pesquisa nas três partes exigidas pela

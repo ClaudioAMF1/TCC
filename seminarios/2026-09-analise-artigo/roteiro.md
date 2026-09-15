@@ -4,7 +4,7 @@
 
 Artigo: *Conflicting Scores, Confusing Signals: An Empirical Study of Vulnerability Scoring Systems*, Koscinski et al., ACM CCS 2025. DOI: [10.1145/3719027.3765210](https://doi.org/10.1145/3719027.3765210).
 
-**Situação:** material preparado para ensaio. Faltam a busca autenticada via CAFe, a conferência do h5 atual no Google Scholar e a comparação com os cinco anexos específicos da atividade, que não estavam acessíveis. O slide 3 descreve um protocolo proposto e o slide 6 distingue métricas verificadas de confirmação pendente. Não apresentar essas etapas como concluídas.
+**Situação:** material preparado para ensaio. A busca na ACM pelo acesso CAFe do IDP foi concluída e documentada: 44 resultados. Faltam a conferência do h5 atual no Google Scholar e a comparação com os cinco anexos específicos da atividade, que não estavam acessíveis. O slide 3 descreve o procedimento realizado; o slide 6 distingue métricas verificadas de confirmação pendente.
 
 **Duração planejada:** 13min05s, com 1min55s de margem até o limite de 15 minutos. Os tempos são metas de ensaio, não uma medição da sua fala. As referências nas notas não fazem parte da leitura oral.
 
@@ -26,13 +26,13 @@ O problema que orienta a escolha é simples: uma equipe encontra muitas vulnerab
 
 Tempo sugerido: 65s. Acumulado: 02:15.
 
-O protocolo começa pelo acesso ao Portal CAPES via CAFe, selecionando o IDP e entrando com a conta institucional. Na base ACM, a busca proposta combina vulnerability prioritization com CVSS, EPSS ou SSVC. O período inicial é de 2021 a 2026, com trabalhos completos e resultados empíricos. A triagem passa por título e resumo, seguida da leitura integral para verificar método, dados e contribuição. Nesta versão, a busca pública e a leitura do artigo já foram realizadas. O registro da busca autenticada via CAFe ainda precisa ser concluído. Por isso, não apresento contagens de resultados nem afirmo que essa etapa institucional já ocorreu.
+A seleção começou pela delimitação provisória do problema e pela busca pública. Depois, executei a consulta na ACM pelo Portal CAPES via CAFe, com a instituição IDP reconhecida. A expressão foi vulnerability prioritization entre aspas, combinada com CVSS, EPSS ou SSVC. A busca em todos os campos recuperou 44 resultados na coleção de textos completos da ACM. Os filtros da interface apareciam como recurso Premium; por isso, período de 2021 a 2026 e pesquisa original foram critérios de triagem manual. O artigo escolhido apareceu na primeira página. Comparei a pertinência de entradas sobre EPSS e priorização adaptativa, mas escolhi a comparação de quatro sistemas por sua relação direta com o problema, método explícito e dados públicos. A análise integral usa a versão aberta dos autores. O protocolo e as capturas registram a consulta, sem apresentar a busca exploratória como revisão exaustiva.
 
 ## Slide 4 — Artigo selecionado
 
 Tempo sugerido: 55s. Acumulado: 03:10.
 
-O título é Conflicting Scores, Confusing Signals: An Empirical Study of Vulnerability Scoring Systems. Viktoria Koscinski e outros quatro autores publicaram o trabalho nos anais da ACM CCS de 2025. A contribuição original está na comparação empírica de quatro sistemas sobre um mesmo conjunto de vulnerabilidades, acompanhada de uma análise temporal do EPSS. Não se trata apenas de reunir opiniões da literatura. Os autores coletam dados, aplicam procedimentos de análise e apresentam resultados próprios. Para a leitura detalhada, usei a versão aberta dos autores, identificada como arXiv versão 1, e confirmei a publicação por DOI e pelos registros da conferência.
+O título é Conflicting Scores, Confusing Signals: An Empirical Study of Vulnerability Scoring Systems. Viktoria Koscinski e outros quatro autores publicaram o trabalho nos anais da ACM CCS de 2025. A contribuição original está na comparação empírica de quatro sistemas sobre um mesmo conjunto de vulnerabilidades, acompanhada de uma análise temporal do EPSS. Não se trata apenas de reunir opiniões da literatura. Os autores coletam dados, aplicam procedimentos de análise e apresentam resultados próprios. Para a leitura detalhada, usei a versão aberta dos autores, identificada como arXiv versão 1, e confirmei a publicação na página da ACM, acessada a partir dos resultados da busca via CAFe, além do DOI e dos registros da conferência.
 
 ## Slide 5 — Relevância para o meu TCC
 
@@ -124,7 +124,7 @@ As referências completas e o registro das fontes estão no material de apoio. A
 
 ## Ajustes antes da apresentação
 
-1. Concluir a busca na ACM a partir do acesso CAFe do IDP e registrar consulta, data, filtros e decisão de seleção.
+1. Revisar o registro da busca já realizada via CAFe e suas três capturas na pasta `evidencias/`. A consulta retornou 44 resultados; o recorte temporal foi critério manual, pois os filtros da interface eram Premium.
 2. Confirmar o h5 no Google Scholar Metrics, registrando nome da conferência, janela de anos e edição. Atualizar slide 6 e sua fala.
 3. Conferir os tutoriais e os dois exemplos de análise da professora. A versão do Documento Técnico obtida publicamente é a da CAPES, de janeiro de 2023.
 4. Reensaiar após essas atualizações. Cortar repetições se o tempo passar de 14 minutos.

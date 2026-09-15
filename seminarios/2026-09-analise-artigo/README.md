@@ -13,6 +13,7 @@
 - `protocolo-busca.md`: procedimento, registro do que foi realizado e pendências.
 - `fontes.bib`: referências bibliográficas principais.
 - `slides.json`: conteúdo estruturado dos slides.
+- `evidencias/`: capturas da autenticação CAFe, consulta na ACM e artigo selecionado.
 
 ## Artigo
 
@@ -24,9 +25,10 @@ KOSCINSKI, Viktoria; NELSON, Mark; OKUTAN, Ahmet; FALSO, Robert; MIRAKHORLI, Meh
 
 Material preparado para ensaio, com duração planejada de 13min05s. **Ainda não é uma versão pronta para submissão sem revisão**, pois faltam:
 
-1. Comprovação da seleção em base acessada via CAFe. O portal reconheceu a opção institucional do IDP e encaminhou ao login, mas a autenticação não foi concluída.
-2. h5 atual do Google Scholar. A consulta automatizada foi bloqueada. O valor histórico 77 é identificado como registro de 2019, sem ser tratado como métrica atual.
-3. Leitura dos anexos específicos da atividade: dois tutoriais da Biblioteca do IDP, o arquivo do Documento Técnico fornecido pela professora e os dois exemplos de análise. Eles não apareceram nas duas branches consultadas nem na busca por arquivos anexados. A versão pública do Documento Técnico da CAPES foi consultada.
+1. h5 atual do Google Scholar. A consulta automatizada foi bloqueada. O valor histórico 77 é identificado como registro de 2019, sem ser tratado como métrica atual.
+2. Leitura dos anexos específicos da atividade: dois tutoriais da Biblioteca do IDP, o arquivo do Documento Técnico fornecido pela professora e os dois exemplos de análise. Eles não apareceram nas duas branches consultadas nem na busca por arquivos anexados. A versão pública do Documento Técnico da CAPES foi consultada.
+
+A busca via **CAFe/IDP foi concluída** na ACM Digital Library em 15/09/2026, com **44 resultados**. As capturas em `evidencias/` mostram o reconhecimento do IDP, a consulta e a página oficial do artigo. O período 2021–2026 foi critério de triagem manual, pois a interface indicava filtros Premium. Veja [o registro detalhado](protocolo-busca.md).
 
 O rank **A*** foi verificado no portal CORE, edição **ICORE2026**. A classificação **A1** está documentada na lista oficial CAPES de eventos **2017–2020**. O corte **h5 ≥ 35** também consta do relatório da área para **2021–2024**. As fontes e suas datas não são intercambiáveis.
 

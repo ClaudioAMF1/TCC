@@ -2,7 +2,7 @@
   "title": "Priorização de vulnerabilidades: análise de artigo científico",
   "author": "Claudio Meireles",
   "date": "2026-09-15",
-  "status": "Versão para preparação, pendente de comprovação CAFe e h5 atual",
+  "status": "Busca via CAFe concluída; pendentes h5 atual e anexos específicos da atividade",
   "sources": {
     "artigo": "https://doi.org/10.1145/3719027.3765210",
     "texto": "https://arxiv.org/abs/2508.13644",
@@ -61,24 +61,25 @@
       "title": "Seleção: busca e triagem",
       "kind": "process",
       "seconds": 65,
-      "notes": "O protocolo começa pelo acesso ao Portal CAPES via CAFe, selecionando o IDP e entrando com a conta institucional. Na base ACM, a busca proposta combina vulnerability prioritization com CVSS, EPSS ou SSVC. O período inicial é de 2021 a 2026, com trabalhos completos e resultados empíricos. A triagem passa por título e resumo, seguida da leitura integral para verificar método, dados e contribuição. Nesta versão, a busca pública e a leitura do artigo já foram realizadas. O registro da busca autenticada via CAFe ainda precisa ser concluído. Por isso, não apresento contagens de resultados nem afirmo que essa etapa institucional já ocorreu.",
+      "notes": "A seleção começou pela delimitação provisória do problema e pela busca pública. Depois, executei a consulta na ACM pelo Portal CAPES via CAFe, com a instituição IDP reconhecida. A expressão foi vulnerability prioritization entre aspas, combinada com CVSS, EPSS ou SSVC. A busca em todos os campos recuperou 44 resultados na coleção de textos completos da ACM. Os filtros da interface apareciam como recurso Premium; por isso, período de 2021 a 2026 e pesquisa original foram critérios de triagem manual. O artigo escolhido apareceu na primeira página. Comparei a pertinência de entradas sobre EPSS e priorização adaptativa, mas escolhi a comparação de quatro sistemas por sua relação direta com o problema, método explícito e dados públicos. A análise integral usa a versão aberta dos autores. O protocolo e as capturas registram a consulta, sem apresentar a busca exploratória como revisão exaustiva.",
       "sources": [
         "https://www.periodicos.capes.gov.br/index.php/acesso-cafe.html",
-        "https://doi.org/10.1145/3719027.3765210"
+        "https://doi.org/10.1145/3719027.3765210",
+        "https://dl-acm-org.ez279.periodicos.capes.gov.br/action/doSearch?AllField=%22vulnerability+prioritization%22+AND+%28CVSS+OR+EPSS+OR+SSVC%29"
       ],
       "steps": [
-        "Acesso CAFe pelo IDP e abertura da ACM Digital Library",
-        "Busca proposta: \"vulnerability prioritization\" AND (CVSS OR EPSS OR SSVC)",
-        "Filtro inicial: 2021–2026, artigo completo, pesquisa empírica",
-        "Leitura integral e decisão por aderência, método e dados"
+        "CAFe pelo IDP → lista de bases → ACM Digital Library",
+        "Busca: \"vulnerability prioritization\" AND (CVSS OR EPSS OR SSVC)",
+        "44 resultados · triagem manual por período e pesquisa original",
+        "Escolha: comparação de 4 sistemas, dados públicos e leitura integral"
       ],
-      "foot": "Busca pública concluída. Registro da busca autenticada via CAFe pendente."
+      "foot": "Consulta realizada em 15/09/2026. Critério temporal: 2021–2026. Filtros da interface eram Premium."
     },
     {
       "title": "Artigo selecionado",
       "kind": "article",
       "seconds": 55,
-      "notes": "O título é Conflicting Scores, Confusing Signals: An Empirical Study of Vulnerability Scoring Systems. Viktoria Koscinski e outros quatro autores publicaram o trabalho nos anais da ACM CCS de 2025. A contribuição original está na comparação empírica de quatro sistemas sobre um mesmo conjunto de vulnerabilidades, acompanhada de uma análise temporal do EPSS. Não se trata apenas de reunir opiniões da literatura. Os autores coletam dados, aplicam procedimentos de análise e apresentam resultados próprios. Para a leitura detalhada, usei a versão aberta dos autores, identificada como arXiv versão 1, e confirmei a publicação por DOI e pelos registros da conferência.",
+      "notes": "O título é Conflicting Scores, Confusing Signals: An Empirical Study of Vulnerability Scoring Systems. Viktoria Koscinski e outros quatro autores publicaram o trabalho nos anais da ACM CCS de 2025. A contribuição original está na comparação empírica de quatro sistemas sobre um mesmo conjunto de vulnerabilidades, acompanhada de uma análise temporal do EPSS. Não se trata apenas de reunir opiniões da literatura. Os autores coletam dados, aplicam procedimentos de análise e apresentam resultados próprios. Para a leitura detalhada, usei a versão aberta dos autores, identificada como arXiv versão 1, e confirmei a publicação na página da ACM, acessada a partir dos resultados da busca via CAFe, além do DOI e dos registros da conferência.",
       "sources": [
         "https://doi.org/10.1145/3719027.3765210",
         "https://arxiv.org/abs/2508.13644",

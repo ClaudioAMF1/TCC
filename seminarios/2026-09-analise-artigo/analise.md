@@ -35,7 +35,7 @@ O prestígio do veículo é um critério complementar. Não garante a validade d
 
 ### Procedimento de busca
 
-O arquivo [protocolo-busca.md](protocolo-busca.md) apresenta o procedimento proposto para a seleção via CAFe e distingue o que foi efetivamente feito nesta sessão. A pesquisa pública, a leitura integral e a inspeção do repositório dos autores foram realizadas. A busca autenticada ainda não foi executada, portanto não há um fluxo de seleção com quantidades inventadas.
+O arquivo [protocolo-busca.md](protocolo-busca.md) registra a busca pública inicial e a consulta efetivamente executada na ACM pelo acesso CAFe do IDP em 15/09/2026. A expressão temática recuperou **44 resultados**, incluindo o artigo na primeira página. A data e o tipo de trabalho foram critérios de triagem manual, pois os filtros da interface apareciam como recurso Premium. Foram realizadas a leitura integral da versão aberta e a inspeção do repositório dos autores. As três capturas em `evidencias/` documentam acesso, consulta e registro editorial. Não foi realizada revisão sistemática dos 44 trabalhos.
 
 ## 2. Métricas e classificação
 
@@ -150,4 +150,9 @@ A contribuição, o conjunto de dados e o escopo ainda dependeriam de revisão a
 
 ## 5. Limites desta preparação
 
-O material considera o enunciado fornecido, o repositório e as novas aulas. Os cinco anexos específicos da atividade não foram localizados: dois tutoriais da Biblioteca do IDP, o Documento Técnico fornecido pela professora e dois exemplos de análise. Foi consultada a versão pública do Documento Técnico da CAPES. Ainda faltam a seleção autenticada via CAFe e a confirmação direta do h5 atual. Esses pontos estão destacados no roteiro e nos slides, para que não sejam confundidos com etapas concluídas.
+O material considera o enunciado fornecido, o repositório e as novas aulas. Os cinco anexos específicos da atividade não foram localizados: dois tutoriais da Biblioteca do IDP, o Documento Técnico fornecido pela professora e dois exemplos de análise. Foi consultada a versão pública do Documento Técnico da CAPES. A seleção via CAFe foi concluída e documentada. Ainda faltam a confirmação direta do h5 atual e a conferência dos anexos específicos. Esses pontos estão destacados no roteiro e nos slides, para que não sejam confundidos com etapas concluídas.
+
+
+## Literatura próxima identificada na consulta institucional
+
+A listagem da ACM também apresentou **Exploit Prediction Scoring System (EPSS)**, Jacobs et al. (2021), DOI [10.1145/3436242](https://doi.org/10.1145/3436242), e **Adaptive Vulnerability Prioritization under Active Exploitation Using the CISA Known Exploited Vulnerabilities Catalog**, Habibi Norouzlou (2026), DOI [10.1145/3807501.3808240](https://doi.org/10.1145/3807501.3808240). Seus títulos e trechos de resumo foram considerados na triagem exploratória; os textos integrais não foram analisados nesta atividade. O segundo merece entrar na revisão bibliográfica antes de assumir originalidade para qualquer TCC sobre orçamento de correções e priorização temporal.

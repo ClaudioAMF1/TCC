@@ -1,0 +1,465 @@
+{
+  "title": "Priorização de vulnerabilidades: análise de artigo científico",
+  "author": "Claudio Meireles",
+  "date": "2026-09-15",
+  "status": "Busca via CAFe concluída; pendentes h5 atual e anexos específicos da atividade",
+  "sources": {
+    "artigo": "https://doi.org/10.1145/3719027.3765210",
+    "texto": "https://arxiv.org/abs/2508.13644",
+    "html": "https://arxiv.org/html/2508.13644v1",
+    "dados": "https://github.com/SoftwareDesignLab/Vulnerability-Scoring-Systems-Comparison",
+    "core": "https://portal.core.edu.au/conf-ranks/?by=all&search=security",
+    "qualis": "https://www.gov.br/capes/pt-br/centrais-de-conteudo/documentos/avaliacao/09012022_RELATORIOQUALISEVENTOS20172020COMPUTACAO.PDF/@@display-file/file",
+    "qualis2024": "https://www.gov.br/capes/pt-br/acesso-a-informacao/acoes-e-programas/avaliacao/sobre-a-avaliacao/areas-avaliacao/sobre-as-areas-de-avaliacao/colegio-de-ciencias-exatas-tecnologicas-e-multidisciplinar/ciencias-exatas-e-da-terra/Computao.pdf/@@display-file/file",
+    "h5historico": "https://www-di.inf.puc-rio.br/~endler/qualis/QualisEventosComputa%C3%A7%C3%A3o-2019Provis.pdf",
+    "percentis": "https://www.gov.br/capes/pt-br/centrais-de-conteudo/documentos/avaliacao/avaliacao-quadrienal-2017/DocumentotcnicoQualisPeridicosfinal.pdf/@@display-file/file",
+    "cafe": "https://www.periodicos.capes.gov.br/index.php/acesso-cafe.html",
+    "epss": "https://www.first.org/epss/faq",
+    "aulas": "https://github.com/ClaudioAMF1/TCC/tree/main/disciplina/aulas",
+    "historico": "https://github.com/ClaudioAMF1/TCC/blob/main/temas/04-avaliacao-da-area.md"
+  },
+  "slides": [
+    {
+      "title": "Priorização de\nvulnerabilidades",
+      "kind": "cover",
+      "seconds": 25,
+      "notes": "O artigo que escolhi analisa como diferentes sistemas orientam a priorização de vulnerabilidades. Minha área de interesse é cibersegurança e o tema do TCC ainda está em definição. Por isso, uso gestão de vulnerabilidades como um recorte provisório para este seminário. Vou explicar a seleção, a classificação do veículo e a estrutura da pesquisa.",
+      "sources": [
+        "https://doi.org/10.1145/3719027.3765210"
+      ],
+      "subtitle": "Seminário de análise de artigo científico",
+      "author": "Claudio Meireles",
+      "context": "Projeto Capstone I · IDP · 2026.2",
+      "foot": "Recorte exploratório para o TCC"
+    },
+    {
+      "title": "Recorte provisório do TCC",
+      "kind": "text",
+      "seconds": 45,
+      "notes": "O problema que orienta a escolha é simples: uma equipe encontra muitas vulnerabilidades, mas não consegue corrigir todas ao mesmo tempo. Ela precisa decidir quais tratar primeiro. No meu repositório, essa linha já aparece entre as possibilidades de TCC. O artigo ajuda a transformar uma área ampla em uma pergunta que pode ser investigada com dados: como a escolha do critério muda a lista de prioridades? Ainda será necessário delimitar população, período e contribuição com o orientador. O seminário serve para fundamentar essa decisão.",
+      "sources": [
+        "https://github.com/ClaudioAMF1/TCC/blob/main/temas/04-avaliacao-da-area.md",
+        "https://github.com/ClaudioAMF1/TCC/tree/main/disciplina/aulas"
+      ],
+      "blocks": [
+        [
+          "Área",
+          "Cibersegurança"
+        ],
+        [
+          "Recorte do seminário",
+          "Avaliação de critérios para priorizar vulnerabilidades"
+        ],
+        [
+          "Pergunta inicial",
+          "Como a escolha do escore altera a lista de correções prioritárias?"
+        ]
+      ],
+      "foot": "O tema definitivo e a contribuição do TCC permanecem em aberto"
+    },
+    {
+      "title": "Seleção: busca e triagem",
+      "kind": "process",
+      "seconds": 65,
+      "notes": "A seleção começou pela delimitação provisória do problema e pela busca pública. Depois, executei a consulta na ACM pelo Portal CAPES via CAFe, com a instituição IDP reconhecida. A expressão foi vulnerability prioritization entre aspas, combinada com CVSS, EPSS ou SSVC. A busca em todos os campos recuperou 44 resultados na coleção de textos completos da ACM. Os filtros da interface apareciam como recurso Premium; por isso, período de 2021 a 2026 e pesquisa original foram critérios de triagem manual. O artigo escolhido apareceu na primeira página. Comparei a pertinência de entradas sobre EPSS e priorização adaptativa, mas escolhi a comparação de quatro sistemas por sua relação direta com o problema, método explícito e dados públicos. A análise integral usa a versão aberta dos autores. O protocolo e as capturas registram a consulta, sem apresentar a busca exploratória como revisão exaustiva.",
+      "sources": [
+        "https://www.periodicos.capes.gov.br/index.php/acesso-cafe.html",
+        "https://doi.org/10.1145/3719027.3765210",
+        "https://dl-acm-org.ez279.periodicos.capes.gov.br/action/doSearch?AllField=%22vulnerability+prioritization%22+AND+%28CVSS+OR+EPSS+OR+SSVC%29"
+      ],
+      "steps": [
+        "CAFe pelo IDP → lista de bases → ACM Digital Library",
+        "Busca: \"vulnerability prioritization\" AND (CVSS OR EPSS OR SSVC)",
+        "44 resultados · triagem manual por período e pesquisa original",
+        "Escolha: comparação de 4 sistemas, dados públicos e leitura integral"
+      ],
+      "foot": "Consulta realizada em 15/09/2026. Critério temporal: 2021–2026. Filtros da interface eram Premium."
+    },
+    {
+      "title": "Artigo selecionado",
+      "kind": "article",
+      "seconds": 55,
+      "notes": "O título é Conflicting Scores, Confusing Signals: An Empirical Study of Vulnerability Scoring Systems. Viktoria Koscinski e outros quatro autores publicaram o trabalho nos anais da ACM CCS de 2025. A contribuição original está na comparação empírica de quatro sistemas sobre um mesmo conjunto de vulnerabilidades, acompanhada de uma análise temporal do EPSS. Não se trata apenas de reunir opiniões da literatura. Os autores coletam dados, aplicam procedimentos de análise e apresentam resultados próprios. Para a leitura detalhada, usei a versão aberta dos autores, identificada como arXiv versão 1, e confirmei a publicação na página da ACM, acessada a partir dos resultados da busca via CAFe, além do DOI e dos registros da conferência.",
+      "sources": [
+        "https://doi.org/10.1145/3719027.3765210",
+        "https://arxiv.org/abs/2508.13644",
+        "https://github.com/SoftwareDesignLab/Vulnerability-Scoring-Systems-Comparison"
+      ],
+      "paper_title": "Conflicting Scores, Confusing Signals:\nAn Empirical Study of Vulnerability Scoring Systems",
+      "authors": "Viktoria Koscinski, Mark Nelson, Ahmet Okutan,\nRobert Falso e Mehdi Mirakhorli",
+      "venue": "ACM CCS 2025 · Artigo completo · p. 1904–1918",
+      "originality": "Originalidade: dados e análises próprios sobre sistemas de pontuação",
+      "foot": "DOI: 10.1145/3719027.3765210 · Leitura: versão aberta dos autores, arXiv v1"
+    },
+    {
+      "title": "Relevância para o meu TCC",
+      "kind": "table",
+      "seconds": 45,
+      "notes": "A relevância não depende só do prestígio da conferência. O assunto corresponde a uma decisão concreta de defesa: priorizar correções. O trabalho reúne 600 vulnerabilidades no estudo principal, compara quatro sistemas e disponibiliza um pacote de reprodução. Isso permite conhecer o desenho metodológico antes de assumir um escopo de TCC. A publicação é de 2025, mas os dados principais são de 2024, uma distinção importante. A análise é pertinente e tecnicamente aproveitável, embora a viabilidade de uma extensão ainda precise de piloto e revisão bibliográfica.",
+      "sources": [
+        "https://doi.org/10.1145/3719027.3765210",
+        "https://github.com/SoftwareDesignLab/Vulnerability-Scoring-Systems-Comparison",
+        "https://github.com/ClaudioAMF1/TCC/blob/main/temas/04-avaliacao-da-area.md"
+      ],
+      "headers": [
+        "Critério",
+        "Evidência",
+        "Uso possível no TCC"
+      ],
+      "rows": [
+        [
+          "Aderência",
+          "Priorização de correções",
+          "Problema de defesa mensurável"
+        ],
+        [
+          "Pesquisa empírica",
+          "600 CVEs e 4 sistemas",
+          "Referência de desenho comparativo"
+        ],
+        [
+          "Reprodutibilidade",
+          "Dados e scripts públicos",
+          "Inspeção e replicação parcial"
+        ],
+        [
+          "Atualidade",
+          "Publicação em 2025",
+          "Base recente, com dados de 2024"
+        ]
+      ],
+      "widths": [
+        250,
+        430,
+        456
+      ],
+      "foot": "Critérios quantitativos e qualitativos. Viabilidade da extensão ainda não testada."
+    },
+    {
+      "title": "Métricas da conferência",
+      "kind": "metrics",
+      "seconds": 65,
+      "notes": "Como o artigo é de conferência, o caminho correspondente no enunciado é h5, classificação Qualis e rank CORE. Confirmei A estrela no portal CORE, na edição ICORE 2026. A lista oficial de eventos da CAPES para 2017 a 2020 classifica a CCS como A1. O corte por h5 para A1 é 35, critério também mantido no relatório do ciclo 2021 a 2024. Existe um registro histórico de h5 igual a 77 na lista provisória de 2019, mas ele não é a métrica atual. O Google Scholar bloqueou a consulta nesta sessão, então o h5 atual permanece pendente. Também é preciso distinguir Qualis Eventos de Qualis Periódicos: a tabela de percentis de revistas não deve ser aplicada diretamente ao h5 de conferências.",
+      "sources": [
+        "https://portal.core.edu.au/conf-ranks/?by=all&search=security",
+        "https://www.gov.br/capes/pt-br/centrais-de-conteudo/documentos/avaliacao/09012022_RELATORIOQUALISEVENTOS20172020COMPUTACAO.PDF/@@display-file/file",
+        "https://www.gov.br/capes/pt-br/acesso-a-informacao/acoes-e-programas/avaliacao/sobre-a-avaliacao/areas-avaliacao/sobre-as-areas-de-avaliacao/colegio-de-ciencias-exatas-tecnologicas-e-multidisciplinar/ciencias-exatas-e-da-terra/Computao.pdf/@@display-file/file",
+        "https://www-di.inf.puc-rio.br/~endler/qualis/QualisEventosComputa%C3%A7%C3%A3o-2019Provis.pdf",
+        "https://www.gov.br/capes/pt-br/centrais-de-conteudo/documentos/avaliacao/avaliacao-quadrienal-2017/DocumentotcnicoQualisPeridicosfinal.pdf/@@display-file/file"
+      ],
+      "headers": [
+        "Indicador",
+        "Resultado verificado"
+      ],
+      "rows": [
+        [
+          "CORE / ICORE 2026",
+          "A*"
+        ],
+        [
+          "Qualis Eventos · 2017–2020",
+          "A1 · lista oficial da CAPES"
+        ],
+        [
+          "Regra de enquadramento por h5",
+          "A1 quando h5 ≥ 35"
+        ],
+        [
+          "h5 histórico · lista provisória de 2019",
+          "77 · não representa o valor atual"
+        ],
+        [
+          "h5 atual · Google Scholar",
+          "Consulta bloqueada · confirmação pendente"
+        ]
+      ],
+      "widths": [
+        565,
+        571
+      ],
+      "foot": "Para conferências, usa-se Qualis Eventos. JIF e CiteScore não se aplicam a esta escolha."
+    },
+    {
+      "title": "Mapa da estrutura do artigo",
+      "kind": "table",
+      "seconds": 45,
+      "notes": "O artigo tem uma organização própria. Começa pelos elementos de identificação e pelo resumo. Depois apresenta introdução, fundamentos e configuração do estudo de caso. Os resultados estão organizados pelas quatro perguntas de pesquisa. Ameaças à validade e discussão aparecem em seções separadas. Os trabalhos relacionados vêm depois da discussão, antes das conclusões. Por fim, há referências e dois apêndices. Essa ordem mostra por que analisar a estrutura vai além de procurar uma sequência rígida de introdução, método, resultado e conclusão. O importante é identificar a função que cada seção cumpre.",
+      "sources": [
+        "https://arxiv.org/html/2508.13644v1"
+      ],
+      "headers": [
+        "Elemento",
+        "Localização na versão lida"
+      ],
+      "rows": [
+        [
+          "Título, autoria, resumo e palavras-chave",
+          "Página 1"
+        ],
+        [
+          "Introdução e fundamentos",
+          "Seções 1–2"
+        ],
+        [
+          "Metodologia",
+          "Seção 3 · Case Study Setup"
+        ],
+        [
+          "Resultados por pergunta de pesquisa",
+          "Seção 4 · RQ1–RQ4"
+        ],
+        [
+          "Ameaças à validade e discussão",
+          "Seções 5–6"
+        ],
+        [
+          "Trabalhos relacionados e conclusões",
+          "Seções 7–8"
+        ],
+        [
+          "Referências e análises complementares",
+          "References · Apêndices A–B"
+        ]
+      ],
+      "widths": [
+        660,
+        476
+      ],
+      "foot": "A numeração refere-se ao arXiv:2508.13644v1, com 15 páginas"
+    },
+    {
+      "title": "Título, resumo e indexação",
+      "kind": "frontmatter",
+      "seconds": 40,
+      "notes": "O título tem duas partes. A primeira destaca o problema dos sinais divergentes, e a segunda informa o objeto e o tipo de estudo. A autoria e as afiliações permitem identificar os responsáveis pela pesquisa. O resumo apresenta o problema, a comparação empírica e a dimensão da amostra, mas descreve os resultados de modo mais geral. Minha avaliação é que ele poderia indicar um efeito numérico para tornar a contribuição mais precisa. As palavras-chave e os conceitos de classificação da ACM ajudam a indexar e recuperar o trabalho nas bases.",
+      "sources": [
+        "https://arxiv.org/html/2508.13644v1",
+        "https://github.com/ClaudioAMF1/TCC/tree/main/disciplina/aulas"
+      ],
+      "blocks": [
+        [
+          "Título",
+          "Problema em destaque e subtítulo que identifica o estudo empírico"
+        ],
+        [
+          "Resumo",
+          "Problema, método e amostra. Resultados descritos sem efeito numérico central."
+        ],
+        [
+          "Autoria e indexação",
+          "Afiliações, palavras-chave e conceitos ACM identificam e tornam o trabalho recuperável"
+        ]
+      ],
+      "foot": "Análise da página 1. Imagem: versão aberta dos autores."
+    },
+    {
+      "title": "Introdução e fundamentos",
+      "kind": "table",
+      "seconds": 60,
+      "notes": "A introdução contextualiza a limitação de recursos para corrigir vulnerabilidades e apresenta a lacuna que os autores pretendem enfrentar: comparar sistemas diferentes sobre os mesmos casos. Ela termina com quatro perguntas, sobre concordância, esforço de triagem, exploração conhecida e tipos de fraqueza. A seção de fundamentos explica os sistemas. CVSS expressa severidade técnica. EPSS estima probabilidade de exploração nos próximos trinta dias. SSVC orienta uma decisão considerando o contexto. Já o Exploitability Index usado no estudo combina um modelo e informações do produto. Ele é o modelo de Okutan e Mirakhorli, não o índice homônimo da Microsoft. Essa distinção conceitual é essencial para interpretar a comparação.",
+      "sources": [
+        "https://arxiv.org/html/2508.13644v1",
+        "https://www.first.org/epss/faq"
+      ],
+      "headers": [
+        "Sistema",
+        "O que representa no estudo"
+      ],
+      "rows": [
+        [
+          "CVSS",
+          "Severidade técnica da vulnerabilidade"
+        ],
+        [
+          "EPSS",
+          "Probabilidade de exploração nos próximos 30 dias"
+        ],
+        [
+          "SSVC",
+          "Ação sugerida conforme contexto e impacto"
+        ],
+        [
+          "Exploitability Index",
+          "Estimativa baseada em modelo e histórico do produto"
+        ]
+      ],
+      "widths": [
+        370,
+        766
+      ],
+      "foot": "Introdução: problema e RQ1–RQ4. Fundamentos: definições necessárias à interpretação."
+    },
+    {
+      "title": "Metodologia e unidades de análise",
+      "kind": "table",
+      "seconds": 75,
+      "notes": "A metodologia descreve um estudo de caso incorporado: o caso é o Patch Tuesday da Microsoft e cada vulnerabilidade é uma unidade de análise. O conjunto principal contém 600 CVEs divulgados entre abril e julho de 2024. Os autores usam dados da Microsoft e do NVD, calculam ou coletam os diferentes escores e comparam suas saídas. O retrato do EPSS é de 9 de julho de 2024. Somente 458 CVEs tinham esse escore, por isso certas análises usam 458, não 600. Há ainda uma análise separada com 1.226 CVEs do KEV e observações mensais de EPSS. Concordância, correlação, agrupamentos por pontuação e sobreposição entre listas são os principais instrumentos. Essas escolhas precisam ser explicitadas para que outra pessoa consiga avaliar ou repetir o procedimento.",
+      "sources": [
+        "https://arxiv.org/html/2508.13644v1",
+        "https://github.com/SoftwareDesignLab/Vulnerability-Scoring-Systems-Comparison"
+      ],
+      "headers": [
+        "Conjunto",
+        "Dimensão e papel"
+      ],
+      "rows": [
+        [
+          "Estudo principal",
+          "600 CVEs · Microsoft · abril–julho de 2024"
+        ],
+        [
+          "Comparação com EPSS disponível",
+          "458 CVEs · 142 sem escore no retrato de 09/07/2024"
+        ],
+        [
+          "Análise temporal adicional",
+          "1.226 CVEs do KEV · retratos mensais de 2021–2024"
+        ],
+        [
+          "Instrumentos",
+          "Correlação, concordância, faixas de escore e top-N"
+        ]
+      ],
+      "widths": [
+        390,
+        746
+      ],
+      "foot": "Ausência de escore não equivale a escore zero. Os conjuntos respondem a análises diferentes."
+    },
+    {
+      "title": "Resultados organizados pelas perguntas",
+      "kind": "table",
+      "seconds": 65,
+      "notes": "A seção de resultados responde às perguntas da introdução. Na primeira, as medidas apontam baixa concordância entre os sistemas. Na segunda, os autores mostram que empates ampliam listas que deveriam conter poucos casos prioritários. Um exemplo é o top vinte de CVSS, que inclui 198 vulnerabilidades quando os empates são preservados. Nas listas de maior prioridade, somente cinco CVEs são comuns aos quatro sistemas na comparação reportada. A terceira pergunta examina a relação com exploração conhecida. A quarta considera as classes de fraqueza, mas muitos grupos têm poucos casos. A função desta seção é apresentar a evidência e o procedimento de leitura dos números. A interpretação mais ampla deve considerar as limitações que vêm depois.",
+      "sources": [
+        "https://arxiv.org/html/2508.13644v1"
+      ],
+      "headers": [
+        "Pergunta",
+        "Resultado relatado"
+      ],
+      "rows": [
+        [
+          "RQ1 · Concordância",
+          "Kappa próximo de zero nas comparações apresentadas"
+        ],
+        [
+          "RQ2 · Triagem",
+          "Top-20 do CVSS inclui 198 CVEs com os empates"
+        ],
+        [
+          "RQ3 · Exploração conhecida",
+          "Escores baixos ou ausentes motivam a análise temporal"
+        ],
+        [
+          "RQ4 · Classes CWE",
+          "Poucos casos em muitas classes limitam generalizações"
+        ]
+      ],
+      "widths": [
+        350,
+        786
+      ],
+      "foot": "Resultados dos autores. Listas top-N incorporam empates, podendo ultrapassar N."
+    },
+    {
+      "title": "EPSS antes da inclusão no KEV",
+      "kind": "chart",
+      "seconds": 65,
+      "notes": "Este gráfico reorganiza a tabela seis e o texto da seção quatro ponto três ponto dois em três grupos exclusivos. Entre 1.226 CVEs do catálogo analisado, 244 tiveram ao menos um retrato mensal com EPSS maior ou igual a meio antes da inclusão no KEV. Outros 275 não tinham escore anterior. O restante, 707, tinha observações, mas nenhuma atingiu esse limiar. Os 19,9 por cento são uma proporção nesse conjunto de CVEs conhecidos, não a acurácia do EPSS. A data de entrada no catálogo também não identifica necessariamente a primeira exploração. Minha leitura crítica é que avaliar utilidade preditiva exige justificar o limiar, a janela temporal e o conjunto de comparação.",
+      "sources": [
+        "https://arxiv.org/html/2508.13644v1",
+        "https://www.first.org/epss/faq"
+      ],
+      "categories": [
+        "Máximo mensal ≥ 0,5",
+        "Máximo mensal < 0,5",
+        "Sem escore anterior"
+      ],
+      "values": [
+        244,
+        707,
+        275
+      ],
+      "headline": "244 de 1.226 · 19,9%",
+      "sub": "atingiram EPSS ≥ 0,5 em algum retrato mensal anterior à inclusão",
+      "foot": "Derivação: 707 = 1.226 − 244 − 275. Proporção na amostra, não acurácia. Fonte: §4.3.2 e Tabela 6."
+    },
+    {
+      "title": "Discussão, limites e conclusão",
+      "kind": "text",
+      "seconds": 70,
+      "notes": "Na discussão, os autores interpretam as divergências e defendem que os escores sejam considerados junto ao contexto da organização. A seção de ameaças à validade reconhece restrições de amostra e de medição. Na minha análise, há cuidados adicionais: normalizar escalas não faz os sistemas medirem o mesmo conceito, fotografias mensais podem perder variações diárias e entrada no KEV é um registro público, não o instante exato do ataque. Por isso, os resultados não demonstram sozinhos que um sistema seja universalmente melhor ou que o EPSS seja inútil. Os trabalhos relacionados posicionam a contribuição diante das pesquisas anteriores. As conclusões retomam as perguntas e as implicações, enquanto referências e apêndices permitem verificar as bases e os detalhes da análise.",
+      "sources": [
+        "https://arxiv.org/html/2508.13644v1",
+        "https://www.first.org/epss/faq",
+        "https://github.com/ClaudioAMF1/TCC/tree/main/disciplina/aulas"
+      ],
+      "blocks": [
+        [
+          "Discussão dos autores",
+          "Escores precisam ser interpretados junto ao contexto da organização"
+        ],
+        [
+          "Minha análise crítica",
+          "Escalas distintas, recorte Microsoft e observação temporal limitam as conclusões"
+        ],
+        [
+          "Conclusão e sustentação",
+          "Síntese das RQs. Trabalhos relacionados posicionam a contribuição. Referências e apêndices permitem conferência."
+        ]
+      ],
+      "foot": "Baixa concordância entre instrumentos com finalidades distintas exige interpretação"
+    },
+    {
+      "title": "Aproveitamento possível no TCC",
+      "kind": "text",
+      "seconds": 45,
+      "notes": "O artigo é útil porque oferece tanto um método quanto pontos que merecem investigação. Um possível TCC poderia comparar critérios de priorização mantendo o mesmo orçamento de correções, com registros históricos coletados antes do evento de interesse. A pergunta inicial seria quanto a lista selecionada muda entre CVSS, EPSS e uma regra que considere exploração conhecida. Para isso, seria preciso definir fornecedores, período, orçamento e medida de resultado, além de tratar dados ausentes e versões dos modelos. Isso é uma proposta exploratória. Ainda não afirmo que seja inédita nem que substitua as outras opções de tema registradas no repositório.",
+      "sources": [
+        "https://github.com/ClaudioAMF1/TCC/blob/main/temas/04-avaliacao-da-area.md",
+        "https://arxiv.org/html/2508.13644v1",
+        "https://github.com/ClaudioAMF1/TCC/tree/main/disciplina/aulas"
+      ],
+      "blocks": [
+        [
+          "Pergunta possível",
+          "Com o mesmo limite de correções, como diferentes critérios alteram a seleção de CVEs?"
+        ],
+        [
+          "Desenho inicial",
+          "Comparação temporal com dados públicos, regras explícitas e controle de dados ausentes"
+        ],
+        [
+          "Próxima decisão",
+          "Revisão de literatura e piloto para delimitar contribuição e viabilidade"
+        ]
+      ],
+      "foot": "Proposta exploratória. Originalidade, escopo e orientação ainda precisam ser definidos."
+    },
+    {
+      "title": "Referências principais",
+      "kind": "references",
+      "seconds": 20,
+      "notes": "As referências completas e o registro das fontes estão no material de apoio. A contribuição deste seminário é analisar criticamente uma pesquisa original que pode orientar a delimitação do meu TCC em cibersegurança. A escolha do artigo fundamenta um caminho possível, mantendo a decisão do tema em aberto.",
+      "sources": [
+        "https://doi.org/10.1145/3719027.3765210",
+        "https://arxiv.org/abs/2508.13644",
+        "https://github.com/SoftwareDesignLab/Vulnerability-Scoring-Systems-Comparison",
+        "https://www.gov.br/capes/pt-br/centrais-de-conteudo/documentos/avaliacao/09012022_RELATORIOQUALISEVENTOS20172020COMPUTACAO.PDF/@@display-file/file",
+        "https://www.gov.br/capes/pt-br/acesso-a-informacao/acoes-e-programas/avaliacao/sobre-a-avaliacao/areas-avaliacao/sobre-as-areas-de-avaliacao/colegio-de-ciencias-exatas-tecnologicas-e-multidisciplinar/ciencias-exatas-e-da-terra/Computao.pdf/@@display-file/file",
+        "https://portal.core.edu.au/conf-ranks/?by=all&search=security",
+        "https://www.first.org/epss/faq",
+        "https://github.com/ClaudioAMF1/TCC/tree/main/disciplina/aulas"
+      ],
+      "items": [
+        "Koscinski et al. (2025). Conflicting Scores, Confusing Signals. ACM CCS. DOI: 10.1145/3719027.3765210.",
+        "CAPES. Relatório Qualis Eventos 2017–2020 e Relatório de Avaliação 2021–2024 da área de Computação.",
+        "CORE Conference Portal. ICORE 2026. Consulta: 15/09/2026.",
+        "FIRST. EPSS Frequently Asked Questions.",
+        "Oliveira, Patrícia. Projeto Capstone I. Aulas 11, 12, 13 e 14."
+      ],
+      "foot": "Fontes completas e links nas notas dos slides e no material de apoio"
+    }
+  ]
+}

@@ -17,6 +17,7 @@ temas/          A busca pelo tema: catálogo, estado da arte, avaliação da ár
 desenhos/       Desenhos experimentais completos dos candidatos que avançaram
 descartados/    Temas testados e rejeitados, com a evidência que os derrubou
 scripts/        Ferramentas escritas para testar a viabilidade de cada tema
+seminarios/     Apresentações, roteiros e análises de artigos
 dados/          Saída bruta das coletas (não versionado — ver .gitignore)
 ```
 
@@ -25,7 +26,7 @@ dados/          Saída bruta das coletas (não versionado — ver .gitignore)
 |---|---|
 | `Plano de Ensino - Projeto Capstone I.pdf` | Cronograma, avaliação, prazos |
 | `Regulamento TCC CIC v.2026-05 -- VIGENTE.pdf` | Regras formais: modalidades, orientação, banca |
-| `aulas/` | Slides 01 a 08 — metodologia científica, maturidade em pesquisa, revisão bibliográfica |
+| `aulas/` | Slides 01 a 08, 11, 12, 13 e 14 — metodologia, questões de pesquisa e estrutura do texto científico |
 | `listas/` | Listas de exercícios da disciplina e guias de estudo correspondentes |
 
 ### `temas/`
@@ -35,6 +36,13 @@ dados/          Saída bruta das coletas (não versionado — ver .gitignore)
 | `02-estado-da-arte.md` | Checagem de literatura de cada tema: o que já foi feito, onde há espaço, veredito |
 | `03-temas-cyber.md` | Temas em cibersegurança compatíveis com o orientador pretendido |
 | `04-avaliacao-da-area.md` | Avaliação honesta da área como escolha de TCC + temas de menor custo de tempo |
+
+### `seminarios/`
+
+[Seminário de análise de artigo científico — setembro/outubro de 2026](seminarios/2026-09-analise-artigo/README.md):
+apresentação de 15 slides, roteiro de aproximadamente 13 minutos, análise crítica e fontes.
+O recorte provisório é priorização de vulnerabilidades; o tema definitivo do TCC continua em aberto.
+A versão de preparação registra as pendências de comprovação via CAFe, h5 atual e anexos da atividade.
 
 ### `desenhos/`
 Desenhos experimentais completos — problema de pesquisa nas três partes exigidas pela

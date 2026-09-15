@@ -24,10 +24,9 @@ verificado**: 396 aplicativos de 71 publicadores públicos distintos. Assumi-lo 
 trabalho não é chute; é a conclusão de um processo de teste documentado.
 
 E há uma segunda camada: **o artigo escolhido é relevante mesmo que o tema mude.** O que
-você vai reaproveitar não é o objeto (apps de controle parental), é o **método** — análise
-estática de APKs, detecção de SDKs de rastreamento, verificação de backend, e a combinação
-de análise automatizada em escala com inspeção manual de uma subamostra. Esse método serve
-a quase qualquer tema de medição em cibersegurança.
+você vai reaproveitar não é o objeto estudado, é o **método** — análise estática de APKs em
+escala, detecção de SDKs de rastreamento e confronto entre o comportamento observado e o
+que o app declara. Esse método serve a quase qualquer tema de medição em cibersegurança.
 
 ### O diferencial que quase ninguém vai ter
 
@@ -53,42 +52,42 @@ vazio. Numa sala de apresentações de 15 minutos, é o tipo de coisa que distin
 
 ### Escolha principal
 
-> **Ali, S., Elgharabawy, M., Duchaussoy, Q., Mannan, M., & Youssef, A. (2020).**
-> *Betrayed by the Guardian: Security and Privacy Risks of Parental Control Solutions.*
-> In: **Proceedings of the 36th Annual Computer Security Applications Conference (ACSAC '20)**,
-> pp. 69–83. DOI: [10.1145/3427228.3427287](https://dl.acm.org/doi/abs/10.1145/3427228.3427287)
+> **Privacy Settings of Third-Party Libraries in Android Apps: A Study of Facebook SDKs.**
+> **Proceedings on Privacy Enhancing Technologies (PoPETs)**, v. 2025, n. 1.
+> [petsymposium.org/popets/2025/popets-2025-0056.php](https://petsymposium.org/popets/2025/popets-2025-0056.php)
+>
+> ⚠️ Confirme autores, paginação e número da edição ao baixar o PDF — não copie daqui.
 
 **Por que este:**
 
-- **É pesquisa original**, não revisão — requisito explícito da atividade. Os autores
-  analisaram 8 dispositivos de rede, 29 apps Android (13 soluções), 10 extensões Chrome e
-  8 aplicações Windows entre março/2019 e maio/2020, mais **análise automatizada de 153 apps
-  Android** para detectar bancos de dados de backend vulneráveis e SDKs de rastreamento.
-- **O método é o molde do seu TCC.** Análise estática em escala + inspeção manual de
-  subamostra + detecção de SDKs de rastreamento + verificação de vazamento. É literalmente o
-  pipeline do N3, aplicado a outro conjunto de apps.
-- **Venue de primeira linha em segurança.** ACSAC é uma das principais conferências
-  aplicadas da área — bom para o item de métricas.
-- **Tem a lacuna que justifica o seu trabalho:** o corpus é de apps comerciais de controle
-  parental, sem recorte governamental, sem grupo de controle pareado e sem contexto
-  brasileiro. Isso te dá a frase de fechamento da justificativa.
+- **É estado da arte.** 2025. A Aula 05/06 é explícita: *"é importante que um trabalho de
+  pesquisa se relacione principalmente com conhecimentos que sejam inerentes ao estado da
+  arte, ou seja, que sejam recentes"*. Em privacidade móvel, um artigo de 2020 já não
+  atende — o Android mudou permissões, armazenamento com escopo e Privacy Sandbox desde lá.
+- **PoPETs é o veículo principal da área de privacidade.** Não é conferência genérica de
+  segurança: é onde essa literatura específica acontece.
+- **O método é o do seu TCC, com um item a mais.** Mais de 6.000 apps analisados para
+  detectar SDKs, verificar como o desenvolvedor configurou as opções de privacidade, e
+  **confrontar isso com o que o app declara nos rótulos e na política de privacidade**.
+  Essa última parte é exatamente a hipótese H2 do `desenhos/N3-apps-governamentais.md`.
+- **É acesso aberto.** O PDF baixa sem CAFe e sem paywall. Isso resolve o gargalo prático:
+  você consegue o texto completo hoje, sem depender da credencial institucional funcionar.
+- **A lacuna continua lá:** corpus de apps populares comerciais, sem recorte governamental,
+  sem grupo de controle pareado, sem contexto brasileiro.
 
-### Alternativa
+### Alternativas
 
-> **Binns, R., Lyngs, U., Van Kleek, M., Zhao, J., Libert, T., & Shadbolt, N. (2018).**
-> *Third Party Tracking in the Mobile Ecosystem.* In: **Proceedings of the 10th ACM
-> Conference on Web Science (WebSci '18)**, pp. 23–31.
-> DOI: [10.1145/3201064.3201089](https://dl.acm.org/doi/10.1145/3201064.3201089)
+| Artigo | Veículo / ano | Quando preferir |
+|---|---|---|
+| Fingerprinting SDKs for Mobile Apps and Where to Find Them | ACM CCS 2025 · [DOI](https://dl.acm.org/doi/10.1145/3719027.3744877) | Se quiser o veículo mais prestigiado. Tema mais estreito (fingerprinting). |
+| A Comprehensive Study on Third-Party User Tracking in Mobile Applications (Paci, Pizzoli & Zannone) | ARES 2023 · [DOI](https://dl.acm.org/doi/10.1145/3600160.3605079) | 400 apps; metade contata rastreadores sem consentimento. Meio-termo de recência. |
+| Betrayed by the Guardian (Ali et al.) | ACSAC 2020 · [DOI](https://dl.acm.org/doi/abs/10.1145/3427228.3427287) | **Não como artigo analisado** — 2020 é antigo demais. Use como citação de apoio na justificativa, por ser o precedente metodológico. |
+| Third Party Tracking in the Mobile Ecosystem (Binns et al.) | WebSci 2018 · Best Paper | Citação de apoio para dimensionar o fenômeno (959 mil apps). |
 
-959.000 apps das lojas do Reino Unido e dos EUA; **Best Paper** no WebSci '18. É a
-referência canônica de prevalência de rastreamento em apps. Use como **segunda citação** na
-justificativa (para dimensionar o fenômeno) ou como escolha principal se preferir um estudo
-de escala em vez de um de profundidade.
-
-> Os dois são **artigos de conferência**, o que é o padrão em Computação — vale dizer isso na
-> apresentação. Isso muda quais métricas você precisa levantar (Seção 3b).
-
----
+> **A lição, que vale para o TCC inteiro:** um artigo pode ser ótimo como *precedente
+> metodológico* e ruim como *estado da arte*. São funções diferentes. Na revisão
+> bibliográfica você vai precisar dos dois tipos — e saber distinguir é o que a Aula 07
+> cobra quando fala em relacionar o trabalho ao que é recente.
 
 ## 3. Planilha de levantamento — o que buscar e onde
 
@@ -101,6 +100,16 @@ CAFe pelo Portal de Periódicos da CAPES → escolher **IDP** como instituição
 institucional. O passo a passo está em `material-fornecido/Como acessar a CAPES.pdf` e
 `Tutorial Plataformas Digitais 2024.pdf`.
 
+> ⚠️ **Atenção — qual caminho se aplica a cada recomendação:**
+> **PoPETs é PERIÓDICO**, não conferência. Se ficar com a escolha principal, use o
+> caminho **(a)**: JIF Percentile no JCR + Highest Percentile no Scopus + Qualis de cada um.
+> As alternativas CCS 2025 e ARES 2023 são conferências e usam o caminho **(b)**.
+> Confirme o tipo do veículo antes de levantar as métricas — errar o caminho custa nota.
+>
+> Se o PoPETs não estiver indexado no JCR, **isso é um achado a reportar**, não um problema:
+> informe que só há Scopus e explique por quê. Reportar a ausência de um indicador é mais
+> correto do que omitir o item.
+
 ### a) Se você escolher um artigo de **revista**
 
 | Indicador | Onde | O que anotar |
@@ -109,7 +118,7 @@ institucional. O passo a passo está em `material-fornecido/Como acessar a CAPES
 | **Highest Percentile** | Scopus → Sources → busque a revista → *CiteScore rank & trend* | o maior percentil entre as categorias |
 | **Qualis** | tabela da Seção 4, aplicada a cada percentil | dois estratos, um por indicador |
 
-### b) Se você escolher um artigo de **conferência** (é o caso dos dois recomendados)
+### b) Se você escolher um artigo de **conferência**
 
 | Indicador | Onde | O que anotar |
 |---|---|---|
@@ -208,17 +217,19 @@ estrutura também é análise**, e é o tipo de observação que rende nota.
 
 **6. Análise da conclusão** — cole e marque: *Inferência a partir dos dados obtidos*.
 
-### Aplicando ao artigo do ACSAC
+### Aplicando ao artigo do PoPETs
 
-Ele tem uma característica útil: a estrutura é **por tipo de solução analisada**
-(dispositivos de rede, Android, Windows, extensões Chrome), não pela sequência clássica
-introdução–método–resultados. Isso te dá material bom de comentar: a organização segue o
-**objeto**, e método e resultados aparecem entrelaçados dentro de cada bloco.
+Duas coisas para observar quando ler, e que rendem comentário na análise:
 
-Compare com o padrão canônico e diga por que faz sentido neste caso. Análise comparativa
-vale mais que descrição.
-
----
+- **Onde fica o método.** Em artigo de periódico de privacidade, a seção de metodologia
+  costuma ser explícita — diferente do exemplo de robótica fornecido pela professora, em que
+  o avaliador precisou reconstruir o método a partir do texto. **Compare os dois casos na
+  apresentação:** dizer por que um artigo tem seção metodológica explícita e o outro não é
+  análise comparativa, que vale mais que descrição.
+- **O confronto declarado × detectado.** O artigo compara a configuração real dos SDKs com o
+  que o app declara nos rótulos e na política de privacidade. Marque essa parte com atenção
+  — é exatamente a hipótese H2 do seu desenho, e é o gancho natural para o slide de
+  fechamento.
 
 ## 7. O que fazer nesta semana
 

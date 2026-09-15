@@ -184,28 +184,29 @@ tituloSlide(s, "O artigo selecionado", 4);
 s.addShape(pres.ShapeType.roundRect, {
   x: M, y: 1.05, w: W - M * 2, h: 1.55, fill: { color: NAVY }, rectRadius: 0.06,
 });
-s.addText("Betrayed by the Guardian: Security and Privacy Risks of Parental Control Solutions", {
+s.addText("Privacy Settings of Third-Party Libraries in Android Apps: A Study of Facebook SDKs", {
   x: M + 0.25, y: 1.22, w: W - M * 2 - 0.5, h: 0.62, isTextBox: true, margin: 0,
   fontFace: SERIF, fontSize: 18, bold: true, color: WHITE,
 });
 s.addText(
-  "ALI, S.; ELGHARABAWY, M.; DUCHAUSSOY, Q.; MANNAN, M.; YOUSSEF, A.  " +
-  "In: Proceedings of the 36th Annual Computer Security Applications Conference (ACSAC '20), " +
-  "2020, p. 69–83.  DOI: 10.1145/3427228.3427287", {
+  "Proceedings on Privacy Enhancing Technologies (PoPETs), v. 2025, n. 1.   " +
+  "Acesso aberto: petsymposium.org/popets/2025/popets-2025-0056.php\n" +
+  "[ confirme autores e paginação ao baixar o PDF ]", {
   x: M + 0.25, y: 1.9, w: W - M * 2 - 0.5, h: 0.6, isTextBox: true, margin: 0,
   fontFace: SANS, fontSize: 11.5, color: "9FC5DA", valign: "top",
 });
 cartao(s, M, 2.8, (W - M * 2 - 0.25) / 2, 1.55, "Por que é pesquisa original",
-  "Coleta e análise próprias: 8 dispositivos de rede, 29 apps Android (13 soluções), " +
-  "10 extensões Chrome e 8 aplicações Windows, entre mar/2019 e mai/2020 — mais análise " +
-  "automatizada de 153 apps.", TEAL);
+  "Coleta e análise próprias: mais de 6.000 apps populares examinados para detectar SDKs, " +
+  "verificar como o desenvolvedor configurou as opções de privacidade e confrontar isso " +
+  "com o que o app declara.", TEAL);
 preencher(s, M + (W - M * 2 - 0.25) / 2 + 0.25, 2.8, (W - M * 2 - 0.25) / 2, 1.55,
   "confirme ao ler o artigo", [
-    "Página exata onde os autores descrevem a coleta própria",
-    "Confirme a paginação e o DOI na versão da ACM DL",
+    "Autores, paginação e número da edição",
+    "Página onde os autores descrevem a coleta própria",
+    "Tamanho exato do corpus analisado",
   ]);
-rodape(s, "1 minuto  ·  artigo de CONFERÊNCIA — define quais métricas levantar");
-s.addNotes("Diga que em Computação a conferência é o veículo principal, diferente de outras áreas. Isso justifica usar h5 e CORE em vez de JCR e Scopus.");
+rodape(s, "1 minuto  ·  PoPETs é PERIÓDICO — use JCR + Scopus, não h5/CORE");
+s.addNotes("Destaque que e de 2025 - estado da arte - e que e acesso aberto. Se perguntarem por artigos mais antigos, explique a diferenca entre precedente metodologico e estado da arte.");
 
 // =====================================================================
 // 6 — RELEVÂNCIA QUANTITATIVA
@@ -258,11 +259,11 @@ s.addNotes("O terceiro cartão é o diferencial: você não está supondo que o 
 // =====================================================================
 s = pres.addSlide();
 tituloSlide(s, "Métricas do veículo e Qualis", 7);
-preencher(s, M, 1.02, (W - M * 2 - 0.25) / 2, 2.0, "levantar — artigo de conferência", [
-  "h5-index (Google Scholar → Metrics):  ______",
-  "h5-mediana:  ______",
-  "Estrato Qualis correspondente:  ______",
-  "CORE Rank (portal.core.edu.au — aberto):  ______  (ano: ____)",
+preencher(s, M, 1.02, (W - M * 2 - 0.25) / 2, 2.0, "levantar — PoPETs é PERIÓDICO", [
+  "JIF Percentile (Web of Science → JCR):  ______",
+  "Highest Percentile (Scopus → Sources):  ______",
+  "Estrato Qualis de cada um:  ______  /  ______",
+  "Se não estiver no JCR, reporte a ausência — é achado, não falha",
 ]);
 cartao(s, M, 3.2, (W - M * 2 - 0.25) / 2, 1.62, "Ressalva que rende ponto",
   "O Documento Técnico (p. 12) diz que, para veículos sem CiteScore/JCR, o percentil é " +

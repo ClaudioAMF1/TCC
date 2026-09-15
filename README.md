@@ -12,7 +12,8 @@ descartados com evidência, um confirmado mas ainda não aceito. Ver a Seção 3
 ## 1. Como o repositório está organizado
 
 ```
-disciplina/     Plano de ensino, regulamento do TCC e slides das aulas
+disciplina/     Plano de ensino, regulamento do TCC, slides das aulas e listas
+seminario/      Seminário de análise de artigo (29/09 e 01/10) e material fornecido
 temas/          A busca pelo tema: catálogo, estado da arte, avaliação da área
 desenhos/       Desenhos experimentais completos dos candidatos que avançaram
 descartados/    Temas testados e rejeitados, com a evidência que os derrubou
@@ -25,8 +26,15 @@ dados/          Saída bruta das coletas (não versionado — ver .gitignore)
 |---|---|
 | `Plano de Ensino - Projeto Capstone I.pdf` | Cronograma, avaliação, prazos |
 | `Regulamento TCC CIC v.2026-05 -- VIGENTE.pdf` | Regras formais: modalidades, orientação, banca |
-| `aulas/` | Slides 01 a 08 — metodologia científica, maturidade em pesquisa, revisão bibliográfica |
+| `aulas/` | Slides 01 a 14 — metodologia, maturidade em pesquisa, questões de pesquisa, análise crítica de propostas, escrita da monografia |
 | `listas/` | Listas de exercícios da disciplina e guias de estudo correspondentes |
+
+### `seminario/`
+| Arquivo | Conteúdo |
+|---|---|
+| `plano-do-seminario.md` | Estratégia, artigo recomendado, planilha de levantamento de métricas, roteiro dos 15 min e formato da análise de estrutura |
+| `qualis-faixas-de-percentil.png` | Figura 6 do Documento Técnico: percentil → estrato |
+| `material-fornecido/` | PDFs disponibilizados pela professora |
 
 ### `temas/`
 | Arquivo | Conteúdo |
@@ -134,7 +142,7 @@ python3 scripts/teste_viabilidade_n1.py --apenas-contagem
 | Data | Marco |
 |---|---|
 | 10/09 | Entrega da **Lista de Exercícios 01** (impressa) — enunciado e guia de estudo em `disciplina/listas/` |
-| 29/09 e 01/10 | Seminário de análise de artigo científico |
+| **29/09 e 01/10** | **Seminário de análise de artigo científico** (4 dos 6 pontos da AV1) — plano em `seminario/` |
 | Out–Nov | 5 encontros de orientação, com ficha assinada e entregue mensalmente |
 | 24/11 a 01/12 | Simulação de defesa |
 | **03/12** | **Entrega da redação do TCC I no Canvas** — prazo duro |

@@ -52,42 +52,56 @@ vazio. Numa sala de apresentações de 15 minutos, é o tipo de coisa que distin
 
 ### Escolha principal
 
-> **Privacy Settings of Third-Party Libraries in Android Apps: A Study of Facebook SDKs.**
-> **Proceedings on Privacy Enhancing Technologies (PoPETs)**, v. 2025, n. 1.
-> [petsymposium.org/popets/2025/popets-2025-0056.php](https://petsymposium.org/popets/2025/popets-2025-0056.php)
+> **NGUYEN, T. T.; BACKES, M.; STOCK, B.** *Freely Given Consent? Studying Consent Notice of
+> Third-Party Tracking and Its Violations of GDPR in Android Apps.* In: **Proceedings of the
+> 2022 ACM SIGSAC Conference on Computer and Communications Security (CCS '22)**.
+> [DOI 10.1145/3548606.3560564](https://dl.acm.org/doi/abs/10.1145/3548606.3560564) ·
+> [PDF aberto](https://swag.cispa.saarland/papers/nguyen2022consent.pdf) ·
+> [artefato público](https://github.com/cispa/consent-notices)
 >
-> ⚠️ Confirme autores, paginação e número da edição ao baixar o PDF — não copie daqui.
+> ⚠️ Confirme autores e paginação ao baixar o PDF — não copie daqui.
 
-**Por que este:**
+**Este equilibra os quatro critérios que importam.** Recência, citações, relevância e
+classificação do veículo não podem ser todos maximizados no mesmo artigo (ver tabela
+abaixo); este é o ponto onde a troca é mais favorável.
 
-- **É estado da arte.** 2025. A Aula 05/06 é explícita: *"é importante que um trabalho de
-  pesquisa se relacione principalmente com conhecimentos que sejam inerentes ao estado da
-  arte, ou seja, que sejam recentes"*. Em privacidade móvel, um artigo de 2020 já não
-  atende — o Android mudou permissões, armazenamento com escopo e Privacy Sandbox desde lá.
-- **PoPETs é o veículo principal da área de privacidade.** Não é conferência genérica de
-  segurança: é onde essa literatura específica acontece.
-- **O método é o do seu TCC, com um item a mais.** Mais de 6.000 apps analisados para
-  detectar SDKs, verificar como o desenvolvedor configurou as opções de privacidade, e
-  **confrontar isso com o que o app declara nos rótulos e na política de privacidade**.
-  Essa última parte é exatamente a hipótese H2 do `desenhos/N3-apps-governamentais.md`.
-- **É acesso aberto.** O PDF baixa sem CAFe e sem paywall. Isso resolve o gargalo prático:
-  você consegue o texto completo hoje, sem depender da credencial institucional funcionar.
-- **A lacuna continua lá:** corpus de apps populares comerciais, sem recorte governamental,
-  sem grupo de controle pareado, sem contexto brasileiro.
+- **Classificação — o mais forte da lista.** CCS é uma das quatro principais conferências
+  de segurança do mundo. Acima de ACSAC, ARES ou PoPETs.
+- **Escala — 239.381 aplicativos Android analisados.** Duas ordens de grandeza acima das
+  alternativas. Isso é um critério quantitativo de relevância por si só.
+- **Citações — quatro anos em CCS.** Tempo real de acumulação, diferente de um artigo de
+  2025. Levante o número nas três bases.
+- **Recência suficiente.** 2022 não é obsoleto para o tema, e atende ao que a Aula 05/06
+  cobra sobre relacionar o trabalho a conhecimento recente.
+- **Relevância direta:** rastreamento de terceiros, consentimento, Android e conformidade
+  legal — é o seu tema, com o eixo jurídico que o N3 também tem (lá via LGPD, aqui via GDPR).
+- **Acesso aberto**, e com **artefato público no GitHub** — sinal forte de qualidade
+  metodológica, e código que você pode estudar para o seu próprio pipeline.
 
-### Alternativas
+### A tensão entre os critérios — e por que não há artigo perfeito
 
-| Artigo | Veículo / ano | Quando preferir |
-|---|---|---|
-| Fingerprinting SDKs for Mobile Apps and Where to Find Them | ACM CCS 2025 · [DOI](https://dl.acm.org/doi/10.1145/3719027.3744877) | Se quiser o veículo mais prestigiado. Tema mais estreito (fingerprinting). |
-| A Comprehensive Study on Third-Party User Tracking in Mobile Applications (Paci, Pizzoli & Zannone) | ARES 2023 · [DOI](https://dl.acm.org/doi/10.1145/3600160.3605079) | 400 apps; metade contata rastreadores sem consentimento. Meio-termo de recência. |
-| Betrayed by the Guardian (Ali et al.) | ACSAC 2020 · [DOI](https://dl.acm.org/doi/abs/10.1145/3427228.3427287) | **Não como artigo analisado** — 2020 é antigo demais. Use como citação de apoio na justificativa, por ser o precedente metodológico. |
-| Third Party Tracking in the Mobile Ecosystem (Binns et al.) | WebSci 2018 · Best Paper | Citação de apoio para dimensionar o fenômeno (959 mil apps). |
+Recência e número de citações **se excluem por construção**: um artigo de 2025 teve um ano
+para ser citado. Vale ter isso na ponta da língua, porque é pergunta provável de banca.
 
-> **A lição, que vale para o TCC inteiro:** um artigo pode ser ótimo como *precedente
-> metodológico* e ruim como *estado da arte*. São funções diferentes. Na revisão
-> bibliográfica você vai precisar dos dois tipos — e saber distinguir é o que a Aula 07
-> cobra quando fala em relacionar o trabalho ao que é recente.
+| Artigo | Ano | Veículo | Escala | Citações |
+|---|---|---|---|---|
+| Binns et al., *Third Party Tracking in the Mobile Ecosystem* | 2018 | WebSci (Best Paper) | 959 mil apps | muitas |
+| Ali et al., *Betrayed by the Guardian* | 2020 | ACSAC | 153 apps | médias |
+| **Nguyen et al., *Freely Given Consent?*** | **2022** | **CCS (topo)** | **239 mil apps** | **boas** |
+| Paci et al., *A Comprehensive Study on Third-Party User Tracking* | 2023 | ARES | 400 apps | poucas |
+| *Privacy Settings of Third-Party Libraries* | 2025 | PoPETs | 6 mil apps | ~zero |
+| *Fingerprinting SDKs for Mobile Apps* | 2025 | CCS | — | ~zero |
+
+**Como resolver na apresentação:** o enunciado pede critérios quantitativos **"e/ou"**
+qualitativos, e o item 2 avalia a classificação do **veículo**, não do artigo. Portanto
+"bem classificado" independe da idade. Se quiser citações altas na justificativa, use os
+canônicos (Binns 2018) como **referência de apoio** — o artigo analisado não precisa
+carregar sozinho todos os critérios.
+
+Os demais da tabela viram citações de apoio: Binns para dimensionar o fenômeno, PoPETs 2025
+para mostrar que você conhece a fronteira atual, ACSAC 2020 como precedente metodológico.
+**Citar os três na justificativa demonstra domínio da literatura** — muito mais que
+apresentar um artigo isolado.
 
 ## 3. Planilha de levantamento — o que buscar e onde
 
@@ -100,15 +114,13 @@ CAFe pelo Portal de Periódicos da CAPES → escolher **IDP** como instituição
 institucional. O passo a passo está em `material-fornecido/Como acessar a CAPES.pdf` e
 `Tutorial Plataformas Digitais 2024.pdf`.
 
-> ⚠️ **Atenção — qual caminho se aplica a cada recomendação:**
-> **PoPETs é PERIÓDICO**, não conferência. Se ficar com a escolha principal, use o
-> caminho **(a)**: JIF Percentile no JCR + Highest Percentile no Scopus + Qualis de cada um.
-> As alternativas CCS 2025 e ARES 2023 são conferências e usam o caminho **(b)**.
-> Confirme o tipo do veículo antes de levantar as métricas — errar o caminho custa nota.
+> ⚠️ **Qual caminho se aplica:** a escolha principal (CCS 2022) é **CONFERÊNCIA** → use o
+> caminho **(b)**: h5-index + Qualis via h5 + CORE Rank. Se optar pelo PoPETs, que é
+> **PERIÓDICO**, use o caminho **(a)**. Confirme o tipo do veículo antes de levantar as
+> métricas — errar o caminho custa nota.
 >
-> Se o PoPETs não estiver indexado no JCR, **isso é um achado a reportar**, não um problema:
-> informe que só há Scopus e explique por quê. Reportar a ausência de um indicador é mais
-> correto do que omitir o item.
+> Boa notícia para o CCS: **o CORE Portal é aberto** e o Google Scholar Metrics lista a
+> conferência. Nenhuma das duas métricas depende de CAFe.
 
 ### a) Se você escolher um artigo de **revista**
 
@@ -217,19 +229,21 @@ estrutura também é análise**, e é o tipo de observação que rende nota.
 
 **6. Análise da conclusão** — cole e marque: *Inferência a partir dos dados obtidos*.
 
-### Aplicando ao artigo do PoPETs
+### Aplicando ao artigo do CCS 2022
 
-Duas coisas para observar quando ler, e que rendem comentário na análise:
+Três coisas para observar quando ler, e que rendem comentário na análise:
 
-- **Onde fica o método.** Em artigo de periódico de privacidade, a seção de metodologia
-  costuma ser explícita — diferente do exemplo de robótica fornecido pela professora, em que
-  o avaliador precisou reconstruir o método a partir do texto. **Compare os dois casos na
-  apresentação:** dizer por que um artigo tem seção metodológica explícita e o outro não é
-  análise comparativa, que vale mais que descrição.
-- **O confronto declarado × detectado.** O artigo compara a configuração real dos SDKs com o
-  que o app declara nos rótulos e na política de privacidade. Marque essa parte com atenção
-  — é exatamente a hipótese H2 do seu desenho, e é o gancho natural para o slide de
-  fechamento.
+- **A escala muda a estrutura.** Com 239 mil aplicativos, o artigo precisa dedicar espaço
+  a como o corpus foi montado e filtrado. Compare com o exemplo de robótica fornecido pela
+  professora, em que o avaliador teve de **reconstruir o método** porque não havia seção
+  explícita. Explicar por que um estudo de larga escala exige metodologia detalhada e o
+  outro não é análise comparativa — vale mais que descrição.
+- **O funil amostral.** Repare como se chega de 239.381 aplicativos a 13.082 com mecanismo
+  de consentimento identificado. Esse afunilamento é exatamente o tipo de decisão que você
+  vai ter de tomar e justificar no seu próprio trabalho.
+- **O artefato público.** O código está no GitHub. Mencione isso na análise: artefato
+  disponível é critério de qualidade e de reprodutibilidade, e é algo que o seu TCC também
+  pode oferecer.
 
 ## 7. O que fazer nesta semana
 

@@ -184,29 +184,29 @@ tituloSlide(s, "O artigo selecionado", 4);
 s.addShape(pres.ShapeType.roundRect, {
   x: M, y: 1.05, w: W - M * 2, h: 1.55, fill: { color: NAVY }, rectRadius: 0.06,
 });
-s.addText("Privacy Settings of Third-Party Libraries in Android Apps: A Study of Facebook SDKs", {
+s.addText("Freely Given Consent? Studying Consent Notice of Third-Party Tracking and Its Violations of GDPR in Android Apps", {
   x: M + 0.25, y: 1.22, w: W - M * 2 - 0.5, h: 0.62, isTextBox: true, margin: 0,
-  fontFace: SERIF, fontSize: 18, bold: true, color: WHITE,
+  fontFace: SERIF, fontSize: 16.5, bold: true, color: WHITE,
 });
 s.addText(
-  "Proceedings on Privacy Enhancing Technologies (PoPETs), v. 2025, n. 1.   " +
-  "Acesso aberto: petsymposium.org/popets/2025/popets-2025-0056.php\n" +
-  "[ confirme autores e paginação ao baixar o PDF ]", {
+  "NGUYEN, T. T.; BACKES, M.; STOCK, B.   In: Proceedings of the 2022 ACM SIGSAC Conference " +
+  "on Computer and Communications Security (CCS '22), 2022.   DOI: 10.1145/3548606.3560564\n" +
+  "PDF aberto: swag.cispa.saarland   ·   artefato: github.com/cispa/consent-notices", {
   x: M + 0.25, y: 1.9, w: W - M * 2 - 0.5, h: 0.6, isTextBox: true, margin: 0,
   fontFace: SANS, fontSize: 11.5, color: "9FC5DA", valign: "top",
 });
 cartao(s, M, 2.8, (W - M * 2 - 0.25) / 2, 1.55, "Por que é pesquisa original",
-  "Coleta e análise próprias: mais de 6.000 apps populares examinados para detectar SDKs, " +
-  "verificar como o desenvolvedor configurou as opções de privacidade e confrontar isso " +
-  "com o que o app declara.", TEAL);
+  "Coleta e análise próprias em larga escala: 239.381 aplicativos Android analisados, " +
+  "13.082 com mecanismo de consentimento identificado. Primeiro estudo em escala sobre " +
+  "avisos de consentimento no Android.", TEAL);
 preencher(s, M + (W - M * 2 - 0.25) / 2 + 0.25, 2.8, (W - M * 2 - 0.25) / 2, 1.55,
   "confirme ao ler o artigo", [
-    "Autores, paginação e número da edição",
-    "Página onde os autores descrevem a coleta própria",
-    "Tamanho exato do corpus analisado",
+    "Paginação exata nos anais do CCS '22",
+    "Como o corpus afunilou de 239.381 para 13.082",
+    "Onde o artefato é citado no texto",
   ]);
-rodape(s, "1 minuto  ·  PoPETs é PERIÓDICO — use JCR + Scopus, não h5/CORE");
-s.addNotes("Destaque que e de 2025 - estado da arte - e que e acesso aberto. Se perguntarem por artigos mais antigos, explique a diferenca entre precedente metodologico e estado da arte.");
+rodape(s, "1 minuto  ·  CCS é CONFERÊNCIA — use h5 + Qualis + CORE Rank");
+s.addNotes("Destaque a escala - 239 mil apps - e que CCS e uma das quatro principais conferencias de seguranca do mundo. O PDF e aberto e o artefato esta no GitHub.");
 
 // =====================================================================
 // 6 — RELEVÂNCIA QUANTITATIVA
@@ -215,15 +215,15 @@ s = pres.addSlide();
 tituloSlide(s, "Relevância — critérios quantitativos", 5);
 preencher(s, M, 1.05, W - M * 2, 1.5, "citações — anote as três, elas divergem", [
   "Google Scholar:  ______        Scopus:  ______        Web of Science:  ______",
-  "Data da consulta: ____/____/2026   ·   Ano de publicação do artigo: 2020",
+  "Data da consulta: ____/____/2026   ·   Ano de publicação do artigo: 2022",
 ]);
 cartao(s, M, 2.7, (W - M * 2 - 0.25) / 2, 1.75, "O que comentar sobre os números",
   "Divergência entre as bases é esperada e vale explicar: cada uma indexa um conjunto " +
   "diferente de veículos.\n\nCite sempre a base e a data junto do número.", NAVY);
 cartao(s, M + (W - M * 2 - 0.25) / 2 + 0.25, 2.7, (W - M * 2 - 0.25) / 2, 1.75,
-  "Contexto que valoriza a citação",
-  "Artigo de 2020 em conferência de segurança de primeira linha.\n\nCompare com a média " +
-  "de citações da área, se conseguir o dado — contextualizar vale mais que o número cru.", NAVY);
+  "Recência × citações: a troca",
+  "Um artigo de 2025 teve um ano para ser citado; um muito citado é antigo por construção.\n\n" +
+  "2022 em CCS é o ponto de equilíbrio — e 239 mil apps é critério quantitativo por si só.", NAVY);
 rodape(s, "1,5 minuto");
 s.addNotes("Não leia os números; interprete. Um número sem contexto não diz nada.");
 
@@ -259,11 +259,11 @@ s.addNotes("O terceiro cartão é o diferencial: você não está supondo que o 
 // =====================================================================
 s = pres.addSlide();
 tituloSlide(s, "Métricas do veículo e Qualis", 7);
-preencher(s, M, 1.02, (W - M * 2 - 0.25) / 2, 2.0, "levantar — PoPETs é PERIÓDICO", [
-  "JIF Percentile (Web of Science → JCR):  ______",
-  "Highest Percentile (Scopus → Sources):  ______",
-  "Estrato Qualis de cada um:  ______  /  ______",
-  "Se não estiver no JCR, reporte a ausência — é achado, não falha",
+preencher(s, M, 1.02, (W - M * 2 - 0.25) / 2, 2.0, "levantar — CCS é CONFERÊNCIA", [
+  "h5-index do CCS (Google Scholar → Metrics):  ______",
+  "h5-mediana:  ______",
+  "Estrato Qualis correspondente ao h5:  ______",
+  "CORE Rank (portal.core.edu.au — aberto):  ______",
 ]);
 cartao(s, M, 3.2, (W - M * 2 - 0.25) / 2, 1.62, "Ressalva que rende ponto",
   "O Documento Técnico (p. 12) diz que, para veículos sem CiteScore/JCR, o percentil é " +

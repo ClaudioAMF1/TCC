@@ -174,17 +174,54 @@ para medir, **antes de baixar o primeiro APK**, se cada hipótese tem instrument
 |---|---|---|
 | 1 | Corpus efetivo após a ficha completa | todas |
 | 2 | Povoamento das células esfera × sensibilidade | H3 |
-| 3 | Existência de controle comercial na mesma categoria e faixa de instalação | H1 |
+| 3 | Suporte comum: sobreposição entre governo e controle em categoria e faixa de instalação | H1 |
 | 4 | Política de privacidade publicada e acessível | H2 |
 | 5 | Sinal preliminar da variável dependente (`containsAds` como limite inferior) | H1 |
 | 6 | Menor diferença detectável com o n disponível | H1, H3 |
 
-Cada porta tem desfecho de contingência escrito no próprio script: se o
-pareamento não existir, a comparação vira interna (entre esferas); se a política
-não for acessível, a fonte de declaração muda para a seção estruturada da loja;
-se as células sensíveis forem pequenas, a estratificação cai e o contraste
-principal permanece. **Nenhum desfecho mata o tema — todos mudam o desenho**, e é
-por isso que o teste vem antes de congelar o protocolo.
+Cada porta tem desfecho de contingência escrito no próprio script: se não houver
+suporte comum, a comparação vira interna (entre esferas); se a política não for
+acessível, a fonte de declaração muda para a seção estruturada da loja; se as
+células sensíveis forem pequenas, a estratificação cai e o contraste principal
+permanece. **Nenhum desfecho mata o tema — todos mudam o desenho**, e é por isso
+que o teste vem antes de congelar o protocolo.
+
+### 5.2 Primeira rodada (subamostra de 40 apps, 16/09/2026)
+
+Rodada parcial, para validar o encanamento. As **proporções** são estimativas
+honestas; as **contagens** não, porque escalam com o tamanho da amostra.
+
+| Medida | Resultado | Leitura |
+|---|---|---|
+| Política de privacidade acessível | **85%**, 100% em `text/html` | H2 tem instrumento. O formato é o fácil — nenhuma política em PDF escaneado. |
+| Apps tratando dado do Art. 11 | **52,5%** (saúde 15, previdência 8, assistência 3, biometria 1) | Extrapola para ~200 apps sensíveis no corpus completo. H3 tem célula. |
+| **Anúncio: governo × comercial** | **0/40 (0%)** contra **6/23 (26,1%)** | IC95% `[0,000; 0,088]` contra `[0,125; 0,465]` — **não se sobrepõem**. |
+
+**O resultado do anúncio reorienta o argumento do trabalho.** Aplicativo de
+governo não monetiza. Logo, se houver rastreador — e a literatura sugere
+fortemente que haverá —, ele **não é de publicidade: é de analytics e
+infraestrutura** (Firebase, Crashlytics, Google Analytics).
+
+Isso **descarta** o enquadramento fácil de que "o governo vende dados do
+cidadão", que seria o primeiro alvo da banca. O que resta é mais preciso e mais
+difícil de atacar: dados de cidadãos em serviço público essencial fluem para
+infraestrutura de terceiros sob jurisdição estrangeira **sem intenção
+comercial**, por dependência técnica assumida por padrão no ecossistema Android.
+É exatamente a camada de soberania de dados.
+
+> Ressalva registrada: anúncio é subconjunto de rastreamento. Este resultado
+> **não** testa a H1, que fala de rastreadores em geral. Ele informa qual será a
+> natureza do rastreamento encontrado, não a sua prevalência.
+
+**Correção de instrumento feita nesta rodada.** A porta 3 reprovou com 45,8%, e
+a inspeção mostrou que toda falha estava em faixa de instalação baixa (10¹–10⁵) e
+todo sucesso em faixa alta (10⁶–10⁸). A causa era do coletor, não do mundo: a
+busca da loja ordena por relevância e nunca alcança um aplicativo comercial de
+cinco mil instalações. O script passou a varrer a cauda dos resultados e a
+limitar dois controles por faixa, e o critério da porta deixou de ser pareamento
+célula a célula — que o plano de análise não exige — e passou a ser **suporte
+comum**. Este episódio entra na monografia como exemplo de ameaça à validade
+detectada por inspeção do padrão de falhas, e não pelo valor agregado.
 
 ---
 

@@ -5,7 +5,7 @@
 substitui o APK sem aviso, e um corpus coletado direto dela não pode ser reconstruído por
 terceiros. É também o gargalo de prazo: a concessão leva dias ou semanas.
 
-**Estado:** ⬜ não enviado · ⬜ enviado em ____ · ⬜ concedido em ____
+**Estado:** ⬜ não enviado · ✅ enviado em 16/09/2026 · ⬜ concedido em ____
 
 ---
 

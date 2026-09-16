@@ -113,6 +113,8 @@ nenhum explora falha, nenhum baixa conteúdo de área autenticada.
 | `ct_direto.py` | Lê os logs de Certificate Transparency direto pela API padrão (RFC 6962) e procura imitação de marca brasileira |
 | `teste_viabilidade_ct.py` | Versão anterior, via crt.sh — mantida como registro; o crt.sh se mostrou instável |
 | `teste_viabilidade_n3.py` | Enumera aplicativos governamentais na Play Store por termo e por catálogo de publicador |
+| `teste_viabilidade_malware.py` | Consulta metadados de famílias de malware bancário no MalwareBazaar e mede compartilhamento de imphash entre famílias, com grupo de controle não brasileiro |
+| `gera_deck_seminario.js` | Gera o deck do seminário de análise de artigo |
 
 ### Como rodar
 
@@ -124,6 +126,16 @@ pip install google-play-scraper cryptography
 python3 scripts/teste_viabilidade_n3.py --expandir
 python3 scripts/ct_direto.py --entradas 20000 --logs 1
 ```
+
+O teste de malware exige uma chave gratuita do MalwareBazaar (auth.abuse.ch):
+
+```bash
+export MALWAREBAZAAR_API_KEY="..."
+python3 scripts/teste_viabilidade_malware.py
+```
+
+> Esse script lê **apenas metadados** — hashes, tipo de arquivo, data e assinatura.
+> Nenhuma amostra de malware é baixada.
 
 O script do Shodan exige uma chave em variável de ambiente:
 

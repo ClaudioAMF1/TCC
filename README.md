@@ -4,8 +4,10 @@ Repositório de trabalho do meu Trabalho de Conclusão de Curso em Ciência da C
 no IDP. Reúne o material da disciplina, a busca pelo tema, os testes de viabilidade que
 foram feitos e os scripts que os produziram.
 
-**Estado atual:** tema ainda em definição. Três candidatos testados empiricamente — dois
-descartados com evidência, um confirmado mas ainda não aceito. Ver a Seção 3.
+**Estado atual:** **tema definido — N3, rastreamento em aplicativos móveis governamentais
+brasileiros.** Quatro candidatos foram testados empiricamente; três caíram com evidência e
+um sobreviveu. A proposta formal para o orientador está em
+`desenhos/N3-proposta-formal.md`. Ver a Seção 3.
 
 ---
 
@@ -52,7 +54,8 @@ ameaças à validade e divisão entre Capstone I e II.
 
 | Arquivo | Tema | Situação |
 |---|---|---|
-| `N3-apps-governamentais.md` | Rastreadores e soberania de dados em apps móveis do governo | ✅ corpus verificado (396 apps) |
+| `N3-proposta-formal.md` | **Proposta que vai ao orientador** — quadrante, hipóteses, método, ética, pendências formais | ⭐ **tema escolhido** |
+| `N3-apps-governamentais.md` | Desenho experimental detalhado do mesmo tema | ✅ corpus verificado (396 apps) |
 | `T1-seguranca-codigo-llm.md` | Segurança do código gerado por LLM + validade do oráculo | ⏸️ forte, mas sem encaixe com o orientador |
 | `T3-lgpd-sites-saude.md` | LGPD Art. 11 e rastreamento em sites de saúde | ⏸️ viável, pouco técnico |
 
@@ -115,6 +118,7 @@ nenhum explora falha, nenhum baixa conteúdo de área autenticada.
 | `ct_direto.py` | Lê os logs de Certificate Transparency direto pela API padrão (RFC 6962) e procura imitação de marca brasileira |
 | `teste_viabilidade_ct.py` | Versão anterior, via crt.sh — mantida como registro; o crt.sh se mostrou instável |
 | `teste_viabilidade_n3.py` | Enumera aplicativos governamentais na Play Store por termo e por catálogo de publicador |
+| `teste_viabilidade_n3_robusto.py` | Mede a **porta de cada hipótese** antes de baixar APK: pareamento (H1), política de privacidade acessível (H2), povoamento das células (H3), potência estatística, e um sinal preliminar da variável dependente |
 | `teste_viabilidade_malware.py` | Consulta metadados de famílias de malware bancário no MalwareBazaar e mede compartilhamento de imphash entre famílias, com grupo de controle não brasileiro |
 | `gera_deck_seminario.js` | Gera o deck do seminário de análise de artigo |
 
@@ -127,6 +131,14 @@ pip install google-play-scraper cryptography
 
 python3 scripts/teste_viabilidade_n3.py --expandir
 python3 scripts/ct_direto.py --entradas 20000 --logs 1
+```
+
+O teste robusto do N3 reaproveita a saída do anterior. Ele tem autoteste offline:
+
+```bash
+python3 scripts/teste_viabilidade_n3_robusto.py --autoteste       # valida a lógica, sem rede
+python3 scripts/teste_viabilidade_n3_robusto.py --limite 40        # rodada curta (~5 min)
+python3 scripts/teste_viabilidade_n3_robusto.py                    # completo (~40 min)
 ```
 
 O teste de malware exige uma chave gratuita do MalwareBazaar (auth.abuse.ch):
@@ -164,10 +176,14 @@ python3 scripts/teste_viabilidade_n1.py --apenas-contagem
 
 ---
 
-## 6. O que falta decidir
+## 6. O que falta
 
-- **Tema definitivo.** O N3 é o único com corpus confirmado, mas ainda não foi aceito.
+- ~~**Tema definitivo.**~~ Definido: **N3**. Proposta formal em `desenhos/N3-proposta-formal.md`.
+- **Rodar o teste robusto** (`scripts/teste_viabilidade_n3_robusto.py`) e levar os números
+  das seis portas junto da proposta.
 - **Orientador.** A apresentação das linhas de pesquisa já ocorreu; o termo de aceite
-  precisa ser formalizado (Art. 10 e Art. 15).
+  precisa ser formalizado (Art. 10 e Art. 15), e é preciso confirmar a elegibilidade do
+  professor pretendido junto à Coordenação (Art. 13, §1º e §6º).
+- **Acesso ao AndroZoo** (`androzoo.uni.lu`) — é o gargalo de prazo, o pedido leva dias.
 - **Modalidade.** Monografia é o caminho de menor risco. Artigo científico depende de
   aceite em periódico Qualis B2, o que não está sob controle do aluno.

@@ -43,6 +43,7 @@ dados/          Saída bruta das coletas (não versionado — ver .gitignore)
 | `02-estado-da-arte.md` | Checagem de literatura de cada tema: o que já foi feito, onde há espaço, veredito |
 | `03-temas-cyber.md` | Temas em cibersegurança compatíveis com o orientador pretendido |
 | `04-avaliacao-da-area.md` | Avaliação honesta da área como escolha de TCC + temas de menor custo de tempo |
+| `05-teste-genealogia-malware.md` | Teste de viabilidade da genealogia do malware bancário brasileiro e por que ele ficou inconclusivo |
 
 ### `desenhos/`
 Desenhos experimentais completos — problema de pesquisa nas três partes exigidas pela
@@ -95,6 +96,7 @@ experimental. Os resultados:
 | **N1** — ICS exposta no Brasil | Contagem e facetas no Shodan | ❌ **Descartado.** Os mesmos hosts respondem em Modbus, IEC-104 e EtherNet/IP ao mesmo tempo — comportamento de honeypot e de nuvem, não de equipamento industrial. O conjunto confirmado está atrás de provedores de acesso, ocultando o operador. |
 | **CT** — abuso de marca em Certificate Transparency | 20 mil entradas de log, casamento por token | ❌ **Descartado.** Zero imitações reais. Phishing moderno raramente põe a marca no domínio, o que impõe teto de recall por construção. |
 | **N3** — apps móveis governamentais | Busca e expansão por catálogo na Play Store | ✅ **Confirmado.** 396 aplicativos de 71 publicadores públicos distintos, três esferas representadas, publicador identificado na origem. |
+| **Genealogia do malware bancário BR** | imphash de 1.764 amostras brasileiras × 2.104 de controle, no MalwareBazaar | ⚠️ **Inconclusivo.** O rótulo de família marca a campanha, não o payload: 85% do acervo brasileiro são containers (zip/iso/lnk/msi), onde imphash não existe. Testar de verdade exigiria desempacotar malware vivo em VM isolada. Detalhes em `temas/05-teste-genealogia-malware.md`. |
 
 Os dois descartes são material de TCC, não tempo perdido: sustentam a seção de metodologia
 e demonstram a postura que as aulas 04 a 08 cobram — hipótese falsificável, verificação

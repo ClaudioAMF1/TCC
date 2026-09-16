@@ -56,6 +56,7 @@ ameaças à validade e divisão entre Capstone I e II.
 |---|---|---|
 | `N3-proposta-formal.md` | **Proposta que vai ao orientador** — quadrante, hipóteses, método, ética, pendências formais | ⭐ **tema escolhido** |
 | `N3-apps-governamentais.md` | Desenho experimental detalhado do mesmo tema | ✅ corpus verificado (396 apps) |
+| `N3-acesso-androzoo.md` | Texto da solicitação de acesso ao AndroZoo, notas e plano B | ⬜ a enviar |
 | `T1-seguranca-codigo-llm.md` | Segurança do código gerado por LLM + validade do oráculo | ⏸️ forte, mas sem encaixe com o orientador |
 | `T3-lgpd-sites-saude.md` | LGPD Art. 11 e rastreamento em sites de saúde | ⏸️ viável, pouco técnico |
 

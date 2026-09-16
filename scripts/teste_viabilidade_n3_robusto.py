@@ -11,9 +11,10 @@ a única que ele responde.
 Um corpus grande não garante estudo executável. Cada hipótese do desenho tem
 uma PORTA própria, e uma porta fechada mata a hipótese mesmo com 400 apps:
 
-    H1 (gov × comercial)   precisa de PAREAMENTO. Se os apps de governo vivem
-                           em faixas de instalação e categorias onde não existe
-                           comercial equivalente, a comparação não é pareável.
+    H1 (gov × comercial)   precisa de SUPORTE COMUM. A regressão usa categoria
+                           e faixa como covariáveis, então não exige par exato
+                           por célula — exige sobreposição entre as duas
+                           distribuições. Sem sobreposição não há comparação.
     H2 (SDK não declarado) precisa de DECLARAÇÃO. Sem política de privacidade
                            publicada e acessível, não há com o que confrontar
                            o detectado. H2 morre sem APK nenhum ser baixado.
@@ -341,31 +342,66 @@ def buscar_fichas(app_ids, get_app, cache_path, pausa):
     return cache
 
 
-def buscar_controle(search, get_app, celulas, por_celula, pausa, oficiais):
-    """Para cada célula (categoria, faixa) ocupada pelo governo, procura
-    aplicativos COMERCIAIS na mesma célula.
+# Termos genéricos que puxam aplicativos FORA do topo de popularidade. A busca
+# da loja ordena por relevância, então `search("Ferramentas")` devolve sempre os
+# gigantes: nenhum app comercial de 5 mil instalações aparece nos 30 primeiros.
+# Isso produziu, na primeira rodada, 0 controle em toda faixa de 10^1 a 10^5 —
+# artefato do instrumento, não propriedade do mundo.
+ISCAS_CAUDA = [
+    "app", "gratis", "brasil", "online", "digital", "facil", "rapido",
+    "simples", "pro", "mobile", "cliente", "minha", "meu",
+]
 
-    É a porta da H1: sem comercial equivalente em categoria e porte, a
-    comparação pareada não existe, e o desenho precisa mudar de eixo.
+
+def coletar_controle(search, get_app, generos, por_categoria, pausa, oficiais):
+    """Monta o grupo de controle comercial por CATEGORIA, com espalhamento
+    deliberado ao longo da faixa de instalação.
+
+    Duas correções sobre a versão anterior:
+
+    1. Não busca só pelo nome da categoria. Combina a categoria com termos
+       genéricos e percorre os resultados a partir da CAUDA da lista, onde
+       vivem os aplicativos menos populares. Sem isso, o controle fica todo
+       concentrado em 10^6+ e as faixas baixas ficam vazias por construção.
+
+    2. Não exige par exato por célula. O plano de análise da H1 é regressão
+       binomial negativa com categoria e faixa como COVARIÁVEIS — e regressão
+       com covariável não precisa de par exato, precisa de SUPORTE COMUM, isto
+       é, sobreposição entre as distribuições dos dois grupos. Exigir par
+       célula a célula reprovava um desenho que não faz isso.
     """
-    print(f"\n  Procurando controle comercial em {len(celulas)} células "
-          f"(até {por_celula} por célula)...\n")
-    controle, cobertas = {}, 0
-    for i, (genero, faixa) in enumerate(sorted(celulas), 1):
-        try:
-            res = search(genero, lang="pt", country="br", n_hits=30)
-        except Exception as e:
-            print(f"  [{i:>2}/{len(celulas)}] {genero[:24]:<24} {faixa:<6} "
-                  f"ERRO {type(e).__name__}")
-            time.sleep(pausa)
-            continue
-
-        achou = 0
-        for r in res:
-            aid = r.get("appId")
-            dev = (r.get("developer") or "")
-            if not aid or aid in controle or normalizar(dev) in oficiais:
+    print(f"\n  Montando controle comercial em {len(generos)} categorias "
+          f"(até {por_categoria} por categoria)...\n")
+    controle = {}
+    for i, genero in enumerate(sorted(generos), 1):
+        candidatos, vistos = [], set()
+        consultas = [genero] + [f"{genero} {isca}" for isca in ISCAS_CAUDA[:6]]
+        for q in consultas:
+            try:
+                res = search(q, lang="pt", country="br", n_hits=30)
+            except Exception:
+                time.sleep(pausa)
                 continue
+            time.sleep(pausa)
+            # intercala cabeça e cauda: pega popular E impopular, nesta ordem
+            ordem = []
+            for a, b in zip(res, reversed(res)):
+                ordem.extend([b, a])
+            for r in ordem:
+                aid = r.get("appId")
+                if not aid or aid in vistos or aid in controle:
+                    continue
+                if normalizar(r.get("developer") or "") in oficiais:
+                    continue
+                vistos.add(aid)
+                candidatos.append(aid)
+            if len(candidatos) >= por_categoria * 4:
+                break
+
+        aceitos, faixas = 0, Counter()
+        for aid in candidatos:
+            if aceitos >= por_categoria:
+                break
             try:
                 f = get_app(aid, lang="pt", country="br")
             except Exception:
@@ -374,23 +410,55 @@ def buscar_controle(search, get_app, celulas, por_celula, pausa, oficiais):
             time.sleep(pausa)
             if f.get("genre") != genero:
                 continue
-            if faixa_instalacao(instalacoes_de(f)) != faixa:
+            fx = faixa_instalacao(instalacoes_de(f))
+            if fx == "?":
                 continue
+            # no máximo 2 por faixa: força espalhamento em vez de 8 gigantes
+            if faixas[fx] >= 2:
+                continue
+            faixas[fx] += 1
+            aceitos += 1
             controle[aid] = {
                 "appId": aid, "title": f.get("title"), "developer": f.get("developer"),
                 "genre": f.get("genre"), "minInstalls": f.get("minInstalls"),
                 "realInstalls": f.get("realInstalls"), "installs": f.get("installs"),
                 "containsAds": f.get("containsAds"),
                 "privacyPolicy": f.get("privacyPolicy"),
-                "celula": f"{genero}|{faixa}",
+                "n_instalacoes": instalacoes_de(f), "faixa": fx,
             }
-            achou += 1
-            if achou >= por_celula:
-                break
-        cobertas += 1 if achou else 0
-        print(f"  [{i:>2}/{len(celulas)}] {genero[:24]:<24} {faixa:<6} +{achou}")
-        time.sleep(pausa)
-    return controle, cobertas
+        espalho = "".join(sorted(faixas)) if faixas else "—"
+        print(f"  [{i:>2}/{len(generos)}] {genero[:26]:<26} +{aceitos:<3} "
+              f"faixas: {' '.join(sorted(faixas)) if faixas else '—'}")
+    return controle
+
+
+def suporte_comum(vivos, controle):
+    """Fração de apps de governo cuja (categoria, faixa) cai DENTRO da amplitude
+    de faixas que o controle cobre naquela categoria.
+
+    É a condição que a regressão realmente exige. Um app de governo em
+    Ferramentas/10^4 é comparável se o controle de Ferramentas vai de 10^3 a
+    10^8 — não é preciso existir um controle exatamente em 10^4.
+    """
+    por_genero = defaultdict(list)
+    for c in controle.values():
+        if c.get("faixa") and c["faixa"] != "?":
+            por_genero[c["genre"]].append(int(c["faixa"].split("^")[1]))
+
+    dentro, fora, sem_categoria = 0, 0, 0
+    for f in vivos:
+        g, fx = f.get("genre"), f.get("faixa")
+        if not g or fx == "?":
+            continue
+        if g not in por_genero:
+            sem_categoria += 1
+            continue
+        e = int(fx.split("^")[1])
+        if min(por_genero[g]) <= e <= max(por_genero[g]):
+            dentro += 1
+        else:
+            fora += 1
+    return dentro, fora, sem_categoria
 
 
 # -------------------------------------------------------------------- relatório
@@ -404,7 +472,7 @@ def porcento(k, n):
     return f"{100*k/n:.1f}%" if n else "—"
 
 
-def relatar(gov, controle, celulas, cobertas, politicas, args):
+def relatar(gov, controle, politicas, args):
     rel = {"coleta": datetime.now(timezone.utc).isoformat()}
 
     # ---- PORTA 1: o corpus sobrevive à ficha completa?
@@ -437,18 +505,32 @@ def relatar(gov, controle, celulas, cobertas, politicas, args):
     rel["sensiveis"] = n_sens
     rel["categorias_sensiveis"] = dict(cats)
 
-    # ---- PORTA 3: existe controle comercial pareável?
-    linha("  PORTA 3 — PAREAMENTO COM CONTROLE COMERCIAL (H1)")
-    print(f"    Células (categoria × faixa) no governo ... {len(celulas)}")
-    print(f"    Células com ao menos um comercial ....... {cobertas} "
-          f"({porcento(cobertas, len(celulas))})")
+    # ---- PORTA 3: existe suporte comum com o controle comercial?
+    linha("  PORTA 3 — SUPORTE COMUM COM O CONTROLE COMERCIAL (H1)")
+    dentro, fora, sem_cat = suporte_comum(vivos, controle)
+    base = dentro + fora + sem_cat
     print(f"    Aplicativos de controle coletados ....... {len(controle)}")
+    print(f"    Categorias cobertas pelo controle ....... "
+          f"{len({c['genre'] for c in controle.values()})}")
+    print(f"\n    Governo DENTRO da amplitude do controle . {dentro} "
+          f"({porcento(dentro, base)})")
+    print(f"    Fora da amplitude (faixa sem cobertura) . {fora}")
+    print(f"    Em categoria sem controle nenhum ........ {sem_cat}")
+    print("\n    A H1 é testada por regressão com categoria e faixa como")
+    print("    COVARIÁVEIS. Isso exige sobreposição entre as distribuições,")
+    print("    não par exato por célula — 'suporte comum', não pareamento.")
+    print("\n    Distribuição por faixa:")
+    fg = Counter(f["faixa"] for f in vivos if f.get("faixa"))
+    fc = Counter(c["faixa"] for c in controle.values() if c.get("faixa"))
+    for fx in sorted(set(fg) | set(fc)):
+        print(f"        {fx:<6}  governo {fg.get(fx,0):>4}   controle {fc.get(fx,0):>4}")
     top = Counter(f["genre"] for f in vivos if f.get("genre")).most_common(8)
     print("\n    Categorias mais frequentes no governo:")
     for g, n in top:
         print(f"        {n:>4}  {g}")
-    rel["pareamento"] = {"celulas": len(celulas), "cobertas": cobertas,
-                         "controle": len(controle)}
+    rel["suporte_comum"] = {"dentro": dentro, "fora": fora,
+                            "sem_categoria": sem_cat, "controle": len(controle),
+                            "faixas_governo": dict(fg), "faixas_controle": dict(fc)}
 
     # ---- PORTA 4: existe declaração para confrontar?
     linha("  PORTA 4 — POLÍTICA DE PRIVACIDADE (H2)")
@@ -505,21 +587,35 @@ def relatar(gov, controle, celulas, cobertas, politicas, args):
 
     # ---- veredito
     linha("  VEREDITO POR HIPÓTESE")
+
+    if args.limite:
+        print(f"""
+    ⚠  RODADA PARCIAL — {args.limite} de {args.total_candidatos} candidatos.
+
+    Os critérios abaixo foram calibrados para o CORPUS COMPLETO. Numa
+    subamostra eles reprovam por falta de n, não por falta de viabilidade:
+    H4 pede 60 apps e você rodou {args.limite}; as células da H3 encolhem na
+    mesma proporção. As PROPORÇÕES (política acessível, taxa de dado
+    sensível, anúncio) são estimativas honestas; as CONTAGENS não são.
+    Rode sem --limite antes de decidir qualquer coisa.
+""")
+
     def marca(ok_):
         return "✅" if ok_ else "❌"
-    h1 = len(celulas) > 0 and cobertas / max(len(celulas), 1) >= 0.6
+    h1 = base > 0 and dentro / base >= 0.6
     h2 = len(politicas) > 0 and ok / max(len(politicas), 1) >= 0.6
     h3 = n_sens >= 30 and menor_celula >= 5
     h4 = len(vivos) >= 60
-    print(f"    {marca(h1)} H1 comparativa      — {porcento(cobertas, len(celulas))} "
-          f"das células têm controle comercial (precisa de ≥60%)")
+    print(f"    {marca(h1)} H1 comparativa      — {porcento(dentro, base)} do governo "
+          f"dentro da amplitude do controle (precisa de ≥60%)")
     print(f"    {marca(h2)} H2 transparência    — {porcento(ok, len(politicas))} "
           f"das políticas acessíveis (precisa de ≥60%)")
     print(f"    {marca(h3)} H3 dado sensível    — {n_sens} apps sensíveis, menor "
           f"célula {menor_celula} (precisa de ≥30 e ≥5)")
     print(f"    {marca(h4)} H4 concordância     — {len(vivos)} apps para o "
           f"piloto de detectores (precisa de ≥60)")
-    rel["veredito"] = {"H1": h1, "H2": h2, "H3": h3, "H4": h4}
+    rel["veredito"] = {"H1": h1, "H2": h2, "H3": h3, "H4": h4,
+                       "parcial": bool(args.limite)}
 
     print("""
   COMO LER ISTO
@@ -531,9 +627,13 @@ def relatar(gov, controle, celulas, cobertas, politicas, args):
                                 que é estruturada, em vez da política em prosa.
     H3 fechada               -> abandone a estratificação por sensibilidade e
                                 mantenha só o contraste gov × comercial.
-    H1 fechada               -> o pareamento por categoria e porte não existe.
-                                Troque para comparação INTERNA: entre esferas,
-                                ou entre apps sensíveis e não sensíveis.
+    H1 fechada               -> antes de mudar o desenho, verifique a linha
+                                "em categoria sem controle nenhum". Se ela for
+                                grande, o problema é da COLETA do controle, não
+                                do mundo: a busca da loja ordena por relevância
+                                e não alcança a cauda de instalação. Só depois
+                                de esgotar isso, troque para comparação INTERNA
+                                — entre esferas, ou sensível × não sensível.
     Potência insuficiente    -> reduza o número de hipóteses e concentre o n.
 
   Nenhum destes desfechos mata o tema. Todos mudam o desenho — e é por isso
@@ -583,6 +683,22 @@ def autoteste():
         if got != esperado:
             falhas.append(f"faixa({n!r}) = {got!r}, esperado {esperado!r}")
 
+    # suporte comum: o app de governo em 10^4 é comparável se o controle
+    # daquela categoria vai de 10^3 a 10^8 — não precisa de par exato em 10^4.
+    vivos_fake = [
+        {"genre": "Ferramentas", "faixa": "10^4"},   # dentro
+        {"genre": "Ferramentas", "faixa": "10^9"},   # fora (acima do controle)
+        {"genre": "Medicina", "faixa": "10^5"},      # sem controle na categoria
+        {"genre": "Ferramentas", "faixa": "?"},      # ignorado
+    ]
+    ctrl_fake = {
+        "a": {"genre": "Ferramentas", "faixa": "10^3"},
+        "b": {"genre": "Ferramentas", "faixa": "10^8"},
+    }
+    got = suporte_comum(vivos_fake, ctrl_fake)
+    if got != (1, 1, 1):
+        falhas.append(f"suporte_comum = {got}, esperado (1, 1, 1)")
+
     lo, hi = ic_proporcao(0, 50)
     if not (lo == 0.0 and 0 < hi < 0.15):
         falhas.append(f"Wilson(0/50) = [{lo}, {hi}] fora do esperado")
@@ -595,8 +711,8 @@ def autoteste():
         for f in falhas:
             print("  -", f)
         sys.exit(1)
-    print(f"AUTOTESTE OK — {len(casos_esfera)+len(casos_sens)+len(casos_faixa)+2} "
-          f"verificações passaram, sem tocar na rede.")
+    total = len(casos_esfera) + len(casos_sens) + len(casos_faixa) + 3
+    print(f"AUTOTESTE OK — {total} verificações passaram, sem tocar na rede.")
 
 
 # ------------------------------------------------------------------------ main
@@ -606,7 +722,8 @@ def main():
         description="Teste robusto de viabilidade do N3: mede as portas de cada hipótese.")
     ap.add_argument("--entrada", help="JSON do primeiro teste (padrão: o mais recente)")
     ap.add_argument("--limite", type=int, help="processa só os N primeiros (rodada curta)")
-    ap.add_argument("--pares-por-celula", type=int, default=3)
+    ap.add_argument("--controle-por-categoria", type=int, default=8,
+                    help="quantos comerciais coletar por categoria (máx. 2 por faixa)")
     ap.add_argument("--pausa", type=float, default=PAUSA)
     ap.add_argument("--sem-controle", action="store_true",
                     help="pula a coleta do grupo de controle (etapa mais cara)")
@@ -645,8 +762,11 @@ def main():
     oficiais_ids = [a["appId"] for a in candidatos if parece_oficial(a.get("dev", ""))]
     nomes_oficiais = {normalizar(a["dev"]) for a in candidatos
                       if parece_oficial(a.get("dev", ""))}
+    args.total_candidatos = len(oficiais_ids)
     if args.limite:
         oficiais_ids = oficiais_ids[:args.limite]
+        print(f"  ⚠ RODADA PARCIAL: {args.limite} de {args.total_candidatos} "
+              f"candidatos. O veredito final não vale para subamostra.")
     print(f"  Candidatos com publicador oficial: {len(oficiais_ids)}\n")
 
     fichas = buscar_fichas(oficiais_ids, get_app, d / f"n3_fichas_{hoje}.json", args.pausa)
@@ -670,16 +790,16 @@ def main():
         resultados = list(ex.map(lambda f: checar_politica(f.get("privacyPolicy")), vivos))
     politicas = {f["appId"]: r for f, r in zip(vivos, resultados)}
 
-    celulas = {(f["genre"], f["faixa"]) for f in vivos
-               if f.get("genre") and f["faixa"] != "?"}
+    generos = {f["genre"] for f in vivos if f.get("genre")}
     if args.sem_controle:
-        controle, cobertas = {}, 0
+        controle = {}
         print("\n  Grupo de controle pulado (--sem-controle).")
     else:
-        controle, cobertas = buscar_controle(
-            search, get_app, celulas, args.pares_por_celula, args.pausa, nomes_oficiais)
+        controle = coletar_controle(search, get_app, generos,
+                                    args.controle_por_categoria, args.pausa,
+                                    nomes_oficiais)
 
-    rel = relatar(gov, controle, celulas, cobertas, politicas, args)
+    rel = relatar(gov, controle, politicas, args)
 
     # planilha JÁ pré-classificada — o revisor corrige, não preenche do zero
     csv_path = d / f"n3_corpus_{hoje}.csv"

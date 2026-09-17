@@ -94,14 +94,31 @@ ou web sem componente Android · publicado apenas como preprint.
 
 Cada célula precisa de **valor + data**. Indicador muda; número sem data não vale.
 
-| Métrica | Valor | Data | Onde consultei |
-|---|---|---|---|
-| Citações — Google Scholar | | | |
-| Citações — Scopus | | | |
-| Citações — ACM DL | | | |
-| Ano de publicação | | | |
-| Escala do estudo (nº de apps) | | | |
-| Artefato público disponível? | | | |
+| | Métrica | Valor | Data | Onde consultei |
+|---|---|---|---|---|
+| ✅ | **Citações — ACM DL** | **42** | 17/09/2026 | `dl.acm.org/doi/10.1145/3548606.3560564` |
+| ☐ | Citações — Scopus | | | via portal CAPES → Buscar base |
+| ☐ | Citações — Google Scholar | | | busca pelo título |
+| ✅ | Downloads — ACM DL | 1.539 | 17/09/2026 | mesma tela |
+| ✅ | Ano de publicação | 2022 (07/11) | | página do artigo |
+| ☐ | Escala do estudo (nº de apps) | | | ler no artigo |
+| ☐ | Artefato público disponível? | | | `github.com/cispa/consent-notices` |
+
+### Dados da citação, conferidos na página do artigo (17/09/2026)
+
+| | |
+|---|---|
+| Autores | Trung Tin Nguyen · Michael Backes · Ben Stock |
+| Título | Freely Given Consent?: Studying Consent Notice of Third-Party Tracking and Its Violations of GDPR in Android Apps |
+| Publicação | CCS '22: Proceedings of the 2022 ACM SIGSAC Conference on Computer and Communications Security |
+| **Páginas** | **2369–2383** |
+| Publicado em | 07 de novembro de 2022 |
+| DOI | `10.1145/3548606.3560564` |
+| Acesso | FREE ACCESS · tipo: RESEARCH-ARTICLE |
+
+> **"RESEARCH-ARTICLE" na etiqueta do ACM** é confirmação independente de que é
+> artigo original, não revisão — exatamente o que o item 1 do enunciado exige. Vale
+> mencionar: é a própria base classificando, não interpretação sua.
 
 > As três bases vão divergir. **Isso não é erro** — elas indexam conjuntos
 > diferentes. Reportar a divergência, em vez de escolher o número maior, é uma

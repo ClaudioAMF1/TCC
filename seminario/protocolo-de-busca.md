@@ -118,13 +118,39 @@ veículo. Não são opcionais e não se substituem entre si.
 
 ### Se for CONFERÊNCIA (é o caso da CCS) — os três obrigatórios
 
-| ☐ | Métrica | Valor | Data | Onde |
+| | Métrica | Valor | Data | Onde |
 |---|---|---|---|---|
 | ☐ | **h5-index** | | | Google Scholar Metrics |
 | ☐ | **Qualis correspondente ao h5** | | | tabela de percentis (ver abaixo) |
-| ☐ | **Rank CORE** | | | `portal.core.edu.au/conf-ranks/` |
+| ✅ | **Rank CORE** | **A\*** | 17/09/2026 | `portal.core.edu.au/conf-ranks/12/` |
 
 Complementares, se sobrar tempo: mediana h5, taxa de aceitação do ano.
+
+#### CORE — levantado, com dois detalhes que valem mais que o rank
+
+Conferido no ICORE Conference Portal em **17/09/2026**:
+
+| | |
+|---|---|
+| Conferência | ACM Conference on Computer and Communications Security |
+| Acrônimo | CCS |
+| **Rank (ICORE2026)** | **A\*** |
+| Field of Research | **4604 — Cybersecurity and privacy** |
+| Fonte DBLP | `dblp.uni-trier.de/db/conf/ccs` |
+
+**1. O rank é estável há quase duas décadas.** A mesma página lista CORE2023,
+2021, 2020, 2018, 2017, 2014, 2013 e 2008 — **A\* em todas**. A única exceção é o
+ERA2010, que deu A. Dizer "é A\* desde 2008, com uma única exceção em 2010" é muito
+mais forte que "é A\*": mostra que a classificação não é ruído de uma edição.
+
+**2. O FoR 4604 resolve a pergunta do conjunto de referência.** O CORE classifica a
+CCS em *Cybersecurity and privacy*. Quando você for converter o h5 em percentil, o
+conjunto de referência natural é a subárea equivalente no Scholar Metrics —
+*Computer Security & Cryptography*. **Os dois instrumentos concordam sobre qual é o
+campo**, e é isso que justifica a escolha da lista em vez de ser arbitrária.
+
+> Guarde o print desta página. É fonte primária e responde o item 2 inteiro na
+> parte do CORE.
 
 #### Convertendo o h5 em percentil — é este o passo que falta
 

@@ -266,16 +266,17 @@ s.addNotes("O terceiro cartão é o diferencial: não é hipótese, é medida pr
 // =====================================================================
 s = pres.addSlide();
 tituloSlide(s, "Métricas do veículo e Qualis", 7);
-preencher(s, M, 1.02, (W - M * 2 - 0.25) / 2, 2.25, "OS TRÊS ITENS OBRIGATÓRIOS — CCS é conferência", [
+preencher(s, M, 1.02, (W - M * 2 - 0.25) / 2, 2.55, "OS TRÊS OBRIGATÓRIOS — faltam 1 e 2; o CORE já saiu", [
   "1 · h5-index (Google Scholar → Metrics):  ______",
   "2 · Qualis correspondente ao h5:  ______",
   "      posição ___ de ___  →  percentil ___  →  estrato ___",
-  "3 · CORE Rank (portal.core.edu.au):  ______",
+  "      p. 12: o Scholar não dá percentil; a CAPES usa uma base por área, o \u0022Universo\u0022. Sem acesso a ele, declare a lista que você usou.",
+  "3 · CORE Rank:  A*  ·  ICORE2026  ·  consultado 17/09/2026  ✓",
 ]);
-cartao(s, M, 3.45, (W - M * 2 - 0.25) / 2, 1.4, "De onde vem esse percentil",
-  "Documento Técnico, p. 12: a base do Google Scholar NÃO fornece percentis dentro dos " +
-  "agrupamentos temáticos. A CAPES contorna com uma base ampliada por área, o " +
-  "\u0022Universo\u0022.\n\nSem acesso a ele, use a lista da subárea — e DECLARE qual foi.", AMBER);
+cartao(s, M, 3.72, (W - M * 2 - 0.25) / 2, 1.15, "CORE: A* desde 2008",
+  "A* em ICORE2026, CORE2023, 2021, 2020, 2018, 2017, 2014, 2013 e 2008. Única exceção: " +
+  "ERA2010 (A).\n\nField of Research 4604 — Cybersecurity and privacy: o MESMO campo da " +
+  "lista usada para o percentil do h5.", "1E6B3A");
 s.addText("Faixas de percentil → estrato  (Figura 6, p. 13 do Documento Técnico)", {
   x: M + (W - M * 2 - 0.25) / 2 + 0.25, y: 1.02, w: (W - M * 2 - 0.25) / 2, h: 0.3,
   isTextBox: true, margin: 0, fontFace: SANS, fontSize: 10.5, bold: true, color: NAVY,

@@ -176,7 +176,16 @@ aparecer, em voz alta e no slide.
 > CiteScore nem JCR, um modelo de regressão linear estima o CiteScore a partir do h5,
 > e o percentil sai da ordenação desses valores estimados.
 >
-> **Terceiro, o CORE.** No CORE Conference Portal, o rank da CCS é `[RANK]`."
+> **Terceiro, o CORE.** No ICORE Conference Portal, a CCS é **A\***, o rank mais alto
+> da escala. E vale notar que não é de uma edição só: a mesma página lista as
+> avaliações de 2008, 2013, 2014, 2017, 2018, 2020, 2021, 2023 e 2026 — **A\* em
+> todas**, com uma única exceção, o ERA de 2010, que deu A. É uma classificação
+> estável há quase vinte anos, não o resultado de um ano bom.
+>
+> Um detalhe que fecha o raciocínio anterior: o CORE classifica a CCS no campo 4604,
+> *Cybersecurity and privacy*. É o mesmo campo da lista que usei no Scholar para
+> calcular o percentil. Os dois instrumentos concordam sobre qual é a área, então o
+> conjunto de referência que escolhi não é arbitrário."
 
 **No slide:** a figura `qualis-faixas-de-percentil.png` com a sua linha destacada, e
 os três valores — h5, estrato, CORE — lado a lado.

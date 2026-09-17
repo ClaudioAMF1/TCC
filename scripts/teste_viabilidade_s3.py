@@ -237,37 +237,133 @@ def esfera_de(dominio: str) -> str:
 
 
 # ------------------------------------------------------------------- coleta
+#
+# Dois motores de DNS. O `dnspython` é mais rápido, mas exige instalação, e
+# instalar biblioteca no Python do sistema é bloqueado no macOS (PEP 668).
+# O `dig` já vem no macOS e em qualquer Linux, e não precisa de nada.
+# O script escolhe sozinho: usa o que estiver disponível.
 
-def consultar(resolver, nome, tipo):
-    try:
-        r = resolver.resolve(nome, tipo)
+
+def parse_txt_dig(saida: str):
+    """Extrai registros TXT da saída de `dig +short`.
+
+    Um TXT longo é quebrado em pedaços de 255 bytes, que o dig imprime como
+    várias strings entre aspas na MESMA linha: "pedaço1" "pedaço2". Elas
+    precisam ser concatenadas — um SPF longo cortado no meio não casaria com
+    'v=spf1', e o domínio apareceria como desprotegido sem estar.
+    """
+    registros = []
+    for linha in saida.splitlines():
+        linha = linha.strip()
+        if not linha:
+            continue
+        pedacos = re.findall(r'"((?:[^"\\]|\\.)*)"', linha)
+        registros.append("".join(pedacos) if pedacos else linha)
+    return registros
+
+
+class ConsultorDig:
+    """Resolve via o binário `dig`. Sem dependência de biblioteca."""
+
+    nome = "dig"
+
+    def __init__(self, timeout=5.0):
+        self.timeout = timeout
+
+    def _dig(self, nome, tipo):
+        import subprocess
+        try:
+            p = subprocess.run(
+                ["dig", "+short", f"+time={int(self.timeout)}", "+tries=1",
+                 tipo, nome],
+                capture_output=True, text=True, timeout=self.timeout + 3)
+        except Exception:
+            return ""
+        return p.stdout
+
+    def consultar(self, nome, tipo):
+        saida = self._dig(nome, tipo)
         if tipo == "TXT":
-            return ["".join(s.decode() for s in rr.strings) for rr in r]
+            return parse_txt_dig(saida)
+        linhas = [l.strip() for l in saida.splitlines() if l.strip()]
         if tipo == "MX":
-            return [str(rr.exchange) for rr in r]
+            # formato: "10 aspmx.l.google.com."
+            return [l.split()[-1] for l in linhas if l.split()]
+        return linhas
+
+
+class ConsultorDnspython:
+    nome = "dnspython"
+
+    def __init__(self, timeout=5.0):
+        import dns.resolver
+        self.r = dns.resolver.Resolver()
+        self.r.lifetime = timeout
+        self.r.timeout = timeout
+
+    def consultar(self, nome, tipo):
+        try:
+            resp = self.r.resolve(nome, tipo)
+        except Exception:
+            return []
+        if tipo == "TXT":
+            return ["".join(s.decode() for s in rr.strings) for rr in resp]
+        if tipo == "MX":
+            return [str(rr.exchange) for rr in resp]
         if tipo == "NS":
-            return [str(rr.target) for rr in r]
-        return [str(rr) for rr in r]
-    except Exception:
-        return []
+            return [str(rr.target) for rr in resp]
+        return [str(rr) for rr in resp]
 
 
-def coletar(dominio, resolver, sondar_dkim):
+def escolher_motor(preferido, timeout):
+    """Devolve uma FÁBRICA de consultor — cada thread cria o seu."""
+    import shutil
+
+    def tem_dig():
+        return shutil.which("dig") is not None
+
+    def tem_dnspython():
+        try:
+            import dns.resolver  # noqa: F401
+            return True
+        except ImportError:
+            return False
+
+    if preferido == "dnspython" or (preferido == "auto" and tem_dnspython()):
+        if not tem_dnspython():
+            sys.exit("Motor 'dnspython' pedido, mas a biblioteca não está instalada.")
+        return lambda: ConsultorDnspython(timeout)
+
+    if preferido in ("dig", "auto"):
+        if not tem_dig():
+            sys.exit(
+                "Nenhum motor de DNS disponível.\n\n"
+                "Opção 1 — instalar o dnspython no ambiente virtual do projeto:\n"
+                "    python3 -m venv .venv\n"
+                "    source .venv/bin/activate\n"
+                "    python3 -m pip install dnspython\n\n"
+                "Opção 2 — ter o comando 'dig' no PATH (já vem no macOS e no Linux).\n"
+            )
+        return lambda: ConsultorDig(timeout)
+
+    sys.exit(f"Motor desconhecido: {preferido}")
+
+
+def coletar(dominio, consultor, sondar_dkim):
+    c = consultor.consultar
     d = {"dominio": dominio, "esfera": esfera_de(dominio)}
 
-    ns = consultar(resolver, dominio, "NS")
-    if not ns and not consultar(resolver, dominio, "A"):
+    ns = c(dominio, "NS")
+    if not ns and not c(dominio, "A"):
         d["resolve"] = False
         return d
     d["resolve"] = True
 
-    txts = consultar(resolver, dominio, "TXT")
-    d["spf"], d["spf_qualificador"] = parse_spf(txts)
+    d["spf"], d["spf_qualificador"] = parse_spf(c(dominio, "TXT"))
+    d["dmarc"], d["dmarc_politica"], d["dmarc_pct"] = parse_dmarc(
+        c(f"_dmarc.{dominio}", "TXT"))
 
-    dm = consultar(resolver, f"_dmarc.{dominio}", "TXT")
-    d["dmarc"], d["dmarc_politica"], d["dmarc_pct"] = parse_dmarc(dm)
-
-    mx = consultar(resolver, dominio, "MX")
+    mx = c(dominio, "MX")
     d["tem_mx"] = bool(mx)
     d["fornecedor_ns"] = classificar_fornecedor(ns)
     d["fornecedor_mx"] = classificar_fornecedor(mx) if mx else "sem_mx"
@@ -275,7 +371,7 @@ def coletar(dominio, resolver, sondar_dkim):
     d["dkim_seletores"] = []
     if sondar_dkim:
         for sel in SELETORES_DKIM:
-            if consultar(resolver, f"{sel}._domainkey.{dominio}", "TXT"):
+            if c(f"{sel}._domainkey.{dominio}", "TXT"):
                 d["dkim_seletores"].append(sel)
     d["dkim"] = bool(d["dkim_seletores"])
     return d
@@ -507,6 +603,24 @@ def autoteste():
         if got != esp:
             f.append(f"fornecedor({hosts}) = {got!r}, esperado {esp!r}")
 
+    # parser da saída do dig — inclui o caso do TXT longo partido em pedaços,
+    # que é onde um SPF de verdade seria perdido se a concatenação falhasse
+    casos_dig = [
+        ('"v=spf1 -all"\n', ["v=spf1 -all"]),
+        ('"v=spf1 include:a.com " "include:b.com -all"\n',
+         ["v=spf1 include:a.com include:b.com -all"]),
+        ('"a" \n"b"\n', ["a", "b"]),
+        ('', []),
+        ('\n\n', []),
+    ]
+    for saida, esp in casos_dig:
+        got = parse_txt_dig(saida)
+        if got != esp:
+            f.append(f"parse_txt_dig({saida!r}) = {got}, esperado {esp}")
+    # o SPF longo tem que sobreviver à concatenação
+    if parse_spf(parse_txt_dig('"v=spf1 include:a.com " "include:b.com ~all"')) != (True, "~"):
+        f.append("SPF partido em dois pedaços não foi remontado")
+
     # pureza: dois fornecedores perfeitamente homogêneos, cada um com política
     # própria -> pureza por fornecedor 100%, base 50%
     regs = ([{"dmarc": True, "dmarc_politica": "reject", "fornecedor_ns": "A"}] * 4
@@ -520,7 +634,8 @@ def autoteste():
         for x in f:
             print("  -", x)
         sys.exit(1)
-    total = len(casos_spf) + len(casos_dmarc) + len(casos_esfera) + len(casos_forn) + 1
+    total = (len(casos_spf) + len(casos_dmarc) + len(casos_esfera)
+             + len(casos_forn) + len(casos_dig) + 2)
     print(f"AUTOTESTE OK — {total} verificações passaram, sem tocar na rede.")
 
 
@@ -534,21 +649,15 @@ def main():
                     help="pula a sondagem de seletores DKIM (13 consultas por domínio)")
     ap.add_argument("--timeout", type=float, default=5.0)
     ap.add_argument("--threads", type=int, default=12)
+    ap.add_argument("--motor", choices=["auto", "dig", "dnspython"], default="auto",
+                    help="motor de DNS. 'auto' usa dnspython se houver, senão dig")
     args = ap.parse_args()
 
     if args.autoteste:
         autoteste()
         return
 
-    try:
-        import dns.resolver
-    except ImportError:
-        sys.exit(
-            "Falta a dependência 'dnspython'.\n\n"
-            "    python3 -m venv .venv\n"
-            "    source .venv/bin/activate\n"
-            "    pip install dnspython\n"
-        )
+    fabrica = escolher_motor(args.motor, args.timeout)
 
     dominios = FEDERAL + JUDICIARIO + LEGISLATIVO + ESTADUAL + MUNICIPAL
     dominios = list(dict.fromkeys(dominios))
@@ -557,14 +666,12 @@ def main():
     print("TESTE DE VIABILIDADE — S3: falsificação de e-mail no setor público")
     print(f"Coleta em {datetime.now(timezone.utc).isoformat(timespec='seconds')}")
     print("=" * 64)
-    print(f"\n  {len(dominios)} domínios. Só consulta de DNS — nenhum e-mail é")
+    print(f"\n  Motor de DNS: {fabrica().nome}")
+    print(f"  {len(dominios)} domínios. Só consulta de DNS — nenhum e-mail é")
     print("  enviado, nenhuma falsificação é tentada, nenhum servidor é tocado.\n")
 
     def tarefa(d):
-        r = dns.resolver.Resolver()
-        r.lifetime = args.timeout
-        r.timeout = args.timeout
-        return coletar(d, r, not args.sem_dkim)
+        return coletar(d, fabrica(), not args.sem_dkim)
 
     with ThreadPoolExecutor(max_workers=args.threads) as ex:
         regs = list(ex.map(tarefa, dominios))

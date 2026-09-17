@@ -152,53 +152,46 @@ controle `[0,269; 0,401]` — e a frase "não se sobrepõem".
 A atividade pede **três itens obrigatórios** para conferência. Os três precisam
 aparecer, em voz alta e no slide.
 
-> "A CCS é uma das quatro principais conferências de segurança do mundo.
+> "A CCS é uma das principais conferências de segurança do mundo, e os três
+> indicadores que a atividade pede confirmam isso por caminhos independentes.
 >
-> **Primeiro, o h5.** No Google Scholar Metrics, o índice h5 da CCS é `[H5]`,
-> consultado em `[DATA]`.
+> **Primeiro, o h5.** No Google Acadêmico, em Principais Publicações, categoria
+> *Computer Security & Cryptography*, consultado em 17 de setembro: a CCS tem
+> **índice h5 de 90** e **mediana h5 de 146**. Ela aparece na **quinta posição** da
+> lista. Vale notar que essa lista mistura periódicos e conferências — entre as
+> conferências, a CCS é a **terceira**, atrás apenas da USENIX Security e da
+> IEEE Symposium on Security and Privacy.
 >
-> **Segundo, o Qualis correspondente.** O Qualis trabalha com percentil, não com h5
-> bruto, então precisei converter — e a conversão tem uma armadilha que vale explicar.
+> **Segundo, o Qualis correspondente.** Aqui há uma conversão a fazer, porque o
+> Qualis trabalha com percentil e não com h5 bruto — e a conversão tem uma armadilha
+> que vale explicitar.
 >
-> Na lista de *Computer Security & Cryptography* do Scholar Metrics, a CCS ocupa a
-> posição `[K]`. Só que o Scholar publica apenas as vinte primeiras de cada subárea.
-> Essa lista é truncada, não é a população da área. Se eu dividir a posição por vinte,
-> o percentil dá `[X]` e o estrato cairia em `[ESTRATO INGÊNUO]` — o que colocaria uma
-> das principais conferências de segurança do mundo abaixo do topo. O erro está no
-> denominador.
+> O Scholar publica apenas as vinte primeiras de cada subárea. Essa lista é truncada,
+> não é a população da área. Se eu usar vinte como denominador, a quinta posição dá
+> percentil 75, que pela Figura 6 corresponde a A2. Só que esse 75 é um **piso por
+> construção**: qualquer universo maior que vinte empurra o percentil para cima,
+> nunca para baixo.
 >
-> É a mesma limitação que o Documento Técnico aponta na página 12: a base do Google
-> Scholar não fornece os percentis dentro dos agrupamentos temáticos, e é por isso que
-> a CAPES precisou construir uma base ampliada por área, que eles chamam de Universo.
+> E dá para saber exatamente onde ele cruza. O limiar do A1 é percentil 87,5. Para a
+> posição 5, isso é atingido a partir de um universo de **quarenta veículos**. A
+> subárea *Computer Security & Cryptography* tem centenas — as vinte exibidas são só
+> o topo do que o Scholar indexa. Portanto o estrato é **A1**, e isso não é uma
+> estimativa: é um limite inferior.
 >
-> Considerando o universo real da área, que tem centenas de veículos, a posição `[K]`
-> corresponde ao primeiro percentil. O estrato é **A1**, e o número que sai da lista
-> truncada é um piso, não a estimativa.
->
-> Vale explicar de onde vem esse percentil, porque o próprio Documento Técnico
-> levanta a questão. Na página 12 ele diz que a base do Google Scholar não fornece
-> os percentis dentro dos agrupamentos temáticos, e que a CAPES contornou isso
-> criando uma base ampliada por área, que eles chamam de Universo, para ter a
-> posição real do veículo dentro do conjunto.
->
-> Eu não tenho acesso a esse Universo, então usei como conjunto de referência a
-> lista da subárea no Google Scholar Metrics, e estou declarando isso. O percentil
-> não é propriedade do veículo — é propriedade do veículo dentro de um conjunto.
->
-> O documento ainda prevê um segundo caminho, nas páginas 11 e 12: para veículos sem
-> CiteScore nem JCR, um modelo de regressão linear estima o CiteScore a partir do h5,
-> e o percentil sai da ordenação desses valores estimados.
+> Essa limitação, aliás, é reconhecida pela própria CAPES. O Documento Técnico diz na
+> página 12 que a base do Google Scholar não fornece os percentis dentro dos
+> agrupamentos temáticos, e que por isso foi preciso construir uma base ampliada por
+> área, que eles chamam de Universo.
 >
 > **Terceiro, o CORE.** No ICORE Conference Portal, a CCS é **A\***, o rank mais alto
-> da escala. E vale notar que não é de uma edição só: a mesma página lista as
-> avaliações de 2008, 2013, 2014, 2017, 2018, 2020, 2021, 2023 e 2026 — **A\* em
-> todas**, com uma única exceção, o ERA de 2010, que deu A. É uma classificação
-> estável há quase vinte anos, não o resultado de um ano bom.
+> da escala. E não é de uma edição só: a página lista as avaliações de 2008, 2013,
+> 2014, 2017, 2018, 2020, 2021, 2023 e 2026 — **A\* em todas**, com uma única
+> exceção, o ERA de 2010, que deu A.
 >
-> Um detalhe que fecha o raciocínio anterior: o CORE classifica a CCS no campo 4604,
-> *Cybersecurity and privacy*. É o mesmo campo da lista que usei no Scholar para
-> calcular o percentil. Os dois instrumentos concordam sobre qual é a área, então o
-> conjunto de referência que escolhi não é arbitrário."
+> Um detalhe fecha o raciocínio: o CORE classifica a CCS no campo 4604,
+> *Cybersecurity and privacy* — o mesmo campo da lista que usei no Scholar para o
+> percentil. Os dois instrumentos concordam sobre qual é a área, então o conjunto de
+> referência que escolhi não é arbitrário."
 
 **No slide:** a figura `qualis-faixas-de-percentil.png` com a sua linha destacada, e
 os três valores — h5, estrato, CORE — lado a lado.

@@ -266,17 +266,15 @@ s.addNotes("O terceiro cartão é o diferencial: não é hipótese, é medida pr
 // =====================================================================
 s = pres.addSlide();
 tituloSlide(s, "Métricas do veículo e Qualis", 7);
-preencher(s, M, 1.02, (W - M * 2 - 0.25) / 2, 2.55, "OS TRÊS OBRIGATÓRIOS — faltam 1 e 2; o CORE já saiu", [
-  "1 · h5-index (Google Scholar → Metrics):  ______",
-  "2 · Qualis correspondente ao h5:  ______",
-  "      posição ___ de ___  →  percentil ___  →  estrato ___",
-  "      ATENÇÃO: o Scholar publica só o TOP 20. Dividir por 20 subestima — é lista truncada, não população (Doc. Técnico, p.12: a CAPES criou o \u0022Universo\u0022 por isso).",
-  "3 · CORE Rank:  A*  ·  ICORE2026  ·  consultado 17/09/2026  ✓",
-]);
-cartao(s, M, 3.72, (W - M * 2 - 0.25) / 2, 1.15, "CORE: A* desde 2008",
-  "A* em ICORE2026, CORE2023, 2021, 2020, 2018, 2017, 2014, 2013 e 2008. Única exceção: " +
-  "ERA2010 (A).\n\nField of Research 4604 — Cybersecurity and privacy: o MESMO campo da " +
-  "lista usada para o percentil do h5.", "1E6B3A");
+cartao(s, M, 1.02, (W - M * 2 - 0.25) / 2, 1.62, "OS TRÊS OBRIGATÓRIOS — todos levantados em 17/09/2026",
+  "1 · h5 = 90   (mediana 146)   posição 5 de 20\n" +
+  "2 · Qualis = A1   (ver o limiar ao lado)\n" +
+  "3 · CORE = A*   ICORE2026", "1E6B3A");
+cartao(s, M, 2.8, (W - M * 2 - 0.25) / 2, 2.05, "Por que A1, e não A2",
+  "Com N=20 o percentil dá 75 (A2) — mas 20 é lista TRUNCADA, não população. Esse 75 é " +
+  "PISO: universo maior só empurra para cima.\n\n" +
+  "A1 exige percentil 87,5.  (N-5)/N >= 0,875  ->  N >= 40.\n" +
+  "Basta a área ter 40 veículos. Tem centenas. Logo A1 — limite, não estimativa.", NAVY);
 s.addText("Faixas de percentil → estrato  (Figura 6, p. 13 do Documento Técnico)", {
   x: M + (W - M * 2 - 0.25) / 2 + 0.25, y: 1.02, w: (W - M * 2 - 0.25) / 2, h: 0.3,
   isTextBox: true, margin: 0, fontFace: SANS, fontSize: 10.5, bold: true, color: NAVY,

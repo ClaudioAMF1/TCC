@@ -120,9 +120,31 @@ veículo. Não são opcionais e não se substituem entre si.
 
 | | Métrica | Valor | Data | Onde |
 |---|---|---|---|---|
-| ☐ | **h5-index** | | | Google Scholar Metrics |
-| ☐ | **Qualis correspondente ao h5** | | | tabela de percentis (ver abaixo) |
+| ✅ | **h5-index** | **90** (mediana 146) | 17/09/2026 | Google Scholar Metrics |
+| ✅ | **Qualis correspondente ao h5** | **A1** — ver o argumento do limiar | 17/09/2026 | Figura 6, p. 13 |
 | ✅ | **Rank CORE** | **A\*** | 17/09/2026 | `portal.core.edu.au/conf-ranks/12/` |
+
+**Os três itens obrigatórios estão levantados.**
+
+#### h5 — levantado
+
+Google Acadêmico → Principais publicações → Categorias → *Engineering & Computer
+Science* → **Computer Security & Cryptography**, em **17/09/2026**:
+
+| Posição | Publicação | h5 | Mediana h5 |
+|---|---|---|---|
+| 1 | USENIX Security Symposium | 116 | 170 |
+| 2 | Computers & Security *(periódico)* | 112 | 164 |
+| 3 | IEEE Symposium on Security and Privacy | 110 | 195 |
+| 4 | IEEE Trans. on Information Forensics and Security *(periódico)* | 100 | 140 |
+| **5** | **ACM Symposium on Computer and Communications Security** | **90** | **146** |
+| … | | | |
+| 13 | Proceedings on Privacy Enhancing Technologies | 56 | 75 |
+
+**Observação que rende:** a lista **mistura periódicos e conferências**. Entre as
+**conferências**, a CCS é a **3ª** — atrás só da USENIX Security e da IEEE S&P.
+Dizer isso é mais preciso que "5º lugar", e mostra que você leu a tabela em vez de
+copiar a linha.
 
 Complementares, se sobrar tempo: mediana h5, taxa de aceitação do ano.
 
@@ -180,16 +202,38 @@ Google Scholar não fornece percentis dentro dos agrupamentos temáticos, e por 
 CAPES teve de montar uma base ampliada por área — o **"Universo"** — para obter a
 posição real.
 
-**Como reportar sem inventar um número:**
+**O argumento do limiar — é ele que fecha o item.**
 
-> "O veículo aparece na posição `[K]` da lista de *Computer Security & Cryptography*
-> do Scholar Metrics. Como o Scholar publica apenas as 20 primeiras, esse conjunto é
-> truncado e não permite calcular o percentil diretamente — é a mesma limitação que o
-> Documento Técnico aponta na página 12, e a razão pela qual a CAPES construiu o
-> Universo por área. Com 20 como denominador o percentil seria `[X]`; com o universo
-> real da área, que tem centenas de veículos, a posição `[K]` corresponde ao primeiro
-> percentil. Portanto o estrato é **A1**, e o valor obtido pela lista truncada é um
-> **piso**, não a estimativa."
+A CCS está na **posição 5**. Com N = 20 (a lista truncada), o percentil seria
+(20 − 5) ÷ 20 × 100 = **75**, o que dá **A2** — na borda inferior. Mas esse 75 é um
+**piso por construção**: qualquer universo maior que 20 empurra o percentil para
+cima, nunca para baixo.
+
+E dá para saber exatamente quando ele cruza para A1:
+
+> (N − 5) ÷ N ≥ 0,875  →  0,125 · N ≥ 5  →  **N ≥ 40**
+
+| Tamanho do universo | Percentil | Estrato |
+|---|---|---|
+| 20 (lista truncada) | 75,0 | A2 — **piso** |
+| 30 | 83,3 | A2 |
+| **40** | **87,5** | **A1 — limiar** |
+| 100 | 95,0 | A1 |
+| 500 | 99,0 | A1 |
+
+**Basta o universo da área ter 40 veículos para a CCS ser A1.** A subárea *Computer
+Security & Cryptography* tem centenas — as 20 exibidas são só o topo do que o Scholar
+indexa. Logo, **A1**, e o que se afirma não é uma estimativa chutada: é um limite.
+
+**Como dizer isso:**
+
+> "A CCS aparece na posição 5 da lista de *Computer Security & Cryptography*, com h5
+> de 90 e mediana 146. O Scholar publica só as vinte primeiras, então essa lista é
+> truncada. Com vinte no denominador o percentil seria 75, que dá A2 — mas esse valor
+> é um piso por construção, porque qualquer universo maior empurra para cima. O
+> limiar do A1 é 87,5, e a posição 5 atinge isso a partir de um universo de quarenta
+> veículos. A subárea tem centenas. Portanto o estrato é **A1**, e isso não é
+> estimativa: é um limite inferior."
 
 Isso é a resposta completa: você calcula, aponta o limite do instrumento, e diz de
 que lado o erro cai. Muito mais forte que entregar um número sem ressalva.

@@ -98,7 +98,7 @@ Cada célula precisa de **valor + data**. Indicador muda; número sem data não 
 |---|---|---|---|---|
 | ✅ | **Citações — ACM DL** | **42** | 17/09/2026 | `dl.acm.org/doi/10.1145/3548606.3560564` |
 | ✅ | **Citações — Scopus** | **52** | 17/09/2026 | Scopus via CAFe, busca `DOI 10.1145/3548606.3560564` |
-| ☐ | Citações — Google Scholar | | | busca pelo título |
+| ✅ | **Citações — Google Acadêmico** | **99** (9 versões) | 17/09/2026 | busca pelo DOI |
 | ✅ | Downloads — ACM DL | 1.539 | 17/09/2026 | mesma tela |
 | ✅ | Ano de publicação | 2022 (07/11) | | página do artigo |
 | ☐ | Escala do estudo (nº de apps) | | | ler no artigo |
@@ -126,17 +126,27 @@ Cada célula precisa de **valor + data**. Indicador muda; número sem data não 
 |---|---|---|
 | ACM Digital Library | **42** | 17/09/2026 |
 | Scopus | **52** | 17/09/2026 |
-| Google Acadêmico | *falta* | |
+| **Google Acadêmico** | **99** | 17/09/2026 |
 
 **O Scopus conta 10 a mais que a própria editora do artigo.** Não é erro de
 nenhuma das duas: a ACM conta o que está indexado no acervo da ACM, e o Scopus
 indexa também IEEE, Springer, Elsevier e periódicos fora da ACM. Um artigo citado
 por um trabalho publicado na IEEE aparece no Scopus e não aparece na ACM DL.
 
-**Diga os dois números com a data, e explique a diferença.** Escolher o maior sem
-dizer de onde veio é o erro que esse item existe para pegar. A expectativa é que o
-Google Acadêmico venha ainda mais alto, porque indexa preprints, teses e relatórios
-que as outras duas ignoram — se vier, isso confirma o padrão.
+E o Google Acadêmico conta **99** — mais que o dobro da ACM. A razão está na própria
+tela: ele indica **"Todas as 9 versões"**. O Scholar agrupa nove versões do mesmo
+trabalho (preprint, repositório institucional, página do CISPA) e soma as citações
+de todas, além de contar citações vindas de teses, relatórios técnicos e preprints
+que Scopus e ACM não indexam.
+
+**A ordem 42 < 52 < 99 não é ruído — é a hierarquia de cobertura das bases.** Diga
+os três com a data e explique a escada. Escolher o maior sem dizer de onde veio é o
+erro que esse item existe para pegar; explicar por que eles diferem é a resposta
+completa.
+
+☐ Escolher **um** número para a justificativa e declarar qual base e qual data. O
+  mais defensável é o do Scopus, que é base multieditora e curada — mas qualquer um
+  serve, desde que declarado.
 
 ### O Scopus também confirmou dois dados do item 2
 

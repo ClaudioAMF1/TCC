@@ -146,15 +146,45 @@ controle `[0,269; 0,401]` — e a frase "não se sobrepõem".
 
 ## Slide 8 — Métricas do veículo e Qualis · 2 min
 
-> "A CCS é uma das quatro principais conferências de segurança do mundo. O índice h5
-> é `[H5]`, consultado em `[DATA]`. No CORE, o rank é `[RANK]`.
->
-> Pela tabela de faixas de percentil do Documento Técnico do Qualis — Figura 6 —,
-> esse percentil corresponde ao estrato `[ESTRATO]`."
+A atividade pede **três itens obrigatórios** para conferência. Os três precisam
+aparecer, em voz alta e no slide.
 
-**No slide:** a figura `qualis-faixas-de-percentil.png` e a sua linha destacada.
+> "A CCS é uma das quatro principais conferências de segurança do mundo.
+>
+> **Primeiro, o h5.** No Google Scholar Metrics, o índice h5 da CCS é `[H5]`,
+> consultado em `[DATA]`.
+>
+> **Segundo, o Qualis correspondente.** O Qualis trabalha com percentil, então
+> converti: na lista de *Computer Security & Cryptography*, a CCS ocupa a posição
+> `[K]` de `[N]`. Isso dá percentil `[(N−K)÷N×100]`, que pela Figura 6 do Documento
+> Técnico corresponde ao estrato **`[ESTRATO]`**.
+>
+> Vale explicar de onde vem esse percentil, porque o próprio Documento Técnico
+> levanta a questão. Na página 12 ele diz que a base do Google Scholar não fornece
+> os percentis dentro dos agrupamentos temáticos, e que a CAPES contornou isso
+> criando uma base ampliada por área, que eles chamam de Universo, para ter a
+> posição real do veículo dentro do conjunto.
+>
+> Eu não tenho acesso a esse Universo, então usei como conjunto de referência a
+> lista da subárea no Google Scholar Metrics, e estou declarando isso. O percentil
+> não é propriedade do veículo — é propriedade do veículo dentro de um conjunto.
+>
+> O documento ainda prevê um segundo caminho, nas páginas 11 e 12: para veículos sem
+> CiteScore nem JCR, um modelo de regressão linear estima o CiteScore a partir do h5,
+> e o percentil sai da ordenação desses valores estimados.
+>
+> **Terceiro, o CORE.** No CORE Conference Portal, o rank da CCS é `[RANK]`."
+
+**No slide:** a figura `qualis-faixas-de-percentil.png` com a sua linha destacada, e
+os três valores — h5, estrato, CORE — lado a lado.
 
 > Leve o print de cada tela. A professora pode pedir.
+>
+> ⚠️ **Não pule o segundo item.** O Qualis é definido para periódicos, e é tentador
+> dizer que não se aplica a conferência — mas a atividade pede explicitamente o
+> "Qualis Periódicos correspondente ao índice h5 encontrado". Calcular **e** apontar
+> de que o resultado depende é a resposta completa. Recusar-se a calcular é deixar um
+> item obrigatório em branco.
 
 ---
 

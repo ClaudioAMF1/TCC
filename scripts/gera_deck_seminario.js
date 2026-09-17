@@ -266,15 +266,16 @@ s.addNotes("O terceiro cartão é o diferencial: não é hipótese, é medida pr
 // =====================================================================
 s = pres.addSlide();
 tituloSlide(s, "Métricas do veículo e Qualis", 7);
-preencher(s, M, 1.02, (W - M * 2 - 0.25) / 2, 2.0, "levantar — CCS é CONFERÊNCIA", [
-  "h5-index do CCS (Google Scholar → Metrics):  ______",
-  "h5-mediana:  ______",
-  "Estrato Qualis correspondente ao h5:  ______",
-  "CORE Rank (portal.core.edu.au — aberto):  ______",
+preencher(s, M, 1.02, (W - M * 2 - 0.25) / 2, 2.25, "OS TRÊS ITENS OBRIGATÓRIOS — CCS é conferência", [
+  "1 · h5-index (Google Scholar → Metrics):  ______",
+  "2 · Qualis correspondente ao h5:  ______",
+  "      posição ___ de ___  →  percentil ___  →  estrato ___",
+  "3 · CORE Rank (portal.core.edu.au):  ______",
 ]);
-cartao(s, M, 3.2, (W - M * 2 - 0.25) / 2, 1.62, "Ressalva que rende ponto",
-  "O Documento Técnico (p. 12) diz que, para veículos sem CiteScore/JCR, o percentil é " +
-  "ESTIMADO por regressão CiteScore–h5.\n\nO estrato obtido por essa via é aproximação — diga isso.", AMBER);
+cartao(s, M, 3.45, (W - M * 2 - 0.25) / 2, 1.4, "De onde vem esse percentil",
+  "Documento Técnico, p. 12: a base do Google Scholar NÃO fornece percentis dentro dos " +
+  "agrupamentos temáticos. A CAPES contorna com uma base ampliada por área, o " +
+  "\u0022Universo\u0022.\n\nSem acesso a ele, use a lista da subárea — e DECLARE qual foi.", AMBER);
 s.addText("Faixas de percentil → estrato  (Figura 6, p. 13 do Documento Técnico)", {
   x: M + (W - M * 2 - 0.25) / 2 + 0.25, y: 1.02, w: (W - M * 2 - 0.25) / 2, h: 0.3,
   isTextBox: true, margin: 0, fontFace: SANS, fontSize: 10.5, bold: true, color: NAVY,

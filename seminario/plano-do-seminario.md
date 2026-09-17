@@ -176,6 +176,62 @@ Imagem em `qualis-faixas-de-percentil.png` — **use ela no slide**, é fonte pr
 Classes de **12,5% de amplitude**. O estrato **C** é dos periódicos que não possuem nenhum
 dos indicadores do modelo e/ou não atendem às boas práticas editoriais (referência: COPE).
 
+### Como converter um h5 de CONFERÊNCIA em percentil
+
+A atividade é explícita: *"Informe o Qualis Periódicos correspondente ao índice h5
+encontrado"*. **É item obrigatório**, mesmo o Qualis sendo definido para periódicos.
+A tabela acima trabalha com percentil, então o h5 precisa virar percentil antes.
+
+**Procedimento:**
+
+1. Google Scholar → **Metrics** → **Categories** → *Engineering & Computer Science*
+   → **Computer Security & Cryptography**.
+2. Essa página lista as **20 publicações de maior h5** da subárea, em ordem.
+   Anote o h5 do seu veículo e **a posição dele na lista**.
+3. Percentil = (quantas publicações estão **abaixo** dele ÷ total da lista) × 100.
+
+   Numa lista de 20, se o veículo é o 3º:  (20 − 3) ÷ 20 × 100 = **85** → **A2**.
+   Se for o 1º:  (20 − 1) ÷ 20 × 100 = **95** → **A1**.
+
+4. Leve o percentil à tabela acima e leia o estrato.
+5. **Declare qual conjunto de referência você usou.** Numa lista de 20 o percentil
+   anda de 5 em 5; na lista de 100 de *Engineering & Computer Science* ele é mais
+   fino, e pode dar um estrato diferente para o mesmo h5.
+
+> **Fonte primária, e é ela que dá a resposta.** O Documento Técnico, p. 12,
+> reconhece o problema e diz como a CAPES o resolve:
+>
+> > *"No caso do QR2, o índice h é a referência para o cálculo dos estratos. Porém,
+> > a base do Google Scholar **não fornece diretamente os valores dos percentis
+> > dentro dos agrupamentos temáticos**. Para contornar, foi necessário criar uma
+> > base ampliada de periódicos pertinentes a cada área, denominada **Universo**,
+> > para que se tivesse a real posição dos títulos utilizados pelos programas dentro
+> > desse conjunto de veículos potenciais da área."*
+>
+> Dois pontos que isso te dá:
+>
+> 1. **O percentil do h5 é posição dentro de um conjunto de referência.** Não é
+>    propriedade do veículo. Você não tem acesso ao "Universo" da CAPES, então usa a
+>    lista da subárea do Google Scholar Metrics e **declara** que foi essa.
+> 2. **O documento prevê um segundo caminho** (p. 11–12): para veículos sem
+>    CiteScore nem JCR, um modelo de **regressão linear CiteScore–h5** estima o
+>    CiteScore, e o percentil sai da ordenação desses valores estimados. Mencione que
+>    existe — mostra que você leu o documento inteiro, não só a Figura 6.
+
+### Os três itens obrigatórios para conferência
+
+| | Onde |
+|---|---|
+| ☐ índice **h5** | Google Scholar Metrics |
+| ☐ **Qualis** correspondente ao h5 | tabela acima, via o percentil calculado |
+| ☐ **Rank CORE** | `portal.core.edu.au/conf-ranks/` |
+
+Para **periódico**, os obrigatórios são outros três: **JIF Percentile** no JCR,
+**Highest Percentile** no Scopus, e o **Qualis de ambos** — note que são dois
+indicadores, e o documento manda considerar **o maior percentil**.
+
+---
+
 Dois detalhes do documento que rendem pergunta de banca:
 - Quando o periódico tem mais de um indicador, considera-se **o maior percentil**.
 - As áreas podem ajustar até 30% dos estratos (20% em 1 nível, 10% em 2 níveis), então o

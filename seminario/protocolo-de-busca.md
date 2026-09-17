@@ -99,38 +99,76 @@ Cada célula precisa de **valor + data**. Indicador muda; número sem data não 
 
 O item 2 da atividade avalia a classificação do **veículo**, não do artigo.
 
-### Se for conferência (é o caso da CCS)
+A atividade define **três itens obrigatórios**, e quais são depende do tipo de
+veículo. Não são opcionais e não se substituem entre si.
 
-| Métrica | Valor | Data | Onde |
-|---|---|---|---|
-| h5-index | | | Google Scholar Metrics |
-| Mediana h5 | | | Google Scholar Metrics |
-| CORE rank | | | portal CORE |
-| Taxa de aceitação do ano | | | site da conferência |
+### Se for CONFERÊNCIA (é o caso da CCS) — os três obrigatórios
 
-### Se fosse periódico
+| ☐ | Métrica | Valor | Data | Onde |
+|---|---|---|---|---|
+| ☐ | **h5-index** | | | Google Scholar Metrics |
+| ☐ | **Qualis correspondente ao h5** | | | tabela de percentis (ver abaixo) |
+| ☐ | **Rank CORE** | | | `portal.core.edu.au/conf-ranks/` |
 
-| Métrica | Valor | Data | Onde |
-|---|---|---|---|
-| Percentil / quartil | | | Scopus (CiteScore) ou JCR |
-| Fator de impacto | | | JCR |
-| ISSN | | | site do periódico |
+Complementares, se sobrar tempo: mediana h5, taxa de aceitação do ano.
 
-### Qualis
+#### Convertendo o h5 em percentil — é este o passo que falta
 
-O `material-fornecido/Documento Tecnico do Qualis Periodicos.pdf` define a conversão
-de percentil em estrato; a Figura 6 está extraída em `qualis-faixas-de-percentil.png`.
+O Qualis trabalha com **percentil**, não com h5 bruto. A conversão:
 
-| | Preencher |
-|---|---|
-| Percentil apurado | |
-| Estrato correspondente | |
-| Faixa da tabela usada | |
+| Passo | O que fazer | Anote |
+|---|---|---|
+| 1 | Google Scholar → Metrics → Categories → *Engineering & Computer Science* → **Computer Security & Cryptography** | |
+| 2 | h5 do veículo | |
+| 3 | Posição dele na lista, e o tamanho da lista | ___ de ___ |
+| 4 | Percentil = (total − posição) ÷ total × 100 | |
+| 5 | Estrato, pela tabela da Figura 6 | |
 
-> Atenção: o Qualis é definido para **periódicos**. Se o veículo for conferência,
-> diga isso na apresentação em vez de forçar um estrato — apontar que o instrumento
-> não se aplica ao caso é análise, não falha. Use o CORE como classificação
-> equivalente e explique a substituição.
+Exemplo da conta: 3º lugar numa lista de 20 → (20 − 3) ÷ 20 × 100 = **85** → **A2**.
+
+> **Fonte primária, e é ela que dá a resposta.** O Documento Técnico, p. 12,
+> reconhece o problema e diz como a CAPES o resolve:
+>
+> > *"No caso do QR2, o índice h é a referência para o cálculo dos estratos. Porém,
+> > a base do Google Scholar **não fornece diretamente os valores dos percentis
+> > dentro dos agrupamentos temáticos**. Para contornar, foi necessário criar uma
+> > base ampliada de periódicos pertinentes a cada área, denominada **Universo**,
+> > para que se tivesse a real posição dos títulos utilizados pelos programas dentro
+> > desse conjunto de veículos potenciais da área."*
+>
+> Dois pontos que isso te dá:
+>
+> 1. **O percentil do h5 é posição dentro de um conjunto de referência.** Não é
+>    propriedade do veículo. Você não tem acesso ao "Universo" da CAPES, então usa a
+>    lista da subárea do Google Scholar Metrics e **declara** que foi essa.
+> 2. **O documento prevê um segundo caminho** (p. 11–12): para veículos sem
+>    CiteScore nem JCR, um modelo de **regressão linear CiteScore–h5** estima o
+>    CiteScore, e o percentil sai da ordenação desses valores estimados. Mencione que
+>    existe — mostra que você leu o documento inteiro, não só a Figura 6.
+
+### Se fosse PERIÓDICO — os outros três obrigatórios
+
+| ☐ | Métrica | Valor | Data | Onde |
+|---|---|---|---|---|
+| ☐ | **JIF Percentile** | | | JCR |
+| ☐ | **Highest Percentile** | | | Scopus |
+| ☐ | **Qualis de ambos** | | | tabela da Figura 6 |
+
+> São **dois** indicadores e **dois** estratos a informar. O Documento Técnico manda
+> considerar **o maior percentil** quando há mais de um indicador — diga isso ao
+> apresentar, mostra que você leu o documento e não só aplicou a tabela.
+
+### A tabela de conversão
+
+`material-fornecido/Documento Tecnico do Qualis Periodicos.pdf`, Figura 6, p. 13.
+Imagem em `qualis-faixas-de-percentil.png` — **use ela no slide**, é fonte primária.
+
+| Estrato | Percentil | | Estrato | Percentil |
+|---|---|---|---|---|
+| **A1** | ≥ 87,5 | | **B1** | 37,5 – 50 |
+| **A2** | 75 – 87,5 | | **B2** | 25 – 37,5 |
+| **A3** | 62,5 – 75 | | **B3** | 12,5 – 25 |
+| **A4** | 50 – 62,5 | | **B4** | 0 – 12,5 |
 
 ---
 

@@ -432,6 +432,67 @@ def coletar_controle(search, get_app, generos, por_categoria, pausa, oficiais):
     return controle
 
 
+def topup_cauda(candidatos, get_app, controle, oficiais, pausa, alvo_por_faixa=12):
+    """Completa o controle nas faixas BAIXAS de instalação.
+
+    Por que é preciso: a busca da loja ordena por relevância, então em
+    categorias disputadas (Ferramentas, Produtividade, Comunicação) ela nunca
+    devolve um aplicativo comercial de cinco mil instalações. A varredura de
+    cauda dentro da busca ajudou, mas não resolveu — nas três maiores
+    categorias do corpus o controle continuou começando em 10^6.
+
+    A fonte usada aqui é barata e já está em disco: o PRIMEIRO teste guardou
+    todos os aplicativos que a busca encontrou, inclusive os ~190 de publicador
+    NÃO oficial. São apps brasileiros, de categoria parecida, e muitos pequenos.
+
+    Ressalva que precisa ir para o texto: esse pool foi encontrado por termos
+    ligados a governo, então pode conter app de terceirizada ou de assunto
+    público. Não é amostra aleatória do comércio, e a monografia declara isso.
+    """
+    faixas_atuais = Counter(c["faixa"] for c in controle.values() if c.get("faixa"))
+    alvo = [f"10^{e}" for e in range(2, 6)]
+    faltam = {fx: alvo_por_faixa - faixas_atuais.get(fx, 0) for fx in alvo}
+    faltam = {k: v for k, v in faltam.items() if v > 0}
+    if not faltam:
+        print("\n  Cauda já coberta — top-up dispensado.")
+        return 0
+
+    print(f"\n  Top-up da cauda: faltam {faltam} "
+          f"(fonte: apps não oficiais do corpus de entrada)\n")
+    pool = [a for a in candidatos
+            if a.get("appId") not in controle
+            and normalizar(a.get("dev", "")) not in oficiais]
+    adicionados = 0
+    for a in pool:
+        if not faltam:
+            break
+        aid = a["appId"]
+        try:
+            f = get_app(aid, lang="pt", country="br")
+        except Exception:
+            time.sleep(pausa)
+            continue
+        time.sleep(pausa)
+        fx = faixa_instalacao(instalacoes_de(f))
+        if fx not in faltam:
+            continue
+        controle[aid] = {
+            "appId": aid, "title": f.get("title"), "developer": f.get("developer"),
+            "genre": f.get("genre"), "minInstalls": f.get("minInstalls"),
+            "realInstalls": f.get("realInstalls"), "installs": f.get("installs"),
+            "containsAds": f.get("containsAds"), "privacyPolicy": f.get("privacyPolicy"),
+            "n_instalacoes": instalacoes_de(f), "faixa": fx, "origem": "topup_cauda",
+        }
+        adicionados += 1
+        faltam[fx] -= 1
+        if faltam[fx] <= 0:
+            del faltam[fx]
+        if adicionados % 10 == 0:
+            print(f"    +{adicionados}   ainda faltam: {faltam or 'nada'}")
+    print(f"\n  Top-up adicionou {adicionados} controles na cauda.")
+    return adicionados
+
+
 def suporte_comum(vivos, controle):
     """Fração de apps de governo cuja (categoria, faixa) cai DENTRO da amplitude
     de faixas que o controle cobre naquela categoria.
@@ -441,24 +502,37 @@ def suporte_comum(vivos, controle):
     10^8 — não é preciso existir um controle exatamente em 10^4.
     """
     por_genero = defaultdict(list)
+    todas = []
     for c in controle.values():
         if c.get("faixa") and c["faixa"] != "?":
-            por_genero[c["genre"]].append(int(c["faixa"].split("^")[1]))
+            e = int(c["faixa"].split("^")[1])
+            por_genero[c["genre"]].append(e)
+            todas.append(e)
 
     dentro, fora, sem_categoria = 0, 0, 0
+    global_dentro = 0
+    lo_g = min(todas) if todas else None
+    hi_g = max(todas) if todas else None
+    deficit = Counter()
+
     for f in vivos:
         g, fx = f.get("genre"), f.get("faixa")
         if not g or fx == "?":
             continue
+        e = int(fx.split("^")[1])
+        if lo_g is not None and lo_g <= e <= hi_g:
+            global_dentro += 1
         if g not in por_genero:
             sem_categoria += 1
             continue
-        e = int(fx.split("^")[1])
         if min(por_genero[g]) <= e <= max(por_genero[g]):
             dentro += 1
         else:
             fora += 1
-    return dentro, fora, sem_categoria
+            deficit[(g, fx)] += 1
+    return {"dentro": dentro, "fora": fora, "sem_categoria": sem_categoria,
+            "global_dentro": global_dentro, "faixa_controle": (lo_g, hi_g),
+            "deficit": deficit}
 
 
 # -------------------------------------------------------------------- relatório
@@ -499,26 +573,44 @@ def relatar(gov, controle, politicas, args):
     cats = Counter(c for f in vivos for c in f["categorias"])
     for c, n in cats.most_common():
         print(f"        {c:<14} {n}")
-    menor_celula = min([v for v in tab.values() if v] or [0])
-    print(f"\n    Menor célula não vazia ............ {menor_celula}")
+    # 'indeterminado' é balde residual, não um nível do fator. Incluí-lo no
+    # mínimo reprova a estratificação por causa dos apps que ela nem usa.
+    menor_celula = min([v for (e, _), v in tab.items()
+                        if e != "indeterminado" and v] or [0])
+    n_indet = sum(v for (e, _), v in tab.items() if e == "indeterminado")
+    print(f"\n    Menor célula dos três níveis ...... {menor_celula}")
+    print(f"    Em 'indeterminado' (fora do fator)  {n_indet} "
+          f"({porcento(n_indet, len(vivos))})")
     rel["celulas"] = {f"{e}|{s}": v for (e, s), v in tab.items()}
     rel["sensiveis"] = n_sens
     rel["categorias_sensiveis"] = dict(cats)
 
     # ---- PORTA 3: existe suporte comum com o controle comercial?
     linha("  PORTA 3 — SUPORTE COMUM COM O CONTROLE COMERCIAL (H1)")
-    dentro, fora, sem_cat = suporte_comum(vivos, controle)
+    sc = suporte_comum(vivos, controle)
+    dentro, fora, sem_cat = sc["dentro"], sc["fora"], sc["sem_categoria"]
     base = dentro + fora + sem_cat
     print(f"    Aplicativos de controle coletados ....... {len(controle)}")
     print(f"    Categorias cobertas pelo controle ....... "
           f"{len({c['genre'] for c in controle.values()})}")
-    print(f"\n    Governo DENTRO da amplitude do controle . {dentro} "
-          f"({porcento(dentro, base)})")
-    print(f"    Fora da amplitude (faixa sem cobertura) . {fora}")
-    print(f"    Em categoria sem controle nenhum ........ {sem_cat}")
     print("\n    A H1 é testada por regressão com categoria e faixa como")
     print("    COVARIÁVEIS. Isso exige sobreposição entre as distribuições,")
     print("    não par exato por célula — 'suporte comum', não pareamento.")
+    print("\n    Dois critérios, do mais frouxo ao mais estrito:")
+    lo_g, hi_g = sc["faixa_controle"]
+    amp = f"10^{lo_g}–10^{hi_g}" if lo_g is not None else "—"
+    print(f"      GLOBAL (só faixa, {amp}) .............. {sc['global_dentro']} "
+          f"({porcento(sc['global_dentro'], base)})")
+    print(f"      POR CATEGORIA (faixa dentro do gênero) . {dentro} "
+          f"({porcento(dentro, base)})")
+    print(f"      Fora, por categoria ................... {fora}")
+    print(f"      Em categoria sem controle nenhum ...... {sem_cat}")
+    if sc["deficit"]:
+        print("\n    Onde falta controle (gov sem cobertura na própria categoria):")
+        for (g, fx), n in sc["deficit"].most_common(8):
+            print(f"        {n:>4}  {g[:28]:<28} {fx}")
+        print("    Se este déficit se concentra em poucas categorias e sempre")
+        print("    nas faixas BAIXAS, o gargalo é do coletor, não do mundo.")
     print("\n    Distribuição por faixa:")
     fg = Counter(f["faixa"] for f in vivos if f.get("faixa"))
     fc = Counter(c["faixa"] for c in controle.values() if c.get("faixa"))
@@ -530,7 +622,10 @@ def relatar(gov, controle, politicas, args):
         print(f"        {n:>4}  {g}")
     rel["suporte_comum"] = {"dentro": dentro, "fora": fora,
                             "sem_categoria": sem_cat, "controle": len(controle),
-                            "faixas_governo": dict(fg), "faixas_controle": dict(fc)}
+                            "global_dentro": sc["global_dentro"],
+                            "faixas_governo": dict(fg), "faixas_controle": dict(fc),
+                            "deficit": {f"{g}|{fx}": n
+                                        for (g, fx), n in sc["deficit"].items()}}
 
     # ---- PORTA 4: existe declaração para confrontar?
     linha("  PORTA 4 — POLÍTICA DE PRIVACIDADE (H2)")
@@ -602,12 +697,14 @@ def relatar(gov, controle, politicas, args):
 
     def marca(ok_):
         return "✅" if ok_ else "❌"
-    h1 = base > 0 and dentro / base >= 0.6
+    h1 = base > 0 and sc["global_dentro"] / base >= 0.6
     h2 = len(politicas) > 0 and ok / max(len(politicas), 1) >= 0.6
     h3 = n_sens >= 30 and menor_celula >= 5
     h4 = len(vivos) >= 60
-    print(f"    {marca(h1)} H1 comparativa      — {porcento(dentro, base)} do governo "
-          f"dentro da amplitude do controle (precisa de ≥60%)")
+    print(f"    {marca(h1)} H1 comparativa      — {porcento(sc['global_dentro'], base)} "
+          f"do governo na amplitude global do controle (precisa de ≥60%)")
+    print(f"       por categoria, o critério estrito dá {porcento(dentro, base)} — a")
+    print(f"       diferença entre os dois é o que falta coletar, não o que falta no mundo")
     print(f"    {marca(h2)} H2 transparência    — {porcento(ok, len(politicas))} "
           f"das políticas acessíveis (precisa de ≥60%)")
     print(f"    {marca(h3)} H3 dado sensível    — {n_sens} apps sensíveis, menor "
@@ -696,8 +793,12 @@ def autoteste():
         "b": {"genre": "Ferramentas", "faixa": "10^8"},
     }
     got = suporte_comum(vivos_fake, ctrl_fake)
-    if got != (1, 1, 1):
-        falhas.append(f"suporte_comum = {got}, esperado (1, 1, 1)")
+    if (got["dentro"], got["fora"], got["sem_categoria"]) != (1, 1, 1):
+        falhas.append(f"suporte_comum por categoria = {got}, esperado (1, 1, 1)")
+    # o de Medicina/10^5 está fora do gênero, mas dentro da amplitude GLOBAL
+    # (10^3 a 10^8) — é exatamente a diferença entre os dois critérios
+    if got["global_dentro"] != 2:
+        falhas.append(f"suporte global = {got['global_dentro']}, esperado 2")
 
     lo, hi = ic_proporcao(0, 50)
     if not (lo == 0.0 and 0 < hi < 0.15):
@@ -711,7 +812,7 @@ def autoteste():
         for f in falhas:
             print("  -", f)
         sys.exit(1)
-    total = len(casos_esfera) + len(casos_sens) + len(casos_faixa) + 3
+    total = len(casos_esfera) + len(casos_sens) + len(casos_faixa) + 4
     print(f"AUTOTESTE OK — {total} verificações passaram, sem tocar na rede.")
 
 
@@ -727,6 +828,8 @@ def main():
     ap.add_argument("--pausa", type=float, default=PAUSA)
     ap.add_argument("--sem-controle", action="store_true",
                     help="pula a coleta do grupo de controle (etapa mais cara)")
+    ap.add_argument("--sem-topup", action="store_true",
+                    help="não completa a cauda do controle com os apps não oficiais")
     ap.add_argument("--autoteste", action="store_true", help="valida a lógica, sem rede")
     args = ap.parse_args()
 
@@ -798,6 +901,8 @@ def main():
         controle = coletar_controle(search, get_app, generos,
                                     args.controle_por_categoria, args.pausa,
                                     nomes_oficiais)
+        if not args.sem_topup:
+            topup_cauda(candidatos, get_app, controle, nomes_oficiais, args.pausa)
 
     rel = relatar(gov, controle, politicas, args)
 

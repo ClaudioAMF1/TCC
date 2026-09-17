@@ -13,9 +13,10 @@ verifica nada. Existem três proteções que o DONO DO DOMÍNIO precisa ligar:
     DMARC  a instrução para quem recebe: se falhar, faça o quê?
            none (entrega e avisa) < quarantine (spam) < reject (recusa)
 
-Domínio público sem DMARC em `reject` é tecnicamente falsificável. E golpe com
-"Receita Federal" ou "INSS" no remetente é o vetor de fraude mais comum contra
-o cidadão brasileiro.
+Domínio sem DMARC, ou com `p=none`, deixa a mensagem falsificada chegar na
+caixa de entrada. `quarantine` protege parcialmente: ela chega, mas no spam.
+Só `reject` recusa. E golpe com "Receita Federal" ou "INSS" no remetente é o
+vetor de fraude mais comum contra o cidadão brasileiro.
 
 O QUE ESTE TESTE DECIDE
 -----------------------
@@ -43,8 +44,8 @@ entrega, não toca em servidor de terceiro.
 
 DEPENDÊNCIA
 -----------
-    python3 -m venv .venv && source .venv/bin/activate
-    pip install dnspython
+Nenhuma obrigatória: usa o binário `dig`, que já vem no macOS e no Linux.
+Se o `dnspython` estiver instalado, é preferido por ser mais rápido.
 
 USO
 ---
@@ -136,6 +137,15 @@ FORNECEDORES = {
     "awsdns-01.org": "AWS", "awsdns.com": "AWS", "amazonaws.com": "AWS",
     "locaweb.com.br": "Locaweb", "uolhost.com.br": "UOL",
     "rnp.br": "RNP", "zimbra.com": "Zimbra",
+    # acrescentados depois da primeira rodada, em que apareceram como
+    # "próprio/outro" e poluíram a tabela de fornecedores
+    "akam.net": "Akamai", "akamaitech.net": "Akamai", "akadns.net": "Akamai",
+    "akamaiedge.net": "Akamai", "edgekey.net": "Akamai",
+    "azure-dns.com": "Azure DNS", "azure-dns.net": "Azure DNS",
+    "nsone.net": "NS1", "ultradns.net": "UltraDNS", "dynect.net": "Dyn",
+    "messagelabs.com": "Broadcom/Symantec", "trendmicro.com": "Trend Micro",
+    "mailcontrol.com": "Forcepoint", "pphosted.com": "Proofpoint",
+    "titan.email": "Titan", "kinghost.net": "KingHost",
 }
 
 
@@ -367,6 +377,8 @@ def coletar(dominio, consultor, sondar_dkim):
     d["tem_mx"] = bool(mx)
     d["fornecedor_ns"] = classificar_fornecedor(ns)
     d["fornecedor_mx"] = classificar_fornecedor(mx) if mx else "sem_mx"
+    d["auto_ns"] = auto_hospedado(dominio, ns)
+    d["auto_mx"] = auto_hospedado(dominio, mx)
 
     d["dkim_seletores"] = []
     if sondar_dkim:
@@ -383,7 +395,29 @@ def pct(k, n):
     return f"{100*k/n:.1f}%" if n else "—"
 
 
-def pureza_por_fornecedor(regs, campo_forn, minimo=3):
+def auto_hospedado(dominio: str, hosts) -> bool:
+    """O domínio opera o próprio serviço, em vez de contratar um terceiro?
+
+    Importa para a hipótese de herança: se a Prefeitura de X usa o DNS da
+    Celepar, a configuração é da Celepar — isso é herança. Se `sp.gov.br` usa
+    um servidor dentro do próprio `sp.gov.br`, dizer que ele "herdou de
+    sp.gov.br" é circular, e infla a concordância sem significar nada.
+    """
+    d = dominio.lower().strip(".")
+    for h in hosts or []:
+        h = (h or "").lower().strip(".")
+        if h == d or h.endswith("." + d):
+            return True
+    return False
+
+
+# Grupos que não são fornecedor de verdade e por isso não entram na conta:
+# 'sem_mx' junta domínios que sequer recebem e-mail — eles concordam em 100%
+# por definição, e sozinhos empurravam a média para cima.
+GRUPOS_DEGENERADOS = ("desconhecido", "sem_mx")
+
+
+def pureza_por_fornecedor(regs, campo_forn, minimo=3, so_terceiros=False):
     """Quanto a postura de um domínio é explicada por QUEM presta o serviço.
 
     Para cada fornecedor com ao menos `minimo` domínios, mede a fração que
@@ -398,8 +432,14 @@ def pureza_por_fornecedor(regs, campo_forn, minimo=3):
     def politica(r):
         return r["dmarc_politica"] if r.get("dmarc") else "ausente"
 
+    campo_auto = "auto_ns" if campo_forn == "fornecedor_ns" else "auto_mx"
+    if so_terceiros:
+        regs = [r for r in regs if not r.get(campo_auto)]
+    if not regs:
+        return 0, 0, [], 0
+
     base_cont = Counter(politica(r) for r in regs)
-    base = base_cont.most_common(1)[0][1] / len(regs) if regs else 0
+    base = base_cont.most_common(1)[0][1] / len(regs)
 
     grupos = defaultdict(list)
     for r in regs:
@@ -407,7 +447,9 @@ def pureza_por_fornecedor(regs, campo_forn, minimo=3):
 
     linhas, soma, total = [], 0, 0
     for forn, membros in grupos.items():
-        if len(membros) < minimo or forn.startswith("desconhecido"):
+        if len(membros) < minimo:
+            continue
+        if any(forn.startswith(g) for g in GRUPOS_DEGENERADOS):
             continue
         c = Counter(politica(m) for m in membros)
         dom, n = c.most_common(1)[0]
@@ -467,11 +509,19 @@ def relatar(regs, args):
         print(f"\n    ⚠ {len(parciais)} domínios têm pct<100: a política vale só para")
         print("      parte das mensagens. Ler só o 'p=' superestima a proteção.")
 
-    print("\n    Proteção efetiva contra falsificação (DMARC p=reject, pct=100):")
     efetiva = sum(1 for r in vivos
                   if r.get("dmarc") and r.get("dmarc_politica") == "reject"
                   and (r.get("dmarc_pct") or 100) == 100)
-    print(f"        {efetiva}/{n}  ({pct(efetiva, n)})  — o resto é falsificável")
+    nenhuma = sum(1 for r in vivos
+                  if not r.get("dmarc") or r.get("dmarc_politica") == "none")
+    print("\n    Nível de proteção efetiva:")
+    print(f"        {efetiva:>4}  ({pct(efetiva,n):>6})  recusa a mensagem falsificada")
+    print(f"        {n-efetiva-nenhuma:>4}  ({pct(n-efetiva-nenhuma,n):>6})  "
+          f"entrega no spam (proteção parcial)")
+    print(f"        {nenhuma:>4}  ({pct(nenhuma,n):>6})  NENHUMA — entrega na "
+          f"caixa de entrada")
+    print("      'quarantine' protege parcialmente: a mensagem chega, mas no spam.")
+    print("      Só 'none' e a ausência de DMARC deixam passar sem marcação.")
 
     print("\n  PORTA 3 — HÁ CONTRASTE ENTRE ESFERAS?")
     print("  " + "=" * 62)
@@ -488,18 +538,25 @@ def relatar(regs, args):
     print("    é herdada de quem presta o serviço de TI.\n")
     for campo, rotulo in (("fornecedor_ns", "quem opera o DNS"),
                           ("fornecedor_mx", "quem recebe o e-mail")):
-        base, media, linhas, cobertos = pureza_por_fornecedor(vivos, campo)
         print(f"    {rotulo.upper()}")
-        print(f"      Fornecedores com ≥3 domínios ... {len(linhas)} "
-              f"(cobrindo {cobertos} domínios)")
-        if linhas:
-            print(f"      Concordância dentro do fornecedor  {media:.0%}")
-            print(f"      Concordância no conjunto todo ...  {base:.0%}")
+        for so_t, etiqueta in ((False, "todos"), (True, "só quem contrata terceiro")):
+            base, media, linhas, cobertos = pureza_por_fornecedor(
+                vivos, campo, so_terceiros=so_t)
+            if not linhas:
+                print(f"      [{etiqueta}] sem fornecedor com ≥3 domínios")
+                continue
             delta = media - base
-            print(f"      Diferença ......................  {delta:+.0%}  "
-                  f"{'← sinal de herança' if delta >= 0.15 else ''}")
-            for forn, cnt, dom, p in linhas[:8]:
-                print(f"          {cnt:>3}  {forn[:34]:<34} {dom:<11} {p:.0%}")
+            print(f"      [{etiqueta}]  {len(linhas)} fornecedores, "
+                  f"{cobertos} domínios")
+            print(f"          dentro do fornecedor {media:.0%} · conjunto todo "
+                  f"{base:.0%} · diferença {delta:+.0%}"
+                  f"{'  ← sinal de herança' if delta >= 0.15 else ''}")
+            if not so_t:
+                for forn, cnt, dom, p in linhas[:8]:
+                    print(f"            {cnt:>3}  {forn[:32]:<32} {dom:<11} {p:.0%}")
+        print("      A linha 'só quem contrata terceiro' exclui domínios que")
+        print("      operam o próprio serviço. Dizer que sp.gov.br herdou a")
+        print("      configuração de sp.gov.br é circular e infla a medida.")
         print()
 
     # ------------------------------------------------------------- veredito
@@ -621,10 +678,33 @@ def autoteste():
     if parse_spf(parse_txt_dig('"v=spf1 include:a.com " "include:b.com ~all"')) != (True, "~"):
         f.append("SPF partido em dois pedaços não foi remontado")
 
+    casos_auto = [
+        ("sp.gov.br", ["ns1.sp.gov.br."], True),
+        ("sp.gov.br", ["sp.gov.br."], True),
+        ("curitiba.pr.gov.br", ["ns1.celepar.pr.gov.br."], False),
+        ("x.gov.br", ["ns1.notx.gov.br."], False),
+        ("x.gov.br", [], False),
+    ]
+    for dom, hosts, esp in casos_auto:
+        got = auto_hospedado(dom, hosts)
+        if got != esp:
+            f.append(f"auto_hospedado({dom!r},{hosts}) = {got}, esperado {esp}")
+
+    # grupo degenerado nao pode entrar na conta de pureza
+    degen = ([{"dmarc": False, "dmarc_politica": None, "fornecedor_mx": "sem_mx",
+               "auto_mx": False}] * 5
+             + [{"dmarc": True, "dmarc_politica": "none", "fornecedor_mx": "Google",
+                 "auto_mx": False}] * 3)
+    _b, _m, linhas_d, _c = pureza_por_fornecedor(degen, "fornecedor_mx")
+    if any(l[0] == "sem_mx" for l in linhas_d):
+        f.append("grupo degenerado 'sem_mx' entrou na conta de pureza")
+
     # pureza: dois fornecedores perfeitamente homogêneos, cada um com política
     # própria -> pureza por fornecedor 100%, base 50%
-    regs = ([{"dmarc": True, "dmarc_politica": "reject", "fornecedor_ns": "A"}] * 4
-            + [{"dmarc": True, "dmarc_politica": "none", "fornecedor_ns": "B"}] * 4)
+    regs = ([{"dmarc": True, "dmarc_politica": "reject", "fornecedor_ns": "A",
+              "auto_ns": False}] * 4
+            + [{"dmarc": True, "dmarc_politica": "none", "fornecedor_ns": "B",
+                "auto_ns": False}] * 4)
     base, media, linhas, cob = pureza_por_fornecedor(regs, "fornecedor_ns")
     if not (abs(base - 0.5) < 1e-9 and abs(media - 1.0) < 1e-9 and len(linhas) == 2):
         f.append(f"pureza = base {base}, media {media}, {len(linhas)} linhas")
@@ -635,7 +715,7 @@ def autoteste():
             print("  -", x)
         sys.exit(1)
     total = (len(casos_spf) + len(casos_dmarc) + len(casos_esfera)
-             + len(casos_forn) + len(casos_dig) + 2)
+             + len(casos_forn) + len(casos_dig) + len(casos_auto) + 3)
     print(f"AUTOTESTE OK — {total} verificações passaram, sem tocar na rede.")
 
 

@@ -266,11 +266,12 @@ s.addNotes("O terceiro cartão é o diferencial: não é hipótese, é medida pr
 // =====================================================================
 s = pres.addSlide();
 tituloSlide(s, "Métricas do veículo e Qualis", 7);
-cartao(s, M, 1.02, (W - M * 2 - 0.25) / 2, 1.62, "OS TRÊS OBRIGATÓRIOS — todos levantados em 17/09/2026",
+cartao(s, M, 1.02, (W - M * 2 - 0.25) / 2, 1.85, "OS TRÊS OBRIGATÓRIOS — todos levantados em 17/09/2026",
   "1 · h5 = 90   (mediana 146)   posição 5 de 20\n" +
+  "     (posição 19 = AsiaCCS, h5 41 — outro evento; conferido)\n" +
   "2 · Qualis = A1   (ver o limiar ao lado)\n" +
   "3 · CORE = A*   ICORE2026", "1E6B3A");
-cartao(s, M, 2.8, (W - M * 2 - 0.25) / 2, 2.05, "Por que A1, e não A2",
+cartao(s, M, 3.02, (W - M * 2 - 0.25) / 2, 1.83, "Por que A1, e não A2",
   "Com N=20 o percentil dá 75 (A2) — mas 20 é lista TRUNCADA, não população. Esse 75 é " +
   "PISO: universo maior só empurra para cima.\n\n" +
   "A1 exige percentil 87,5.  (N-5)/N >= 0,875  ->  N >= 40.\n" +

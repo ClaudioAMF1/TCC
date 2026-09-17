@@ -162,6 +162,12 @@ aparecer, em voz alta e no slide.
 > conferências, a CCS é a **terceira**, atrás apenas da USENIX Security e da
 > IEEE Symposium on Security and Privacy.
 >
+> E confirmei que é o veículo certo, porque a mesma lista traz na posição 19 a ACM
+> Asia Conference on Computer and Communications Security — a AsiaCCS, que é um
+> evento diferente, com h5 de 41. Os nomes são próximos, então cliquei no índice para
+> ver os artigos que o compõem e confirmar que são do CCS. O CORE também aponta para
+> a entrada do CCS no DBLP, distinta da entrada da AsiaCCS.
+>
 > **Segundo, o Qualis correspondente.** Aqui há uma conversão a fazer, porque o
 > Qualis trabalha com percentil e não com h5 bruto — e a conversão tem uma armadilha
 > que vale explicitar.

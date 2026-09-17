@@ -46,6 +46,7 @@ dados/          Saída bruta das coletas (não versionado — ver .gitignore)
 | `03-temas-cyber.md` | Temas em cibersegurança compatíveis com o orientador pretendido |
 | `04-avaliacao-da-area.md` | Avaliação honesta da área como escolha de TCC + temas de menor custo de tempo |
 | `05-teste-genealogia-malware.md` | Teste de viabilidade da genealogia do malware bancário brasileiro e por que ele ficou inconclusivo |
+| `06-temas-de-pergunta-simples.md` | Quatro temas cuja pergunta cabe numa frase, com custo, armadilha e teste de viabilidade de cada um |
 
 ### `desenhos/`
 Desenhos experimentais completos — problema de pesquisa nas três partes exigidas pela
@@ -56,7 +57,7 @@ ameaças à validade e divisão entre Capstone I e II.
 |---|---|---|
 | `N3-proposta-formal.md` | **Proposta que vai ao orientador** — quadrante, hipóteses, método, ética, pendências formais | ⭐ **tema escolhido** |
 | `N3-apps-governamentais.md` | Desenho experimental detalhado do mesmo tema | ✅ corpus verificado (396 apps) |
-| `N3-acesso-androzoo.md` | Texto da solicitação de acesso ao AndroZoo, notas e plano B | ⬜ a enviar |
+| `N3-acesso-androzoo.md` | Solicitação de acesso ao AndroZoo, obrigações de uso e citação | ✅ concedido 17/09 |
 | `T1-seguranca-codigo-llm.md` | Segurança do código gerado por LLM + validade do oráculo | ⏸️ forte, mas sem encaixe com o orientador |
 | `T3-lgpd-sites-saude.md` | LGPD Art. 11 e rastreamento em sites de saúde | ⏸️ viável, pouco técnico |
 
@@ -122,6 +123,7 @@ nenhum explora falha, nenhum baixa conteúdo de área autenticada.
 | `teste_viabilidade_n3.py` | Enumera aplicativos governamentais na Play Store por termo e por catálogo de publicador |
 | `teste_viabilidade_n3_robusto.py` | Mede a **porta de cada hipótese** antes de baixar APK: pareamento (H1), política de privacidade acessível (H2), povoamento das células (H3), potência estatística, e um sinal preliminar da variável dependente |
 | `teste_viabilidade_malware.py` | Consulta metadados de famílias de malware bancário no MalwareBazaar e mede compartilhamento de imphash entre famílias, com grupo de controle não brasileiro |
+| `teste_viabilidade_s3.py` | Consulta SPF, DKIM, DMARC, MX e NS de domínios públicos brasileiros e mede se há **variação** a explicar e se a postura é herdada do fornecedor de TI |
 | `gera_deck_seminario.js` | Gera o deck do seminário de análise de artigo |
 
 ### Como rodar
@@ -152,6 +154,14 @@ python3 scripts/teste_viabilidade_malware.py
 
 > Esse script lê **apenas metadados** — hashes, tipo de arquivo, data e assinatura.
 > Nenhuma amostra de malware é baixada.
+
+O teste do S3 (falsificação de e-mail) não exige chave nenhuma — só consulta de DNS:
+
+```bash
+pip install dnspython
+python3 scripts/teste_viabilidade_s3.py --autoteste   # valida a lógica, sem rede
+python3 scripts/teste_viabilidade_s3.py               # ~2 min
+```
 
 O script do Shodan exige uma chave em variável de ambiente:
 
@@ -189,6 +199,9 @@ python3 scripts/teste_viabilidade_n1.py --apenas-contagem
 - **Orientador.** A apresentação das linhas de pesquisa já ocorreu; o termo de aceite
   precisa ser formalizado (Art. 10 e Art. 15), e é preciso confirmar a elegibilidade do
   professor pretendido junto à Coordenação (Art. 13, §1º e §6º).
-- **Acesso ao AndroZoo** (`androzoo.uni.lu`) — é o gargalo de prazo, o pedido leva dias.
+- ~~**Acesso ao AndroZoo.**~~ Concedido em 17/09, menos de 6h após o pedido. A chave é de
+  **uso individual** e vive só em variável de ambiente; o uso do acervo **obriga a citar**
+  dois trabalhos — ver `desenhos/N3-acesso-androzoo.md`.
+- **Piloto de 20 aplicativos** ponta a ponta pelos três detectores — entrega 6 do Capstone I.
 - **Modalidade.** Monografia é o caminho de menor risco. Artigo científico depende de
   aceite em periódico Qualis B2, o que não está sob controle do aluno.

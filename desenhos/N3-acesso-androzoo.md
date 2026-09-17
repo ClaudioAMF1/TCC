@@ -5,7 +5,38 @@
 substitui o APK sem aviso, e um corpus coletado direto dela não pode ser reconstruído por
 terceiros. É também o gargalo de prazo: a concessão leva dias ou semanas.
 
-**Estado:** ⬜ não enviado · ⬜ enviado em ____ · ⬜ concedido em ____
+**Estado:** ✅ **concedido em 17/09/2026**, menos de seis horas após o envio.
+Resposta de Marco Alecci (Universidade de Luxemburgo).
+
+---
+
+## 0. Obrigações que vieram junto da concessão
+
+**A chave é de uso individual.** O e-mail de concessão é explícito: colegas,
+alunos e orientadores que queiram acesso precisam **cada um enviar seu próprio
+pedido**, do respectivo e-mail institucional. Compartilhar a chave viola a
+condição de uso. Se o orientador quiser acesso, ele pede a dele.
+
+**A chave nunca entra no repositório.** Só variável de ambiente:
+
+```bash
+export ANDROZOO_API_KEY="..."
+```
+
+O `.gitignore` já cobre `.env`, `*.key`, `secrets*` e `dados/`.
+
+**Citação obrigatória.** O uso do acervo exige citar dois trabalhos, indicados na
+concessão:
+
+| Referência | DOI |
+|---|---|
+| Allix, Bissyandé, Klein & Le Traon. *AndroZoo: Collecting Millions of Android Apps for the Research Community.* MSR 2016. | `10.1145/2901739.2903508` |
+| Trabalho sobre os **metadados** do acervo — exigido porque este TCC usa metadados, não só binários. Confirmar título e autores em `dl.acm.org/doi/10.1145/3643991.3644863` antes de citar. | `10.1145/3643991.3644863` |
+
+> O segundo está registrado aqui pelo DOI de propósito: a referência completa
+> precisa ser conferida na fonte, não reconstruída de memória.
+
+**Documentação da API:** `androzoo.uni.lu/api_doc`
 
 ---
 
@@ -86,7 +117,11 @@ Computer Science — Instituto Brasiliense de Direito Público (IDP)
 
 ---
 
-## 4. Plano B, se o acesso não sair
+## 4. Plano B — não é mais necessário
+
+Mantido como registro do raciocínio. O acesso saiu, então a limitação abaixo
+**não** entra na monografia: o corpus é fixável por hash e reconstruível por
+terceiros, como o desenho previa.
 
 O desenho **não morre** sem AndroZoo — fica mais frágil em um ponto específico, e o texto
 precisa dizer qual.
@@ -102,9 +137,9 @@ validade da monografia.
 
 ---
 
-## 5. Depois de enviar
+## 5. Próximo passo
 
-Registrar a data aqui no topo. Se não houver resposta em duas semanas, reenviar uma vez,
-com o orientador como remetente — e começar o plano B em paralelo, sem esperar. O prazo do
-Capstone I é 03/12; o piloto de 20 aplicativos não pode ficar bloqueado à espera de
-resposta de terceiro.
+Com o acesso em mãos, o gargalo de prazo do Capstone I deixou de existir. O que
+vem agora é o **piloto de 20 aplicativos** (entrega 6 da Seção 9 da proposta):
+baixar por hash, passar pelos três detectores e produzir os números preliminares
+de concordância.

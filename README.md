@@ -57,7 +57,7 @@ ameaças à validade e divisão entre Capstone I e II.
 |---|---|---|
 | `N3-proposta-formal.md` | **Proposta que vai ao orientador** — quadrante, hipóteses, método, ética, pendências formais | ⭐ **tema escolhido** |
 | `N3-apps-governamentais.md` | Desenho experimental detalhado do mesmo tema | ✅ corpus verificado (396 apps) |
-| `N3-acesso-androzoo.md` | Texto da solicitação de acesso ao AndroZoo, notas e plano B | ⬜ a enviar |
+| `N3-acesso-androzoo.md` | Solicitação de acesso ao AndroZoo, obrigações de uso e citação | ✅ concedido 17/09 |
 | `T1-seguranca-codigo-llm.md` | Segurança do código gerado por LLM + validade do oráculo | ⏸️ forte, mas sem encaixe com o orientador |
 | `T3-lgpd-sites-saude.md` | LGPD Art. 11 e rastreamento em sites de saúde | ⏸️ viável, pouco técnico |
 
@@ -190,6 +190,9 @@ python3 scripts/teste_viabilidade_n1.py --apenas-contagem
 - **Orientador.** A apresentação das linhas de pesquisa já ocorreu; o termo de aceite
   precisa ser formalizado (Art. 10 e Art. 15), e é preciso confirmar a elegibilidade do
   professor pretendido junto à Coordenação (Art. 13, §1º e §6º).
-- **Acesso ao AndroZoo** (`androzoo.uni.lu`) — é o gargalo de prazo, o pedido leva dias.
+- ~~**Acesso ao AndroZoo.**~~ Concedido em 17/09, menos de 6h após o pedido. A chave é de
+  **uso individual** e vive só em variável de ambiente; o uso do acervo **obriga a citar**
+  dois trabalhos — ver `desenhos/N3-acesso-androzoo.md`.
+- **Piloto de 20 aplicativos** ponta a ponta pelos três detectores — entrega 6 do Capstone I.
 - **Modalidade.** Monografia é o caminho de menor risco. Artigo científico depende de
   aceite em periódico Qualis B2, o que não está sob controle do aluno.

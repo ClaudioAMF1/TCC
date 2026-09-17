@@ -4,10 +4,18 @@ Repositório de trabalho do meu Trabalho de Conclusão de Curso em Ciência da C
 no IDP. Reúne o material da disciplina, a busca pelo tema, os testes de viabilidade que
 foram feitos e os scripts que os produziram.
 
-**Estado atual:** **tema definido — N3, rastreamento em aplicativos móveis governamentais
-brasileiros.** Quatro candidatos foram testados empiricamente; três caíram com evidência e
-um sobreviveu. A proposta formal para o orientador está em
-`desenhos/N3-proposta-formal.md`. Ver a Seção 3.
+**Estado atual: dois finalistas.** Seis temas foram testados empiricamente antes de
+qualquer um virar desenho. Três caíram com evidência, um ficou inconclusivo, e **dois
+passaram**:
+
+| | Tema | Situação |
+|---|---|---|
+| **N3** | Rastreamento por terceiros em apps móveis governamentais | ✅ 4 portas abertas · AndroZoo concedido · achado próprio |
+| **S3** | Falsificação de e-mail em domínios públicos | ✅ 4 portas abertas · 3 achados · hipótese principal caiu |
+
+A proposta formal do N3 está em `desenhos/N3-proposta-formal.md`; o registro do S3 em
+`desenhos/S3-falsificacao-email.md`. O seminário de 29/09 está sendo preparado **com o
+N3**, que é o mais adiantado. Ver a Seção 3.
 
 ---
 
@@ -32,9 +40,15 @@ dados/          Saída bruta das coletas (não versionado — ver .gitignore)
 | `listas/` | Listas de exercícios da disciplina e guias de estudo correspondentes |
 
 ### `seminario/`
+Atividade de 29/09 e 01/10, 15 minutos, **4 dos 6 pontos da AV1**. Preparada com o **N3**.
+
 | Arquivo | Conteúdo |
 |---|---|
-| `plano-do-seminario.md` | Estratégia, artigo recomendado, planilha de levantamento de métricas, roteiro dos 15 min e formato da análise de estrutura |
+| `plano-do-seminario.md` | Estratégia: por que este artigo, a tensão entre recência e citações, a tabela Qualis |
+| `roteiro-falado.md` | **O que dizer, slide a slide**, com os números do N3 já no texto |
+| `protocolo-de-busca.md` | O que registrar **enquanto** busca — o slide 4 é impossível de reconstruir depois — e a planilha de métricas |
+| `analise-da-estrutura.md` | Formulário dos seis blocos, a preencher lendo o artigo. Vale 5 dos 15 minutos |
+| `seminario-analise-de-artigo.pptx` | Deck de 15 slides. O que está em âmbar é o que só você pode preencher |
 | `qualis-faixas-de-percentil.png` | Figura 6 do Documento Técnico: percentil → estrato |
 | `material-fornecido/` | PDFs disponibilizados pela professora |
 
@@ -55,11 +69,12 @@ ameaças à validade e divisão entre Capstone I e II.
 
 | Arquivo | Tema | Situação |
 |---|---|---|
-| `N3-proposta-formal.md` | **Proposta que vai ao orientador** — quadrante, hipóteses, método, ética, pendências formais | ⭐ **tema escolhido** |
+| `N3-proposta-formal.md` | **Proposta que vai ao orientador** — quadrante, hipóteses, método, ética, pendências formais | ⭐ **finalista** |
 | `N3-apps-governamentais.md` | Desenho experimental detalhado do mesmo tema | ✅ corpus verificado (396 apps) |
 | `N3-acesso-androzoo.md` | Solicitação de acesso ao AndroZoo, obrigações de uso e citação | ✅ concedido 17/09 |
-| `T1-seguranca-codigo-llm.md` | Segurança do código gerado por LLM + validade do oráculo | ⏸️ forte, mas sem encaixe com o orientador |
-| `T3-lgpd-sites-saude.md` | LGPD Art. 11 e rastreamento em sites de saúde | ⏸️ viável, pouco técnico |
+| `S3-falsificacao-email.md` | **Segundo finalista** — SPF/DKIM/DMARC no setor público, os três achados e a hipótese que caiu | ⭐ **finalista** |
+| `arquivados/T1-seguranca-codigo-llm.md` | Segurança do código gerado por LLM | ⏸️ forte, sem encaixe com o orientador |
+| `arquivados/T3-lgpd-sites-saude.md` | LGPD Art. 11 em sites de saúde | ⏸️ viável, pouco técnico |
 
 ### `descartados/`
 | Arquivo | Por que caiu |
@@ -103,10 +118,16 @@ experimental. Os resultados:
 | **N3** — apps móveis governamentais | Busca e expansão por catálogo na Play Store | ✅ **Confirmado.** 396 aplicativos de 71 publicadores públicos distintos, três esferas representadas, publicador identificado na origem. |
 | **N3** — segunda rodada, por hipótese | Seis portas medidas antes de baixar qualquer APK | ✅ **As quatro hipóteses têm instrumento.** Menor célula de esfera 35; 152 apps com dado do Art. 11; 92,4% do corpus dentro da amplitude do controle; 81,6% das políticas de privacidade acessíveis; menor diferença detectável de 5,1 p.p. E um achado: **0 de 396 apps de governo exibem anúncio, contra 33,2% do controle comercial.** |
 | **Genealogia do malware bancário BR** | imphash de 1.764 amostras brasileiras × 2.104 de controle, no MalwareBazaar | ⚠️ **Inconclusivo.** O rótulo de família marca a campanha, não o payload: 85% do acervo brasileiro são containers (zip/iso/lnk/msi), onde imphash não existe. Testar de verdade exigiria desempacotar malware vivo em VM isolada. Detalhes em `temas/05-teste-genealogia-malware.md`. |
+| **S3** — falsificação de e-mail no setor público | SPF, DKIM, DMARC, MX e NS de 121 domínios públicos | ✅ **Confirmado, com ressalva.** 81,8% têm DMARC, mas só **18,2% recusam** a mensagem falsificada — adotaram e pararam antes de proteger. O estadual é o pior estrato. E **45% da amostra tem o correio institucional na Microsoft ou no Google**. A hipótese de herança por fornecedor **não sobreviveu** ao corte de circularidade. Detalhes em `desenhos/S3-falsificacao-email.md`. |
 
-Os dois descartes são material de TCC, não tempo perdido: sustentam a seção de metodologia
-e demonstram a postura que as aulas 04 a 08 cobram — hipótese falsificável, verificação
+Os descartes são material de TCC, não tempo perdido: sustentam a seção de metodologia e
+demonstram a postura que as aulas 04 a 08 cobram — hipótese falsificável, verificação
 empírica, disposição de abandonar o que não se sustenta.
+
+**Três correções de instrumento ficaram registradas**, e valem por si: em todas, o número
+agregado dizia "inviável" enquanto a distribuição por trás dele dizia "erro de medida".
+O casamento por substring (`pix` em `capixaba`, `sus` em `Direct Cursus`), o imphash medido
+sobre containers em vez de binários, e a auto-hospedagem contada como fornecedor terceiro.
 
 ---
 
@@ -119,7 +140,6 @@ nenhum explora falha, nenhum baixa conteúdo de área autenticada.
 |---|---|
 | `teste_viabilidade_n1.py` | Consulta o Shodan (contagens e facetas) para dimensionar a exposição de ICS no Brasil |
 | `ct_direto.py` | Lê os logs de Certificate Transparency direto pela API padrão (RFC 6962) e procura imitação de marca brasileira |
-| `teste_viabilidade_ct.py` | Versão anterior, via crt.sh — mantida como registro; o crt.sh se mostrou instável |
 | `teste_viabilidade_n3.py` | Enumera aplicativos governamentais na Play Store por termo e por catálogo de publicador |
 | `teste_viabilidade_n3_robusto.py` | Mede a **porta de cada hipótese** antes de baixar APK: pareamento (H1), política de privacidade acessível (H2), povoamento das células (H3), potência estatística, e um sinal preliminar da variável dependente |
 | `teste_viabilidade_malware.py` | Consulta metadados de famílias de malware bancário no MalwareBazaar e mede compartilhamento de imphash entre famílias, com grupo de controle não brasileiro |

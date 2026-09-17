@@ -2,49 +2,53 @@
 
 **Datas:** 29/09 e 01/10/2026 · ordem alfabética · **15 minutos** por apresentação
 **Peso:** 4 dos 6 pontos da AV1 (a Lista 01 vale 2) — é a maior nota do bimestre
-**Hoje:** 15/09 → **duas semanas**
+**Tema assumido:** **N3** — rastreamento por terceiros em apps móveis governamentais
+
+> **Este arquivo é a estratégia.** A execução está em três arquivos irmãos:
+> `protocolo-de-busca.md` (o que registrar enquanto busca), `roteiro-falado.md`
+> (o que dizer, slide a slide) e `analise-da-estrutura.md` (o formulário a
+> preencher lendo o artigo).
 
 ---
 
-## 1. O problema do tema indefinido — e como resolvê-lo
+## 1. O tema está resolvido
 
-A atividade exige justificar a relevância do artigo **para o seu TCC**. Você ainda não tem
-tema fechado, só a área. Três saídas possíveis:
+A versão anterior deste plano tratava o tema como indefinido e recomendava
+**assumir** o N3 como hipótese de trabalho. Isso não é mais necessário: o N3 foi
+verificado empiricamente e tem resultado próprio.
 
-| Saída | Avaliação |
+| O que se sabe hoje sobre o N3 | |
 |---|---|
-| Escolher um artigo genérico de cibersegurança | ❌ A justificativa fica vaga. "É da minha área" não é critério. |
-| Esperar fechar o tema antes de escolher o artigo | ❌ Duas semanas. Não dá. |
-| **Assumir o candidato mais forte como tema de trabalho e escolher o artigo que é o precedente metodológico dele** | ✅ |
+| Corpus | **396** aplicativos, **71** publicadores públicos distintos, três esferas |
+| Dado sensível (Art. 11) | **152** apps — saúde 125, previdência 28, biometria 17, assistência 5 |
+| Grupo de controle | suporte comum de **92,4%** com comerciais pareados |
+| Declaração | **81,6%** das políticas de privacidade acessíveis, 99,7% em HTML |
+| Potência | menor diferença detectável de **5,1 pontos percentuais** |
+| Fonte de APKs | **AndroZoo concedido** em 17/09 |
+| Achado próprio | **0 de 396** apps de governo exibem anúncio, contra **33,2%** do controle |
 
-### Por que a terceira funciona
-
-O `N3 — rastreadores em apps móveis governamentais` é o único candidato com **corpus
-verificado**: 396 aplicativos de 71 publicadores públicos distintos. Assumi-lo como tema de
-trabalho não é chute; é a conclusão de um processo de teste documentado.
-
-E há uma segunda camada: **o artigo escolhido é relevante mesmo que o tema mude.** O que
-você vai reaproveitar não é o objeto estudado, é o **método** — análise estática de APKs em
-escala, detecção de SDKs de rastreamento e confronto entre o comportamento observado e o
-que o app declara. Esse método serve a quase qualquer tema de medição em cibersegurança.
+**Existe um segundo finalista** (`../desenhos/S3-falsificacao-email.md`), mas o
+seminário vai com o N3 porque é o mais adiantado — e porque o método do artigo
+escolhido se aproveita nos dois: análise estática em escala, detecção de SDKs de
+terceiros, e confronto entre o comportamento observado e o que o app declara.
 
 ### O diferencial que quase ninguém vai ter
 
-Você tem **dois temas testados e rejeitados com dados**:
+Você tem **três temas testados e rejeitados com dados**, não com opinião:
 
-- **N1 (infraestrutura crítica exposta):** descartado porque os mesmos hosts respondem em
-  Modbus, IEC-104 e EtherNet/IP simultaneamente — comportamento de honeypot e de nuvem, não
-  de equipamento industrial. A variável independente era inobservável.
-- **CT (abuso de marca em Certificate Transparency):** descartado porque, em 20.007 entradas
-  de log, não apareceu nenhuma imitação real — phishing moderno raramente põe a marca no
-  domínio, o que impõe teto de recall por construção.
+- **N1 (infraestrutura crítica exposta):** os mesmos hosts respondem em Modbus,
+  IEC‑104 e EtherNet/IP ao mesmo tempo — honeypot e nuvem, não equipamento
+  industrial. A variável independente era inobservável.
+- **CT (abuso de marca):** 20.007 entradas de log, zero imitações reais. Phishing
+  moderno raramente põe a marca no domínio: teto de recall por construção.
+- **Genealogia de malware:** o rótulo de família marca a campanha, não o payload.
+  85% do acervo brasileiro são containers, onde o imphash nem existe.
 
-Gaste **30 segundos** disso no slide de justificativa. É demonstração direta do que a
-Aula 04 chama de maturidade em pesquisa e do que a Aula 07 chama de evitar o fundamento
-vazio. Numa sala de apresentações de 15 minutos, é o tipo de coisa que distingue.
+E **três correções de instrumento** em que o número agregado dizia "inviável"
+enquanto a distribuição por trás dizia "erro de medida".
 
-> ⚠️ Antes de fechar: **alinhe com o orientador.** Se ele apontar outra direção, troque o
-> artigo — ainda há tempo. O que não dá é chegar no dia 29 sem tema assumido.
+Gaste **um minuto** disso no slide 3. É demonstração direta do que a Aula 04 chama
+de maturidade em pesquisa e do que a Aula 07 chama de evitar o fundamento vazio.
 
 ---
 

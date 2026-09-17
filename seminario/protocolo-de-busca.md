@@ -97,7 +97,7 @@ Cada célula precisa de **valor + data**. Indicador muda; número sem data não 
 | | Métrica | Valor | Data | Onde consultei |
 |---|---|---|---|---|
 | ✅ | **Citações — ACM DL** | **42** | 17/09/2026 | `dl.acm.org/doi/10.1145/3548606.3560564` |
-| ☐ | Citações — Scopus | | | via portal CAPES → Buscar base |
+| ✅ | **Citações — Scopus** | **52** | 17/09/2026 | Scopus via CAFe, busca `DOI 10.1145/3548606.3560564` |
 | ☐ | Citações — Google Scholar | | | busca pelo título |
 | ✅ | Downloads — ACM DL | 1.539 | 17/09/2026 | mesma tela |
 | ✅ | Ano de publicação | 2022 (07/11) | | página do artigo |
@@ -120,9 +120,40 @@ Cada célula precisa de **valor + data**. Indicador muda; número sem data não 
 > artigo original, não revisão — exatamente o que o item 1 do enunciado exige. Vale
 > mencionar: é a própria base classificando, não interpretação sua.
 
-> As três bases vão divergir. **Isso não é erro** — elas indexam conjuntos
-> diferentes. Reportar a divergência, em vez de escolher o número maior, é uma
-> observação metodológica que rende ponto.
+### A divergência entre bases — já medida
+
+| Base | Citações | Data |
+|---|---|---|
+| ACM Digital Library | **42** | 17/09/2026 |
+| Scopus | **52** | 17/09/2026 |
+| Google Acadêmico | *falta* | |
+
+**O Scopus conta 10 a mais que a própria editora do artigo.** Não é erro de
+nenhuma das duas: a ACM conta o que está indexado no acervo da ACM, e o Scopus
+indexa também IEEE, Springer, Elsevier e periódicos fora da ACM. Um artigo citado
+por um trabalho publicado na IEEE aparece no Scopus e não aparece na ACM DL.
+
+**Diga os dois números com a data, e explique a diferença.** Escolher o maior sem
+dizer de onde veio é o erro que esse item existe para pegar. A expectativa é que o
+Google Acadêmico venha ainda mais alto, porque indexa preprints, teses e relatórios
+que as outras duas ignoram — se vier, isso confirma o padrão.
+
+### O Scopus também confirmou dois dados do item 2
+
+| | |
+|---|---|
+| Tipo de documento | **Conference Paper** |
+| Subject area | Computer Science |
+| Source | Proceedings of the ACM Conference on Computer and Communications Security |
+
+**"Conference Paper"** é a terceira fonte independente confirmando que o ramo
+correto do item 2 é o de conferência — junto com a etiqueta `RESEARCH-ARTICLE` do
+ACM e a entrada no CORE.
+
+E note o nome da fonte no Scopus: *Proceedings of the ACM Conference on Computer
+and Communications Security*. É a **quarta** variação do nome do mesmo veículo
+(Scholar: *ACM Symposium*; ACM: *ACM SIGSAC Conference*; CORE: *ACM Conference*).
+Reforça por que a verificação de identidade do veículo era necessária.
 
 ---
 

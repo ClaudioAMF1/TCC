@@ -100,6 +100,7 @@ experimental. Os resultados:
 | **N1** — ICS exposta no Brasil | Contagem e facetas no Shodan | ❌ **Descartado.** Os mesmos hosts respondem em Modbus, IEC-104 e EtherNet/IP ao mesmo tempo — comportamento de honeypot e de nuvem, não de equipamento industrial. O conjunto confirmado está atrás de provedores de acesso, ocultando o operador. |
 | **CT** — abuso de marca em Certificate Transparency | 20 mil entradas de log, casamento por token | ❌ **Descartado.** Zero imitações reais. Phishing moderno raramente põe a marca no domínio, o que impõe teto de recall por construção. |
 | **N3** — apps móveis governamentais | Busca e expansão por catálogo na Play Store | ✅ **Confirmado.** 396 aplicativos de 71 publicadores públicos distintos, três esferas representadas, publicador identificado na origem. |
+| **N3** — segunda rodada, por hipótese | Seis portas medidas antes de baixar qualquer APK | ✅ **As quatro hipóteses têm instrumento.** Menor célula de esfera 35; 152 apps com dado do Art. 11; 92,4% do corpus dentro da amplitude do controle; 81,6% das políticas de privacidade acessíveis; menor diferença detectável de 5,1 p.p. E um achado: **0 de 396 apps de governo exibem anúncio, contra 33,2% do controle comercial.** |
 | **Genealogia do malware bancário BR** | imphash de 1.764 amostras brasileiras × 2.104 de controle, no MalwareBazaar | ⚠️ **Inconclusivo.** O rótulo de família marca a campanha, não o payload: 85% do acervo brasileiro são containers (zip/iso/lnk/msi), onde imphash não existe. Testar de verdade exigiria desempacotar malware vivo em VM isolada. Detalhes em `temas/05-teste-genealogia-malware.md`. |
 
 Os dois descartes são material de TCC, não tempo perdido: sustentam a seção de metodologia
@@ -180,8 +181,11 @@ python3 scripts/teste_viabilidade_n1.py --apenas-contagem
 ## 6. O que falta
 
 - ~~**Tema definitivo.**~~ Definido: **N3**. Proposta formal em `desenhos/N3-proposta-formal.md`.
-- **Rodar o teste robusto** (`scripts/teste_viabilidade_n3_robusto.py`) e levar os números
-  das seis portas junto da proposta.
+- ~~**Rodar o teste robusto.**~~ Rodado em 17/09: as quatro hipóteses têm instrumento.
+- **Conferir à mão** as 43 políticas que deram `403` e `302` — são bloqueio de agente e
+  redirecionamento, não ausência de documento. Eleva a taxa da H2.
+- **Revisar 30 linhas ao acaso** da planilha pré-classificada. A taxa de correção mede o
+  erro do classificador e vira número da seção de ameaças à validade.
 - **Orientador.** A apresentação das linhas de pesquisa já ocorreu; o termo de aceite
   precisa ser formalizado (Art. 10 e Art. 15), e é preciso confirmar a elegibilidade do
   professor pretendido junto à Coordenação (Art. 13, §1º e §6º).

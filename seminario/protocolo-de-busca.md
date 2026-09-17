@@ -146,6 +146,32 @@ Science* → **Computer Security & Cryptography**, em **17/09/2026**:
 Dizer isso é mais preciso que "5º lugar", e mostra que você leu a tabela em vez de
 copiar a linha.
 
+#### ⚠️ Confirme que a linha é o MESMO veículo do artigo
+
+Os nomes não batem entre as fontes, e há uma conferência homônima na mesma lista:
+
+| Onde | Como aparece | h5 |
+|---|---|---|
+| Scholar, posição **5** | ACM **Symposium** on Computer and Communications Security | **90** |
+| Atas do artigo | ACM **SIGSAC Conference** on Computer and Communications Security (CCS '22) | — |
+| Scholar, posição **19** | ACM **Asia Conference** on Computer and Communications Security | **41** |
+
+A da posição 19 é a **AsiaCCS**, evento **diferente**, com menos da metade do h5.
+Pegar a linha errada significa apresentar 41 no lugar de 90.
+
+**Verificação primária, 30 segundos:** no Google Acadêmico, **clique no número do
+h5**. Ele abre a lista dos artigos que compõem o índice. Se aparecerem trabalhos do
+CCS — idealmente o próprio artigo escolhido —, o veículo está confirmado.
+
+☐ Cliquei no h5 e confirmei que os artigos listados são do CCS
+☐ Anotei a **janela de anos** que o Scholar declara para o h5 (são os 5 anos
+  completos mais recentes; se ela incluir o ano do artigo, as citações dele entram
+  no índice — vale dizer)
+☐ Conferi que o CORE aponta `dblp.uni-trier.de/db/conf/ccs` e **não** `/asiaccs`
+
+> **Vocabulário:** o h5 é **do veículo**, nunca do artigo. Artigo tem citações;
+> veículo tem h5. Misturar os dois é erro fácil de a banca pegar.
+
 Complementares, se sobrar tempo: mediana h5, taxa de aceitação do ano.
 
 #### CORE — levantado, com dois detalhes que valem mais que o rank

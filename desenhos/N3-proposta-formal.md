@@ -186,16 +186,75 @@ células sensíveis forem pequenas, a estratificação cai e o contraste princip
 permanece. **Nenhum desfecho mata o tema — todos mudam o desenho**, e é por isso
 que o teste vem antes de congelar o protocolo.
 
-### 5.2 Primeira rodada (subamostra de 40 apps, 16/09/2026)
+### 5.2 Resultado da rodada completa (396 apps, 17/09/2026)
 
-Rodada parcial, para validar o encanamento. As **proporções** são estimativas
-honestas; as **contagens** não, porque escalam com o tamanho da amostra.
+**As quatro portas estão abertas.** Os números abaixo são os que vão à
+orientação.
 
-| Medida | Resultado | Leitura |
+| Porta | Medida | Resultado | Critério |
+|---|---|---|---|
+| 1 | Corpus efetivo | **396 de 396** fichas obtidas, nenhuma remoção | — |
+| 2 | Menor célula dos três níveis de esfera | **35** | ≥5 ✅ |
+| 2 | Apps tratando dado do Art. 11 | **152 (38,4%)** | ≥30 ✅ |
+| 3 | Governo na amplitude do controle | **364 (92,4%)** | ≥60% ✅ |
+| 4 | Política de privacidade acessível | **323 (81,6%)** | ≥60% ✅ |
+| 6 | Menor diferença detectável | **5,1 pontos percentuais** | literatura reporta 15–30 ✅ |
+
+**Estratificação.** Federal 85, estadual 206, municipal 95. Apenas **10 apps
+(2,5%)** ficaram em *indeterminado* — a atribuição de esfera pelo nome do
+publicador resolve 97,5% do corpus sem intervenção. Dentro dos sensíveis: saúde
+125, previdência 28, biometria 17, assistência social 5.
+
+**Declaração.** Das 323 políticas acessíveis, **321 em HTML e 1 em PDF** — o
+formato caro de processar é residual. Os 27 `HTTP 403` e 15 `302` são bloqueio de
+agente e redirecionamento, não ausência de documento; conferidos à mão, elevam a
+taxa efetiva.
+
+#### O achado que reorienta o argumento
+
+| | Com anúncio | Proporção | IC95% |
+|---|---|---|---|
+| Governo (n=396) | **0** | **0,0%** | [0,000; 0,010] |
+| Controle comercial (n=190) | 63 | 33,2% | [0,269; 0,401] |
+
+Os intervalos **não se sobrepõem**, e zero em 396 é um resultado limpo.
+Aplicativo de governo não monetiza. Logo, se houver rastreador — e a literatura
+sugere fortemente que haverá —, ele **não é de publicidade: é de analytics e
+infraestrutura** (Firebase, Crashlytics, Google Analytics).
+
+Isso **descarta** o enquadramento de que "o governo vende dados do cidadão", que
+seria o primeiro alvo da banca. O que resta é mais preciso e mais difícil de
+atacar: dados de cidadãos em serviço público essencial fluem para infraestrutura
+de terceiros sob jurisdição estrangeira **sem intenção comercial**, por
+dependência técnica assumida por padrão no ecossistema Android. É exatamente a
+camada de soberania de dados.
+
+> Ressalva registrada: anúncio é subconjunto de rastreamento. Este resultado
+> **não** testa a H1, que fala de rastreadores em geral. Ele informa qual será a
+> natureza do rastreamento encontrado, não a sua prevalência.
+
+#### Uma limitação real, que vai declarada
+
+As duas populações têm distribuições de porte genuinamente diferentes:
+
+| Faixa de instalação | Governo | Controle |
 |---|---|---|
-| Política de privacidade acessível | **85%**, 100% em `text/html` | H2 tem instrumento. O formato é o fácil — nenhuma política em PDF escaneado. |
-| Apps tratando dado do Art. 11 | **52,5%** (saúde 15, previdência 8, assistência 3, biometria 1) | Extrapola para ~200 apps sensíveis no corpus completo. H3 tem célula. |
-| **Anúncio: governo × comercial** | **0/40 (0%)** contra **6/23 (26,1%)** | IC95% `[0,000; 0,088]` contra `[0,125; 0,465]` — **não se sobrepõem**. |
+| 10⁰–10¹ | 30 | 0 |
+| 10²–10⁵ | 308 | 63 |
+| 10⁶–10⁹ | 56 | 127 |
+
+Aplicativo de governo **é estruturalmente pequeno** — um app de prefeitura de
+cidade de 50 mil habitantes tem mil instalações, e isso é propriedade do mundo,
+não do coletor. **30 aplicativos (7,6%) ficam abaixo de qualquer controle que
+exista** e são aparados do suporte comum na H1, pelo procedimento padrão de
+*common support trimming*. Eles permanecem na H3, que é comparação interna e não
+depende de controle externo.
+
+Ressalva do grupo de controle: 22 dos 190 controles vieram de um complemento de
+cauda montado a partir dos aplicativos de publicador não oficial que a busca
+original encontrou. São comerciais, mas foram achados por termos ligados a
+governo — não constituem amostra aleatória do comércio, e a monografia declara
+isso.
 
 **O resultado do anúncio reorienta o argumento do trabalho.** Aplicativo de
 governo não monetiza. Logo, se houver rastreador — e a literatura sugere
@@ -213,15 +272,31 @@ comercial**, por dependência técnica assumida por padrão no ecossistema Andro
 > **não** testa a H1, que fala de rastreadores em geral. Ele informa qual será a
 > natureza do rastreamento encontrado, não a sua prevalência.
 
-**Correção de instrumento feita nesta rodada.** A porta 3 reprovou com 45,8%, e
-a inspeção mostrou que toda falha estava em faixa de instalação baixa (10¹–10⁵) e
-todo sucesso em faixa alta (10⁶–10⁸). A causa era do coletor, não do mundo: a
-busca da loja ordena por relevância e nunca alcança um aplicativo comercial de
-cinco mil instalações. O script passou a varrer a cauda dos resultados e a
-limitar dois controles por faixa, e o critério da porta deixou de ser pareamento
-célula a célula — que o plano de análise não exige — e passou a ser **suporte
-comum**. Este episódio entra na monografia como exemplo de ameaça à validade
-detectada por inspeção do padrão de falhas, e não pelo valor agregado.
+#### Três correções de instrumento, e o que elas ensinam
+
+O teste chegou a este resultado depois de reprovar duas hipóteses por defeito
+próprio. O registro é deliberado: é material da seção de metodologia.
+
+1. **A porta da H1 media pareamento célula a célula.** Reprovou com 45,8%, e a
+   inspeção mostrou que *toda* falha estava em faixa baixa e *todo* sucesso em
+   faixa alta. A causa era do coletor: a busca da loja ordena por relevância e
+   nunca alcança um aplicativo comercial de cinco mil instalações. Corrigido em
+   duas frentes — varredura da cauda dos resultados com teto de dois controles
+   por faixa, e complemento a partir dos aplicativos não oficiais já coletados.
+2. **O critério da H1 era mais estrito que o plano de análise.** A regressão usa
+   categoria e faixa como covariáveis, o que exige **suporte comum**, não par
+   exato por gênero. Trocado o critério, o mesmo corpus passou de 27,4% para
+   92,4%.
+3. **A porta da H3 incluía o balde residual no mínimo.** Reprovava com "menor
+   célula 3", mas essa célula era *indeterminado × sensível* — e *indeterminado*
+   não é um nível do fator esfera, é o que a heurística não classificou. Entre os
+   três níveis reais, a menor célula é 35.
+
+A lição é a mesma nos três casos e é a que a monografia registra: **um critério
+de decisão pode reprovar por defeito próprio, e a única defesa é inspecionar o
+padrão das falhas em vez de ler só o valor agregado.** Nos três, o número
+agregado dizia "inviável" enquanto a distribuição por trás dele dizia "erro de
+medida".
 
 ---
 

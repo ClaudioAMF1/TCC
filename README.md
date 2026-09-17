@@ -123,6 +123,7 @@ nenhum explora falha, nenhum baixa conteúdo de área autenticada.
 | `teste_viabilidade_n3.py` | Enumera aplicativos governamentais na Play Store por termo e por catálogo de publicador |
 | `teste_viabilidade_n3_robusto.py` | Mede a **porta de cada hipótese** antes de baixar APK: pareamento (H1), política de privacidade acessível (H2), povoamento das células (H3), potência estatística, e um sinal preliminar da variável dependente |
 | `teste_viabilidade_malware.py` | Consulta metadados de famílias de malware bancário no MalwareBazaar e mede compartilhamento de imphash entre famílias, com grupo de controle não brasileiro |
+| `teste_viabilidade_s3.py` | Consulta SPF, DKIM, DMARC, MX e NS de domínios públicos brasileiros e mede se há **variação** a explicar e se a postura é herdada do fornecedor de TI |
 | `gera_deck_seminario.js` | Gera o deck do seminário de análise de artigo |
 
 ### Como rodar
@@ -153,6 +154,14 @@ python3 scripts/teste_viabilidade_malware.py
 
 > Esse script lê **apenas metadados** — hashes, tipo de arquivo, data e assinatura.
 > Nenhuma amostra de malware é baixada.
+
+O teste do S3 (falsificação de e-mail) não exige chave nenhuma — só consulta de DNS:
+
+```bash
+pip install dnspython
+python3 scripts/teste_viabilidade_s3.py --autoteste   # valida a lógica, sem rede
+python3 scripts/teste_viabilidade_s3.py               # ~2 min
+```
 
 O script do Shodan exige uma chave em variável de ambiente:
 

@@ -7,6 +7,10 @@ secrets*
 scripts/dados/
 dados/
 
+# Node — só o gerador do deck usa, e é dependência de build
+node_modules/
+package-lock.json
+
 # Python
 __pycache__/
 *.pyc

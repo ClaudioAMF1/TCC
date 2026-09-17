@@ -106,15 +106,19 @@ s.addText(
   x: M, y: 1.95, w: 4.2, h: 0.8, isTextBox: true, margin: 0,
   fontFace: SANS, fontSize: 12, color: GRAY, valign: "top",
 });
-cartao(s, 5.05, 1.05, W - M - 5.05, 1.75, "Tema de trabalho assumido",
-  "Rastreadores de terceiros e soberania de dados em aplicativos móveis " +
-  "governamentais brasileiros.\n\nCorpus já verificado: 396 aplicativos, " +
-  "71 publicadores públicos distintos.", NAVY);
-preencher(s, M, 3.05, W - M * 2, 1.9, "ajuste conforme a conversa com o orientador", [
-  "Se o orientador apontar outra direção, troque o artigo — ainda há tempo.",
-  "Diga em uma frase por que o tema ainda é 'de trabalho' e não definitivo: isso é honesto e antecipa a pergunta.",
-  "Se já houver termo de aceite assinado, mencione o nome do orientador aqui.",
-]);
+cartao(s, 5.05, 1.05, W - M - 5.05, 1.75, "Tema do TCC",
+  "Rastreamento por terceiros e soberania de dados em aplicativos móveis " +
+  "governamentais brasileiros.\n\nQuando o cidadão usa o Meu SUS ou o Meu INSS, " +
+  "quais empresas além do governo recebem dados dele?", NAVY);
+const cq = (W - M * 2 - 0.6) / 4;
+cartao(s, M, 3.05, cq, 1.55, "Corpus",
+  "396 aplicativos\n71 publicadores públicos\ntrês esferas", TEAL);
+cartao(s, M + cq + 0.2, 3.05, cq, 1.55, "Dado sensível — Art. 11",
+  "152 aplicativos\nsaúde 125 · previdência 28\nbiometria 17", TEAL);
+cartao(s, M + (cq + 0.2) * 2, 3.05, cq, 1.55, "Instrumento",
+  "81,6% das políticas\nacessíveis\n\npotência: 5,1 p.p.", TEAL);
+cartao(s, M + (cq + 0.2) * 3, 3.05, cq, 1.55, "Fonte de APKs",
+  "AndroZoo\nacesso concedido\n17/09/2026", "1E6B3A");
 rodape(s, "1 minuto");
 s.addNotes("Abra dizendo que o tema está em definição mas que a escolha do artigo não depende disso — o que se reaproveita é o método.");
 
@@ -123,11 +127,11 @@ s.addNotes("Abra dizendo que o tema está em definição mas que a escolha do ar
 // =====================================================================
 s = pres.addSlide();
 tituloSlide(s, "Como cheguei a este recorte", 2);
-s.addText("Três candidatos passaram por teste de viabilidade antes de virar projeto. Dois caíram.", {
+s.addText("Seis temas passaram por teste de viabilidade antes de virar projeto. Três caíram, um ficou inconclusivo.", {
   x: M, y: 1.0, w: W - M * 2, h: 0.32, isTextBox: true, margin: 0,
   fontFace: SANS, fontSize: 12.5, color: GRAY,
 });
-const col = (W - M * 2 - 0.4) / 3;
+const col = (W - M * 2 - 0.6) / 4;
 cartao(s, M, 1.45, col, 2.55, "Descartado — ICS exposta",
   "Os mesmos hosts respondiam em Modbus, IEC-104 e EtherNet/IP ao mesmo tempo — " +
   "equipamento industrial real não faz isso.\n\nA variável independente (o setor do " +
@@ -136,9 +140,12 @@ cartao(s, M + col + 0.2, 1.45, col, 2.55, "Descartado — abuso de marca",
   "20.007 entradas de log de Certificate Transparency analisadas.\n\n" +
   "Nenhuma imitação real encontrada: phishing moderno raramente põe a marca no " +
   "domínio, o que impõe teto de recall.", "9B2C2C");
-cartao(s, M + (col + 0.2) * 2, 1.45, col, 2.55, "Confirmado — apps de governo",
-  "396 aplicativos de 71 publicadores públicos.\n\nAs três esferas representadas e o " +
-  "publicador identificado na origem — sem trabalho de atribuição.", "1E6B3A");
+cartao(s, M + (col + 0.2) * 2, 1.45, col, 2.55, "Inconclusivo — malware bancário",
+  "O repositório rotula a CAMPANHA, não o payload.\n\n85% do acervo brasileiro são " +
+  "containers, onde a métrica que eu usava nem existe. Erro meu, registrado.", "8A6D1F");
+cartao(s, M + (col + 0.2) * 3, 1.45, col, 2.55, "Confirmado — apps de governo",
+  "396 aplicativos, 71 publicadores públicos, três esferas.\n\nPublicador identificado " +
+  "na origem: sem trabalho de atribuição — que foi o que matou o primeiro tema.", "1E6B3A");
 s.addText(
   "Descartar com evidência é parte do método (Aula 04 — maturidade em pesquisa; " +
   "Aula 07 — evitar o fundamento vazio).", {
@@ -239,20 +246,20 @@ cartao(s, M, 1.05, c3, 2.5, "1 · O método é o que eu reuso",
 cartao(s, M + c3 + 0.2, 1.05, c3, 2.5, "2 · A lacuna que ele deixa",
   "Corpus de apps comerciais de controle parental.\n\nSem recorte governamental, sem " +
   "grupo de controle pareado e sem contexto brasileiro — exatamente onde meu trabalho entra.", TEAL);
-cartao(s, M + (c3 + 0.2) * 2, 1.05, c3, 2.5, "3 · O recorte já é viável",
-  "Não é hipótese: eu medi.\n\n396 aplicativos governamentais de 71 publicadores públicos " +
-  "distintos, cobrindo as esferas federal, estadual e municipal.", TEAL);
+cartao(s, M + (c3 + 0.2) * 2, 1.05, c3, 2.5, "3 · Já tenho um resultado",
+  "0 de 396 apps de governo exibem anúncio. No controle comercial, 33,2%.\n\n" +
+  "IC95% [0,000; 0,010] contra [0,269; 0,401] — não se sobrepõem.", "1E6B3A");
 s.addShape(pres.ShapeType.roundRect, {
   x: M, y: 3.75, w: W - M * 2, h: 0.85, fill: { color: NAVY }, rectRadius: 0.06,
 });
 s.addText(
-  "O artigo me dá o método; o meu recorte dá o que ele não cobriu. E o corpus para " +
-  "cobri-lo já foi verificado.", {
+  "Se o app de governo não monetiza, o rastreador que houver não é de publicidade — " +
+  "é dependência técnica. Isso muda a pergunta.", {
   x: M + 0.25, y: 3.93, w: W - M * 2 - 0.5, h: 0.5, isTextBox: true, margin: 0,
   fontFace: SERIF, fontSize: 14.5, italic: true, color: WHITE, align: "center",
 });
 rodape(s, "1,5 minuto  ·  este é o slide mais forte da sua justificativa");
-s.addNotes("O terceiro cartão é o diferencial: você não está supondo que o recorte existe, você mediu. Enfatize isso.");
+s.addNotes("O terceiro cartão é o diferencial: não é hipótese, é medida própria. Zero em 396 é um resultado limpo. Diga que isso descarta o enquadramento de que o governo vende dados e deixa a questão mais difícil: por que o rastreador está lá, então?");
 
 // =====================================================================
 // 8 — MÉTRICAS E QUALIS

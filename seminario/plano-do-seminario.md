@@ -188,15 +188,16 @@ A tabela acima trabalha com percentil, então o h5 precisa virar percentil antes
    → **Computer Security & Cryptography**.
 2. Essa página lista as **20 publicações de maior h5** da subárea, em ordem.
    Anote o h5 do seu veículo e **a posição dele na lista**.
-3. Percentil = (quantas publicações estão **abaixo** dele ÷ total da lista) × 100.
-
-   Numa lista de 20, se o veículo é o 3º:  (20 − 3) ÷ 20 × 100 = **85** → **A2**.
-   Se for o 1º:  (20 − 1) ÷ 20 × 100 = **95** → **A1**.
-
-4. Leve o percentil à tabela acima e leia o estrato.
-5. **Declare qual conjunto de referência você usou.** Numa lista de 20 o percentil
-   anda de 5 em 5; na lista de 100 de *Engineering & Computer Science* ele é mais
-   fino, e pode dar um estrato diferente para o mesmo h5.
+3. **Cuidado com o denominador.** O Scholar publica só as **20 primeiras** de cada
+   subárea. Isso é lista truncada, não população. Dividir por 20 subestima: o 3º
+   lugar daria (20 − 3) ÷ 20 × 100 = 85 → **A2**, colocando uma das principais
+   conferências de segurança do mundo abaixo do topo. O erro não é da tabela, é do
+   denominador.
+4. **Reporte assim:** a posição na lista publicada, a ressalva de que ela é truncada,
+   o percentil que sairia com 20 como denominador **rotulado como piso**, e o
+   estrato considerando o universo real da área.
+5. **Declare qual conjunto de referência você usou** e por quê — o Field of Research
+   do CORE é a justificativa independente.
 
 > **Fonte primária, e é ela que dá a resposta.** O Documento Técnico, p. 12,
 > reconhece o problema e diz como a CAPES o resolve:

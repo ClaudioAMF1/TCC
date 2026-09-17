@@ -157,10 +157,23 @@ aparecer, em voz alta e no slide.
 > **Primeiro, o h5.** No Google Scholar Metrics, o índice h5 da CCS é `[H5]`,
 > consultado em `[DATA]`.
 >
-> **Segundo, o Qualis correspondente.** O Qualis trabalha com percentil, então
-> converti: na lista de *Computer Security & Cryptography*, a CCS ocupa a posição
-> `[K]` de `[N]`. Isso dá percentil `[(N−K)÷N×100]`, que pela Figura 6 do Documento
-> Técnico corresponde ao estrato **`[ESTRATO]`**.
+> **Segundo, o Qualis correspondente.** O Qualis trabalha com percentil, não com h5
+> bruto, então precisei converter — e a conversão tem uma armadilha que vale explicar.
+>
+> Na lista de *Computer Security & Cryptography* do Scholar Metrics, a CCS ocupa a
+> posição `[K]`. Só que o Scholar publica apenas as vinte primeiras de cada subárea.
+> Essa lista é truncada, não é a população da área. Se eu dividir a posição por vinte,
+> o percentil dá `[X]` e o estrato cairia em `[ESTRATO INGÊNUO]` — o que colocaria uma
+> das principais conferências de segurança do mundo abaixo do topo. O erro está no
+> denominador.
+>
+> É a mesma limitação que o Documento Técnico aponta na página 12: a base do Google
+> Scholar não fornece os percentis dentro dos agrupamentos temáticos, e é por isso que
+> a CAPES precisou construir uma base ampliada por área, que eles chamam de Universo.
+>
+> Considerando o universo real da área, que tem centenas de veículos, a posição `[K]`
+> corresponde ao primeiro percentil. O estrato é **A1**, e o número que sai da lista
+> truncada é um piso, não a estimativa.
 >
 > Vale explicar de onde vem esse percentil, porque o próprio Documento Técnico
 > levanta a questão. Na página 12 ele diz que a base do Google Scholar não fornece

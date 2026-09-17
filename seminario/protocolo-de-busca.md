@@ -160,11 +160,39 @@ O Qualis trabalha com **percentil**, não com h5 bruto. A conversão:
 |---|---|---|
 | 1 | Google Scholar → Metrics → Categories → *Engineering & Computer Science* → **Computer Security & Cryptography** | |
 | 2 | h5 do veículo | |
-| 3 | Posição dele na lista, e o tamanho da lista | ___ de ___ |
-| 4 | Percentil = (total − posição) ÷ total × 100 | |
+| 3 | Posição na lista | ___ de 20 |
+| 4 | Percentil — **leia a armadilha abaixo antes** | |
 | 5 | Estrato, pela tabela da Figura 6 | |
 
-Exemplo da conta: 3º lugar numa lista de 20 → (20 − 3) ÷ 20 × 100 = **85** → **A2**.
+### ⚠️ A armadilha do denominador
+
+O Scholar publica **só as 20 primeiras** de cada subárea. **Isso é uma lista
+truncada, não a população da área.**
+
+Dividir a posição por 20 subestima o percentil de forma grosseira. Se o veículo é o
+3º entre os 20 que o Scholar exibe, ele não é o 3º entre 20 — é o **3º entre todos
+os veículos da área**, que são centenas. A conta ingênua daria
+(20 − 3) ÷ 20 × 100 = 85 → **A2**, o que colocaria uma das principais conferências
+de segurança do mundo abaixo do topo. O erro está no denominador.
+
+**É exatamente o problema que o Documento Técnico descreve (p. 12):** a base do
+Google Scholar não fornece percentis dentro dos agrupamentos temáticos, e por isso a
+CAPES teve de montar uma base ampliada por área — o **"Universo"** — para obter a
+posição real.
+
+**Como reportar sem inventar um número:**
+
+> "O veículo aparece na posição `[K]` da lista de *Computer Security & Cryptography*
+> do Scholar Metrics. Como o Scholar publica apenas as 20 primeiras, esse conjunto é
+> truncado e não permite calcular o percentil diretamente — é a mesma limitação que o
+> Documento Técnico aponta na página 12, e a razão pela qual a CAPES construiu o
+> Universo por área. Com 20 como denominador o percentil seria `[X]`; com o universo
+> real da área, que tem centenas de veículos, a posição `[K]` corresponde ao primeiro
+> percentil. Portanto o estrato é **A1**, e o valor obtido pela lista truncada é um
+> **piso**, não a estimativa."
+
+Isso é a resposta completa: você calcula, aponta o limite do instrumento, e diz de
+que lado o erro cai. Muito mais forte que entregar um número sem ressalva.
 
 > **Fonte primária, e é ela que dá a resposta.** O Documento Técnico, p. 12,
 > reconhece o problema e diz como a CAPES o resolve:

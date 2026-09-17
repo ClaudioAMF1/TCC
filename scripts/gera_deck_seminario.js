@@ -270,7 +270,7 @@ preencher(s, M, 1.02, (W - M * 2 - 0.25) / 2, 2.55, "OS TRÊS OBRIGATÓRIOS — 
   "1 · h5-index (Google Scholar → Metrics):  ______",
   "2 · Qualis correspondente ao h5:  ______",
   "      posição ___ de ___  →  percentil ___  →  estrato ___",
-  "      p. 12: o Scholar não dá percentil; a CAPES usa uma base por área, o \u0022Universo\u0022. Sem acesso a ele, declare a lista que você usou.",
+  "      ATENÇÃO: o Scholar publica só o TOP 20. Dividir por 20 subestima — é lista truncada, não população (Doc. Técnico, p.12: a CAPES criou o \u0022Universo\u0022 por isso).",
   "3 · CORE Rank:  A*  ·  ICORE2026  ·  consultado 17/09/2026  ✓",
 ]);
 cartao(s, M, 3.72, (W - M * 2 - 0.25) / 2, 1.15, "CORE: A* desde 2008",

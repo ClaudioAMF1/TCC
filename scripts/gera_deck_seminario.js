@@ -342,7 +342,15 @@ const blocos = [
           "você vai precisar fazer no seu próprio trabalho.",
   },
   {
-    n: 13, titulo: "Análise da conclusão",
+    n: 13, titulo: "Análise da discussão",
+    intro: "O enunciado nomeia a discussão. É o que separa o medido do que ele significa.",
+    rotulos: ["Interpretação do resultado", "Confronto com a literatura anterior",
+              "Implicação prática ou normativa", "Ameaças à validade"],
+    dica: "Artigo de segurança com frequência funde discussão e resultados, ou a chama de " +
+          "Implications. Se não houver seção autônoma, DIGA — apontar isso é análise de estrutura.",
+  },
+  {
+    n: 14, titulo: "Análise da conclusão",
     intro: "Cole a conclusão e marque o que os autores inferem.",
     rotulos: ["Inferência a partir dos dados obtidos", "Trabalhos futuros",
               "O que ficou fora do escopo"],

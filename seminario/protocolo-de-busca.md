@@ -12,8 +12,20 @@ Leve print de cada tela. A professora pode pedir.
 
 ## 1. Acesso
 
-O acesso à ACM Digital Library e ao Scopus é pelo **CAFe**, com a credencial do IDP.
-O tutorial está em `material-fornecido/Como acessar a CAFe.pdf`.
+O acesso é pelo **portal da CAPES via CAFe**, com a credencial do IDP. Os tutoriais
+estão em `material-fornecido/Como acessar a CAPES.pdf` e
+`material-fornecido/Tutorial Plataformas Digitais 2024.pdf`.
+
+### ⚠️ A busca TEM que ser numa base da CAFe
+
+O item 1 do enunciado nomeia as bases: **Web of Science, ScienceDirect, ACM, Scopus,
+IEEE Xplore**, entre outras. O **Google Scholar não está na lista**.
+
+O Scholar aparece no enunciado só no **item 2**, e só para o **h5**. Buscar o artigo
+no Scholar e apresentar isso como o passo a passo da seleção contraria o item 1 —
+mesmo que você acabe no mesmo artigo.
+
+**Faça a busca na ACM DL e/ou no Scopus, e registre a tela.**
 
 ☐ **Testar o acesso hoje.** Se a credencial não funcionar, você precisa de tempo
 para resolver com a biblioteca — e descobrir isso no dia 28 é fatal.
@@ -29,7 +41,8 @@ que não deram certo: refinar a string é parte do método e mostra rigor.
 
 | Campo | Preencher |
 |---|---|
-| Base | |
+| Base (WoS · ScienceDirect · ACM · Scopus · IEEE Xplore) | |
+| Acesso via CAFe confirmado? | |
 | Data da consulta | |
 | String exata | |
 | Filtros aplicados (ano, tipo, idioma) | |
@@ -39,7 +52,8 @@ que não deram certo: refinar a string é parte do método e mostra rigor.
 
 | Campo | Preencher |
 |---|---|
-| Base | |
+| Base (WoS · ScienceDirect · ACM · Scopus · IEEE Xplore) | |
+| Acesso via CAFe confirmado? | |
 | Data da consulta | |
 | String exata | |
 | Filtros aplicados | |

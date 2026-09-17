@@ -246,15 +246,15 @@ Estrutura que segue a ordem exigida no enunciado.
 | # | Slide | Tempo |
 |---|---|---|
 | 1 | Capa — título, seu nome, disciplina, data | — |
-| 2 | **Contexto:** área do TCC e o tema de trabalho assumido | 1 min |
-| 3 | **Como cheguei aqui:** os dois temas testados e rejeitados, com o número de cada teste | 1 min |
+| 2 | **Contexto:** área do TCC e o tema | 1 min |
+| 3 | **Como cheguei aqui:** os três temas testados e rejeitados, com o número de cada teste | 1 min |
 | 4 | **Passo a passo da seleção:** base usada, string de busca, filtros, critério de inclusão, quantos resultados → quantos lidos → 1 escolhido | 2 min |
 | 5 | **O artigo:** citação completa + por que é original e não revisão | 1 min |
 | 6 | **Relevância — quantitativa:** citações nas três bases, métricas do veículo | 1,5 min |
 | 7 | **Relevância — qualitativa:** o método que eu reuso + a lacuna que ele deixa + meu corpus de 396 apps | 1,5 min |
 | 8 | **Métricas e Qualis:** h5, estrato, CORE rank + a tabela da Figura 6 | 2 min |
-| 9–14 | **Análise da estrutura** (Seção 6) | 5 min |
-| 15 | Fechamento: o que este artigo muda no meu TCC | 0,5 min |
+| 9–15 | **Análise da estrutura** — 7 blocos, incluindo **discussão** | 5 min |
+| 16 | Fechamento: o que este artigo muda no meu TCC | 0,5 min |
 
 **Prove o tempo em voz alta antes.** Quinze minutos passam rápido, e a análise da estrutura
 é o que mais rende nota — não deixe para correr no fim.

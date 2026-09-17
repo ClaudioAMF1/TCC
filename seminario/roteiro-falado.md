@@ -5,7 +5,7 @@ para ler no slide. `[COLCHETES]` marcam o que só você pode preencher, porque
 depende de consultar a fonte.
 
 **Orçamento de tempo.** Os 5 minutos da análise da estrutura são inegociáveis — é
-o que mais rende nota. Se atrasar, corte do slide 6, não do 9–14.
+o que mais rende nota. Se atrasar, corte do slide 6, não do 9–15.
 
 ---
 
@@ -67,7 +67,8 @@ Este é o slide que a atividade pede explicitamente e que quase todo mundo esque
 Os valores saem de `protocolo-de-busca.md`, preenchido **enquanto** você busca — é
 impossível reconstruir depois.
 
-> "A busca foi feita em `[BASES]`, em `[DATA]`. A string foi `[STRING]`.
+> "A busca foi feita na `[BASE — ACM DL / Scopus / Web of Science / IEEE Xplore]`,
+> acessada pelo portal da CAPES via CAFe, em `[DATA]`. A string foi `[STRING]`.
 >
 > Apliquei estes filtros: `[FILTROS]`. Os critérios de inclusão foram: artigo
 > original e não revisão, com medição empírica em escala, sobre rastreamento por
@@ -85,9 +86,11 @@ impossível reconstruir depois.
 > "O artigo é `[CITAÇÃO COMPLETA — conferir no PDF, não copiar de terceiros]`,
 > publicado na CCS de 2022.
 >
-> É um artigo **original**, não uma revisão: os autores construíram um corpus
-> próprio, executaram uma medição e reportaram resultados primários. Isso importa
-> porque a atividade pede análise de artigo original."
+> É um artigo **original** no sentido exato que o enunciado define: relata pela
+> primeira vez os resultados de uma pesquisa inédita, apresentando novos dados. Os
+> autores construíram um corpus próprio de `[N]` aplicativos, executaram a medição e
+> reportaram resultados primários. Não é revisão, não é survey, não é reanálise de
+> dado de terceiro."
 
 **No slide:** a citação em formato ABNT e o DOI.
 
@@ -188,10 +191,15 @@ os três valores — h5, estrato, CORE — lado a lado.
 
 ---
 
-## Slides 9 a 14 — Análise da estrutura · 5 min
+## Slides 9 a 15 — Análise da estrutura · 5 min
 
-O formulário está em `analise-da-estrutura.md`. Seis blocos, seguindo o exemplo que
-a professora forneceu: estrutura, resumo, introdução, método, resultados, conclusão.
+O formulário está em `analise-da-estrutura.md`. **Sete** blocos: estrutura, resumo,
+introdução, método, resultados, **discussão** e conclusão — a lista que o item 3 do
+enunciado nomeia.
+
+⚠️ **A discussão é nomeada no enunciado.** Artigo de segurança com frequência funde
+discussão e resultados, ou a chama de *Implications*. Se for o caso, **diga** — que o
+elemento não aparece como seção autônoma é análise de estrutura, não omissão sua.
 
 **A regra que muda a nota:** não é resumir o artigo. É reproduzir o texto real e
 anotar ao lado a função retórica de cada trecho.
@@ -210,7 +218,7 @@ Dois comentários que rendem mais que descrição:
 
 ---
 
-## Slide 15 — Fechamento · 30 s
+## Slide 16 — Fechamento · 30 s
 
 > "Este artigo me dá três coisas: o método validado, a lacuna que justifica o meu
 > trabalho, e um padrão de escrita para a minha própria seção de metodologia.

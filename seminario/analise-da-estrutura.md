@@ -6,6 +6,10 @@ Vale 5 dos 15 minutos e é **o que mais rende nota**.
 anotar, ao lado, a função retórica de cada trecho. O modelo é o
 `material-fornecido/Exemplo de Analise da Estrutura de Artigo.pdf`.
 
+O enunciado pede: *"analise a estrutura do trabalho (introdução, metodologia,
+resultados, **discussão**, conclusão, etc.)"* e *"descreva e explique as principais
+características de cada elemento"*. Os sete blocos abaixo cobrem essa lista.
+
 Preencha a coluna da esquerda com **recorte literal** do artigo. A da direita com a
 função. Onde estiver `[...]`, é você que completa.
 
@@ -117,7 +121,30 @@ Verifique e comente:
 
 ---
 
-## Bloco 6 — Conclusão
+## Bloco 6 — Discussão
+
+**O enunciado nomeia a discussão explicitamente** como elemento da estrutura. Ela é o
+que separa *o que foi medido* de *o que isso significa*.
+
+| Trecho | Função |
+|---|---|
+| `[...]` | Interpreta o resultado |
+| `[...]` | Confronta com a literatura anterior |
+| `[...]` | Implicação prática ou normativa |
+| `[...]` | Ameaças à validade / limitações |
+
+> **Armadilha frequente em artigo de segurança:** muitos fundem discussão com
+> resultados, ou a chamam de *Implications*, *Discussion and Limitations*, ou
+> distribuem a interpretação ao longo das seções.
+>
+> **Se for o caso, diga.** "A discussão não aparece como seção autônoma; está
+> distribuída em `[...]`" é análise de estrutura, e é exatamente o movimento que o
+> avaliador faz no segundo exemplo fornecido pela professora, quando anota que o
+> método não estava explicitamente descrito.
+
+---
+
+## Bloco 7 — Conclusão
 
 | Trecho | Função |
 |---|---|

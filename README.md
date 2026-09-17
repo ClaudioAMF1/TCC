@@ -46,6 +46,7 @@ dados/          Saída bruta das coletas (não versionado — ver .gitignore)
 | `03-temas-cyber.md` | Temas em cibersegurança compatíveis com o orientador pretendido |
 | `04-avaliacao-da-area.md` | Avaliação honesta da área como escolha de TCC + temas de menor custo de tempo |
 | `05-teste-genealogia-malware.md` | Teste de viabilidade da genealogia do malware bancário brasileiro e por que ele ficou inconclusivo |
+| `06-temas-de-pergunta-simples.md` | Quatro temas cuja pergunta cabe numa frase, com custo, armadilha e teste de viabilidade de cada um |
 
 ### `desenhos/`
 Desenhos experimentais completos — problema de pesquisa nas três partes exigidas pela

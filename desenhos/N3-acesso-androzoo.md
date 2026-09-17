@@ -5,8 +5,8 @@
 substitui o APK sem aviso, e um corpus coletado direto dela não pode ser reconstruído por
 terceiros. É também o gargalo de prazo: a concessão leva dias ou semanas.
 
-**Estado:** ✅ **concedido em 17/09/2026**, menos de seis horas após o envio.
-Resposta de Marco Alecci (Universidade de Luxemburgo).
+**Estado:** ✅ enviado em **16/09/2026** · ✅ **concedido em 17/09/2026**, menos de
+seis horas depois. Resposta de Marco Alecci (Universidade de Luxemburgo).
 
 ---
 

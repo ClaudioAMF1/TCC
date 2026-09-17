@@ -155,12 +155,14 @@ python3 scripts/teste_viabilidade_malware.py
 > Esse script lê **apenas metadados** — hashes, tipo de arquivo, data e assinatura.
 > Nenhuma amostra de malware é baixada.
 
-O teste do S3 (falsificação de e-mail) não exige chave nenhuma — só consulta de DNS:
+O teste do S3 (falsificação de e-mail) não exige chave **nem instalação**: usa o
+`dig`, que já vem no macOS e no Linux. Se o `dnspython` estiver instalado, ele é
+preferido por ser mais rápido.
 
 ```bash
-pip install dnspython
 python3 scripts/teste_viabilidade_s3.py --autoteste   # valida a lógica, sem rede
-python3 scripts/teste_viabilidade_s3.py               # ~2 min
+python3 scripts/teste_viabilidade_s3.py               # ~2 a 5 min
+python3 scripts/teste_viabilidade_s3.py --motor dig   # força o dig
 ```
 
 O script do Shodan exige uma chave em variável de ambiente:

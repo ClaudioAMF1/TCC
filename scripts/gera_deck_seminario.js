@@ -96,7 +96,7 @@ s.addText("Área do TCC", {
   x: M, y: 1.05, w: 4.2, h: 0.3, isTextBox: true, margin: 0,
   fontFace: SANS, fontSize: 11, bold: true, color: TEAL, charSpacing: 1,
 });
-s.addText("Cibersegurança — medição empírica", {
+s.addText("Cibersegurança, na vertente de medição", {
   x: M, y: 1.38, w: 4.2, h: 0.5, isTextBox: true, margin: 0,
   fontFace: SERIF, fontSize: 21, bold: true, color: NAVY,
 });
@@ -113,13 +113,12 @@ cartao(s, 5.05, 1.05, W - M - 5.05, 1.75, "Tema do TCC",
 const cq = (W - M * 2 - 0.6) / 4;
 cartao(s, M, 3.05, cq, 1.55, "Corpus",
   "396 aplicativos\n71 publicadores públicos\ntrês esferas", TEAL);
-cartao(s, M + cq + 0.2, 3.05, cq, 1.55, "Dado sensível — Art. 11",
+cartao(s, M + cq + 0.2, 3.05, cq, 1.55, "Dado sensível, Art. 11",
   "152 aplicativos\nsaúde 125 · previdência 28\nbiometria 17", TEAL);
 cartao(s, M + (cq + 0.2) * 2, 3.05, cq, 1.55, "Instrumento",
   "81,6% das políticas\nacessíveis\n\npotência: 5,1 p.p.", TEAL);
 cartao(s, M + (cq + 0.2) * 3, 3.05, cq, 1.55, "Fonte de APKs",
   "AndroZoo\nacesso concedido\n17/09/2026", "1E6B3A");
-rodape(s, "1 minuto");
 s.addNotes("Abra dizendo que o tema está em definição mas que a escolha do artigo não depende disso — o que se reaproveita é o método.");
 
 // =====================================================================
@@ -127,78 +126,80 @@ s.addNotes("Abra dizendo que o tema está em definição mas que a escolha do ar
 // =====================================================================
 s = pres.addSlide();
 tituloSlide(s, "Como cheguei a este recorte", 2);
-s.addText("Seis temas passaram por teste de viabilidade antes de virar projeto. Três caíram, um ficou inconclusivo.", {
+s.addText("Testei quatro temas antes de escolher. Três não sobreviveram aos dados.", {
   x: M, y: 1.0, w: W - M * 2, h: 0.32, isTextBox: true, margin: 0,
-  fontFace: SANS, fontSize: 12.5, color: GRAY,
+  fontFace: SANS, fontSize: 13, color: GRAY,
 });
 const col = (W - M * 2 - 0.6) / 4;
-cartao(s, M, 1.45, col, 2.55, "Descartado — ICS exposta",
-  "Os mesmos hosts respondiam em Modbus, IEC-104 e EtherNet/IP ao mesmo tempo — " +
-  "equipamento industrial real não faz isso.\n\nA variável independente (o setor do " +
-  "operador) era inobservável.", "9B2C2C");
-cartao(s, M + col + 0.2, 1.45, col, 2.55, "Descartado — abuso de marca",
-  "20.007 entradas de log de Certificate Transparency analisadas.\n\n" +
-  "Nenhuma imitação real encontrada: phishing moderno raramente põe a marca no " +
-  "domínio, o que impõe teto de recall.", "9B2C2C");
-cartao(s, M + (col + 0.2) * 2, 1.45, col, 2.55, "Inconclusivo — malware bancário",
-  "O repositório rotula a CAMPANHA, não o payload.\n\n85% do acervo brasileiro são " +
-  "containers, onde a métrica que eu usava nem existe. Erro meu, registrado.", "8A6D1F");
-cartao(s, M + (col + 0.2) * 3, 1.45, col, 2.55, "Confirmado — apps de governo",
-  "396 aplicativos, 71 publicadores públicos, três esferas.\n\nPublicador identificado " +
-  "na origem: sem trabalho de atribuição — que foi o que matou o primeiro tema.", "1E6B3A");
-s.addText(
-  "Descartar com evidência é parte do método (Aula 04 — maturidade em pesquisa; " +
-  "Aula 07 — evitar o fundamento vazio).", {
+cartao(s, M, 1.45, col, 2.55, "Infraestrutura industrial",
+  "Queria medir equipamento de indústria exposto na internet.\n\n" +
+  "Os endereços que achei respondiam a três protocolos ao mesmo tempo. " +
+  "Equipamento de verdade não faz isso: eram armadilhas e servidores de nuvem.", "9B2C2C");
+cartao(s, M + col + 0.2, 1.45, col, 2.55, "Sites que imitam bancos",
+  "Procurei endereços falsos em 20 mil registros de certificado digital.\n\n" +
+  "Não achei nenhum. Golpe hoje quase nunca põe o nome do banco no endereço do site.", "9B2C2C");
+cartao(s, M + (col + 0.2) * 2, 1.45, col, 2.55, "Vírus de banco brasileiro",
+  "Quis medir o parentesco entre famílias de vírus.\n\n" +
+  "Descobri que o repositório identifica a campanha do golpe, não o programa. " +
+  "Eu estava medindo a coisa errada. Registrei o erro.", "8A6D1F");
+cartao(s, M + (col + 0.2) * 3, 1.45, col, 2.55, "Apps de governo   ✓",
+  "396 aplicativos de 71 órgãos públicos, nas três esferas.\n\n" +
+  "A loja diz quem publicou cada um. Não preciso descobrir de quem é o app, " +
+  "que foi justamente o que faltou nos outros três.", "1E6B3A");
+s.addText("Descartar com evidência faz parte do método. É o que as aulas 04 e 07 chamam de maturidade em pesquisa.", {
   x: M, y: 4.2, w: W - M * 2, h: 0.4, isTextBox: true, margin: 0,
   fontFace: SANS, fontSize: 11.5, italic: true, color: TEAL,
 });
-rodape(s, "1 minuto  ·  não se alongue aqui — é contexto, não o conteúdo principal");
-s.addNotes("Trinta segundos no máximo por tema descartado. O objetivo é mostrar que a escolha foi testada, não contar a história inteira.");
+s.addNotes("1 minuto. Trinta segundos no maximo por tema. O objetivo e mostrar que a escolha foi testada, nao contar a historia inteira. Se alguem perguntar detalhe de algum deles, o registro completo esta no repositorio.");
 
 // =====================================================================
 // 4 — PASSO A PASSO DA SELEÇÃO
 // =====================================================================
 s = pres.addSlide();
-tituloSlide(s, "Passo a passo da seleção", 3);
-s.addText("Scopus, via portal da CAPES / CAFe  ·  21 de setembro de 2026  ·  prints de cada tela", {
-  x: M, y: 0.98, w: W - M * 2, h: 0.3, isTextBox: true, margin: 0,
-  fontFace: SANS, fontSize: 12, color: GRAY,
+tituloSlide(s, "Como cheguei até este artigo", 3);
+s.addText("Scopus, pelo portal da CAPES via CAFe, em 21 de setembro de 2026.", {
+  x: M, y: 0.98, w: W - M * 2, h: 0.28, isTextBox: true, margin: 0,
+  fontFace: SANS, fontSize: 12.5, color: GRAY,
 });
-cartao(s, M, 1.36, (W - M * 2 - 0.22) / 2, 1.5, "Tentativa 1 — expressão exata",
-  "\u0022third-party tracking\u0022 AND consent AND android\n" +
-  "campo: Article title, Abstract, Keywords\n\n" +
-  "→ 4 documentos", NAVY);
-cartao(s, M + (W - M * 2 - 0.22) / 2 + 0.22, 1.36, (W - M * 2 - 0.22) / 2, 1.5,
-  "Tentativa 2 — ampliada",
-  "\u0022third party\u0022 AND tracking AND android AND (consent OR GDPR)\n\n" +
-  "→ 12 documentos\n" +
-  "CS 11 · Eng 3 · Soc 3 · Env 2", TEAL);
-s.addText("Filtros na T1: Year 2021–2025 · Computer Science · Conference paper · English   →   4 (nenhum perdido)", {
-  x: M, y: 2.95, w: W - M * 2, h: 0.26, isTextBox: true, margin: 0,
-  fontFace: SANS, fontSize: 10.5, italic: true, color: TEAL,
+s.addImage({
+  path: "/home/user/TCC/seminario/pesquisa/busca-scopus-resultados.jpg",
+  x: M, y: 1.32, w: 5.55, h: 3.21,
 });
-const linhas = [
-  ["1", "WhisperTest — iOS UI Automation", "2025", "0", "iOS, não Android"],
-  ["2", "A Comprehensive Study on 3rd-Party User Tracking", "2023", "10", "menos citado"],
-  ["3", "Freely Given Consent?  (Nguyen, Backes, Stock)", "2022", "52", "SELECIONADO"],
-  ["4", "A fait accompli?  (Kollnig, Binns)", "2021", "34", "SOUPS = CORE B"],
-];
+s.addText("Duas buscas, no campo título, resumo e palavras-chave:", {
+  x: 5.85, y: 1.32, w: W - M - 5.85, h: 0.26, isTextBox: true, margin: 0,
+  fontFace: SANS, fontSize: 10.5, bold: true, color: NAVY,
+});
+s.addText([
+  { text: '1.  "third-party tracking" AND consent AND android', options: { breakLine: true } },
+  { text: "     4 resultados", options: { breakLine: true, bold: true, color: TEAL } },
+  { text: "", options: { breakLine: true } },
+  { text: '2.  "third party" AND tracking AND android AND', options: { breakLine: true } },
+  { text: "     (consent OR GDPR)", options: { breakLine: true } },
+  { text: "     12 resultados", options: { breakLine: true, bold: true, color: TEAL } },
+], {
+  x: 5.85, y: 1.64, w: W - M - 5.85, h: 1.15, isTextBox: true, margin: 0,
+  fontFace: "Consolas", fontSize: 9, color: NAVY, valign: "top",
+});
 s.addTable(
-  [[{ text: "#", options: { bold: true } }, { text: "Artigo", options: { bold: true } },
-    { text: "Ano", options: { bold: true } }, { text: "Cit.", options: { bold: true } },
-    { text: "Decisão", options: { bold: true } }]].concat(
-    linhas.map((r, i) => r.map((c) => ({
-      text: c,
-      options: { bold: i === 2, color: i === 2 ? "1E6B3A" : NAVY },
-    })))
-  ),
+  [[{ text: "Candidato", options: { bold: true } }, { text: "Ano", options: { bold: true } },
+    { text: "Cit.", options: { bold: true } }, { text: "", options: { bold: true } }]].concat([
+    ["WhisperTest", "2025", "0", "é iOS"],
+    ["Third-Party User Tracking", "2023", "10", "menos citado"],
+    ["Freely Given Consent?", "2022", "52", "escolhido"],
+    ["A fait accompli?", "2021", "34", "veículo menor"],
+  ].map((r, i) => r.map((c) => ({
+    text: c, options: { bold: i === 2, color: i === 2 ? "1E6B3A" : NAVY },
+  })))),
   {
-    x: M, y: 3.3, w: W - M * 2, colW: [0.3, 4.6, 0.55, 0.55, 2.2],
-    fontFace: SANS, fontSize: 10, border: { type: "solid", color: "D8DEE6", pt: 0.5 },
-    fill: { color: "FFFFFF" }, rowH: 0.27, valign: "middle",
+    x: 5.85, y: 2.95, w: W - M - 5.85, colW: [1.75, 0.42, 0.42, 1.0],
+    fontFace: SANS, fontSize: 9, border: { type: "solid", color: "D8DEE6", pt: 0.5 },
+    fill: { color: "FFFFFF" }, rowH: 0.24, valign: "middle",
   }
 );
-rodape(s, "2 minutos  ·  4 encontrados  →  3 avaliados  →  1 selecionado");
+s.addText("A busca também encontrou a alternativa que eu considerei e descartei.", {
+  x: 5.85, y: 4.32, w: W - M - 5.85, h: 0.3, isTextBox: true, margin: 0,
+  fontFace: SANS, fontSize: 9.5, italic: true, color: TEAL, valign: "top",
+});
 s.addNotes("A busca encontrou o Kollnig et al. SOUPS 2021, que e a alternativa mais seria. Se perguntarem se voce avaliou outras opcoes, a resposta esta no proprio print: 34 citacoes contra 52, um ano mais velho, e SOUPS e CORE B contra A* do CCS.");
 
 // =====================================================================
@@ -214,7 +215,7 @@ s.addText("Freely Given Consent? Studying Consent Notice of Third-Party Tracking
   fontFace: SERIF, fontSize: 16.5, bold: true, color: WHITE,
 });
 s.addText(
-  "NGUYEN, Trung Tin; BACKES, Michael; STOCK, Ben.   In: CCS '22 — Proceedings of the 2022 ACM " +
+  "NGUYEN, Trung Tin; BACKES, Michael; STOCK, Ben.   In: CCS '22, Proceedings of the 2022 ACM " +
   "SIGSAC Conference on Computer and Communications Security. Los Angeles, 7–11 nov. 2022, " +
   "p. 2369–2383.   DOI: 10.1145/3548606.3560564\n" +
   "RESEARCH-ARTICLE  ·  FREE ACCESS  ·  15 páginas  ·  artefato: github.com/cispa/gdpr-consent", {
@@ -230,15 +231,14 @@ cartao(s, M + (W - M * 2 - 0.25) / 2 + 0.25, 2.8, (W - M * 2 - 0.25) / 2, 1.55,
   "ACM Digital Library:  etiqueta RESEARCH-ARTICLE\n" +
   "Scopus:  tipo de documento Conference Paper\n" +
   "O próprio artigo:  corpus e ferramenta construídos pelos autores", "1E6B3A");
-rodape(s, "1 minuto  ·  CCS é CONFERÊNCIA — use h5 + Qualis + CORE Rank");
 s.addNotes("Destaque a escala - 239 mil apps - e que CCS e uma das quatro principais conferencias de seguranca do mundo. O PDF e aberto e o artefato esta no GitHub.");
 
 // =====================================================================
 // 6 — RELEVÂNCIA QUANTITATIVA
 // =====================================================================
 s = pres.addSlide();
-tituloSlide(s, "Relevância — critérios quantitativos", 5);
-cartao(s, M, 1.05, W - M * 2, 1.5, "CITAÇÕES — levantadas em 17/09/2026, as três nas bases",
+tituloSlide(s, "Por que este artigo importa: os números", 5);
+cartao(s, M, 1.05, W - M * 2, 1.5, "CITAÇÕES levantadas nas três bases em 17/09/2026",
   "ACM Digital Library  42          Scopus  52          Google Acadêmico  99  (9 versões)\n\n" +
   "Publicado em 07/11/2022  ·  1.539 downloads na ACM  ·  239.381 apps analisados", "1E6B3A");
 cartao(s, M, 2.7, (W - M * 2 - 0.25) / 2, 1.75, "Por que 42 < 52 < 99",
@@ -248,35 +248,33 @@ cartao(s, M, 2.7, (W - M * 2 - 0.25) / 2, 1.75, "Por que 42 < 52 < 99",
 cartao(s, M + (W - M * 2 - 0.25) / 2 + 0.25, 2.7, (W - M * 2 - 0.25) / 2, 1.75,
   "Recência × citações: a troca",
   "Um artigo de 2025 teve um ano para ser citado; um muito citado é antigo por construção.\n\n" +
-  "2022 em CCS é o ponto de equilíbrio — e 239 mil apps é critério quantitativo por si só.", NAVY);
-rodape(s, "1,5 minuto");
+  "2022 em CCS é o ponto de equilíbrio, e 239 mil apps já é critério quantitativo por si só.", NAVY);
 s.addNotes("Não leia os números; interprete. Um número sem contexto não diz nada.");
 
 // =====================================================================
 // 7 — RELEVÂNCIA QUALITATIVA (preenchido)
 // =====================================================================
 s = pres.addSlide();
-tituloSlide(s, "Relevância — critérios qualitativos", 6);
+tituloSlide(s, "Por que este artigo importa: o conteúdo", 6);
 const c3 = (W - M * 2 - 0.4) / 3;
 cartao(s, M, 1.05, c3, 2.5, "1 · O método é o que eu reuso",
   "Análise estática de APKs em escala, detecção de SDKs de rastreamento, verificação de " +
   "backend e inspeção manual de subamostra.\n\nÉ o pipeline que pretendo aplicar.", TEAL);
 cartao(s, M + c3 + 0.2, 1.05, c3, 2.5, "2 · A lacuna que ele deixa",
-  "Corpus de apps comerciais de controle parental.\n\nSem recorte governamental, sem " +
-  "grupo de controle pareado e sem contexto brasileiro — exatamente onde meu trabalho entra.", TEAL);
+  "Corpus de aplicativos comerciais, estudados sob o GDPR.\n\nSem recorte governamental, sem " +
+  "grupo de controle pareado e sem contexto brasileiro. É onde o meu trabalho entra.", TEAL);
 cartao(s, M + (c3 + 0.2) * 2, 1.05, c3, 2.5, "3 · Já tenho um resultado",
   "0 de 396 apps de governo exibem anúncio. No controle comercial, 33,2%.\n\n" +
-  "IC95% [0,000; 0,010] contra [0,269; 0,401] — não se sobrepõem.", "1E6B3A");
+  "IC95% [0,000; 0,010] contra [0,269; 0,401]. Não se sobrepõem.", "1E6B3A");
 s.addShape(pres.ShapeType.roundRect, {
   x: M, y: 3.75, w: W - M * 2, h: 0.85, fill: { color: NAVY }, rectRadius: 0.06,
 });
 s.addText(
-  "Se o app de governo não monetiza, o rastreador que houver não é de publicidade — " +
+  "Se o app de governo não monetiza, o rastreador que houver não é de publicidade. " +
   "é dependência técnica. Isso muda a pergunta.", {
   x: M + 0.25, y: 3.93, w: W - M * 2 - 0.5, h: 0.5, isTextBox: true, margin: 0,
   fontFace: SERIF, fontSize: 14.5, italic: true, color: WHITE, align: "center",
 });
-rodape(s, "1,5 minuto  ·  este é o slide mais forte da sua justificativa");
 s.addNotes("O terceiro cartão é o diferencial: não é hipótese, é medida própria. Zero em 396 é um resultado limpo. Diga que isso descarta o enquadramento de que o governo vende dados e deixa a questão mais difícil: por que o rastreador está lá, então?");
 
 // =====================================================================
@@ -284,16 +282,16 @@ s.addNotes("O terceiro cartão é o diferencial: não é hipótese, é medida pr
 // =====================================================================
 s = pres.addSlide();
 tituloSlide(s, "Métricas do veículo e Qualis", 7);
-cartao(s, M, 1.02, (W - M * 2 - 0.25) / 2, 1.85, "OS TRÊS OBRIGATÓRIOS — todos levantados em 17/09/2026",
+cartao(s, M, 1.02, (W - M * 2 - 0.25) / 2, 1.85, "OS TRÊS OBRIGATÓRIOS, levantados em 17/09/2026",
   "1 · h5 = 90   (mediana 146)   posição 5 de 20\n" +
-  "     (posição 19 = AsiaCCS, h5 41 — outro evento; conferido)\n" +
+  "     (posição 19 é a AsiaCCS, h5 41, outro evento)\n" +
   "2 · Qualis = A1   (ver o limiar ao lado)\n" +
   "3 · CORE = A*   ICORE2026", "1E6B3A");
 cartao(s, M, 3.02, (W - M * 2 - 0.25) / 2, 1.83, "Por que A1, e não A2",
-  "Com N=20 o percentil dá 75 (A2) — mas 20 é lista TRUNCADA, não população. Esse 75 é " +
+  "Com N=20 o percentil dá 75, que seria A2. Mas 20 é lista TRUNCADA, não população. Esse 75 é " +
   "PISO: universo maior só empurra para cima.\n\n" +
   "A1 exige percentil 87,5.  (N-5)/N >= 0,875  ->  N >= 40.\n" +
-  "Basta a área ter 40 veículos. Tem centenas. Logo A1 — limite, não estimativa.", NAVY);
+  "Basta a área ter 40 veículos. Tem centenas. Logo A1. É limite, não estimativa.", NAVY);
 s.addText("Faixas de percentil → estrato  (Figura 6, p. 13 do Documento Técnico)", {
   x: M + (W - M * 2 - 0.25) / 2 + 0.25, y: 1.02, w: (W - M * 2 - 0.25) / 2, h: 0.3,
   isTextBox: true, margin: 0, fontFace: SANS, fontSize: 10.5, bold: true, color: NAVY,
@@ -306,12 +304,11 @@ s.addText([
   { text: "Classes de 12,5% de amplitude.", options: { breakLine: true, bold: true } },
   { text: "Estrato C: periódicos sem nenhum dos indicadores do modelo.", options: { breakLine: true } },
   { text: "Com mais de um indicador, considera-se o MAIOR percentil.", options: { breakLine: true } },
-  { text: "As áreas podem ajustar até 30% dos estratos — o valor publicado pode divergir da tabela.", options: {} },
+  { text: "As áreas podem ajustar até 30% dos estratos, então o valor publicado pode divergir da tabela.", options: {} },
 ], {
   x: M + (W - M * 2 - 0.25) / 2 + 0.25, y: 2.58, w: (W - M * 2 - 0.25) / 2, h: 2.1,
   isTextBox: true, margin: 0, fontFace: SANS, fontSize: 10.5, color: GRAY, paraSpaceAfter: 4,
 });
-rodape(s, "2 minutos  ·  use a figura original no slide — é fonte primária");
 s.addNotes("Mostre a tabela na tela e aponte onde o seu veículo cai. Mencione a ressalva da estimativa por h5.");
 
 // =====================================================================
@@ -319,116 +316,140 @@ s.addNotes("Mostre a tabela na tela e aponte onde o seu veículo cai. Mencione a
 // =====================================================================
 const blocos = [
   {
-    n: 8, titulo: "Análise da estrutura",
-    intro: "As 8 seções do artigo e a função de cada uma. 15 páginas.",
+    n: 8, titulo: "A estrutura do artigo",
+    intro: "Oito seções em quinze páginas. À direita, o que chama atenção.",
     conteudo: [
-      "1  Introduction  (p.1-3)   contextualiza, 3 questões de pesquisa, contribuições",
-      "2  Legal Background of GDPR Consent  (p.3-4)   define juridicamente as 4 violações",
-      "3  Methodology  (p.4-6)   como identificar os avisos de consentimento",
-      "4  Large-Scale Analysis  (p.6-11)   aplicação em escala + resultados",
-      "5  Developer Notification  (p.11-12)   notifica devs e coleta respostas",
-      "6  Discussion  (p.12-13)   ·  7  Related Work  (p.13)  ·  8  Conclusion  (p.13)",
+      "1  Introduction            p.1-3    contexto, 3 perguntas, contribuições",
+      "2  Legal Background        p.3-4    define na lei as 4 violações que vai medir",
+      "3  Methodology             p.4-6    como achar os avisos de consentimento",
+      "4  Large-Scale Analysis    p.6-11   aplica em escala e mostra os resultados",
+      "5  Developer Notification  p.11-12  avisa os desenvolvedores, coleta respostas",
+      "6  Discussion              p.12-13  interpreta",
+      "7  Related Work            p.13     revisão da literatura",
+      "8  Conclusion              p.13     fecha",
     ],
-    rotulos: ["Related Work é a seção 7, NÃO a 2", "Método (3) separado da aplicação (4)",
-              "Seções 3+4 = 7,5 de 15 páginas", "NÃO há seção de Limitações nem de Ética"],
-    dica: "Metodologia detalhada é CONSEQUÊNCIA da escala. No exemplo da professora o avaliador " +
-          "teve de reconstruir o método; com 239 mil apps isso seria impossível.",
+    rotulos: ["A revisão da literatura é a seção 7, não a 2",
+              "Método (3) vem separado da aplicação (4)",
+              "As seções 3 e 4 ocupam metade do artigo",
+              "Não existe seção de Limitações nem de Ética"],
+    dica: "Num estudo de 239 mil aplicativos, método detalhado é consequência da escala. " +
+          "No exemplo da professora o avaliador teve que reconstruir o método porque não havia seção.",
   },
   {
-    n: 9, titulo: "Análise do resumo",
-    intro: "Seis movimentos, cada um em uma ou duas frases.",
+    n: 9, titulo: "O resumo",
+    intro: "Seis movimentos, um por frase. É modelo de como escrever o meu.",
     conteudo: [
-      "Contextualiza:  \u0022Adopted in May 2018, the GDPR requires the consent... to be freely given\u0022",
-      "Lacuna:  \u0022no research has systematically studied how consent notices are implemented\u0022",
-      "Objetivo:  \u0022we perform the first large-scale study into consent notices\u0022",
-      "Método:  \u0022a mostly automated and scalable approach... 239,381 Android apps\u0022",
-      "Resultados:  4 mecanismos · 13.082 apps · 30.160 sem aviso · 2.688 (20,54%) violam",
-      "Palavras-chave:  Android Security; Consent; GDPR; User Privacy",
-    ],
-    rotulos: ["Contextualiza", "Declara a lacuna", "Objetivo", "Método empregado",
-              "Resultados", "Implicação"],
-    dica: "As palavras-chave trazem Consent e GDPR, mas NÃO trazem tracking nem third-party — " +
-          "que estão no título. Isso diz como os autores querem ser encontrados.",
-  },
-  {
-    n: 10, titulo: "Análise da introdução",
-    intro: "Abre pelo fenômeno cotidiano, não pela técnica. E declara 3 questões.",
-    conteudo: [
-      "\u0022Every time we load a page... information about us will be broadcast to large",
-      "numbers of companies, most notably for advertising purposes.\u0022",
+      "CONTEXTO      o GDPR exige consentimento livre, específico e informado",
+      "LACUNA        ninguém estudou como os avisos são de fato implementados",
+      "OBJETIVO      primeiro estudo em larga escala sobre esses avisos",
+      "MÉTODO        abordagem automatizada aplicada a 239.381 aplicativos",
+      "RESULTADO     30.160 sem aviso nenhum; 2.688 dos que têm, violam a lei",
+      "IMPLICAÇÃO    falta transparência e falta apoio aos desenvolvedores",
       "",
-      "Q1  Do mobile apps implement any form of consent notices?",
-      "Q2  Can these consent notices be legally justified under GDPR?",
-      "Q3  Are developers aware of the requirements and of their own violations?",
+      "Palavras-chave: Android Security, Consent, GDPR, User Privacy",
     ],
-    rotulos: ["Contextualiza", "Descreve a problemática", "Posiciona na literatura",
-              "Questões de pesquisa", "Contribuições em lista"],
-    dica: "Nota de rodapé 1: eles chamam de violação POTENCIAL de propósito, para não emitir " +
-          "juízo jurídico — que seria consultoria legal regulada. Mesmo cuidado que a LGPD exige de mim.",
+    rotulos: ["Cada movimento cabe em uma frase",
+              "As palavras-chave trazem Consent e GDPR",
+              "mas não trazem tracking nem third-party,",
+              "que estão no título do artigo"],
+    dica: "As palavras-chave mostram como os autores querem ser encontrados. " +
+          "Compare com os termos que eu usei na minha busca.",
   },
   {
-    n: 11, titulo: "Análise do método — o funil",
-    intro: "Corpus do AndroZoo, três critérios de inclusão, dois instrumentos.",
+    n: 10, titulo: "A introdução",
+    intro: "Abre pelo que acontece com o usuário, não pela técnica.",
     conteudo: [
-      "5.800.000   nomes de apps na lista do AndroZoo",
-      "      ↓     ≥10k downloads · permissão sensível · atualizado após maio/2018",
+      "\u0022Toda vez que abrimos uma página ou usamos um aplicativo, informação",
+      " sobre nós é transmitida a um grande número de empresas.\u0022",
+      "",
+      "Depois declara três perguntas de pesquisa:",
+      "",
+      "  1  os aplicativos implementam algum tipo de aviso de consentimento?",
+      "  2  esses avisos se justificam juridicamente sob o GDPR?",
+      "  3  os desenvolvedores sabem que estão em violação?",
+    ],
+    rotulos: ["Contextualiza", "Descreve o problema", "Aponta a lacuna",
+              "Declara objetivo e contribuições",
+              "As 3 perguntas são respondíveis por medição"],
+    dica: "Na nota de rodapé 1 eles explicam que dizem violação POTENCIAL de propósito, " +
+          "para não emitir juízo jurídico. Mesmo cuidado que a LGPD vai exigir de mim.",
+  },
+  {
+    n: 11, titulo: "O método, e o funil",
+    intro: "Corpus vindo do AndroZoo, três critérios de entrada, dois instrumentos.",
+    conteudo: [
+      "5.800.000   nomes de aplicativos na lista do AndroZoo",
+      "      ↓     mais de 10 mil downloads, pede permissão sensível,",
+      "            atualizado depois de maio de 2018",
       "  250.972   aplicativos obtidos",
-      "      ↓     análise dinâmica bem-sucedida em 95,38%",
-      "  239.381   analisados  →  13.082 com aviso  →  2.688 (20,54%) violam",
-      "   30.160   não tentam sequer implementar aviso  ·  1.127 devs notificados",
+      "      ↓     a análise funcionou em 95,38% deles",
+      "  239.381   analisados",
+      "   13.082   têm aviso de consentimento   →   2.688 violam a lei",
+      "   30.160   não têm aviso nenhum",
     ],
-    rotulos: ["Fonte: AndroZoo — a MESMA do meu TCC", "3 critérios de inclusão explícitos",
-              "OCR + PLN + clustering + verificação manual", "Análise dinâmica de tráfego",
-              "Reportam a taxa de sucesso, não só o total"],
-    dica: "O denominador MUDA no meio: os 20,54% são sobre os 13.082 que têm mecanismo, " +
-          "não sobre os 239.381. E os 30.160 são categoria separada — não têm mecanismo nenhum.",
+    rotulos: ["O AndroZoo é a mesma fonte que eu vou usar",
+              "Três critérios de entrada declarados",
+              "Dois instrumentos: a tela e o tráfego de rede",
+              "Reportam quanto NÃO conseguiram analisar"],
+    dica: "O denominador muda no meio do funil: os 2.688 são sobre os 13.082 que têm aviso, " +
+          "não sobre os 239 mil. E os 30.160 são outra categoria, não têm aviso nenhum.",
   },
   {
-    n: 12, titulo: "Análise dos resultados",
-    intro: "Dois instrumentos independentes validam cada afirmação.",
+    n: 12, titulo: "Os resultados",
+    intro: "Cada afirmação é sustentada por dois instrumentos independentes.",
     conteudo: [
-      "2.181  (16,67%)  enviaram dado ANTES do consentimento explícito",
-      "1.084  ( 8,28%)  sem qualquer forma de recusar",
-      "  134            enviaram dado DEPOIS do opt-out explícito",
-      "  ~99%           das violações envolvem o Android Advertising ID (AAID)",
+      "2.181   mandaram dado ANTES de o usuário consentir",
+      "1.084   não oferecem nenhuma forma de recusar",
+      "  134   mandaram dado DEPOIS de o usuário recusar",
       "",
-      "Validação:  a tela prova que o aviso existe; o tráfego prova que o dado saiu.",
+      "Quase todas as violações envolvem o identificador de anúncio do Android.",
+      "",
+      "A tela prova que o aviso existe. O tráfego prova que o dado saiu.",
+      "Um sozinho não sustenta a afirmação.",
     ],
-    rotulos: ["SEM intervalo de confiança", "SEM tamanho de efeito",
-              "SEM grupo de controle ← minha lacuna", "COM artefato público"],
-    dica: "Presença não é transmissão. É o mesmo par estático+dinâmico que eu vou precisar " +
-          "no meu trabalho: detectar o SDK não prova que ele enviou dado.",
+    rotulos: ["Não tem intervalo de confiança",
+              "Não tem tamanho de efeito",
+              "Não tem grupo de controle",
+              "e essa é a minha lacuna"],
+    dica: "Presença não é transmissão. E o mesmo par de instrumentos que eu vou precisar: " +
+          "detectar o SDK no aplicativo nao prova que ele enviou dado.",
   },
   {
-    n: 13, titulo: "Análise da discussão",
-    intro: "Seção 6, autônoma, com três subseções.",
+    n: 13, titulo: "A discussão",
+    intro: "Existe seção própria, com três subseções.",
     conteudo: [
-      "6.1  Widespread Violation of GDPR Consent   →  não é caso isolado, é prática difundida",
-      "6.2  Transparency of Processing Users' Data  →  o problema não é só ilegalidade, é opacidade",
-      "6.3  Lack of Support for Developers          →  falta ferramenta e orientação, não sobra má-fé",
+      "6.1   a violação é generalizada, não é caso isolado",
+      "6.2   o problema não é só ilegalidade, é falta de transparência",
+      "6.3   falta ferramenta e orientação para o desenvolvedor cumprir a lei",
       "",
-      "Depois de medir 2.688 violações, eles NÃO concluem que os devs agem de má-fé.",
-      "Usam as respostas coletadas na Seção 5 para reenquadrar a causa.",
+      "Depois de encontrar 2.688 violações, eles NÃO concluem que",
+      "os desenvolvedores agem de má-fé. Usam as respostas que",
+      "coletaram na seção 5 para deslocar a causa.",
     ],
-    rotulos: ["Interpreta o resultado", "Confronta com a literatura",
-              "Implicação normativa", "Resiste à explicação fácil"],
-    dica: "É o movimento que o MEU resultado pede: 0 de 396 apps de governo com anúncio. " +
-          "Se houver rastreador, não é monetização — é dependência técnica.",
+    rotulos: ["Interpreta o resultado",
+              "Confronta com a literatura",
+              "Tira implicação prática",
+              "Resiste à explicação fácil"],
+    dica: "E o mesmo movimento que o meu resultado pede: nenhum dos 396 apps de governo tem " +
+          "anuncio. Se houver rastreador, nao e para ganhar dinheiro, e dependencia tecnica.",
   },
   {
-    n: 14, titulo: "Análise da conclusão",
-    intro: "Repete o resumo quase palavra por palavra — com UMA diferença.",
+    n: 14, titulo: "A conclusão",
+    intro: "Repete o resumo quase palavra por palavra. Com uma diferença.",
     conteudo: [
-      "RESUMO:      \u00222,688 (20.54%) apps VIOLATE at least one...\u0022",
-      "CONCLUSÃO:   \u00222,688 (20.54%) apps POTENTIALLY VIOLATE at least one...\u0022",
+      "NO RESUMO:      2.688 aplicativos VIOLAM ao menos um requisito",
       "",
-      "A nota de rodapé 1 explica que \u0022potencial\u0022 foi escolha deliberada, para não",
-      "emitir juízo jurídico. Logo a CONCLUSÃO está correta e o RESUMO escorrega.",
+      "NA CONCLUSÃO:   2.688 aplicativos POTENCIALMENTE VIOLAM",
+      "",
+      "A nota de rodapé 1 diz que \u0022potencialmente\u0022 foi escolha deliberada,",
+      "para não emitir juízo jurídico.",
+      "",
+      "Logo a conclusão está certa e o resumo escorrega.",
     ],
     rotulos: ["Retoma o objetivo", "Infere a partir dos dados",
-              "Retoma a 3ª questão de pesquisa", "Implicação normativa"],
-    dica: "Comparar o que o resumo promete com o que a conclusão entrega é análise crítica de " +
-          "verdade — e aqui ela encontra uma inconsistência real num artigo A*.",
+              "Responde a terceira pergunta", "Tira implicação"],
+    dica: "Comparar o que o resumo promete com o que a conclusao entrega e analise critica de " +
+          "verdade. Aqui ela encontra uma inconsistencia real num artigo de conferencia A*.",
   },
 ];
 
@@ -463,7 +484,6 @@ blocos.forEach((b) => {
     fontFace: SANS, fontSize: 11, color: NAVY, paraSpaceAfter: 7, valign: "top",
   });
   cartao(sl, M, 3.95, W - M * 2, 1.15, "Observação para esta seção", b.dica, TEAL);
-  rodape(sl, "~50 segundos por slide  ·  a análise da estrutura vale 5 dos 15 minutos");
   sl.addNotes("Não leia o texto colado em voz alta. Aponte os rótulos e explique a função de cada trecho.");
 });
 
@@ -479,7 +499,7 @@ s.addText("O que este artigo muda no meu TCC", {
 s.addShape(pres.ShapeType.rect, { x: M, y: 1.58, w: 0.85, h: 0.035, fill: { color: TEAL } });
 const fechos = [
   ["Método", "Adoto o pipeline de análise estática de APKs com detecção de SDKs de rastreamento e validação manual de subamostra."],
-  ["Recorte", "Aplico ao parque governamental brasileiro, que o artigo não cobre — com grupo de controle comercial pareado."],
+  ["Recorte", "Aplico ao parque governamental brasileiro, que o artigo não cobre, e acrescento grupo de controle comercial pareado."],
   ["Próximo passo", "Validar manualmente os 396 aplicativos e rodar o piloto com os 20 maiores."],
 ];
 fechos.forEach(([rot, txt], i) => {

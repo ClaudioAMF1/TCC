@@ -69,7 +69,15 @@ Numerados na ordem em que foram feitos.
 | `20-busca3-filtrada-70` | Busca 3 após ano, área e tipo: **70 documentos** |
 | `24-busca3-5-finalistas` | Busca 3 refinada por palavra-chave: **5 documentos**, os finalistas |
 | `04`, `07` a `09`, `11` a `13`, `15`, `16`, `19`, `21` a `23` | Telas intermediárias da mesma sequência, guardadas como registro |
-| `busca-scopus-resultados.jpg` | Recorte comprimido do print 06, usado no slide 4 |
+| `busca-scopus-resultados.jpg` | Recorte comprimido do print 06 |
+| `funil-1-131.jpg` | Recorte do print 18, comprimido para o slide 2: **131** |
+| `funil-2-70.jpg` | Recorte do print 20, comprimido para o slide 2: **70** |
+| `funil-3-5.jpg` | Recorte do print 24, comprimido para o slide 2: **5** |
+
+Os três `funil-*.jpg` são os que aparecem no deck, lado a lado. Antes disso o slide
+mostrava um único print, o da busca 1 com **4 resultados**, que não é nenhuma das
+etapas do funil narrado — a tela contradizia o texto. Agora cada número do funil
+tem a tela correspondente em cima dele.
 
 **Os arquivos marcados como intermediários não foram conferidos um a um.** Estão
 aqui porque fazem parte do registro da sessão de busca, não porque cada um carregue

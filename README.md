@@ -45,6 +45,7 @@ Atividade de 29/09 e 01/10, 15 minutos, **4 dos 6 pontos da AV1**. Preparada com
 | Arquivo | Conteúdo |
 |---|---|
 | `enunciado-da-atividade.md` | **O enunciado transcrito** + a leitura literal: o que ele exige, o que ele NÃO exige, e as duas armadilhas |
+| `plano-de-execucao.md` | **Cronograma dia a dia** até 29/09, com o que falta, quem faz o quê e as respostas das perguntas prováveis |
 | `plano-do-seminario.md` | Estratégia: por que este artigo, a tensão entre recência e citações, a conversão h5 → Qualis |
 | `roteiro-falado.md` | **O que dizer, slide a slide**, com os números do N3 já no texto |
 | `protocolo-de-busca.md` | O que registrar **enquanto** busca — o slide 4 é impossível de reconstruir depois — e a planilha de métricas |

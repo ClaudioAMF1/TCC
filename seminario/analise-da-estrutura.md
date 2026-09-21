@@ -116,10 +116,6 @@ Cole o abstract e marque cada trecho.
 > justificativa, e é exatamente a decisão que você vai tomar nos seus 396
 > aplicativos.
 
-> **Este é o ponto de conexão mais forte com o seu TCC.** Cada corte do funil é uma
-> decisão que precisa de justificativa, e é exatamente a decisão que você vai tomar
-> nos seus 396 aplicativos. Diga isso na apresentação.
-
 ---
 
 ## Bloco 5 — Resultados

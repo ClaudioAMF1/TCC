@@ -13,24 +13,20 @@
 | **1** — relevância quantitativa | ✅ 42 (ACM) · 52 (Scopus) · 99 (Scholar), com data |
 | **1** — relevância qualitativa | ✅ escrita, com os números do N3 |
 | **2** — h5 · Qualis · CORE | ✅ 90 · A1 · A\* |
-| **3** — análise da estrutura | ⬜ **falta ler o artigo** |
-| Deck | 🟡 16 slides; 1–8 e 16 prontos, 9–15 esperando o artigo |
+| **3** — análise da estrutura | ✅ **PREENCHIDA** a partir do PDF |
+| Deck | 🟡 16 slides; **15 prontos**. Só o slide 4 espera o seu funil |
 | Ensaio | ⬜ |
 
-**Duas coisas destravam tudo o que falta.** As duas estão no Dia 1.
+**Falta UMA coisa só: o funil da sua busca (slide 4).** O resto está fechado.
 
 ---
 
 ## Dia 1 (hoje) — 1h30
 
-### A. Anexar o PDF do artigo nesta conversa — 5 min
+### ~~A. Anexar o PDF~~ ✅ feito em 21/09
 
-Baixe pela ACM DL (`dl.acm.org/doi/10.1145/3548606.3560564` → botão **PDF/eReader**)
-e **anexe aqui**. Com o PDF em mãos eu preencho os sete blocos da análise de
-estrutura, que é o item 3 inteiro.
-
-> Por que não faço sozinho: o ambiente onde eu rodo bloqueia o acesso à ACM, ao
-> CISPA e ao arXiv. Não é escolha, é o proxy da rede.
+A análise da estrutura está preenchida em `analise-da-estrutura.md` e nos slides 9 a
+15, com o texto real do artigo.
 
 ### B. A busca na ACM — 40 min · **é o único item que eu não posso fazer por você**
 

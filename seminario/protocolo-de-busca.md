@@ -32,46 +32,78 @@ para resolver com a biblioteca — e descobrir isso no dia 28 é fatal.
 
 ---
 
-## 2. A busca
+## 2. A busca — EXECUTADA em 21/09/2026
 
-Execute e registre. Se fizer mais de uma tentativa, registre **todas**, inclusive as
-que não deram certo: refinar a string é parte do método e mostra rigor.
+Prints em `seminario/pesquisa/`. **Base: Scopus, acessada pelo portal da CAPES via
+CAFe** (`www-scopus-com.ez279.periodicos.capes.gov.br`) — o prefixo `ez279` no
+endereço é a prova do acesso institucional.
 
-### Tentativa 1
+### As três tentativas
 
-| Campo | Preencher |
-|---|---|
-| Base (WoS · ScienceDirect · ACM · Scopus · IEEE Xplore) | |
-| Acesso via CAFe confirmado? | |
-| Data da consulta | |
-| String exata | |
-| Filtros aplicados (ano, tipo, idioma) | |
-| Resultados devolvidos | |
+| | String | Resultados |
+|---|---|---|
+| 1 | `"third-party tracking" AND consent AND android` | **4** |
+| 2 | `"third party" AND tracking AND android AND (consent OR GDPR)` | **12** (9 com filtro de ano) |
+| **3** | `"third-party tracking"` | **131** |
 
-### Tentativa 2
+Todas no campo *Article title, Abstract, Keywords*, na mesma sessão.
 
-| Campo | Preencher |
-|---|---|
-| Base (WoS · ScienceDirect · ACM · Scopus · IEEE Xplore) | |
-| Acesso via CAFe confirmado? | |
-| Data da consulta | |
-| String exata | |
-| Filtros aplicados | |
-| Resultados devolvidos | |
+**As duas primeiras foram cirúrgicas demais.** Expressão exata mais três termos
+obrigatórios devolveu 4 documentos, o que não demonstra triagem: parece busca feita
+até achar o que já se queria. A terceira abre para 131 e depois estreita por filtro,
+que é como uma busca sistemática deve parecer.
 
-### String sugerida como ponto de partida
+### O funil que vai ao slide
 
 ```
-("third-party" OR "third party") AND (tracking OR tracker OR SDK)
-AND (android OR "mobile app") AND (privacy OR consent OR GDPR)
+131   expressão exata, sem filtro                          print 18
+ ↓    ano 2018–2026, Computer Science, Conference + Article
+ 70                                                        print 20
+ ↓    palavras-chave Third Parties e Third-party Tracking,
+      ano 2018–2025
+  5   finalistas                                           print 24
+ ↓    leitura de título e resumo
+  1   selecionado
 ```
 
-Ajuste à sintaxe de cada base — a ACM DL e o Scopus não usam a mesma. **Registre a
-string que você de fato usou**, não esta.
+### Os cinco finalistas
+
+| Artigo | Veículo | Ano | Cit. | Decisão |
+|---|---|---|---|---|
+| A Comprehensive Study on Third-Party User Tracking | ACM ICPS | 2023 | 10 | ❌ menos citado |
+| **Freely Given Consent?** | **CCS** | **2022** | **52** | ✅ **selecionado** |
+| A fait accompli? An empirical study into the absence of consent | SOUPS | 2021 | 34 | ❌ veículo CORE B |
+| Protecting privacy on the web: HTTPS e Google Analytics | Online Information Review | 2018 | 23 | ❌ é web, não Android |
+| WhisperTest: Voice-Control Library for iOS UI Automation | CCS | 2025 | 0 | ❌ é iOS |
+
+> **E apareceu um artigo de 2026 no IEEE Symposium on Security and Privacy**, sobre
+> riscos de privacidade em plataformas de gestão de consentimento, com **0 citações**.
+> Mais recente que o escolhido, em veículo de topo, e ainda sem tempo de ser citado.
+> É a prova viva de que recência e citações se excluem por construção. Se perguntarem
+> por que não um artigo mais novo, a resposta está no próprio print.
+
+### Detalhe: os quatro candidatos da Tentativa 1
+
+| # | Artigo | Veículo | Ano | Citações (Scopus) | Decisão |
+|---|---|---|---|---|---|
+| 1 | WhisperTest: A Voice-Control-based Library for **iOS** UI Automation | CCS 2025 | 2025 | 0 | ❌ **iOS**, não Android; e é ferramenta de automação de UI, não medição de rastreamento |
+| 2 | A Comprehensive Study on Third-Party User Tracking in Mobile Applications | ACM ICPS | 2023 | 10 | ❌ menos citado e em veículo de menor classificação |
+| **3** | **Freely Given Consent?** — Nguyen, Backes, Stock | **CCS** | **2022** | **52** | ✅ **SELECIONADO** |
+| 4 | A fait accompli? An empirical study into the absence of consent | SOUPS | 2021 | 34 | ❌ mais antigo, menos citado, e SOUPS é **CORE B** contra **A\*** do CCS |
+
+### O funil
+
+| | Quantos |
+|---|---|
+| Resultados devolvidos (T1) | **4** |
+| Resultados devolvidos (T2, ampla) | **12** |
+| Após leitura de título e resumo | **3** — o WhisperTest sai por ser iOS |
+| Lidos na íntegra | ☐ *confirmar* |
+| **Selecionado** | **1** |
 
 ### Critérios de inclusão e exclusão
 
-Declare antes de olhar os resultados. É o que separa seleção de conveniência.
+Declarados **antes** de olhar os resultados. É o que separa seleção de conveniência.
 
 **Incluir:** artigo original com medição empírica · rastreamento por terceiros em
 Android · veículo indexado e revisado por pares · texto completo acessível.
@@ -79,14 +111,11 @@ Android · veículo indexado e revisado por pares · texto completo acessível.
 **Excluir:** revisão de literatura ou survey · posicionamento sem dado · foco em iOS
 ou web sem componente Android · publicado apenas como preprint.
 
-### O funil
-
-| | Quantos |
-|---|---|
-| Resultados devolvidos | |
-| Após ler título e resumo | |
-| Lidos na íntegra | |
-| **Selecionado** | 1 |
+> **O achado que vale ponto:** a busca encontrou o **Kollnig et al. (SOUPS 2021)**,
+> que é a alternativa mais séria ao artigo escolhido. Poder dizer *"considerei e
+> descartei, com o número"* — 34 citações contra 52, um ano mais velho, CORE B contra
+> A\* — é muito mais forte que apresentar um artigo isolado. Se perguntarem se você
+> avaliou alternativas, a resposta está no próprio print da busca.
 
 ---
 

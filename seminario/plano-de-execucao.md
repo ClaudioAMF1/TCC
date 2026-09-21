@@ -9,58 +9,15 @@
 
 | Item do enunciado | Estado |
 |---|---|
-| **1** — passo a passo da seleção | ⬜ **falta** — só você pode fazer |
+| **1** — passo a passo da seleção | ✅ **executado em 21/09**, duas tentativas, prints em `pesquisa/` |
 | **1** — relevância quantitativa | ✅ 42 (ACM) · 52 (Scopus) · 99 (Scholar), com data |
 | **1** — relevância qualitativa | ✅ escrita, com os números do N3 |
 | **2** — h5 · Qualis · CORE | ✅ 90 · A1 · A\* |
-| **3** — análise da estrutura | ⬜ **falta ler o artigo** |
-| Deck | 🟡 16 slides; 1–8 e 16 prontos, 9–15 esperando o artigo |
-| Ensaio | ⬜ |
+| **3** — análise da estrutura | ✅ preenchida a partir do PDF, 7 blocos |
+| Deck | ✅ **16 slides, nenhum campo em aberto** |
+| Ensaio | ⬜ **é o que falta** |
 
-**Duas coisas destravam tudo o que falta.** As duas estão no Dia 1.
-
----
-
-## Dia 1 (hoje) — 1h30
-
-### A. Anexar o PDF do artigo nesta conversa — 5 min
-
-Baixe pela ACM DL (`dl.acm.org/doi/10.1145/3548606.3560564` → botão **PDF/eReader**)
-e **anexe aqui**. Com o PDF em mãos eu preencho os sete blocos da análise de
-estrutura, que é o item 3 inteiro.
-
-> Por que não faço sozinho: o ambiente onde eu rodo bloqueia o acesso à ACM, ao
-> CISPA e ao arXiv. Não é escolha, é o proxy da rede.
-
-### B. A busca na ACM — 40 min · **é o único item que eu não posso fazer por você**
-
-O item 1 pede *"o passo a passo para a seleção"*. É o registro do que **você**
-executou. Se eu inventar uma busca que não aconteceu, isso é metodologia fabricada
-— exatamente o que derrubou três temas deste TCC quando o número não batia com o
-que estava por trás.
-
-Abra `protocolo-de-busca.md` ao lado e preencha **enquanto** faz:
-
-1. Portal CAPES → **Entrar** (CAFe) → ☰ → **Buscar base** → `ACM` → **Acesse**
-2. Na busca da ACM, cole:
-   ```
-   AllField:("third-party tracking" AND consent AND android)
-   ```
-3. **Anote antes de clicar em qualquer resultado:** string exata, data, **quantos
-   resultados vieram**
-4. Filtre por `Research Article` e período `2018–2026`. Anote o novo total.
-5. Passe os olhos em título + resumo de todos. Conte quantos sobrevivem aos
-   critérios de inclusão → esse é o **M**
-6. Dos M, escolha 3 a 5 para abrir. Anote **por que descartou cada um**
-7. Print de cada tela
-
-> Se a string trouxer resultado demais ou de menos, ajuste e **registre as duas
-> tentativas**. Refinar a string faz parte do método e mostra rigor — o protocolo
-> tem espaço para Tentativa 1 e 2.
-
-### C. Me mandar os dois — 5 min
-
-O PDF anexado e os números do funil. A partir daí eu fecho os slides 4 e 9–15.
+**A atividade está montada.** O que resta é ensaiar e conferir.
 
 ---
 

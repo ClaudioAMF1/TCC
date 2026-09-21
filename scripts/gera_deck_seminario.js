@@ -160,28 +160,46 @@ s.addNotes("Trinta segundos no máximo por tema descartado. O objetivo é mostra
 // =====================================================================
 s = pres.addSlide();
 tituloSlide(s, "Passo a passo da seleção", 3);
-s.addText("A atividade pede o processo, não só o resultado. Anote enquanto pesquisa — depois é irrecuperável.", {
-  x: M, y: 1.0, w: W - M * 2, h: 0.32, isTextBox: true, margin: 0,
+s.addText("Scopus, via portal da CAPES / CAFe  ·  21 de setembro de 2026  ·  prints de cada tela", {
+  x: M, y: 0.98, w: W - M * 2, h: 0.3, isTextBox: true, margin: 0,
   fontFace: SANS, fontSize: 12, color: GRAY,
 });
-preencher(s, M, 1.45, (W - M * 2 - 0.25) / 2, 3.45, "registre a sua busca", [
-  "Base(s) usada(s) via CAFe: ACM DL, IEEE Xplore, Scopus, Web of Science…",
-  "String de busca exata, com os operadores booleanos",
-  "Filtros: período, tipo de documento, idioma, área",
-  "Nº de resultados retornados",
-  "Nº após leitura de título e resumo",
-  "Nº após leitura do texto completo",
-  "Critérios de inclusão e exclusão aplicados",
-  "Data da consulta",
-]);
-preencher(s, M + (W - M * 2 - 0.25) / 2 + 0.25, 1.45, (W - M * 2 - 0.25) / 2, 3.45,
-  "por que este e não outro", [
-    "Por que é artigo ORIGINAL e não revisão — aponte no texto onde isso fica claro (coleta própria, experimento, dados novos)",
-    "Quais candidatos você descartou e por quê",
-    "Print das telas de busca (guarde; ela pode pedir)",
-  ]);
-rodape(s, "2 minutos");
-s.addNotes("Se você fizer a busca sem anotar, este slide fica impossível. Anote em um arquivo enquanto pesquisa.");
+cartao(s, M, 1.36, (W - M * 2 - 0.22) / 2, 1.5, "Tentativa 1 — expressão exata",
+  "\u0022third-party tracking\u0022 AND consent AND android\n" +
+  "campo: Article title, Abstract, Keywords\n\n" +
+  "→ 4 documentos", NAVY);
+cartao(s, M + (W - M * 2 - 0.22) / 2 + 0.22, 1.36, (W - M * 2 - 0.22) / 2, 1.5,
+  "Tentativa 2 — ampliada",
+  "\u0022third party\u0022 AND tracking AND android AND (consent OR GDPR)\n\n" +
+  "→ 12 documentos\n" +
+  "CS 11 · Eng 3 · Soc 3 · Env 2", TEAL);
+s.addText("Filtros na T1: Year 2021–2025 · Computer Science · Conference paper · English   →   4 (nenhum perdido)", {
+  x: M, y: 2.95, w: W - M * 2, h: 0.26, isTextBox: true, margin: 0,
+  fontFace: SANS, fontSize: 10.5, italic: true, color: TEAL,
+});
+const linhas = [
+  ["1", "WhisperTest — iOS UI Automation", "2025", "0", "iOS, não Android"],
+  ["2", "A Comprehensive Study on 3rd-Party User Tracking", "2023", "10", "menos citado"],
+  ["3", "Freely Given Consent?  (Nguyen, Backes, Stock)", "2022", "52", "SELECIONADO"],
+  ["4", "A fait accompli?  (Kollnig, Binns)", "2021", "34", "SOUPS = CORE B"],
+];
+s.addTable(
+  [[{ text: "#", options: { bold: true } }, { text: "Artigo", options: { bold: true } },
+    { text: "Ano", options: { bold: true } }, { text: "Cit.", options: { bold: true } },
+    { text: "Decisão", options: { bold: true } }]].concat(
+    linhas.map((r, i) => r.map((c) => ({
+      text: c,
+      options: { bold: i === 2, color: i === 2 ? "1E6B3A" : NAVY },
+    })))
+  ),
+  {
+    x: M, y: 3.3, w: W - M * 2, colW: [0.3, 4.6, 0.55, 0.55, 2.2],
+    fontFace: SANS, fontSize: 10, border: { type: "solid", color: "D8DEE6", pt: 0.5 },
+    fill: { color: "FFFFFF" }, rowH: 0.27, valign: "middle",
+  }
+);
+rodape(s, "2 minutos  ·  4 encontrados  →  3 avaliados  →  1 selecionado");
+s.addNotes("A busca encontrou o Kollnig et al. SOUPS 2021, que e a alternativa mais seria. Se perguntarem se voce avaliou outras opcoes, a resposta esta no proprio print: 34 citacoes contra 52, um ano mais velho, e SOUPS e CORE B contra A* do CCS.");
 
 // =====================================================================
 // 5 — O ARTIGO

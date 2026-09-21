@@ -32,46 +32,62 @@ para resolver com a biblioteca — e descobrir isso no dia 28 é fatal.
 
 ---
 
-## 2. A busca
+## 2. A busca — EXECUTADA em 21/09/2026
 
-Execute e registre. Se fizer mais de uma tentativa, registre **todas**, inclusive as
-que não deram certo: refinar a string é parte do método e mostra rigor.
+Prints em `seminario/pesquisa/`. **Base: Scopus, acessada pelo portal da CAPES via
+CAFe** (`www-scopus-com.ez279.periodicos.capes.gov.br`) — o prefixo `ez279` no
+endereço é a prova do acesso institucional.
 
-### Tentativa 1
+### Tentativa 1 — específica
 
-| Campo | Preencher |
+| Campo | Valor |
 |---|---|
-| Base (WoS · ScienceDirect · ACM · Scopus · IEEE Xplore) | |
-| Acesso via CAFe confirmado? | |
-| Data da consulta | |
-| String exata | |
-| Filtros aplicados (ano, tipo, idioma) | |
-| Resultados devolvidos | |
+| Base | **Scopus** (Elsevier), via CAFe |
+| Data | **21/09/2026** |
+| Campo de busca | Article title, Abstract, Keywords |
+| String | `"third-party tracking" AND consent AND android` |
+| **Resultados** | **4 documentos** |
+| Filtros aplicados | Year 2021–2025 · Subject area *Computer Science* · Document type *Conference paper* · Language *English* |
+| Resultados após filtros | **4** — nenhum perdido, o que indica que o conjunto já era homogêneo |
 
-### Tentativa 2
+### Tentativa 2 — ampla
 
-| Campo | Preencher |
+| Campo | Valor |
 |---|---|
-| Base (WoS · ScienceDirect · ACM · Scopus · IEEE Xplore) | |
-| Acesso via CAFe confirmado? | |
-| Data da consulta | |
-| String exata | |
-| Filtros aplicados | |
-| Resultados devolvidos | |
+| Base | **Scopus** (Elsevier), via CAFe |
+| Data | **21/09/2026** |
+| Campo de busca | Article title, Abstract, Keywords |
+| String | `"third party" AND tracking AND android AND (consent OR GDPR)` |
+| **Resultados** | **12 documentos** |
+| Distribuição por área | Computer Science 11 · Engineering 3 · Social Sciences 3 · Environmental Science 2 |
 
-### String sugerida como ponto de partida
+> **Por que duas tentativas:** a primeira usa *"third-party tracking"* como
+> **expressão exata** e devolveu 4. A segunda solta a expressão em dois termos e
+> acrescenta GDPR, triplicando para 12. Registrar as duas mostra que a string foi
+> **calibrada**, e não aceita na primeira forma que veio à cabeça.
 
-```
-("third-party" OR "third party") AND (tracking OR tracker OR SDK)
-AND (android OR "mobile app") AND (privacy OR consent OR GDPR)
-```
+### Os quatro candidatos da Tentativa 1
 
-Ajuste à sintaxe de cada base — a ACM DL e o Scopus não usam a mesma. **Registre a
-string que você de fato usou**, não esta.
+| # | Artigo | Veículo | Ano | Citações (Scopus) | Decisão |
+|---|---|---|---|---|---|
+| 1 | WhisperTest: A Voice-Control-based Library for **iOS** UI Automation | CCS 2025 | 2025 | 0 | ❌ **iOS**, não Android; e é ferramenta de automação de UI, não medição de rastreamento |
+| 2 | A Comprehensive Study on Third-Party User Tracking in Mobile Applications | ACM ICPS | 2023 | 10 | ❌ menos citado e em veículo de menor classificação |
+| **3** | **Freely Given Consent?** — Nguyen, Backes, Stock | **CCS** | **2022** | **52** | ✅ **SELECIONADO** |
+| 4 | A fait accompli? An empirical study into the absence of consent | SOUPS | 2021 | 34 | ❌ mais antigo, menos citado, e SOUPS é **CORE B** contra **A\*** do CCS |
+
+### O funil
+
+| | Quantos |
+|---|---|
+| Resultados devolvidos (T1) | **4** |
+| Resultados devolvidos (T2, ampla) | **12** |
+| Após leitura de título e resumo | **3** — o WhisperTest sai por ser iOS |
+| Lidos na íntegra | ☐ *confirmar* |
+| **Selecionado** | **1** |
 
 ### Critérios de inclusão e exclusão
 
-Declare antes de olhar os resultados. É o que separa seleção de conveniência.
+Declarados **antes** de olhar os resultados. É o que separa seleção de conveniência.
 
 **Incluir:** artigo original com medição empírica · rastreamento por terceiros em
 Android · veículo indexado e revisado por pares · texto completo acessível.
@@ -79,14 +95,11 @@ Android · veículo indexado e revisado por pares · texto completo acessível.
 **Excluir:** revisão de literatura ou survey · posicionamento sem dado · foco em iOS
 ou web sem componente Android · publicado apenas como preprint.
 
-### O funil
-
-| | Quantos |
-|---|---|
-| Resultados devolvidos | |
-| Após ler título e resumo | |
-| Lidos na íntegra | |
-| **Selecionado** | 1 |
+> **O achado que vale ponto:** a busca encontrou o **Kollnig et al. (SOUPS 2021)**,
+> que é a alternativa mais séria ao artigo escolhido. Poder dizer *"considerei e
+> descartei, com o número"* — 34 citações contra 52, um ano mais velho, CORE B contra
+> A\* — é muito mais forte que apresentar um artigo isolado. Se perguntarem se você
+> avaliou alternativas, a resposta está no próprio print da busca.
 
 ---
 

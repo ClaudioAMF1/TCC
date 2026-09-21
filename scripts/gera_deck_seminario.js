@@ -266,15 +266,16 @@ s.addNotes("O terceiro cartão é o diferencial: não é hipótese, é medida pr
 // =====================================================================
 s = pres.addSlide();
 tituloSlide(s, "Métricas do veículo e Qualis", 7);
-preencher(s, M, 1.02, (W - M * 2 - 0.25) / 2, 2.0, "levantar — CCS é CONFERÊNCIA", [
-  "h5-index do CCS (Google Scholar → Metrics):  ______",
-  "h5-mediana:  ______",
-  "Estrato Qualis correspondente ao h5:  ______",
-  "CORE Rank (portal.core.edu.au — aberto):  ______",
-]);
-cartao(s, M, 3.2, (W - M * 2 - 0.25) / 2, 1.62, "Ressalva que rende ponto",
-  "O Documento Técnico (p. 12) diz que, para veículos sem CiteScore/JCR, o percentil é " +
-  "ESTIMADO por regressão CiteScore–h5.\n\nO estrato obtido por essa via é aproximação — diga isso.", AMBER);
+cartao(s, M, 1.02, (W - M * 2 - 0.25) / 2, 1.85, "OS TRÊS OBRIGATÓRIOS — todos levantados em 17/09/2026",
+  "1 · h5 = 90   (mediana 146)   posição 5 de 20\n" +
+  "     (posição 19 = AsiaCCS, h5 41 — outro evento; conferido)\n" +
+  "2 · Qualis = A1   (ver o limiar ao lado)\n" +
+  "3 · CORE = A*   ICORE2026", "1E6B3A");
+cartao(s, M, 3.02, (W - M * 2 - 0.25) / 2, 1.83, "Por que A1, e não A2",
+  "Com N=20 o percentil dá 75 (A2) — mas 20 é lista TRUNCADA, não população. Esse 75 é " +
+  "PISO: universo maior só empurra para cima.\n\n" +
+  "A1 exige percentil 87,5.  (N-5)/N >= 0,875  ->  N >= 40.\n" +
+  "Basta a área ter 40 veículos. Tem centenas. Logo A1 — limite, não estimativa.", NAVY);
 s.addText("Faixas de percentil → estrato  (Figura 6, p. 13 do Documento Técnico)", {
   x: M + (W - M * 2 - 0.25) / 2 + 0.25, y: 1.02, w: (W - M * 2 - 0.25) / 2, h: 0.3,
   isTextBox: true, margin: 0, fontFace: SANS, fontSize: 10.5, bold: true, color: NAVY,
@@ -341,7 +342,15 @@ const blocos = [
           "você vai precisar fazer no seu próprio trabalho.",
   },
   {
-    n: 13, titulo: "Análise da conclusão",
+    n: 13, titulo: "Análise da discussão",
+    intro: "O enunciado nomeia a discussão. É o que separa o medido do que ele significa.",
+    rotulos: ["Interpretação do resultado", "Confronto com a literatura anterior",
+              "Implicação prática ou normativa", "Ameaças à validade"],
+    dica: "Artigo de segurança com frequência funde discussão e resultados, ou a chama de " +
+          "Implications. Se não houver seção autônoma, DIGA — apontar isso é análise de estrutura.",
+  },
+  {
+    n: 14, titulo: "Análise da conclusão",
     intro: "Cole a conclusão e marque o que os autores inferem.",
     rotulos: ["Inferência a partir dos dados obtidos", "Trabalhos futuros",
               "O que ficou fora do escopo"],

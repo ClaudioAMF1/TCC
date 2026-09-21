@@ -6,6 +6,10 @@ Vale 5 dos 15 minutos e é **o que mais rende nota**.
 anotar, ao lado, a função retórica de cada trecho. O modelo é o
 `material-fornecido/Exemplo de Analise da Estrutura de Artigo.pdf`.
 
+O enunciado pede: *"analise a estrutura do trabalho (introdução, metodologia,
+resultados, **discussão**, conclusão, etc.)"* e *"descreva e explique as principais
+características de cada elemento"*. Os sete blocos abaixo cobrem essa lista.
+
 Preencha a coluna da esquerda com **recorte literal** do artigo. A da direita com a
 função. Onde estiver `[...]`, é você que completa.
 
@@ -83,18 +87,34 @@ Cole o abstract e marque cada trecho.
 | Validação do instrumento | `[...]` |
 | Tratamento estatístico | `[...]` |
 
-**O funil amostral — registre os números:**
+**O funil amostral — já extraído do resumo (confirme lendo o artigo):**
 
 ```
-[N] aplicativos coletados
-  → [N1] após [critério]
-    → [N2] após [critério]
-      → [N3] analisados em profundidade
+239.381  aplicativos Android analisados
+   ↓
+ 13.082  com mecanismo de consentimento identificado
+         (4 mecanismos amplamente implementados foram reconhecidos)
+   ↓
+  2.688  (20,54% dos 13.082) violam ao menos um requisito
+         de consentimento da GDPR
+
+ 30.160  aplicativos NEM TENTAM implementar aviso de consentimento
+         para compartilhar dado pessoal com terceiros
 ```
 
-> **Este é o ponto de conexão mais forte com o seu TCC.** Cada corte do funil é uma
-> decisão que precisa de justificativa, e é exatamente a decisão que você vai tomar
-> nos seus 396 aplicativos. Diga isso na apresentação.
+> **Duas observações que rendem:**
+>
+> 1. **O denominador muda no meio do funil.** Os 20,54% são sobre os 13.082 que
+>    *têm* mecanismo — não sobre os 239.381. Percentual sobre subconjunto é
+>    exatamente o tipo de coisa que precisa ser lida com atenção, e apontar isso
+>    mostra que você leu o número, não só copiou.
+> 2. **Os 30.160 são um achado separado.** Não violam o mecanismo: não têm
+>    mecanismo nenhum. É uma categoria diferente de problema, e o artigo a trata
+>    separadamente.
+>
+> **A conexão com o seu TCC:** cada corte desses é uma decisão que precisou de
+> justificativa, e é exatamente a decisão que você vai tomar nos seus 396
+> aplicativos.
 
 ---
 
@@ -117,7 +137,30 @@ Verifique e comente:
 
 ---
 
-## Bloco 6 — Conclusão
+## Bloco 6 — Discussão
+
+**O enunciado nomeia a discussão explicitamente** como elemento da estrutura. Ela é o
+que separa *o que foi medido* de *o que isso significa*.
+
+| Trecho | Função |
+|---|---|
+| `[...]` | Interpreta o resultado |
+| `[...]` | Confronta com a literatura anterior |
+| `[...]` | Implicação prática ou normativa |
+| `[...]` | Ameaças à validade / limitações |
+
+> **Armadilha frequente em artigo de segurança:** muitos fundem discussão com
+> resultados, ou a chamam de *Implications*, *Discussion and Limitations*, ou
+> distribuem a interpretação ao longo das seções.
+>
+> **Se for o caso, diga.** "A discussão não aparece como seção autônoma; está
+> distribuída em `[...]`" é análise de estrutura, e é exatamente o movimento que o
+> avaliador faz no segundo exemplo fornecido pela professora, quando anota que o
+> método não estava explicitamente descrito.
+
+---
+
+## Bloco 7 — Conclusão
 
 | Trecho | Função |
 |---|---|

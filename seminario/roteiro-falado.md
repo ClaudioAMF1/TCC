@@ -5,7 +5,7 @@ para ler no slide. `[COLCHETES]` marcam o que só você pode preencher, porque
 depende de consultar a fonte.
 
 **Orçamento de tempo.** Os 5 minutos da análise da estrutura são inegociáveis — é
-o que mais rende nota. Se atrasar, corte do slide 6, não do 9–14.
+o que mais rende nota. Se atrasar, corte do slide 6, não do 9–15.
 
 ---
 
@@ -67,7 +67,8 @@ Este é o slide que a atividade pede explicitamente e que quase todo mundo esque
 Os valores saem de `protocolo-de-busca.md`, preenchido **enquanto** você busca — é
 impossível reconstruir depois.
 
-> "A busca foi feita em `[BASES]`, em `[DATA]`. A string foi `[STRING]`.
+> "A busca foi feita na `[BASE — ACM DL / Scopus / Web of Science / IEEE Xplore]`,
+> acessada pelo portal da CAPES via CAFe, em `[DATA]`. A string foi `[STRING]`.
 >
 > Apliquei estes filtros: `[FILTROS]`. Os critérios de inclusão foram: artigo
 > original e não revisão, com medição empírica em escala, sobre rastreamento por
@@ -85,9 +86,11 @@ impossível reconstruir depois.
 > "O artigo é `[CITAÇÃO COMPLETA — conferir no PDF, não copiar de terceiros]`,
 > publicado na CCS de 2022.
 >
-> É um artigo **original**, não uma revisão: os autores construíram um corpus
-> próprio, executaram uma medição e reportaram resultados primários. Isso importa
-> porque a atividade pede análise de artigo original."
+> É um artigo **original** no sentido exato que o enunciado define: relata pela
+> primeira vez os resultados de uma pesquisa inédita, apresentando novos dados. Os
+> autores construíram um corpus próprio de `[N]` aplicativos, executaram a medição e
+> reportaram resultados primários. Não é revisão, não é survey, não é reanálise de
+> dado de terceiro."
 
 **No slide:** a citação em formato ABNT e o DOI.
 
@@ -146,22 +149,78 @@ controle `[0,269; 0,401]` — e a frase "não se sobrepõem".
 
 ## Slide 8 — Métricas do veículo e Qualis · 2 min
 
-> "A CCS é uma das quatro principais conferências de segurança do mundo. O índice h5
-> é `[H5]`, consultado em `[DATA]`. No CORE, o rank é `[RANK]`.
->
-> Pela tabela de faixas de percentil do Documento Técnico do Qualis — Figura 6 —,
-> esse percentil corresponde ao estrato `[ESTRATO]`."
+A atividade pede **três itens obrigatórios** para conferência. Os três precisam
+aparecer, em voz alta e no slide.
 
-**No slide:** a figura `qualis-faixas-de-percentil.png` e a sua linha destacada.
+> "A CCS é uma das principais conferências de segurança do mundo, e os três
+> indicadores que a atividade pede confirmam isso por caminhos independentes.
+>
+> **Primeiro, o h5.** No Google Acadêmico, em Principais Publicações, categoria
+> *Computer Security & Cryptography*, consultado em 17 de setembro: a CCS tem
+> **índice h5 de 90** e **mediana h5 de 146**. Ela aparece na **quinta posição** da
+> lista. Vale notar que essa lista mistura periódicos e conferências — entre as
+> conferências, a CCS é a **terceira**, atrás apenas da USENIX Security e da
+> IEEE Symposium on Security and Privacy.
+>
+> E confirmei que é o veículo certo, porque a mesma lista traz na posição 19 a ACM
+> Asia Conference on Computer and Communications Security — a AsiaCCS, que é um
+> evento diferente, com h5 de 41. Os nomes são próximos, então cliquei no índice para
+> ver os artigos que o compõem e confirmar que são do CCS. O CORE também aponta para
+> a entrada do CCS no DBLP, distinta da entrada da AsiaCCS.
+>
+> **Segundo, o Qualis correspondente.** Aqui há uma conversão a fazer, porque o
+> Qualis trabalha com percentil e não com h5 bruto — e a conversão tem uma armadilha
+> que vale explicitar.
+>
+> O Scholar publica apenas as vinte primeiras de cada subárea. Essa lista é truncada,
+> não é a população da área. Se eu usar vinte como denominador, a quinta posição dá
+> percentil 75, que pela Figura 6 corresponde a A2. Só que esse 75 é um **piso por
+> construção**: qualquer universo maior que vinte empurra o percentil para cima,
+> nunca para baixo.
+>
+> E dá para saber exatamente onde ele cruza. O limiar do A1 é percentil 87,5. Para a
+> posição 5, isso é atingido a partir de um universo de **quarenta veículos**. A
+> subárea *Computer Security & Cryptography* tem centenas — as vinte exibidas são só
+> o topo do que o Scholar indexa. Portanto o estrato é **A1**, e isso não é uma
+> estimativa: é um limite inferior.
+>
+> Essa limitação, aliás, é reconhecida pela própria CAPES. O Documento Técnico diz na
+> página 12 que a base do Google Scholar não fornece os percentis dentro dos
+> agrupamentos temáticos, e que por isso foi preciso construir uma base ampliada por
+> área, que eles chamam de Universo.
+>
+> **Terceiro, o CORE.** No ICORE Conference Portal, a CCS é **A\***, o rank mais alto
+> da escala. E não é de uma edição só: a página lista as avaliações de 2008, 2013,
+> 2014, 2017, 2018, 2020, 2021, 2023 e 2026 — **A\* em todas**, com uma única
+> exceção, o ERA de 2010, que deu A.
+>
+> Um detalhe fecha o raciocínio: o CORE classifica a CCS no campo 4604,
+> *Cybersecurity and privacy* — o mesmo campo da lista que usei no Scholar para o
+> percentil. Os dois instrumentos concordam sobre qual é a área, então o conjunto de
+> referência que escolhi não é arbitrário."
+
+**No slide:** a figura `qualis-faixas-de-percentil.png` com a sua linha destacada, e
+os três valores — h5, estrato, CORE — lado a lado.
 
 > Leve o print de cada tela. A professora pode pedir.
+>
+> ⚠️ **Não pule o segundo item.** O Qualis é definido para periódicos, e é tentador
+> dizer que não se aplica a conferência — mas a atividade pede explicitamente o
+> "Qualis Periódicos correspondente ao índice h5 encontrado". Calcular **e** apontar
+> de que o resultado depende é a resposta completa. Recusar-se a calcular é deixar um
+> item obrigatório em branco.
 
 ---
 
-## Slides 9 a 14 — Análise da estrutura · 5 min
+## Slides 9 a 15 — Análise da estrutura · 5 min
 
-O formulário está em `analise-da-estrutura.md`. Seis blocos, seguindo o exemplo que
-a professora forneceu: estrutura, resumo, introdução, método, resultados, conclusão.
+O formulário está em `analise-da-estrutura.md`. **Sete** blocos: estrutura, resumo,
+introdução, método, resultados, **discussão** e conclusão — a lista que o item 3 do
+enunciado nomeia.
+
+⚠️ **A discussão é nomeada no enunciado.** Artigo de segurança com frequência funde
+discussão e resultados, ou a chama de *Implications*. Se for o caso, **diga** — que o
+elemento não aparece como seção autônoma é análise de estrutura, não omissão sua.
 
 **A regra que muda a nota:** não é resumir o artigo. É reproduzir o texto real e
 anotar ao lado a função retórica de cada trecho.
@@ -180,7 +239,7 @@ Dois comentários que rendem mais que descrição:
 
 ---
 
-## Slide 15 — Fechamento · 30 s
+## Slide 16 — Fechamento · 30 s
 
 > "Este artigo me dá três coisas: o método validado, a lacuna que justifica o meu
 > trabalho, e um padrão de escrita para a minha própria seção de metodologia.

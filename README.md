@@ -44,11 +44,13 @@ Atividade de 29/09 e 01/10, 15 minutos, **4 dos 6 pontos da AV1**. Preparada com
 
 | Arquivo | Conteúdo |
 |---|---|
-| `plano-do-seminario.md` | Estratégia: por que este artigo, a tensão entre recência e citações, a tabela Qualis |
+| `enunciado-da-atividade.md` | **O enunciado transcrito** + a leitura literal: o que ele exige, o que ele NÃO exige, e as duas armadilhas |
+| `plano-de-execucao.md` | **Cronograma dia a dia** até 29/09, com o que falta, quem faz o quê e as respostas das perguntas prováveis |
+| `plano-do-seminario.md` | Estratégia: por que este artigo, a tensão entre recência e citações, a conversão h5 → Qualis |
 | `roteiro-falado.md` | **O que dizer, slide a slide**, com os números do N3 já no texto |
 | `protocolo-de-busca.md` | O que registrar **enquanto** busca — o slide 4 é impossível de reconstruir depois — e a planilha de métricas |
-| `analise-da-estrutura.md` | Formulário dos seis blocos, a preencher lendo o artigo. Vale 5 dos 15 minutos |
-| `seminario-analise-de-artigo.pptx` | Deck de 15 slides. O que está em âmbar é o que só você pode preencher |
+| `analise-da-estrutura.md` | Formulário dos **sete blocos** (inclui discussão), a preencher lendo o artigo. Vale 5 dos 15 minutos |
+| `seminario-analise-de-artigo.pptx` | Deck de 16 slides. O que está em âmbar é o que só você pode preencher |
 | `qualis-faixas-de-percentil.png` | Figura 6 do Documento Técnico: percentil → estrato |
 | `material-fornecido/` | PDFs disponibilizados pela professora |
 

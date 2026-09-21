@@ -176,6 +176,63 @@ Imagem em `qualis-faixas-de-percentil.png` — **use ela no slide**, é fonte pr
 Classes de **12,5% de amplitude**. O estrato **C** é dos periódicos que não possuem nenhum
 dos indicadores do modelo e/ou não atendem às boas práticas editoriais (referência: COPE).
 
+### Como converter um h5 de CONFERÊNCIA em percentil
+
+A atividade é explícita: *"Informe o Qualis Periódicos correspondente ao índice h5
+encontrado"*. **É item obrigatório**, mesmo o Qualis sendo definido para periódicos.
+A tabela acima trabalha com percentil, então o h5 precisa virar percentil antes.
+
+**Procedimento:**
+
+1. Google Scholar → **Metrics** → **Categories** → *Engineering & Computer Science*
+   → **Computer Security & Cryptography**.
+2. Essa página lista as **20 publicações de maior h5** da subárea, em ordem.
+   Anote o h5 do seu veículo e **a posição dele na lista**.
+3. **Cuidado com o denominador.** O Scholar publica só as **20 primeiras** de cada
+   subárea. Isso é lista truncada, não população. Dividir por 20 subestima: o 3º
+   lugar daria (20 − 3) ÷ 20 × 100 = 85 → **A2**, colocando uma das principais
+   conferências de segurança do mundo abaixo do topo. O erro não é da tabela, é do
+   denominador.
+4. **Reporte assim:** a posição na lista publicada, a ressalva de que ela é truncada,
+   o percentil que sairia com 20 como denominador **rotulado como piso**, e o
+   estrato considerando o universo real da área.
+5. **Declare qual conjunto de referência você usou** e por quê — o Field of Research
+   do CORE é a justificativa independente.
+
+> **Fonte primária, e é ela que dá a resposta.** O Documento Técnico, p. 12,
+> reconhece o problema e diz como a CAPES o resolve:
+>
+> > *"No caso do QR2, o índice h é a referência para o cálculo dos estratos. Porém,
+> > a base do Google Scholar **não fornece diretamente os valores dos percentis
+> > dentro dos agrupamentos temáticos**. Para contornar, foi necessário criar uma
+> > base ampliada de periódicos pertinentes a cada área, denominada **Universo**,
+> > para que se tivesse a real posição dos títulos utilizados pelos programas dentro
+> > desse conjunto de veículos potenciais da área."*
+>
+> Dois pontos que isso te dá:
+>
+> 1. **O percentil do h5 é posição dentro de um conjunto de referência.** Não é
+>    propriedade do veículo. Você não tem acesso ao "Universo" da CAPES, então usa a
+>    lista da subárea do Google Scholar Metrics e **declara** que foi essa.
+> 2. **O documento prevê um segundo caminho** (p. 11–12): para veículos sem
+>    CiteScore nem JCR, um modelo de **regressão linear CiteScore–h5** estima o
+>    CiteScore, e o percentil sai da ordenação desses valores estimados. Mencione que
+>    existe — mostra que você leu o documento inteiro, não só a Figura 6.
+
+### Os três itens obrigatórios para conferência
+
+| | Onde |
+|---|---|
+| ☐ índice **h5** | Google Scholar Metrics |
+| ☐ **Qualis** correspondente ao h5 | tabela acima, via o percentil calculado |
+| ☐ **Rank CORE** | `portal.core.edu.au/conf-ranks/` |
+
+Para **periódico**, os obrigatórios são outros três: **JIF Percentile** no JCR,
+**Highest Percentile** no Scopus, e o **Qualis de ambos** — note que são dois
+indicadores, e o documento manda considerar **o maior percentil**.
+
+---
+
 Dois detalhes do documento que rendem pergunta de banca:
 - Quando o periódico tem mais de um indicador, considera-se **o maior percentil**.
 - As áreas podem ajustar até 30% dos estratos (20% em 1 nível, 10% em 2 níveis), então o
@@ -190,15 +247,15 @@ Estrutura que segue a ordem exigida no enunciado.
 | # | Slide | Tempo |
 |---|---|---|
 | 1 | Capa — título, seu nome, disciplina, data | — |
-| 2 | **Contexto:** área do TCC e o tema de trabalho assumido | 1 min |
-| 3 | **Como cheguei aqui:** os dois temas testados e rejeitados, com o número de cada teste | 1 min |
+| 2 | **Contexto:** área do TCC e o tema | 1 min |
+| 3 | **Como cheguei aqui:** os três temas testados e rejeitados, com o número de cada teste | 1 min |
 | 4 | **Passo a passo da seleção:** base usada, string de busca, filtros, critério de inclusão, quantos resultados → quantos lidos → 1 escolhido | 2 min |
 | 5 | **O artigo:** citação completa + por que é original e não revisão | 1 min |
 | 6 | **Relevância — quantitativa:** citações nas três bases, métricas do veículo | 1,5 min |
 | 7 | **Relevância — qualitativa:** o método que eu reuso + a lacuna que ele deixa + meu corpus de 396 apps | 1,5 min |
 | 8 | **Métricas e Qualis:** h5, estrato, CORE rank + a tabela da Figura 6 | 2 min |
-| 9–14 | **Análise da estrutura** (Seção 6) | 5 min |
-| 15 | Fechamento: o que este artigo muda no meu TCC | 0,5 min |
+| 9–15 | **Análise da estrutura** — 7 blocos, incluindo **discussão** | 5 min |
+| 16 | Fechamento: o que este artigo muda no meu TCC | 0,5 min |
 
 **Prove o tempo em voz alta antes.** Quinze minutos passam rápido, e a análise da estrutura
 é o que mais rende nota — não deixe para correr no fim.

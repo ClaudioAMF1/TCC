@@ -38,35 +38,51 @@ Prints em `seminario/pesquisa/`. **Base: Scopus, acessada pelo portal da CAPES v
 CAFe** (`www-scopus-com.ez279.periodicos.capes.gov.br`) — o prefixo `ez279` no
 endereço é a prova do acesso institucional.
 
-### Tentativa 1 — específica
+### As três tentativas
 
-| Campo | Valor |
-|---|---|
-| Base | **Scopus** (Elsevier), via CAFe |
-| Data | **21/09/2026** |
-| Campo de busca | Article title, Abstract, Keywords |
-| String | `"third-party tracking" AND consent AND android` |
-| **Resultados** | **4 documentos** |
-| Filtros aplicados | Year 2021–2025 · Subject area *Computer Science* · Document type *Conference paper* · Language *English* |
-| Resultados após filtros | **4** — nenhum perdido, o que indica que o conjunto já era homogêneo |
+| | String | Resultados |
+|---|---|---|
+| 1 | `"third-party tracking" AND consent AND android` | **4** |
+| 2 | `"third party" AND tracking AND android AND (consent OR GDPR)` | **12** (9 com filtro de ano) |
+| **3** | `"third-party tracking"` | **131** |
 
-### Tentativa 2 — ampla
+Todas no campo *Article title, Abstract, Keywords*, na mesma sessão.
 
-| Campo | Valor |
-|---|---|
-| Base | **Scopus** (Elsevier), via CAFe |
-| Data | **21/09/2026** |
-| Campo de busca | Article title, Abstract, Keywords |
-| String | `"third party" AND tracking AND android AND (consent OR GDPR)` |
-| **Resultados** | **12 documentos** |
-| Distribuição por área | Computer Science 11 · Engineering 3 · Social Sciences 3 · Environmental Science 2 |
+**As duas primeiras foram cirúrgicas demais.** Expressão exata mais três termos
+obrigatórios devolveu 4 documentos, o que não demonstra triagem: parece busca feita
+até achar o que já se queria. A terceira abre para 131 e depois estreita por filtro,
+que é como uma busca sistemática deve parecer.
 
-> **Por que duas tentativas:** a primeira usa *"third-party tracking"* como
-> **expressão exata** e devolveu 4. A segunda solta a expressão em dois termos e
-> acrescenta GDPR, triplicando para 12. Registrar as duas mostra que a string foi
-> **calibrada**, e não aceita na primeira forma que veio à cabeça.
+### O funil que vai ao slide
 
-### Os quatro candidatos da Tentativa 1
+```
+131   expressão exata, sem filtro                          print 18
+ ↓    ano 2018–2026, Computer Science, Conference + Article
+ 70                                                        print 20
+ ↓    palavras-chave Third Parties e Third-party Tracking,
+      ano 2018–2025
+  5   finalistas                                           print 24
+ ↓    leitura de título e resumo
+  1   selecionado
+```
+
+### Os cinco finalistas
+
+| Artigo | Veículo | Ano | Cit. | Decisão |
+|---|---|---|---|---|
+| A Comprehensive Study on Third-Party User Tracking | ACM ICPS | 2023 | 10 | ❌ menos citado |
+| **Freely Given Consent?** | **CCS** | **2022** | **52** | ✅ **selecionado** |
+| A fait accompli? An empirical study into the absence of consent | SOUPS | 2021 | 34 | ❌ veículo CORE B |
+| Protecting privacy on the web: HTTPS e Google Analytics | Online Information Review | 2018 | 23 | ❌ é web, não Android |
+| WhisperTest: Voice-Control Library for iOS UI Automation | CCS | 2025 | 0 | ❌ é iOS |
+
+> **E apareceu um artigo de 2026 no IEEE Symposium on Security and Privacy**, sobre
+> riscos de privacidade em plataformas de gestão de consentimento, com **0 citações**.
+> Mais recente que o escolhido, em veículo de topo, e ainda sem tempo de ser citado.
+> É a prova viva de que recência e citações se excluem por construção. Se perguntarem
+> por que não um artigo mais novo, a resposta está no próprio print.
+
+### Detalhe: os quatro candidatos da Tentativa 1
 
 | # | Artigo | Veículo | Ano | Citações (Scopus) | Decisão |
 |---|---|---|---|---|---|

@@ -17,5 +17,3 @@ __pycache__/
 venv/
 .venv/
 
-# prints das buscas: úteis, mas pesados (1,4 MB cada)
-seminario/pesquisa/*.png

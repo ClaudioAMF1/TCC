@@ -165,20 +165,31 @@ s.addImage({
   path: "/home/user/TCC/seminario/pesquisa/busca-scopus-resultados.jpg",
   x: M, y: 1.32, w: 5.55, h: 3.21,
 });
-s.addText("Duas buscas, no campo título, resumo e palavras-chave:", {
+s.addText("Três buscas, no campo título, resumo e palavras-chave:", {
   x: 5.85, y: 1.32, w: W - M - 5.85, h: 0.26, isTextBox: true, margin: 0,
   fontFace: SANS, fontSize: 10.5, bold: true, color: NAVY,
 });
 s.addText([
-  { text: '1.  "third-party tracking" AND consent AND android', options: { breakLine: true } },
-  { text: "     4 resultados", options: { breakLine: true, bold: true, color: TEAL } },
-  { text: "", options: { breakLine: true } },
+  { text: '1.  "third-party tracking" AND consent AND android      4', options: { breakLine: true } },
   { text: '2.  "third party" AND tracking AND android AND', options: { breakLine: true } },
-  { text: "     (consent OR GDPR)", options: { breakLine: true } },
-  { text: "     12 resultados", options: { breakLine: true, bold: true, color: TEAL } },
+  { text: '    (consent OR GDPR)                                  12', options: { breakLine: true } },
+  { text: '3.  "third-party tracking"                            131', options: { breakLine: true, bold: true } },
 ], {
-  x: 5.85, y: 1.64, w: W - M - 5.85, h: 1.15, isTextBox: true, margin: 0,
-  fontFace: "Consolas", fontSize: 9, color: NAVY, valign: "top",
+  x: 5.85, y: 1.64, w: W - M - 5.85, h: 0.75, isTextBox: true, margin: 0,
+  fontFace: "Consolas", fontSize: 8, color: NAVY, valign: "top",
+});
+s.addText([
+  { text: "131", options: { bold: true, color: TEAL } },
+  { text: "  expressão exata", options: { breakLine: true } },
+  { text: " 70", options: { bold: true, color: TEAL } },
+  { text: "  ano, área e tipo de documento", options: { breakLine: true } },
+  { text: "  5", options: { bold: true, color: TEAL } },
+  { text: "  palavras-chave", options: { breakLine: true } },
+  { text: "  1", options: { bold: true, color: "1E6B3A" } },
+  { text: "  selecionado", options: {} },
+], {
+  x: 5.85, y: 2.45, w: W - M - 5.85, h: 0.75, isTextBox: true, margin: 0,
+  fontFace: "Consolas", fontSize: 9.5, color: NAVY, valign: "top",
 });
 s.addTable(
   [[{ text: "Candidato", options: { bold: true } }, { text: "Ano", options: { bold: true } },
@@ -191,13 +202,13 @@ s.addTable(
     text: c, options: { bold: i === 2, color: i === 2 ? "1E6B3A" : NAVY },
   })))),
   {
-    x: 5.85, y: 2.95, w: W - M - 5.85, colW: [1.75, 0.42, 0.42, 1.0],
+    x: 5.85, y: 3.28, w: W - M - 5.85, colW: [1.75, 0.42, 0.42, 1.0],
     fontFace: SANS, fontSize: 9, border: { type: "solid", color: "D8DEE6", pt: 0.5 },
     fill: { color: "FFFFFF" }, rowH: 0.24, valign: "middle",
   }
 );
-s.addText("A busca também encontrou a alternativa que eu considerei e descartei.", {
-  x: 5.85, y: 4.32, w: W - M - 5.85, h: 0.3, isTextBox: true, margin: 0,
+s.addText("Apareceu também um artigo de 2026 no IEEE S&P, com 0 citações.", {
+  x: 5.85, y: 4.55, w: W - M - 5.85, h: 0.3, isTextBox: true, margin: 0,
   fontFace: SANS, fontSize: 9.5, italic: true, color: TEAL, valign: "top",
 });
 s.addNotes("A busca encontrou o Kollnig et al. SOUPS 2021, que e a alternativa mais seria. Se perguntarem se voce avaliou outras opcoes, a resposta esta no proprio print: 34 citacoes contra 52, um ano mais velho, e SOUPS e CORE B contra A* do CCS.");

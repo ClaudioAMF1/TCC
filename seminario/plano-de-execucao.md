@@ -14,7 +14,7 @@
 | **1** — relevância qualitativa | ✅ escrita, com os números do N3 |
 | **2** — h5 · Qualis · CORE | ✅ 90 · A1 · A\* |
 | **3** — análise da estrutura | ✅ preenchida a partir do PDF, 7 blocos |
-| Deck | ✅ **16 slides, nenhum campo em aberto** |
+| Deck | ✅ **13 slides, no formato do exemplo da professora** |
 | Ensaio | ⬜ **é o que falta** |
 
 **A atividade está montada.** O que resta é ensaiar e conferir.
@@ -63,16 +63,20 @@ Orçamento:
 
 | Slides | Conteúdo | Tempo |
 |---|---|---|
-| 2–3 | contexto + os três descartes | 2 min |
-| 4 | passo a passo da busca | 2 min |
-| 5 | o artigo | 1 min |
-| 6–7 | relevância quanti + quali | 3 min |
-| 8 | h5, Qualis, CORE | 2 min |
-| 9–15 | **análise da estrutura** | **5 min** |
-| 16 | fechamento | 30 s |
+| 1 | capa | 15 s |
+| 2 | passo a passo da busca, os três prints do funil | 2 min |
+| 3 | o artigo e por que ele é original | 1 min |
+| 4 | relevância quantitativa e qualitativa | 2 min 30 s |
+| 5 | h5, Qualis, CORE | 2 min |
+| 6–12 | **análise da estrutura, um slide por seção** | **6 min** |
+| 13 | fechamento | 45 s |
 
-**Se estourar, corte do slide 6.** Nunca da análise da estrutura — é o maior bloco
-da nota.
+Os slides 6 a 12 mostram **o texto do artigo em inglês, no original**, com a
+anotação ao lado. Você **não lê esse texto em voz alta** — aponta o trecho e fala
+a anotação. Quem tenta ler os recortes estoura o tempo na terceira seção.
+
+**Se estourar, corte do slide 4.** Nunca da análise da estrutura, que é o maior
+bloco da nota.
 
 Anote onde você travou. É isso que o Dia 5 conserta.
 
@@ -120,8 +124,8 @@ Um ensaio corrido. Dormir.
 
 **Eu faço**, assim que você me mandar o PDF e o funil:
 - os sete blocos da análise de estrutura, com recorte literal do artigo
-- os slides 9 a 15 preenchidos
-- o slide 4 com o seu funil
+- os slides 6 a 12 preenchidos
+- o slide 2 com o seu funil
 - revisão da citação ABNT contra o que estiver no PDF
 
 **Eu não faço, e não é limitação técnica:**

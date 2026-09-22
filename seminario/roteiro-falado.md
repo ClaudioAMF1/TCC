@@ -204,7 +204,7 @@ aparecer, em voz alta e no slide.
 > percentil. Os dois instrumentos concordam sobre qual é a área, então o conjunto de
 > referência que escolhi não é arbitrário."
 
-**No slide:** a figura `pesquisa/metricas/qualis-periodicos-faixas-de-percentil.png` com a sua linha destacada, e
+**No slide:** a figura `pesquisa/metricas/08-qualis-periodicos-faixas-de-percentil.png` com a sua linha destacada, e
 os três valores — h5, estrato, CORE — lado a lado.
 
 > Leve o print de cada tela. A professora pode pedir.

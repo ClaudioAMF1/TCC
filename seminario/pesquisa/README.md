@@ -1,8 +1,8 @@
 # Evidência da seleção e das métricas
 
-Prints do item 1 (seleção do artigo) e do item 2 (métricas do veículo). **Todos os
-24 prints da busca foram conferidos tela a tela em 22/09/2026**, e os nomes dizem o
-que cada um mostra.
+Prints do item 1 (seleção e relevância do artigo) e do item 2 (métricas do veículo).
+**Todos foram conferidos tela a tela em 22/09/2026**, e os nomes dizem o que cada um
+mostra.
 
 **Base: Scopus, pelo portal da CAPES via CAFe**, em **21/09/2026, das 08:46 às
 09:11**. O endereço nas telas é `www-scopus-com.ez279.periodicos.capes.gov.br`. O
@@ -15,12 +15,12 @@ pesquisa/
 ├── busca-1/               string estreita, 4 resultados
 ├── busca-2/               string intermediária, 12 resultados
 ├── busca-3/               string ampla, 131 → 70 → 39 → 5   ← é a que vai ao slide
-├── metricas/              item 2: Qualis e o ramo de periódico que não se aplica
+├── metricas/              citações do artigo (item 1) e h5, Qualis, CORE (item 2)
 └── recortes-para-slide/   os quatro degraus do funil, comprimidos para o deck
 ```
 
-A numeração dos prints (01 a 24) é a ordem em que foram tirados e continua a mesma
-entre as pastas.
+A numeração dos prints da busca (01 a 24) é a ordem em que foram tirados e continua
+a mesma entre as pastas. Os dois `00a` e `00b` são de 17/09, anteriores à busca.
 
 ---
 
@@ -70,8 +70,10 @@ Item 1 está no print 23; itens 2 a 5 no print 24.
 ### `0-acesso/`
 | Arquivo | O que mostra |
 |---|---|
-| `01-capes-ficha-scopus-acesso-cafe` | Ficha da base Scopus no portal da CAPES, com "Acesso CAFe" e a instituição identificada como IDP |
-| `02-scopus-formulario-da-busca-1` | Formulário do Scopus com a primeira string digitada |
+| `00a-capes-portal-busca-pela-base-scopus` | 17/09 · Portal de Periódicos da CAPES, *"Você está acessando esse portal por: IDP"*, via CAFe |
+| `00b-capes-lista-de-bases-scopus-proxy-ez279` | 17/09 · Lista A-Z de bases da CAPES, já pelo proxy `ez279` |
+| `01-capes-ficha-scopus-acesso-cafe` | 21/09 · Ficha da base Scopus no portal da CAPES, com "Acesso CAFe" e a instituição identificada como IDP |
+| `02-scopus-formulario-da-busca-1` | 21/09 · Formulário do Scopus com a primeira string digitada |
 
 ### `busca-1/` — `"third-party tracking" AND consent AND android`
 | Arquivo | O que mostra |
@@ -107,12 +109,28 @@ Item 1 está no print 23; itens 2 a 5 no print 24.
 | `23-termo-consent-5-resultados` | String com **`consent`**, ano 2018–2025: **5 documentos**, itens 1 a 3 |
 | `24-5-finalistas-itens-2-a-5` | Os mesmos 5, itens 2 a 5, com todos os filtros visíveis |
 
-### `metricas/` — item 2
+### `metricas/`
+Prints de **17/09/2026**, exceto o 07 (22/09) e o 10 (21/09). O 08 é uma figura do PDF da CAPES, não print de tela.
+
+**Item 1 — relevância quantitativa: citações do artigo**
+
 | Arquivo | O que mostra |
 |---|---|
-| `qualis-eventos-computacao-2017-2020-ccs-a1` | **CAPES, Qualis Eventos da Computação 2017–2020, p. 9: CCS = A1.** Fonte primária do estrato |
-| `qualis-periodicos-faixas-de-percentil` | Figura 6 do Documento Técnico do Qualis Periódicos: percentil → estrato. Base do argumento do limiar |
-| `scopus-sources-busca-por-titulo-0-resultados` | Scopus *Sources* pesquisado pelo título do artigo: 0 resultados. *Sources* busca **veículos**, não artigos, e a CCS não é periódico. Por isso o ramo JIF / Highest Percentile do enunciado não se aplica |
+| `01-acm-dl-42-citacoes-1539-downloads` | ACM Digital Library, painel *Bibliometrics*: **42 citações**, 1.539 downloads |
+| `02-acm-dl-pagina-do-artigo-research-article` | Página do artigo na ACM: etiqueta **RESEARCH-ARTICLE** e FREE ACCESS, CCS '22, p. 2369–2383, publicado em 07/11/2022. É a prova de artigo original |
+| `03-scopus-doi-no-campo-titulo-0-resultados` | Scopus com o DOI no campo *Article title, Abstract, Keywords*: 0 resultados. DOI não é título, então o campo estava errado |
+| `04-scopus-doi-todos-os-campos-52-citacoes` | O mesmo DOI em *All fields*: **1 documento, 52 citações**, tipo *Conference Paper* |
+| `05-google-academico-99-citacoes-9-versoes` | Google Acadêmico pelo DOI: **"Citado por 99"** e **"Todas as 9 versões"** |
+
+**Item 2 — métricas do veículo**
+
+| Arquivo | O que mostra |
+|---|---|
+| `06-google-scholar-metrics-h5-90-posicao-5` | *Computer Security & Cryptography*, lista completa das 20: CCS na **posição 5, h5 90, mediana 146**. Das quatro acima, duas são periódicos, então entre conferências a CCS é a 3ª. A AsiaCCS, que não é o mesmo evento, está na posição 19, com h5 41 |
+| `07-qualis-eventos-computacao-2017-2020-ccs-a1` | **CAPES, Qualis Eventos da Computação 2017–2020, p. 9: CCS = A1.** Fonte primária do estrato |
+| `08-qualis-periodicos-faixas-de-percentil` | Figura 6 do Documento Técnico do Qualis Periódicos: percentil → estrato. Base do argumento do limiar |
+| `09-core-portal-ccs-a-estrela` | ICORE Conference Portal: **A\*** em ICORE2026, com o histórico inteiro (A\* desde 2008; só o ERA2010 deu A). FoR 4604, *Cybersecurity and privacy*. DBLP aponta `conf/ccs`, não `asiaccs` |
+| `10-scopus-sources-busca-por-titulo-0-resultados` | Scopus *Sources* pesquisado pelo título do artigo: 0 resultados. *Sources* busca **veículos**, não artigos, e a CCS não é periódico. Por isso o ramo JIF / Highest Percentile do enunciado não se aplica |
 
 ### `recortes-para-slide/`
 Recortes de 1200 × 694, sem barra de menu nem dock, para caber no deck.
@@ -126,21 +144,11 @@ Recortes de 1200 × 694, sem barra de menu nem dock, para caber no deck.
 
 ---
 
-## O que ainda falta aqui
+## O que ficou fora de propósito
 
-Os prints das **outras métricas** foram vistos na conversa, mas **não estão no
-repositório**:
-
-| Falta | Número | Consultado em |
-|---|---|---|
-| Google Scholar Metrics, *Computer Security & Cryptography* | h5 **90**, mediana 146, posição 5 | 17/09/2026 |
-| Portal CORE (ICORE), registro da CCS | **A\*** | 17/09/2026 |
-| ACM Digital Library, página do artigo | **42** citações | 17/09/2026 |
-| Scopus, busca pelo DOI | **52** citações | 17/09/2026 |
-| Google Acadêmico, busca pelo DOI | **99** citações, 9 versões | 17/09/2026 |
-
-Se ainda estiverem no seu computador, coloque em `metricas/`. São a prova de cinco
-números que estão no slide.
+**O e-mail de concessão do AndroZoo** (17/09) foi enviado na mesma leva de prints,
+mas mostra a **chave da API** em texto aberto. A chave é de uso individual e vive só
+em variável de ambiente. Não entra no repositório, nem recortada.
 
 ---
 

@@ -169,7 +169,7 @@ Esse último ponto transforma "acho relevante" em "é relevante, e eu medi".
 ## 4. Tabela Qualis — percentil → estrato
 
 Extraída da Figura 6, p. 13 do `Documento Tecnico do Qualis Periodicos.pdf`.
-Imagem em `pesquisa/metricas/qualis-periodicos-faixas-de-percentil.png` — **use ela no slide**, é fonte primária.
+Imagem em `pesquisa/metricas/08-qualis-periodicos-faixas-de-percentil.png` — **use ela no slide**, é fonte primária.
 
 | Estrato | Faixa de percentil | | Estrato | Faixa de percentil |
 |---|---|---|---|---|

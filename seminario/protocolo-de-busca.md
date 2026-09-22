@@ -430,7 +430,7 @@ que lado o erro cai. Muito mais forte que entregar um número sem ressalva.
 ### A tabela de conversão
 
 `material-fornecido/Documento Tecnico do Qualis Periodicos.pdf`, Figura 6, p. 13.
-Imagem em `pesquisa/metricas/qualis-periodicos-faixas-de-percentil.png` — **use ela no slide**, é fonte primária.
+Imagem em `pesquisa/metricas/08-qualis-periodicos-faixas-de-percentil.png` — **use ela no slide**, é fonte primária.
 
 | Estrato | Percentil | | Estrato | Percentil |
 |---|---|---|---|---|

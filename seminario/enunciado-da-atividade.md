@@ -62,7 +62,7 @@ Análise da Estrutura de Artigos.
 |---|---|---|
 | Passo a passo da seleção | `protocolo-de-busca.md` §2 · prints em `pesquisa/busca-3/` | 2 |
 | Artigo **original**, com a definição dada acima | `protocolo-de-busca.md` §3 | 3 |
-| Justificativa de relevância para o **seu TCC** | `plano-do-seminario.md` · proposta N3 | 3 e 23 |
+| Justificativa de relevância para o **seu TCC** | `protocolo-de-busca.md` §3 · proposta N3 | 3 e 23 |
 | Busca em **base via CAFe** — WoS, ScienceDirect, ACM, Scopus, IEEE Xplore | `pesquisa/0-acesso/` | 2 |
 | h5 + Qualis do h5 + CORE (conferência) | `protocolo-de-busca.md` §4 · `pesquisa/metricas/` | 4 |
 | Estrutura, **incluindo discussão** | `analise-da-estrutura.md` | 5 a 22 (discussão: 19) |

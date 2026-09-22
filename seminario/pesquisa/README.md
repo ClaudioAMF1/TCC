@@ -49,7 +49,7 @@ acrescentar **`consent`** à string, porque consentimento é o recorte do TCC. O
 | 1 | An Empirical Measurement of Cookie Banners Potential Legal Violations in EU vs US Websites | LNCS | 2025 | 0 | web, não Android |
 | 2 | A Comprehensive Study on Third-Party User Tracking in Mobile Applications | ACM ICPS | 2023 | 10 | menos citado |
 | **3** | **Freely Given Consent?** — Nguyen, Backes, Stock | **CCS** | **2022** | **52** | **selecionado** |
-| 4 | A fait accompli? An empirical study into the absence of consent to third-party tracking in Android apps | SOUPS | 2021 | 34 | veículo CORE B |
+| 4 | A fait accompli? An empirical study into the absence of consent to third-party tracking in Android apps | SOUPS | 2021 | 34 | ICORE A (2026), abaixo do A\* da CCS |
 | 5 | Protecting privacy on the web: HTTPS and Google Analytics in academic library websites | Online Information Review | 2018 | 23 | web, não Android |
 
 Item 1 está no print 23; itens 2 a 5 no print 24.
@@ -110,7 +110,7 @@ Item 1 está no print 23; itens 2 a 5 no print 24.
 | `24-5-finalistas-itens-2-a-5` | Os mesmos 5, itens 2 a 5, com todos os filtros visíveis |
 
 ### `metricas/`
-Prints de **17/09/2026**, exceto o 07 (22/09) e o 10 (21/09). O 08 é uma figura do PDF da CAPES, não print de tela.
+Prints de **17/09/2026**, exceto o 07 e o 11 (22/09) e o 10 (21/09). O 08 é uma figura do PDF da CAPES, não print de tela.
 
 **Item 1 — relevância quantitativa: citações do artigo**
 
@@ -128,9 +128,10 @@ Prints de **17/09/2026**, exceto o 07 (22/09) e o 10 (21/09). O 08 é uma figura
 |---|---|
 | `06-google-scholar-metrics-h5-90-posicao-5` | *Computer Security & Cryptography*, lista completa das 20: CCS na **posição 5, h5 90, mediana 146**. Das quatro acima, duas são periódicos, então entre conferências a CCS é a 3ª. A AsiaCCS, que não é o mesmo evento, está na posição 19, com h5 41 |
 | `07-qualis-eventos-computacao-2017-2020-ccs-a1` | **CAPES, Qualis Eventos da Computação 2017–2020, p. 9: CCS = A1.** Fonte primária do estrato |
-| `08-qualis-periodicos-faixas-de-percentil` | Figura 6 do Documento Técnico do Qualis Periódicos: percentil → estrato. Base do argumento do limiar |
+| `08-qualis-periodicos-faixas-de-percentil` | Figura 6 do Documento Técnico do Qualis Periódicos: a escala percentil → estrato. Só referência: o h5 **não** foi convertido em percentil (ver `protocolo-de-busca.md`, §4) |
 | `09-core-portal-ccs-a-estrela` | ICORE Conference Portal: **A\*** em ICORE2026, com o histórico inteiro (A\* desde 2008; só o ERA2010 deu A). FoR 4604, *Cybersecurity and privacy*. DBLP aponta `conf/ccs`, não `asiaccs` |
 | `10-scopus-sources-busca-por-titulo-0-resultados` | Scopus *Sources* pesquisado pelo título do artigo: 0 resultados. *Sources* busca **veículos**, não artigos, e a CCS não é periódico. Por isso o ramo JIF / Highest Percentile do enunciado não se aplica |
+| `11-core-portal-soups-a-icore2026` | ICORE, registro da **SOUPS**: **A** no ICORE2026, **B** no CORE2020, 2021 e 2023. É por isso que a comparação com a CCS usa a mesma edição, 2026: A contra A\* |
 
 ### `recortes-para-slide/`
 Recortes de 1200 × 694, sem barra de menu nem dock, para caber no deck.

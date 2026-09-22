@@ -1,4 +1,4 @@
-# Análise da estrutura — PREENCHIDA
+# Análise da estrutura do artigo
 
 **Artigo:** NGUYEN, Trung Tin; BACKES, Michael; STOCK, Ben. *Freely Given Consent?
 Studying Consent Notice of Third-Party Tracking and Its Violations of GDPR in
@@ -10,8 +10,10 @@ Vale 5 dos 15 minutos e é o que mais rende nota. O enunciado pede: *"analise a
 estrutura do trabalho (introdução, metodologia, resultados, discussão, conclusão,
 etc.)"* e *"descreva e explique as principais características de cada elemento"*.
 
-> ⚠️ **Confira contra o PDF antes de apresentar.** Tudo abaixo saiu do texto, mas eu
-> já errei número quatro vezes nesta preparação. Abra o artigo e valide.
+> **Conferido contra o PDF da ACM em 22/09/2026.** As citações literais e os números
+> abaixo batem com a versão da ACM, que é a usada na apresentação. Na conferência, uma
+> citação do resumo estava abreviada dentro das aspas e foi restaurada. A cópia dos autores
+> no CISPA difere pelo menos na segunda pergunta de pesquisa.
 
 ---
 
@@ -69,7 +71,7 @@ guidelines do not mandate approval for such a study"*.
 
 | Trecho | Função |
 |---|---|
-| *"Adopted in May 2018, the European Union's GDPR requires the consent for processing users' personal data to be freely given, specific, informed, and unambiguous."* | **Contextualiza** — estabelece a norma |
+| *"Adopted in May 2018, the European Union's General Data Protection Regulation (GDPR) requires the consent for processing users' personal data to be freely given, specific, informed, and unambiguous."* | **Contextualiza** — estabelece a norma |
 | *"While prior work has shown that this often is not given through automated network traffic analysis, no research has systematically studied how consent notices are currently implemented and whether they conform to GDPR in mobile apps."* | **Declara a lacuna** — o que já se sabe e o que falta |
 | *"To close this research gap, we perform the first large-scale study into consent notices for third-party tracking in Android apps..."* | **Objetivo** |
 | *"...we propose a mostly automated and scalable approach to identify the currently implemented consent notices and apply it to a set of 239,381 Android apps."* | **Método empregado** |

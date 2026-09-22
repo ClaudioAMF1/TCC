@@ -85,26 +85,12 @@ Se ainda não leu inteiro, esta ordem rende mais em menos tempo. Use o PDF da AC
 
 Em voz alta. **Não leia os trechos em inglês.** Aponte o trecho e fale a análise.
 
-**23 slides em 15 minutos são 39 segundos cada.** Não dá para dar o mesmo tempo a
-todos:
-
-| Slides | Conteúdo | Tempo |
-|---|---|---|
-| 1 | capa | 10 s |
-| 2–3 | seleção, originalidade, relevância | 2 min 15 s |
-| 4 | h5, Qualis, CORE | 1 min 30 s |
-| 5 | estrutura do artigo | 45 s |
-| 6–11 | resumo, introdução, Figura 1, fundamentação | 2 min 45 s |
-| 12–13 | método | 1 min 30 s |
-| 14–18 | resultados e notificação | 2 min 15 s |
-| 19–20 | discussão e limites | 1 min 30 s |
-| 21–22 | conclusão | 1 min |
-| 23 | aplicação ao TCC | 40 s |
-| | **total** | **14 min 20 s**, sobram 40 s |
+**O roteiro, slide a slide, está em [`roteiro.md`](roteiro.md)**: o que falar, onde apontar e o
+relógio acumulado ao fim de cada slide. Total: **14 min 35 s**, sobram 25 s.
 
 As notas do apresentador no `.pptx` têm o texto de apoio de cada slide.
 
-**Se estourar**, passe mais rápido pelos pares 9+10 (Figura 1) e 6+7 (resumo). Não
+**Se estourar**, passe mais rápido pelos slides 9, 10 e 14. Não
 corte 5, 12, 13 e 19, que são o esqueleto do item 3. Não encurte 21+22: o contraste
 *"violate"* × *"potentially violate"* é o melhor argumento da apresentação.
 
@@ -123,11 +109,15 @@ corte 5, 12, 13 e 19, que são o esqueleto do item 3. Não encurte 21+22: o cont
 > relatórios: 99.
 
 **"O enunciado pede Qualis Periódicos. Por que Qualis Eventos?"**
-> Porque a CCS é conferência, e o Qualis Periódicos classifica revistas. Para
-> conferências da Computação, a CAPES publica o Qualis Eventos, com a mesma escala de
-> A1 a B4. A CCS é A1 no quadriênio 2017–2020. Não converti o h5 em percentil porque
-> o Scholar mostra só as 20 primeiras da subárea, e a base que a CAPES usa para a
-> posição real não é pública. Preferi o estrato publicado a um número calculado.
+> Procurei a CCS no Qualis Periódicos, nos quadriênios 2017–2020 e 2021–2024, e ela
+> não aparece, porque é conferência e essa lista é de revistas. Para conferências de
+> Computação, a CAPES publica o Qualis Eventos, e nele a CCS é A1.
+
+**"E converter o h5 em Qualis Periódicos?"**
+> O Documento Técnico põe a Computação no agrupamento QR1. Nele, o h5 só vira
+> percentil por uma regressão com coeficientes de cada área, nas páginas 11 e 12, e
+> o documento não publica esses coeficientes. Então não dá para fazer a conta sem
+> inventar número.
 
 **"Por que não o artigo da SOUPS?"**
 > Mesmo tema, mas 34 citações contra 52, e a SOUPS é A no ICORE2026 contra A\* da

@@ -47,6 +47,7 @@ versão final.** O índice da pasta é o [`seminario/README.md`](seminario/READM
 | Arquivo | Conteúdo |
 |---|---|
 | `apresentacao/` | **A versão final** — 23 slides + 2 de apoio, `.pptx` e `.pdf`, e o relatório da revisão |
+| `roteiro.md` | **O que falar em cada slide**, com o tempo e o relógio acumulado |
 | `plano-de-execucao.md` | O que falta: testar no aplicativo, ensaiar, as perguntas prováveis |
 | `enunciado-da-atividade.md` | O enunciado transcrito e onde cada exigência está atendida |
 | `protocolo-de-busca.md` | Itens 1 e 2: as três buscas, o funil, os finalistas, as métricas com data |

@@ -151,6 +151,7 @@ CORE.
 |---|---|---|---|
 | **h5** | **90** (mediana 146), posição 5 | 17/09/2026 | `metricas/06` |
 | **Qualis** | **A1** (Qualis Eventos, Computação, 2017–2020) | 22/09/2026 | `metricas/07` |
+| Qualis Periódicos | **não consta** (2017–2020 e 2021–2024) | 22/09/2026 | `metricas/12` e `13` |
 | **CORE** | **A\*** (ICORE2026) | 17/09/2026 | `metricas/09` |
 
 ### h5
@@ -183,22 +184,23 @@ A CAPES classifica a CCS diretamente:
 | Página | **9** de 44 |
 | Linha | CCS · ACM Symposium on Computer and Communications Security · **A1** |
 
-**Duas ressalvas para dizer antes que ela pergunte:**
+**A CCS não está no Qualis Periódicos.** Busca na Plataforma Sucupira em 22/09/2026,
+título *Computer and Communications Security*, sem filtro de área: *"Não existem dados
+cadastrados"* no quadriênio 2017–2020 (`metricas/12`) e no 2021–2024 (`metricas/13`).
+O Qualis Periódicos classifica revistas, e a CCS é conferência. A classificação que a
+CAPES dá a ela é a do Qualis Eventos: A1.
 
-1. **É o Qualis Eventos, não o Qualis Periódicos.** O enunciado pede "Qualis
-   Periódicos correspondente ao índice h5". O Periódicos classifica revistas, e a CCS
-   é conferência. Para conferências da Computação, o instrumento da CAPES é o Qualis
-   Eventos, com a mesma escala de estratos (A1 a B4).
-2. **O A1 é do quadriênio 2017–2020.** Ele não é uma conversão do h5 90 de hoje.
+**Como dizer:**
+> "Procurei a CCS no Qualis Periódicos, nos quadriênios 2017–2020 e 2021–2024, e ela
+> não aparece, porque é conferência, não revista. Para conferências de Computação, a
+> CAPES publica o Qualis Eventos, e nele a CCS é A1."
 
-**Por que não converter o h5 em percentil.** Seria o caminho literal do enunciado, e
-ele não se sustenta com o que está disponível. O Scholar publica só as 20 primeiras
-de cada subárea: a posição 5 numa lista truncada não dá o percentil dentro do
-conjunto real de veículos da área. O próprio Documento Técnico do Qualis Periódicos
-(p. 12) reconhece o problema. A CAPES montou uma base ampliada, o "Universo", para
-ter a posição real, e essa base não é pública. Qualquer conversão feita aqui
-dependeria do tamanho de um universo que não foi demonstrado. Por isso o estrato
-apresentado é o que a CAPES publicou, com a fonte, e não um percentil calculado.
+**Se ela pedir a conversão do h5 em Qualis Periódicos.** O Documento Técnico que ela
+distribuiu não permite fazer essa conta para a Computação. O Anexo 1 (p. 18) põe a
+Ciência da Computação no agrupamento **QR1**. No QR1, o h5 só vira percentil por uma
+regressão que estima o CiteScore a partir do h5, com coeficientes calculados para
+cada área (p. 11–12), e o documento não publica esses coeficientes. Qualquer
+percentil calculado aqui seria inventado.
 
 A escala de estratos do Qualis Periódicos (Figura 6, p. 13 do Documento Técnico) está
 em `metricas/08`, para referência.
@@ -219,9 +221,11 @@ classificação é estável, não um acaso de uma edição.
 
 ### O caminho de periódico não se aplica
 
-JIF Percentile e Highest Percentile são métricas de **revista**. No Scopus *Sources*,
-que busca veículos e não artigos, a busca pelo título do artigo devolve zero
-(`metricas/10`). A CCS não é periódico, então esse ramo do enunciado não se aplica.
+JIF Percentile e Highest Percentile são métricas de **revista**, e a CCS é conferência:
+o Scopus classifica o artigo como *Conference Paper* (`metricas/04`). O print
+`metricas/10` é uma busca no Scopus *Sources* pelo título do artigo, que dá zero; ele
+fica como registro da tentativa, mas não prova nada, porque *Sources* busca veículos
+pelo nome, não artigos.
 
 ---
 

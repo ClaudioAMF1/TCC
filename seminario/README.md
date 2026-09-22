@@ -16,6 +16,7 @@ vai apresentar e ensaiar. Ver `plano-de-execucao.md`.
 | Se você quer... | Abra |
 |---|---|
 | **A apresentação** | [`apresentacao/seminario-analise-de-artigo.pptx`](apresentacao/seminario-analise-de-artigo.pptx), com notas do apresentador em todos os slides. O [`.pdf`](apresentacao/seminario-analise-de-artigo.pdf) é o backup |
+| **O que falar em cada slide**, com o tempo | [`roteiro.md`](roteiro.md) |
 | **O que falta fazer** e as perguntas prováveis | [`plano-de-execucao.md`](plano-de-execucao.md) |
 | O que foi corrigido na versão final, com o antes e o depois | [`apresentacao/relatorio-de-revisao.pdf`](apresentacao/relatorio-de-revisao.pdf) |
 | O que a professora pediu, ao pé da letra | [`enunciado-da-atividade.md`](enunciado-da-atividade.md) |
@@ -26,7 +27,8 @@ vai apresentar e ensaiar. Ver `plano-de-execucao.md`.
 seminario/
 ├── README.md                   este índice
 ├── enunciado-da-atividade.md   enunciado transcrito, o que exige e o que não exige
-├── plano-de-execucao.md        o que falta, ensaio cronometrado, perguntas prováveis
+├── roteiro.md                  o que falar em cada slide, com o relógio acumulado
+├── plano-de-execucao.md        o que falta, ensaio, perguntas prováveis
 ├── protocolo-de-busca.md       itens 1 e 2: busca, funil, finalistas, métricas
 ├── analise-da-estrutura.md     item 3: os sete blocos, com recortes do artigo
 ├── apresentacao/
@@ -40,7 +42,7 @@ seminario/
 | Item do enunciado | Slides | Registro | Evidência |
 |---|---|---|---|
 | **1** — seleção e relevância | 2 e 3 (finalistas no 24) | [`protocolo-de-busca.md`](protocolo-de-busca.md) §2 e §3 | `pesquisa/0-acesso/`, `busca-1/` a `busca-3/`, `metricas/01` a `05` |
-| **2** — h5, Qualis, CORE | 4 | [`protocolo-de-busca.md`](protocolo-de-busca.md) §4 | `pesquisa/metricas/06` a `11` |
+| **2** — h5, Qualis, CORE | 4 | [`protocolo-de-busca.md`](protocolo-de-busca.md) §4 | `pesquisa/metricas/06` a `13` |
 | **3** — estrutura | 5 a 22 (discussão no 19) | [`analise-da-estrutura.md`](analise-da-estrutura.md) | o PDF do artigo, versão da ACM |
 
 ## Os números, num lugar só
@@ -50,7 +52,7 @@ seminario/
 | Funil da busca | **131 → 70 → 39 → 5 → 1** | Scopus via CAFe, prints 18, 20, 21, 23 | 21/09/2026 |
 | Citações | **42** ACM · **52** Scopus · **99** Google Acadêmico | página de cada base | 17/09/2026 |
 | h5 | **90** (mediana 146), posição 5 em *Computer Security & Cryptography*, 3ª entre as conferências | Google Scholar Metrics | 17/09/2026 |
-| Qualis | **A1** — Qualis **Eventos**, não Periódicos; ver `protocolo-de-busca.md` §4 | CAPES, Computação 2017–2020, p. 9 | 22/09/2026 |
+| Qualis | **A1** no Qualis **Eventos**. No Qualis **Periódicos** a CCS **não consta** (é conferência) | CAPES, Computação 2017–2020, p. 9 · Sucupira | 22/09/2026 |
 | CORE | **A\*** (ICORE2026; A\* desde 2008, exceto ERA2010) | portal.core.edu.au | 17/09/2026 |
 | SOUPS, a alternativa descartada | **A** no ICORE2026 (era B até o CORE2023) | portal.core.edu.au | 22/09/2026 |
 

@@ -110,7 +110,7 @@ Item 1 está no print 23; itens 2 a 5 no print 24.
 | `24-5-finalistas-itens-2-a-5` | Os mesmos 5, itens 2 a 5, com todos os filtros visíveis |
 
 ### `metricas/`
-Prints de **17/09/2026**, exceto o 07 e o 11 (22/09) e o 10 (21/09). O 08 é uma figura do PDF da CAPES, não print de tela.
+Prints de **17/09/2026**, exceto o 07, o 11, o 12 e o 13 (22/09) e o 10 (21/09). O 08 é uma figura do PDF da CAPES, não print de tela.
 
 **Item 1 — relevância quantitativa: citações do artigo**
 
@@ -130,8 +130,12 @@ Prints de **17/09/2026**, exceto o 07 e o 11 (22/09) e o 10 (21/09). O 08 é uma
 | `07-qualis-eventos-computacao-2017-2020-ccs-a1` | **CAPES, Qualis Eventos da Computação 2017–2020, p. 9: CCS = A1.** Fonte primária do estrato |
 | `08-qualis-periodicos-faixas-de-percentil` | Figura 6 do Documento Técnico do Qualis Periódicos: a escala percentil → estrato. Só referência: o h5 **não** foi convertido em percentil (ver `protocolo-de-busca.md`, §4) |
 | `09-core-portal-ccs-a-estrela` | ICORE Conference Portal: **A\*** em ICORE2026, com o histórico inteiro (A\* desde 2008; só o ERA2010 deu A). FoR 4604, *Cybersecurity and privacy*. DBLP aponta `conf/ccs`, não `asiaccs` |
-| `10-scopus-sources-busca-por-titulo-0-resultados` | Scopus *Sources* pesquisado pelo título do artigo: 0 resultados. *Sources* busca **veículos**, não artigos, e a CCS não é periódico. Por isso o ramo JIF / Highest Percentile do enunciado não se aplica |
+| `10-scopus-sources-busca-por-titulo-0-resultados` | Scopus *Sources* pesquisado pelo título do **artigo**: 0 resultados. *Sources* busca veículos pelo nome, então essa busca sempre dá zero e não prova nada sobre a CCS. Fica como registro da tentativa. O ramo JIF / Highest Percentile não se aplica porque a CCS é conferência (`04`: *Conference Paper*) |
 | `11-core-portal-soups-a-icore2026` | ICORE, registro da **SOUPS**: **A** no ICORE2026, **B** no CORE2020, 2021 e 2023. É por isso que a comparação com a CCS usa a mesma edição, 2026: A contra A\* |
+| `12-qualis-periodicos-2017-2020-ccs-nao-consta` | Plataforma Sucupira, Qualis **Periódicos** 2017–2020, título *Computer and Communications Security*, **sem filtro de área**: *"Não existem dados cadastrados"* |
+| `13-qualis-periodicos-2021-2024-ccs-nao-consta` | A mesma busca no quadriênio **2021–2024**: também sem resultado |
+
+**Os prints 12 e 13 respondem ao item 2 ao pé da letra.** O enunciado pede o *Qualis Periódicos* correspondente ao h5. A CCS não está no Qualis Periódicos em nenhum dos dois quadriênios, porque é conferência e essa lista é de revistas. A classificação da CAPES para ela é a do Qualis Eventos (`07`): A1.
 
 ### `recortes-para-slide/`
 Recortes de 1200 × 694, sem barra de menu nem dock, para caber no deck.

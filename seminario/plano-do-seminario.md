@@ -1,5 +1,10 @@
 # Seminário — Análise de Artigo Científico
 
+> **Escrito para o deck anterior, de 16 slides, que foi substituído em 22/09 pela
+> apresentação em `apresentacao/`.** Os argumentos, os números e as respostas às
+> perguntas continuam valendo. **A numeração de slides citada aqui não vale mais.**
+> O funil correto é `131 → 70 → 39 → 5 → 1`; ver `protocolo-de-busca.md`, §2.
+
 **Datas:** 29/09 e 01/10/2026 · ordem alfabética · **15 minutos** por apresentação
 **Peso:** 4 dos 6 pontos da AV1 (a Lista 01 vale 2) — é a maior nota do bimestre
 **Tema assumido:** **N3** — rastreamento por terceiros em apps móveis governamentais
@@ -164,7 +169,7 @@ Esse último ponto transforma "acho relevante" em "é relevante, e eu medi".
 ## 4. Tabela Qualis — percentil → estrato
 
 Extraída da Figura 6, p. 13 do `Documento Tecnico do Qualis Periodicos.pdf`.
-Imagem em `qualis-faixas-de-percentil.png` — **use ela no slide**, é fonte primária.
+Imagem em `pesquisa/metricas/qualis-periodicos-faixas-de-percentil.png` — **use ela no slide**, é fonte primária.
 
 | Estrato | Faixa de percentil | | Estrato | Faixa de percentil |
 |---|---|---|---|---|

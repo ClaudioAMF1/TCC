@@ -1,6 +1,6 @@
 # Protocolo de busca e planilha de métricas
 
-**Preencha este arquivo ENQUANTO busca, não depois.** O slide 4 pede o passo a passo
+**Preencha este arquivo ENQUANTO busca, não depois.** O item 1 pede o passo a passo
 da seleção, e esse é o único item da atividade que é **impossível de reconstruir**:
 se você achar o artigo e só depois tentar lembrar quantos resultados a busca
 devolveu, o número vai ser inventado — e inventar número na metodologia é
@@ -34,76 +34,79 @@ para resolver com a biblioteca — e descobrir isso no dia 28 é fatal.
 
 ## 2. A busca — EXECUTADA em 21/09/2026
 
-Prints em `seminario/pesquisa/`. **Base: Scopus, acessada pelo portal da CAPES via
-CAFe** (`www-scopus-com.ez279.periodicos.capes.gov.br`) — o prefixo `ez279` no
-endereço é a prova do acesso institucional.
+Prints em `seminario/pesquisa/`, uma pasta por busca. **Base: Scopus, acessada pelo
+portal da CAPES via CAFe** (`www-scopus-com.ez279.periodicos.capes.gov.br`) — o
+prefixo `ez279` no endereço é a prova do acesso institucional.
 
 ### As três tentativas
 
-| | String | Resultados |
-|---|---|---|
-| 1 | `"third-party tracking" AND consent AND android` | **4** |
-| 2 | `"third party" AND tracking AND android AND (consent OR GDPR)` | **12** (9 com filtro de ano) |
-| **3** | `"third-party tracking"` | **131** |
+| | String | Resultados | Prints |
+|---|---|---|---|
+| 1 | `"third-party tracking" AND consent AND android` | **4** | `busca-1/` |
+| 2 | `"third party" AND tracking AND android AND (consent OR GDPR)` | **12** (9 com filtro de área e tipo) | `busca-2/` |
+| **3** | `"third-party tracking"`, depois refinada com `consent` | **131 → 5** | `busca-3/` |
 
-Todas no campo *Article title, Abstract, Keywords*, na mesma sessão.
+Todas no campo *Article title, Abstract, Keywords*, na mesma sessão, entre 08:46 e
+09:11.
 
 **As duas primeiras foram cirúrgicas demais.** Expressão exata mais três termos
 obrigatórios devolveu 4 documentos, o que não demonstra triagem: parece busca feita
-até achar o que já se queria. A terceira abre para 131 e depois estreita por filtro,
-que é como uma busca sistemática deve parecer.
+até achar o que já se queria. A terceira abre para 131 e depois estreita, que é como
+uma busca sistemática deve parecer.
 
-### O funil que vai ao slide
+### O funil — conferido tela a tela em 22/09/2026
 
 ```
-131   expressão exata, sem filtro                          print 18
- ↓    ano 2018–2026, Computer Science, Conference + Article
- 70                                                        print 20
- ↓    palavras-chave Third Parties e Third-party Tracking,
-      ano 2018–2025
-  5   finalistas                                           print 24
+131   "third-party tracking", sem filtro                          print 18 · 09:07
+ ↓    ano 2018–2026 · Computer Science · Conference paper + Article
+ 70                                                               print 20 · 09:09
+ ↓    palavras-chave Third Parties e Third-party Tracking
+ 39                                                               print 21 · 09:10
+ ↓    acrescenta o termo consent à string · ano passa a 2018–2025
+  5   finalistas                                                  print 23 · 09:11
  ↓    leitura de título e resumo
   1   selecionado
 ```
 
-### Os cinco finalistas
+> **Correção de 22/09.** A versão anterior deste funil dizia `131 → 70 → 5`, com o
+> corte para 5 atribuído às palavras-chave. Os prints mostram outra coisa: as
+> palavras-chave levaram a **39** (print 21), e o que levou a **5** foi acrescentar
+> **`consent`** à string (print 23, a caixa de busca está visível). A etapa de 39
+> tinha sumido do registro.
+>
+> A versão correta é **melhor** para a apresentação, não pior. Ela mostra uma decisão
+> de método — o recorte do TCC é consentimento, então o termo entra na string — em
+> vez de um filtro de interface.
 
-| Artigo | Veículo | Ano | Cit. | Decisão |
-|---|---|---|---|---|
-| A Comprehensive Study on Third-Party User Tracking | ACM ICPS | 2023 | 10 | ❌ menos citado |
-| **Freely Given Consent?** | **CCS** | **2022** | **52** | ✅ **selecionado** |
-| A fait accompli? An empirical study into the absence of consent | SOUPS | 2021 | 34 | ❌ veículo CORE B |
-| Protecting privacy on the web: HTTPS e Google Analytics | Online Information Review | 2018 | 23 | ❌ é web, não Android |
-| WhisperTest: Voice-Control Library for iOS UI Automation | CCS | 2025 | 0 | ❌ é iOS |
+### Os cinco finalistas — print 23 (itens 1 a 3) e print 24 (itens 2 a 5)
 
-> **E apareceu um artigo de 2026 no IEEE Symposium on Security and Privacy**, sobre
-> riscos de privacidade em plataformas de gestão de consentimento, com **0 citações**.
-> Mais recente que o escolhido, em veículo de topo, e ainda sem tempo de ser citado.
-> É a prova viva de que recência e citações se excluem por construção. Se perguntarem
-> por que não um artigo mais novo, a resposta está no próprio print.
-
-### Detalhe: os quatro candidatos da Tentativa 1
-
-| # | Artigo | Veículo | Ano | Citações (Scopus) | Decisão |
+| # | Artigo | Veículo | Ano | Cit. | Decisão |
 |---|---|---|---|---|---|
-| 1 | WhisperTest: A Voice-Control-based Library for **iOS** UI Automation | CCS 2025 | 2025 | 0 | ❌ **iOS**, não Android; e é ferramenta de automação de UI, não medição de rastreamento |
-| 2 | A Comprehensive Study on Third-Party User Tracking in Mobile Applications | ACM ICPS | 2023 | 10 | ❌ menos citado e em veículo de menor classificação |
-| **3** | **Freely Given Consent?** — Nguyen, Backes, Stock | **CCS** | **2022** | **52** | ✅ **SELECIONADO** |
-| 4 | A fait accompli? An empirical study into the absence of consent | SOUPS | 2021 | 34 | ❌ mais antigo, menos citado, e SOUPS é **CORE B** contra **A\*** do CCS |
+| 1 | An Empirical Measurement of Cookie Banners Potential Legal Violations in EU vs US Websites | LNCS 15995 | 2025 | 0 | ❌ é web, não Android |
+| 2 | A Comprehensive Study on Third-Party User Tracking in Mobile Applications | ACM ICPS | 2023 | 10 | ❌ menos citado, veículo de menor classificação |
+| **3** | **Freely Given Consent?** — Nguyen, Backes, Stock | **CCS** | **2022** | **52** | ✅ **selecionado** |
+| 4 | A fait accompli? An empirical study into the absence of consent to third-party tracking in Android apps | SOUPS | 2021 | 34 | ❌ veículo CORE B, contra A\* do CCS |
+| 5 | Protecting privacy on the web: A study of HTTPS and Google Analytics implementation in academic library websites | Online Information Review | 2018 | 23 | ❌ é web, não Android |
 
-### O funil
+> **Correção de 22/09.** A tabela anterior tinha o **WhisperTest** (CCS 2025, iOS)
+> como quinto finalista. Ele não está nos 5 da busca 3: aparece nas buscas 1 e 2. O
+> item 1 da lista de 5 é o artigo sobre *cookie banners* (print 23). O erro foi meu,
+> ao montar a tabela juntando o print 06 com o print 24.
+
+> **E o artigo de 2026 no IEEE S&P**, sobre riscos de privacidade em plataformas de
+> gestão de consentimento, com **0 citações**, aparece na **busca 2** (print 10).
+> Mais recente que o escolhido, em veículo de topo, e ainda sem tempo de ser citado.
+> É a prova de que recência e citações se excluem por construção.
+
+### Lidos na íntegra
 
 | | Quantos |
 |---|---|
-| Resultados devolvidos (T1) | **4** |
-| Resultados devolvidos (T2, ampla) | **12** |
-| Após leitura de título e resumo | **3** — o WhisperTest sai por ser iOS |
+| Finalistas | **5** |
+| Após leitura de título e resumo | **1** |
 | Lidos na íntegra | ☐ *confirmar* |
-| **Selecionado** | **1** |
 
 ### Critérios de inclusão e exclusão
-
-Declarados **antes** de olhar os resultados. É o que separa seleção de conveniência.
 
 **Incluir:** artigo original com medição empírica · rastreamento por terceiros em
 Android · veículo indexado e revisado por pares · texto completo acessível.
@@ -111,11 +114,13 @@ Android · veículo indexado e revisado por pares · texto completo acessível.
 **Excluir:** revisão de literatura ou survey · posicionamento sem dado · foco em iOS
 ou web sem componente Android · publicado apenas como preprint.
 
+Aplicados aos cinco: dois saem por serem **web** (1 e 5). Dos três Android, o CCS
+tem mais citações que os outros dois e o único veículo A\*.
+
 > **O achado que vale ponto:** a busca encontrou o **Kollnig et al. (SOUPS 2021)**,
 > que é a alternativa mais séria ao artigo escolhido. Poder dizer *"considerei e
 > descartei, com o número"* — 34 citações contra 52, um ano mais velho, CORE B contra
-> A\* — é muito mais forte que apresentar um artigo isolado. Se perguntarem se você
-> avaliou alternativas, a resposta está no próprio print da busca.
+> A\* — é muito mais forte que apresentar um artigo isolado.
 
 ---
 
@@ -425,7 +430,7 @@ que lado o erro cai. Muito mais forte que entregar um número sem ressalva.
 ### A tabela de conversão
 
 `material-fornecido/Documento Tecnico do Qualis Periodicos.pdf`, Figura 6, p. 13.
-Imagem em `qualis-faixas-de-percentil.png` — **use ela no slide**, é fonte primária.
+Imagem em `pesquisa/metricas/qualis-periodicos-faixas-de-percentil.png` — **use ela no slide**, é fonte primária.
 
 | Estrato | Percentil | | Estrato | Percentil |
 |---|---|---|---|---|

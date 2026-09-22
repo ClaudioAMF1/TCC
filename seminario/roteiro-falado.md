@@ -1,5 +1,10 @@
 # Roteiro falado — 15 minutos
 
+> **Escrito para o deck anterior, de 16 slides, que foi substituído em 22/09 pela
+> apresentação em `apresentacao/`.** Os argumentos, os números e as respostas às
+> perguntas continuam valendo. **A numeração de slides citada aqui não vale mais.**
+> O funil correto é `131 → 70 → 39 → 5 → 1`; ver `protocolo-de-busca.md`, §2.
+
 O que dizer, slide a slide. Os trechos entre aspas são **texto para falar**, não
 para ler no slide. `[COLCHETES]` marcam o que só você pode preencher, porque
 depende de consultar a fonte.
@@ -199,7 +204,7 @@ aparecer, em voz alta e no slide.
 > percentil. Os dois instrumentos concordam sobre qual é a área, então o conjunto de
 > referência que escolhi não é arbitrário."
 
-**No slide:** a figura `qualis-faixas-de-percentil.png` com a sua linha destacada, e
+**No slide:** a figura `pesquisa/metricas/qualis-periodicos-faixas-de-percentil.png` com a sua linha destacada, e
 os três valores — h5, estrato, CORE — lado a lado.
 
 > Leve o print de cada tela. A professora pode pedir.

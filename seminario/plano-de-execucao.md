@@ -1,6 +1,6 @@
-# Plano de execução — 8 dias até a apresentação
+# Plano de execução até a apresentação
 
-**Hoje:** 21/09/2026 · **Apresentação:** 29/09 ou 01/10, ordem alfabética
+**Atualizado:** 22/09/2026 · **Apresentação:** 29/09 ou 01/10, ordem alfabética
 **Sobrenome:** Meireles → provavelmente **29/09**. Prepare-se para a primeira data.
 
 ---
@@ -9,22 +9,36 @@
 
 | Item do enunciado | Estado |
 |---|---|
-| **1** — passo a passo da seleção | ✅ **executado em 21/09**, duas tentativas, prints em `pesquisa/` |
+| **1** — passo a passo da seleção | ✅ busca de 21/09, prints conferidos um a um em 22/09 |
 | **1** — relevância quantitativa | ✅ 42 (ACM) · 52 (Scopus) · 99 (Scholar), com data |
-| **1** — relevância qualitativa | ✅ escrita, com os números do N3 |
-| **2** — h5 · Qualis · CORE | ✅ 90 · A1 · A\* |
-| **3** — análise da estrutura | ✅ preenchida a partir do PDF, 7 blocos |
-| Deck | ✅ **13 slides, no formato do exemplo da professora** |
+| **1** — relevância qualitativa | ✅ |
+| **2** — h5 · Qualis · CORE | ✅ 90 · **A1 (documento da CAPES)** · A\* |
+| **3** — análise da estrutura | ✅ |
+| Apresentação | ✅ **23 slides + 2 de apoio**, em `apresentacao/` — com as correções abaixo pendentes |
 | Ensaio | ⬜ **é o que falta** |
-
-**A atividade está montada.** O que resta é ensaiar e conferir.
 
 ---
 
-## Dia 2 — 2h · ler o artigo
+## Correções pendentes na apresentação
 
-Mesmo que eu preencha a análise de estrutura, **você precisa ter lido**. A banca
-pergunta, e ler o resumo não sustenta 5 minutos de fala.
+Encontradas na revisão de 22/09. As três primeiras custam ponto.
+
+| | Slide | O que está | O que deve estar |
+|---|---|---|---|
+| ☐ | **4** | Qualis: *"Não determinável com os dados disponíveis"* | **A1** — CAPES, Qualis Eventos Computação 2017–2020, p. 9. Print em `pesquisa/metricas/` |
+| ☐ | **2** | Funil `131 → 70 → 5`, com o 5 atribuído a "palavras-chave específicas" | `131 → 70 → 39 → 5`. As palavras-chave levam a **39**; o termo **`consent`** na string leva a **5**. Recortes prontos em `pesquisa/recortes-para-slide/`, um por degrau |
+| ☐ | **24** | WhisperTest (CCS 2025) entre os finalistas | *An Empirical Measurement of Cookie Banners Potential Legal Violations in EU vs US Websites* (LNCS, 2025, 0 cit.) — é web, não Android |
+| ☐ | 4 e 25 | *"Sem nova confirmação no Google Scholar"* | *"Google Scholar Metrics, Computer Security & Cryptography, posição 5, consulta em 17/09/2026"* |
+| ☐ | 3 | Relevância sem citações | Acrescentar **42 · 52 · 99** — hoje só aparecem no slide 24, que é de apoio |
+| ☐ | 24 | SOUPS: *"menor prioridade na seleção"* | **veículo CORE B**, que é critério |
+| ☐ | 25 | Fontes sem o Qualis Eventos | Acrescentar o relatório da CAPES |
+
+O erro do WhisperTest e o funil sem o degrau de 39 vieram do **meu** registro, não
+da sua busca. As telas sempre mostraram o certo.
+
+---
+
+## Ler o artigo — 2h
 
 Ordem de leitura que rende mais em menos tempo:
 
@@ -35,54 +49,45 @@ Ordem de leitura que rende mais em menos tempo:
 | 3 | Introdução, parágrafo a parágrafo. Procure a **lista de contribuições** | 20 min |
 | 4 | Método — confirme o funil (239.381 → 13.082 → 2.688) | 30 min |
 | 5 | Resultados — tem IC? tem tamanho de efeito? **tem grupo de controle?** | 20 min |
-| 6 | Procure a discussão. Se não houver seção com esse nome, anote onde está | 15 min |
+| 6 | Discussão, Seção 6 | 15 min |
 | 7 | Conclusão — compare com o que o resumo prometeu | 10 min |
 
----
-
-## Dia 3 — 1h · revisar o que eu preenchi
-
-Eu vou ter entregado a análise de estrutura preenchida e o deck fechado. Seu
-trabalho: **conferir contra o PDF** e corrigir o que eu tiver errado.
-
-Isso não é formalidade. Nesta conversa eu errei h5 (dei 93, era 90), posição na
-lista (dei 3, era 5), o denominador do percentil, e o critério da H3 do seu TCC.
-Todas as quatro vezes quem pegou foi você, perguntando o que o número significava.
-
-☐ Cada recorte do artigo que eu citar existe mesmo, com essas palavras
-☐ Os números do funil batem
+☐ Cada recorte em inglês dos slides existe no PDF, com essas palavras (Ctrl+F)
 ☐ A citação ABNT bate com a primeira página do PDF
 
 ---
 
-## Dia 4 — 1h · primeiro ensaio, cronometrado
+## Primeiro ensaio, cronometrado — 1h
 
-Em voz alta, com o cronômetro. **Não leia os slides** — eles são apoio.
+Em voz alta, com o cronômetro. **Não leia os slides.** Nos recortes em inglês, aponte
+o trecho e fale a análise.
 
-Orçamento:
+**23 slides em 15 minutos são 39 segundos cada.** Não dá para dar o mesmo tempo a
+todos. Orçamento:
 
 | Slides | Conteúdo | Tempo |
 |---|---|---|
-| 1 | capa | 15 s |
-| 2 | passo a passo da busca, os três prints do funil | 2 min |
-| 3 | o artigo e por que ele é original | 1 min |
-| 4 | relevância quantitativa e qualitativa | 2 min 30 s |
-| 5 | h5, Qualis, CORE | 2 min |
-| 6–12 | **análise da estrutura, um slide por seção** | **6 min** |
-| 13 | fechamento | 45 s |
+| 1 | capa | 10 s |
+| 2–3 | seleção, originalidade, relevância | 2 min 15 s |
+| 4 | h5, Qualis, CORE | 1 min 30 s |
+| 5 | estrutura do artigo, a tabela | 45 s |
+| 6–11 | resumo, introdução, Figura 1, fundamentação | 2 min 45 s |
+| 12–13 | método | 1 min 30 s |
+| 14–18 | resultados e notificação | 2 min 15 s |
+| 19–20 | discussão e limites | 1 min 30 s |
+| 21–22 | conclusão | 1 min |
+| 23 | aplicação ao TCC | 40 s |
+| | **total** | **14 min 20 s** — sobram 40 s |
 
-Os slides 6 a 12 mostram **o texto do artigo em inglês, no original**, com a
-anotação ao lado. Você **não lê esse texto em voz alta** — aponta o trecho e fala
-a anotação. Quem tenta ler os recortes estoura o tempo na terceira seção.
+**Se estourar**, funda os pares **9+10** (Figura 1) primeiro, depois **6+7** (resumo).
+Não funda 21+22: o contraste *"violate"* × *"potentially violate"* é o melhor
+argumento da apresentação. **Nunca corte 5, 12, 13 e 19** — são o esqueleto do item 3.
 
-**Se estourar, corte do slide 4.** Nunca da análise da estrutura, que é o maior
-bloco da nota.
-
-Anote onde você travou. É isso que o Dia 5 conserta.
+Anote onde você travou.
 
 ---
 
-## Dia 5 — 1h · segundo ensaio + as perguntas
+## Segundo ensaio e as perguntas — 1h
 
 Refaça, corrigindo o que travou. Depois treine as três respostas:
 
@@ -102,7 +107,7 @@ Refaça, corrigindo o que travou. Depois treine as três respostas:
 
 ---
 
-## Dia 6 — 30 min · conferência final
+## Conferência final — 30 min
 
 ☐ Citação ABNT conferida na **primeira página do PDF**, não daqui
 ☐ Todos os números com **data de consulta** visível no slide
@@ -112,27 +117,10 @@ Refaça, corrigindo o que travou. Depois treine as três respostas:
 
 ---
 
-## Dia 7 — véspera · 20 min
+## Véspera — 20 min
 
 Um ensaio corrido. Dormir.
 
 **Não mexa no deck na véspera.** Erro entra nessa hora.
 
 ---
-
-## O que eu faço e o que eu não faço
-
-**Eu faço**, assim que você me mandar o PDF e o funil:
-- os sete blocos da análise de estrutura, com recorte literal do artigo
-- os slides 6 a 12 preenchidos
-- o slide 2 com o seu funil
-- revisão da citação ABNT contra o que estiver no PDF
-
-**Eu não faço, e não é limitação técnica:**
-- **a busca.** O item 1 avalia o caminho que *você* percorreu. Inventar um funil é
-  fabricar metodologia — e este repositório inteiro é construído sobre o oposto
-  disso. Três temas caíram aqui porque o número não batia com a estrutura por trás.
-  Não vou colocar um número inventado no slide que a professora vai usar para
-  avaliar o seu método.
-- **o ensaio.** Quinze minutos em pé, em voz alta, é a parte que decide se a
-  apresentação funciona. Não tem atalho.

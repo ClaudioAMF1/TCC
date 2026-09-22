@@ -1,7 +1,0 @@
-{
-  "name": "tcc-seminario",
-  "private": true,
-  "description": "Gerador do deck do seminario de analise de artigo",
-  "scripts": { "deck": "node scripts/gera_deck_seminario.js" },
-  "dependencies": { "pptxgenjs": "^4.0.1" }
-}

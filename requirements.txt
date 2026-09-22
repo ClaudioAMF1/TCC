@@ -1,0 +1,10 @@
+# Dependências dos scripts de viabilidade. Todo o resto é biblioteca padrão.
+#
+#   python3 -m venv .venv && source .venv/bin/activate
+#   pip install -r requirements.txt
+
+google-play-scraper>=1.2   # teste_viabilidade_n3.py, teste_viabilidade_n3_robusto.py
+cryptography>=41           # ct_direto.py
+
+# Opcional: o teste do S3 usa o dig do sistema se o dnspython não estiver instalado.
+dnspython>=2.4             # teste_viabilidade_s3.py

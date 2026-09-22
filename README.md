@@ -14,8 +14,8 @@ passaram**:
 | **S3** | Falsificação de e-mail em domínios públicos | ✅ 4 portas abertas · 3 achados · hipótese principal caiu |
 
 A proposta formal do N3 está em `desenhos/N3-proposta-formal.md`; o registro do S3 em
-`desenhos/S3-falsificacao-email.md`. O seminário de 29/09 está sendo preparado **com o
-N3**, que é o mais adiantado. Ver a Seção 3.
+`desenhos/S3-falsificacao-email.md`. O seminário de 29/09 foi preparado **com o N3**:
+ver `seminario/README.md`.
 
 ---
 
@@ -40,18 +40,20 @@ dados/          Saída bruta das coletas (não versionado — ver .gitignore)
 | `listas/` | Listas de exercícios da disciplina e guias de estudo correspondentes |
 
 ### `seminario/`
-Atividade de 29/09 e 01/10, 15 minutos, **4 dos 6 pontos da AV1**. Preparada com o **N3**.
+Atividade de 29/09 e 01/10, 15 minutos, **4 dos 6 pontos da AV1**. Artigo: Nguyen,
+Backes e Stock, *Freely Given Consent?*, ACM CCS 2022.
+
+**O índice da pasta está em `seminario/README.md`**, com o mapa de cada arquivo,
+todos os números num lugar só e o que ficou de fora e por quê.
 
 | Arquivo | Conteúdo |
 |---|---|
-| `enunciado-da-atividade.md` | **O enunciado transcrito** + a leitura literal: o que ele exige, o que ele NÃO exige, e as duas armadilhas |
-| `plano-de-execucao.md` | **Cronograma dia a dia** até 29/09, com o que falta, quem faz o quê e as respostas das perguntas prováveis |
-| `plano-do-seminario.md` | Estratégia: por que este artigo, a tensão entre recência e citações, a conversão h5 → Qualis |
-| `roteiro-falado.md` | **O que dizer, slide a slide**, com os números do N3 já no texto |
-| `protocolo-de-busca.md` | O que registrar **enquanto** busca — o slide 4 é impossível de reconstruir depois — e a planilha de métricas |
-| `analise-da-estrutura.md` | Formulário dos **sete blocos** (inclui discussão), a preencher lendo o artigo. Vale 5 dos 15 minutos |
-| `seminario-analise-de-artigo.pptx` | Deck de 16 slides. O que está em âmbar é o que só você pode preencher |
-| `qualis-faixas-de-percentil.png` | Figura 6 do Documento Técnico: percentil → estrato |
+| `apresentacao/` | **O deck que vai ser apresentado** — 23 slides + 2 de apoio, `.pptx` e `.pdf` |
+| `plano-de-execucao.md` | **O que falta**: correções pendentes no deck, ensaio cronometrado, perguntas prováveis |
+| `enunciado-da-atividade.md` | O enunciado transcrito e o que ele exige, slide a slide |
+| `protocolo-de-busca.md` | Itens 1 e 2: as três buscas, o funil, os finalistas, as métricas com data |
+| `analise-da-estrutura.md` | Item 3: os sete blocos, com recortes do artigo |
+| `pesquisa/` | **Prints da busca e das métricas**, uma pasta por busca, com nomes que dizem o que cada um mostra |
 | `material-fornecido/` | PDFs disponibilizados pela professora |
 
 ### `temas/`
@@ -146,14 +148,13 @@ nenhum explora falha, nenhum baixa conteúdo de área autenticada.
 | `teste_viabilidade_n3_robusto.py` | Mede a **porta de cada hipótese** antes de baixar APK: pareamento (H1), política de privacidade acessível (H2), povoamento das células (H3), potência estatística, e um sinal preliminar da variável dependente |
 | `teste_viabilidade_malware.py` | Consulta metadados de famílias de malware bancário no MalwareBazaar e mede compartilhamento de imphash entre famílias, com grupo de controle não brasileiro |
 | `teste_viabilidade_s3.py` | Consulta SPF, DKIM, DMARC, MX e NS de domínios públicos brasileiros e mede se há **variação** a explicar e se a postura é herdada do fornecedor de TI |
-| `gera_deck_seminario.js` | Gera o deck do seminário de análise de artigo |
 
 ### Como rodar
 
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
-pip install google-play-scraper cryptography
+pip install -r requirements.txt
 
 python3 scripts/teste_viabilidade_n3.py --expandir
 python3 scripts/ct_direto.py --entradas 20000 --logs 1
@@ -214,6 +215,9 @@ python3 scripts/teste_viabilidade_n1.py --apenas-contagem
 
 ## 6. O que falta
 
+- **Seminário.** Aplicar as correções pendentes no deck — a principal é o Qualis do
+  slide 4, que está como "não determinável" e é **A1** pela CAPES — e ensaiar. Lista em
+  `seminario/plano-de-execucao.md`.
 - ~~**Tema definitivo.**~~ Definido: **N3**. Proposta formal em `desenhos/N3-proposta-formal.md`.
 - ~~**Rodar o teste robusto.**~~ Rodado em 17/09: as quatro hipóteses têm instrumento.
 - **Conferir à mão** as 43 políticas que deram `403` e `302` — são bloqueio de agente e

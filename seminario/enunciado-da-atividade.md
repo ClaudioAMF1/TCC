@@ -58,15 +58,15 @@ Análise da Estrutura de Artigos.
 
 ## Leitura literal do enunciado — o que ele exige e o que ele NÃO exige
 
-| Exige | Onde está preparado |
-|---|---|
-| Passo a passo da seleção | `protocolo-de-busca.md` → slide 4 |
-| Artigo **original**, com a definição dada acima | slide 5 |
-| Justificativa de relevância para o **seu TCC** | slides 6 e 7 |
-| Busca em **base via CAFe** — WoS, ScienceDirect, ACM, Scopus, IEEE Xplore | `protocolo-de-busca.md` §2 |
-| h5 + Qualis do h5 + CORE (conferência) | `protocolo-de-busca.md` §4 → slide 8 |
-| Estrutura, **incluindo discussão** | `analise-da-estrutura.md` → slides 9–14 |
-| **A ordem** acima | o deck segue essa ordem |
+| Exige | Onde está | Slide da apresentação |
+|---|---|---|
+| Passo a passo da seleção | `protocolo-de-busca.md` §2 · prints em `pesquisa/busca-3/` | 2 |
+| Artigo **original**, com a definição dada acima | `protocolo-de-busca.md` §3 | 3 |
+| Justificativa de relevância para o **seu TCC** | `plano-do-seminario.md` · proposta N3 | 3 e 23 |
+| Busca em **base via CAFe** — WoS, ScienceDirect, ACM, Scopus, IEEE Xplore | `pesquisa/0-acesso/` | 2 |
+| h5 + Qualis do h5 + CORE (conferência) | `protocolo-de-busca.md` §4 · `pesquisa/metricas/` | 4 |
+| Estrutura, **incluindo discussão** | `analise-da-estrutura.md` | 5 a 22 (discussão: 19) |
+| **A ordem** acima | a apresentação segue essa ordem | 2 → 4 → 5 |
 
 **O que o enunciado NÃO pede** — e portanto não vale gastar tempo:
 

@@ -208,7 +208,7 @@ veículo. Não são opcionais e não se substituem entre si.
 | | Métrica | Valor | Data | Onde |
 |---|---|---|---|---|
 | ✅ | **h5-index** | **90** (mediana 146) | 17/09/2026 | Google Scholar Metrics |
-| ✅ | **Qualis correspondente ao h5** | **A1** — ver o argumento do limiar | 17/09/2026 | Figura 6, p. 13 |
+| ✅ | **Qualis correspondente ao h5** | **A1** — agora com documento da CAPES | 22/09/2026 | Qualis Eventos Computação 2017–2020, p. 9 |
 | ✅ | **Rank CORE** | **A\*** | 17/09/2026 | `portal.core.edu.au/conf-ranks/12/` |
 
 **Os três itens obrigatórios estão levantados.**
@@ -287,7 +287,46 @@ campo**, e é isso que justifica a escolha da lista em vez de ser arbitrária.
 > Guarde o print desta página. É fonte primária e responde o item 2 inteiro na
 > parte do CORE.
 
-#### Convertendo o h5 em percentil — é este o passo que falta
+#### Qualis — a CAPES já classificou a CCS, e o documento está público
+
+Em **22/09/2026** apareceu a fonte que torna o cálculo abaixo desnecessário como
+prova. A CAPES publica um **Qualis Eventos** da área de Computação, e a CCS está
+nele:
+
+| | |
+|---|---|
+| Documento | *Relatório Reunião — Qualis Eventos — Computação*, quadriênio **2017–2020** |
+| Onde | `gov.br/capes/pt-br/centrais-de-conteudo/documentos/avaliacao/` `09012022_RELATORIOQUALISEVENTOS20172020COMPUTACAO.PDF` |
+| Página | **9** de 44 |
+| Sigla | **CCS** |
+| Nome na lista | ACM Symposium on Computer and Communications Security |
+| **Estrato** | **A1** |
+
+**Por que isso vale mais que o argumento do limiar:** o limiar é uma dedução minha
+a partir de uma lista truncada. Isto é a CAPES dizendo o estrato. Deduzir A1 e a
+CAPES ter escrito A1 são coisas de peso diferente numa banca.
+
+**Duas ressalvas que é melhor você dizer antes de ela perguntar:**
+
+1. **O nome na lista é o mesmo que o do Scholar**, "ACM *Symposium* on Computer and
+   Communications Security", enquanto as atas do artigo dizem "ACM *SIGSAC
+   Conference*". A sigla **CCS** é o que amarra os três. A **AsiaCCS** é linha
+   separada na lista, sob outra sigla — não é a mesma.
+2. **É o Qualis Eventos, não o Qualis Periódicos.** O enunciado pede "o Qualis
+   Periódicos correspondente ao índice h5", mas Periódicos classifica revistas, e a
+   CCS não é revista. Para conferência, o instrumento equivalente da CAPES é este. A
+   escala de estratos é a mesma (A1 a B4).
+
+**Como dizer, em duas frases:** *"A CAPES classifica a CCS como A1 no Qualis Eventos
+de Computação do quadriênio 2017–2020, página 9. E o h5 é consistente com isso: a
+posição 5 da subárea atinge o limiar de 87,5 do A1 a partir de um universo de
+quarenta veículos, e a subárea tem centenas."*
+
+O cálculo abaixo continua valendo — como **corroboração**, e como resposta caso ela
+pergunte especificamente pela conversão do h5 em percentil, que é o que o enunciado
+pede ao pé da letra.
+
+#### Convertendo o h5 em percentil — corroboração, não mais a prova única
 
 O Qualis trabalha com **percentil**, não com h5 bruto. A conversão:
 

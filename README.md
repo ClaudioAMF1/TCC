@@ -154,7 +154,7 @@ nenhum explora falha, nenhum baixa conteúdo de área autenticada.
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
-pip install google-play-scraper cryptography
+pip install -r requirements.txt
 
 python3 scripts/teste_viabilidade_n3.py --expandir
 python3 scripts/ct_direto.py --entradas 20000 --logs 1

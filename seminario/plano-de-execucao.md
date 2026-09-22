@@ -21,7 +21,7 @@
 
 ## Correções pendentes na apresentação
 
-Encontradas na revisão de 22/09. As três primeiras custam ponto.
+Encontradas na revisão de 22/09. As três primeiras custam ponto; a do slide 8 também, se ela conferir a citação.
 
 | | Slide | O que está | O que deve estar |
 |---|---|---|---|
@@ -32,6 +32,7 @@ Encontradas na revisão de 22/09. As três primeiras custam ponto.
 | ☐ | 3 | Relevância sem citações | Acrescentar **42 · 52 · 99** — hoje só aparecem no slide 24, que é de apoio |
 | ☐ | 24 | SOUPS: *"menor prioridade na seleção"* | **veículo CORE B**, que é critério |
 | ☐ | 25 | Fontes sem o Qualis Eventos | Acrescentar o relatório da CAPES |
+| ☐ | **8** | Pergunta 2: *"Do these implemented consent notices can be legally justified under GDPR?"*, com a nota *"a redação original foi preservada"* | **"Can these implemented consent notices be legally justified under GDPR?"** — é o que está no PDF da ACM, p. 2. Tirar a nota |
 
 O erro do WhisperTest e o funil sem o degrau de 39 vieram do **meu** registro, não
 da sua busca. As telas sempre mostraram o certo.
@@ -52,7 +53,9 @@ Ordem de leitura que rende mais em menos tempo:
 | 6 | Discussão, Seção 6 | 15 min |
 | 7 | Conclusão — compare com o que o resumo prometeu | 10 min |
 
-☐ Cada recorte em inglês dos slides existe no PDF, com essas palavras (Ctrl+F)
+☑ **Citações em inglês conferidas contra o PDF da ACM em 22/09**: 18 recortes, 16
+  idênticos, 1 idêntico com diferença só de extração (o *third-party* do slide 19,
+  quebrado no fim da linha do PDF) e **1 errado** — o do slide 8, na tabela acima.
 ☐ A citação ABNT bate com a primeira página do PDF
 
 ---

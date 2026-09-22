@@ -15,6 +15,7 @@ ACM CCS 2022, p. 2369–2383. DOI [10.1145/3548606.3560564](https://doi.org/10.1
 | **A apresentação** | `apresentacao/seminario-analise-de-artigo.pptx` (e o `.pdf` de backup) |
 | **O que falta fazer**, incluindo as correções pendentes no deck | `plano-de-execucao.md` |
 | O que a professora pediu, ao pé da letra | `enunciado-da-atividade.md` |
+| **Finalizar o deck com outro modelo** | `prompt-versao-final.md` — o prompt pronto e a lista de anexos |
 
 ## Pasta por pasta
 
@@ -23,6 +24,7 @@ seminario/
 ├── README.md                    este índice
 ├── enunciado-da-atividade.md    enunciado transcrito + o que exige e o que não exige
 ├── plano-de-execucao.md         estado, correções pendentes, ensaio, perguntas prováveis
+├── prompt-versao-final.md       prompt para outro modelo aplicar as correções no deck
 ├── protocolo-de-busca.md        item 1 e item 2: busca, funil, finalistas, métricas
 ├── analise-da-estrutura.md      item 3: os sete blocos, com recortes do artigo
 ├── plano-do-seminario.md        estratégia: por que este artigo, recência × citações

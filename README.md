@@ -41,19 +41,17 @@ dados/          Saída bruta das coletas (não versionado — ver .gitignore)
 
 ### `seminario/`
 Atividade de 29/09 e 01/10, 15 minutos, **4 dos 6 pontos da AV1**. Artigo: Nguyen,
-Backes e Stock, *Freely Given Consent?*, ACM CCS 2022.
-
-**O índice da pasta está em `seminario/README.md`**, com o mapa de cada arquivo,
-todos os números num lugar só e o que ficou de fora e por quê.
+Backes e Stock, *Freely Given Consent?*, ACM CCS 2022. **A apresentação está na
+versão final.** O índice da pasta é o [`seminario/README.md`](seminario/README.md).
 
 | Arquivo | Conteúdo |
 |---|---|
-| `apresentacao/` | **O deck que vai ser apresentado** — 23 slides + 2 de apoio, `.pptx` e `.pdf` |
-| `plano-de-execucao.md` | **O que falta**: correções pendentes no deck, ensaio cronometrado, perguntas prováveis |
-| `enunciado-da-atividade.md` | O enunciado transcrito e o que ele exige, slide a slide |
+| `apresentacao/` | **A versão final** — 23 slides + 2 de apoio, `.pptx` e `.pdf`, e o relatório da revisão |
+| `plano-de-execucao.md` | O que falta: testar no aplicativo, ensaiar, as perguntas prováveis |
+| `enunciado-da-atividade.md` | O enunciado transcrito e onde cada exigência está atendida |
 | `protocolo-de-busca.md` | Itens 1 e 2: as três buscas, o funil, os finalistas, as métricas com data |
-| `analise-da-estrutura.md` | Item 3: os sete blocos, com recortes do artigo |
-| `pesquisa/` | **Prints da busca e das métricas**, uma pasta por busca, com nomes que dizem o que cada um mostra |
+| `analise-da-estrutura.md` | Item 3: os sete blocos, com recortes do artigo conferidos no PDF |
+| `pesquisa/` | **Os prints**: uma pasta por busca e uma de métricas, com nomes que dizem o que cada um mostra |
 | `material-fornecido/` | PDFs disponibilizados pela professora |
 
 ### `temas/`
@@ -215,9 +213,8 @@ python3 scripts/teste_viabilidade_n1.py --apenas-contagem
 
 ## 6. O que falta
 
-- **Seminário.** Aplicar as correções pendentes no deck — a principal é o Qualis do
-  slide 4, que está como "não determinável" e é **A1** pela CAPES — e ensaiar. Lista em
-  `seminario/plano-de-execucao.md`.
+- **Seminário.** A apresentação está na versão final. Falta testar no aplicativo em que
+  vai ser apresentada e ensaiar com cronômetro — ver `seminario/plano-de-execucao.md`.
 - ~~**Tema definitivo.**~~ Definido: **N3**. Proposta formal em `desenhos/N3-proposta-formal.md`.
 - ~~**Rodar o teste robusto.**~~ Rodado em 17/09: as quatro hipóteses têm instrumento.
 - **Conferir à mão** as 43 políticas que deram `403` e `302` — são bloqueio de agente e

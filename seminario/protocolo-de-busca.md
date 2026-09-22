@@ -1,42 +1,26 @@
-# Protocolo de busca e planilha de métricas
+# Registro da busca e das métricas
 
-**Preencha este arquivo ENQUANTO busca, não depois.** O item 1 pede o passo a passo
-da seleção, e esse é o único item da atividade que é **impossível de reconstruir**:
-se você achar o artigo e só depois tentar lembrar quantos resultados a busca
-devolveu, o número vai ser inventado — e inventar número na metodologia é
-exatamente o oposto do que a disciplina cobra.
-
-Leve print de cada tela. A professora pode pedir.
+Itens 1 e 2 do enunciado: como o artigo foi encontrado, por que ele é relevante e
+como o veículo é classificado. Cada número aqui tem data e um print em
+`pesquisa/`. Conferido tela a tela em 22/09/2026.
 
 ---
 
 ## 1. Acesso
 
-O acesso é pelo **portal da CAPES via CAFe**, com a credencial do IDP. Os tutoriais
-estão em `material-fornecido/Como acessar a CAPES.pdf` e
-`material-fornecido/Tutorial Plataformas Digitais 2024.pdf`.
+**Portal de Periódicos da CAPES, via CAFe, com a credencial do IDP.** O item 1 exige
+base acessada pela CAFe e cita Web of Science, ScienceDirect, ACM, Scopus e IEEE
+Xplore. O Google Scholar não está nessa lista: ele aparece só no item 2, para o h5.
+Por isso a busca foi no **Scopus**.
 
-### ⚠️ A busca TEM que ser numa base da CAFe
+O endereço nas telas é `www-scopus-com.ez279.periodicos.capes.gov.br`. O prefixo
+`ez279` é o proxy institucional da CAPES, e é a prova de que o acesso foi pela CAFe.
 
-O item 1 do enunciado nomeia as bases: **Web of Science, ScienceDirect, ACM, Scopus,
-IEEE Xplore**, entre outras. O **Google Scholar não está na lista**.
-
-O Scholar aparece no enunciado só no **item 2**, e só para o **h5**. Buscar o artigo
-no Scholar e apresentar isso como o passo a passo da seleção contraria o item 1 —
-mesmo que você acabe no mesmo artigo.
-
-**Faça a busca na ACM DL e/ou no Scopus, e registre a tela.**
-
-☐ **Testar o acesso hoje.** Se a credencial não funcionar, você precisa de tempo
-para resolver com a biblioteca — e descobrir isso no dia 28 é fatal.
+Prints: `pesquisa/0-acesso/`.
 
 ---
 
-## 2. A busca — EXECUTADA em 21/09/2026
-
-Prints em `seminario/pesquisa/`, uma pasta por busca. **Base: Scopus, acessada pelo
-portal da CAPES via CAFe** (`www-scopus-com.ez279.periodicos.capes.gov.br`) — o
-prefixo `ez279` no endereço é a prova do acesso institucional.
+## 2. A busca — 21/09/2026, das 08:46 às 09:11
 
 ### As três tentativas
 
@@ -46,15 +30,13 @@ prefixo `ez279` no endereço é a prova do acesso institucional.
 | 2 | `"third party" AND tracking AND android AND (consent OR GDPR)` | **12** (9 com filtro de área e tipo) | `busca-2/` |
 | **3** | `"third-party tracking"`, depois refinada com `consent` | **131 → 5** | `busca-3/` |
 
-Todas no campo *Article title, Abstract, Keywords*, na mesma sessão, entre 08:46 e
-09:11.
+Todas no campo *Article title, Abstract, Keywords*.
 
-**As duas primeiras foram cirúrgicas demais.** Expressão exata mais três termos
-obrigatórios devolveu 4 documentos, o que não demonstra triagem: parece busca feita
-até achar o que já se queria. A terceira abre para 131 e depois estreita, que é como
-uma busca sistemática deve parecer.
+**As duas primeiras foram estreitas demais.** Expressão exata mais três termos
+obrigatórios devolve 4 documentos, o que não mostra triagem nenhuma. A terceira abre
+para 131 e depois estreita, que é como uma busca sistemática deve ser.
 
-### O funil — conferido tela a tela em 22/09/2026
+### O funil
 
 ```
 131   "third-party tracking", sem filtro                          print 18 · 09:07
@@ -68,386 +50,190 @@ uma busca sistemática deve parecer.
   1   selecionado
 ```
 
-> **Correção de 22/09.** A versão anterior deste funil dizia `131 → 70 → 5`, com o
-> corte para 5 atribuído às palavras-chave. Os prints mostram outra coisa: as
-> palavras-chave levaram a **39** (print 21), e o que levou a **5** foi acrescentar
-> **`consent`** à string (print 23, a caixa de busca está visível). A etapa de 39
-> tinha sumido do registro.
->
-> A versão correta é **melhor** para a apresentação, não pior. Ela mostra uma decisão
-> de método — o recorte do TCC é consentimento, então o termo entra na string — em
-> vez de um filtro de interface.
+**O último corte é uma decisão de método, não um filtro de interface.** O recorte do
+TCC é consentimento, então o termo entra na string. O print 23 mostra a caixa de busca
+com `consent` e o total na mesma tela.
 
-### Os cinco finalistas — print 23 (itens 1 a 3) e print 24 (itens 2 a 5)
+### Os cinco finalistas
 
 | # | Artigo | Veículo | Ano | Cit. | Decisão |
 |---|---|---|---|---|---|
 | 1 | An Empirical Measurement of Cookie Banners Potential Legal Violations in EU vs US Websites | LNCS 15995 | 2025 | 0 | ❌ é web, não Android |
-| 2 | A Comprehensive Study on Third-Party User Tracking in Mobile Applications | ACM ICPS | 2023 | 10 | ❌ menos citado, veículo de menor classificação |
+| 2 | A Comprehensive Study on Third-Party User Tracking in Mobile Applications | ACM ICPS | 2023 | 10 | ❌ menos citado |
 | **3** | **Freely Given Consent?** — Nguyen, Backes, Stock | **CCS** | **2022** | **52** | ✅ **selecionado** |
-| 4 | A fait accompli? An empirical study into the absence of consent to third-party tracking in Android apps | SOUPS | 2021 | 34 | ❌ veículo CORE B, contra A\* do CCS |
+| 4 | A fait accompli? An empirical study into the absence of consent to third-party tracking in Android apps | SOUPS | 2021 | 34 | ❌ ICORE A (2026), abaixo do A\* da CCS |
 | 5 | Protecting privacy on the web: A study of HTTPS and Google Analytics implementation in academic library websites | Online Information Review | 2018 | 23 | ❌ é web, não Android |
 
-> **Correção de 22/09.** A tabela anterior tinha o **WhisperTest** (CCS 2025, iOS)
-> como quinto finalista. Ele não está nos 5 da busca 3: aparece nas buscas 1 e 2. O
-> item 1 da lista de 5 é o artigo sobre *cookie banners* (print 23). O erro foi meu,
-> ao montar a tabela juntando o print 06 com o print 24.
+Item 1 no print 23; itens 2 a 5 no print 24.
 
-> **E o artigo de 2026 no IEEE S&P**, sobre riscos de privacidade em plataformas de
-> gestão de consentimento, com **0 citações**, aparece na **busca 2** (print 10).
-> Mais recente que o escolhido, em veículo de topo, e ainda sem tempo de ser citado.
-> É a prova de que recência e citações se excluem por construção.
+**Critérios.** Incluir: artigo original com medição empírica, rastreamento por
+terceiros em Android, veículo revisado por pares. Excluir: revisão de literatura,
+foco só em web ou iOS, preprint.
 
-### Lidos na íntegra
+Aplicados aos cinco, dois saem por serem web (1 e 5). Dos três Android, o da CCS tem
+mais citações e o veículo de classificação mais alta.
 
-| | Quantos |
-|---|---|
-| Finalistas | **5** |
-| Após leitura de título e resumo | **1** |
-| Lidos na íntegra | ☐ *confirmar* |
+**A alternativa mais séria é o Kollnig et al. (SOUPS 2021).** Poder dizer
+*"considerei e descartei, com o número"* vale mais que apresentar um artigo isolado:
+34 citações contra 52, e SOUPS **A** contra CCS **A\*** na mesma edição do ICORE.
 
-### Critérios de inclusão e exclusão
+> **A comparação usa a mesma edição para os dois.** A SOUPS era **B** no CORE2020, no
+> CORE2021 e no CORE2023, e subiu para **A** no ICORE2026 (print
+> `metricas/11-core-portal-soups-a-icore2026`). Como o rank da CCS citado é o do
+> ICORE2026, o da SOUPS também tem de ser. O registro anterior dizia "CORE B", o que
+> misturava edições.
 
-**Incluir:** artigo original com medição empírica · rastreamento por terceiros em
-Android · veículo indexado e revisado por pares · texto completo acessível.
+> **O artigo de 2026 no IEEE S&P** sobre plataformas de gestão de consentimento, com
+> **0 citações**, aparece na busca 2 (print 10). É a prova de que recência e citações
+> se excluem por construção: um artigo novo não teve tempo de ser citado.
 
-**Excluir:** revisão de literatura ou survey · posicionamento sem dado · foco em iOS
-ou web sem componente Android · publicado apenas como preprint.
+### Duas correções de registro, feitas em 22/09
 
-Aplicados aos cinco: dois saem por serem **web** (1 e 5). Dos três Android, o CCS
-tem mais citações que os outros dois e o único veículo A\*.
+1. O funil registrado antes era `131 → 70 → 5`, com o corte final atribuído às
+   palavras-chave. Os prints mostram o degrau de **39** e o termo `consent`.
+2. A tabela de finalistas tinha o **WhisperTest** (CCS 2025, iOS), que é das buscas 1
+   e 2. O quinto finalista é o artigo sobre *cookie banners*.
 
-> **O achado que vale ponto:** a busca encontrou o **Kollnig et al. (SOUPS 2021)**,
-> que é a alternativa mais séria ao artigo escolhido. Poder dizer *"considerei e
-> descartei, com o número"* — 34 citações contra 52, um ano mais velho, CORE B contra
-> A\* — é muito mais forte que apresentar um artigo isolado.
+Os dois erros foram de registro, não de busca. As telas sempre mostraram o certo.
 
 ---
 
-## 3. Métricas do artigo
+## 3. Métricas do artigo — relevância quantitativa
 
-Cada célula precisa de **valor + data**. Indicador muda; número sem data não vale.
+| Base | Citações | Data | Print |
+|---|---|---|---|
+| ACM Digital Library | **42** | 17/09/2026 | `metricas/01` |
+| Scopus | **52** | 17/09/2026 | `metricas/04` |
+| Google Acadêmico | **99** (9 versões) | 17/09/2026 | `metricas/05` |
 
-| | Métrica | Valor | Data | Onde consultei |
-|---|---|---|---|---|
-| ✅ | **Citações — ACM DL** | **42** | 17/09/2026 | `dl.acm.org/doi/10.1145/3548606.3560564` |
-| ✅ | **Citações — Scopus** | **52** | 17/09/2026 | Scopus via CAFe, busca `DOI 10.1145/3548606.3560564` |
-| ✅ | **Citações — Google Acadêmico** | **99** (9 versões) | 17/09/2026 | busca pelo DOI |
-| ✅ | Downloads — ACM DL | 1.539 | 17/09/2026 | mesma tela |
-| ✅ | Ano de publicação | 2022 (07/11) | | página do artigo |
-| ☐ | Escala do estudo (nº de apps) | | | ler no artigo |
-| ☐ | Artefato público disponível? | | | `github.com/cispa/consent-notices` |
+Downloads na ACM: 1.539, na mesma tela.
 
-### Dados da citação, conferidos na página do artigo (17/09/2026)
+**A ordem 42 < 52 < 99 é a cobertura de cada base, não erro.** A ACM conta só o
+próprio acervo. O Scopus acrescenta IEEE, Springer, Elsevier e outros. O Google
+Acadêmico agrupa nove versões do mesmo trabalho e conta teses, relatórios e preprints.
 
-| | |
-|---|---|
-| Autores | Trung Tin Nguyen · Michael Backes · Ben Stock |
-| Título | Freely Given Consent?: Studying Consent Notice of Third-Party Tracking and Its Violations of GDPR in Android Apps |
-| Publicação | CCS '22: Proceedings of the 2022 ACM SIGSAC Conference on Computer and Communications Security |
-| **Páginas** | **2369–2383** |
-| Publicado em | 07 de novembro de 2022 |
-| DOI | `10.1145/3548606.3560564` |
-| Acesso | FREE ACCESS · tipo: RESEARCH-ARTICLE |
+**No Scopus, o DOI tem de ir em *All fields*.** No campo de título e resumo ele
+devolve zero (`metricas/03`), porque DOI não é título.
 
-> **"RESEARCH-ARTICLE" na etiqueta do ACM** é confirmação independente de que é
-> artigo original, não revisão — exatamente o que o item 1 do enunciado exige. Vale
-> mencionar: é a própria base classificando, não interpretação sua.
+### Por que é artigo original
 
-### A divergência entre bases — já medida
+O item 1 define original como o que relata pela primeira vez uma pesquisa inédita.
+Três fontes independentes confirmam:
 
-| Base | Citações | Data |
+| Fonte | O que diz | Print |
 |---|---|---|
-| ACM Digital Library | **42** | 17/09/2026 |
-| Scopus | **52** | 17/09/2026 |
-| **Google Acadêmico** | **99** | 17/09/2026 |
+| ACM Digital Library | etiqueta **RESEARCH-ARTICLE** | `metricas/02` |
+| Scopus | tipo de documento **Conference Paper** | `metricas/04` |
+| O próprio artigo | corpus de 239.381 apps e ferramenta construídos pelos autores | — |
 
-**O Scopus conta 10 a mais que a própria editora do artigo.** Não é erro de
-nenhuma das duas: a ACM conta o que está indexado no acervo da ACM, e o Scopus
-indexa também IEEE, Springer, Elsevier e periódicos fora da ACM. Um artigo citado
-por um trabalho publicado na IEEE aparece no Scopus e não aparece na ACM DL.
+### O veículo tem quatro nomes
 
-E o Google Acadêmico conta **99** — mais que o dobro da ACM. A razão está na própria
-tela: ele indica **"Todas as 9 versões"**. O Scholar agrupa nove versões do mesmo
-trabalho (preprint, repositório institucional, página do CISPA) e soma as citações
-de todas, além de contar citações vindas de teses, relatórios técnicos e preprints
-que Scopus e ACM não indexam.
-
-**A ordem 42 < 52 < 99 não é ruído — é a hierarquia de cobertura das bases.** Diga
-os três com a data e explique a escada. Escolher o maior sem dizer de onde veio é o
-erro que esse item existe para pegar; explicar por que eles diferem é a resposta
-completa.
-
-☐ Escolher **um** número para a justificativa e declarar qual base e qual data. O
-  mais defensável é o do Scopus, que é base multieditora e curada — mas qualquer um
-  serve, desde que declarado.
-
-### O Scopus também confirmou dois dados do item 2
-
-| | |
+| Onde | Como aparece |
 |---|---|
-| Tipo de documento | **Conference Paper** |
-| Subject area | Computer Science |
-| Source | Proceedings of the ACM Conference on Computer and Communications Security |
+| Atas do artigo | ACM **SIGSAC Conference** on Computer and Communications Security (CCS '22) |
+| Scopus | Proceedings of the **ACM Conference** on Computer and Communications Security |
+| Google Scholar Metrics e CAPES | **ACM Symposium** on Computer and Communications Security |
+| ICORE | ACM Conference on Computer and Communications Security |
 
-**"Conference Paper"** é a terceira fonte independente confirmando que o ramo
-correto do item 2 é o de conferência — junto com a etiqueta `RESEARCH-ARTICLE` do
-ACM e a entrada no CORE.
-
-E note o nome da fonte no Scopus: *Proceedings of the ACM Conference on Computer
-and Communications Security*. É a **quarta** variação do nome do mesmo veículo
-(Scholar: *ACM Symposium*; ACM: *ACM SIGSAC Conference*; CORE: *ACM Conference*).
-Reforça por que a verificação de identidade do veículo era necessária.
+A sigla **CCS** é o que amarra os quatro. E há um evento diferente com nome parecido,
+a **AsiaCCS** (*ACM Asia Conference on...*), com h5 41. Pegar a linha errada seria
+apresentar 41 no lugar de 90.
 
 ---
 
-## 4. Métricas do veículo
+## 4. Métricas do veículo — item 2
 
-O item 2 da atividade avalia a classificação do **veículo**, não do artigo.
+A CCS é **conferência**. O enunciado dá dois caminhos, e o tipo de veículo decide
+qual vale. Para conferência: h5 no Google Scholar, Qualis correspondente e rank no
+CORE.
 
-A atividade define **três itens obrigatórios**, e quais são depende do tipo de
-veículo. Não são opcionais e não se substituem entre si.
+| Métrica | Valor | Data | Print |
+|---|---|---|---|
+| **h5** | **90** (mediana 146), posição 5 | 17/09/2026 | `metricas/06` |
+| **Qualis** | **A1** (Qualis Eventos, Computação, 2017–2020) | 22/09/2026 | `metricas/07` |
+| **CORE** | **A\*** (ICORE2026) | 17/09/2026 | `metricas/09` |
 
-### Se for CONFERÊNCIA (é o caso da CCS) — os três obrigatórios
+### h5
 
-| | Métrica | Valor | Data | Onde |
-|---|---|---|---|---|
-| ✅ | **h5-index** | **90** (mediana 146) | 17/09/2026 | Google Scholar Metrics |
-| ✅ | **Qualis correspondente ao h5** | **A1** — agora com documento da CAPES | 22/09/2026 | Qualis Eventos Computação 2017–2020, p. 9 |
-| ✅ | **Rank CORE** | **A\*** | 17/09/2026 | `portal.core.edu.au/conf-ranks/12/` |
+Google Acadêmico → Principais publicações → *Engineering & Computer Science* →
+**Computer Security & Cryptography**:
 
-**Os três itens obrigatórios estão levantados.**
-
-#### h5 — levantado
-
-Google Acadêmico → Principais publicações → Categorias → *Engineering & Computer
-Science* → **Computer Security & Cryptography**, em **17/09/2026**:
-
-| Posição | Publicação | h5 | Mediana h5 |
+| Posição | Publicação | h5 | Mediana |
 |---|---|---|---|
 | 1 | USENIX Security Symposium | 116 | 170 |
 | 2 | Computers & Security *(periódico)* | 112 | 164 |
 | 3 | IEEE Symposium on Security and Privacy | 110 | 195 |
 | 4 | IEEE Trans. on Information Forensics and Security *(periódico)* | 100 | 140 |
 | **5** | **ACM Symposium on Computer and Communications Security** | **90** | **146** |
-| … | | | |
-| 13 | Proceedings on Privacy Enhancing Technologies | 56 | 75 |
+| 19 | ACM Asia Conference on Computer and Communications Security | 41 | 66 |
 
-**Observação que rende:** a lista **mistura periódicos e conferências**. Entre as
-**conferências**, a CCS é a **3ª** — atrás só da USENIX Security e da IEEE S&P.
-Dizer isso é mais preciso que "5º lugar", e mostra que você leu a tabela em vez de
-copiar a linha.
+A lista mistura periódicos e conferências. **Entre as conferências, a CCS é a 3ª**,
+atrás só da USENIX Security e da IEEE S&P.
 
-#### ⚠️ Confirme que a linha é o MESMO veículo do artigo
+O h5 é **do veículo**, não do artigo. Artigo tem citações; veículo tem h5.
 
-Os nomes não batem entre as fontes, e há uma conferência homônima na mesma lista:
+### Qualis
 
-| Onde | Como aparece | h5 |
-|---|---|---|
-| Scholar, posição **5** | ACM **Symposium** on Computer and Communications Security | **90** |
-| Atas do artigo | ACM **SIGSAC Conference** on Computer and Communications Security (CCS '22) | — |
-| Scholar, posição **19** | ACM **Asia Conference** on Computer and Communications Security | **41** |
-
-A da posição 19 é a **AsiaCCS**, evento **diferente**, com menos da metade do h5.
-Pegar a linha errada significa apresentar 41 no lugar de 90.
-
-**Verificação primária, 30 segundos:** no Google Acadêmico, **clique no número do
-h5**. Ele abre a lista dos artigos que compõem o índice. Se aparecerem trabalhos do
-CCS — idealmente o próprio artigo escolhido —, o veículo está confirmado.
-
-☐ Cliquei no h5 e confirmei que os artigos listados são do CCS
-☐ Anotei a **janela de anos** que o Scholar declara para o h5 (são os 5 anos
-  completos mais recentes; se ela incluir o ano do artigo, as citações dele entram
-  no índice — vale dizer)
-☐ Conferi que o CORE aponta `dblp.uni-trier.de/db/conf/ccs` e **não** `/asiaccs`
-
-> **Vocabulário:** o h5 é **do veículo**, nunca do artigo. Artigo tem citações;
-> veículo tem h5. Misturar os dois é erro fácil de a banca pegar.
-
-Complementares, se sobrar tempo: mediana h5, taxa de aceitação do ano.
-
-#### CORE — levantado, com dois detalhes que valem mais que o rank
-
-Conferido no ICORE Conference Portal em **17/09/2026**:
-
-| | |
-|---|---|
-| Conferência | ACM Conference on Computer and Communications Security |
-| Acrônimo | CCS |
-| **Rank (ICORE2026)** | **A\*** |
-| Field of Research | **4604 — Cybersecurity and privacy** |
-| Fonte DBLP | `dblp.uni-trier.de/db/conf/ccs` |
-
-**1. O rank é estável há quase duas décadas.** A mesma página lista CORE2023,
-2021, 2020, 2018, 2017, 2014, 2013 e 2008 — **A\* em todas**. A única exceção é o
-ERA2010, que deu A. Dizer "é A\* desde 2008, com uma única exceção em 2010" é muito
-mais forte que "é A\*": mostra que a classificação não é ruído de uma edição.
-
-**2. O FoR 4604 resolve a pergunta do conjunto de referência.** O CORE classifica a
-CCS em *Cybersecurity and privacy*. Quando você for converter o h5 em percentil, o
-conjunto de referência natural é a subárea equivalente no Scholar Metrics —
-*Computer Security & Cryptography*. **Os dois instrumentos concordam sobre qual é o
-campo**, e é isso que justifica a escolha da lista em vez de ser arbitrária.
-
-> Guarde o print desta página. É fonte primária e responde o item 2 inteiro na
-> parte do CORE.
-
-#### Qualis — a CAPES já classificou a CCS, e o documento está público
-
-Em **22/09/2026** apareceu a fonte que torna o cálculo abaixo desnecessário como
-prova. A CAPES publica um **Qualis Eventos** da área de Computação, e a CCS está
-nele:
+A CAPES classifica a CCS diretamente:
 
 | | |
 |---|---|
 | Documento | *Relatório Reunião — Qualis Eventos — Computação*, quadriênio **2017–2020** |
-| Onde | `gov.br/capes/pt-br/centrais-de-conteudo/documentos/avaliacao/` `09012022_RELATORIOQUALISEVENTOS20172020COMPUTACAO.PDF` |
+| Endereço | `gov.br/capes/pt-br/centrais-de-conteudo/documentos/avaliacao/09012022_RELATORIOQUALISEVENTOS20172020COMPUTACAO.PDF` |
 | Página | **9** de 44 |
-| Sigla | **CCS** |
-| Nome na lista | ACM Symposium on Computer and Communications Security |
-| **Estrato** | **A1** |
+| Linha | CCS · ACM Symposium on Computer and Communications Security · **A1** |
 
-**Por que isso vale mais que o argumento do limiar:** o limiar é uma dedução minha
-a partir de uma lista truncada. Isto é a CAPES dizendo o estrato. Deduzir A1 e a
-CAPES ter escrito A1 são coisas de peso diferente numa banca.
+**Duas ressalvas para dizer antes que ela pergunte:**
 
-**Duas ressalvas que é melhor você dizer antes de ela perguntar:**
+1. **É o Qualis Eventos, não o Qualis Periódicos.** O enunciado pede "Qualis
+   Periódicos correspondente ao índice h5". O Periódicos classifica revistas, e a CCS
+   é conferência. Para conferências da Computação, o instrumento da CAPES é o Qualis
+   Eventos, com a mesma escala de estratos (A1 a B4).
+2. **O A1 é do quadriênio 2017–2020.** Ele não é uma conversão do h5 90 de hoje.
 
-1. **O nome na lista é o mesmo que o do Scholar**, "ACM *Symposium* on Computer and
-   Communications Security", enquanto as atas do artigo dizem "ACM *SIGSAC
-   Conference*". A sigla **CCS** é o que amarra os três. A **AsiaCCS** é linha
-   separada na lista, sob outra sigla — não é a mesma.
-2. **É o Qualis Eventos, não o Qualis Periódicos.** O enunciado pede "o Qualis
-   Periódicos correspondente ao índice h5", mas Periódicos classifica revistas, e a
-   CCS não é revista. Para conferência, o instrumento equivalente da CAPES é este. A
-   escala de estratos é a mesma (A1 a B4).
+**Por que não converter o h5 em percentil.** Seria o caminho literal do enunciado, e
+ele não se sustenta com o que está disponível. O Scholar publica só as 20 primeiras
+de cada subárea: a posição 5 numa lista truncada não dá o percentil dentro do
+conjunto real de veículos da área. O próprio Documento Técnico do Qualis Periódicos
+(p. 12) reconhece o problema. A CAPES montou uma base ampliada, o "Universo", para
+ter a posição real, e essa base não é pública. Qualquer conversão feita aqui
+dependeria do tamanho de um universo que não foi demonstrado. Por isso o estrato
+apresentado é o que a CAPES publicou, com a fonte, e não um percentil calculado.
 
-**Como dizer, em duas frases:** *"A CAPES classifica a CCS como A1 no Qualis Eventos
-de Computação do quadriênio 2017–2020, página 9. E o h5 é consistente com isso: a
-posição 5 da subárea atinge o limiar de 87,5 do A1 a partir de um universo de
-quarenta veículos, e a subárea tem centenas."*
+A escala de estratos do Qualis Periódicos (Figura 6, p. 13 do Documento Técnico) está
+em `metricas/08`, para referência.
 
-O cálculo abaixo continua valendo — como **corroboração**, e como resposta caso ela
-pergunte especificamente pela conversão do h5 em percentil, que é o que o enunciado
-pede ao pé da letra.
+### CORE
 
-#### Convertendo o h5 em percentil — corroboração, não mais a prova única
+ICORE Conference Portal, `portal.core.edu.au/conf-ranks/12/`:
 
-O Qualis trabalha com **percentil**, não com h5 bruto. A conversão:
+| | |
+|---|---|
+| Acrônimo | CCS |
+| **Rank ICORE2026** | **A\*** |
+| Field of Research | 4604 — Cybersecurity and privacy |
+| Fonte DBLP | `dblp.uni-trier.de/db/conf/ccs` (não `asiaccs`) |
 
-| Passo | O que fazer | Anote |
-|---|---|---|
-| 1 | Google Scholar → Metrics → Categories → *Engineering & Computer Science* → **Computer Security & Cryptography** | |
-| 2 | h5 do veículo | |
-| 3 | Posição na lista | ___ de 20 |
-| 4 | Percentil — **leia a armadilha abaixo antes** | |
-| 5 | Estrato, pela tabela da Figura 6 | |
+**A\* em todas as edições desde 2008**, com uma exceção: o ERA2010 deu A. A
+classificação é estável, não um acaso de uma edição.
 
-### ⚠️ A armadilha do denominador
+### O caminho de periódico não se aplica
 
-O Scholar publica **só as 20 primeiras** de cada subárea. **Isso é uma lista
-truncada, não a população da área.**
-
-Dividir a posição por 20 subestima o percentil de forma grosseira. Se o veículo é o
-3º entre os 20 que o Scholar exibe, ele não é o 3º entre 20 — é o **3º entre todos
-os veículos da área**, que são centenas. A conta ingênua daria
-(20 − 3) ÷ 20 × 100 = 85 → **A2**, o que colocaria uma das principais conferências
-de segurança do mundo abaixo do topo. O erro está no denominador.
-
-**É exatamente o problema que o Documento Técnico descreve (p. 12):** a base do
-Google Scholar não fornece percentis dentro dos agrupamentos temáticos, e por isso a
-CAPES teve de montar uma base ampliada por área — o **"Universo"** — para obter a
-posição real.
-
-**O argumento do limiar — é ele que fecha o item.**
-
-A CCS está na **posição 5**. Com N = 20 (a lista truncada), o percentil seria
-(20 − 5) ÷ 20 × 100 = **75**, o que dá **A2** — na borda inferior. Mas esse 75 é um
-**piso por construção**: qualquer universo maior que 20 empurra o percentil para
-cima, nunca para baixo.
-
-E dá para saber exatamente quando ele cruza para A1:
-
-> (N − 5) ÷ N ≥ 0,875  →  0,125 · N ≥ 5  →  **N ≥ 40**
-
-| Tamanho do universo | Percentil | Estrato |
-|---|---|---|
-| 20 (lista truncada) | 75,0 | A2 — **piso** |
-| 30 | 83,3 | A2 |
-| **40** | **87,5** | **A1 — limiar** |
-| 100 | 95,0 | A1 |
-| 500 | 99,0 | A1 |
-
-**Basta o universo da área ter 40 veículos para a CCS ser A1.** A subárea *Computer
-Security & Cryptography* tem centenas — as 20 exibidas são só o topo do que o Scholar
-indexa. Logo, **A1**, e o que se afirma não é uma estimativa chutada: é um limite.
-
-**Como dizer isso:**
-
-> "A CCS aparece na posição 5 da lista de *Computer Security & Cryptography*, com h5
-> de 90 e mediana 146. O Scholar publica só as vinte primeiras, então essa lista é
-> truncada. Com vinte no denominador o percentil seria 75, que dá A2 — mas esse valor
-> é um piso por construção, porque qualquer universo maior empurra para cima. O
-> limiar do A1 é 87,5, e a posição 5 atinge isso a partir de um universo de quarenta
-> veículos. A subárea tem centenas. Portanto o estrato é **A1**, e isso não é
-> estimativa: é um limite inferior."
-
-Isso é a resposta completa: você calcula, aponta o limite do instrumento, e diz de
-que lado o erro cai. Muito mais forte que entregar um número sem ressalva.
-
-> **Fonte primária, e é ela que dá a resposta.** O Documento Técnico, p. 12,
-> reconhece o problema e diz como a CAPES o resolve:
->
-> > *"No caso do QR2, o índice h é a referência para o cálculo dos estratos. Porém,
-> > a base do Google Scholar **não fornece diretamente os valores dos percentis
-> > dentro dos agrupamentos temáticos**. Para contornar, foi necessário criar uma
-> > base ampliada de periódicos pertinentes a cada área, denominada **Universo**,
-> > para que se tivesse a real posição dos títulos utilizados pelos programas dentro
-> > desse conjunto de veículos potenciais da área."*
->
-> Dois pontos que isso te dá:
->
-> 1. **O percentil do h5 é posição dentro de um conjunto de referência.** Não é
->    propriedade do veículo. Você não tem acesso ao "Universo" da CAPES, então usa a
->    lista da subárea do Google Scholar Metrics e **declara** que foi essa.
-> 2. **O documento prevê um segundo caminho** (p. 11–12): para veículos sem
->    CiteScore nem JCR, um modelo de **regressão linear CiteScore–h5** estima o
->    CiteScore, e o percentil sai da ordenação desses valores estimados. Mencione que
->    existe — mostra que você leu o documento inteiro, não só a Figura 6.
-
-### Se fosse PERIÓDICO — os outros três obrigatórios
-
-| ☐ | Métrica | Valor | Data | Onde |
-|---|---|---|---|---|
-| ☐ | **JIF Percentile** | | | JCR |
-| ☐ | **Highest Percentile** | | | Scopus |
-| ☐ | **Qualis de ambos** | | | tabela da Figura 6 |
-
-> São **dois** indicadores e **dois** estratos a informar. O Documento Técnico manda
-> considerar **o maior percentil** quando há mais de um indicador — diga isso ao
-> apresentar, mostra que você leu o documento e não só aplicou a tabela.
-
-### A tabela de conversão
-
-`material-fornecido/Documento Tecnico do Qualis Periodicos.pdf`, Figura 6, p. 13.
-Imagem em `pesquisa/metricas/08-qualis-periodicos-faixas-de-percentil.png` — **use ela no slide**, é fonte primária.
-
-| Estrato | Percentil | | Estrato | Percentil |
-|---|---|---|---|---|
-| **A1** | ≥ 87,5 | | **B1** | 37,5 – 50 |
-| **A2** | 75 – 87,5 | | **B2** | 25 – 37,5 |
-| **A3** | 62,5 – 75 | | **B3** | 12,5 – 25 |
-| **A4** | 50 – 62,5 | | **B4** | 0 – 12,5 |
+JIF Percentile e Highest Percentile são métricas de **revista**. No Scopus *Sources*,
+que busca veículos e não artigos, a busca pelo título do artigo devolve zero
+(`metricas/10`). A CCS não é periódico, então esse ramo do enunciado não se aplica.
 
 ---
 
-## 5. Conferência final da citação
+## 5. Referência
 
-☐ Autores, na ordem exata do PDF
-☐ Título completo, com subtítulo
-☐ Nome completo do evento ou periódico
-☐ Ano, páginas, DOI
-☐ Formatada em ABNT
+NGUYEN, Trung Tin; BACKES, Michael; STOCK, Ben. Freely Given Consent? Studying
+Consent Notice of Third-Party Tracking and Its Violations of GDPR in Android Apps.
+In: ACM SIGSAC CONFERENCE ON COMPUTER AND COMMUNICATIONS SECURITY (CCS '22), 2022,
+Los Angeles. **Proceedings** [...]. New York: ACM, 2022. p. 2369–2383. DOI:
+10.1145/3548606.3560564.
 
-**Nunca copie referência de segunda mão**, nem deste repositório. Abra o PDF e
-confira. É o erro mais fácil de a banca pegar e o mais bobo de cometer.
+**Versão usada: a da ACM** (PDF `3548606.3560564`, 15 páginas). A cópia dos autores
+no CISPA tem pelo menos uma diferença de texto: a segunda pergunta de pesquisa diz
+*"Do these ... can be"*, e a versão da ACM diz *"Can these ... be"*. As citações e
+páginas da apresentação seguem a ACM.

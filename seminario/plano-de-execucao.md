@@ -57,6 +57,15 @@ figuras citadas estão nas páginas indicadas. Nenhum travessão no meio de fras
 - Pequenos ajustes de texto nos slides 2, 8, 11, 13 e 17 e nas notas. Nenhum número
   do artigo mudou, nenhum travessão no meio de frase, nenhum texto abaixo de 12 pt.
 
+**Versão final (`final-idp`, 28/09)**, conferida no arquivo:
+
+- **Logo do IDP** em todos os slides.
+- **Slide 22:** saiu a comparação *"violate"* × *"potentially violate"*. O slide mostra
+  só a implicação da conclusão (transparência e apoio aos desenvolvedores), com
+  citação literal da p. 13. O slide 7 perdeu a chamada para essa comparação.
+- Tempos das notas ajustados: total de **14 min**.
+- Nenhum número do artigo mudou; as imagens do artigo e do funil são as mesmas.
+
 Antes disso, uma mudança feita depois do relatório de 22/09: a nota do apresentador do slide 23
 citava como fonte um arquivo do repositório que foi removido nesta organização. O
 link saiu; a outra fonte da mesma nota, a proposta do N3, tem os números que ela usa.
@@ -98,18 +107,17 @@ Se ainda não leu inteiro, esta ordem rende mais em menos tempo. Use o PDF da AC
 Em voz alta. **Não leia os trechos em inglês.** Aponte o trecho e fale a análise.
 
 **O roteiro, slide a slide, está em [`roteiro.md`](roteiro.md)** (e em [`roteiro.pdf`](roteiro.pdf)): o que falar, onde apontar e o
-relógio acumulado ao fim de cada slide. Meta: **14 min 10 s**, sobram 50 s.
-
-**Acrescente uma frase ao fim da fala do slide 4**, que o PDF não tem (no `roteiro.md` ela já está, marcada com ➕):
-> "No Qualis Periódicos ela não aparece, porque essa lista é só de revistas."
-
-Assim você responde à palavra "Periódicos" do enunciado antes que ela pergunte.
+relógio acumulado ao fim de cada slide. Meta: **14 min**, sobra 1 min.
 
 As notas do apresentador no `.pptx` têm o texto de apoio de cada slide.
 
-**Se estourar**, passe mais rápido pelos slides 9, 10 e 14. Não
-corte 5, 12, 13 e 19, que são o esqueleto do item 3. Não encurte 21+22: o contraste
-*"violate"* × *"potentially violate"* é o melhor argumento da apresentação.
+**Se estourar**, siga o "Controle do tempo" no fim do roteiro. Não corte 5, 12, 13
+e 19, que são o esqueleto do item 3.
+
+**A comparação *"violate"* × *"potentially violate"* saiu do deck, mas vale guardar
+para uma pergunta.** Se ela perguntar o que você observou na conclusão: *"No resumo,
+os autores escrevem que os apps violam. Na conclusão, que potencialmente violam,
+coerente com a nota 1 sobre certeza jurídica."*
 
 ---
 

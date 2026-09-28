@@ -50,8 +50,8 @@ automática com Qualis Periódicos.
 
 *Gesto:* apresente o título abreviado. Não leia o subtítulo inteiro.
 
-> Boa tarde. Eu sou o Claudio e vou apresentar a análise do artigo *Freely Given
-> Consent?*, de Nguyen, Backes e Stock, publicado na ACM CCS em 2022. Vou seguir a
+> Bom dia. Eu sou o Claudio e vou apresentar a análise do artigo *Freely Given
+> Consent?*, publicado na ACM CCS em 2022. Vou seguir a
 > ordem da atividade: seleção do artigo, métricas do veículo e análise da estrutura
 > da pesquisa.
 
@@ -63,8 +63,9 @@ automática com Qualis Periódicos.
 > Fiz a busca no Scopus, acessado pelo Portal da CAPES via CAFe, com a instituição
 > IDP. Pesquisei *third-party tracking* entre aspas, em título, resumo e
 > palavras-chave, e obtive 131 resultados. Os filtros de 2018 a 2026, Computação,
-> artigos e conferências reduziram para 70. As palavras-chave Third Parties e
-> Third-party Tracking levaram a 39. Depois, acrescentei *consent* e ajustei o período
+> artigos e conferências reduziram para 70. Em seguida, no filtro de palavras chave
+> do Scopus, selecionei os termos Third Parties e Third-party Tracking reduzindo o 
+> conjunto para 39. Depois, acrescentei *consent* e ajustei o período
 > para 2018 a 2025: ficaram cinco. Essa etapa delimita o consentimento dentro do tema
 > de rastreamento do meu TCC. A leitura de títulos e resumos levou à escolha deste
 > artigo.

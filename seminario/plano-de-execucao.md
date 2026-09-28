@@ -97,10 +97,10 @@ Se ainda não leu inteiro, esta ordem rende mais em menos tempo. Use o PDF da AC
 
 Em voz alta. **Não leia os trechos em inglês.** Aponte o trecho e fale a análise.
 
-**O roteiro, slide a slide, está em [`roteiro.pdf`](roteiro.pdf)**: o que falar, onde apontar e o
+**O roteiro, slide a slide, está em [`roteiro.md`](roteiro.md)** (e em [`roteiro.pdf`](roteiro.pdf)): o que falar, onde apontar e o
 relógio acumulado ao fim de cada slide. Meta: **14 min 10 s**, sobram 50 s.
 
-**Acrescente uma frase ao fim da fala do slide 4**, que o roteiro não tem:
+**Acrescente uma frase ao fim da fala do slide 4**, que o PDF não tem (no `roteiro.md` ela já está, marcada com ➕):
 > "No Qualis Periódicos ela não aparece, porque essa lista é só de revistas."
 
 Assim você responde à palavra "Periódicos" do enunciado antes que ela pergunte.

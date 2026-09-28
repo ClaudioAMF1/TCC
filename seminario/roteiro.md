@@ -60,8 +60,8 @@ automática com Qualis Periódicos.
 
 *Gesto:* aponte para as quatro etapas, da esquerda para a direita.
 
-> Fiz a busca no Scopus, acessado pelo Portal da CAPES via CAFe, com a instituição
-> IDP. Pesquisei *third-party tracking* entre aspas, em título, resumo e
+> Fiz a busca no Scopus,
+> Pesquisei *third-party tracking* entre aspas, em título, resumo e
 > palavras-chave, e obtive 131 resultados. Os filtros de 2018 a 2026, Computação,
 > artigos e conferências reduziram para 70. Em seguida, no filtro de palavras chave
 > do Scopus, selecionei os termos Third Parties e Third-party Tracking reduzindo o 

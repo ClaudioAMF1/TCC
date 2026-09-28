@@ -26,7 +26,7 @@ A CCS está classificada como A1 no Qualis Eventos da Computação 2021–2024, 
 
 **Fala:**
 
-Boa tarde. Eu sou o Claudio e vou apresentar a análise do artigo Freely Given Consent?, de Nguyen, Backes e Stock, publicado na ACM CCS em 2022. Vou seguir a ordem da atividade: seleção do artigo, métricas do veículo e análise da estrutura da pesquisa.
+Bom dia. Eu sou o Claudio e vou apresentar a análise do artigo Freely Given Consent? Publicado na ACM CCS em 2022. Vou seguir a ordem da atividade: seleção do artigo, métricas do veículo e análise da estrutura da pesquisa.
 
 ### Slide 02 • Seleção do artigo no Scopus
 
@@ -38,7 +38,7 @@ Boa tarde. Eu sou o Claudio e vou apresentar a análise do artigo Freely Given C
 
 **Fala:**
 
-Fiz a busca no Scopus, acessado pelo Portal da CAPES via CAFe, com a instituição IDP. Pesquisei third-party tracking entre aspas, em título, resumo e palavras-chave, e obtive 131 resultados. Os filtros de 2018 a 2026, Computação, artigos e trabalhos de conferência reduziram para 70. Depois, no painel de filtros de palavras-chave, selecionei Third Parties e Third-party Tracking, chegando a 39. Por fim, acrescentei consent à expressão de busca. Essa busca retornou cinco documentos, com o período exibido de 2018 a 2025. O consentimento delimita o recorte do meu TCC. A leitura dos títulos e resumos levou à escolha deste artigo.
+Fiz a busca no Scopus. Pesquisei third-party tracking entre aspas, em título, resumo e palavras-chave, e obtive 131 resultados. Os filtros de 2018 a 2026, Computação, artigos e trabalhos de conferência reduziram para 70. Depois, no painel de filtros de palavras-chave, selecionei Third Parties e Third-party Tracking, chegando a 39. Por fim, acrescentei consent à expressão de busca. Essa busca retornou cinco documentos, com o período exibido de 2018 a 2025. O consentimento delimita o recorte do meu TCC. A leitura dos títulos e resumos levou à escolha deste artigo.
 
 ### Slide 03 • Originalidade e relevância para o TCC
 

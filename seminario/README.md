@@ -33,7 +33,7 @@ seminario/
 ├── protocolo-de-busca.md       itens 1 e 2: busca, funil, finalistas, métricas
 ├── analise-da-estrutura.md     item 3: os sete blocos, com recortes do artigo
 ├── apresentacao/
-│   ├── seminario-analise-de-artigo.pptx   versão final, 23 slides + 2 de apoio
+│   ├── seminario-analise-de-artigo.pptx   versão final (final-idp, 28/09), 23 + 2 de apoio
 │   ├── seminario-analise-de-artigo.pdf    a mesma, em PDF
 │   └── relatorio-de-revisao.pdf           as correções da revisão de 22/09
 ├── pesquisa/                   prints da busca e das métricas, ver pesquisa/README.md

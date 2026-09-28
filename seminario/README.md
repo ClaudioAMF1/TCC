@@ -16,7 +16,7 @@ vai apresentar e ensaiar. Ver `plano-de-execucao.md`.
 | Se você quer... | Abra |
 |---|---|
 | **A apresentação** | [`apresentacao/seminario-analise-de-artigo.pptx`](apresentacao/seminario-analise-de-artigo.pptx), com notas do apresentador em todos os slides. O [`.pdf`](apresentacao/seminario-analise-de-artigo.pdf) é o backup |
-| **O que falar em cada slide**, com o tempo | [`roteiro.md`](roteiro.md) |
+| **O que falar em cada slide**, com o tempo | [`roteiro.pdf`](roteiro.pdf) |
 | **O que falta fazer** e as perguntas prováveis | [`plano-de-execucao.md`](plano-de-execucao.md) |
 | O que foi corrigido na versão final, com o antes e o depois | [`apresentacao/relatorio-de-revisao.pdf`](apresentacao/relatorio-de-revisao.pdf) |
 | O que a professora pediu, ao pé da letra | [`enunciado-da-atividade.md`](enunciado-da-atividade.md) |
@@ -27,14 +27,14 @@ vai apresentar e ensaiar. Ver `plano-de-execucao.md`.
 seminario/
 ├── README.md                   este índice
 ├── enunciado-da-atividade.md   enunciado transcrito, o que exige e o que não exige
-├── roteiro.md                  o que falar em cada slide, com o relógio acumulado
+├── roteiro.pdf                 o que falar em cada slide, com o relógio acumulado
 ├── plano-de-execucao.md        o que falta, ensaio, perguntas prováveis
 ├── protocolo-de-busca.md       itens 1 e 2: busca, funil, finalistas, métricas
 ├── analise-da-estrutura.md     item 3: os sete blocos, com recortes do artigo
 ├── apresentacao/
 │   ├── seminario-analise-de-artigo.pptx   versão final, 23 slides + 2 de apoio
 │   ├── seminario-analise-de-artigo.pdf    a mesma, em PDF
-│   └── relatorio-de-revisao.pdf           o que mudou na revisão final
+│   └── relatorio-de-revisao.pdf           as correções da revisão de 22/09
 ├── pesquisa/                   prints da busca e das métricas, ver pesquisa/README.md
 └── material-fornecido/         PDFs da professora, sem alteração
 ```
@@ -52,7 +52,7 @@ seminario/
 | Funil da busca | **131 → 70 → 39 → 5 → 1** | Scopus via CAFe, prints 18, 20, 21, 23 | 21/09/2026 |
 | Citações | **42** ACM · **52** Scopus · **99** Google Acadêmico | página de cada base | 17/09/2026 |
 | h5 | **90** (mediana 146), posição 5 em *Computer Security & Cryptography*, 3ª entre as conferências | Google Scholar Metrics | 17/09/2026 |
-| Qualis | **A1** no Qualis **Eventos**. No Qualis **Periódicos** a CCS **não consta** (é conferência) | CAPES, Computação 2017–2020, p. 9 · Sucupira | 22/09/2026 |
+| Qualis | **A1** no Qualis **Eventos** da Computação, **2021–2024** (classificado pelo h5, em 8 estratos por percentil). No Qualis **Periódicos** a CCS **não consta** (é conferência) | CAPES/Sucupira: planilha linha 90 e relatório p. 1, 2 e 6 | 28/09/2026 |
 | CORE | **A\*** (ICORE2026; A\* desde 2008, exceto ERA2010) | portal.core.edu.au | 17/09/2026 |
 | SOUPS, a alternativa descartada | **A** no ICORE2026 (era B até o CORE2023) | portal.core.edu.au | 22/09/2026 |
 

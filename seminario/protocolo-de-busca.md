@@ -150,7 +150,7 @@ CORE.
 | Métrica | Valor | Data | Print |
 |---|---|---|---|
 | **h5** | **90** (mediana 146), posição 5 | 17/09/2026 | `metricas/06` |
-| **Qualis** | **A1** (Qualis Eventos, Computação, 2017–2020) | 22/09/2026 | `metricas/07` |
+| **Qualis** | **A1** (Qualis Eventos, Computação, 2021–2024) | 28/09/2026 | `metricas/14` e `15` |
 | Qualis Periódicos | **não consta** (2017–2020 e 2021–2024) | 22/09/2026 | `metricas/12` e `13` |
 | **CORE** | **A\*** (ICORE2026) | 17/09/2026 | `metricas/09` |
 
@@ -175,32 +175,44 @@ O h5 é **do veículo**, não do artigo. Artigo tem citações; veículo tem h5.
 
 ### Qualis
 
-A CAPES classifica a CCS diretamente:
+**A CCS é A1 no Qualis Eventos da Computação, quadriênio 2021–2024**, que inclui 2022,
+o ano do artigo.
 
 | | |
 |---|---|
-| Documento | *Relatório Reunião — Qualis Eventos — Computação*, quadriênio **2017–2020** |
-| Endereço | `gov.br/capes/pt-br/centrais-de-conteudo/documentos/avaliacao/09012022_RELATORIOQUALISEVENTOS20172020COMPUTACAO.PDF` |
-| Página | **9** de 44 |
-| Linha | CCS · ACM Symposium on Computer and Communications Security · **A1** |
+| Fonte | Plataforma Sucupira → Qualis Eventos → *Classificação de trabalho em anais 2025*, área **Computação** |
+| Planilha oficial | **linha 90**: CCS · ACM Symposium on Computer and Communications Security · **A1** (`metricas/15`) |
+| Relatório da comissão | p. 1: quadriênio **2021–2024**; p. 2: critérios; p. 6: CCS **A1** (`metricas/14`) |
+| Consulta | 28/09/2026 |
+
+A consulta se chama "trabalho em anais 2025" porque a classificação do quadriênio
+2021–2024 foi feita em 2025 (relatório, p. 1). No quadriênio anterior, 2017–2020, a
+CCS também era A1 (`metricas/07`).
+
+**O A1 saiu do h5.** O relatório diz que a Computação classificou os eventos com
+*"metodologia semelhante à utilizada para periódicos, ou seja, utilização de 8
+estratos divididos em percentis"* (p. 1), usando o **h5** do Google Scholar Metrics
+(p. 2), junto com critérios obrigatórios e análise qualitativa. É o mais perto que
+existe do "Qualis correspondente ao índice h5" do enunciado. Uma ressalva: o h5 que a
+comissão usou é o da época da classificação, não o 90 consultado em 17/09/2026.
 
 **A CCS não está no Qualis Periódicos.** Busca na Plataforma Sucupira em 22/09/2026,
 título *Computer and Communications Security*, sem filtro de área: *"Não existem dados
 cadastrados"* no quadriênio 2017–2020 (`metricas/12`) e no 2021–2024 (`metricas/13`).
-O Qualis Periódicos classifica revistas, e a CCS é conferência. A classificação que a
-CAPES dá a ela é a do Qualis Eventos: A1.
+O Qualis Periódicos classifica revistas, e a CCS é conferência.
 
 **Como dizer:**
-> "Procurei a CCS no Qualis Periódicos, nos quadriênios 2017–2020 e 2021–2024, e ela
-> não aparece, porque é conferência, não revista. Para conferências de Computação, a
-> CAPES publica o Qualis Eventos, e nele a CCS é A1."
+> "A CCS é conferência, então não aparece no Qualis Periódicos, que é só de revistas.
+> Para eventos, a Computação classificou pelo h5, com os mesmos 8 estratos por
+> percentil usados para periódicos. Nessa classificação, de 2021–2024, a CCS é A1."
 
-**Se ela pedir a conversão do h5 em Qualis Periódicos.** O Documento Técnico que ela
-distribuiu não permite fazer essa conta para a Computação. O Anexo 1 (p. 18) põe a
-Ciência da Computação no agrupamento **QR1**. No QR1, o h5 só vira percentil por uma
+**Se ela pedir a conversão do h5 90 em Qualis Periódicos.** O Documento Técnico que
+ela distribuiu não permite fazer essa conta para a Computação. O Anexo 1 (p. 18) põe
+a Ciência da Computação no agrupamento **QR1**. No QR1, o h5 só vira percentil por uma
 regressão que estima o CiteScore a partir do h5, com coeficientes calculados para
-cada área (p. 11–12), e o documento não publica esses coeficientes. Qualquer
-percentil calculado aqui seria inventado.
+cada área (p. 11–12), e o documento não publica esses coeficientes. E, mesmo com
+eles, o procedimento é para periódicos: não produziria uma classificação oficial para
+uma conferência.
 
 A escala de estratos do Qualis Periódicos (Figura 6, p. 13 do Documento Técnico) está
 em `metricas/08`, para referência.

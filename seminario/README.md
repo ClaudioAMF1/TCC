@@ -16,7 +16,7 @@ vai apresentar e ensaiar. Ver `plano-de-execucao.md`.
 | Se você quer... | Abra |
 |---|---|
 | **A apresentação** | [`apresentacao/seminario-analise-de-artigo.pptx`](apresentacao/seminario-analise-de-artigo.pptx), com notas do apresentador em todos os slides. O [`.pdf`](apresentacao/seminario-analise-de-artigo.pdf) é o backup |
-| **O que falar em cada slide**, com o tempo | [`roteiro.pdf`](roteiro.pdf) |
+| **O que falar em cada slide**, com o tempo | [`roteiro.md`](roteiro.md) (ou o [`roteiro.pdf`](roteiro.pdf), mesmo texto) |
 | **O que falta fazer** e as perguntas prováveis | [`plano-de-execucao.md`](plano-de-execucao.md) |
 | O que foi corrigido na versão final, com o antes e o depois | [`apresentacao/relatorio-de-revisao.pdf`](apresentacao/relatorio-de-revisao.pdf) |
 | O que a professora pediu, ao pé da letra | [`enunciado-da-atividade.md`](enunciado-da-atividade.md) |
@@ -27,7 +27,8 @@ vai apresentar e ensaiar. Ver `plano-de-execucao.md`.
 seminario/
 ├── README.md                   este índice
 ├── enunciado-da-atividade.md   enunciado transcrito, o que exige e o que não exige
-├── roteiro.pdf                 o que falar em cada slide, com o relógio acumulado
+├── roteiro.md                  o que falar em cada slide, com o relógio acumulado
+├── roteiro.pdf                 o mesmo roteiro, em PDF
 ├── plano-de-execucao.md        o que falta, ensaio, perguntas prováveis
 ├── protocolo-de-busca.md       itens 1 e 2: busca, funil, finalistas, métricas
 ├── analise-da-estrutura.md     item 3: os sete blocos, com recortes do artigo

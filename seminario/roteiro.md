@@ -77,7 +77,7 @@ automática com Qualis Periódicos.
 
 > É uma pesquisa original porque apresenta dados empíricos próprios e uma ferramenta
 > de análise. Os autores analisaram 239.381 aplicativos Android. A relevância
-> quantitativa inclui as citações registradas em 17 de setembro: 42 na ACM, 52 no
+> quantitativa inclui as seguintes citações: 42 na ACM, 52 no
 > Scopus e 99 no Google Acadêmico. As bases têm coberturas diferentes, então esses
 > valores não se somam. A relevância para meu TCC está no método: comparar as escolhas
 > mostradas na interface com o envio efetivo de dados, em um projeto sobre aplicativos

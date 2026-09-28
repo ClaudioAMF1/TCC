@@ -11,7 +11,7 @@
 |---|---|
 | **1** — passo a passo da seleção | ✅ funil 131 → 70 → 39 → 5 → 1, com um print por degrau |
 | **1** — relevância | ✅ qualitativa, e quantitativa com 42 · 52 · 99 citações |
-| **2** — h5 · Qualis · CORE | ✅ 90 · A1 · A\*, cada um com print e data |
+| **2** — h5 · Qualis · CORE | ✅ 90 · A1 (Qualis Eventos 2021–2024) · A\*, cada um com fonte e data |
 | **3** — análise da estrutura | ✅ slides 5 a 22, discussão no 19 |
 | Apresentação | ✅ **versão final** em `apresentacao/` |
 | Teste no Google Slides | ⬜ **falta** |
@@ -30,7 +30,7 @@ depois.
 
 | Slide | Problema | Como ficou |
 |---|---|---|
-| **4** | Qualis "não determinável" | **A1**, pelo Qualis Eventos da Computação 2017–2020, p. 9 |
+| **4** | Qualis "não determinável" | **A1** no Qualis Eventos da Computação. Em 28/09 a fonte passou de 2017–2020 para **2021–2024**, que inclui o ano do artigo |
 | **2** | Funil de 3 degraus, com o 5 atribuído às palavras-chave | 4 degraus, **131 → 70 → 39 → 5**, com o termo `consent` como último corte |
 | **8** | *"Do these ... can be legally justified"* | *"Can these ... be legally justified"*, que é o texto da versão da ACM |
 | **24** | WhisperTest entre os finalistas | o artigo sobre *cookie banners* (LNCS, 2025) |
@@ -45,7 +45,19 @@ anterior, exceto a pergunta do slide 8. Todos os números do artigo batem com o 
 As 17 citações em inglês estão no PDF da ACM, palavra por palavra. As páginas e
 figuras citadas estão nas páginas indicadas. Nenhum travessão no meio de frase.
 
-Uma única mudança foi feita depois do relatório: a nota do apresentador do slide 23
+**Rodada de 28/09**, conferida no arquivo:
+
+- **Slide 4:** o Qualis passou para o **quadriênio 2021–2024**, que inclui 2022, o ano
+  do artigo. A1 confirmado na planilha oficial (linha 90) e no relatório da comissão
+  (p. 1 e p. 6); a imagem do slide é o recorte da linha CCS no relatório.
+- **Slides 14 a 18:** as etiquetas dizem a qual pergunta de pesquisa cada resultado
+  responde.
+- **Slide 12:** os termos em inglês do processo foram traduzidos.
+- **Slide 5:** Related Work e Conclusion em linhas separadas.
+- Pequenos ajustes de texto nos slides 2, 8, 11, 13 e 17 e nas notas. Nenhum número
+  do artigo mudou, nenhum travessão no meio de frase, nenhum texto abaixo de 12 pt.
+
+Antes disso, uma mudança feita depois do relatório de 22/09: a nota do apresentador do slide 23
 citava como fonte um arquivo do repositório que foi removido nesta organização. O
 link saiu; a outra fonte da mesma nota, a proposta do N3, tem os números que ela usa.
 Slides e PDF não mudaram.
@@ -85,8 +97,13 @@ Se ainda não leu inteiro, esta ordem rende mais em menos tempo. Use o PDF da AC
 
 Em voz alta. **Não leia os trechos em inglês.** Aponte o trecho e fale a análise.
 
-**O roteiro, slide a slide, está em [`roteiro.md`](roteiro.md)**: o que falar, onde apontar e o
-relógio acumulado ao fim de cada slide. Total: **14 min 35 s**, sobram 25 s.
+**O roteiro, slide a slide, está em [`roteiro.pdf`](roteiro.pdf)**: o que falar, onde apontar e o
+relógio acumulado ao fim de cada slide. Meta: **14 min 10 s**, sobram 50 s.
+
+**Acrescente uma frase ao fim da fala do slide 4**, que o roteiro não tem:
+> "No Qualis Periódicos ela não aparece, porque essa lista é só de revistas."
+
+Assim você responde à palavra "Periódicos" do enunciado antes que ela pergunte.
 
 As notas do apresentador no `.pptx` têm o texto de apoio de cada slide.
 
@@ -109,9 +126,9 @@ corte 5, 12, 13 e 19, que são o esqueleto do item 3. Não encurte 21+22: o cont
 > relatórios: 99.
 
 **"O enunciado pede Qualis Periódicos. Por que Qualis Eventos?"**
-> Procurei a CCS no Qualis Periódicos, nos quadriênios 2017–2020 e 2021–2024, e ela
-> não aparece, porque é conferência e essa lista é de revistas. Para conferências de
-> Computação, a CAPES publica o Qualis Eventos, e nele a CCS é A1.
+> A CCS é conferência, então não aparece no Qualis Periódicos, que é só de revistas.
+> Para eventos, a Computação classificou pelo h5, com os mesmos 8 estratos por
+> percentil usados para periódicos. Nessa classificação, de 2021–2024, a CCS é A1.
 
 **"E converter o h5 em Qualis Periódicos?"**
 > O Documento Técnico põe a Computação no agrupamento QR1. Nele, o h5 só vira

@@ -110,7 +110,7 @@ Item 1 está no print 23; itens 2 a 5 no print 24.
 | `24-5-finalistas-itens-2-a-5` | Os mesmos 5, itens 2 a 5, com todos os filtros visíveis |
 
 ### `metricas/`
-Prints de **17/09/2026**, exceto o 07, o 11, o 12 e o 13 (22/09) e o 10 (21/09). O 08 é uma figura do PDF da CAPES, não print de tela.
+Prints de **17/09/2026**, exceto o 07, o 11, o 12 e o 13 (22/09) e o 10 (21/09). O 08 é uma figura do PDF da CAPES. O 14 e o 15 são os documentos oficiais da CAPES, baixados da Sucupira em 28/09/2026.
 
 **Item 1 — relevância quantitativa: citações do artigo**
 
@@ -127,13 +127,15 @@ Prints de **17/09/2026**, exceto o 07, o 11, o 12 e o 13 (22/09) e o 10 (21/09).
 | Arquivo | O que mostra |
 |---|---|
 | `06-google-scholar-metrics-h5-90-posicao-5` | *Computer Security & Cryptography*, lista completa das 20: CCS na **posição 5, h5 90, mediana 146**. Das quatro acima, duas são periódicos, então entre conferências a CCS é a 3ª. A AsiaCCS, que não é o mesmo evento, está na posição 19, com h5 41 |
-| `07-qualis-eventos-computacao-2017-2020-ccs-a1` | **CAPES, Qualis Eventos da Computação 2017–2020, p. 9: CCS = A1.** Fonte primária do estrato |
+| `07-qualis-eventos-computacao-2017-2020-ccs-a1` | CAPES, Qualis Eventos da Computação **2017–2020**, p. 9: CCS = A1. Quadriênio anterior; a fonte principal agora é a de 2021–2024 (`14` e `15`) |
 | `08-qualis-periodicos-faixas-de-percentil` | Figura 6 do Documento Técnico do Qualis Periódicos: a escala percentil → estrato. Só referência: o h5 **não** foi convertido em percentil (ver `protocolo-de-busca.md`, §4) |
 | `09-core-portal-ccs-a-estrela` | ICORE Conference Portal: **A\*** em ICORE2026, com o histórico inteiro (A\* desde 2008; só o ERA2010 deu A). FoR 4604, *Cybersecurity and privacy*. DBLP aponta `conf/ccs`, não `asiaccs` |
 | `10-scopus-sources-busca-por-titulo-0-resultados` | Scopus *Sources* pesquisado pelo título do **artigo**: 0 resultados. *Sources* busca veículos pelo nome, então essa busca sempre dá zero e não prova nada sobre a CCS. Fica como registro da tentativa. O ramo JIF / Highest Percentile não se aplica porque a CCS é conferência (`04`: *Conference Paper*) |
 | `11-core-portal-soups-a-icore2026` | ICORE, registro da **SOUPS**: **A** no ICORE2026, **B** no CORE2020, 2021 e 2023. É por isso que a comparação com a CCS usa a mesma edição, 2026: A contra A\* |
 | `12-qualis-periodicos-2017-2020-ccs-nao-consta` | Plataforma Sucupira, Qualis **Periódicos** 2017–2020, título *Computer and Communications Security*, **sem filtro de área**: *"Não existem dados cadastrados"* |
 | `13-qualis-periodicos-2021-2024-ccs-nao-consta` | A mesma busca no quadriênio **2021–2024**: também sem resultado |
+| `14-qualis-eventos-computacao-2021-2024-relatorio.pdf` | **Fonte principal do Qualis.** Relatório da Comissão de Qualis Eventos da Computação, **2021–2024**. p. 1: quadriênio e *"8 estratos divididos em percentis"*, como nos periódicos; p. 2: o indicador é o **h5**; p. 6: CCS **A1** |
+| `15-qualis-eventos-computacao-2021-2024-planilha.xlsx` | Planilha oficial baixada da Sucupira (*Classificação de trabalho em anais 2025*, área Computação), 781 eventos. **Linha 90: CCS, ACM Symposium on Computer and Communications Security, A1** |
 
 **Os prints 12 e 13 respondem ao item 2 ao pé da letra.** O enunciado pede o *Qualis Periódicos* correspondente ao h5. A CCS não está no Qualis Periódicos em nenhum dos dois quadriênios, porque é conferência e essa lista é de revistas. A classificação da CAPES para ela é a do Qualis Eventos (`07`): A1.
 

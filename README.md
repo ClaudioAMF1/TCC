@@ -26,6 +26,7 @@ disciplina/     Plano de ensino, regulamento do TCC, slides das aulas e listas
 seminario/      Seminário de análise de artigo (29/09 e 01/10) e material fornecido
 temas/          A busca pelo tema: catálogo, estado da arte, avaliação da área
 desenhos/       Desenhos experimentais completos dos candidatos que avançaram
+tcc/            O texto do TCC I e o passo a passo do piloto
 descartados/    Temas testados e rejeitados, com a evidência que os derrubou
 scripts/        Ferramentas escritas para testar a viabilidade de cada tema
 dados/          Saída bruta das coletas (não versionado — ver .gitignore)
@@ -79,6 +80,16 @@ ameaças à validade e divisão entre Capstone I e II.
 | `arquivados/T1-seguranca-codigo-llm.md` | Segurança do código gerado por LLM | ⏸️ forte, sem encaixe com o orientador |
 | `arquivados/T3-lgpd-sites-saude.md` | LGPD Art. 11 em sites de saúde | ⏸️ viável, pouco técnico |
 
+### `tcc/`
+O texto do Projeto Capstone I: resumo, abstract, introdução, metodologia das etapas
+executadas e plano de atividades. Índice e mudanças em relação à proposta em
+[`tcc/README.md`](tcc/README.md).
+
+| Arquivo | Conteúdo |
+|---|---|
+| `tcc1-projeto-de-pesquisa.md` | **O texto**, com referências conferidas |
+| `piloto-passo-a-passo.md` | Como rodar o piloto do AndroZoo no seu computador, comando por comando |
+
 ### `descartados/`
 | Arquivo | Por que caiu |
 |---|---|
@@ -91,7 +102,8 @@ ameaças à validade e divisão entre Capstone I e II.
 Extraídas do `disciplina/Regulamento TCC CIC v.2026-05`:
 
 - Trabalho **individual** (Art. 6º).
-- **Texto final em inglês** (Art. 32, §3º).
+- Texto final em inglês (Art. 32, §3º), salvo anuência da Coordenação com endosso do
+  orientador (§4º). **O TCC I está sendo escrito em português.**
 - Modalidade *artigo científico* exige **aceite em periódico Qualis ≥ B2** para aprovar em
   Capstone II (Art. 29, §1º) — risco alto, fora do controle do aluno.
 - Orientador precisa de **titulação stricto sensu em tecnologia ou engenharias** (Art. 13, §1º)
@@ -119,7 +131,7 @@ experimental. Os resultados:
 | **N1** — ICS exposta no Brasil | Contagem e facetas no Shodan | ❌ **Descartado.** Os mesmos hosts respondem em Modbus, IEC-104 e EtherNet/IP ao mesmo tempo — comportamento de honeypot e de nuvem, não de equipamento industrial. O conjunto confirmado está atrás de provedores de acesso, ocultando o operador. |
 | **CT** — abuso de marca em Certificate Transparency | 20 mil entradas de log, casamento por token | ❌ **Descartado.** Zero imitações reais. Phishing moderno raramente põe a marca no domínio, o que impõe teto de recall por construção. |
 | **N3** — apps móveis governamentais | Busca e expansão por catálogo na Play Store | ✅ **Confirmado.** 396 aplicativos de 71 publicadores públicos distintos, três esferas representadas, publicador identificado na origem. |
-| **N3** — segunda rodada, por hipótese | Seis portas medidas antes de baixar qualquer APK | ✅ **As quatro hipóteses têm instrumento.** Menor célula de esfera 35; 152 apps com dado do Art. 11; 92,4% do corpus dentro da amplitude do controle; 81,6% das políticas de privacidade acessíveis; menor diferença detectável de 5,1 p.p. E um achado: **0 de 396 apps de governo exibem anúncio, contra 33,2% do controle comercial.** |
+| **N3** — segunda rodada, por hipótese | Seis portas medidas antes de baixar qualquer APK | ✅ **As quatro hipóteses têm instrumento.** Menor célula de esfera 35; 152 apps com dado do Art. 11; 92,4% do corpus dentro da amplitude do controle; 81,6% das políticas de privacidade acessíveis; menor diferença detectável entre 6,0 e 12,3 p.p., conforme a taxa de base. E um achado: **0 de 396 apps de governo exibem anúncio, contra 33,2% do controle comercial.** |
 | **Genealogia do malware bancário BR** | imphash de 1.764 amostras brasileiras × 2.104 de controle, no MalwareBazaar | ⚠️ **Inconclusivo.** O rótulo de família marca a campanha, não o payload: 85% do acervo brasileiro são containers (zip/iso/lnk/msi), onde imphash não existe. Testar de verdade exigiria desempacotar malware vivo em VM isolada. Detalhes em `temas/05-teste-genealogia-malware.md`. |
 | **S3** — falsificação de e-mail no setor público | SPF, DKIM, DMARC, MX e NS de 121 domínios públicos | ✅ **Confirmado, com ressalva.** 81,8% têm DMARC, mas só **18,2% recusam** a mensagem falsificada — adotaram e pararam antes de proteger. O estadual é o pior estrato. E **45% da amostra tem o correio institucional na Microsoft ou no Google**. A hipótese de herança por fornecedor **não sobreviveu** ao corte de circularidade. Detalhes em `desenhos/S3-falsificacao-email.md`. |
 
@@ -145,6 +157,7 @@ nenhum explora falha, nenhum baixa conteúdo de área autenticada.
 | `ct_direto.py` | Lê os logs de Certificate Transparency direto pela API padrão (RFC 6962) e procura imitação de marca brasileira |
 | `teste_viabilidade_n3.py` | Enumera aplicativos governamentais na Play Store por termo e por catálogo de publicador |
 | `teste_viabilidade_n3_robusto.py` | Mede a **porta de cada hipótese** antes de baixar APK: pareamento (H1), política de privacidade acessível (H2), povoamento das células (H3), potência estatística, e um sinal preliminar da variável dependente |
+| `piloto_androzoo.py` | **Piloto da H4**: cobertura do AndroZoo, sorteio de 20 apps, download pelo hash, três detectores (Exodus código, Exodus rede, Disconnect) e κ de Fleiss / τ de Kendall. Passo a passo em `tcc/piloto-passo-a-passo.md` |
 | `teste_viabilidade_malware.py` | Consulta metadados de famílias de malware bancário no MalwareBazaar e mede compartilhamento de imphash entre famílias, com grupo de controle não brasileiro |
 | `teste_viabilidade_s3.py` | Consulta SPF, DKIM, DMARC, MX e NS de domínios públicos brasileiros e mede se há **variação** a explicar e se a postura é herdada do fornecedor de TI |
 
@@ -165,6 +178,12 @@ O teste robusto do N3 reaproveita a saída do anterior. Ele tem autoteste offlin
 python3 scripts/teste_viabilidade_n3_robusto.py --autoteste       # valida a lógica, sem rede
 python3 scripts/teste_viabilidade_n3_robusto.py --limite 40        # rodada curta (~5 min)
 python3 scripts/teste_viabilidade_n3_robusto.py                    # completo (~40 min)
+```
+
+O piloto do AndroZoo tem autoteste offline; o resto está em `tcc/piloto-passo-a-passo.md`:
+
+```bash
+python3 scripts/piloto_androzoo.py autoteste
 ```
 
 O teste de malware exige uma chave gratuita do MalwareBazaar (auth.abuse.ch):
@@ -228,6 +247,9 @@ python3 scripts/teste_viabilidade_n1.py --apenas-contagem
 - ~~**Acesso ao AndroZoo.**~~ Concedido em 17/09, menos de 6h após o pedido. A chave é de
   **uso individual** e vive só em variável de ambiente; o uso do acervo **obriga a citar**
   dois trabalhos — ver `desenhos/N3-acesso-androzoo.md`.
-- **Piloto de 20 aplicativos** ponta a ponta pelos três detectores — entrega 6 do Capstone I.
+- **Piloto de 20 aplicativos** — script pronto e testado; falta rodar no seu computador,
+  seguindo `tcc/piloto-passo-a-passo.md`.
+- **Texto do TCC I** — primeira versão em `tcc/`. Faltam os números do piloto, a revisão
+  sistemática e a passagem para o modelo ABNT.
 - **Modalidade.** Monografia é o caminho de menor risco. Artigo científico depende de
   aceite em periódico Qualis B2, o que não está sob controle do aluno.

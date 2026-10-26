@@ -166,7 +166,7 @@ def ler_lista_androzoo(fluxo_texto, pacotes):
         if obrig not in idx:
             raise ValueError(f"coluna '{obrig}' ausente no cabeçalho: {cab}")
 
-    melhor, n_versoes = {}, Counter()
+    melhor, n_versoes, outros = {}, Counter(), set()
     lidas = malformadas = 0
     for row in leitor:
         lidas += 1
@@ -178,6 +178,7 @@ def ler_lista_androzoo(fluxo_texto, pacotes):
             continue
         mercados = row[idx["markets"]].split("|")
         if "play.google.com" not in mercados:
+            outros.add(pkg)
             continue
         n_versoes[pkg] += 1
         cand = {
@@ -192,7 +193,8 @@ def ler_lista_androzoo(fluxo_texto, pacotes):
         if atual is None or chave > (atual["vercode"], atual["vt_scan_date"],
                                      atual["dex_date"]):
             melhor[pkg] = cand
-    return melhor, n_versoes, {"linhas": lidas, "malformadas": malformadas}
+    return melhor, n_versoes, {"linhas": lidas, "malformadas": malformadas,
+                               "so_outros_mercados": sorted(outros - set(melhor))}
 
 
 def abrir_lista(origem: str):
@@ -287,26 +289,50 @@ def cmd_cobertura(args):
                         "defasagem_dias": defasagem_dias(a["atualizado"], m["vt_scan_date"])
                         if m else ""})
 
+    def contar(grupo, chave):
+        por = defaultdict(lambda: [0, 0])
+        for a in apps:
+            if a["grupo"] == grupo:
+                por[a[chave] or "?"][1] += 1
+                por[a[chave] or "?"][0] += a["appId"] in melhor
+        return por
+
     for grupo in ("governo", "controle"):
         g = [a for a in apps if a["grupo"] == grupo]
         k = sum(1 for a in g if a["appId"] in melhor)
         lo, hi = wilson(k, len(g))
         print(f"\n  {grupo:<9} {k:>4}/{len(g):<4} no acervo  "
               f"({k / max(len(g), 1):.1%}, IC95% {lo:.1%} a {hi:.1%})")
-        por = defaultdict(lambda: [0, 0])
-        chave = "esfera" if grupo == "governo" else "faixa"
-        for a in g:
-            por[a[chave] or "?"][1] += 1
-            por[a[chave] or "?"][0] += a["appId"] in melhor
-        for c, (kk, nn) in sorted(por.items()):
+    for chave in ("esfera", "sensivel"):
+        print(f"\n  Governo por {chave}:")
+        for c, (kk, nn) in sorted(contar("governo", chave).items()):
             print(f"      {c:<14} {kk:>4}/{nn:<4} {kk / nn:.0%}")
+
+    # mesma faixa, lado a lado: se o governo tiver cobertura menor que o
+    # controle DENTRO da faixa, o porte não explica tudo
+    fg, fc = contar("governo", "faixa"), contar("controle", "faixa")
+    print("\n  Por faixa de instalações:   governo          controle")
+    for fx in sorted(set(fg) | set(fc), key=lambda f: (f == "?", f)):
+        cel = []
+        for por in (fg, fc):
+            kk, nn = por.get(fx, (0, 0))
+            cel.append(f"{kk:>4}/{nn:<4} {kk / nn:>4.0%}" if nn else f"{'-':>14}")
+        print(f"      {fx:<6}               {cel[0]}    {cel[1]}")
+
+    so_outros = [p for p in est["so_outros_mercados"]
+                 if any(a["appId"] == p and a["grupo"] == "governo" for a in apps)]
+    print(f"\n  Governo no AndroZoo só por outro mercado (fora da Google Play): "
+          f"{len(so_outros)}")
+
+    cobertos = [a for a in apps if a["grupo"] == "governo" and a["appId"] in melhor]
     gov_def = [defasagem_dias(a["atualizado"], melhor[a["appId"]]["vt_scan_date"])
-               for a in apps if a["grupo"] == "governo" and a["appId"] in melhor]
+               for a in cobertos]
     gov_def = sorted(d for d in gov_def if d != "")
     if gov_def:
         print(f"\n  Defasagem (loja − AndroZoo), governo: mediana "
               f"{gov_def[len(gov_def) // 2]} dias; acima de 365 dias: "
-              f"{sum(d > 365 for d in gov_def)} de {len(gov_def)}")
+              f"{sum(d > 365 for d in gov_def)} de {len(gov_def)} "
+              f"({len(cobertos) - len(gov_def)} sem data para calcular)")
     print(f"\n  Planilha: {saida}\n")
 
 
@@ -805,9 +831,11 @@ def autoteste():
         "com.exemplo,DDD,5,play.google.com,2023-05-05 00:00:00,,50,x\n"
         "com.virgula,errado,EEE,1,play.google.com,2023-01-01 00:00:00,,1,x\n"
         '"com.aspas,ok",FFF,3,play.google.com,2023-01-01 00:00:00,,1,x\n'
-        "fora.do.corpus,GGG,1,play.google.com,2023-01-01 00:00:00,,1,x\n")
+        "fora.do.corpus,GGG,1,play.google.com,2023-01-01 00:00:00,,1,x\n"
+        "so.anzhi,HHH,1,anzhi,2023-01-01 00:00:00,,1,x\n")
     melhor, nv, est = ler_lista_androzoo(
-        lista, {"br.gov.meuinss", "com.exemplo", "com.aspas,ok", "com.virgula"})
+        lista, {"br.gov.meuinss", "com.exemplo", "com.aspas,ok", "com.virgula",
+                "so.anzhi"})
     if melhor.get("br.gov.meuinss", {}).get("sha256") != "BBB":
         falhas.append(f"versão escolhida = {melhor.get('br.gov.meuinss')}, esperado BBB "
                       "(maior vercode da Google Play, ignorando o anzhi)")
@@ -819,6 +847,9 @@ def autoteste():
         falhas.append("pacote entre aspas com vírgula não foi lido")
     if "fora.do.corpus" in melhor:
         falhas.append("pacote fora do corpus entrou")
+    if est["so_outros_mercados"] != ["so.anzhi"] or "so.anzhi" in melhor:
+        falhas.append(f"só em outro mercado = {est['so_outros_mercados']}, "
+                      "esperado ['so.anzhi'] e fora da escolha")
 
     # 2. defasagem: loja atualizada um ano depois da cópia do AndroZoo
     ts = datetime(2025, 1, 1, tzinfo=timezone.utc).timestamp()

@@ -34,7 +34,7 @@ consultados não examinam o parque governamental brasileiro nem comparam a
 população estudada com uma linha de base pareada. Este trabalho mede a presença
 de rastreadores de terceiros em aplicativos governamentais brasileiros e a
 compara com a de aplicativos comerciais de mesma categoria e porte, por análise
-estática de pacotes de instalação fixados por hash no acervo AndroZoo. Nesta
+estática dos pacotes de instalação, fixados por hash. Nesta
 primeira etapa, foram construídos um corpus de 396 aplicativos candidatos, de
 71 publicadores públicos das três esferas de governo, e um grupo de controle de
 190 aplicativos comerciais, e foi verificado, antes de qualquer download, se
@@ -50,7 +50,12 @@ comercialização de dados para a soberania de dados. Um segundo resultado é
 metodológico: a inspeção do código do MobSF mostrou que sua detecção de
 rastreadores aplica a base de assinaturas do Exodus Privacy com a mesma regra de
 casamento, de modo que as duas ferramentas não são detectores independentes, e o
-instrumento de comparação entre detectores foi redefinido.
+instrumento de comparação entre detectores foi redefinido. O terceiro resultado
+é que o AndroZoo, acervo acadêmico usado como fonte dos pacotes, contém apenas
+23,2% dos aplicativos governamentais, contra 84,2% do controle. O porte explica
+parte da diferença, mas, na mesma faixa de instalações, a razão de chances de um
+aplicativo governamental estar no acervo é de 0,13 (IC95% de 0,07 a 0,24), e a
+maior parte do corpus terá de ser coletada direto da loja.
 
 **Palavras-chave:** rastreamento por terceiros; aplicativos governamentais;
 privacidade; LGPD; análise estática.
@@ -68,8 +73,8 @@ the studies reviewed neither examine Brazilian government applications nor
 compare the studied population against a matched baseline. This work measures
 the presence of third-party trackers in Brazilian government applications and
 compares it with that of commercial applications of the same category and size,
-through static analysis of installation packages pinned by hash in the AndroZoo
-collection. In this first stage, a corpus of 396 candidate applications from 71
+through static analysis of installation packages pinned by hash. In this first
+stage, a corpus of 396 candidate applications from 71
 public-sector publishers across the three levels of government and a control
 group of 190 commercial applications were built, and, before any download, it
 was verified whether each hypothesis has an adequate instrument and sample size.
@@ -83,7 +88,12 @@ which shifts the problem from the sale of data to data sovereignty. A second
 result is methodological: an inspection of the MobSF source code showed that its
 tracker detection applies the Exodus Privacy signature database with the same
 matching rule, so the two tools are not independent detectors, and the
-instrument for comparing detectors was redefined.
+instrument for comparing detectors was redefined. The third result is that
+AndroZoo, the academic collection used as the package source, contains only
+23.2% of the government applications, against 84.2% of the control group. Size
+explains part of the gap, but within the same install tier the odds ratio of a
+government application being in the collection is 0.13 (95% CI from 0.07 to
+0.24), so most of the corpus will have to be collected directly from the store.
 
 **Keywords:** third-party tracking; government applications; privacy; LGPD;
 static analysis.
@@ -222,8 +232,11 @@ Ao final do trabalho, espera-se obter:
   que ele é executado nem que transmite dados. A subamostra dinâmica mede essa
   diferença em parte dos aplicativos.
 - O estudo cobre apenas aplicativos Android distribuídos pela Google Play.
-- A versão analisada é a disponível no AndroZoo, que pode ser anterior à versão
-  vigente na loja. A defasagem é medida e reportada.
+- O AndroZoo contém apenas 23,2% dos aplicativos governamentais (Seção 2.10).
+  Os demais são coletados direto da Google Play, com o hash registrado, e quem
+  repetir o estudo só consegue obter a mesma versão dos que estão no acervo.
+  Para estes, a versão pode ser anterior à vigente na loja; a defasagem é medida
+  e reportada.
 - O grupo de controle não é amostra aleatória do mercado comercial: foi montado
   a partir de buscas na loja por categoria, com complemento de aplicativos de
   publicadores não oficiais encontrados nas buscas iniciais.
@@ -242,8 +255,9 @@ dois grupos. Os procedimentos são, em ordem:
 2. caracterização dos aplicativos por metadados públicos e montagem de um grupo
    de controle comercial;
 3. verificação de viabilidade de cada hipótese antes do download dos pacotes;
-4. obtenção dos pacotes no AndroZoo, fixados por hash (ALLIX et al., 2016;
-   ALECCI et al., 2024);
+4. obtenção dos pacotes no AndroZoo (ALLIX et al., 2016; ALECCI et al., 2024)
+   e, para os que não estão no acervo, direto da Google Play, sempre com o hash
+   registrado;
 5. detecção de rastreadores por mais de um detector e medida de concordância;
 6. confronto com as declarações dos publicadores;
 7. análise dinâmica de uma subamostra com dispositivo e conta próprios;
@@ -482,7 +496,9 @@ al., 2024). Isso torna o corpus reconstruível por outros pesquisadores, o que a
 coleta direta da loja não permite, porque a loja substitui o pacote a cada
 atualização. O acesso foi solicitado em 16 de setembro de 2026 e concedido em
 17 de setembro de 2026. A chave de acesso é individual, não é compartilhada e
-não é gravada no repositório; os scripts a leem de uma variável de ambiente.
+não é gravada no repositório; os scripts a leem de uma variável de ambiente. A
+cobertura do acervo para o corpus deste trabalho foi medida no piloto e está na
+Seção 2.10.
 
 ### 2.9 Verificação dos detectores de rastreadores
 
@@ -556,9 +572,68 @@ todas as etapas com dois APKs públicos de teste do projeto Androguard. Ele exec
    rastreador e o τ de Kendall entre os ordenamentos de aplicativos por número
    de rastreadores.
 
-O ambiente em que este texto foi preparado não tem acesso de rede ao AndroZoo
-nem à API do Exodus, e o piloto ainda não foi executado. A execução é a primeira
-atividade do plano.
+As duas primeiras etapas foram executadas em 26 de outubro de 2026, sobre a
+lista do AndroZoo baixada em 21 de outubro, com 27.754.097 registros. Download,
+detecção e concordância estão em execução.
+
+**Cobertura do AndroZoo.** O acervo contém menos de um quarto dos aplicativos
+governamentais:
+
+| Grupo | No AndroZoo | Proporção | IC95% (Wilson) |
+|---|---|---|---|
+| Governo (n = 396) | 92 | 23,2% | 19,3% a 27,6% |
+| Controle comercial (n = 190) | 160 | 84,2% | 78,4% a 88,7% |
+
+Fonte: elaborado pelo autor (2026).
+
+A cobertura depende do porte nos dois grupos:
+
+| Faixa de instalações | Governo | Controle |
+|---|---|---|
+| 10⁰ e 10¹ | 0 de 30 (0%) | não há |
+| 10² | 4 de 70 (6%) | 2 de 12 (17%) |
+| 10³ | 8 de 81 (10%) | 4 de 12 (33%) |
+| 10⁴ | 20 de 93 (22%) | 7 de 12 (58%) |
+| 10⁵ | 21 de 64 (33%) | 21 de 27 (78%) |
+| 10⁶ | 21 de 34 (62%) | 35 de 36 (97%) |
+| 10⁷ | 13 de 16 (81%) | 42 de 42 (100%) |
+| 10⁸ | 5 de 6 (83%) | 31 de 31 (100%) |
+| 10⁹ | não há | 18 de 18 (100%) |
+
+Fonte: elaborado pelo autor (2026).
+
+O acervo quase não tem aplicativos com menos de mil instalações e tem
+praticamente todos acima de um milhão. Como o parque governamental se concentra
+nas faixas baixas, o porte explica parte da diferença, mas não toda: o governo
+fica abaixo do controle em todas as sete faixas em que os dois grupos existem.
+Se os 364 aplicativos governamentais dessas faixas tivessem a cobertura do
+controle na mesma faixa, seriam esperados 198 no acervo (54,3%), e não os 92
+observados (25,3%). A razão de chances de Mantel e Haenszel (1959), estratificada
+por faixa, é de 0,13 (IC95% de 0,07 a 0,24). A causa dessa diferença não foi
+determinada; uma hipótese a testar é que parte dos aplicativos governamentais
+esteja disponível apenas na loja brasileira, fora do alcance da coleta do
+acervo. Entre as esferas, a cobertura é de 49% no federal, 17% no estadual e 15%
+no municipal, e nenhum aplicativo governamental está no acervo apenas por outro
+mercado.
+
+A consequência para o desenho é direta: o AndroZoo não pode ser a única fonte. Os
+304 aplicativos governamentais fora do acervo serão coletados direto da Google
+Play, com o hash registrado. Como o controle está quase todo no acervo e o
+governo quase todo fora, a fonte do pacote varia junto com o grupo; ela será
+registrada por aplicativo e usada em análise de sensibilidade da H1.
+
+**Defasagem.** Dos 92 aplicativos governamentais no acervo, 65 têm as duas datas
+necessárias para o cálculo. Para eles, a mediana entre a cópia do AndroZoo e a
+última atualização na loja é de 36 dias, e 16 (24,6%) têm cópia com mais de um
+ano de defasagem.
+
+**Amostra.** Com a semente 20261020, foram sorteados 14 aplicativos
+governamentais, ao menos dois de cada combinação de esfera e sensibilidade, e 6
+do controle, três com anúncio e três sem, somando 518 MB. A amostra já mostra
+dois erros da classificação automática: o aplicativo Nota Paraná, de nota
+fiscal, foi marcado como sensível por palavra-chave, e o do Superior Tribunal de
+Justiça, tribunal da União, foi classificado como estadual. Os erros não afetam a
+H4, que compara detectores, mas reforçam a validação manual prevista no plano.
 
 ### 2.11 Aspectos éticos das etapas executadas
 
@@ -586,7 +661,7 @@ exige cinco encontros de orientação registrados no bimestre.
 | 27/10 a 02/11 | Validação manual do corpus na planilha gerada pelo script: vínculo oficial, esfera e dado sensível pelo Art. 5º, II | Corpus validado; taxa de erro da classificação automática |
 | 27/10 a 09/11 | Piloto: amostra, download, detecção e concordância nos 20 aplicativos | Números preliminares da H4; ficha de orientação 2 |
 | 03/11 a 16/11 | Revisão sistemática conforme Kitchenham e Charters (2007): protocolo, termos, bases (Scopus, ACM DL, IEEE Xplore), seleção | Protocolo e lista de trabalhos selecionados |
-| 10/11 a 16/11 | Ampliar o controle nas categorias com menor cobertura | Cobertura por categoria recalculada; ficha de orientação 3 |
+| 10/11 a 16/11 | Ampliar o controle nas categorias com menor cobertura; testar a coleta direta da Google Play, com hash registrado, em cinco aplicativos fora do AndroZoo | Cobertura por categoria recalculada; procedimento de coleta direta definido; ficha de orientação 3 |
 | 17/11 a 23/11 | Traduzir os Arts. 7º, 11 e 33 da LGPD em critérios verificáveis; congelar o protocolo e o plano de análise com data registrada no repositório; preparar a apresentação | Protocolo congelado; slides da simulação; ficha de orientação 4 |
 | 24/11 a 01/12 | Simulação de defesa | Apresentação e sugestões da avaliadora |
 | até 03/12 | Incorporar as sugestões e entregar a redação no modelo ABNT | Redação entregue; ficha de orientação 5 |
@@ -598,7 +673,7 @@ Fonte: elaborado pelo autor (2026).
 
 | Mês | Atividade |
 |---|---|
-| Fevereiro | Download e detecção em todo o corpus validado e no controle ampliado |
+| Fevereiro | Download e detecção em todo o corpus validado e no controle ampliado: AndroZoo para os aplicativos do acervo, Google Play direta para os demais |
 | Março | Confronto com as políticas de privacidade e com a seção "Segurança dos dados" (H2); comparação entre aplicativos sensíveis e não sensíveis (H3) |
 | Abril | Análise dinâmica da subamostra com dispositivo e conta próprios: destinos, jurisdição e taxa de bloqueio por *certificate pinning* |
 | Maio | Análise estatística conforme o plano congelado: regressão binomial negativa para a H1, proporções com IC para H2 e H3, concordância para a H4. Comunicação de achados graves aos órgãos responsáveis antes da publicação |
@@ -610,7 +685,7 @@ Fonte: elaborado pelo autor (2026).
 
 | Risco | Efeito | Contingência |
 |---|---|---|
-| Cobertura baixa do AndroZoo para aplicativos pequenos | Corpus analisável menor que o planejado | Coleta direta da loja com SHA-256 registrado, declarada como ameaça à validade |
+| Cobertura baixa do AndroZoo (ocorreu: 23,2% do governo) | Fonte do pacote diferente entre os grupos; reconstrução parcial do corpus por terceiros | Coleta direta da loja com SHA-256 registrado; fonte registrada por aplicativo e usada em análise de sensibilidade; limitação declarada |
 | Versão do AndroZoo muito anterior à da loja | Resultado desatualizado | Reportar a defasagem; usar a coleta direta para os mais defasados |
 | Prevalência muito alta ou muito baixa | κ instável mesmo com acordo alto | Reportar, junto do κ, as proporções de concordância positiva e negativa |
 | Cobertura por categoria continuar baixa | Ajuste por categoria na H1 sem sustentação | Restringir a H1 às categorias com suporte e reportar a análise com e sem a restrição |
@@ -676,6 +751,10 @@ KOLLNIG, K. et al. A fait accompli? An empirical study into the absence of
 consent to third-party tracking in Android apps. In: SYMPOSIUM ON USABLE PRIVACY
 AND SECURITY, 17., 2021. **Proceedings** [...]. Berkeley: USENIX Association,
 2021b. p. 181-195.
+
+MANTEL, N.; HAENSZEL, W. Statistical aspects of the analysis of data from
+retrospective studies of disease. **Journal of the National Cancer Institute**,
+v. 22, n. 4, p. 719-748, 1959.
 
 MOBSF. **Mobile Security Framework (MobSF)**. Versão 4.5.3. [*S. l.*], 2026.
 Disponível em: https://pypi.org/project/mobsf/4.5.3/. Acesso em: 20 out. 2026.

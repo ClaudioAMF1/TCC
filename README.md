@@ -247,8 +247,9 @@ python3 scripts/teste_viabilidade_n1.py --apenas-contagem
 - ~~**Acesso ao AndroZoo.**~~ Concedido em 17/09, menos de 6h após o pedido. A chave é de
   **uso individual** e vive só em variável de ambiente; o uso do acervo **obriga a citar**
   dois trabalhos — ver `desenhos/N3-acesso-androzoo.md`.
-- **Piloto de 20 aplicativos** — script pronto e testado; falta rodar no seu computador,
-  seguindo `tcc/piloto-passo-a-passo.md`.
+- **Piloto de 20 aplicativos** — cobertura e amostra rodadas em 26/10. O AndroZoo tem só
+  **92 dos 396 apps de governo (23,2%)**, contra 84,2% do controle: os outros 304 vão ser
+  coletados direto da Google Play. Faltam download, detecção e concordância.
 - **Texto do TCC I** — primeira versão em `tcc/`. Faltam os números do piloto, a revisão
   sistemática e a passagem para o modelo ABNT.
 - **Modalidade.** Monografia é o caminho de menor risco. Artigo científico depende de

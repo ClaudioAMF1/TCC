@@ -1,8 +1,8 @@
 # TCC I: o texto
 
-**Estado em 20/10/2026:** resumo, abstract, introdução, metodologia das etapas
-executadas e plano de atividades escritos. O piloto tem script pronto e
-testado, falta rodar no seu computador.
+**Estado em 26/10/2026:** resumo, abstract, introdução, metodologia das etapas
+executadas e plano de atividades escritos. Piloto: cobertura e amostra
+executadas; faltam download, detecção e concordância.
 
 | Arquivo | O que é |
 |---|---|
@@ -13,6 +13,7 @@ testado, falta rodar no seu computador.
 
 | Ponto | Proposta (16/09) | Texto (20/10) | Por quê |
 |---|---|---|---|
+| Fonte dos APKs | AndroZoo | AndroZoo para os 92 apps de governo do acervo (23,2%); Google Play direta, com hash, para os outros 304 | Cobertura medida em 26/10. Ver Seção 2.10 |
 | Detectores da H4 | MobSF, Androguard, Exodus | A (Exodus, código), B (Exodus, rede), C (Disconnect, rede); MobSF como verificação | O MobSF usa a base e a regra do Exodus; o Androguard só extrai. Ver Seção 2.9 |
 | Menor diferença detectável | 5,1 p.p. | 6,0 a 12,3 p.p., conforme a taxa de base | O 5,1 usava taxa de base de 1% (a de anúncios) |
 | Dado sensível | 152 apps | 152 pelo critério automático; a validação aplica o Art. 5º, II | Previdência e assistência social não são dado sensível por si |
@@ -27,7 +28,7 @@ hipótese.
 
 ## O que falta no texto
 
-- Números do piloto na Seção 2.10 (depois de rodar o passo a passo).
+- Números da detecção e da concordância na Seção 2.10 (cobertura e amostra já estão lá).
 - Datas de acesso da LGPD e do Exodus nas referências (anotar o dia em que abrir cada link).
 - Passar para o modelo ABNT da instituição antes de 03/12.
 - **Língua.** O regulamento v.2026-05 (Art. 32, §3º) pede o trabalho final em

@@ -11,7 +11,7 @@ executadas; faltam download, detecção e concordância.
 
 ## O que mudou em relação à proposta
 
-| Ponto | Proposta (16/09) | Texto (20/10) | Por quê |
+| Ponto | Proposta (16/09) | Texto atual | Por quê |
 |---|---|---|---|
 | Fonte dos APKs | AndroZoo | AndroZoo para os 92 apps de governo do acervo (23,2%); Google Play direta, com hash, para os outros 304 | Cobertura medida em 26/10. Ver Seção 2.10 |
 | Detectores da H4 | MobSF, Androguard, Exodus | A (Exodus, código), B (Exodus, rede), C (Disconnect, rede); MobSF como verificação | O MobSF usa a base e a regra do Exodus; o Androguard só extrai. Ver Seção 2.9 |

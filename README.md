@@ -249,8 +249,8 @@ python3 scripts/teste_viabilidade_n1.py --apenas-contagem
   dois trabalhos — ver `desenhos/N3-acesso-androzoo.md`.
 - **Piloto de 20 aplicativos** — cobertura e amostra rodadas em 26/10. O AndroZoo tem só
   **92 dos 396 apps de governo (23,2%)**, contra 84,2% do controle: os outros 304 vão ser
-  coletados direto da Google Play. Detecção e concordância rodadas em 28/10 (κ 0,52);
-  falta a conferência manual das detecções (`evidencias`, passo 9).
+  coletados direto da Google Play. Piloto concluído em 28/10: κ 0,52 com os detectores
+  como são, 0,69 depois da conferência; 72% das detecções do detector B eram falso positivo.
 - **Texto do TCC I** — primeira versão em `tcc/`. Faltam os números do piloto, a revisão
   sistemática e a passagem para o modelo ABNT.
 - **Modalidade.** Monografia é o caminho de menor risco. Artigo científico depende de

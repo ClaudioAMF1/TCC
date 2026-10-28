@@ -851,7 +851,8 @@ def cmd_concordancia(args):
               f"{v['conc_negativa']:>5.2f}   {v['discordantes']:>5}     {jac}")
     if n < 60:
         print(f"\n  ⚠ n = {n}. É piloto: os números testam o pipeline e o instrumento,")
-        print("    não a H4. Sem a conferência das evidências, nem isso.")
+        print("    não a H4. O κ sem conferência é o da H4 (ferramentas como são);")
+        print("    com --conferencia, ele mostra de onde vem a discordância.")
     prev = [v["proporcao"] for v in rel["por_detector"].values()]
     if prev and (min(prev) > 0.9 or max(prev) < 0.1):
         print("  ⚠ Prevalência extrema: o κ fica instável mesmo com acordo alto.")

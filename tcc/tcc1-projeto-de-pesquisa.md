@@ -55,7 +55,11 @@ instrumento de comparação entre detectores foi redefinido. O terceiro resultad
 23,2% dos aplicativos governamentais, contra 84,2% do controle. O porte explica
 parte da diferença, mas, na mesma faixa de instalações, a razão de chances de um
 aplicativo governamental estar no acervo é de 0,13 (IC95% de 0,07 a 0,24), e a
-maior parte do corpus terá de ser coletada direto da loja.
+maior parte do corpus terá de ser coletada direto da loja. Num piloto com 20
+aplicativos, a proporção com ao menos um rastreador variou de 75% a 95% conforme
+o detector, e a conferência manual mostrou que 72% das detecções do detector
+baseado em domínios eram falsos positivos, vindos de assinaturas que tomam
+qualquer link do Google ou do Facebook por SDK.
 
 **Palavras-chave:** rastreamento por terceiros; aplicativos governamentais;
 privacidade; LGPD; análise estática.
@@ -94,6 +98,10 @@ AndroZoo, the academic collection used as the package source, contains only
 explains part of the gap, but within the same install tier the odds ratio of a
 government application being in the collection is 0.13 (95% CI from 0.07 to
 0.24), so most of the corpus will have to be collected directly from the store.
+In a pilot with 20 applications, the share with at least one tracker ranged from
+75% to 95% depending on the detector, and manual review showed that 72% of the
+detections made by the domain-based detector were false positives, caused by
+signatures that take any Google or Facebook link for an SDK.
 
 **Keywords:** third-party tracking; government applications; privacy; LGPD;
 static analysis.
@@ -574,8 +582,7 @@ todas as etapas com dois APKs públicos de teste do projeto Androguard. Ele exec
 
 As duas primeiras etapas foram executadas em 26 de outubro de 2026, sobre a
 lista do AndroZoo baixada em 21 de outubro, com 27.754.097 registros. Download,
-detecção e concordância foram executados em 28 de outubro; a conferência manual
-das detecções está em andamento.
+detecção, concordância e conferência manual foram executados em 28 de outubro.
 
 **Cobertura do AndroZoo.** O acervo contém menos de um quarto dos aplicativos
 governamentais:
@@ -636,9 +643,10 @@ fiscal, foi marcado como sensível por palavra-chave, e o do Superior Tribunal d
 Justiça, tribunal da União, foi classificado como estadual. Os erros não afetam a
 H4, que compara detectores, mas reforçam a validação manual prevista no plano.
 
-**Detecção e concordância, antes da conferência manual.** Os 20 pacotes foram
-baixados e tiveram o SHA-256 conferido. A base do Exodus usada tinha 432
-rastreadores; a da Disconnect, 3.464 domínios nas três categorias escolhidas.
+**Detecção e concordância.** Os 20 pacotes foram baixados e tiveram o SHA-256
+conferido. A base do Exodus usada tinha 432 rastreadores; a da Disconnect, 3.464
+domínios nas três categorias escolhidas. Com os detectores como eles são, sem
+nenhuma correção:
 
 | Detector | Aplicativos com ao menos um rastreador | IC95% (Wilson) | Média por aplicativo |
 |---|---|---|---|
@@ -650,27 +658,71 @@ Fonte: elaborado pelo autor (2026).
 
 A média do detector C conta empresas, e não rastreadores, e por isso não se
 compara diretamente às outras duas. O κ de Fleiss sobre a presença de ao menos um
-rastreador foi de 0,52. Por par de detectores:
+rastreador foi de 0,52, abaixo do limiar de 0,6 da H4. É esse o número que
+corresponde à pergunta da H4, porque mede as ferramentas como um pesquisador as
+usaria.
 
-| Par | τ-b de Kendall | Concordância positiva | Concordância negativa | Aplicativos discordantes |
-|---|---|---|---|---|
-| A e B | 0,71 | 0,88 | 0,33 | 4 |
-| A e C | 0,69 | 0,97 | 0,89 | 1 |
-| B e C | 0,66 | 0,91 | 0,40 | 3 |
+**Conferência das detecções.** Cada uma das 223 detecções foi conferida pela
+evidência que a produziu, com um critério único: a detecção é verdadeira quando o
+SDK nomeado está no pacote, o que se prova pela classe do próprio SDK ou por um
+endereço que só aquele fornecedor usa. Link para página e domínio citado por
+várias bibliotecas do Google não provam SDK nenhum. O script aplicou o critério
+como regras explícitas e deixou 8 casos para decisão manual, dos quais 2 foram
+alterados. Como a prova principal é o código, a precisão do detector A é de 100%
+por construção; a conferência mede precisão, e não o que cada detector deixa de
+ver.
+
+| Detector | Detecções verdadeiras |
+|---|---|
+| A: Exodus, código | 66 de 66 (100%) |
+| B: Exodus, rede | 35 de 123 (28%) |
+| C: Disconnect, rede | 30 de 34 (88%) |
 
 Fonte: elaborado pelo autor (2026).
 
-Um κ abaixo de 0,6 seria compatível com a H4, mas este ainda não pode ser lido
-assim, por dois motivos. Primeiro, a discordância está concentrada: em três
-aplicativos, a única detecção é um rastreador apontado só pelo detector B. Se as
-três forem falso positivo, do tipo do link para `maps.google.com` descrito na
-Seção 2.9, o κ passa a 0,90. Segundo, os detectores A e B usam a mesma base e,
-no mesmo aplicativo, nomeiam conjuntos de rastreadores pouco sobrepostos (índice
-de Jaccard médio de 0,19). Isso pode vir de falsos positivos de B ou de SDKs que
-A não reconhece pelas classes, como código ofuscado; só a conferência das
-evidências separa os dois casos. Por isso o script gera uma planilha com a
-evidência de cada detecção, para marcação manual, e recalcula as medidas sem os
-falsos positivos marcados.
+O detector B erra nos dois sentidos, e o erro vem da base de assinaturas, não do
+script. Para mais: na base do Exodus, a assinatura de rede do rastreador "Google
+Ads" é `\.google\.com`, e a dos rastreadores do Facebook é `\.facebook\.com`;
+um único link para `www.facebook.com` conta como sete rastreadores. Para menos:
+a assinatura de rede do Firebase Analytics é
+`firebase\.com|firebaselogging-pa\.googleapis\.com`, que não inclui o endereço
+para onde ele envia os dados, e o detector B não vê o Firebase nos quatro
+aplicativos governamentais em que ele é o único rastreador. As duas vezes em que
+B apontou o Firebase corretamente foram coincidência: a expressão
+`firebase\.com` casou com textos que não são domínio, como
+`xamarin.firebase.common.dll`.
+
+Sem os 92 falsos positivos:
+
+| Detector | Aplicativos com ao menos um rastreador | IC95% (Wilson) |
+|---|---|---|
+| A: Exodus, código | 15 de 20 (75%) | 53% a 89% |
+| B: Exodus, rede | 11 de 20 (55%) | 34% a 74% |
+| C: Disconnect, rede | 15 de 20 (75%) | 53% a 89% |
+
+Fonte: elaborado pelo autor (2026).
+
+| Par | τ-b de Kendall | Concordância positiva | Concordância negativa | Aplicativos discordantes |
+|---|---|---|---|---|
+| A e B | 0,82 | 0,85 | 0,71 | 4 |
+| A e C | 0,85 | 1,00 | 1,00 | 0 |
+| B e C | 0,71 | 0,85 | 0,71 | 4 |
+
+Fonte: elaborado pelo autor (2026).
+
+O κ passa a 0,69, entre 0,65 e 0,76 quando se retira um aplicativo de cada vez.
+Os detectores A e C, de bases e métodos diferentes, concordam nos 20
+aplicativos; toda a discordância restante vem do detector B. O índice de Jaccard
+médio entre A e B, que compara os rastreadores nomeados em cada aplicativo, sobe
+de 0,19 para 0,54.
+
+Com 20 aplicativos, o piloto não testa a H4, mas mostra que o instrumento
+enxerga o efeito que ela descreve e identifica a sua causa: a mesma amostra
+produz 75% ou 95% de aplicativos com rastreador conforme o detector, por falsos
+positivos e falsos negativos que vêm das assinaturas. Para a coleta completa,
+propõe-se usar o detector A como medida principal, o C como verificação
+independente e o B para medir o efeito do método, com a decisão registrada junto
+ao orientador.
 
 Os cinco aplicativos sem nenhum rastreador pelo detector A são todos
 governamentais (9 de 14 governamentais com rastreador, contra 6 de 6 do

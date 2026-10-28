@@ -232,7 +232,9 @@ def abrir_lista(origem: str):
 def carregar_populacao():
     """Governo vem da planilha do teste robusto; controle, do relatório dele."""
     corpus = mais_recente("n3_corpus_*.csv")
-    relatorio = mais_recente("n3_relatorio_*.json")
+    # o controle ampliado por categoria (ampliar_controle.py), quando existe,
+    # substitui o do teste robusto: ele já contém o antigo mais os novos
+    relatorio = mais_recente("controle_ampliado_*.json") or mais_recente("n3_relatorio_*.json")
     if not corpus:
         sys.exit("Não achei dados/n3_corpus_*.csv. Rode antes:\n"
                  "    python3 scripts/teste_viabilidade_n3_robusto.py")
@@ -651,10 +653,11 @@ def cmd_detectar(args):
                  "(cada terminal novo precisa ativar de novo):\n\n"
                  "    source .venv/bin/activate\n"
                  "    python3 -m pip install -r requirements.txt")
-    origem = DADOS / "piloto_amostra.csv"
+    origem = Path(args.amostra) if args.amostra else DADOS / "piloto_amostra.csv"
     if not origem.exists():
         sys.exit("Rode antes a etapa 'amostra'.")
-    amostra = ler_planilha(origem)
+    # a planilha da coleta direta tem as falhas junto: elas não têm APK
+    amostra = [r for r in ler_planilha(origem) if r.get("status", "ok") == "ok"]
     rastreadores = carregar_exodus(args.exodus)
     dominios = carregar_disconnect(args.disconnect, args.categorias_disconnect)
     print(f"  Exodus: {len(rastreadores)} rastreadores   "
@@ -699,7 +702,9 @@ def cmd_detectar(args):
             print(f"  [{i:>2}/{len(amostra)}] ERRO {r['appId']}: {reg['erro'][:60]}")
         resultados.append(reg)
 
-    saida = DADOS / f"piloto_deteccao_{HOJE}.json"
+    # outra amostra não sobrescreve o resultado do piloto do mesmo dia
+    saida = DADOS / (f"deteccao_{Path(args.amostra).stem}.json" if args.amostra
+                     else f"piloto_deteccao_{HOJE}.json")
     saida.write_text(json.dumps({
         "data": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "bases": {"exodus_rastreadores": len(rastreadores),
@@ -1283,6 +1288,8 @@ def main():
     p.add_argument("--disconnect", help="services.json local (padrão: baixa do GitHub)")
     p.add_argument("--categorias-disconnect", nargs="+", default=list(CATEGORIAS_DISCONNECT))
     p.add_argument("--mobsf", help="pasta com relatórios JSON do MobSF, um <sha256>.json por APK")
+    p.add_argument("--amostra", help="planilha com appId e sha256 no lugar da amostra do piloto "
+                                     "(por exemplo, a da coleta direta)")
     p.set_defaults(func=cmd_detectar)
 
     p = sub.add_parser("evidencias", help="planilha para conferir cada detecção à mão")

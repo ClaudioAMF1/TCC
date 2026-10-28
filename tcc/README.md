@@ -9,6 +9,7 @@ detecções do detector B eram falso positivo.
 |---|---|
 | [`tcc1-projeto-de-pesquisa.md`](tcc1-projeto-de-pesquisa.md) | **O texto.** Identificação, resumo, abstract, Cap. 1 Introdução, Cap. 2 Metodologia do que foi feito, Cap. 3 Plano de atividades, referências |
 | [`piloto-passo-a-passo.md`](piloto-passo-a-passo.md) | Como rodar o piloto do AndroZoo, comando por comando |
+| [`coleta-passo-a-passo.md`](coleta-passo-a-passo.md) | Ampliar o controle por categoria e coletar direto da Google Play |
 | [`latex/`](latex/) | **O mesmo texto em LaTeX (abnTeX2, ABNT)**, pronto para o Overleaf: `main.tex` e `referencias.bib` |
 
 ## Abrir no Overleaf

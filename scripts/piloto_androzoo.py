@@ -479,7 +479,9 @@ RAIZES_PACOTE = {"com", "org", "net", "io", "android", "androidx", "java", "java
 EXTENSOES = {"java", "kt", "xml", "json", "png", "jpg", "jpeg", "gif", "webp", "svg",
              "txt", "html", "htm", "js", "css", "so", "dex", "class", "properties",
              "ttf", "otf", "mp3", "mp4", "wav", "ogg", "zip", "jar", "apk", "db",
-             "sqlite", "pem", "crt", "bin", "dat", "proto", "gz", "smali", "md"}
+             "sqlite", "pem", "crt", "bin", "dat", "proto", "gz", "smali", "md",
+             # app Xamarin: 'xamarin.firebase.common.dll' virou domínio no piloto
+             "dll", "exe", "pdb"}
 
 
 def extrair_hosts(textos):
@@ -882,6 +884,54 @@ def suspeita_evidencia(evidencia: str) -> str:
     return ""
 
 
+# Regras da conferência. O critério é um só: a detecção é verdadeira quando o
+# SDK nomeado está no APK. A prova é a classe do SDK (detector A) ou um endereço
+# que só aquele fornecedor usa. Link de página não prova SDK nenhum.
+ENDPOINTS_CONHECIDOS = {"graph.facebook.com", "graph-video.facebook.com",
+                        "adservice.google.com"}
+PAGINAS_CONHECIDAS = {"t.co", "bit.ly", "goo.gl", "tieba.baidu.com"}
+# domínios do Google que várias bibliotecas dele citam, não só o SDK nomeado:
+# o Firebase Analytics, por exemplo, cita googleadservices.com sem ter AdMob
+INFRA_GOOGLE = ("googlesyndication.com", "googleadservices.com",
+                "google-analytics.com", "doubleclick.net", "googletagmanager.com")
+
+
+def tipo_pagina(host: str) -> str:
+    """'' se parece endereço de SDK; 'pagina' se é link de página; 'www' se
+    só o prefixo sugere página (esse vai para revisão)."""
+    h = (host or "").lower()
+    if h in ENDPOINTS_CONHECIDOS:
+        return ""
+    if suspeita_evidencia(h) or h in PAGINAS_CONHECIDAS:
+        return "pagina"
+    if any(h == b or h.endswith("." + b) for b in ("google.com", "facebook.com")):
+        return "pagina"
+    return "www" if h.startswith("www.") else ""
+
+
+def sugerir_marca(detector, rastreador, evidencia, tambem_em, nomes_a):
+    """Aplica as regras e devolve (S ou N, motivo, 'sim' se precisa revisão)."""
+    ev = (evidencia or "").lower()
+    if detector == "A":
+        return "N", "classe do próprio SDK no APK", ""
+    pag = tipo_pagina(ev)
+    if detector == "C":
+        if pag:
+            return "S", "link de página, não endereço de SDK", "sim" if pag == "www" else ""
+        if rastreador == "Google" and not any(n.startswith("Google") for n in nomes_a):
+            return "S", "nenhum SDK do Google achado no código", "sim"
+        return "N", "endereço do fornecedor", ""
+    if "A" in (tambem_em or "").split("+"):
+        return "N", "A achou o código do mesmo SDK", ""
+    if pag:
+        return ("S", "link de página; não prova o SDK, e A não achou o código",
+                "sim" if pag == "www" else "")
+    if rastreador.startswith("Google") and any(ev == b or ev.endswith("." + b)
+                                               for b in INFRA_GOOGLE):
+        return "S", "domínio citado por várias bibliotecas do Google; A não achou o código", ""
+    return "N", "endereço específico do fornecedor, sem código achado por A", "sim"
+
+
 def aplicar_conferencia(apps, linhas_conf):
     """Tira das listas dos detectores o que a conferência marcou com S.
     Devolve (apps corrigidos, quantas removidas, quantas linhas sem S nem N)."""
@@ -929,10 +979,16 @@ def cmd_evidencias(args):
                           and nome in det[o]] if d != "C" else []
                 susp = suspeita_evidencia(ev) if d in ("B", "C") else ""
                 n_susp += bool(susp)
-                linhas_csv.append({"appId": a["appId"], "grupo": a["grupo"], "detector": d,
-                                   "rastreador": nome, "evidencia": ev,
-                                   "tambem_em": "+".join(outros), "suspeita": susp,
-                                   "FALSO_POSITIVO_S_N": ""})
+                linha_csv = {"appId": a["appId"], "grupo": a["grupo"], "detector": d,
+                             "rastreador": nome, "evidencia": ev,
+                             "tambem_em": "+".join(outros), "suspeita": susp,
+                             "FALSO_POSITIVO_S_N": ""}
+                if args.sugerir:
+                    marca_s, motivo, revisar = sugerir_marca(
+                        d, nome, ev, "+".join(outros), det.get("A", []))
+                    linha_csv.update({"FALSO_POSITIVO_S_N": marca_s, "motivo": motivo,
+                                      "revisar": revisar})
+                linhas_csv.append(linha_csv)
                 marca = f"  ⚠ {susp}" if susp else ""
                 junto = f"  [também {'+'.join(outros)}]" if outros else ""
                 print(f"    {d}  {nome[:34]:<34} {ev[:52]}{junto}{marca}")
@@ -943,7 +999,21 @@ def cmd_evidencias(args):
         w.writerows(linhas_csv)
     print(f"\n  {len(linhas_csv)} detecções, {n_susp} com domínio suspeito de ser link.")
     print(f"  Planilha: {saida}")
-    print("  Preencha FALSO_POSITIVO_S_N com S ou N e rode:")
+    if args.sugerir:
+        print("\n  Marcação sugerida pelas regras (confira; a coluna 'motivo' diz por quê):")
+        for d in ("A", "B", "C", "M"):
+            ls = [r for r in linhas_csv if r["detector"] == d]
+            if ls:
+                ok = sum(r["FALSO_POSITIVO_S_N"] == "N" for r in ls)
+                print(f"    {d}  {ok:>3} de {len(ls):<3} verdadeiras ({ok / len(ls):.0%})")
+        rev = [r for r in linhas_csv if r.get("revisar")]
+        print(f"\n  {len(rev)} linhas pedem a sua decisão (coluna revisar = sim):")
+        for r in rev:
+            print(f"    {r['FALSO_POSITIVO_S_N']}  {r['detector']}  {r['rastreador'][:26]:<26} "
+                  f"{r['evidencia'][:34]:<34} {r['appId']}")
+        print("\n  Mude o que discordar e rode:")
+    else:
+        print("  Preencha FALSO_POSITIVO_S_N com S ou N e rode:")
     print("    python3 scripts/piloto_androzoo.py concordancia --conferencia\n")
 
 
@@ -1127,6 +1197,27 @@ def autoteste():
     if abs(k_obs - 0.520) > 0.001:
         falhas.append(f"κ do piloto = {k_obs:.3f}, esperado 0,520")
 
+    # 10d. regras de conferência, com casos do piloto de 28/10
+    regras = [
+        (("A", "Google Firebase Analytics", "Lcom/google/firebase/X;", "", []), "N"),
+        (("B", "Google Ads", "firebase.google.com", "", []), "S"),
+        (("B", "Facebook Login", "developers.facebook.com", "A", ["Facebook Login"]), "N"),
+        (("B", "Facebook Ads", "www.facebook.com", "", []), "S"),
+        (("B", "Google AdMob", "pagead2.googlesyndication.com", "", []), "S"),
+        (("B", "Google AdMob", "ad.doubleclick.net", "A", ["Google AdMob"]), "N"),
+        (("B", "Amplitude", "api.eu.amplitude.com", "A", ["Amplitude"]), "N"),
+        (("B", "Backtrace", "events.backtrace.io", "", []), "N"),
+        (("C", "Twitter", "t.co", "", []), "S"),
+        (("C", "Google", "pagead2.googlesyndication.com", "", ["Google CrashLytics"]), "N"),
+        (("C", "Google", "pagead2.googlesyndication.com", "", ["Bugsnag"]), "S"),
+        (("C", "OneSignal", "api.onesignal.com", "", ["OneSignal"]), "N"),
+        (("B", "Facebook Login", "graph.facebook.com", "", []), "N"),
+    ]
+    for (d, nome, ev, tamb, nomes_a), esp in regras:
+        got = sugerir_marca(d, nome, ev, tamb, nomes_a)[0]
+        if got != esp:
+            falhas.append(f"sugerir_marca({d}, {nome}, {ev}) = {got}, esperado {esp}")
+
     # 10c. planilha salva pelo Excel em português (';' e Windows-1252) e pelo
     # Numbers (',' e UTF-8 com BOM) dão o mesmo resultado
     tmp2 = Path(tempfile.mkdtemp(prefix="piloto_planilha_"))
@@ -1161,7 +1252,7 @@ def autoteste():
         for f in falhas:
             print("  -", f)
         sys.exit(1)
-    print("AUTOTESTE OK — 12 grupos de verificação passaram, sem rede e sem APK.")
+    print("AUTOTESTE OK — 13 grupos de verificação passaram, sem rede e sem APK.")
 
 
 # ========================================================================== main
@@ -1197,6 +1288,8 @@ def main():
     p.add_argument("--deteccao", help="JSON da etapa detectar (padrão: o mais recente)")
     p.add_argument("--sobrescrever", action="store_true",
                    help="gera de novo mesmo que a planilha do dia já exista")
+    p.add_argument("--sugerir", action="store_true",
+                   help="já preenche S ou N pelas regras de conferência, com o motivo")
     p.set_defaults(func=cmd_evidencias)
 
     p = sub.add_parser("concordancia", help="κ de Fleiss e τ de Kendall")

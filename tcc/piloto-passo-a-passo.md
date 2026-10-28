@@ -30,9 +30,14 @@ cd TCC
 git pull
 python3 -m venv .venv
 source .venv/bin/activate
-pip install -r requirements.txt
+python3 -m pip install -r requirements.txt
 python3 scripts/piloto_androzoo.py autoteste
 ```
+
+**Todo terminal novo precisa ativar o ambiente de novo**, antes de qualquer
+etapa: `cd ~/Documents/TCC && source .venv/bin/activate`. O prompt passa a
+mostrar `py TCC`. Sem isso aparece "Falta o Androguard" ou "command not found:
+pip". O Androguard é pacote do Python: não existe no Homebrew.
 
 Tem que aparecer `AUTOTESTE OK`. Se aparecer `AUTOTESTE FALHOU`, pare e me
 mande a saída.

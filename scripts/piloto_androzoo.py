@@ -629,7 +629,10 @@ def cmd_detectar(args):
     try:
         import androguard  # noqa: F401
     except ImportError:
-        sys.exit("Falta o Androguard:\n    pip install androguard")
+        sys.exit("Falta o Androguard. Quase sempre é o ambiente virtual desativado\n"
+                 "(cada terminal novo precisa ativar de novo):\n\n"
+                 "    source .venv/bin/activate\n"
+                 "    python3 -m pip install -r requirements.txt")
     origem = DADOS / "piloto_amostra.csv"
     if not origem.exists():
         sys.exit("Rode antes a etapa 'amostra'.")

@@ -574,7 +574,8 @@ todas as etapas com dois APKs públicos de teste do projeto Androguard. Ele exec
 
 As duas primeiras etapas foram executadas em 26 de outubro de 2026, sobre a
 lista do AndroZoo baixada em 21 de outubro, com 27.754.097 registros. Download,
-detecção e concordância estão em execução.
+detecção e concordância foram executados em 28 de outubro; a conferência manual
+das detecções está em andamento.
 
 **Cobertura do AndroZoo.** O acervo contém menos de um quarto dos aplicativos
 governamentais:
@@ -634,6 +635,48 @@ dois erros da classificação automática: o aplicativo Nota Paraná, de nota
 fiscal, foi marcado como sensível por palavra-chave, e o do Superior Tribunal de
 Justiça, tribunal da União, foi classificado como estadual. Os erros não afetam a
 H4, que compara detectores, mas reforçam a validação manual prevista no plano.
+
+**Detecção e concordância, antes da conferência manual.** Os 20 pacotes foram
+baixados e tiveram o SHA-256 conferido. A base do Exodus usada tinha 432
+rastreadores; a da Disconnect, 3.464 domínios nas três categorias escolhidas.
+
+| Detector | Aplicativos com ao menos um rastreador | IC95% (Wilson) | Média por aplicativo |
+|---|---|---|---|
+| A: Exodus, código | 15 de 20 (75%) | 53% a 89% | 3,3 |
+| B: Exodus, rede | 19 de 20 (95%) | 76% a 99% | 6,2 |
+| C: Disconnect, rede | 16 de 20 (80%) | 58% a 92% | 1,7 |
+
+Fonte: elaborado pelo autor (2026).
+
+A média do detector C conta empresas, e não rastreadores, e por isso não se
+compara diretamente às outras duas. O κ de Fleiss sobre a presença de ao menos um
+rastreador foi de 0,52. Por par de detectores:
+
+| Par | τ-b de Kendall | Concordância positiva | Concordância negativa | Aplicativos discordantes |
+|---|---|---|---|---|
+| A e B | 0,71 | 0,88 | 0,33 | 4 |
+| A e C | 0,69 | 0,97 | 0,89 | 1 |
+| B e C | 0,66 | 0,91 | 0,40 | 3 |
+
+Fonte: elaborado pelo autor (2026).
+
+Um κ abaixo de 0,6 seria compatível com a H4, mas este ainda não pode ser lido
+assim, por dois motivos. Primeiro, a discordância está concentrada: em três
+aplicativos, a única detecção é um rastreador apontado só pelo detector B. Se as
+três forem falso positivo, do tipo do link para `maps.google.com` descrito na
+Seção 2.9, o κ passa a 0,90. Segundo, os detectores A e B usam a mesma base e,
+no mesmo aplicativo, nomeiam conjuntos de rastreadores pouco sobrepostos (índice
+de Jaccard médio de 0,19). Isso pode vir de falsos positivos de B ou de SDKs que
+A não reconhece pelas classes, como código ofuscado; só a conferência das
+evidências separa os dois casos. Por isso o script gera uma planilha com a
+evidência de cada detecção, para marcação manual, e recalcula as medidas sem os
+falsos positivos marcados.
+
+Os cinco aplicativos sem nenhum rastreador pelo detector A são todos
+governamentais (9 de 14 governamentais com rastreador, contra 6 de 6 do
+controle). Com 20 aplicativos, sorteados apenas entre os que estão no AndroZoo,
+isso não diz nada sobre a H1; é registrado como ponto a observar na coleta
+completa.
 
 ### 2.11 Aspectos éticos das etapas executadas
 

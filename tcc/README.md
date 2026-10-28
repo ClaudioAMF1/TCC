@@ -1,8 +1,8 @@
 # TCC I: o texto
 
-**Estado em 26/10/2026:** resumo, abstract, introdução, metodologia das etapas
-executadas e plano de atividades escritos. Piloto: cobertura e amostra
-executadas; faltam download, detecção e concordância.
+**Estado em 28/10/2026:** resumo, abstract, introdução, metodologia das etapas
+executadas e plano de atividades escritos. Piloto executado inteiro (κ de
+Fleiss 0,52, antes da conferência); falta a conferência manual das detecções.
 
 | Arquivo | O que é |
 |---|---|
@@ -28,7 +28,7 @@ hipótese.
 
 ## O que falta no texto
 
-- Números da detecção e da concordância na Seção 2.10 (cobertura e amostra já estão lá).
+- Números da concordância **depois** da conferência manual, na Seção 2.10 (os de antes já estão lá).
 - Datas de acesso da LGPD e do Exodus nas referências (anotar o dia em que abrir cada link).
 - Passar para o modelo ABNT da instituição antes de 03/12.
 - **Língua.** O regulamento v.2026-05 (Art. 32, §3º) pede o trabalho final em

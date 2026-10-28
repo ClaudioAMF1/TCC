@@ -30,9 +30,14 @@ cd TCC
 git pull
 python3 -m venv .venv
 source .venv/bin/activate
-pip install -r requirements.txt
+python3 -m pip install -r requirements.txt
 python3 scripts/piloto_androzoo.py autoteste
 ```
+
+**Todo terminal novo precisa ativar o ambiente de novo**, antes de qualquer
+etapa: `cd ~/Documents/TCC && source .venv/bin/activate`. O prompt passa a
+mostrar `py TCC`. Sem isso aparece "Falta o Androguard" ou "command not found:
+pip". O Androguard é pacote do Python: não existe no Homebrew.
 
 Tem que aparecer `AUTOTESTE OK`. Se aparecer `AUTOTESTE FALHOU`, pare e me
 mande a saída.
@@ -137,23 +142,47 @@ Imprime, por detector, quantos apps têm ao menos um rastreador, o κ de Fleiss
 e, por par de detectores, o τ de Kendall e as concordâncias positiva e
 negativa.
 
-## 9. Conferir as detecções à mão (30 min)
+## 9. Conferir as detecções à mão (1 a 2 h)
 
-Abra `dados/piloto_deteccao_AAAAMMDD.json`. Para cada app, o campo
-`evidencias` mostra a classe (detector A) ou o domínio (B e C) que produziu
-cada detecção. Marque as que são falso positivo. Exemplo já conhecido:
-`"Google Ads": "maps.google.com"` no detector B é um link de mapa, não SDK de
-anúncio.
+Sem esta etapa o κ não quer dizer nada. No piloto de 28/10 o κ deu 0,52, mas
+três apps tiveram uma única detecção, só do detector B. Se essas três forem
+falso positivo, o κ vai a 0,90.
 
-Essa conferência é o que separa "o detector achou" de "o app tem".
+```bash
+python3 scripts/piloto_androzoo.py evidencias
+```
+
+Ele lista, app por app, cada detecção com o que a produziu (a classe, no
+detector A; o domínio, em B e C) e grava `dados/piloto_conferencia_AAAAMMDD.csv`.
+Domínios com cara de link de página já vêm com o aviso `⚠ link de uso geral?`.
+
+Abra a planilha no Excel ou no Numbers e preencha a coluna `FALSO_POSITIVO_S_N`:
+
+| Marque | Quando | Exemplos |
+|---|---|---|
+| **S** | o domínio é link para página, não endereço de SDK | `maps.google.com`, `www.facebook.com`, `play.google.com`, `www.google.com` |
+| **N** | o domínio é endereço que o SDK chama | `app-measurement.com`, `graph.facebook.com`, `*.googleapis.com`, `*.doubleclick.net`, `*.crashlytics.com` |
+| **N** | a classe é do próprio SDK (detector A: quase sempre é) | `com/google/firebase/analytics/...`, `com/facebook/appevents/...` |
+
+Na dúvida, deixe em branco e me mande a linha. Pode salvar no formato que o
+programa quiser (vírgula ou ponto e vírgula): o script lê os dois.
+
+Depois:
+
+```bash
+python3 scripts/piloto_androzoo.py concordancia --conferencia
+```
+
+Ele mostra o κ e os pares de novo, já sem os falsos positivos, e o κ de antes
+para comparar.
 
 ## 10. O que me mandar
 
-- a saída do terminal das etapas 3 e 8;
-- o arquivo `dados/piloto_deteccao_AAAAMMDD.json` (não tem a chave);
-- a lista dos falsos positivos que você marcou.
+- a saída da etapa `evidencias` (se quiser, eu indico quais parecem falso
+  positivo antes de você marcar);
+- depois da marcação, a saída de `concordancia --conferencia`.
 
-Com isso eu atualizo a Seção 2.10 do texto com os números do piloto.
+Com isso eu atualizo a Seção 2.10 do texto.
 
 **Não faça commit de nada de `dados/`.** APK, lista e bases ficam só no seu
 computador.

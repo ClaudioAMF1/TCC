@@ -36,7 +36,9 @@ ETAPAS
     amostra       sorteia os 20 do piloto entre os cobertos (semente fixa)
     baixar        baixa os APKs da amostra pelo sha256 e confere o hash
     detectar      aplica A, B e C (e o MobSF, se houver relatórios)
+    evidencias    planilha com o que produziu cada detecção, para conferir à mão
     concordancia  κ de Fleiss e τ de Kendall entre os detectores
+                  (--conferencia: tira os falsos positivos marcados)
     autoteste     valida a lógica sem rede e sem APK
 
 CHAVE DO ANDROZOO
@@ -119,6 +121,21 @@ def mascarar(texto: str) -> str:
     return re.sub(r"apikey=[^&\s]+", "apikey=***", texto)
 
 
+def ler_planilha(caminho: Path):
+    """Lê CSV escrito pelo script ou salvo à mão. O Excel em português grava
+    com ';' e, às vezes, em Windows-1252; o Numbers grava com ',' em UTF-8.
+    Sem isto, a marcação feita na planilha some sem aviso."""
+    bruto = Path(caminho).read_bytes()
+    try:
+        texto = bruto.decode("utf-8-sig")
+    except UnicodeDecodeError:
+        texto = bruto.decode("cp1252")
+    cab = texto.split("\n", 1)[0]
+    sep = ";" if cab.count(";") > cab.count(",") else ","
+    return [{(k or "").strip(): (v or "").strip() for k, v in r.items()}
+            for r in csv.DictReader(io.StringIO(texto, newline=""), delimiter=sep)]
+
+
 def mais_recente(padrao: str):
     achados = sorted(DADOS.glob(padrao))
     return achados[-1] if achados else None
@@ -166,7 +183,7 @@ def ler_lista_androzoo(fluxo_texto, pacotes):
         if obrig not in idx:
             raise ValueError(f"coluna '{obrig}' ausente no cabeçalho: {cab}")
 
-    melhor, n_versoes = {}, Counter()
+    melhor, n_versoes, outros = {}, Counter(), set()
     lidas = malformadas = 0
     for row in leitor:
         lidas += 1
@@ -178,6 +195,7 @@ def ler_lista_androzoo(fluxo_texto, pacotes):
             continue
         mercados = row[idx["markets"]].split("|")
         if "play.google.com" not in mercados:
+            outros.add(pkg)
             continue
         n_versoes[pkg] += 1
         cand = {
@@ -192,7 +210,8 @@ def ler_lista_androzoo(fluxo_texto, pacotes):
         if atual is None or chave > (atual["vercode"], atual["vt_scan_date"],
                                      atual["dex_date"]):
             melhor[pkg] = cand
-    return melhor, n_versoes, {"linhas": lidas, "malformadas": malformadas}
+    return melhor, n_versoes, {"linhas": lidas, "malformadas": malformadas,
+                               "so_outros_mercados": sorted(outros - set(melhor))}
 
 
 def abrir_lista(origem: str):
@@ -218,20 +237,21 @@ def carregar_populacao():
         sys.exit("Não achei dados/n3_corpus_*.csv. Rode antes:\n"
                  "    python3 scripts/teste_viabilidade_n3_robusto.py")
     apps = []
-    with corpus.open(encoding="utf-8") as fh:
-        for r in csv.DictReader(fh):
-            # a revisão manual, quando existir, manda sobre a heurística
-            if (r.get("OFICIAL_S_N") or "").strip().upper() == "N":
-                continue
-            apps.append({
-                "grupo": "governo", "appId": r["appId"],
-                "categoria": r.get("categoria", ""),
-                "faixa": r.get("faixa", ""),
-                "esfera": (r.get("ESFERA_REVISADA") or r.get("esfera_auto") or "").strip(),
-                "sensivel": (r.get("SENSIVEL_REVISADO") or r.get("sensivel_auto") or "").strip(),
-                "anuncio": r.get("tem_anuncio", ""),
-                "atualizado": r.get("atualizado", ""),
-            })
+    for r in ler_planilha(corpus):
+        # a revisão manual, quando existir, manda sobre a heurística
+        if (r.get("OFICIAL_S_N") or "").strip().upper() == "N":
+            continue
+        apps.append({
+            "grupo": "governo", "appId": r["appId"],
+            "categoria": r.get("categoria", ""),
+            "faixa": r.get("faixa", ""),
+            # revisão digitada à mão vem como 'Federal', 'Sim', 'nao'
+            "esfera": (r.get("ESFERA_REVISADA") or r.get("esfera_auto") or "").lower(),
+            "sensivel": (r.get("SENSIVEL_REVISADO") or r.get("sensivel_auto") or "")
+            .lower().replace("nao", "não"),
+            "anuncio": r.get("tem_anuncio", ""),
+            "atualizado": r.get("atualizado", ""),
+        })
     if relatorio:
         rel = json.loads(relatorio.read_text(encoding="utf-8"))
         for c in rel.get("controle", []):
@@ -287,26 +307,50 @@ def cmd_cobertura(args):
                         "defasagem_dias": defasagem_dias(a["atualizado"], m["vt_scan_date"])
                         if m else ""})
 
+    def contar(grupo, chave):
+        por = defaultdict(lambda: [0, 0])
+        for a in apps:
+            if a["grupo"] == grupo:
+                por[a[chave] or "?"][1] += 1
+                por[a[chave] or "?"][0] += a["appId"] in melhor
+        return por
+
     for grupo in ("governo", "controle"):
         g = [a for a in apps if a["grupo"] == grupo]
         k = sum(1 for a in g if a["appId"] in melhor)
         lo, hi = wilson(k, len(g))
         print(f"\n  {grupo:<9} {k:>4}/{len(g):<4} no acervo  "
               f"({k / max(len(g), 1):.1%}, IC95% {lo:.1%} a {hi:.1%})")
-        por = defaultdict(lambda: [0, 0])
-        chave = "esfera" if grupo == "governo" else "faixa"
-        for a in g:
-            por[a[chave] or "?"][1] += 1
-            por[a[chave] or "?"][0] += a["appId"] in melhor
-        for c, (kk, nn) in sorted(por.items()):
+    for chave in ("esfera", "sensivel"):
+        print(f"\n  Governo por {chave}:")
+        for c, (kk, nn) in sorted(contar("governo", chave).items()):
             print(f"      {c:<14} {kk:>4}/{nn:<4} {kk / nn:.0%}")
+
+    # mesma faixa, lado a lado: se o governo tiver cobertura menor que o
+    # controle DENTRO da faixa, o porte não explica tudo
+    fg, fc = contar("governo", "faixa"), contar("controle", "faixa")
+    print("\n  Por faixa de instalações:   governo          controle")
+    for fx in sorted(set(fg) | set(fc), key=lambda f: (f == "?", f)):
+        cel = []
+        for por in (fg, fc):
+            kk, nn = por.get(fx, (0, 0))
+            cel.append(f"{kk:>4}/{nn:<4} {kk / nn:>4.0%}" if nn else f"{'-':>14}")
+        print(f"      {fx:<6}               {cel[0]}    {cel[1]}")
+
+    so_outros = [p for p in est["so_outros_mercados"]
+                 if any(a["appId"] == p and a["grupo"] == "governo" for a in apps)]
+    print(f"\n  Governo no AndroZoo só por outro mercado (fora da Google Play): "
+          f"{len(so_outros)}")
+
+    cobertos = [a for a in apps if a["grupo"] == "governo" and a["appId"] in melhor]
     gov_def = [defasagem_dias(a["atualizado"], melhor[a["appId"]]["vt_scan_date"])
-               for a in apps if a["grupo"] == "governo" and a["appId"] in melhor]
+               for a in cobertos]
     gov_def = sorted(d for d in gov_def if d != "")
     if gov_def:
         print(f"\n  Defasagem (loja − AndroZoo), governo: mediana "
               f"{gov_def[len(gov_def) // 2]} dias; acima de 365 dias: "
-              f"{sum(d > 365 for d in gov_def)} de {len(gov_def)}")
+              f"{sum(d > 365 for d in gov_def)} de {len(gov_def)} "
+              f"({len(cobertos) - len(gov_def)} sem data para calcular)")
     print(f"\n  Planilha: {saida}\n")
 
 
@@ -353,8 +397,7 @@ def cmd_amostra(args):
     origem = Path(args.cobertura) if args.cobertura else mais_recente("piloto_cobertura_*.csv")
     if not origem:
         sys.exit("Rode antes a etapa 'cobertura'.")
-    with origem.open(encoding="utf-8") as fh:
-        linhas = list(csv.DictReader(fh))
+    linhas = ler_planilha(origem)
     amostra = sortear_amostra(linhas, args.n_gov, args.n_ctrl, args.semente)
     saida = DADOS / "piloto_amostra.csv"
     with saida.open("w", newline="", encoding="utf-8") as fh:
@@ -389,8 +432,7 @@ def cmd_baixar(args):
     origem = DADOS / "piloto_amostra.csv"
     if not origem.exists():
         sys.exit("Rode antes a etapa 'amostra'.")
-    with origem.open(encoding="utf-8") as fh:
-        amostra = list(csv.DictReader(fh))
+    amostra = ler_planilha(origem)
     pasta = DADOS / "apks"
     pasta.mkdir(parents=True, exist_ok=True)
 
@@ -437,7 +479,9 @@ RAIZES_PACOTE = {"com", "org", "net", "io", "android", "androidx", "java", "java
 EXTENSOES = {"java", "kt", "xml", "json", "png", "jpg", "jpeg", "gif", "webp", "svg",
              "txt", "html", "htm", "js", "css", "so", "dex", "class", "properties",
              "ttf", "otf", "mp3", "mp4", "wav", "ogg", "zip", "jar", "apk", "db",
-             "sqlite", "pem", "crt", "bin", "dat", "proto", "gz", "smali", "md"}
+             "sqlite", "pem", "crt", "bin", "dat", "proto", "gz", "smali", "md",
+             # app Xamarin: 'xamarin.firebase.common.dll' virou domínio no piloto
+             "dll", "exe", "pdb"}
 
 
 def extrair_hosts(textos):
@@ -603,12 +647,14 @@ def cmd_detectar(args):
     try:
         import androguard  # noqa: F401
     except ImportError:
-        sys.exit("Falta o Androguard:\n    pip install androguard")
+        sys.exit("Falta o Androguard. Quase sempre é o ambiente virtual desativado\n"
+                 "(cada terminal novo precisa ativar de novo):\n\n"
+                 "    source .venv/bin/activate\n"
+                 "    python3 -m pip install -r requirements.txt")
     origem = DADOS / "piloto_amostra.csv"
     if not origem.exists():
         sys.exit("Rode antes a etapa 'amostra'.")
-    with origem.open(encoding="utf-8") as fh:
-        amostra = list(csv.DictReader(fh))
+    amostra = ler_planilha(origem)
     rastreadores = carregar_exodus(args.exodus)
     dominios = carregar_disconnect(args.disconnect, args.categorias_disconnect)
     print(f"  Exodus: {len(rastreadores)} rastreadores   "
@@ -742,6 +788,10 @@ def calcular_concordancia(apps, detectores):
     linhas = [[sum(1 for d in detectores if not binario[d][i]),
                sum(1 for d in detectores if binario[d][i])] for i in range(len(validos))]
     rel["kappa_fleiss"] = fleiss_kappa(linhas) if validos else float("nan")
+    # com n pequeno, um app muda o κ; o intervalo abaixo mostra quanto
+    sem_um = [fleiss_kappa(linhas[:i] + linhas[i + 1:]) for i in range(len(linhas))]
+    sem_um = [k for k in sem_um if not math.isnan(k)]
+    rel["kappa_sem_um_app"] = [min(sem_um), max(sem_um)] if sem_um else []
     for d1, d2 in combinations(detectores, 2):
         par = concordancia_par(binario[d1], binario[d2])
         par["tau_b"] = kendall_tau_b(cont[d1], cont[d2])
@@ -764,7 +814,24 @@ def cmd_concordancia(args):
     detectores = ["A", "B", "C"]
     if any("M" in a.get("detectores", {}) for a in apps):
         detectores.append("M")
+    antes = None
+    if args.conferencia:
+        conf = (mais_recente("piloto_conferencia_*.csv") if args.conferencia == "auto"
+                else Path(args.conferencia))
+        if not conf or not conf.exists():
+            sys.exit("Não achei a planilha de conferência. Rode antes a etapa 'evidencias'.")
+        linhas_conf = ler_planilha(conf)
+        antes = calcular_concordancia(apps, detectores)
+        apps, removidas, sem_marca = aplicar_conferencia(apps, linhas_conf)
+        print(f"  Conferência: {conf}")
+        print(f"    {removidas} detecções marcadas como falso positivo e removidas")
+        if sem_marca:
+            print(f"    ⚠ {sem_marca} linhas sem marcação (S ou N) contam como verdadeiras")
+        print()
     rel = calcular_concordancia(apps, detectores)
+    if antes:
+        rel["antes_da_conferencia"] = {"kappa_fleiss": antes["kappa_fleiss"],
+                                       "por_detector": antes["por_detector"]}
     n = rel["n"]
     print(f"  Aplicativos com todos os detectores: {n} (fonte: {origem})\n")
     for d, v in rel["por_detector"].items():
@@ -772,13 +839,20 @@ def cmd_concordancia(args):
               f"({v['proporcao']:.0%}, IC95% {v['ic95'][0]:.0%} a {v['ic95'][1]:.0%})"
               f"   média {v['media_rastreadores']:.1f}")
     print(f"\n    κ de Fleiss (presença de ≥1 rastreador): {rel['kappa_fleiss']:.3f}")
+    if rel["kappa_sem_um_app"]:
+        lo, hi = rel["kappa_sem_um_app"]
+        print(f"    κ tirando um app de cada vez: de {lo:.3f} a {hi:.3f}")
+    if antes:
+        print(f"    κ antes da conferência: {antes['kappa_fleiss']:.3f}")
     print("\n    Par    τ-b    conc.+  conc.−  discord.  Jaccard")
     for par, v in rel["pares"].items():
         jac = f"{v['jaccard_medio']:.2f}" if "jaccard_medio" in v else "  -"
         print(f"    {par:<5} {v['tau_b']:>5.2f}   {v['conc_positiva']:>5.2f}   "
               f"{v['conc_negativa']:>5.2f}   {v['discordantes']:>5}     {jac}")
-    if n < 20:
-        print(f"\n  ⚠ n = {n}. É piloto: os números testam o pipeline, não a H4.")
+    if n < 60:
+        print(f"\n  ⚠ n = {n}. É piloto: os números testam o pipeline e o instrumento,")
+        print("    não a H4. O κ sem conferência é o da H4 (ferramentas como são);")
+        print("    com --conferencia, ele mostra de onde vem a discordância.")
     prev = [v["proporcao"] for v in rel["por_detector"].values()]
     if prev and (min(prev) > 0.9 or max(prev) < 0.1):
         print("  ⚠ Prevalência extrema: o κ fica instável mesmo com acordo alto.")
@@ -786,6 +860,162 @@ def cmd_concordancia(args):
     saida = DADOS / f"piloto_concordancia_{HOJE}.json"
     saida.write_text(json.dumps(rel, indent=2, ensure_ascii=False), encoding="utf-8")
     print(f"\n  Resultado: {saida}\n")
+
+
+# =================================================================== evidencias
+
+BASES_GERAIS = {"google.com", "google.com.br", "facebook.com", "youtube.com",
+                "instagram.com", "twitter.com", "x.com", "linkedin.com",
+                "whatsapp.com", "apple.com", "microsoft.com"}
+# subdomínio de link para página, não de SDK: graph.facebook.com e
+# adservice.google.com, por exemplo, NÃO entram aqui, porque são endpoints
+SUB_GERAIS = {"www", "maps", "play", "support", "accounts", "developers",
+              "policies", "docs", "drive", "mail", "m", "plus", "web", "api"}
+
+
+def suspeita_evidencia(evidencia: str) -> str:
+    """Marca o domínio que parece link de página e não endpoint de SDK. É só
+    um aviso para a conferência: quem decide é quem confere."""
+    h = (evidencia or "").lower()
+    if h in BASES_GERAIS:
+        return "link de uso geral?"
+    sub, _, base = h.partition(".")
+    if base in BASES_GERAIS and sub in SUB_GERAIS:
+        return "link de uso geral?"
+    return ""
+
+
+# Regras da conferência. O critério é um só: a detecção é verdadeira quando o
+# SDK nomeado está no APK. A prova é a classe do SDK (detector A) ou um endereço
+# que só aquele fornecedor usa. Link de página não prova SDK nenhum.
+ENDPOINTS_CONHECIDOS = {"graph.facebook.com", "graph-video.facebook.com",
+                        "adservice.google.com"}
+PAGINAS_CONHECIDAS = {"t.co", "bit.ly", "goo.gl", "tieba.baidu.com"}
+# domínios do Google que várias bibliotecas dele citam, não só o SDK nomeado:
+# o Firebase Analytics, por exemplo, cita googleadservices.com sem ter AdMob
+INFRA_GOOGLE = ("googlesyndication.com", "googleadservices.com",
+                "google-analytics.com", "doubleclick.net", "googletagmanager.com")
+
+
+def tipo_pagina(host: str) -> str:
+    """'' se parece endereço de SDK; 'pagina' se é link de página; 'www' se
+    só o prefixo sugere página (esse vai para revisão)."""
+    h = (host or "").lower()
+    if h in ENDPOINTS_CONHECIDOS:
+        return ""
+    if suspeita_evidencia(h) or h in PAGINAS_CONHECIDAS:
+        return "pagina"
+    if any(h == b or h.endswith("." + b) for b in ("google.com", "facebook.com")):
+        return "pagina"
+    return "www" if h.startswith("www.") else ""
+
+
+def sugerir_marca(detector, rastreador, evidencia, tambem_em, nomes_a):
+    """Aplica as regras e devolve (S ou N, motivo, 'sim' se precisa revisão)."""
+    ev = (evidencia or "").lower()
+    if detector == "A":
+        return "N", "classe do próprio SDK no APK", ""
+    pag = tipo_pagina(ev)
+    if detector == "C":
+        if pag:
+            return "S", "link de página, não endereço de SDK", "sim" if pag == "www" else ""
+        if rastreador == "Google" and not any(n.startswith("Google") for n in nomes_a):
+            return "S", "nenhum SDK do Google achado no código", "sim"
+        return "N", "endereço do fornecedor", ""
+    if "A" in (tambem_em or "").split("+"):
+        return "N", "A achou o código do mesmo SDK", ""
+    if pag:
+        return ("S", "link de página; não prova o SDK, e A não achou o código",
+                "sim" if pag == "www" else "")
+    if rastreador.startswith("Google") and any(ev == b or ev.endswith("." + b)
+                                               for b in INFRA_GOOGLE):
+        return "S", "domínio citado por várias bibliotecas do Google; A não achou o código", ""
+    return "N", "endereço específico do fornecedor, sem código achado por A", "sim"
+
+
+def aplicar_conferencia(apps, linhas_conf):
+    """Tira das listas dos detectores o que a conferência marcou com S.
+    Devolve (apps corrigidos, quantas removidas, quantas linhas sem S nem N)."""
+    marcados, sem_marca = set(), 0
+    for r in linhas_conf:
+        v = (r.get("FALSO_POSITIVO_S_N") or "").strip().upper()
+        if v == "S":
+            marcados.add((r["appId"], r["detector"], r["rastreador"]))
+        elif v != "N":
+            sem_marca += 1
+    novos, removidas = [], 0
+    for a in apps:
+        b = dict(a)
+        if "detectores" in a:
+            b["detectores"] = {}
+            for d, nomes in a["detectores"].items():
+                fica = [x for x in nomes if (a["appId"], d, x) not in marcados]
+                removidas += len(nomes) - len(fica)
+                b["detectores"][d] = fica
+        novos.append(b)
+    return novos, removidas, sem_marca
+
+
+def cmd_evidencias(args):
+    linha("  EVIDÊNCIAS PARA CONFERÊNCIA MANUAL")
+    origem = Path(args.deteccao) if args.deteccao else mais_recente("piloto_deteccao_*.json")
+    if not origem:
+        sys.exit("Rode antes a etapa 'detectar'.")
+    saida = DADOS / f"piloto_conferencia_{HOJE}.csv"
+    if saida.exists() and not args.sobrescrever:
+        sys.exit(f"{saida} já existe e pode ter a sua conferência. Para gerar de novo\n"
+                 "por cima dela, use --sobrescrever.")
+    apps = json.loads(origem.read_text(encoding="utf-8"))["apps"]
+    linhas_csv, n_susp = [], 0
+    for a in apps:
+        if "detectores" not in a:
+            continue
+        print(f"\n  {a['appId']}  ({a['grupo']})")
+        det, evid = a["detectores"], a.get("evidencias", {})
+        for d in sorted(det):
+            for nome in det[d]:
+                ev = evid.get(d, {}).get(nome, "")
+                # A, B e M nomeiam pela base do Exodus; C nomeia a empresa
+                outros = [o for o in ("A", "B", "M") if o != d and o in det
+                          and nome in det[o]] if d != "C" else []
+                susp = suspeita_evidencia(ev) if d in ("B", "C") else ""
+                n_susp += bool(susp)
+                linha_csv = {"appId": a["appId"], "grupo": a["grupo"], "detector": d,
+                             "rastreador": nome, "evidencia": ev,
+                             "tambem_em": "+".join(outros), "suspeita": susp,
+                             "FALSO_POSITIVO_S_N": ""}
+                if args.sugerir:
+                    marca_s, motivo, revisar = sugerir_marca(
+                        d, nome, ev, "+".join(outros), det.get("A", []))
+                    linha_csv.update({"FALSO_POSITIVO_S_N": marca_s, "motivo": motivo,
+                                      "revisar": revisar})
+                linhas_csv.append(linha_csv)
+                marca = f"  ⚠ {susp}" if susp else ""
+                junto = f"  [também {'+'.join(outros)}]" if outros else ""
+                print(f"    {d}  {nome[:34]:<34} {ev[:52]}{junto}{marca}")
+    with saida.open("w", newline="", encoding="utf-8") as fh:
+        w = csv.DictWriter(fh, fieldnames=list(linhas_csv[0].keys()) if linhas_csv else
+                           ["appId"])
+        w.writeheader()
+        w.writerows(linhas_csv)
+    print(f"\n  {len(linhas_csv)} detecções, {n_susp} com domínio suspeito de ser link.")
+    print(f"  Planilha: {saida}")
+    if args.sugerir:
+        print("\n  Marcação sugerida pelas regras (confira; a coluna 'motivo' diz por quê):")
+        for d in ("A", "B", "C", "M"):
+            ls = [r for r in linhas_csv if r["detector"] == d]
+            if ls:
+                ok = sum(r["FALSO_POSITIVO_S_N"] == "N" for r in ls)
+                print(f"    {d}  {ok:>3} de {len(ls):<3} verdadeiras ({ok / len(ls):.0%})")
+        rev = [r for r in linhas_csv if r.get("revisar")]
+        print(f"\n  {len(rev)} linhas pedem a sua decisão (coluna revisar = sim):")
+        for r in rev:
+            print(f"    {r['FALSO_POSITIVO_S_N']}  {r['detector']}  {r['rastreador'][:26]:<26} "
+                  f"{r['evidencia'][:34]:<34} {r['appId']}")
+        print("\n  Mude o que discordar e rode:")
+    else:
+        print("  Preencha FALSO_POSITIVO_S_N com S ou N e rode:")
+    print("    python3 scripts/piloto_androzoo.py concordancia --conferencia\n")
 
 
 # ===================================================================== autoteste
@@ -805,9 +1035,11 @@ def autoteste():
         "com.exemplo,DDD,5,play.google.com,2023-05-05 00:00:00,,50,x\n"
         "com.virgula,errado,EEE,1,play.google.com,2023-01-01 00:00:00,,1,x\n"
         '"com.aspas,ok",FFF,3,play.google.com,2023-01-01 00:00:00,,1,x\n'
-        "fora.do.corpus,GGG,1,play.google.com,2023-01-01 00:00:00,,1,x\n")
+        "fora.do.corpus,GGG,1,play.google.com,2023-01-01 00:00:00,,1,x\n"
+        "so.anzhi,HHH,1,anzhi,2023-01-01 00:00:00,,1,x\n")
     melhor, nv, est = ler_lista_androzoo(
-        lista, {"br.gov.meuinss", "com.exemplo", "com.aspas,ok", "com.virgula"})
+        lista, {"br.gov.meuinss", "com.exemplo", "com.aspas,ok", "com.virgula",
+                "so.anzhi"})
     if melhor.get("br.gov.meuinss", {}).get("sha256") != "BBB":
         falhas.append(f"versão escolhida = {melhor.get('br.gov.meuinss')}, esperado BBB "
                       "(maior vercode da Google Play, ignorando o anzhi)")
@@ -819,6 +1051,9 @@ def autoteste():
         falhas.append("pacote entre aspas com vírgula não foi lido")
     if "fora.do.corpus" in melhor:
         falhas.append("pacote fora do corpus entrou")
+    if est["so_outros_mercados"] != ["so.anzhi"] or "so.anzhi" in melhor:
+        falhas.append(f"só em outro mercado = {est['so_outros_mercados']}, "
+                      "esperado ['so.anzhi'] e fora da escolha")
 
     # 2. defasagem: loja atualizada um ano depois da cópia do AndroZoo
     ts = datetime(2025, 1, 1, tzinfo=timezone.utc).timestamp()
@@ -939,6 +1174,69 @@ def autoteste():
     if len(ctrl) != 6 or sum(r["anuncio"] == "True" for r in ctrl) != 3:
         falhas.append("controle deveria ter 6 apps, 3 com anúncio")
 
+    # 10b. conferência: suspeita de link e remoção do que foi marcado
+    casos = {"maps.google.com": True, "www.facebook.com": True, "google.com": True,
+             "graph.facebook.com": False, "adservice.google.com": False,
+             "app-measurement.com": False, "": False}
+    for h, esp in casos.items():
+        if bool(suspeita_evidencia(h)) != esp:
+            falhas.append(f"suspeita_evidencia({h!r}) deveria ser {esp}")
+    apps_c = [{"appId": "x", "detectores": {"A": [], "B": ["Google Ads", "Firebase"]}},
+              {"appId": "y", "erro": "APK ausente"}]
+    conf = [{"appId": "x", "detector": "B", "rastreador": "Google Ads",
+             "FALSO_POSITIVO_S_N": "s"},
+            {"appId": "x", "detector": "B", "rastreador": "Firebase",
+             "FALSO_POSITIVO_S_N": ""}]
+    novos, rem, sem = aplicar_conferencia(apps_c, conf)
+    if novos[0]["detectores"]["B"] != ["Firebase"] or rem != 1 or sem != 1:
+        falhas.append(f"aplicar_conferencia = {novos[0]}, {rem}, {sem}")
+    if apps_c[0]["detectores"]["B"] != ["Google Ads", "Firebase"]:
+        falhas.append("aplicar_conferencia alterou a lista original")
+    # o κ do piloto real, e o mesmo κ se as 3 detecções isoladas de B caírem
+    pres = [(0, 0, 0)] + [(1, 1, 1)] * 15 + [(0, 1, 0)] * 3 + [(0, 1, 1)]
+    k_obs = fleiss_kappa([[3 - sum(r), sum(r)] for r in pres])
+    if abs(k_obs - 0.520) > 0.001:
+        falhas.append(f"κ do piloto = {k_obs:.3f}, esperado 0,520")
+
+    # 10d. regras de conferência, com casos do piloto de 28/10
+    regras = [
+        (("A", "Google Firebase Analytics", "Lcom/google/firebase/X;", "", []), "N"),
+        (("B", "Google Ads", "firebase.google.com", "", []), "S"),
+        (("B", "Facebook Login", "developers.facebook.com", "A", ["Facebook Login"]), "N"),
+        (("B", "Facebook Ads", "www.facebook.com", "", []), "S"),
+        (("B", "Google AdMob", "pagead2.googlesyndication.com", "", []), "S"),
+        (("B", "Google AdMob", "ad.doubleclick.net", "A", ["Google AdMob"]), "N"),
+        (("B", "Amplitude", "api.eu.amplitude.com", "A", ["Amplitude"]), "N"),
+        (("B", "Backtrace", "events.backtrace.io", "", []), "N"),
+        (("C", "Twitter", "t.co", "", []), "S"),
+        (("C", "Google", "pagead2.googlesyndication.com", "", ["Google CrashLytics"]), "N"),
+        (("C", "Google", "pagead2.googlesyndication.com", "", ["Bugsnag"]), "S"),
+        (("C", "OneSignal", "api.onesignal.com", "", ["OneSignal"]), "N"),
+        (("B", "Facebook Login", "graph.facebook.com", "", []), "N"),
+    ]
+    for (d, nome, ev, tamb, nomes_a), esp in regras:
+        got = sugerir_marca(d, nome, ev, tamb, nomes_a)[0]
+        if got != esp:
+            falhas.append(f"sugerir_marca({d}, {nome}, {ev}) = {got}, esperado {esp}")
+
+    # 10c. planilha salva pelo Excel em português (';' e Windows-1252) e pelo
+    # Numbers (',' e UTF-8 com BOM) dão o mesmo resultado
+    tmp2 = Path(tempfile.mkdtemp(prefix="piloto_planilha_"))
+    (tmp2 / "excel.csv").write_bytes(
+        "appId;detector;rastreador;FALSO_POSITIVO_S_N\r\nx;B;Google Ads;S\r\n"
+        "y;C;Ação;N\r\n".encode("cp1252"))
+    (tmp2 / "numbers.csv").write_bytes(
+        "\ufeffappId,detector,rastreador,FALSO_POSITIVO_S_N\nx,B,Google Ads,S\n"
+        "y,C,Ação,N\n".encode("utf-8"))
+    for nome in ("excel.csv", "numbers.csv"):
+        got = ler_planilha(tmp2 / nome)
+        if [(r["appId"], r["rastreador"], r["FALSO_POSITIVO_S_N"]) for r in got] != \
+                [("x", "Google Ads", "S"), ("y", "Ação", "N")]:
+            falhas.append(f"ler_planilha({nome}) = {got}")
+    for f in tmp2.iterdir():
+        f.unlink()
+    tmp2.rmdir()
+
     # 10. a chave nunca aparece em mensagem
     os.environ["ANDROZOO_API_KEY"] = "chave-de-teste-123"
     msg = mascarar(f"HTTP 403 em {URL_DOWNLOAD_ANDROZOO}?apikey=chave-de-teste-123&sha256=X")
@@ -955,7 +1253,7 @@ def autoteste():
         for f in falhas:
             print("  -", f)
         sys.exit(1)
-    print("AUTOTESTE OK — 10 grupos de verificação passaram, sem rede e sem APK.")
+    print("AUTOTESTE OK — 13 grupos de verificação passaram, sem rede e sem APK.")
 
 
 # ========================================================================== main
@@ -987,8 +1285,18 @@ def main():
     p.add_argument("--mobsf", help="pasta com relatórios JSON do MobSF, um <sha256>.json por APK")
     p.set_defaults(func=cmd_detectar)
 
+    p = sub.add_parser("evidencias", help="planilha para conferir cada detecção à mão")
+    p.add_argument("--deteccao", help="JSON da etapa detectar (padrão: o mais recente)")
+    p.add_argument("--sobrescrever", action="store_true",
+                   help="gera de novo mesmo que a planilha do dia já exista")
+    p.add_argument("--sugerir", action="store_true",
+                   help="já preenche S ou N pelas regras de conferência, com o motivo")
+    p.set_defaults(func=cmd_evidencias)
+
     p = sub.add_parser("concordancia", help="κ de Fleiss e τ de Kendall")
     p.add_argument("--deteccao", help="JSON da etapa detectar (padrão: o mais recente)")
+    p.add_argument("--conferencia", nargs="?", const="auto",
+                   help="aplica a planilha de conferência (padrão: a mais recente)")
     p.set_defaults(func=cmd_concordancia)
 
     p = sub.add_parser("autoteste", help="valida a lógica sem rede")

@@ -9,6 +9,20 @@ detecções do detector B eram falso positivo.
 |---|---|
 | [`tcc1-projeto-de-pesquisa.md`](tcc1-projeto-de-pesquisa.md) | **O texto.** Identificação, resumo, abstract, Cap. 1 Introdução, Cap. 2 Metodologia do que foi feito, Cap. 3 Plano de atividades, referências |
 | [`piloto-passo-a-passo.md`](piloto-passo-a-passo.md) | Como rodar o piloto do AndroZoo, comando por comando |
+| [`latex/`](latex/) | **O mesmo texto em LaTeX (abnTeX2, ABNT)**, pronto para o Overleaf: `main.tex` e `referencias.bib` |
+
+## Abrir no Overleaf
+
+1. Compacte os dois arquivos de `latex/` num `.zip` (ou use o que veio no chat).
+2. No Overleaf: **New Project > Upload Project** e escolha o `.zip`.
+3. O compilador padrão (pdfLaTeX) serve. Clique em **Recompile**.
+
+O projeto gera capa, folha de rosto, resumo, abstract, listas de tabelas e de
+quadros, sumário, os três capítulos e as referências no formato ABNT. Foi
+compilado e conferido página por página antes de subir: 30 páginas, sem erro.
+
+**Daqui em diante, edite no Overleaf.** O `.md` fica como registro da versão
+de 28/10; se o texto mudar lá, é o `.tex` que vale.
 
 ## O que mudou em relação à proposta
 

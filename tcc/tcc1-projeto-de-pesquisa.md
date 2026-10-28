@@ -288,7 +288,7 @@ acrescentados como capítulos próprios.
 
 ## 2 METODOLOGIA DAS ETAPAS EXECUTADAS
 
-Este capítulo descreve o que foi feito até 20 de outubro de 2026. Todos os
+Este capítulo descreve o que foi feito até 28 de outubro de 2026. Todos os
 scripts citados estão no repositório do trabalho, na pasta `scripts/`.
 
 ### 2.1 Escolha do tema por testes de viabilidade

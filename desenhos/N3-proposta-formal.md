@@ -387,7 +387,7 @@ estatística, discussão, e publicação do conjunto de dados como artefato.
 
 | Item | Base | Situação |
 |---|---|---|
-| Termo de aceite do orientador | Art. 10 e Art. 15 | **pendente** |
+| Termo de aceite do orientador | Art. 10 e Art. 15 | ✅ **assinado**, tema aprovado (registrado em 28/10/2026) |
 | Verificar elegibilidade do orientador na lista da Coordenação | Art. 13, §1º e §6º (máx. 3 orientandos novos/semestre) | **a confirmar** |
 | 5 encontros de orientação com ficha assinada | Art. 19, II e Art. 24 | a iniciar — reprova por si só se faltar |
 | Modalidade | Art. 29, §1º | **monografia**. A modalidade artigo exige aceite em periódico Qualis ≥ B2, o que não está sob controle do aluno. |

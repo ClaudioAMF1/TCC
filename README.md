@@ -241,9 +241,9 @@ python3 scripts/teste_viabilidade_n1.py --apenas-contagem
   redirecionamento, não ausência de documento. Eleva a taxa da H2.
 - **Revisar 30 linhas ao acaso** da planilha pré-classificada. A taxa de correção mede o
   erro do classificador e vira número da seção de ameaças à validade.
-- **Orientador.** A apresentação das linhas de pesquisa já ocorreu; o termo de aceite
-  precisa ser formalizado (Art. 10 e Art. 15), e é preciso confirmar a elegibilidade do
-  professor pretendido junto à Coordenação (Art. 13, §1º e §6º).
+- ~~**Orientador.**~~ O Prof. Eduardo Arthur Izycki aprovou o tema e assinou o termo de
+  aceite (Art. 10 e Art. 15). Seguem os **5 encontros de orientação** com ficha assinada
+  (Art. 19, II e Art. 24).
 - ~~**Acesso ao AndroZoo.**~~ Concedido em 17/09, menos de 6h após o pedido. A chave é de
   **uso individual** e vive só em variável de ambiente; o uso do acervo **obriga a citar**
   dois trabalhos — ver `desenhos/N3-acesso-androzoo.md`.

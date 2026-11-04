@@ -313,9 +313,9 @@ A diferença decisiva do tema escolhido é que a variável que separa os grupos,
 
 Em 17 de setembro de 2026, a ficha completa de cada um dos 396 candidatos foi obtida na Google Play, sem nenhuma remoção. O script é \texttt{scripts/\allowbreak{}teste\_\allowbreak{}viabilidade\_\allowbreak{}n3\_\allowbreak{}robusto.\allowbreak{}py}, e cada aplicativo recebeu três classificações automáticas.
 
-\textbf{Esfera de governo}, pelo nome do publicador, testando primeiro os sinais municipais, depois os estaduais e por último os federais, porque ``municipal'' é menos ambíguo que ``secretaria''. Resultado: 85 federais, 206 estaduais, 95 municipais e 10 indeterminados (2,5\%).
+\textbf{Esfera de governo}, pelo nome do publicador, testando primeiro os sinais municipais, depois os estaduais e por último os federais, porque ``municipal'' é menos ambíguo que ``secretaria''. Resultado: 85 federais, 206 estaduais, 95 municipais e 10 indeterminados (2,5\%). A validação manual encontrou um erro de regra, já corrigido: os aplicativos do STJ, tribunal da União, saíam estaduais (Seção~\ref{sec:2.12}).
 
-\textbf{Tratamento de dado sensível}, por palavras-chave no título e na descrição, em quatro grupos: saúde, biometria, previdência e assistência social. Resultado: 152 aplicativos (38,4\%) em ao menos um grupo; 125 em saúde, 28 em previdência, 17 em biometria e 5 em assistência social (um aplicativo pode estar em mais de um grupo). O critério automático é mais amplo que o da LGPD: previdência e assistência social não são, por si, dado sensível no sentido do Art. 5º, II. A validação manual vai aplicar a definição legal e reportar as duas contagens. Mesmo pelo critério estrito, o grupo de saúde sozinho tem 125 aplicativos.
+\textbf{Tratamento de dado sensível}, por palavras-chave no título e na descrição, em quatro grupos: saúde, biometria, previdência e assistência social. Resultado: 152 aplicativos (38,4\%) em ao menos um grupo; 125 em saúde, 28 em previdência, 17 em biometria e 5 em assistência social (um aplicativo pode estar em mais de um grupo). O critério automático é mais amplo que o da LGPD: previdência e assistência social não são, por si, dado sensível no sentido do Art. 5º, II. A validação manual de uma amostra (Seção~\ref{sec:2.12}) mostrou que esse critério por palavra-chave erra em 28,6\% dos aplicativos oficiais, nos dois sentidos; as contagens acima são, por isso, provisórias.
 
 \textbf{Faixa de instalações}, em escala logarítmica, pela ordem de grandeza do número mínimo de instalações informado pela loja ($10^{0}$, $10^{1}$, \ldots{}, $10^{9}$). Dois aplicativos não informam instalações.
 
@@ -349,7 +349,7 @@ Política de privacidade acessível (resposta HTTP 200) & H2 & $\geq$ 60\% & 323
 \end{minipage}
 \end{center}
 
-As quatro hipóteses têm instrumento. Três ressalvas acompanham esse resultado.
+As quatro hipóteses têm instrumento. As contagens de esfera e de sensibilidade vêm da classificação automática, cuja taxa de erro foi medida depois (Seção~\ref{sec:2.12}). Três ressalvas acompanham esse resultado.
 
 \textbf{Suporte comum.} As duas populações têm portes diferentes, e isso é propriedade do mundo, não do coletor: um aplicativo de prefeitura de cidade pequena tem poucas centenas de instalações.
 
@@ -656,7 +656,36 @@ Comerciais em falta para dois por célula & 80, em 44 células & 18 \\
 
 As 18 vagas restantes estão, na maioria, na faixa de $10^{2}$ instalações, em que a busca da loja quase não devolve aplicativo comercial. Com 252 aplicativos de controle, a menor diferença detectável no pior caso, com taxa de base de 50\%, cai de 12,3 para 11,4 pontos percentuais. Os 62 aplicativos novos ainda não foram cruzados com o AndroZoo; como a coleta completa vai baixar governo e controle direto da Google Play, isso não bloqueia a etapa seguinte.
 
-\section{Aspectos éticos das etapas executadas}\label{sec:2.12}
+\section{Validação manual de uma amostra do corpus}\label{sec:2.12}
+
+Em 4 de novembro de 2026, uma amostra do corpus foi conferida na Google Play, ficha por ficha, e, quando a ficha não bastava, na documentação do órgão responsável. A amostra é sistemática: com os 396 aplicativos ordenados pelo identificador, foram tomados o primeiro e um a cada 13, até completar 30. A eles se somaram dois casos com erro já conhecido, o aplicativo do STJ e o Nota Paraná, que ficam fora das taxas abaixo porque não foram sorteados. Para cada aplicativo foram registrados se o publicador é órgão público, a esfera e se o aplicativo trata dado de saúde ou biométrico (Art. 5º, II da LGPD), com a evidência de cada decisão.
+
+\begin{center}
+\begin{minipage}{\textwidth}
+\centering
+\small
+\tabelacaption{Validação manual da amostra sorteada do corpus}\label{tabela:15}
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}X>{\centering\arraybackslash}X>{\centering\arraybackslash}X>{\centering\arraybackslash}X}
+\toprule
+\textbf{Na amostra sorteada (n = 30)} & \textbf{Divergências} & \textbf{Proporção} & \textbf{IC95\% (Wilson)} \\
+\midrule
+Publicador não é órgão público & 2 de 30 & 6,7\% & 1,8\% a 21,3\% \\
+Esfera errada, entre os oficiais & 0 de 28 & 0,0\% & 0,0\% a 12,1\% \\
+Sensibilidade errada, entre os oficiais & 8 de 28 & 28,6\% & 15,3\% a 47,1\% \\
+Aplicativos com ao menos uma divergência & 10 de 30 & 33,3\% & 19,2\% a 51,2\% \\
+\bottomrule
+\end{tabularx}
+\fonte{Elaborado pelo autor (2026).}
+\end{minipage}
+\end{center}
+
+Os dois publicadores privados são empresas que fornecem aplicativos a prefeituras e publicam com nome de serviço público. A esfera não errou na amostra sorteada. O erro do STJ, que saía estadual, vinha de uma regra: o nome dos tribunais da União contém a expressão ``tribunal de justiça'', usada para reconhecer os tribunais estaduais. A regra foi corrigida; ela afetava os três aplicativos do STJ no corpus.
+
+A classificação de sensibilidade errou nos dois sentidos. Marcou como sensíveis aplicativos que só têm a palavra-chave no nome ou na descrição: um inventário de bens de uma secretaria que leva ``Previdência'' no nome, um aplicativo de exames de equídeos e um de escalas de profissionais de saúde que não coleta dado de saúde dos usuários. E deixou de marcar aplicativos que tratam dado sensível sem usar as palavras previstas: prova de vida por selfie, agendamento de exames e leitura de atestado médico. Entre os 28 oficiais sorteados, 11 tratam dado sensível pela conferência, contra 13 pela classificação automática: a proporção agregada é parecida, mas o rótulo de cada aplicativo não é confiável.
+
+Daí vêm duas mudanças no método. A H3, que compara aplicativos sensíveis e não sensíveis, vai usar a classificação manual da sensibilidade nos 396 aplicativos, com os critérios e o registro de evidência desta amostra. E a oficialidade será conferida nos 396 antes da coleta completa, porque a taxa de 6,7\% corresponde a cerca de 26 aplicativos privados no corpus. A esfera automática, com a regra corrigida, é conferida junto.
+
+\section{Aspectos éticos das etapas executadas}\label{sec:2.13}
 
 As etapas executadas usaram apenas metadados públicos da Google Play e uma requisição GET à política de privacidade divulgada pelo próprio publicador, com agente identificado como pesquisa acadêmica. Nenhum aplicativo foi instalado, nenhuma área autenticada foi acessada e nenhum dado pessoal foi coletado. O objeto de estudo é o aplicativo, não pessoas.
 
@@ -670,16 +699,17 @@ As datas da disciplina são as do plano de ensino: simulação de defesa em 24/1
 \begin{minipage}{\textwidth}
 \centering
 \small
-\quadrocaption{Cronograma até a defesa do Projeto Capstone I}\label{quadro:15}
+\quadrocaption{Cronograma até a defesa do Projeto Capstone I}\label{quadro:16}
 \begin{tabularx}{\textwidth}{|l|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|}
 \hline
 \textbf{Período} & \textbf{Atividade} & \textbf{Produto} \\
 \hline
 20/10 a 26/10 & Rodar a etapa de cobertura do piloto. Primeiro encontro de orientação: apresentar este texto e a mudança de detectores da H4 & Tabela de cobertura do AndroZoo; ficha de orientação 1 \\ \hline
-27/10 a 02/11 & Validação manual do corpus na planilha gerada pelo script: vínculo oficial, esfera e dado sensível pelo Art. 5º, II & Corpus validado; taxa de erro da classificação automática \\ \hline
+27/10 a 04/11 & Validação manual de uma amostra de 32 aplicativos (feita em 04/11, Seção~\ref{sec:2.12}) & Taxa de erro da classificação automática \\ \hline
 27/10 a 09/11 & Piloto: amostra, download, detecção e concordância nos 20 aplicativos & Números preliminares da H4; ficha de orientação 2 \\ \hline
 03/11 a 16/11 & Revisão sistemática conforme \citeonline{kitchenham2007}: protocolo, termos, bases (Scopus, ACM DL, IEEE Xplore), seleção & Protocolo e lista de trabalhos selecionados \\ \hline
 10/11 a 16/11 & Testar a coleta direta da Google Play, com hash registrado, em cinco aplicativos fora do AndroZoo & Procedimento de coleta direta definido; ficha de orientação 3 \\ \hline
+10/11 a 23/11 & Classificação manual da oficialidade e da sensibilidade dos 396 aplicativos, com os critérios da Seção~\ref{sec:2.12} & Corpus validado; rótulos manuais para a H3 \\ \hline
 17/11 a 23/11 & Traduzir os Arts. 7º, 11 e 33 da LGPD em critérios verificáveis; congelar o protocolo e o plano de análise com data registrada no repositório; preparar a apresentação & Protocolo congelado; slides da simulação; ficha de orientação 4 \\ \hline
 24/11 a 01/12 & Simulação de defesa & Apresentação e sugestões da avaliadora \\ \hline
 até 03/12 & Incorporar as sugestões e entregar a redação no modelo ABNT & Redação entregue; ficha de orientação 5 \\ \hline
@@ -695,7 +725,7 @@ até 03/12 & Incorporar as sugestões e entregar a redação no modelo ABNT & Re
 \begin{minipage}{\textwidth}
 \centering
 \small
-\quadrocaption{Cronograma do Projeto Capstone II}\label{quadro:16}
+\quadrocaption{Cronograma do Projeto Capstone II}\label{quadro:17}
 \begin{tabularx}{\textwidth}{|l|>{\raggedright\arraybackslash}X|}
 \hline
 \textbf{Mês} & \textbf{Atividade} \\
@@ -716,7 +746,7 @@ Junho & Redação final, publicação do conjunto de dados e defesa \\ \hline
 \begin{minipage}{\textwidth}
 \centering
 \small
-\quadrocaption{Riscos e contingências}\label{quadro:17}
+\quadrocaption{Riscos e contingências}\label{quadro:18}
 \begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|}
 \hline
 \textbf{Risco} & \textbf{Efeito} & \textbf{Contingência} \\

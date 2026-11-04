@@ -245,8 +245,9 @@ python3 scripts/teste_viabilidade_n1.py --apenas-contagem
 - ~~**Rodar o teste robusto.**~~ Rodado em 17/09: as quatro hipóteses têm instrumento.
 - **Conferir à mão** as 43 políticas que deram `403` e `302` — são bloqueio de agente e
   redirecionamento, não ausência de documento. Eleva a taxa da H2.
-- **Revisar 30 linhas ao acaso** da planilha pré-classificada. A taxa de correção mede o
-  erro do classificador e vira número da seção de ameaças à validade.
+- ~~**Revisar 30 linhas ao acaso.**~~ Feito em 04/11 (amostra sistemática de 30 + 2 casos
+  conhecidos): 6,7% de publicador privado, esfera sem erro, **28,6% de erro na sensibilidade**.
+  Próximo: classificar oficialidade e sensibilidade à mão nos 396 (Seção 2.12 do texto).
 - ~~**Orientador.**~~ O Prof. Eduardo Arthur Izycki aprovou o tema e assinou o termo de
   aceite (Art. 10 e Art. 15). Seguem os **5 encontros de orientação** com ficha assinada
   (Art. 19, II e Art. 24).

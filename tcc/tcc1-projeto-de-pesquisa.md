@@ -356,7 +356,9 @@ classificações automáticas.
 **Esfera de governo**, pelo nome do publicador, testando primeiro os sinais
 municipais, depois os estaduais e por último os federais, porque "municipal" é
 menos ambíguo que "secretaria". Resultado: 85 federais, 206 estaduais, 95
-municipais e 10 indeterminados (2,5%).
+municipais e 10 indeterminados (2,5%). A validação manual encontrou um erro de
+regra, já corrigido: os aplicativos do STJ, tribunal da União, saíam estaduais
+(Seção 2.12).
 
 **Tratamento de dado sensível**, por palavras-chave no título e na descrição,
 em quatro grupos: saúde, biometria, previdência e assistência social. Resultado:
@@ -364,8 +366,9 @@ em quatro grupos: saúde, biometria, previdência e assistência social. Resulta
 17 em biometria e 5 em assistência social (um aplicativo pode estar em mais de
 um grupo). O critério automático é mais amplo que o da LGPD: previdência e
 assistência social não são, por si, dado sensível no sentido do Art. 5º, II. A
-validação manual vai aplicar a definição legal e reportar as duas contagens.
-Mesmo pelo critério estrito, o grupo de saúde sozinho tem 125 aplicativos.
+validação manual de uma amostra (Seção 2.12) mostrou que esse critério por
+palavra-chave erra em 28,6% dos aplicativos oficiais, nos dois sentidos; as
+contagens acima são, por isso, provisórias.
 
 **Faixa de instalações**, em escala logarítmica, pela ordem de grandeza do
 número mínimo de instalações informado pela loja (10⁰, 10¹, …, 10⁹). Dois
@@ -404,7 +407,9 @@ instrumento. Os critérios foram escritos no script antes da rodada completa.
 
 Fonte: elaborado pelo autor (2026).
 
-As quatro hipóteses têm instrumento. Três ressalvas acompanham esse resultado.
+As quatro hipóteses têm instrumento. As contagens de esfera e de sensibilidade
+vêm da classificação automática, cuja taxa de erro foi medida depois (Seção
+2.12). Três ressalvas acompanham esse resultado.
 
 **Suporte comum.** As duas populações têm portes diferentes, e isso é
 propriedade do mundo, não do coletor: um aplicativo de prefeitura de cidade
@@ -761,7 +766,52 @@ cai de 12,3 para 11,4 pontos percentuais. Os 62 aplicativos novos ainda não
 foram cruzados com o AndroZoo; como a coleta completa vai baixar governo e
 controle direto da Google Play, isso não bloqueia a etapa seguinte.
 
-### 2.12 Aspectos éticos das etapas executadas
+### 2.12 Validação manual de uma amostra do corpus
+
+Em 4 de novembro de 2026, uma amostra do corpus foi conferida na Google Play,
+ficha por ficha, e, quando a ficha não bastava, na documentação do órgão
+responsável. A amostra é sistemática: com os 396 aplicativos ordenados pelo
+identificador, foram tomados o primeiro e um a cada 13, até completar 30. A eles
+se somaram dois casos com erro já conhecido, o aplicativo do STJ e o Nota
+Paraná, que ficam fora das taxas abaixo porque não foram sorteados. Para cada
+aplicativo foram registrados se o publicador é órgão público, a esfera e se o
+aplicativo trata dado de saúde ou biométrico (Art. 5º, II da LGPD), com a
+evidência de cada decisão.
+
+| Na amostra sorteada (n = 30) | Divergências | Proporção | IC95% (Wilson) |
+|---|---|---|---|
+| Publicador não é órgão público | 2 de 30 | 6,7% | 1,8% a 21,3% |
+| Esfera errada, entre os oficiais | 0 de 28 | 0,0% | 0,0% a 12,1% |
+| Sensibilidade errada, entre os oficiais | 8 de 28 | 28,6% | 15,3% a 47,1% |
+| Aplicativos com ao menos uma divergência | 10 de 30 | 33,3% | 19,2% a 51,2% |
+
+Fonte: elaborado pelo autor (2026).
+
+Os dois publicadores privados são empresas que fornecem aplicativos a
+prefeituras e publicam com nome de serviço público. A esfera não errou na
+amostra sorteada. O erro do STJ, que saía estadual, vinha de uma regra: o nome
+dos tribunais da União contém a expressão "tribunal de justiça", usada para
+reconhecer os tribunais estaduais. A regra foi corrigida; ela afetava os três
+aplicativos do STJ no corpus.
+
+A classificação de sensibilidade errou nos dois sentidos. Marcou como sensíveis
+aplicativos que só têm a palavra-chave no nome ou na descrição: um inventário de
+bens de uma secretaria que leva "Previdência" no nome, um aplicativo de exames
+de equídeos e um de escalas de profissionais de saúde que não coleta dado de
+saúde dos usuários. E deixou de marcar aplicativos que tratam dado sensível sem
+usar as palavras previstas: prova de vida por selfie, agendamento de exames e
+leitura de atestado médico. Entre os 28 oficiais sorteados, 11 tratam dado
+sensível pela conferência, contra 13 pela classificação automática: a proporção
+agregada é parecida, mas o rótulo de cada aplicativo não é confiável.
+
+Daí vêm duas mudanças no método. A H3, que compara aplicativos sensíveis e não
+sensíveis, vai usar a classificação manual da sensibilidade nos 396
+aplicativos, com os critérios e o registro de evidência desta amostra. E a
+oficialidade será conferida nos 396 antes da coleta completa, porque a taxa de
+6,7% corresponde a cerca de 26 aplicativos privados no corpus. A esfera
+automática, com a regra corrigida, é conferida junto.
+
+### 2.13 Aspectos éticos das etapas executadas
 
 As etapas executadas usaram apenas metadados públicos da Google Play e uma
 requisição GET à política de privacidade divulgada pelo próprio publicador, com
@@ -784,10 +834,11 @@ exige cinco encontros de orientação registrados no bimestre.
 | Período | Atividade | Produto |
 |---|---|---|
 | 20/10 a 26/10 | Rodar a etapa de cobertura do piloto. Primeiro encontro de orientação: apresentar este texto e a mudança de detectores da H4 | Tabela de cobertura do AndroZoo; ficha de orientação 1 |
-| 27/10 a 02/11 | Validação manual do corpus na planilha gerada pelo script: vínculo oficial, esfera e dado sensível pelo Art. 5º, II | Corpus validado; taxa de erro da classificação automática |
+| 27/10 a 04/11 | Validação manual de uma amostra de 32 aplicativos (feita em 04/11, Seção 2.12) | Taxa de erro da classificação automática |
 | 27/10 a 09/11 | Piloto: amostra, download, detecção e concordância nos 20 aplicativos | Números preliminares da H4; ficha de orientação 2 |
 | 03/11 a 16/11 | Revisão sistemática conforme Kitchenham e Charters (2007): protocolo, termos, bases (Scopus, ACM DL, IEEE Xplore), seleção | Protocolo e lista de trabalhos selecionados |
 | 10/11 a 16/11 | Testar a coleta direta da Google Play, com hash registrado, em cinco aplicativos fora do AndroZoo | Procedimento de coleta direta definido; ficha de orientação 3 |
+| 10/11 a 23/11 | Classificação manual da oficialidade e da sensibilidade dos 396 aplicativos, com os critérios da Seção 2.12 | Corpus validado; rótulos manuais para a H3 |
 | 17/11 a 23/11 | Traduzir os Arts. 7º, 11 e 33 da LGPD em critérios verificáveis; congelar o protocolo e o plano de análise com data registrada no repositório; preparar a apresentação | Protocolo congelado; slides da simulação; ficha de orientação 4 |
 | 24/11 a 01/12 | Simulação de defesa | Apresentação e sugestões da avaliadora |
 | até 03/12 | Incorporar as sugestões e entregar a redação no modelo ABNT | Redação entregue; ficha de orientação 5 |

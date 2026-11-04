@@ -125,6 +125,16 @@ FEDERAL = _norm_conj({
     "caixa economica", "exercito", "marinha", "aeronautica",
 })
 
+# Órgãos da União com "tribunal" ou "justiça" no nome, como os estaduais. Sem
+# vir antes, o Superior Tribunal de Justiça casava "tribunal de justica" e saía
+# estadual: foram 3 apps no corpus, achados na validação manual de 04/11.
+FEDERAL_PRIMEIRO = _norm_conj({
+    "superior tribunal", "tribunal superior", "supremo tribunal",
+    "tribunal regional federal", "tribunal regional do trabalho",
+    "tribunal regional eleitoral", "justica federal", "justica do trabalho",
+    "justica eleitoral",
+})
+
 # Publicadores cujo nome não carrega sinal de esfera nenhum.
 ESFERA_CONHECIDA = {
     normalizar("serviços e informações do brasil"): "federal",
@@ -139,18 +149,20 @@ ESFERA_CONHECIDA = {
 
 
 def classificar_esfera(dev: str) -> str:
-    """Municipal -> estadual -> federal. A ordem importa.
+    """Tribunais da União -> municipal -> estadual -> federal. A ordem importa.
 
     'Secretaria Municipal de Saúde' contém 'saúde' e 'secretaria', que são
     ambíguos; 'municipal' não é. Por isso o sinal menos ambíguo decide primeiro.
+    Os tribunais da União vêm antes de tudo porque o nome deles contém os
+    sinais estaduais ('Superior Tribunal de Justiça').
     """
     d = normalizar(dev)
     if not d:
         return "indeterminado"
     if d in ESFERA_CONHECIDA:
         return ESFERA_CONHECIDA[d]
-    for conj, rotulo in ((MUNICIPAL, "municipal"), (ESTADUAL, "estadual"),
-                         (FEDERAL, "federal")):
+    for conj, rotulo in ((FEDERAL_PRIMEIRO, "federal"), (MUNICIPAL, "municipal"),
+                         (ESTADUAL, "estadual"), (FEDERAL, "federal")):
         if any(tem_termo(d, t) for t in conj):
             return rotulo
     return "indeterminado"
@@ -752,6 +764,10 @@ def autoteste():
         ("Ministério da Saúde", "federal"),
         ("Serviços e Informações do Brasil", "federal"),
         ("Justiça Eleitoral Brasileira", "federal"),
+        ("Superior Tribunal de Justiça", "federal"),
+        ("Tribunal Regional do Trabalho da 4ª Região", "federal"),
+        ("Tribunal Regional Eleitoral de São Paulo", "federal"),
+        ("Tribunal de Justiça de Pernambuco", "estadual"),
         ("Direct Cursus Computer Systems Trading LLC", "indeterminado"),
         ("SERPROS Fundo Multipatrocinado", "indeterminado"),
         ("", "indeterminado"),

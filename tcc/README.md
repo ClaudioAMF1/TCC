@@ -33,7 +33,8 @@ de 28/10; se o texto mudar lá, é o `.tex` que vale.
 | Detectores da H4 | MobSF, Androguard, Exodus | A (Exodus, código), B (Exodus, rede), C (Disconnect, rede); MobSF como verificação | O MobSF usa a base e a regra do Exodus; o Androguard só extrai. Ver Seção 2.9 |
 | Medida principal | (não definida) | Detector A; C como verificação independente; B só para medir o efeito do método | No piloto, 72% das detecções de B foram falso positivo e B não vê o Firebase Analytics. **Decisão a levar ao orientador** |
 | Menor diferença detectável | 5,1 p.p. | 5,7 a 11,4 p.p. com o controle de 252 (6,0 a 12,3 com 190), conforme a taxa de base | O 5,1 usava taxa de base de 1% (a de anúncios) |
-| Dado sensível | 152 apps | 152 pelo critério automático; a validação aplica o Art. 5º, II | Previdência e assistência social não são dado sensível por si |
+| Dado sensível | 152 apps | 152 pelo critério automático, provisório; a H3 passa a usar classificação manual dos 396 | A validação de 04/11 mediu 28,6% de erro na sensibilidade automática (Seção 2.12) |
+| Oficialidade | 396 apps de órgão público | 396 candidatos; conferência dos 396 antes da coleta | 2 de 30 sorteados (6,7%) eram de empresa privada |
 | Suporte comum | 92,4% por faixa; 27,4% por categoria | 92,4% por faixa; por categoria, 77,9% com o controle de 190 e 89,1% com o ampliado (252) | O 27,4% vinha de uma rodada anterior ao complemento de apps pequenos e não se reproduz. Ampliação feita em 04/11, Seção 2.11 |
 | Escopo | Rastreadores **e** falhas de configuração de segurança | Só rastreadores | Nenhuma das hipóteses H1 a H4 mede postura de segurança: ela não tinha hipótese nem critério de decisão. Para voltar, precisa de hipótese própria |
 | H3 | "não apresentam postura de proteção superior" | "não apresentam menos rastreadores" | "Postura de proteção" não tinha medida definida |

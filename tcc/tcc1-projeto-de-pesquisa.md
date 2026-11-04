@@ -785,7 +785,7 @@ Fonte: elaborado pelo autor (2026).
 | Prevalência muito alta ou muito baixa | κ instável mesmo com acordo alto | Reportar, junto do κ, as proporções de concordância positiva e negativa |
 | Cobertura por categoria continuar baixa | Ajuste por categoria na H1 sem sustentação | Restringir a H1 às categorias com suporte e reportar a análise com e sem a restrição |
 | Achado grave atribuível a um órgão | Risco ao cidadão se publicado antes da correção | Comunicação prévia ao órgão e, se couber, ao CTIR Gov e à ANPD, com prazo definido com o orientador |
-| Atraso na orientação ou no termo de aceite | Reprovação por falta de encontros | Agendar os cinco encontros já no primeiro deles |
+| Atraso nos encontros de orientação | Reprovação por falta de encontros | Agendar os cinco encontros já no primeiro deles |
 
 Fonte: elaborado pelo autor (2026).
 

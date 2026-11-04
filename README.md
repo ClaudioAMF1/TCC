@@ -158,10 +158,16 @@ nenhum explora falha, nenhum baixa conteúdo de área autenticada.
 | `teste_viabilidade_n3.py` | Enumera aplicativos governamentais na Play Store por termo e por catálogo de publicador |
 | `teste_viabilidade_n3_robusto.py` | Mede a **porta de cada hipótese** antes de baixar APK: pareamento (H1), política de privacidade acessível (H2), povoamento das células (H3), potência estatística, e um sinal preliminar da variável dependente |
 | `piloto_androzoo.py` | **Piloto da H4**: cobertura do AndroZoo, sorteio de 20 apps, download pelo hash, três detectores (Exodus código, Exodus rede, Disconnect) e κ de Fleiss / τ de Kendall. Passo a passo em `tcc/piloto-passo-a-passo.md` |
+| `ampliar_controle.py` | Procura comerciais nas células categoria × faixa de instalações em que o controle falta, para o suporte comum da H1. `--diagnostico` só mede |
+| `coleta_google_play.py` | Baixa APKs direto da Google Play pelo `apkeep`, registra SHA-256 e versão e guarda o base junto dos do AndroZoo. Passo a passo em `tcc/coleta-passo-a-passo.md` |
 | `teste_viabilidade_malware.py` | Consulta metadados de famílias de malware bancário no MalwareBazaar e mede compartilhamento de imphash entre famílias, com grupo de controle não brasileiro |
 | `teste_viabilidade_s3.py` | Consulta SPF, DKIM, DMARC, MX e NS de domínios públicos brasileiros e mede se há **variação** a explicar e se a postura é herdada do fornecedor de TI |
 
 ### Como rodar
+
+> **O projeto fica em `~/Projetos/TCC`, fora do iCloud.** Na pasta Documentos
+> sincronizada, o macOS tira arquivos do disco e o git passa a falhar com
+> `mmap failed: Operation canceled`.
 
 ```bash
 python3 -m venv .venv
@@ -241,9 +247,9 @@ python3 scripts/teste_viabilidade_n1.py --apenas-contagem
   redirecionamento, não ausência de documento. Eleva a taxa da H2.
 - **Revisar 30 linhas ao acaso** da planilha pré-classificada. A taxa de correção mede o
   erro do classificador e vira número da seção de ameaças à validade.
-- **Orientador.** A apresentação das linhas de pesquisa já ocorreu; o termo de aceite
-  precisa ser formalizado (Art. 10 e Art. 15), e é preciso confirmar a elegibilidade do
-  professor pretendido junto à Coordenação (Art. 13, §1º e §6º).
+- ~~**Orientador.**~~ O Prof. Eduardo Arthur Izycki aprovou o tema e assinou o termo de
+  aceite (Art. 10 e Art. 15). Seguem os **5 encontros de orientação** com ficha assinada
+  (Art. 19, II e Art. 24).
 - ~~**Acesso ao AndroZoo.**~~ Concedido em 17/09, menos de 6h após o pedido. A chave é de
   **uso individual** e vive só em variável de ambiente; o uso do acervo **obriga a citar**
   dois trabalhos — ver `desenhos/N3-acesso-androzoo.md`.

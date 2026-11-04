@@ -43,7 +43,7 @@ except ImportError:
         "Falta a dependência 'google-play-scraper'.\n\n"
         "No macOS com Python do Homebrew, instalar no sistema é bloqueado\n"
         "(PEP 668). Use o ambiente virtual do projeto:\n\n"
-        "    cd ~/Documents/TCC\n"
+        "    cd ~/Projetos/TCC\n"
         "    python3 -m venv .venv\n"
         "    source .venv/bin/activate\n"
         "    pip install google-play-scraper cryptography\n\n"

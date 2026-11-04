@@ -32,9 +32,9 @@ de 28/10; se o texto mudar lá, é o `.tex` que vale.
 | Fonte dos APKs | AndroZoo | AndroZoo para os 92 apps de governo do acervo (23,2%); Google Play direta, com hash, para os outros 304 | Cobertura medida em 26/10. Ver Seção 2.10 |
 | Detectores da H4 | MobSF, Androguard, Exodus | A (Exodus, código), B (Exodus, rede), C (Disconnect, rede); MobSF como verificação | O MobSF usa a base e a regra do Exodus; o Androguard só extrai. Ver Seção 2.9 |
 | Medida principal | (não definida) | Detector A; C como verificação independente; B só para medir o efeito do método | No piloto, 72% das detecções de B foram falso positivo e B não vê o Firebase Analytics. **Decisão a levar ao orientador** |
-| Menor diferença detectável | 5,1 p.p. | 6,0 a 12,3 p.p., conforme a taxa de base | O 5,1 usava taxa de base de 1% (a de anúncios) |
+| Menor diferença detectável | 5,1 p.p. | 5,7 a 11,4 p.p. com o controle de 252 (6,0 a 12,3 com 190), conforme a taxa de base | O 5,1 usava taxa de base de 1% (a de anúncios) |
 | Dado sensível | 152 apps | 152 pelo critério automático; a validação aplica o Art. 5º, II | Previdência e assistência social não são dado sensível por si |
-| Suporte comum | 92,4% | 92,4% por faixa; 27,4% por categoria | Os dois números vão lado a lado; ampliar o controle está no plano |
+| Suporte comum | 92,4% por faixa; 27,4% por categoria | 92,4% por faixa; por categoria, 77,9% com o controle de 190 e 89,1% com o ampliado (252) | O 27,4% vinha de uma rodada anterior ao complemento de apps pequenos e não se reproduz. Ampliação feita em 04/11, Seção 2.11 |
 | Escopo | Rastreadores **e** falhas de configuração de segurança | Só rastreadores | Nenhuma das hipóteses H1 a H4 mede postura de segurança: ela não tinha hipótese nem critério de decisão. Para voltar, precisa de hipótese própria |
 | H3 | "não apresentam postura de proteção superior" | "não apresentam menos rastreadores" | "Postura de proteção" não tinha medida definida |
 | Título | "...postura de segurança e soberania de dados..." | "...e soberania de dados..." | Segue o escopo |

@@ -103,7 +103,7 @@ Trabalho de Conclusão de Curso.}
 \imprimirfolhaderosto
 
 \begin{resumo}
-Aplicativos móveis do governo brasileiro concentram serviços para os quais o cidadão não tem alternativa, como previdência, saúde e documentos digitais, e parte deles trata dado pessoal sensível nos termos da Lei Geral de Proteção de Dados Pessoais (LGPD). A literatura sobre aplicativos comerciais mostra que a maioria embarca bibliotecas de rastreamento de terceiros, mas os estudos consultados não examinam o parque governamental brasileiro nem comparam a população estudada com uma linha de base pareada. Este trabalho mede a presença de rastreadores de terceiros em aplicativos governamentais brasileiros e a compara com a de aplicativos comerciais de mesma categoria e porte, por análise estática dos pacotes de instalação, fixados por hash. Nesta primeira etapa, foram construídos um corpus de 396 aplicativos candidatos, de 71 publicadores públicos das três esferas de governo, e um grupo de controle de 190 aplicativos comerciais, e foi verificado, antes de qualquer download, se cada hipótese dispõe de instrumento e de tamanho amostral suficientes. O principal resultado obtido até aqui é que nenhum dos 396 aplicativos governamentais declara exibir anúncios na Google Play (IC95\% de 0\% a 1,0\%), contra 33,2\% dos aplicativos do controle (IC95\% de 26,9\% a 40,1\%). Como a declaração de anúncios é um limite inferior do rastreamento, o resultado não estima a prevalência de rastreadores, mas indica sua natureza: se houver rastreamento nesses aplicativos, ele vem de bibliotecas de análise de uso e de infraestrutura, e não de monetização, o que desloca o problema da comercialização de dados para a soberania de dados. Um segundo resultado é metodológico: a inspeção do código do MobSF mostrou que sua detecção de rastreadores aplica a base de assinaturas do Exodus Privacy com a mesma regra de casamento, de modo que as duas ferramentas não são detectores independentes, e o instrumento de comparação entre detectores foi redefinido. O terceiro resultado é que o AndroZoo, acervo acadêmico usado como fonte dos pacotes, contém apenas 23,2\% dos aplicativos governamentais, contra 84,2\% do controle. O porte explica parte da diferença, mas, na mesma faixa de instalações, a razão de chances de um aplicativo governamental estar no acervo é de 0,13 (IC95\% de 0,07 a 0,24), e a maior parte do corpus terá de ser coletada direto da loja. Num piloto com 20 aplicativos, a proporção com ao menos um rastreador variou de 75\% a 95\% conforme o detector, e a conferência manual mostrou que 72\% das detecções do detector baseado em domínios eram falsos positivos, vindos de assinaturas que tomam qualquer link do Google ou do Facebook por SDK.
+Aplicativos móveis do governo brasileiro concentram serviços para os quais o cidadão não tem alternativa, como previdência, saúde e documentos digitais, e parte deles trata dado pessoal sensível nos termos da Lei Geral de Proteção de Dados Pessoais (LGPD). A literatura sobre aplicativos comerciais mostra que a maioria embarca bibliotecas de rastreamento de terceiros, mas os estudos consultados não examinam o parque governamental brasileiro nem comparam a população estudada com uma linha de base pareada. Este trabalho mede a presença de rastreadores de terceiros em aplicativos governamentais brasileiros e a compara com a de aplicativos comerciais de mesma categoria e porte, por análise estática dos pacotes de instalação, fixados por hash. Nesta primeira etapa, foram construídos um corpus de 396 aplicativos candidatos, de 71 publicadores públicos das três esferas de governo, e um grupo de controle de 190 aplicativos comerciais, depois ampliado para 252, e foi verificado, antes de qualquer download, se cada hipótese dispõe de instrumento e de tamanho amostral suficientes. O principal resultado obtido até aqui é que nenhum dos 396 aplicativos governamentais declara exibir anúncios na Google Play (IC95\% de 0\% a 1,0\%), contra 33,2\% dos aplicativos do controle (IC95\% de 26,9\% a 40,1\%). Como a declaração de anúncios é um limite inferior do rastreamento, o resultado não estima a prevalência de rastreadores, mas indica sua natureza: se houver rastreamento nesses aplicativos, ele vem de bibliotecas de análise de uso e de infraestrutura, e não de monetização, o que desloca o problema da comercialização de dados para a soberania de dados. Um segundo resultado é metodológico: a inspeção do código do MobSF mostrou que sua detecção de rastreadores aplica a base de assinaturas do Exodus Privacy com a mesma regra de casamento, de modo que as duas ferramentas não são detectores independentes, e o instrumento de comparação entre detectores foi redefinido. O terceiro resultado é que o AndroZoo, acervo acadêmico usado como fonte dos pacotes, contém apenas 23,2\% dos aplicativos governamentais, contra 84,2\% do controle. O porte explica parte da diferença, mas, na mesma faixa de instalações, a razão de chances de um aplicativo governamental estar no acervo é de 0,13 (IC95\% de 0,07 a 0,24), e a maior parte do corpus terá de ser coletada direto da loja. Num piloto com 20 aplicativos, a proporção com ao menos um rastreador variou de 75\% a 95\% conforme o detector, e a conferência manual mostrou que 72\% das detecções do detector baseado em domínios eram falsos positivos, vindos de assinaturas que tomam qualquer link do Google ou do Facebook por SDK.
 
 \vspace{\onelineskip}
 \noindent\textbf{Palavras-chave}: rastreamento por terceiros; aplicativos governamentais; privacidade; LGPD; análise estática.
@@ -111,7 +111,7 @@ Aplicativos móveis do governo brasileiro concentram serviços para os quais o c
 
 \begin{resumo}[Abstract]
 \begin{otherlanguage*}{english}
-Brazilian government mobile applications concentrate services for which citizens have no alternative, such as social security, health care and digital documents, and some of them process sensitive personal data as defined by the Brazilian General Data Protection Law (LGPD). Research on commercial applications shows that most of them embed third-party tracking libraries, but the studies reviewed neither examine Brazilian government applications nor compare the studied population against a matched baseline. This work measures the presence of third-party trackers in Brazilian government applications and compares it with that of commercial applications of the same category and size, through static analysis of installation packages pinned by hash. In this first stage, a corpus of 396 candidate applications from 71 public-sector publishers across the three levels of government and a control group of 190 commercial applications were built, and, before any download, it was verified whether each hypothesis has an adequate instrument and sample size. The main result obtained so far is that none of the 396 government applications declares showing ads on Google Play (95\% CI from 0\% to 1.0\%), against 33.2\% of the control applications (95\% CI from 26.9\% to 40.1\%). Since the ad declaration is a lower bound for tracking, this result does not estimate tracker prevalence, but it indicates its nature: if these applications contain tracking, it comes from usage analytics and infrastructure libraries rather than monetization, which shifts the problem from the sale of data to data sovereignty. A second result is methodological: an inspection of the MobSF source code showed that its tracker detection applies the Exodus Privacy signature database with the same matching rule, so the two tools are not independent detectors, and the instrument for comparing detectors was redefined. The third result is that AndroZoo, the academic collection used as the package source, contains only 23.2\% of the government applications, against 84.2\% of the control group. Size explains part of the gap, but within the same install tier the odds ratio of a government application being in the collection is 0.13 (95\% CI from 0.07 to 0.24), so most of the corpus will have to be collected directly from the store. In a pilot with 20 applications, the share with at least one tracker ranged from 75\% to 95\% depending on the detector, and manual review showed that 72\% of the detections made by the domain-based detector were false positives, caused by signatures that take any Google or Facebook link for an SDK.
+Brazilian government mobile applications concentrate services for which citizens have no alternative, such as social security, health care and digital documents, and some of them process sensitive personal data as defined by the Brazilian General Data Protection Law (LGPD). Research on commercial applications shows that most of them embed third-party tracking libraries, but the studies reviewed neither examine Brazilian government applications nor compare the studied population against a matched baseline. This work measures the presence of third-party trackers in Brazilian government applications and compares it with that of commercial applications of the same category and size, through static analysis of installation packages pinned by hash. In this first stage, a corpus of 396 candidate applications from 71 public-sector publishers across the three levels of government and a control group of 190 commercial applications, later expanded to 252, were built, and, before any download, it was verified whether each hypothesis has an adequate instrument and sample size. The main result obtained so far is that none of the 396 government applications declares showing ads on Google Play (95\% CI from 0\% to 1.0\%), against 33.2\% of the control applications (95\% CI from 26.9\% to 40.1\%). Since the ad declaration is a lower bound for tracking, this result does not estimate tracker prevalence, but it indicates its nature: if these applications contain tracking, it comes from usage analytics and infrastructure libraries rather than monetization, which shifts the problem from the sale of data to data sovereignty. A second result is methodological: an inspection of the MobSF source code showed that its tracker detection applies the Exodus Privacy signature database with the same matching rule, so the two tools are not independent detectors, and the instrument for comparing detectors was redefined. The third result is that AndroZoo, the academic collection used as the package source, contains only 23.2\% of the government applications, against 84.2\% of the control group. Size explains part of the gap, but within the same install tier the odds ratio of a government application being in the collection is 0.13 (95\% CI from 0.07 to 0.24), so most of the corpus will have to be collected directly from the store. In a pilot with 20 applications, the share with at least one tracker ranged from 75\% to 95\% depending on the detector, and manual review showed that 72\% of the detections made by the domain-based detector were false positives, caused by signatures that take any Google or Facebook link for an SDK.
 
 \vspace{\onelineskip}
 \noindent\textbf{Keywords}: third-party tracking; government applications; privacy; LGPD; static analysis.
@@ -271,7 +271,7 @@ Este documento tem dois capítulos além desta introdução. O Capítulo~\ref{ca
 
 \chapter{Metodologia das etapas executadas}\label{cap:2}
 
-Este capítulo descreve o que foi feito até 28 de outubro de 2026. Todos os scripts citados estão no repositório do trabalho, na pasta \texttt{scripts/\allowbreak{}}.
+Este capítulo descreve o que foi feito até 4 de novembro de 2026. Todos os scripts citados estão no repositório do trabalho, na pasta \texttt{scripts/\allowbreak{}}.
 
 \section{Escolha do tema por testes de viabilidade}\label{sec:2.1}
 
@@ -372,7 +372,7 @@ Total & 394 & 190 \\
 \end{minipage}
 \end{center}
 
-Os 30 aplicativos abaixo de qualquer controle (7,6\%) ficam fora da comparação da H1, pelo procedimento de restrição ao suporte comum, e permanecem na H3, que compara aplicativos governamentais entre si. O critério da tabela considera apenas a faixa. Exigida a sobreposição dentro de cada categoria, a cobertura registrada cai para 27,4\%. Ampliar o controle dentro das categorias mais frequentes é atividade do plano (Seção~\ref{sec:3.1}).
+Os 30 aplicativos abaixo de qualquer controle (7,6\%) ficam fora da comparação da H1, pelo procedimento de restrição ao suporte comum, e permanecem na H3, que compara aplicativos governamentais entre si. O critério da tabela considera apenas a faixa. Exigida a sobreposição dentro de cada categoria, a cobertura é de 307 de 394 (77,9\%). O valor de 27,4\% citado na proposta não se reproduz com o controle final: vinha de uma rodada anterior ao complemento de aplicativos pequenos descrito na Seção~\ref{sec:2.4}. A ampliação do controle dentro de cada categoria está na Seção~\ref{sec:2.11}.
 
 \textbf{Políticas de privacidade.} Das 323 políticas acessíveis, 321 estão em HTML e uma em PDF. Entre as que falharam, 27 responderam HTTP 403 e 15 com redirecionamento, o que indica bloqueio do agente automático ou mudança de endereço, e não ausência de documento. A conferência manual tende a elevar a taxa.
 
@@ -631,7 +631,32 @@ Com 20 aplicativos, o piloto não testa a H4, mas mostra que o instrumento enxer
 
 Os cinco aplicativos sem nenhum rastreador pelo detector A são todos governamentais (9 de 14 governamentais com rastreador, contra 6 de 6 do controle). Com 20 aplicativos, sorteados apenas entre os que estão no AndroZoo, isso não diz nada sobre a H1; é registrado como ponto a observar na coleta completa.
 
-\section{Aspectos éticos das etapas executadas}\label{sec:2.11}
+\section{Ampliação do controle por categoria}\label{sec:2.11}
+
+Em 4 de novembro de 2026, o controle foi ampliado dentro de cada categoria, com o script \texttt{scripts/\allowbreak{}ampliar\_\allowbreak{}controle.\allowbreak{}py}. Para cada célula de categoria e faixa de instalações em que havia aplicativo governamental e menos de dois comerciais, o script buscou na Google Play pelo nome da categoria, por termos genéricos e pelas palavras mais frequentes nos títulos dos aplicativos governamentais daquela categoria, que trazem aplicativos comerciais do mesmo assunto. Foram aceitos apenas aplicativos de publicador não oficial, da mesma categoria e de uma das faixas em falta, com teto de 80 fichas lidas por categoria. As faixas abaixo de $10^{2}$ ficaram de fora, porque os aplicativos governamentais nelas já saem da H1 pela restrição ao suporte comum.
+
+\begin{center}
+\begin{minipage}{\textwidth}
+\centering
+\small
+\tabelacaption{Cobertura do controle antes e depois da ampliação por categoria}\label{tabela:14}
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}X>{\centering\arraybackslash}X>{\centering\arraybackslash}X}
+\toprule
+\textbf{Medida} & \textbf{Antes} & \textbf{Depois} \\
+\midrule
+Aplicativos comerciais no controle & 190 & 252 \\
+Governo dentro da amplitude de faixas do controle da mesma categoria & 307 de 394 (77,9\%) & 351 de 394 (89,1\%) \\
+Governo com comercial na mesma categoria e na mesma faixa & 228 de 394 (57,9\%) & 344 de 394 (87,3\%) \\
+Comerciais em falta para dois por célula & 80, em 44 células & 18 \\
+\bottomrule
+\end{tabularx}
+\fonte{Elaborado pelo autor (2026).}
+\end{minipage}
+\end{center}
+
+As 18 vagas restantes estão, na maioria, na faixa de $10^{2}$ instalações, em que a busca da loja quase não devolve aplicativo comercial. Com 252 aplicativos de controle, a menor diferença detectável no pior caso, com taxa de base de 50\%, cai de 12,3 para 11,4 pontos percentuais. Os 62 aplicativos novos ainda não foram cruzados com o AndroZoo; como a coleta completa vai baixar governo e controle direto da Google Play, isso não bloqueia a etapa seguinte.
+
+\section{Aspectos éticos das etapas executadas}\label{sec:2.12}
 
 As etapas executadas usaram apenas metadados públicos da Google Play e uma requisição GET à política de privacidade divulgada pelo próprio publicador, com agente identificado como pesquisa acadêmica. Nenhum aplicativo foi instalado, nenhuma área autenticada foi acessada e nenhum dado pessoal foi coletado. O objeto de estudo é o aplicativo, não pessoas.
 
@@ -645,7 +670,7 @@ As datas da disciplina são as do plano de ensino: simulação de defesa em 24/1
 \begin{minipage}{\textwidth}
 \centering
 \small
-\quadrocaption{Cronograma até a defesa do Projeto Capstone I}\label{quadro:14}
+\quadrocaption{Cronograma até a defesa do Projeto Capstone I}\label{quadro:15}
 \begin{tabularx}{\textwidth}{|l|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|}
 \hline
 \textbf{Período} & \textbf{Atividade} & \textbf{Produto} \\
@@ -654,7 +679,7 @@ As datas da disciplina são as do plano de ensino: simulação de defesa em 24/1
 27/10 a 02/11 & Validação manual do corpus na planilha gerada pelo script: vínculo oficial, esfera e dado sensível pelo Art. 5º, II & Corpus validado; taxa de erro da classificação automática \\ \hline
 27/10 a 09/11 & Piloto: amostra, download, detecção e concordância nos 20 aplicativos & Números preliminares da H4; ficha de orientação 2 \\ \hline
 03/11 a 16/11 & Revisão sistemática conforme \citeonline{kitchenham2007}: protocolo, termos, bases (Scopus, ACM DL, IEEE Xplore), seleção & Protocolo e lista de trabalhos selecionados \\ \hline
-10/11 a 16/11 & Ampliar o controle nas categorias com menor cobertura; testar a coleta direta da Google Play, com hash registrado, em cinco aplicativos fora do AndroZoo & Cobertura por categoria recalculada; procedimento de coleta direta definido; ficha de orientação 3 \\ \hline
+10/11 a 16/11 & Testar a coleta direta da Google Play, com hash registrado, em cinco aplicativos fora do AndroZoo & Procedimento de coleta direta definido; ficha de orientação 3 \\ \hline
 17/11 a 23/11 & Traduzir os Arts. 7º, 11 e 33 da LGPD em critérios verificáveis; congelar o protocolo e o plano de análise com data registrada no repositório; preparar a apresentação & Protocolo congelado; slides da simulação; ficha de orientação 4 \\ \hline
 24/11 a 01/12 & Simulação de defesa & Apresentação e sugestões da avaliadora \\ \hline
 até 03/12 & Incorporar as sugestões e entregar a redação no modelo ABNT & Redação entregue; ficha de orientação 5 \\ \hline
@@ -670,7 +695,7 @@ até 03/12 & Incorporar as sugestões e entregar a redação no modelo ABNT & Re
 \begin{minipage}{\textwidth}
 \centering
 \small
-\quadrocaption{Cronograma do Projeto Capstone II}\label{quadro:15}
+\quadrocaption{Cronograma do Projeto Capstone II}\label{quadro:16}
 \begin{tabularx}{\textwidth}{|l|>{\raggedright\arraybackslash}X|}
 \hline
 \textbf{Mês} & \textbf{Atividade} \\
@@ -691,7 +716,7 @@ Junho & Redação final, publicação do conjunto de dados e defesa \\ \hline
 \begin{minipage}{\textwidth}
 \centering
 \small
-\quadrocaption{Riscos e contingências}\label{quadro:16}
+\quadrocaption{Riscos e contingências}\label{quadro:17}
 \begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|}
 \hline
 \textbf{Risco} & \textbf{Efeito} & \textbf{Contingência} \\
@@ -699,7 +724,7 @@ Junho & Redação final, publicação do conjunto de dados e defesa \\ \hline
 Cobertura baixa do AndroZoo (ocorreu: 23,2\% do governo) & Fonte do pacote diferente entre os grupos; reconstrução parcial do corpus por terceiros & Coleta direta da loja com SHA-256 registrado; fonte registrada por aplicativo e usada em análise de sensibilidade; limitação declarada \\ \hline
 Versão do AndroZoo muito anterior à da loja & Resultado desatualizado & Reportar a defasagem; usar a coleta direta para os mais defasados \\ \hline
 Prevalência muito alta ou muito baixa & $\kappa$ instável mesmo com acordo alto & Reportar, junto do $\kappa$, as proporções de concordância positiva e negativa \\ \hline
-Cobertura por categoria continuar baixa & Ajuste por categoria na H1 sem sustentação & Restringir a H1 às categorias com suporte e reportar a análise com e sem a restrição \\ \hline
+Células de porte pequeno sem controle (18 vagas, na maioria em $10^{2}$) & Ajuste por categoria na H1 sem sustentação nessas células & Restringir a H1 às células com suporte e reportar a análise com e sem a restrição \\ \hline
 Achado grave atribuível a um órgão & Risco ao cidadão se publicado antes da correção & Comunicação prévia ao órgão e, se couber, ao CTIR Gov e à ANPD, com prazo definido com o orientador \\ \hline
 Atraso nos encontros de orientação & Reprovação por falta de encontros & Agendar os cinco encontros já no primeiro deles \\ \hline
 \end{tabularx}

@@ -15,8 +15,11 @@ source .venv/bin/activate
 
 ## Parte A. Ampliar o controle por categoria (1 a 2 h, quase tudo espera)
 
-**Para quê:** hoje só 27,4% dos apps de governo têm um comercial da mesma
-categoria na mesma amplitude de porte. O script procura comerciais exatamente
+**Feito em 04/11:** 62 comerciais novos, controle de 190 para 252, cobertura
+por categoria de 77,9% para 89,1%. Os passos ficam como registro e para refazer.
+
+**Para quê:** com o controle de 190, 77,9% dos apps de governo tinham um
+comercial da mesma categoria na mesma amplitude de porte, e 57,9% na mesma faixa. O script procura comerciais exatamente
 nas células categoria × faixa de instalações que faltam.
 
 ### A1. Testar e medir a falta (2 min)
@@ -26,8 +29,8 @@ python3 scripts/ampliar_controle.py --autoteste
 python3 scripts/ampliar_controle.py --diagnostico
 ```
 
-O diagnóstico não busca nada. Ele mostra a cobertura atual (deve dar perto dos
-27,4% de setembro) e quantos comerciais faltam em cada categoria.
+O diagnóstico não busca nada. Ele mostra a cobertura atual e quantos
+comerciais faltam em cada categoria.
 
 ### A2. Buscar (1 a 2 h)
 

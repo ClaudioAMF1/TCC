@@ -5,10 +5,11 @@ Amplia o grupo de controle comercial dentro de cada categoria da loja.
 POR QUE ESTE SCRIPT EXISTE
 --------------------------
 A H1 compara governo e comercial com categoria e faixa de instalações como
-covariáveis. O teste de 17/09 deu 92,4% de suporte comum olhando só a faixa,
-mas 27,4% exigindo a mesma categoria: em muitas categorias o controle não chega
-às faixas em que os apps de governo estão. Este script procura comerciais
-exatamente nas células (categoria × faixa) que faltam.
+covariáveis. O teste de 17/09 deu 92,4% de suporte comum olhando só a faixa;
+exigindo a mesma categoria, o controle de 190 cobria 77,9% pela amplitude e
+57,9% célula a célula. Este script procura comerciais exatamente nas células
+(categoria × faixa) que faltam. Na rodada de 04/11, achou 62 e levou as duas
+medidas a 89,1% e 87,3%.
 
 COMO PROCURA
 ------------
@@ -119,7 +120,7 @@ def celulas_em_falta(gov, controle, por_celula, faixa_minima):
 def cobertura(gov, controle):
     """Duas medidas, as mesmas do teste robusto:
     - amplitude: o app de governo está entre a menor e a maior faixa do controle
-      da MESMA categoria (é o 27,4% do teste de 17/09);
+      da MESMA categoria;
     - celula: existe comercial na mesma categoria e na mesma faixa."""
     por_cat = defaultdict(list)
     celulas = set()

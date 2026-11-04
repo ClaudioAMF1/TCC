@@ -37,7 +37,7 @@ compara com a de aplicativos comerciais de mesma categoria e porte, por análise
 estática dos pacotes de instalação, fixados por hash. Nesta
 primeira etapa, foram construídos um corpus de 396 aplicativos candidatos, de
 71 publicadores públicos das três esferas de governo, e um grupo de controle de
-190 aplicativos comerciais, e foi verificado, antes de qualquer download, se
+190 aplicativos comerciais, depois ampliado para 252, e foi verificado, antes de qualquer download, se
 cada hipótese dispõe de instrumento e de tamanho amostral suficientes. O
 principal resultado obtido até aqui é que nenhum dos 396 aplicativos
 governamentais declara exibir anúncios na Google Play (IC95% de 0% a 1,0%),
@@ -80,7 +80,7 @@ compares it with that of commercial applications of the same category and size,
 through static analysis of installation packages pinned by hash. In this first
 stage, a corpus of 396 candidate applications from 71
 public-sector publishers across the three levels of government and a control
-group of 190 commercial applications were built, and, before any download, it
+group of 190 commercial applications, later expanded to 252, were built, and, before any download, it
 was verified whether each hypothesis has an adequate instrument and sample size.
 The main result obtained so far is that none of the 396 government applications
 declares showing ads on Google Play (95% CI from 0% to 1.0%), against 33.2% of
@@ -288,7 +288,7 @@ acrescentados como capítulos próprios.
 
 ## 2 METODOLOGIA DAS ETAPAS EXECUTADAS
 
-Este capítulo descreve o que foi feito até 28 de outubro de 2026. Todos os
+Este capítulo descreve o que foi feito até 4 de novembro de 2026. Todos os
 scripts citados estão no repositório do trabalho, na pasta `scripts/`.
 
 ### 2.1 Escolha do tema por testes de viabilidade
@@ -422,9 +422,11 @@ Fonte: elaborado pelo autor (2026).
 Os 30 aplicativos abaixo de qualquer controle (7,6%) ficam fora da comparação da
 H1, pelo procedimento de restrição ao suporte comum, e permanecem na H3, que
 compara aplicativos governamentais entre si. O critério da tabela considera
-apenas a faixa. Exigida a sobreposição dentro de cada categoria, a cobertura
-registrada cai para 27,4%. Ampliar o controle dentro das categorias mais
-frequentes é atividade do plano (Seção 3.1).
+apenas a faixa. Exigida a sobreposição dentro de cada categoria, a cobertura é
+de 307 de 394 (77,9%). O valor de 27,4% citado na proposta não se reproduz com o
+controle final: vinha de uma rodada anterior ao complemento de aplicativos
+pequenos descrito na Seção 2.4. A ampliação do controle dentro de cada
+categoria está na Seção 2.11.
 
 **Políticas de privacidade.** Das 323 políticas acessíveis, 321 estão em HTML e
 uma em PDF. Entre as que falharam, 27 responderam HTTP 403 e 15 com
@@ -730,7 +732,36 @@ controle). Com 20 aplicativos, sorteados apenas entre os que estão no AndroZoo,
 isso não diz nada sobre a H1; é registrado como ponto a observar na coleta
 completa.
 
-### 2.11 Aspectos éticos das etapas executadas
+### 2.11 Ampliação do controle por categoria
+
+Em 4 de novembro de 2026, o controle foi ampliado dentro de cada categoria, com
+o script `scripts/ampliar_controle.py`. Para cada célula de categoria e faixa de
+instalações em que havia aplicativo governamental e menos de dois comerciais, o
+script buscou na Google Play pelo nome da categoria, por termos genéricos e
+pelas palavras mais frequentes nos títulos dos aplicativos governamentais
+daquela categoria, que trazem aplicativos comerciais do mesmo assunto. Foram
+aceitos apenas aplicativos de publicador não oficial, da mesma categoria e de
+uma das faixas em falta, com teto de 80 fichas lidas por categoria. As faixas
+abaixo de 10² ficaram de fora, porque os aplicativos governamentais nelas já
+saem da H1 pela restrição ao suporte comum.
+
+| Medida | Antes | Depois |
+|---|---|---|
+| Aplicativos comerciais no controle | 190 | 252 |
+| Governo dentro da amplitude de faixas do controle da mesma categoria | 307 de 394 (77,9%) | 351 de 394 (89,1%) |
+| Governo com comercial na mesma categoria e na mesma faixa | 228 de 394 (57,9%) | 344 de 394 (87,3%) |
+| Comerciais em falta para dois por célula | 80, em 44 células | 18 |
+
+Fonte: elaborado pelo autor (2026).
+
+As 18 vagas restantes estão, na maioria, na faixa de 10² instalações, em que a
+busca da loja quase não devolve aplicativo comercial. Com 252 aplicativos de
+controle, a menor diferença detectável no pior caso, com taxa de base de 50%,
+cai de 12,3 para 11,4 pontos percentuais. Os 62 aplicativos novos ainda não
+foram cruzados com o AndroZoo; como a coleta completa vai baixar governo e
+controle direto da Google Play, isso não bloqueia a etapa seguinte.
+
+### 2.12 Aspectos éticos das etapas executadas
 
 As etapas executadas usaram apenas metadados públicos da Google Play e uma
 requisição GET à política de privacidade divulgada pelo próprio publicador, com
@@ -756,7 +787,7 @@ exige cinco encontros de orientação registrados no bimestre.
 | 27/10 a 02/11 | Validação manual do corpus na planilha gerada pelo script: vínculo oficial, esfera e dado sensível pelo Art. 5º, II | Corpus validado; taxa de erro da classificação automática |
 | 27/10 a 09/11 | Piloto: amostra, download, detecção e concordância nos 20 aplicativos | Números preliminares da H4; ficha de orientação 2 |
 | 03/11 a 16/11 | Revisão sistemática conforme Kitchenham e Charters (2007): protocolo, termos, bases (Scopus, ACM DL, IEEE Xplore), seleção | Protocolo e lista de trabalhos selecionados |
-| 10/11 a 16/11 | Ampliar o controle nas categorias com menor cobertura; testar a coleta direta da Google Play, com hash registrado, em cinco aplicativos fora do AndroZoo | Cobertura por categoria recalculada; procedimento de coleta direta definido; ficha de orientação 3 |
+| 10/11 a 16/11 | Testar a coleta direta da Google Play, com hash registrado, em cinco aplicativos fora do AndroZoo | Procedimento de coleta direta definido; ficha de orientação 3 |
 | 17/11 a 23/11 | Traduzir os Arts. 7º, 11 e 33 da LGPD em critérios verificáveis; congelar o protocolo e o plano de análise com data registrada no repositório; preparar a apresentação | Protocolo congelado; slides da simulação; ficha de orientação 4 |
 | 24/11 a 01/12 | Simulação de defesa | Apresentação e sugestões da avaliadora |
 | até 03/12 | Incorporar as sugestões e entregar a redação no modelo ABNT | Redação entregue; ficha de orientação 5 |
@@ -783,7 +814,7 @@ Fonte: elaborado pelo autor (2026).
 | Cobertura baixa do AndroZoo (ocorreu: 23,2% do governo) | Fonte do pacote diferente entre os grupos; reconstrução parcial do corpus por terceiros | Coleta direta da loja com SHA-256 registrado; fonte registrada por aplicativo e usada em análise de sensibilidade; limitação declarada |
 | Versão do AndroZoo muito anterior à da loja | Resultado desatualizado | Reportar a defasagem; usar a coleta direta para os mais defasados |
 | Prevalência muito alta ou muito baixa | κ instável mesmo com acordo alto | Reportar, junto do κ, as proporções de concordância positiva e negativa |
-| Cobertura por categoria continuar baixa | Ajuste por categoria na H1 sem sustentação | Restringir a H1 às categorias com suporte e reportar a análise com e sem a restrição |
+| Células de porte pequeno sem controle (18 vagas, na maioria em 10²) | Ajuste por categoria na H1 sem sustentação nessas células | Restringir a H1 às células com suporte e reportar a análise com e sem a restrição |
 | Achado grave atribuível a um órgão | Risco ao cidadão se publicado antes da correção | Comunicação prévia ao órgão e, se couber, ao CTIR Gov e à ANPD, com prazo definido com o orientador |
 | Atraso nos encontros de orientação | Reprovação por falta de encontros | Agendar os cinco encontros já no primeiro deles |
 

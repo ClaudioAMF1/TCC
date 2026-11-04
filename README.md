@@ -165,6 +165,10 @@ nenhum explora falha, nenhum baixa conteúdo de área autenticada.
 
 ### Como rodar
 
+> **O projeto fica em `~/Projetos/TCC`, fora do iCloud.** Na pasta Documentos
+> sincronizada, o macOS tira arquivos do disco e o git passa a falhar com
+> `mmap failed: Operation canceled`.
+
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate

@@ -6,7 +6,7 @@ segundo precisa de uma conta Google da pesquisa.
 Antes de qualquer um, em todo terminal novo:
 
 ```bash
-cd ~/Documents/TCC
+cd ~/Projetos/TCC
 git pull
 source .venv/bin/activate
 ```
@@ -142,7 +142,7 @@ para um arquivo separado e não mexe no do piloto.
 | `Faltam as credenciais` | refazer os dois `export` do B4 no mesmo terminal |
 | `falha de autenticação` em todos | o token AAS está errado: refazer o B3 |
 | `Não achei o apkeep` | refazer o B2; ou passar o caminho: `--apkeep ~/.cargo/bin/apkeep` |
-| `Não achei dados/n3_corpus_*.csv` | rodar da pasta do repositório, com `cd ~/Documents/TCC` |
+| `Não achei dados/n3_corpus_*.csv` | rodar da pasta do repositório, com `cd ~/Projetos/TCC` |
 
 **Não faça commit de nada de `dados/`.** APKs não podem ser redistribuídos; o
 que se publica no fim é a lista de apps com o hash de cada um.

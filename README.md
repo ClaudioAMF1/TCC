@@ -89,6 +89,8 @@ executadas e plano de atividades. Índice e mudanças em relação à proposta e
 |---|---|
 | `tcc1-projeto-de-pesquisa.md` | **O texto**, com referências conferidas |
 | `piloto-passo-a-passo.md` | Como rodar o piloto do AndroZoo no seu computador, comando por comando |
+| `revisao/protocolo-revisao-sistematica.md` | **Protocolo da revisão sistemática** (Kitchenham e Charters): cinco questões, 22 buscas, conjunto de controle de 11 estudos, critérios, qualidade, extração |
+| `revisao/buscas-passo-a-passo.md` | Como rodar cada busca, exportar e fazer a triagem com o script |
 
 ### `descartados/`
 | Arquivo | Por que caiu |
@@ -159,6 +161,7 @@ nenhum explora falha, nenhum baixa conteúdo de área autenticada.
 | `teste_viabilidade_n3_robusto.py` | Mede a **porta de cada hipótese** antes de baixar APK: pareamento (H1), política de privacidade acessível (H2), povoamento das células (H3), potência estatística, e um sinal preliminar da variável dependente |
 | `piloto_androzoo.py` | **Piloto da H4**: cobertura do AndroZoo, sorteio de 20 apps, download pelo hash, três detectores (Exodus código, Exodus rede, Disconnect) e κ de Fleiss / τ de Kendall. Passo a passo em `tcc/piloto-passo-a-passo.md` |
 | `ampliar_controle.py` | Procura comerciais nas células categoria × faixa de instalações em que o controle falta, para o suporte comum da H1. `--diagnostico` só mede |
+| `revisao_triagem.py` | Revisão sistemática: junta as exportações do Scopus, ACM, IEEE, SOL e BDTD, tira duplicatas, confere o conjunto de controle, sorteia o reteste, calcula o κ da triagem e dá os números do PRISMA. Passo a passo em `tcc/revisao/buscas-passo-a-passo.md` |
 | `coleta_google_play.py` | Baixa APKs direto da Google Play pelo `apkeep`, registra SHA-256 e versão e guarda o base junto dos do AndroZoo. Passo a passo em `tcc/coleta-passo-a-passo.md` |
 | `teste_viabilidade_malware.py` | Consulta metadados de famílias de malware bancário no MalwareBazaar e mede compartilhamento de imphash entre famílias, com grupo de controle não brasileiro |
 | `teste_viabilidade_s3.py` | Consulta SPF, DKIM, DMARC, MX e NS de domínios públicos brasileiros e mede se há **variação** a explicar e se a postura é herdada do fornecedor de TI |
@@ -258,7 +261,10 @@ python3 scripts/teste_viabilidade_n1.py --apenas-contagem
   **92 dos 396 apps de governo (23,2%)**, contra 84,2% do controle: os outros 304 vão ser
   coletados direto da Google Play. Piloto concluído em 28/10: κ 0,52 com os detectores
   como são, 0,69 depois da conferência; 72% das detecções do detector B eram falso positivo.
-- **Texto do TCC I** — primeira versão em `tcc/`. Faltam os números do piloto, a revisão
-  sistemática e a passagem para o modelo ABNT.
+- **Texto do TCC I** — versão em `tcc/`, com os números do piloto. Falta a passagem para o
+  modelo ABNT da instituição.
+- **Revisão sistemática** — protocolo escrito em 04/11 (`tcc/revisao/`). A busca exploratória
+  achou Samarasinghe et al. (WWW 2022): 1.166 apps de governo de 71 países, só com o MobSF e
+  sem linha de base. A lacuna do texto foi reescrita em cima dele. Próximo: rodar as 22 buscas.
 - **Modalidade.** Monografia é o caminho de menor risco. Artigo científico depende de
   aceite em periódico Qualis B2, o que não está sob controle do aluno.

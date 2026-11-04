@@ -57,6 +57,14 @@ Dois vazios persistem nesse conjunto:
    rastreamento de um domínio isoladamente, sem linha de base — o que impede
    dizer se a taxa observada é alta, baixa ou típica.
 
+> **Nota de 04/11/2026.** O item 1 estava incompleto. A busca exploratória feita
+> para o protocolo da revisão achou Samarasinghe et al. (WWW 2022, DOI
+> 10.1145/3485447.3512223), que analisaram 1.166 aplicativos Android de governo
+> de 71 países, só com o MobSF e sem grupo de controle; o Brasil aparece apenas
+> em exemplos isolados. O item 2 continua de pé. A lacuna foi reescrita no texto
+> do TCC I (Seção 1.2) em três pontos: o caso brasileiro, a linha de base e o
+> instrumento.
+
 > **Sobre o "fundamento vazio" (Aula 07/08).** A ausência de estudo anterior não
 > é, por si só, justificativa — a disciplina é explícita quanto a isso. O que
 > sustenta esta proposta não é o vazio, e sim o que a literatura **já

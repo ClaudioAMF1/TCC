@@ -28,10 +28,12 @@ Brasília, 2026
 Aplicativos móveis do governo brasileiro concentram serviços para os quais o
 cidadão não tem alternativa, como previdência, saúde e documentos digitais, e
 parte deles trata dado pessoal sensível nos termos da Lei Geral de Proteção de
-Dados Pessoais (LGPD). A literatura sobre aplicativos comerciais mostra que a
-maioria embarca bibliotecas de rastreamento de terceiros, mas os estudos
-consultados não examinam o parque governamental brasileiro nem comparam a
-população estudada com uma linha de base pareada. Este trabalho mede a presença
+Dados Pessoais (LGPD). A literatura mostra que a maioria dos aplicativos
+comerciais embarca bibliotecas de rastreamento de terceiros, e um estudo com
+1.166 aplicativos de governo de 71 países encontrou rastreadores do Google em
+37% deles. Nenhum dos estudos consultados, porém, examina o parque
+governamental brasileiro nem compara aplicativos de governo com uma linha de
+base pareada. Este trabalho mede a presença
 de rastreadores de terceiros em aplicativos governamentais brasileiros e a
 compara com a de aplicativos comerciais de mesma categoria e porte, por análise
 estática dos pacotes de instalação, fixados por hash. Nesta
@@ -71,10 +73,12 @@ privacidade; LGPD; análise estática.
 Brazilian government mobile applications concentrate services for which citizens
 have no alternative, such as social security, health care and digital
 documents, and some of them process sensitive personal data as defined by the
-Brazilian General Data Protection Law (LGPD). Research on commercial
-applications shows that most of them embed third-party tracking libraries, but
-the studies reviewed neither examine Brazilian government applications nor
-compare the studied population against a matched baseline. This work measures
+Brazilian General Data Protection Law (LGPD). Research shows that most
+commercial applications embed third-party tracking libraries, and a study of
+1,166 government applications from 71 countries found Google trackers in 37%
+of them. None of the studies reviewed, however, examines Brazilian government
+applications or compares government applications against a matched baseline.
+This work measures
 the presence of third-party trackers in Brazilian government applications and
 compares it with that of commercial applications of the same category and size,
 through static analysis of installation packages pinned by hash. In this first
@@ -136,6 +140,11 @@ empresas continuam concentrando a capacidade de rastrear e que o consentimento
 exigido raramente é obtido de forma válida (KOLLNIG et al., 2021a; KOLLNIG et
 al., 2021b; NGUYEN; BACKES; STOCK, 2022).
 
+Aplicativos de governo também já foram medidos. Samarasinghe et al. (2022)
+analisaram 1.166 aplicativos Android governamentais de 71 países e relatam
+rastreadores do Google em 37% deles e envio de dados do dispositivo, como
+modelo e identificador, a rastreadores conhecidos em 23,1%.
+
 O tema deste trabalho é o rastreamento por terceiros em aplicativos móveis
 publicados por órgãos públicos brasileiros, examinado do ponto de vista da
 proteção de dados e da soberania sobre os dados dos cidadãos.
@@ -147,14 +156,33 @@ SDKs de rastreamento de terceiros, e em que medida esse comportamento difere do
 de aplicativos comerciais de mesma categoria e porte?
 
 **Lacuna.** A detecção de SDKs de rastreamento por análise estática é método
-consolidado e já foi aplicada a aplicativos de diversos domínios comerciais. Os
-trabalhos consultados até aqui têm duas lacunas em comum: estudam aplicativos
-comerciais ou de saúde privada, e não o parque de aplicativos governamentais
-brasileiros, que está sujeito a um regime jurídico distinto; e reportam a taxa
-de rastreamento de uma população sem uma linha de base pareada, o que impede
-dizer se a taxa observada é alta, baixa ou típica. A revisão sistemática
-prevista no plano de atividades (Seção 3) vai confirmar ou corrigir essa
-avaliação.
+consolidado e já foi aplicada a aplicativos de diversos domínios comerciais e,
+no estudo de Samarasinghe et al. (2022), a aplicativos de governo de vários
+países. Esse estudo deixa em aberto três pontos, que são os deste trabalho.
+
+1. **O caso brasileiro.** A amostra internacional foi montada a partir de links
+   para a Google Play encontrados em sites de governo, com o governo
+   identificado pelo domínio `.gov.` no e-mail ou no site do desenvolvedor. O
+   Brasil aparece só em exemplos isolados, como um dos sete aplicativos que
+   enviavam credenciais sem criptografia. Não há separação por esfera de
+   governo nem identificação dos aplicativos que tratam dado sensível, que são
+   o recorte da H3.
+2. **A linha de base.** Os 37% não são comparados com aplicativos comerciais
+   equivalentes e, por isso, não dizem se o governo rastreia mais, menos ou o
+   mesmo que o mercado. Os demais trabalhos consultados, sobre aplicativos
+   comerciais ou de saúde privada, também reportam a taxa de uma população sem
+   linha de base pareada, o que impede dizer se a taxa observada é alta, baixa
+   ou típica.
+3. **O instrumento.** A detecção usou uma única ferramenta, o MobSF, que aplica
+   a base e a regra de assinatura de código do Exodus Privacy (Seção 2.9). A
+   taxa não foi confrontada com outro detector nem conferida à mão, e é essa
+   dependência da ferramenta que a H4 mede.
+
+Os autores relatam ainda que parte significativa dos aplicativos de governo não
+pôde ser baixada por restrição de região. É a mesma hipótese levantada aqui
+para a baixa cobertura do AndroZoo (Seção 2.10), e um motivo para coletar os
+pacotes com conta e região brasileiras. A revisão sistemática, cujo protocolo
+está descrito na Seção 2.13, vai confirmar ou corrigir essa avaliação.
 
 **Relevância.** O cidadão pode trocar de aplicativo de banco, mas não pode trocar
 de aplicativo do INSS. A falta de alternativa muda o peso de qualquer coleta
@@ -627,7 +655,9 @@ observados (25,3%). A razão de chances de Mantel e Haenszel (1959), estratifica
 por faixa, é de 0,13 (IC95% de 0,07 a 0,24). A causa dessa diferença não foi
 determinada; uma hipótese a testar é que parte dos aplicativos governamentais
 esteja disponível apenas na loja brasileira, fora do alcance da coleta do
-acervo. Entre as esferas, a cobertura é de 49% no federal, 17% no estadual e 15%
+acervo. Samarasinghe et al. (2022) relatam perda do mesmo tipo: parte
+significativa dos aplicativos de governo da amostra deles não pôde ser baixada
+por restrição de região. Entre as esferas, a cobertura é de 49% no federal, 17% no estadual e 15%
 no municipal, e nenhum aplicativo governamental está no acervo apenas por outro
 mercado.
 
@@ -811,13 +841,58 @@ oficialidade será conferida nos 396 antes da coleta completa, porque a taxa de
 6,7% corresponde a cerca de 26 aplicativos privados no corpus. A esfera
 automática, com a regra corrigida, é conferida junto.
 
-### 2.13 Aspectos éticos das etapas executadas
+### 2.13 Protocolo da revisão sistemática
 
-As etapas executadas usaram apenas metadados públicos da Google Play e uma
-requisição GET à política de privacidade divulgada pelo próprio publicador, com
-agente identificado como pesquisa acadêmica. Nenhum aplicativo foi instalado,
-nenhuma área autenticada foi acessada e nenhum dado pessoal foi coletado. O
-objeto de estudo é o aplicativo, não pessoas.
+A revisão segue Kitchenham e Charters (2007), com bola de neve conforme Wohlin
+(2014) e relato do fluxo conforme o PRISMA 2020 (PAGE et al., 2021). O protocolo
+completo está no repositório do trabalho, em
+`tcc/revisao/protocolo-revisao-sistematica.md`; esta seção resume as decisões.
+
+**Origem.** Uma busca exploratória feita na preparação do protocolo encontrou
+Samarasinghe et al. (2022), estudo de aplicativos de governo de 71 países que
+não estava entre os consultados quando a lacuna foi escrita na proposta. A
+lacuna foi reescrita (Seção 1.2), e o episódio fixou duas decisões: a revisão
+cobre aplicativos de governo de qualquer país, e as strings de busca são
+validadas contra estudos que precisam ser achados.
+
+**Questões.** São cinco, uma por necessidade do projeto: QR1, métodos de
+detecção e sua validação (H4); QR2, prevalência e linha de base (H1); QR3,
+confronto entre o declarado e o detectado (H2); QR4, aplicativos de governo,
+inclusive os de enfrentamento da COVID-19 (H1, H3 e lacuna); QR5, Brasil, LGPD
+e transferência internacional de dados (discussão jurídica).
+
+**Fontes e strings.** O Scopus é a base principal; a ACM Digital Library e o
+IEEE Xplore recebem as strings das QR1 a QR4; a SBC OpenLib e a BDTD cobrem a
+produção nacional; e a bola de neve parte dos incluídos, para trás e para a
+frente. São 22 buscas, de 2015 a 2026, em inglês e português.
+
+**Validação das strings.** Onze estudos conhecidos formam um conjunto de
+controle, na linha do padrão quase-ouro de Zhang, Babar e Tell (2011). Cada
+string tem de recuperar os estudos de controle que a base indexa; se não
+recuperar, o termo que faltou é acrescentado e a busca é refeita, com a mudança
+registrada no protocolo.
+
+**Seleção e qualidade.** Há quatro critérios de inclusão e sete de exclusão. A
+triagem é feita por título e resumo e depois pelo texto completo, e cada
+exclusão leva o código do critério que a motivou. Como a seleção é feita por um
+revisor, a consistência é medida por reteste de 10% das decisões e por
+conferência do orientador em 20 registros, com o κ de Cohen (COHEN, 1960) e o
+mesmo limiar de 0,6 usado na H4. A qualidade é avaliada por oito perguntas, das
+quais duas, a reprodutibilidade e a validação da detecção, medem o que a H4
+discute; a nota não exclui estudos.
+
+**Síntese.** É narrativa e organizada por questão, sem metanálise: as taxas da
+literatura vêm de detectores e populações diferentes, e juntá-las seria assumir
+o que a H4 testa.
+
+### 2.14 Aspectos éticos das etapas executadas
+
+As etapas executadas usaram metadados públicos da Google Play, uma requisição
+GET à política de privacidade divulgada pelo próprio publicador, com agente
+identificado como pesquisa acadêmica, e, no piloto, pacotes obtidos do AndroZoo
+nos termos de uso do acervo e analisados sem instalação. Nenhum aplicativo foi
+instalado, nenhuma área autenticada foi acessada e nenhum dado pessoal foi
+coletado. O objeto de estudo é o aplicativo, não pessoas.
 
 ---
 
@@ -836,7 +911,7 @@ exige cinco encontros de orientação registrados no bimestre.
 | 20/10 a 26/10 | Rodar a etapa de cobertura do piloto. Primeiro encontro de orientação: apresentar este texto e a mudança de detectores da H4 | Tabela de cobertura do AndroZoo; ficha de orientação 1 |
 | 27/10 a 04/11 | Validação manual de uma amostra de 32 aplicativos (feita em 04/11, Seção 2.12) | Taxa de erro da classificação automática |
 | 27/10 a 09/11 | Piloto: amostra, download, detecção e concordância nos 20 aplicativos | Números preliminares da H4; ficha de orientação 2 |
-| 03/11 a 16/11 | Revisão sistemática conforme Kitchenham e Charters (2007): protocolo, termos, bases (Scopus, ACM DL, IEEE Xplore), seleção | Protocolo e lista de trabalhos selecionados |
+| 03/11 a 16/11 | Revisão sistemática conforme Kitchenham e Charters (2007): protocolo escrito em 04/11 (Seção 2.13); buscas, conferência do conjunto de controle, seleção, bola de neve e extração | Lista de trabalhos selecionados; κ da triagem |
 | 10/11 a 16/11 | Testar a coleta direta da Google Play, com hash registrado, em cinco aplicativos fora do AndroZoo | Procedimento de coleta direta definido; ficha de orientação 3 |
 | 10/11 a 23/11 | Classificação manual da oficialidade e da sensibilidade dos 396 aplicativos, com os critérios da Seção 2.12 | Corpus validado; rótulos manuais para a H3 |
 | 17/11 a 23/11 | Traduzir os Arts. 7º, 11 e 33 da LGPD em critérios verificáveis; congelar o protocolo e o plano de análise com data registrada no repositório; preparar a apresentação | Protocolo congelado; slides da simulação; ficha de orientação 4 |
@@ -898,6 +973,10 @@ Pessoais (LGPD). **Diário Oficial da União**: seção 1, Brasília, DF, 15 ago
 https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm.
 Acesso em: [preencher na consulta].
 
+COHEN, J. A coefficient of agreement for nominal scales. **Educational and
+Psychological Measurement**, v. 20, n. 1, p. 37-46, 1960. DOI:
+10.1177/001316446002000104.
+
 DISCONNECT. **Disconnect tracking protection**. [*S. l.*], 2026. Lista de
 serviços de rastreamento, licença CC BY-NC-SA 4.0. Disponível em:
 https://github.com/disconnectme/disconnect-tracking-protection. Acesso em: 20
@@ -942,11 +1021,28 @@ ACM SIGSAC CONFERENCE ON COMPUTER AND COMMUNICATIONS SECURITY, 2022, Los
 Angeles. **Proceedings** [...]. New York: ACM, 2022. p. 2369-2383. DOI:
 10.1145/3548606.3560564.
 
+PAGE, M. J. et al. The PRISMA 2020 statement: an updated guideline for
+reporting systematic reviews. **BMJ**, v. 372, art. n71, 2021. DOI:
+10.1136/bmj.n71.
+
 RAZAGHPANAH, A. et al. Apps, trackers, privacy, and regulators: a global study
 of the mobile tracking ecosystem. In: NETWORK AND DISTRIBUTED SYSTEM SECURITY
 SYMPOSIUM, 2018, San Diego. **Proceedings** [...]. Reston: Internet Society,
 2018. DOI: 10.14722/ndss.2018.23353.
 
+SAMARASINGHE, N. et al. Et tu, Brute? Privacy analysis of government websites
+and mobile apps. In: ACM WEB CONFERENCE, 2022, Lyon. **Proceedings** [...]. New
+York: ACM, 2022. p. 564-575. DOI: 10.1145/3485447.3512223.
+
 WILSON, E. B. Probable inference, the law of succession, and statistical
 inference. **Journal of the American Statistical Association**, v. 22, n. 158,
 p. 209-212, 1927. DOI: 10.1080/01621459.1927.10502953.
+
+WOHLIN, C. Guidelines for snowballing in systematic literature studies and a
+replication in software engineering. In: INTERNATIONAL CONFERENCE ON EVALUATION
+AND ASSESSMENT IN SOFTWARE ENGINEERING, 18., 2014, London. **Proceedings**
+[...]. New York: ACM, 2014. p. 1-10. DOI: 10.1145/2601248.2601268.
+
+ZHANG, H.; BABAR, M. A.; TELL, P. Identifying relevant studies in software
+engineering. **Information and Software Technology**, v. 53, n. 6, p. 625-637,
+2011. DOI: 10.1016/j.infsof.2010.12.010.

@@ -1,15 +1,18 @@
 # TCC I: o texto
 
-**Estado em 28/10/2026:** resumo, abstract, introdução, metodologia das etapas
+**Estado em 04/11/2026:** resumo, abstract, introdução, metodologia das etapas
 executadas e plano de atividades escritos. Piloto concluído: κ de Fleiss 0,52
 com os detectores como são e 0,69 depois da conferência manual; 72% das
-detecções do detector B eram falso positivo.
+detecções do detector B eram falso positivo. Protocolo da revisão sistemática
+escrito; a lacuna foi reescrita depois de achar Samarasinghe et al. (2022).
 
 | Arquivo | O que é |
 |---|---|
 | [`tcc1-projeto-de-pesquisa.md`](tcc1-projeto-de-pesquisa.md) | **O texto.** Identificação, resumo, abstract, Cap. 1 Introdução, Cap. 2 Metodologia do que foi feito, Cap. 3 Plano de atividades, referências |
 | [`piloto-passo-a-passo.md`](piloto-passo-a-passo.md) | Como rodar o piloto do AndroZoo, comando por comando |
 | [`coleta-passo-a-passo.md`](coleta-passo-a-passo.md) | Ampliar o controle por categoria e coletar direto da Google Play |
+| [`revisao/protocolo-revisao-sistematica.md`](revisao/protocolo-revisao-sistematica.md) | **Protocolo da revisão sistemática**: questões, strings de cada base, conjunto de controle, critérios, qualidade, extração, cronograma e registros |
+| [`revisao/buscas-passo-a-passo.md`](revisao/buscas-passo-a-passo.md) | Como rodar as 22 buscas, exportar, juntar e triar |
 | [`latex/`](latex/) | **O mesmo texto em LaTeX (abnTeX2, ABNT)**, pronto para o Overleaf: `main.tex` e `referencias.bib` |
 
 ## Abrir no Overleaf
@@ -29,6 +32,7 @@ de 28/10; se o texto mudar lá, é o `.tex` que vale.
 
 | Ponto | Proposta (16/09) | Texto atual | Por quê |
 |---|---|---|---|
+| Lacuna | Os estudos cobrem só apps comerciais ou de saúde privada; nenhum tem linha de base pareada | Samarasinghe et al. (2022) mediram 1.166 apps de governo de 71 países; a lacuna passa a ser o caso brasileiro (esferas, dado sensível), a linha de base e o instrumento | O estudo foi achado na busca exploratória de 04/11. Ver Seções 1.2 e 2.13 |
 | Fonte dos APKs | AndroZoo | AndroZoo para os 92 apps de governo do acervo (23,2%); Google Play direta, com hash, para os outros 304 | Cobertura medida em 26/10. Ver Seção 2.10 |
 | Detectores da H4 | MobSF, Androguard, Exodus | A (Exodus, código), B (Exodus, rede), C (Disconnect, rede); MobSF como verificação | O MobSF usa a base e a regra do Exodus; o Androguard só extrai. Ver Seção 2.9 |
 | Medida principal | (não definida) | Detector A; C como verificação independente; B só para medir o efeito do método | No piloto, 72% das detecções de B foram falso positivo e B não vê o Firebase Analytics. **Decisão a levar ao orientador** |

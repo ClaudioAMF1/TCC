@@ -1,6 +1,6 @@
 # Protocolo da revisão sistemática
 
-**Versão 1.0, 04/11/2026.** Segue as diretrizes de Kitchenham e Charters (2007)
+**Versão 1.1, 06/11/2026.** Segue as diretrizes de Kitchenham e Charters (2007)
 para revisões sistemáticas em engenharia de software, com bola de neve conforme
 Wohlin (2014) e relato do fluxo conforme o PRISMA 2020 (PAGE et al., 2021).
 
@@ -55,7 +55,7 @@ a busca não pode se limitar aos trabalhos já conhecidos.
 | Fonte | Por que entra | Strings |
 |---|---|---|
 | Scopus | Maior base multidisciplinar; indexa a maior parte dos anais da ACM e do IEEE e periódicos de direito e de políticas públicas. É a base principal. | S1 a S5b |
-| ACM Digital Library, na coleção *The ACM Guide to Computing Literature* | Anais de WWW, CCS, WebSci, ASE, ICSE e LADC; a coleção *Guide* inclui registros de outras editoras | S1 a S4b |
+| ~~ACM Digital Library~~ | **Saiu na versão 1.1** (Seção 12.3): sem acesso à exportação. Os anais da ACM ficam cobertos pelo Scopus | (S1 a S4b) |
 | IEEE Xplore | Anais e periódicos do IEEE (S&P, EuroS&P, TDSC, TSE) | S1 a S4b |
 | SBC OpenLib (SOL) | Anais do SBSeg, do WebMedia e do SBES e o JISA, onde se publica a pesquisa brasileira da área | SOL1 a SOL3 |
 | BDTD (IBICT) | Teses e dissertações brasileiras | BDTD1, BDTD2 |
@@ -423,6 +423,9 @@ que sustentam a decisão.
 | 06/11/2026 | IEEE Xplore | S3 | 85 | `ieee_S3_20261106.csv` | 54 fora do Scopus |
 | 06/11/2026 | IEEE Xplore | S4a | 220 | `ieee_S4a_20261106.csv` | 178 fora do Scopus |
 | 06/11/2026 | IEEE Xplore | S4b | 20 | `ieee_S4b_20261106.csv` | Scopus e IEEE juntos: 1.493 registros, 279 duplicatas, 1.214 únicos. O IEEE traz mais ruído: o campo *All Metadata* inclui os termos de indexação do IEEE e a base aplica radicalização ("governance" casa com `government*`). Só um terço dos registros do IEEE satisfaz a string em título, resumo e palavras-chave do autor sem esses dois efeitos. Um filtro automático foi testado e descartado, porque excluiria registros relevantes, como um estudo de aplicativos de *e-governance*. O ruído fica para a triagem |
+| 06/11/2026 | ACM | S1 | 52 | (não exportado) | A busca roda na edição gratuita, mas a exportação de citações exige assinatura que o IDP não tem. Ver 12.3 |
+| 06/11/2026 | BDTD | BDTD1 | 7 | `bdtd_BDTD1_20261106.csv` | Pela API pública da BDTD (`bdtd.ibict.br/vufind/api/v1/search`, campo AllFields, filtro 2015 a 2026) |
+| 06/11/2026 | BDTD | BDTD2 | 16 | `bdtd_BDTD2_20261106.csv` | Idem. Scopus, IEEE e BDTD juntos: 1.516 registros, 279 duplicatas, 1.237 únicos |
 
 ### 12.2 Conjunto de controle
 
@@ -439,6 +442,10 @@ que sustentam a decisão.
 | Data | Versão | O que mudou | Por quê |
 |---|---|---|---|
 | 04/11/2026 | 1.0 | Versão inicial | |
+| 06/11/2026 | 1.1 | A ACM Digital Library sai das fontes | A busca funciona na edição gratuita (a S1 deu 52 resultados), mas exportar as citações é recurso pago e o IDP não dá acesso à ACM. A cobertura dos anais da ACM fica com o Scopus: os seis estudos de controle publicados pela ACM (C01, C05, C06, C08, C09 e C10) foram todos recuperados nele. Trabalhos da ACM fora do Scopus entram pela bola de neve. **Pendente: concordância do orientador** |
+| 06/11/2026 | 1.1 | BDTD consultada pela API pública | Mesma string e mesmo filtro de anos da interface; a API devolve o resumo, o que dispensa copiar à mão |
+| 06/11/2026 | 1.1 | SOL feita à mão | O site da SBC OpenLib recusa acesso automatizado |
+| 06/11/2026 | 1.1 | O texto do TCC (Seção 2.13) ainda cita a ACM e 22 buscas | Será atualizado com os números finais, ao fim das buscas |
 
 ---
 

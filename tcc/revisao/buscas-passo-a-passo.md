@@ -61,6 +61,10 @@ mv ~/Downloads/scopus.csv dados/revisao/buscas/scopus_S1_20261105.csv
 
 ### 2.2 ACM Digital Library: S1, S2, S3, S4a, S4b (5 buscas)
 
+> **Não usada desde 06/11 (protocolo 1.1).** A exportação exige assinatura que o
+> IDP não tem; os anais da ACM ficam cobertos pelo Scopus. Os passos ficam como
+> registro.
+
 1. Abra `https://dl.acm.org/search/advanced`.
 2. No topo, escolha a coleção **The ACM Guide to Computing Literature**.
 3. Abra a edição da consulta (**Edit Query**) e cole a string da Seção 4.3,

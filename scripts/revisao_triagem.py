@@ -522,20 +522,30 @@ def controle(planilha: Path):
     linhas = ler_planilha(planilha)
     print("\nCONJUNTO DE CONTROLE (protocolo, Seção 5)")
     print("  " + "=" * 62)
-    achados, falhas = 0, []
+    def strings_de(r):
+        return {s.split(":", 1)[1] for s in r.get("strings", "").split("|")
+                if ":" in s}
+
+    # Um estudo só é cobrado depois que a string que deveria achá-lo rodou.
+    rodadas = set().union(*(strings_de(r) for r in linhas)) if linhas else set()
+    achados, falhas, cobrados = 0, [], 0
     for cid, doi, titulo, esperadas in CONTROLE:
+        esperadas = esperadas.split()
         r = achar_controle(linhas, doi, titulo)
+        if r is None and not set(esperadas) & rodadas:
+            print(f"  {cid}  aguardando   falta rodar {' ou '.join(esperadas)}")
+            continue
+        cobrados += 1
         if r is None:
             print(f"  {cid}  NÃO ACHADO   {titulo[:52]}")
             falhas.append(cid)
             continue
         achados += 1
-        strings = set(s.split(":", 1)[1] for s in r.get("strings", "").split("|")
-                      if ":" in s)
-        faltam = [s for s in esperadas.split() if s not in strings]
+        faltam = [s for s in esperadas if s in rodadas and s not in strings_de(r)]
         nota = "" if not faltam else f"   não veio pela {', '.join(faltam)}"
         print(f"  {cid}  achado ({r['id']})  {r.get('strings', '')}{nota}")
-    print(f"\n  Achados: {achados} de {len(CONTROLE)}")
+    print(f"\n  Achados: {achados} dos {cobrados} cujas strings já rodaram "
+          f"({len(CONTROLE)} no total)")
     if falhas:
         print("  Para cada não achado: busque o título exato na base. Se a base "
               "tem o artigo, a string falhou (me mande qual). Se não tem, é "

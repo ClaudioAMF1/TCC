@@ -411,13 +411,14 @@ que sustentam a decisão.
 
 | Data | Base | String | Resultados | Arquivo | Observação |
 |---|---|---|---|---|---|
-| | | | | | |
+| 06/11/2026 | Scopus | S1 | 135 | `scopus_S1_20261106.csv` | 133 únicos. As 2 duplicatas são da própria exportação: um artigo com o mesmo DOI nos anais do PLDI e no SIGPLAN Notices, e um estudo com versão de evento (2018) e de periódico (2019) com o mesmo título |
 
 ### 12.2 Conjunto de controle
 
 | Id | Achado? | Por qual base e string | Se não: a base indexa? | Ação |
 |---|---|---|---|---|
-| C01 a C11 | | | | |
+| C06 | Sim | Scopus, S1 | | |
+| C01 a C05, C07 a C11 | Aguardando as strings S2 a S4b | | | |
 
 ### 12.3 Alterações do protocolo
 

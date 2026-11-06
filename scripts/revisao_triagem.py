@@ -16,6 +16,7 @@ ETAPAS
     juntar        lê dados/revisao/buscas/, tira duplicatas e grava a planilha
                   de triagem; se já existe uma, mantém as decisões marcadas
     controle      confere o conjunto de controle do protocolo (Seção 5)
+    sugestao      concordância entre a pré-triagem e as decisões do autor
     amostra       sorteia registros já decididos para o reteste ou o orientador
     concordancia  κ de Cohen entre a decisão original e a da conferência
     prisma        números de cada fase para o fluxograma
@@ -65,9 +66,14 @@ NOME_ARQUIVO = re.compile(
 
 CAMPOS = ["id", "titulo", "autores", "ano", "veiculo", "tipo", "doi", "url",
           "bases", "strings", "outras_versoes", "resumo", "palavras_chave",
+          "sugestao_f1", "sugestao_criterio", "sugestao_motivo",
           "decisao_f1", "criterio_f1", "decisao_f2", "criterio_f2",
           "observacao"]
-DECISOES = ["decisao_f1", "criterio_f1", "decisao_f2", "criterio_f2",
+# A sugestão da pré-triagem fica em colunas próprias, separada da decisão do
+# autor, para que a concordância entre as duas possa ser medida (protocolo,
+# Seção 7.2). Tudo isso passa de uma junção para a seguinte.
+DECISOES = ["sugestao_f1", "sugestao_criterio", "sugestao_motivo",
+            "decisao_f1", "criterio_f1", "decisao_f2", "criterio_f2",
             "observacao"]
 
 # Seção 5 do protocolo. (id, DOI, título, strings que têm de achar)
@@ -624,6 +630,28 @@ def concordancia(planilha: Path, conferencia: Path, fase: str):
             print(f"    {i}  original {a}  conferência {b}  {t}")
 
 
+def sugestao(planilha: Path):
+    """Quanto as decisões do autor concordam com as sugestões da pré-triagem
+    (protocolo, Seção 7.4)."""
+    pares, mudou = [], []
+    for r in ler_planilha(planilha):
+        a, b = decisao(r.get("sugestao_f1")), decisao(r.get("decisao_f1"))
+        if a and b:
+            pares.append((a, b))
+            if a != b:
+                mudou.append((r["id"], a, b, (r.get("titulo") or "")[:60]))
+    if not pares:
+        sys.exit("Nenhum registro com sugestão e decisão preenchidas.")
+    kb = kappa_cohen([(binaria(a), binaria(b)) for a, b in pares])
+    print(f"\nSUGESTÃO × DECISÃO NA F1 ({len(pares)} registros)")
+    print("  " + "=" * 62)
+    print(f"  Decisões diferentes da sugestão: {len(mudou)} "
+          f"({len(mudou) / len(pares):.1%})")
+    print(f"  κ de Cohen, passa (I ou T) contra fica (E ou R): {kb:.3f}")
+    for i, a, b, t in mudou:
+        print(f"    {i}  sugestão {a}  decisão {b}  {t}")
+
+
 def prisma(planilha: Path, pasta: Path):
     linhas = ler_planilha(planilha)
     cont_arq = pasta / "contagens.json"
@@ -815,7 +843,7 @@ def main():
     sub = ap.add_subparsers(dest="etapa", required=True)
     sub.add_parser("juntar")
     sub.add_parser("autoteste")
-    for nome in ("controle", "prisma"):
+    for nome in ("controle", "prisma", "sugestao"):
         s = sub.add_parser(nome)
         s.add_argument("--planilha", type=Path)
     s = sub.add_parser("amostra")
@@ -842,6 +870,8 @@ def main():
                  "python3 scripts/revisao_triagem.py juntar")
     if a.etapa == "controle":
         controle(planilha)
+    elif a.etapa == "sugestao":
+        sugestao(planilha)
     elif a.etapa == "prisma":
         prisma(planilha, PASTA)
     elif a.etapa == "amostra":

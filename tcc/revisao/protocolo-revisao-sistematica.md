@@ -1,6 +1,6 @@
 # Protocolo da revisão sistemática
 
-**Versão 1.1, 06/11/2026.** Segue as diretrizes de Kitchenham e Charters (2007)
+**Versão 1.2, 06/11/2026.** Segue as diretrizes de Kitchenham e Charters (2007)
 para revisões sistemáticas em engenharia de software, com bola de neve conforme
 Wohlin (2014) e relato do fluxo conforme o PRISMA 2020 (PAGE et al., 2021).
 
@@ -59,7 +59,7 @@ a busca não pode se limitar aos trabalhos já conhecidos.
 | IEEE Xplore | Anais e periódicos do IEEE (S&P, EuroS&P, TDSC, TSE) | S1 a S4b |
 | SBC OpenLib (SOL) | Anais do SBSeg, do WebMedia e do SBES e o JISA, onde se publica a pesquisa brasileira da área | SOL1 a SOL3 |
 | BDTD (IBICT) | Teses e dissertações brasileiras | BDTD1, BDTD2 |
-| Bola de neve | Para trás (referências) e para a frente (quem cita), a partir dos incluídos | Seção 7.3 |
+| Bola de neve | Para trás (referências) e para a frente (quem cita), a partir dos incluídos | Seção 7.4 |
 
 O Google Acadêmico não é base de busca, porque o resultado não é reproduzível;
 ele é usado só na bola de neve para a frente ("Citado por") e para localizar
@@ -253,7 +253,7 @@ Um registro é incluído quando atende a **todos** os critérios de inclusão e 
 | IC1 | Estudo primário que mede, detecta ou analisa rastreamento por terceiros, bibliotecas ou SDKs de terceiros, ou fluxos de dados pessoais em aplicativos móveis (QR1 a QR4); ou trabalho que analisa a LGPD ou a transferência internacional de dados aplicada a aplicativos ou serviços digitais (QR5) |
 | IC2 | Publicado em periódico ou evento com revisão por pares, ou tese ou dissertação defendida |
 | IC3 | Escrito em inglês ou português |
-| IC4 | Publicado de 2015 a 2026 (vale para a busca nas bases; ver 7.3) |
+| IC4 | Publicado de 2015 a 2026 (vale para a busca nas bases; ver 7.4) |
 
 | Código | Critério de exclusão |
 |---|---|
@@ -262,8 +262,13 @@ Um registro é incluído quando atende a **todos** os critérios de inclusão e 
 | EC3 | "Rastreamento" em outro sentido: localização física, olhar, objetos, contatos sem análise do aplicativo, acompanhamento de saúde ou de atividade física sem medida de terceiros |
 | EC4 | Usa a detecção de bibliotecas só como meio para outro fim (malware, reempacotamento, clones), sem medir rastreamento e sem avaliar a detecção |
 | EC5 | Mede só a percepção ou a intenção de uso das pessoas (questionário, entrevista, modelo de aceitação), sem nenhuma medida sobre os aplicativos |
-| EC6 | Resumo, pôster, artigo curto de até 4 páginas, editorial, tutorial ou palestra; preprint sem revisão por pares (exceção: 7.3) |
+| EC6 | Resumo, pôster, artigo curto de até 4 páginas, editorial, tutorial ou palestra; preprint sem revisão por pares (exceção: 7.4) |
 | EC7 | Texto completo indisponível pelas fontes da Seção 3 e sem resposta do autor em 7 dias |
+
+Um registro que não atende a um critério de inclusão é excluído com o código
+desse critério (IC1 a IC4). Quando mais de um código se aplica, usa-se o mais
+específico: um estudo de malware que usa bibliotecas só como filtro é EC4, e
+não IC1; o IC1 fica para o que está fora do tema e não cabe em EC2 a EC5.
 
 Revisões da literatura que aparecerem na busca não são incluídas como estudo
 primário; elas são registradas com a marca `R` e servem de ponto de partida da
@@ -282,8 +287,8 @@ bola de neve.
 | F2 | Texto completo | `I` ou `E`, com o código do critério |
 | F3 | Bola de neve a partir dos incluídos em F2 | Os novos achados passam por F1 e F2 |
 
-Cada decisão de exclusão leva o código de um único critério, o primeiro que se
-aplica na ordem da tabela. Isso permite contar os excluídos por critério no
+Cada decisão de exclusão leva o código de um único critério, o mais
+específico (Seção 6). Isso permite contar os excluídos por critério no
 fluxograma do PRISMA.
 
 ### 7.2 Confiabilidade com um revisor
@@ -304,7 +309,21 @@ discutidas, o texto do critério que mais produziu divergência é reescrito e o
 registros excluídos por ele são decididos de novo. O κ, o tamanho da amostra e
 a eventual mudança de critério são reportados.
 
-### 7.3 Bola de neve
+### 7.3 Pré-triagem assistida
+
+A F1 começa com uma pré-triagem feita por um assistente de inteligência
+artificial baseado em modelo de linguagem. Ele leu os 1.249 títulos, e os
+resumos quando o título não bastava, e sugeriu para cada registro uma decisão,
+o código do critério e o motivo. O autor confere cada sugestão e é quem decide.
+A planilha guarda a sugestão e a decisão em colunas separadas, e o trabalho
+reporta quantas sugestões o autor mudou e o κ de Cohen entre as duas
+(`scripts/revisao_triagem.py sugestao`). O reteste e a conferência do
+orientador (7.2) são feitos sobre as decisões do autor, sem mostrar a sugestão.
+
+O uso é declarado no texto do trabalho, conforme o regulamento (Art. 19, X e
+Art. 49). **Pendente: concordância do orientador.**
+
+### 7.4 Bola de neve
 
 Segue Wohlin (2014): para cada incluído em F2, examinam-se as referências (para
 trás) e os trabalhos que o citam no Google Acadêmico e no Scopus (para a
@@ -449,6 +468,8 @@ que sustentam a decisão.
 | 06/11/2026 | 1.1 | BDTD consultada pela API pública | Mesma string e mesmo filtro de anos da interface; a API devolve o resumo, o que dispensa copiar à mão |
 | 06/11/2026 | 1.1 | SOL feita à mão | O site da SBC OpenLib recusa acesso automatizado |
 | 06/11/2026 | 1.1 | O texto do TCC (Seção 2.13) ainda cita a ACM e 22 buscas | Será atualizado com os números finais, ao fim das buscas |
+| 06/11/2026 | 1.2 | Códigos IC1 a IC4 para exclusão por falta de critério de inclusão; regra do código mais específico | A tabela de EC não cobria o que está fora do tema sem se encaixar em EC2 a EC5 |
+| 06/11/2026 | 1.2 | Pré-triagem assistida na F1 (Seção 7.3) | Reduzir o tempo da F1 sem tirar a decisão do autor; concordância medida e reportada. **Pendente: concordância do orientador** |
 
 ---
 
@@ -463,7 +484,7 @@ que sustentam a decisão.
   português nelas podem escapar. SOL e BDTD cobrem a produção nacional.
 - **Viés de publicação.** Estudos que não acham rastreadores tendem a ser menos
   publicados, o que puxa para cima as prevalências da QR2.
-- **Recorte de 2015.** Trabalhos fundadores anteriores entram pela regra de 7.3.
+- **Recorte de 2015.** Trabalhos fundadores anteriores entram pela regra de 7.4.
 
 ---
 

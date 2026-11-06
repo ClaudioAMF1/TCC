@@ -418,6 +418,11 @@ que sustentam a decisão.
 | 06/11/2026 | Scopus | S4b | 29 | `scopus_S4b_20261106.csv` | S1 a S4b juntas: 719 registros, 54 duplicatas, 665 únicos |
 | 06/11/2026 | Scopus | S5a | 43 | `scopus_S5a_20261106.csv` | |
 | 06/11/2026 | Scopus | S5b | 63 | `scopus_S5b_20261106.csv` | Scopus completo: 825 registros, 62 duplicatas, 763 únicos, todos com resumo |
+| 06/11/2026 | IEEE Xplore | S1 | 152 | `ieee_S1_20261106.csv` | 96 fora do Scopus |
+| 06/11/2026 | IEEE Xplore | S2 | 191 | `ieee_S2_20261106.csv` | 129 fora do Scopus |
+| 06/11/2026 | IEEE Xplore | S3 | 85 | `ieee_S3_20261106.csv` | 54 fora do Scopus |
+| 06/11/2026 | IEEE Xplore | S4a | 220 | `ieee_S4a_20261106.csv` | 178 fora do Scopus |
+| 06/11/2026 | IEEE Xplore | S4b | 20 | `ieee_S4b_20261106.csv` | Scopus e IEEE juntos: 1.493 registros, 279 duplicatas, 1.214 únicos. O IEEE traz mais ruído: o campo *All Metadata* inclui os termos de indexação do IEEE e a base aplica radicalização ("governance" casa com `government*`). Só um terço dos registros do IEEE satisfaz a string em título, resumo e palavras-chave do autor sem esses dois efeitos. Um filtro automático foi testado e descartado, porque excluiria registros relevantes, como um estudo de aplicativos de *e-governance*. O ruído fica para a triagem |
 
 ### 12.2 Conjunto de controle
 

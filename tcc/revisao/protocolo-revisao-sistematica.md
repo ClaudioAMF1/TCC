@@ -413,6 +413,9 @@ que sustentam a decisão.
 |---|---|---|---|---|---|
 | 06/11/2026 | Scopus | S1 | 135 | `scopus_S1_20261106.csv` | 133 únicos. As 2 duplicatas são da própria exportação: um artigo com o mesmo DOI nos anais do PLDI e no SIGPLAN Notices, e um estudo com versão de evento (2018) e de periódico (2019) com o mesmo título |
 | 06/11/2026 | Scopus | S2 | 299 | `scopus_S2_20261106.csv` | Junto com a S1: 434 registros, 18 duplicatas, 416 únicos |
+| 06/11/2026 | Scopus | S3 | 83 | `scopus_S3_20261106.csv` | |
+| 06/11/2026 | Scopus | S4a | 173 | `scopus_S4a_20261106.csv` | |
+| 06/11/2026 | Scopus | S4b | 29 | `scopus_S4b_20261106.csv` | S1 a S4b juntas: 719 registros, 54 duplicatas, 665 únicos |
 
 ### 12.2 Conjunto de controle
 
@@ -421,7 +424,8 @@ que sustentam a decisão.
 | C01 a C05 | Sim | Scopus, S2 | | |
 | C06 | Sim | Scopus, S1 | | |
 | C09 a C11 | Sim | Scopus, S2 (antes das S4a e S4b) | | |
-| C07, C08 | Aguardando a S3 | | | |
+| C08 | Sim | Scopus, S3 | | |
+| C07 | Não | | A conferir: buscar o título exato no Scopus | |
 
 ### 12.3 Alterações do protocolo
 

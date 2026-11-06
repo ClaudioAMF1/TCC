@@ -416,6 +416,8 @@ que sustentam a decisão.
 | 06/11/2026 | Scopus | S3 | 83 | `scopus_S3_20261106.csv` | |
 | 06/11/2026 | Scopus | S4a | 173 | `scopus_S4a_20261106.csv` | |
 | 06/11/2026 | Scopus | S4b | 29 | `scopus_S4b_20261106.csv` | S1 a S4b juntas: 719 registros, 54 duplicatas, 665 únicos |
+| 06/11/2026 | Scopus | S5a | 43 | `scopus_S5a_20261106.csv` | |
+| 06/11/2026 | Scopus | S5b | 63 | `scopus_S5b_20261106.csv` | Scopus completo: 825 registros, 62 duplicatas, 763 únicos, todos com resumo |
 
 ### 12.2 Conjunto de controle
 
@@ -425,7 +427,7 @@ que sustentam a decisão.
 | C06 | Sim | Scopus, S1 | | |
 | C09 a C11 | Sim | Scopus, S2 (antes das S4a e S4b) | | |
 | C08 | Sim | Scopus, S3 | | |
-| C07 | Não | | A conferir: buscar o título exato no Scopus | |
+| C07 | Não | | Não. `TITLE ( "scaling privacy compliance analysis" )` sem filtro deu 0 documentos em 06/11 | Limite de cobertura, não de string: entra pela bola de neve. Revocação no Scopus: 10 de 10 estudos indexados |
 
 ### 12.3 Alterações do protocolo
 

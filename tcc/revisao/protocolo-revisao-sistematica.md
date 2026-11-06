@@ -426,6 +426,9 @@ que sustentam a decisão.
 | 06/11/2026 | ACM | S1 | 52 | (não exportado) | A busca roda na edição gratuita, mas a exportação de citações exige assinatura que o IDP não tem. Ver 12.3 |
 | 06/11/2026 | BDTD | BDTD1 | 7 | `bdtd_BDTD1_20261106.csv` | Pela API pública da BDTD (`bdtd.ibict.br/vufind/api/v1/search`, campo AllFields, filtro 2015 a 2026) |
 | 06/11/2026 | BDTD | BDTD2 | 16 | `bdtd_BDTD2_20261106.csv` | Idem. Scopus, IEEE e BDTD juntos: 1.516 registros, 279 duplicatas, 1.237 únicos |
+| 06/11/2026 | SOL | SOL1 | 1 | `sol_SOL1_20261106.csv` | Transcrito da tela de resultados, que o site não exporta |
+| 06/11/2026 | SOL | SOL2 | 5 | `sol_SOL2_20261106.csv` | Idem; inclui C11 |
+| 06/11/2026 | SOL | SOL3 | 9 | `sol_SOL3_20261106.csv` | Idem. **Fim das buscas: 1.531 registros (Scopus 825, IEEE 668, BDTD 23, SOL 15), 282 duplicatas, 1.249 únicos para a triagem.** Conjunto de controle: 10 de 11 recuperados; o que falta (C07) não é indexado pelo Scopus e entra pela bola de neve |
 
 ### 12.2 Conjunto de controle
 

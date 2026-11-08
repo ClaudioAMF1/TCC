@@ -1,0 +1,128 @@
+{
+  "data": "20261106",
+  "arquivos": [
+    {
+      "arquivo": "bdtd_BDTD1_20261106.csv",
+      "base": "bdtd",
+      "string": "BDTD1",
+      "data": "20261106",
+      "registros": 7
+    },
+    {
+      "arquivo": "bdtd_BDTD2_20261106.csv",
+      "base": "bdtd",
+      "string": "BDTD2",
+      "data": "20261106",
+      "registros": 16
+    },
+    {
+      "arquivo": "ieee_S1_20261106.csv",
+      "base": "ieee",
+      "string": "S1",
+      "data": "20261106",
+      "registros": 152
+    },
+    {
+      "arquivo": "ieee_S2_20261106.csv",
+      "base": "ieee",
+      "string": "S2",
+      "data": "20261106",
+      "registros": 191
+    },
+    {
+      "arquivo": "ieee_S3_20261106.csv",
+      "base": "ieee",
+      "string": "S3",
+      "data": "20261106",
+      "registros": 85
+    },
+    {
+      "arquivo": "ieee_S4a_20261106.csv",
+      "base": "ieee",
+      "string": "S4a",
+      "data": "20261106",
+      "registros": 220
+    },
+    {
+      "arquivo": "ieee_S4b_20261106.csv",
+      "base": "ieee",
+      "string": "S4b",
+      "data": "20261106",
+      "registros": 20
+    },
+    {
+      "arquivo": "scopus_S1_20261106.csv",
+      "base": "scopus",
+      "string": "S1",
+      "data": "20261106",
+      "registros": 135
+    },
+    {
+      "arquivo": "scopus_S2_20261106.csv",
+      "base": "scopus",
+      "string": "S2",
+      "data": "20261106",
+      "registros": 299
+    },
+    {
+      "arquivo": "scopus_S3_20261106.csv",
+      "base": "scopus",
+      "string": "S3",
+      "data": "20261106",
+      "registros": 83
+    },
+    {
+      "arquivo": "scopus_S4a_20261106.csv",
+      "base": "scopus",
+      "string": "S4a",
+      "data": "20261106",
+      "registros": 173
+    },
+    {
+      "arquivo": "scopus_S4b_20261106.csv",
+      "base": "scopus",
+      "string": "S4b",
+      "data": "20261106",
+      "registros": 29
+    },
+    {
+      "arquivo": "scopus_S5a_20261106.csv",
+      "base": "scopus",
+      "string": "S5a",
+      "data": "20261106",
+      "registros": 43
+    },
+    {
+      "arquivo": "scopus_S5b_20261106.csv",
+      "base": "scopus",
+      "string": "S5b",
+      "data": "20261106",
+      "registros": 63
+    },
+    {
+      "arquivo": "sol_SOL1_20261106.csv",
+      "base": "sol",
+      "string": "SOL1",
+      "data": "20261106",
+      "registros": 1
+    },
+    {
+      "arquivo": "sol_SOL2_20261106.csv",
+      "base": "sol",
+      "string": "SOL2",
+      "data": "20261106",
+      "registros": 5
+    },
+    {
+      "arquivo": "sol_SOL3_20261106.csv",
+      "base": "sol",
+      "string": "SOL3",
+      "data": "20261106",
+      "registros": 9
+    }
+  ],
+  "bruto_bases": 1531,
+  "unicos_bases": 1249,
+  "duplicatas_bases": 282,
+  "unicos_total": 1249
+}

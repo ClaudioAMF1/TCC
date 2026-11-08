@@ -184,8 +184,9 @@ para comparar.
 
 Com isso eu atualizo a Seção 2.10 do texto.
 
-**Não faça commit de nada de `dados/`.** APK, lista e bases ficam só no seu
-computador.
+**APK, lista do AndroZoo e bases ficam só no seu computador.** O `.gitignore`
+já os deixa de fora; do `dados/` só entram no repositório as planilhas e os
+relatórios pequenos.
 
 ---
 

@@ -57,6 +57,14 @@ Dois vazios persistem nesse conjunto:
    rastreamento de um domínio isoladamente, sem linha de base — o que impede
    dizer se a taxa observada é alta, baixa ou típica.
 
+> **Nota de 04/11/2026.** O item 1 estava incompleto. A busca exploratória feita
+> para o protocolo da revisão achou Samarasinghe et al. (WWW 2022, DOI
+> 10.1145/3485447.3512223), que analisaram 1.166 aplicativos Android de governo
+> de 71 países, só com o MobSF e sem grupo de controle; o Brasil aparece apenas
+> em exemplos isolados. O item 2 continua de pé. A lacuna foi reescrita no texto
+> do TCC I (Seção 1.2) em três pontos: o caso brasileiro, a linha de base e o
+> instrumento.
+
 > **Sobre o "fundamento vazio" (Aula 07/08).** A ausência de estudo anterior não
 > é, por si só, justificativa — a disciplina é explícita quanto a isso. O que
 > sustenta esta proposta não é o vazio, e sim o que a literatura **já
@@ -287,6 +295,9 @@ próprio. O registro é deliberado: é material da seção de metodologia.
    categoria e faixa como covariáveis, o que exige **suporte comum**, não par
    exato por gênero. Trocado o critério, o mesmo corpus passou de 27,4% para
    92,4%.
+   *Nota de 04/11/2026: recalculado sobre o controle final de 190, o critério
+   por categoria dá 77,9%; o 27,4% vinha de uma rodada anterior ao complemento
+   da cauda. Com o controle ampliado para 252, dá 89,1%.*
 3. **A porta da H3 incluía o balde residual no mínimo.** Reprovava com "menor
    célula 3", mas essa célula era *indeterminado × sensível* — e *indeterminado*
    não é um nível do fator esfera, é o que a heurística não classificou. Entre os

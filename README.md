@@ -37,8 +37,10 @@ dados/          Saída bruta das coletas (não versionado — ver .gitignore)
 |---|---|
 | `Plano de Ensino - Projeto Capstone I.pdf` | Cronograma, avaliação, prazos |
 | `Regulamento TCC CIC v.2026-05 -- VIGENTE.pdf` | Regras formais: modalidades, orientação, banca |
-| `aulas/` | Slides 01 a 14 — metodologia, maturidade em pesquisa, questões de pesquisa, análise crítica de propostas, escrita da monografia |
+| `aulas/` | Slides 01 a 16 — metodologia, maturidade em pesquisa, questões de pesquisa, análise crítica de propostas, escrita da monografia, artigo científico (15 e 16). As aulas 09 e 10 não estão aqui |
 | `listas/` | Listas de exercícios da disciplina e guias de estudo correspondentes |
+| `normas/` | ABNT NBR 14724:2024 (trabalhos acadêmicos), NBR 6023:2018 (referências), NBR 6022:2018 (artigo em periódico) e o guia de referências do IEEE. **As normas da ABNT são exemplares licenciados, com dados de quem comprou: só podem ficar aqui enquanto o repositório for privado** |
+| `modelos/` | Modelo de slides do IDP, para a simulação e a defesa |
 
 ### `seminario/`
 Atividade de 29/09 e 01/10, 15 minutos, **4 dos 6 pontos da AV1**. Artigo: Nguyen,

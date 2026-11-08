@@ -243,6 +243,8 @@ o script lista.
 | número de registros não bate com o da base | exporte de novo; no Scopus, confira se marcou **All** |
 | `Não achei dados/revisao/triagem_*.csv` | rode o `juntar` antes |
 
-**Não faça commit de nada de `dados/`.** As exportações trazem resumos, que os
-termos de uso das bases não permitem redistribuir. O que entra no repositório
-no fim é a lista dos estudos incluídos, com as decisões.
+**As planilhas da revisão ficam no repositório**, em `dados/revisao/`, desde
+08/11, quando ele passou a ser privado. As exportações trazem resumos, que os
+termos de uso das bases não permitem redistribuir: se o repositório voltar a
+ser público, `dados/revisao/` sai antes. Os PDFs dos artigos
+(`dados/revisao/pdf/`) nunca entram.

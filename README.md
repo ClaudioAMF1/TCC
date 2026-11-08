@@ -29,7 +29,7 @@ desenhos/       Desenhos experimentais completos dos candidatos que avançaram
 tcc/            O texto do TCC I e o passo a passo do piloto
 descartados/    Temas testados e rejeitados, com a evidência que os derrubou
 scripts/        Ferramentas escritas para testar a viabilidade de cada tema
-dados/          Saída bruta das coletas (não versionado — ver .gitignore)
+dados/          Coletas. Versionados só planilhas e relatórios pequenos (repositório privado); APKs e listas grandes ficam fora (ver .gitignore)
 ```
 
 ### `disciplina/`

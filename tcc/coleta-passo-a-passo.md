@@ -147,5 +147,6 @@ para um arquivo separado e não mexe no do piloto.
 | `Não achei o apkeep` | refazer o B2; ou passar o caminho: `--apkeep ~/.cargo/bin/apkeep` |
 | `Não achei dados/n3_corpus_*.csv` | rodar da pasta do repositório, com `cd ~/Projetos/TCC` |
 
-**Não faça commit de nada de `dados/`.** APKs não podem ser redistribuídos; o
-que se publica no fim é a lista de apps com o hash de cada um.
+**APKs nunca vão para o repositório**, nem com ele privado: não podem ser
+redistribuídos. O `.gitignore` já os deixa de fora. O que se publica no fim é a
+lista de apps com o hash de cada um.

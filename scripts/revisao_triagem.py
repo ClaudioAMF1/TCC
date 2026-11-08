@@ -36,8 +36,9 @@ DECISÕES NA PLANILHA
                               R revisão da literatura (fonte de bola de neve)
     criterio_f1 / criterio_f2: código do critério de exclusão (EC1 a EC7)
 
-Nada daqui vai para o repositório: as exportações do Scopus trazem o resumo, e
-os termos de uso não permitem redistribuí-lo. Fica tudo em dados/revisao/.
+Tudo fica em dados/revisao/, que é versionado enquanto o repositório for
+privado. As exportações do Scopus trazem o resumo, e os termos de uso não
+permitem redistribuí-lo: se o repositório voltar a ser público, essa pasta sai.
 """
 
 import argparse

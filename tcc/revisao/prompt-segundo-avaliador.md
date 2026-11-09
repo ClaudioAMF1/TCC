@@ -154,12 +154,31 @@ Junte todas as respostas de cada prompt num arquivo só, com o cabeçalho uma ve
 - `dados/segundo_avaliador/resposta_artigos_<nome-da-ia>.csv`
 - `dados/segundo_avaliador/resposta_apps_<nome-da-ia>.csv`
 
-Faça `git add`, `commit` e `push` (ou me mande aqui), junto com as suas duas
-planilhas conferidas. Eu calculo:
+As do ChatGPT já estão no repositório (150 artigos e 100 apps, conferidos em
+09/11).
+
+**A sua parte** são as planilhas cegas, com as mesmas amostras e nenhuma
+sugestão: `dados/segundo_avaliador/cega_artigos150_claudio.xlsx` e
+`cega_apps100_claudio.xlsx`. Preencha as colunas em maiúsculas (SUA DECISÃO e
+SEU CRITÉRIO; SEU OFICIAL, SUA ESFERA e SEU SENSÍVEL), salve com o mesmo nome e
+faça `git add`, `commit` e `push`. Depois rode:
+
+```bash
+python3 scripts/segundo_avaliador.py comparar
+```
+
+O script dá, para artigos e apps:
 
 - a concordância entre você e a outra IA (κ de Cohen), em cada coluna;
 - a concordância entre você e a minha sugestão, para comparar;
-- a lista das divergências, para você olhar caso a caso.
+- o κ de Fleiss dos três juntos;
+- a lista das divergências, em `divergencias_artigos.csv` e
+  `divergencias_apps.csv`, para você olhar caso a caso.
+
+Enquanto as suas planilhas estiverem em branco, o script não mostra nada, para
+não influenciar as suas decisões. Os 5 apps da amostra que você já validou em
+04/11 ficam fora da comparação com a minha sugestão: nesses, a sugestão é a
+sua própria validação.
 
 **No texto do TCC**, se usar esse resultado, ele entra como verificação
 adicional, ao lado do reteste e da conferência do orientador, com o uso das IAs

@@ -1,0 +1,26 @@
+id;decisao;criterio;motivo
+R0002;I;;Analisa permissões usadas por bibliotecas de terceiros e aplicativos Android
+R0014;E;EC4;Recomenda bibliotecas sem avaliar sua detecção ou medir rastreamento
+R0017;T;;Avalia malware com SDKs invasivos sem esclarecer detecção de rastreamento
+R0038;I;;Detecta vazamentos de dados por bibliotecas de terceiros em apps
+R0052;I;;Relaciona análise estática das práticas de dados a rótulos de privacidade
+R0054;E;EC4;Gera testes de vulnerabilidades sem avaliar rastreamento ou detecção de bibliotecas
+R0070;I;;Avalia identificação de bibliotecas ofuscadas usando aplicativos como referência
+R0078;I;;Avalia detecção de bibliotecas Android com acurácia e comparação entre ferramentas
+R0081;E;EC4;Detecta clones de métodos vulneráveis sem avaliar detecção de bibliotecas
+R0093;I;;Propõe e avalia detecção de bibliotecas em aplicativos Android ofuscados
+R0098;E;EC3;Rastreia pessoas por visão computacional para estimar ocupação de salas
+R0102;E;EC4;Filtra bibliotecas para identificar malware por divergências entre descrição e comportamento
+R0111;I;;Detecta bibliotecas e versões em aplicativos Android com avaliação experimental
+R0118;I;;Compara ferramentas de detecção de bibliotecas usando conjuntos de referência
+R0122;I;;Avalia detecção de bibliotecas e versões com precisão e revocação
+R0140;E;EC3;Acompanha sintomas e tratamentos sem analisar rastreamento por terceiros
+R0142;E;EC3;Propõe localização de celulares perdidos com armazenamento controlado pelo usuário
+R0145;E;EC3;Avalia intervenção contra sedentarismo usando monitoramento de atividade física
+R0164;E;EC3;Investiga participação em pesquisas de deslocamento usando aplicativo de rastreamento GPS
+R0171;E;EC5;Investiga percepções e aceitabilidade de dispositivos sem analisar privacidade dos apps
+R0178;I;;Mede rastreamento por terceiros em aplicativos Android antes e depois do GDPR
+R0193;I;;Analisa aplicativos reais de contatos e mede presença de rastreadores
+R0196;T;;Propõe compartilhamento com redes publicitárias mas não esclarece avaliação empírica
+R0213;E;IC1;Apresenta agenda conceitual sem estudo primário ou avaliação de detecção
+R0226;I;;Detecta bibliotecas rastreadoras e compartilhamento de dados em aplicativos de sintomas

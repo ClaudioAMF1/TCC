@@ -24,3 +24,128 @@ R0193;I;;Analisa aplicativos reais de contatos e mede presença de rastreadores
 R0196;T;;Propõe compartilhamento com redes publicitárias mas não esclarece avaliação empírica
 R0213;E;IC1;Apresenta agenda conceitual sem estudo primário ou avaliação de detecção
 R0226;I;;Detecta bibliotecas rastreadoras e compartilhamento de dados em aplicativos de sintomas
+R0240;E;IC1;Monitora comportamento individual de privacidade sem analisar rastreamento por terceiros
+R0261;E;EC3;Avalia adesão a estudo clínico de dermatite com acompanhamento por smartphones
+R0266;E;EC5;Pesquisa preocupações das usuárias sem examinar práticas reais dos aplicativos
+R0273;E;EC5;Entrevista profissionais sobre experiências com dados de saúde gerados por pacientes
+R0283;I;;Analisa rastreadores em aplicativos Android associados a dispositivos IoT reais
+R0287;E;EC3;Monitora indicadores clínicos para diagnóstico de doenças hepáticas
+R0297;I;;Analisa risco de privacidade combinando permissões e bibliotecas publicitárias em apps
+R0311;E;EC3;Monitora sintomas infantis e gera alertas de saúde
+R0326;E;EC6;Publicação identificada como pôster no título
+R0331;I;;Compara coleta de dados e bibliotecas rastreadoras em aplicativos iOS chineses
+R0333;I;;Analisa vazamentos para terceiros em aplicativos de navegação e atividade física
+R0337;I;;Detecta coleta por bibliotecas analíticas e confronta políticas de privacidade
+R0366;E;IC1;Avalia usabilidade do CoronaMelder sem examinar rastreamento ou práticas de privacidade
+R0374;E;EC3;Revisa intervenções de emagrecimento com monitoramento de saúde e atividade física
+R0377;E;EC3;Avalia aplicativos de acompanhamento da menopausa sem rastreamento por terceiros
+R0378;E;EC3;Rastreia atividade de fala com gravador móvel e extração de características
+R0379;E;EC3;Reconhece exercícios e conta repetições usando radar
+R0385;I;;Analisa rastreadores e coleta de dados em aplicativos de atualização Android
+R0386;E;EC5;Investiga atitudes e comportamentos de privacidade de estudantes
+R0399;I;;Identifica bibliotecas publicitárias pelo comportamento de rede dos aplicativos
+R0405;E;EC2;Estuda rastreamento em aplicativos de televisores sem analisar aplicativos móveis
+R0418;R;;Revisa técnicas de proteção da privacidade em soluções digitais para COVID
+R0421;E;IC1;Propõe interoperabilidade de prontuários móveis sem analisar rastreamento por terceiros
+R0424;I;;Analisa permissões e transporte de dados em aplicativos reais de contatos
+R0430;E;EC3;Monitora atividades e emissões para incentivar comportamentos sustentáveis
+R0438;E;EC2;Revisa detecção de intrusões em redes sem analisar aplicativos móveis
+R0440;T;;Analisa privacidade de app governamental mas natureza primária não fica clara
+R0446;T;;Compara permissões e políticas sem esclarecer fluxos de dados para terceiros
+R0459;T;;Analisa declarações de coleta sem esclarecer participação de terceiros
+R0460;E;IC1;Revisa detecção de botnets Android sem tratar rastreamento por terceiros
+R0463;E;EC5;Classifica opiniões sobre serviços de água sem examinar privacidade dos aplicativos
+R0487;I;;Analisa permissões e ameaças em aplicativos governamentais de contatos
+R0488;E;EC3;Desenvolve aplicativo para acompanhar estatísticas da pandemia
+R0489;R;;Revisa respostas digitais à pandemia incluindo vigilância e privacidade
+R0497;E;IC1;Modela governança de dados médicos sem analisar rastreamento ou aplicativos reais
+R0502;I;;Analisa compartilhamento de dados com empresas em aplicativo Android experimental
+R0509;I;;Confronta políticas com transferências internacionais efetivamente observadas em aplicativos Android
+R0512;I;;Compara coleta detectada por análise estática com declarações dos aplicativos
+R0516;E;EC2;Desenvolve agregação criptográfica para aprendizado distribuído sem analisar aplicativos móveis
+R0519;E;EC2;Detecta phishing em websites sem analisar aplicativos móveis
+R0528;E;IC1;Avalia medidas de apoio financeiro sem analisar rastreamento em aplicativos
+R0548;I;;Confronta fluxos externos de dados sensíveis com políticas de aplicativos IoT
+R0582;E;EC5;Pesquisa percepções de acesso a serviços de HIV sem analisar apps
+R0592;I;;Analisa comportamento de privacidade em aplicativos reais de contatos
+R0595;E;EC5;Pesquisa percepção de proteção da privacidade sem analisar aplicativos
+R0605;E;EC5;Mede confiança e apoio dos usuários ao aplicativo governamental
+R0609;E;IC1;Discute ética de grandes dados sem estudo primário sobre aplicativos
+R0610;E;IC1;Classifica imagens inadequadas sem analisar rastreamento ou terceiros
+R0620;I;;Compara compartilhamento detectado e declarações incluindo bibliotecas de terceiros
+R0622;E;IC1;Detecta aplicativos falsificados por código Smali sem analisar rastreamento
+R0649;I;;Demonstra acesso de miniapps terceiros a informações sensíveis em superapps
+R0652;T;;Propõe identidade móvel governamental sem esclarecer avaliação das práticas de privacidade
+R0653;I;;Analisa acesso de bibliotecas a recursos sensíveis e divergências nas descrições
+R0655;E;IC1;Avalia organização de testes de invasão sem analisar rastreamento ou privacidade
+R0681;T;;Examina privacidade e soberania no GAEN sem esclarecer natureza primária
+R0683;E;EC3;Mede tempo de uso do celular e desempenho acadêmico
+R0710;I;;Analisa governança e transferência de dados em versões internacionais de aplicativos
+R0718;T;;Estuda soberania de apps públicos sem esclarecer análise de privacidade
+R0729;E;EC5;Pesquisa aceitação de tecnologias e disposição para compartilhar dados de saúde
+R0731;E;EC5;Sintetiza experiências e opiniões de cuidadores sem analisar privacidade dos apps
+R0737;I;;Avalia geolocalização contra referência e transferências internacionais em aplicativos Android
+R0749;E;IC1;Discute evolução tecnológica geral sem analisar rastreamento em aplicativos
+R0757;E;EC3;Monitora localização e saúde de viajantes para pesquisa epidemiológica
+R0759;T;;Propõe proteção transfronteiriça em serviço digital sem detalhar transferências
+R0760;I;;Analisa termos do Grindr à luz da LGPD
+R0761;E;EC5;Analisa percepções e benefícios anunciados sem examinar práticas de privacidade
+R0764;E;EC2;Avalia controle de acesso exclusivamente em aplicações web
+R0765;E;EC3;Investiga rastreamento visual de objetos por drones
+R0793;I;;Inclui análise estática e dinâmica de aplicativos governamentais de certificados
+R0797;E;EC2;Avalia dispositivos IoT sem analisar aplicativos móveis
+R0799;E;EC3;Avalia comunicação Bluetooth para monitoramento cerebral e neurofeedback móvel
+R0800;E;IC1;Gera testes unitários Android sem analisar rastreamento ou bibliotecas
+R0805;E;EC2;Propõe autenticação e reconhecimento facial em portal bancário
+R0820;E;IC1;Avalia desofuscação para detectar malware sem analisar rastreamento ou bibliotecas
+R0826;E;IC1;Propõe avaliação de maturidade de segurança para empresas
+R0831;E;IC1;Analisa bugs em trechos reutilizados sem estudar rastreamento ou bibliotecas
+R0844;E;IC1;Analisa desempenho de aplicativos sem investigar rastreamento por terceiros
+R0850;T;;Modelo de permissões não esclarece coleta ou compartilhamento por terceiros
+R0859;T;;Detecta violações de privacidade sem esclarecer participação de bibliotecas ou terceiros
+R0861;E;EC3;Propõe monitoramento de saúde por pulseira e aplicativo
+R0868;E;EC2;Examina dados residuais em celulares leiloados sem analisar aplicativos móveis
+R0869;E;EC2;Avalia comunicação Bluetooth de dispositivo vestível sem analisar aplicativos móveis
+R0871;I;;Detecta exposição de dados pessoais em logs de aplicativos e bibliotecas
+R0872;I;;Analisa vigilância encoberta e evolução de aplicativos Android de stalkerware
+R0873;E;IC1;Detecta cliques fraudulentos sem analisar rastreamento ou privacidade
+R0886;T;;Compara rótulos declarados sem esclarecer análise de rastreamento ou terceiros
+R0888;E;IC1;Detecta incompatibilidades de APIs Android sem analisar bibliotecas de terceiros
+R0897;E;EC2;Discute ameaças cibernéticas gerais sem analisar aplicativos móveis
+R0915;E;EC2;Investiga segurança da camada física de redes sem analisar aplicativos
+R0921;E;EC3;Avalia reconhecimento de atividades humanas por sensores vestíveis
+R0931;I;;Investiga coleta ilícita e conformidade de políticas em plataformas de notificações
+R0937;E;EC3;Identifica ambientes e localização para monitoramento de marcha
+R0945;E;EC3;Usa mobilidade para estimar infecções sem analisar privacidade do aplicativo
+R0954;E;EC2;Avalia criptografia de armazenamento em dispositivos vestíveis
+R0965;T;;Avalia segurança de app municipal sem detalhar testes de privacidade
+R0971;E;IC1;Agrupa famílias de malware sem analisar rastreamento ou bibliotecas de terceiros
+R0980;E;IC1;Revisa detecção de malware ofuscado sem foco em rastreamento por terceiros
+R0987;E;EC3;Rastreia restauração ambiental e créditos de carbono
+R1004;E;EC2;Avalia amplificador eletrônico sem tratar de aplicativos móveis
+R1007;E;EC3;Monitora exercícios e estima riscos de doenças
+R1010;E;EC2;Propõe infraestrutura de evacuação de edifícios sem analisar aplicativos móveis
+R1016;E;EC5;Pesquisa experiências de desenvolvedores com componentes visuais do Flutter
+R1017;E;EC5;Pesquisa conhecimento e comportamento de funcionários sobre políticas de segurança
+R1022;E;EC3;Monitora veículos e detecta acidentes com sensores
+R1028;E;IC1;Investiga falhas e exceções de aplicativos sem analisar rastreamento
+R1032;E;EC3;Prevê passos e recomenda atividades físicas
+R1042;E;EC3;Acompanha alimentação e atividade física para controle de peso
+R1045;I;;Propõe e avalia identificação de tráfego de bibliotecas de terceiros
+R1051;I;;Demonstra captura de digitação e envio de dados a servidor remoto
+R1083;E;EC2;Avalia computação segura em nuvem sem analisar aplicativos móveis
+R1099;E;EC3;Reconhece exercícios e corrige movimentos por visão computacional
+R1123;E;IC1;Categoriza riscos gerais de dispositivos sem analisar rastreamento por terceiros
+R1128;E;EC2;Propõe controle de acesso a sensores sem analisar aplicativos móveis
+R1131;T;;Permite recomendações comerciais com documentos pessoais mas não detalha avaliação
+R1132;E;EC2;Revisa perícia de dispositivos domésticos IoT sem analisar aplicativos móveis
+R1134;E;EC2;Monitora botijões e vazamentos de gás sem analisar aplicativos móveis
+R1140;E;IC1;Mede técnicas de proteção dos apps sem analisar rastreamento por terceiros
+R1164;E;IC1;Revisa interceptação legal na Indonésia sem abordar LGPD ou transferências internacionais
+R1172;T;;Propõe análise de fluxos pessoais sem esclarecer terceiros ou avaliação empírica
+R1182;E;IC1;Investiga falhas de permissões personalizadas sem analisar rastreamento por terceiros
+R1186;E;EC4;Usa identificadores de SDKs para atribuição de autoria e detecção de PUAs
+R1191;R;;Revisa privacidade e controle de fluxos de dados em aplicativos Android
+R1198;E;EC3;Monitora sinais vitais e detecta anomalias de saúde
+R1233;E;EC3;Propõe rastreador veicular com criptografia
+R1242;E;IC1;Jogo educacional de programação sem relação com rastreamento ou privacidade

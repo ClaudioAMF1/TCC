@@ -9,6 +9,7 @@ secrets*
 scripts/dados/
 dados/*
 !dados/revisao/
+!dados/segundo_avaliador/
 dados/revisao/pdf/
 dados/revisao/*.bak.csv
 !dados/n3_corpus_*.csv

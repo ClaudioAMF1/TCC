@@ -163,6 +163,7 @@ nenhum explora falha, nenhum baixa conteúdo de área autenticada.
 | `teste_viabilidade_n3_robusto.py` | Mede a **porta de cada hipótese** antes de baixar APK: pareamento (H1), política de privacidade acessível (H2), povoamento das células (H3), potência estatística, e um sinal preliminar da variável dependente |
 | `piloto_androzoo.py` | **Piloto da H4**: cobertura do AndroZoo, sorteio de 20 apps, download pelo hash, três detectores (Exodus código, Exodus rede, Disconnect) e κ de Fleiss / τ de Kendall. Passo a passo em `tcc/piloto-passo-a-passo.md` |
 | `ampliar_controle.py` | Procura comerciais nas células categoria × faixa de instalações em que o controle falta, para o suporte comum da H1. `--diagnostico` só mede |
+| `fichas_publicadores.py` | Ficha atual de cada app do corpus na Google Play e o **nome jurídico** do publicador ("Sobre o desenvolvedor"), evidência para a classificação manual dos 396 |
 | `revisao_triagem.py` | Revisão sistemática: junta as exportações do Scopus, ACM, IEEE, SOL e BDTD, tira duplicatas, confere o conjunto de controle, sorteia o reteste, calcula o κ da triagem e dá os números do PRISMA. Passo a passo em `tcc/revisao/buscas-passo-a-passo.md` |
 | `coleta_google_play.py` | Baixa APKs direto da Google Play pelo `apkeep`, registra SHA-256 e versão e guarda o base junto dos do AndroZoo. Passo a passo em `tcc/coleta-passo-a-passo.md` |
 | `teste_viabilidade_malware.py` | Consulta metadados de famílias de malware bancário no MalwareBazaar e mede compartilhamento de imphash entre famílias, com grupo de controle não brasileiro |

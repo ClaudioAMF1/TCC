@@ -1,0 +1,4607 @@
+{
+  "relatorio": {
+    "coleta": "2026-09-17T12:38:31.050235+00:00",
+    "corpus": {
+      "processados": 396,
+      "vivos": 396,
+      "erros": 0
+    },
+    "celulas": {
+      "federal|não sensível": 45,
+      "federal|sensível": 40,
+      "estadual|sensível": 74,
+      "estadual|não sensível": 132,
+      "indeterminado|não sensível": 7,
+      "municipal|sensível": 35,
+      "municipal|não sensível": 60,
+      "indeterminado|sensível": 3
+    },
+    "sensiveis": 152,
+    "categorias_sensiveis": {
+      "previdencia": 28,
+      "saude": 125,
+      "assistencia": 5,
+      "biometria": 17
+    },
+    "suporte_comum": {
+      "dentro": 307,
+      "fora": 87,
+      "sem_categoria": 0,
+      "controle": 190,
+      "global_dentro": 364,
+      "faixas_governo": {
+        "10^6": 34,
+        "10^8": 6,
+        "10^7": 16,
+        "10^5": 64,
+        "10^3": 81,
+        "10^4": 93,
+        "10^2": 70,
+        "10^1": 24,
+        "10^0": 6,
+        "?": 2
+      },
+      "faixas_controle": {
+        "10^6": 36,
+        "10^7": 42,
+        "10^8": 31,
+        "10^5": 27,
+        "10^9": 18,
+        "10^3": 12,
+        "10^4": 12,
+        "10^2": 12
+      },
+      "deficit": {
+        "Social|10^5": 6,
+        "Produtividade|10^1": 6,
+        "Social|10^4": 2,
+        "Saúde e fitness|10^4": 5,
+        "Saúde e fitness|10^3": 4,
+        "Educativos|10^4": 2,
+        "Livros e referências|10^3": 3,
+        "Viagem e Turismo|10^0": 1,
+        "Veículos|10^3": 1,
+        "Finanças|10^5": 3,
+        "Finanças|10^4": 4,
+        "Ferramentas|10^1": 6,
+        "Entretenimento|10^3": 2,
+        "Esportes|10^2": 1,
+        "Ferramentas|10^0": 3,
+        "Medicina|10^2": 4,
+        "Social|10^3": 2,
+        "Clima|10^3": 1,
+        "Social|10^2": 2,
+        "Eventos|10^2": 2,
+        "Negócios|10^1": 4,
+        "Finanças|10^2": 1,
+        "Entretenimento|10^4": 3,
+        "Entretenimento|10^2": 3,
+        "Personalização|10^3": 1,
+        "Comunicação|10^1": 2,
+        "Saúde e fitness|10^2": 1,
+        "Medicina|10^1": 2,
+        "Finanças|10^1": 1,
+        "Casuais|10^0": 1,
+        "Produtividade|10^0": 1,
+        "Veículos|10^1": 1,
+        "Livros e referências|10^2": 2,
+        "Saúde e fitness|10^1": 1,
+        "Finanças|10^3": 1,
+        "Notícias e revistas|10^3": 1,
+        "Viagem e Turismo|10^1": 1
+      }
+    },
+    "politica": {
+      "estados": {
+        "ok": 323,
+        "http_404": 10,
+        "falha": 9,
+        "http_403": 27,
+        "http_302": 15,
+        "http_520": 1,
+        "ausente": 2,
+        "http_500": 1,
+        "http_502": 1,
+        "http_503": 7
+      },
+      "tipos": {
+        "text/html": 321,
+        "application/pdf": 1
+      }
+    },
+    "anuncio": {
+      "gov_k": 0,
+      "gov_n": 396,
+      "ctrl_k": 63,
+      "ctrl_n": 190
+    },
+    "potencia": {
+      "p_base": 0.0,
+      "n_gov": 396,
+      "mde_vs_controle": 0.051
+    },
+    "veredito": {
+      "H1": true,
+      "H2": true,
+      "H3": true,
+      "H4": true,
+      "parcial": false
+    }
+  },
+  "controle": [
+    {
+      "appId": "com.jmm.ipassion",
+      "title": "iPassion - Jogos de amor",
+      "developer": "Macro Tap",
+      "genre": "Casuais",
+      "minInstalls": 1000000,
+      "realInstalls": 3444252,
+      "installs": "1.000.000+",
+      "containsAds": true,
+      "privacyPolicy": "https://ipassion.app/privacy-google.html",
+      "n_instalacoes": 1000000,
+      "faixa": "10^6"
+    },
+    {
+      "appId": "ru.yandex.weatherplugin",
+      "title": "Yandex Weather & Rain Radar",
+      "developer": "Direct Cursus Computer Systems Trading LLC",
+      "genre": "Clima",
+      "minInstalls": 50000000,
+      "realInstalls": 58729604,
+      "installs": "50.000.000+",
+      "containsAds": true,
+      "privacyPolicy": "https://yandex.ru/legal/confidential/",
+      "n_instalacoes": 50000000,
+      "faixa": "10^7"
+    },
+    {
+      "appId": "aplicacion.tiempo",
+      "title": "Previsão do Tempo - Meteored",
+      "developer": "Meteored",
+      "genre": "Clima",
+      "minInstalls": 50000000,
+      "realInstalls": 80133068,
+      "installs": "50.000.000+",
+      "containsAds": true,
+      "privacyPolicy": "https://www.yourweather.co.uk/privacy.html",
+      "n_instalacoes": 50000000,
+      "faixa": "10^7"
+    },
+    {
+      "appId": "mobi.lockdown.weather",
+      "title": "Today Weather: Radar e Widgets",
+      "developer": "todayweather.co",
+      "genre": "Clima",
+      "minInstalls": 1000000,
+      "realInstalls": 3083620,
+      "installs": "1.000.000+",
+      "containsAds": true,
+      "privacyPolicy": "https://todayweather.co/privacy.html",
+      "n_instalacoes": 1000000,
+      "faixa": "10^6"
+    },
+    {
+      "appId": "de.wetteronline.wetterapp",
+      "title": "Clima&Radar: Previsão do Tempo",
+      "developer": "WetterOnline",
+      "genre": "Clima",
+      "minInstalls": 100000000,
+      "realInstalls": 149502549,
+      "installs": "100.000.000+",
+      "containsAds": true,
+      "privacyPolicy": "https://www.weatherandradar.com/apps/android/privacy/",
+      "n_instalacoes": 100000000,
+      "faixa": "10^8"
+    },
+    {
+      "appId": "com.accuweather.android",
+      "title": "AccuWeather: Radar ao vivo",
+      "developer": "AccuWeather",
+      "genre": "Clima",
+      "minInstalls": 100000000,
+      "realInstalls": 130409173,
+      "installs": "100.000.000+",
+      "containsAds": true,
+      "privacyPolicy": "http://m.accuweather.com/en/privacy",
+      "n_instalacoes": 100000000,
+      "faixa": "10^8"
+    },
+    {
+      "appId": "weather.forecast.rain.radar",
+      "title": "Tela do Clima",
+      "developer": "weather screen team",
+      "genre": "Clima",
+      "minInstalls": 5000000,
+      "realInstalls": 5225990,
+      "installs": "5.000.000+",
+      "containsAds": true,
+      "privacyPolicy": "https://firstscreen.mlink.me/policy/privacy",
+      "n_instalacoes": 5000000,
+      "faixa": "10^6"
+    },
+    {
+      "appId": "aplicacionpago.tiempo",
+      "title": "Previsão Tempo - Meteored Pro",
+      "developer": "Meteored",
+      "genre": "Clima",
+      "minInstalls": 100000,
+      "realInstalls": 316373,
+      "installs": "100.000+",
+      "containsAds": false,
+      "privacyPolicy": "https://www.yourweather.co.uk/privacy.html",
+      "n_instalacoes": 100000,
+      "faixa": "10^5"
+    },
+    {
+      "appId": "com.rainbowmeteo.weather.rainbow.ai",
+      "title": "Rainbow Weather: Climatempo AI",
+      "developer": "Weather Forecast Technologies",
+      "genre": "Clima",
+      "minInstalls": 500000,
+      "realInstalls": 618925,
+      "installs": "500.000+",
+      "containsAds": false,
+      "privacyPolicy": "https://www.rainbow.ai/privacy-policy",
+      "n_instalacoes": 500000,
+      "faixa": "10^5"
+    },
+    {
+      "appId": "com.whatsapp",
+      "title": "WhatsApp Messenger",
+      "developer": "WhatsApp LLC",
+      "genre": "Comunicação",
+      "minInstalls": 10000000000,
+      "realInstalls": 12322703000,
+      "installs": "10.000.000.000+",
+      "containsAds": false,
+      "privacyPolicy": "https://www.whatsapp.com/legal/privacy-policy",
+      "n_instalacoes": 10000000000,
+      "faixa": "10^9"
+    },
+    {
+      "appId": "com.whatsapp.w4b",
+      "title": "WhatsApp Business",
+      "developer": "WhatsApp LLC",
+      "genre": "Comunicação",
+      "minInstalls": 1000000000,
+      "realInstalls": 2280858568,
+      "installs": "1.000.000.000+",
+      "containsAds": false,
+      "privacyPolicy": "https://www.whatsapp.com/legal/business-app-privacy-policy",
+      "n_instalacoes": 1000000000,
+      "faixa": "10^9"
+    },
+    {
+      "appId": "com.rebelvox.voxer",
+      "title": "Voxer Walkie-Talkie PTT",
+      "developer": "VoxerPro LLC",
+      "genre": "Comunicação",
+      "minInstalls": 10000000,
+      "realInstalls": 40035263,
+      "installs": "10.000.000+",
+      "containsAds": false,
+      "privacyPolicy": "http://www.voxer.com/legal/consumer/privacy.html",
+      "n_instalacoes": 10000000,
+      "faixa": "10^7"
+    },
+    {
+      "appId": "com.discord",
+      "title": "Discord - Converse e Jogue",
+      "developer": "Discord Inc.",
+      "genre": "Comunicação",
+      "minInstalls": 500000000,
+      "realInstalls": 689684438,
+      "installs": "500.000.000+",
+      "containsAds": false,
+      "privacyPolicy": "https://discordapp.com/privacy/",
+      "n_instalacoes": 500000000,
+      "faixa": "10^8"
+    },
+    {
+      "appId": "com.yahoo.mobile.client.android.mail",
+      "title": "Yahoo Mail – e-mail organizado",
+      "developer": "Yahoo",
+      "genre": "Comunicação",
+      "minInstalls": 100000000,
+      "realInstalls": 350785887,
+      "installs": "100.000.000+",
+      "containsAds": true,
+      "privacyPolicy": "https://policies.yahoo.com/xw/en/yahoo/privacy/directory/international/index.htm",
+      "n_instalacoes": 100000000,
+      "faixa": "10^8"
+    },
+    {
+      "appId": "com.cipherchat.bonchat",
+      "title": "BonChat",
+      "developer": "CipherChat Tech Company Limited",
+      "genre": "Comunicação",
+      "minInstalls": 1000000,
+      "realInstalls": 2956161,
+      "installs": "1.000.000+",
+      "containsAds": false,
+      "privacyPolicy": "https://pub.bonchat.app/bonchat-privacy.html",
+      "n_instalacoes": 1000000,
+      "faixa": "10^6"
+    },
+    {
+      "appId": "com.facebook.talk",
+      "title": "O aplicativo de mensagens para",
+      "developer": "Meta Platforms, Inc.",
+      "genre": "Comunicação",
+      "minInstalls": 50000000,
+      "realInstalls": 69481712,
+      "installs": "50.000.000+",
+      "containsAds": false,
+      "privacyPolicy": "https://www.facebook.com/legal/messengerkids/privacypolicy?version=2020",
+      "n_instalacoes": 50000000,
+      "faixa": "10^7"
+    },
+    {
+      "appId": "com.justalk.kids.android",
+      "title": "JusTalk Kids Messenger",
+      "developer": "JusTalk",
+      "genre": "Comunicação",
+      "minInstalls": 5000000,
+      "realInstalls": 7470896,
+      "installs": "5.000.000+",
+      "containsAds": false,
+      "privacyPolicy": "https://kids.justalk.com/privacy.html",
+      "n_instalacoes": 5000000,
+      "faixa": "10^6"
+    },
+    {
+      "appId": "com.amayasoft.abc.kids.alphabet.learning.games",
+      "title": "ABC: jogo do alfabeto infantil",
+      "developer": "Amaya Kids - learning games for 3-5 years old",
+      "genre": "Educativos",
+      "minInstalls": 100000,
+      "realInstalls": 210229,
+      "installs": "100.000+",
+      "containsAds": false,
+      "privacyPolicy": "http://amayakids.com/privacy.html",
+      "n_instalacoes": 100000,
+      "faixa": "10^5"
+    },
+    {
+      "appId": "com.rvappstudios.shapes.colors.toddler",
+      "title": "Crianças Colorir: Cores Jogos",
+      "developer": "RV AppStudios",
+      "genre": "Educativos",
+      "minInstalls": 10000000,
+      "realInstalls": 21407343,
+      "installs": "10.000.000+",
+      "containsAds": false,
+      "privacyPolicy": "https://www.rvappstudios.com/privacy_policy_ABC.php",
+      "n_instalacoes": 10000000,
+      "faixa": "10^7"
+    },
+    {
+      "appId": "com.rvappstudios.baby.toddler.kids.games.learning.activity",
+      "title": "Jogos infantis: 3-7 anos",
+      "developer": "RV AppStudios",
+      "genre": "Educativos",
+      "minInstalls": 50000000,
+      "realInstalls": 92429607,
+      "installs": "50.000.000+",
+      "containsAds": false,
+      "privacyPolicy": "https://www.rvappstudios.com/privacy_policy_ABC.php",
+      "n_instalacoes": 50000000,
+      "faixa": "10^7"
+    },
+    {
+      "appId": "com.bebi.family.baby.games.mg2",
+      "title": "Jogos Infantis Educativos 2-5",
+      "developer": "Bebi Family: Educational Games for Kids",
+      "genre": "Educativos",
+      "minInstalls": 5000000,
+      "realInstalls": 7334256,
+      "installs": "5.000.000+",
+      "containsAds": false,
+      "privacyPolicy": "http://bebi.family/privacy-policy/",
+      "n_instalacoes": 5000000,
+      "faixa": "10^6"
+    },
+    {
+      "appId": "gen.tech.keiki.world.learning",
+      "title": "Keiki Jogos Crianças 4 anos",
+      "developer": "Benipol Limited",
+      "genre": "Educativos",
+      "minInstalls": 5000000,
+      "realInstalls": 6551607,
+      "installs": "5.000.000+",
+      "containsAds": false,
+      "privacyPolicy": "https://get.keiki.app/terms/privacy-policy/",
+      "n_instalacoes": 5000000,
+      "faixa": "10^6"
+    },
+    {
+      "appId": "com.binkyacademy.learning.game",
+      "title": "Jogos educativos 3,4,5,6 anos",
+      "developer": "Game Tunes",
+      "genre": "Educativos",
+      "minInstalls": 100000,
+      "realInstalls": 243119,
+      "installs": "100.000+",
+      "containsAds": false,
+      "privacyPolicy": "https://www.gametunes.org/privacy-policy",
+      "n_instalacoes": 100000,
+      "faixa": "10^5"
+    },
+    {
+      "appId": "com.rvappstudios.kids.coloring.book.color.painting",
+      "title": "Jogos de Colorir: Cor Pintura",
+      "developer": "RV AppStudios",
+      "genre": "Educativos",
+      "minInstalls": 100000000,
+      "realInstalls": 181038670,
+      "installs": "100.000.000+",
+      "containsAds": false,
+      "privacyPolicy": "https://www.rvappstudios.com/privacy_policy_ABC.php",
+      "n_instalacoes": 100000000,
+      "faixa": "10^8"
+    },
+    {
+      "appId": "com.edujoy.masha.games",
+      "title": "Masha e o Urso. Jogo Educativo",
+      "developer": "DTC Lab",
+      "genre": "Educativos",
+      "minInstalls": 100000000,
+      "realInstalls": 223745796,
+      "installs": "100.000.000+",
+      "containsAds": true,
+      "privacyPolicy": "https://dtclab.pro/privacypolicy",
+      "n_instalacoes": 100000000,
+      "faixa": "10^8"
+    },
+    {
+      "appId": "org.coursera.android",
+      "title": "Coursera: avance sua carreira",
+      "developer": "Coursera, Inc.",
+      "genre": "Educação",
+      "minInstalls": 10000000,
+      "realInstalls": 32074011,
+      "installs": "10.000.000+",
+      "containsAds": false,
+      "privacyPolicy": "https://www.coursera.org/about/privacy",
+      "n_instalacoes": 10000000,
+      "faixa": "10^7"
+    },
+    {
+      "appId": "com.duolingo",
+      "title": "Duolingo Inglês e mais idiomas",
+      "developer": "Duolingo",
+      "genre": "Educação",
+      "minInstalls": 500000000,
+      "realInstalls": 969191177,
+      "installs": "500.000.000+",
+      "containsAds": true,
+      "privacyPolicy": "https://www.duolingo.com/privacy",
+      "n_instalacoes": 500000000,
+      "faixa": "10^8"
+    },
+    {
+      "appId": "com.earlystart.monkeymath",
+      "title": "Monkey Math: Kids math games",
+      "developer": "EARLY START JOINT STOCK COMPANY",
+      "genre": "Educação",
+      "minInstalls": 500000,
+      "realInstalls": 679753,
+      "installs": "500.000+",
+      "containsAds": false,
+      "privacyPolicy": "https://www.monkeyenglish.net/en/policy-app",
+      "n_instalacoes": 500000,
+      "faixa": "10^5"
+    },
+    {
+      "appId": "com.google.android.apps.classroom",
+      "title": "Google Sala de Aula",
+      "developer": "Google LLC",
+      "genre": "Educação",
+      "minInstalls": 100000000,
+      "realInstalls": 405918925,
+      "installs": "100.000.000+",
+      "containsAds": false,
+      "privacyPolicy": "http://www.google.com/policies/privacy",
+      "n_instalacoes": 100000000,
+      "faixa": "10^8"
+    },
+    {
+      "appId": "com.classdojo.android",
+      "title": "ClassDojo: Escola e Casa",
+      "developer": "ClassDojo",
+      "genre": "Educação",
+      "minInstalls": 50000000,
+      "realInstalls": 52866253,
+      "installs": "50.000.000+",
+      "containsAds": false,
+      "privacyPolicy": "http://www.classdojo.com/privacy",
+      "n_instalacoes": 50000000,
+      "faixa": "10^7"
+    },
+    {
+      "appId": "com.slatescience.Matific",
+      "title": "Matific Matemática",
+      "developer": "Matific - Educational Maths Games",
+      "genre": "Educação",
+      "minInstalls": 5000000,
+      "realInstalls": 6733884,
+      "installs": "5.000.000+",
+      "containsAds": false,
+      "privacyPolicy": "https://www.matific.com/us/en-us/home/privacy/",
+      "n_instalacoes": 5000000,
+      "faixa": "10^6"
+    },
+    {
+      "appId": "com.splash.kids.education.learning.games.free.multiplication.reading.math.grade.app.splashmath",
+      "title": "SplashLearn: Kids Learning App",
+      "developer": "StudyPad, Inc.",
+      "genre": "Educação",
+      "minInstalls": 1000000,
+      "realInstalls": 1502646,
+      "installs": "1.000.000+",
+      "containsAds": false,
+      "privacyPolicy": "https://www.splashlearn.com/privacy",
+      "n_instalacoes": 1000000,
+      "faixa": "10^6"
+    },
+    {
+      "appId": "com.ikame.ai.language.learning",
+      "title": "LearnUp: Aprendendo Idiomas",
+      "developer": "iKame Applications - Begamob Global",
+      "genre": "Educação",
+      "minInstalls": 100000,
+      "realInstalls": 358062,
+      "installs": "100.000+",
+      "containsAds": false,
+      "privacyPolicy": "https://begamob.com/bega-policy.html",
+      "n_instalacoes": 100000,
+      "faixa": "10^5"
+    },
+    {
+      "appId": "com.ss.android.ttmd.video",
+      "title": "PineDrama - Mininovelas",
+      "developer": "TikTok Pte. Ltd.",
+      "genre": "Entretenimento",
+      "minInstalls": 50000000,
+      "realInstalls": 68472424,
+      "installs": "50.000.000+",
+      "containsAds": false,
+      "privacyPolicy": "https://www.tiktok.com/legal/privacy-policy/",
+      "n_instalacoes": 50000000,
+      "faixa": "10^7"
+    },
+    {
+      "appId": "ai.socialapps.speakmaster",
+      "title": "PolyBuzz: Fale com Amigos IA",
+      "developer": "CLOUD WHALE INTERACTIVE TECHNOLOGY LLC.",
+      "genre": "Entretenimento",
+      "minInstalls": 50000000,
+      "realInstalls": 55669837,
+      "installs": "50.000.000+",
+      "containsAds": true,
+      "privacyPolicy": "https://app.polybuzz.ai/static/hy/speakmaster/privacyPolicy/index.html?darkmode=1&darkStyle=1",
+      "n_instalacoes": 50000000,
+      "faixa": "10^7"
+    },
+    {
+      "appId": "com.dramawave.app",
+      "title": "DramaWave - Dramas & Reels",
+      "developer": "SKYWORK AI PTE.LTD.",
+      "genre": "Entretenimento",
+      "minInstalls": 100000000,
+      "realInstalls": 135576598,
+      "installs": "100.000.000+",
+      "containsAds": true,
+      "privacyPolicy": "https://mydramawave.com/rules/privacy",
+      "n_instalacoes": 100000000,
+      "faixa": "10^8"
+    },
+    {
+      "appId": "com.newleaf.app.android.victor",
+      "title": "ReelShort - Stream Drama & TV",
+      "developer": "NewLeaf Publishing",
+      "genre": "Entretenimento",
+      "minInstalls": 100000000,
+      "realInstalls": 282087845,
+      "installs": "100.000.000+",
+      "containsAds": true,
+      "privacyPolicy": "https://crazymaplestudios.com/v/privacy-agreement.html",
+      "n_instalacoes": 100000000,
+      "faixa": "10^8"
+    },
+    {
+      "appId": "com.netflix.mediaclient",
+      "title": "Netflix",
+      "developer": "Netflix, Inc.",
+      "genre": "Entretenimento",
+      "minInstalls": 1000000000,
+      "realInstalls": 3591348283,
+      "installs": "1.000.000.000+",
+      "containsAds": false,
+      "privacyPolicy": "http://www.netflix.com/privacy",
+      "n_instalacoes": 1000000000,
+      "faixa": "10^9"
+    },
+    {
+      "appId": "com.google.android.play.games",
+      "title": "Google Play Games",
+      "developer": "Google LLC",
+      "genre": "Entretenimento",
+      "minInstalls": 5000000000,
+      "realInstalls": 6142292609,
+      "installs": "5.000.000.000+",
+      "containsAds": true,
+      "privacyPolicy": "http://www.google.com/policies/privacy",
+      "n_instalacoes": 5000000000,
+      "faixa": "10^9"
+    },
+    {
+      "appId": "de.telekom.magentatv.mobile",
+      "title": "MagentaTV: TV & Streaming",
+      "developer": "Telekom Deutschland GmbH",
+      "genre": "Entretenimento",
+      "minInstalls": 1000000,
+      "realInstalls": 2410426,
+      "installs": "1.000.000+",
+      "containsAds": false,
+      "privacyPolicy": "https://www.telekom.de/datenschutzhinweise/view/171.html",
+      "n_instalacoes": 1000000,
+      "faixa": "10^6"
+    },
+    {
+      "appId": "com.storeelshort.app",
+      "title": "StoReel - Movies, Dramas & TV",
+      "developer": "StoReel US INC.",
+      "genre": "Entretenimento",
+      "minInstalls": 500000,
+      "realInstalls": 589431,
+      "installs": "500.000+",
+      "containsAds": true,
+      "privacyPolicy": "https://storeelapp.com/privacy",
+      "n_instalacoes": 500000,
+      "faixa": "10^5"
+    },
+    {
+      "appId": "com.ea.gp.fifamobile",
+      "title": "EA SPORTS FC™ Futebol Mobile",
+      "developer": "ELECTRONIC ARTS",
+      "genre": "Esportes",
+      "minInstalls": 500000000,
+      "realInstalls": 797603947,
+      "installs": "500.000.000+",
+      "containsAds": true,
+      "privacyPolicy": "http://privacy.ea.com/en",
+      "n_instalacoes": 500000000,
+      "faixa": "10^8"
+    },
+    {
+      "appId": "com.mcentric.mcclient.MyMadrid",
+      "title": "Real Madrid",
+      "developer": "Real Madrid C.F.",
+      "genre": "Esportes",
+      "minInstalls": 10000000,
+      "realInstalls": 17976687,
+      "installs": "10.000.000+",
+      "containsAds": true,
+      "privacyPolicy": "https://www.realmadrid.com/es-ES/legal/politica-de-privacidad",
+      "n_instalacoes": 10000000,
+      "faixa": "10^7"
+    },
+    {
+      "appId": "com.espn.score_center",
+      "title": "ESPN",
+      "developer": "Disney",
+      "genre": "Esportes",
+      "minInstalls": 100000000,
+      "realInstalls": 108302874,
+      "installs": "100.000.000+",
+      "containsAds": true,
+      "privacyPolicy": "https://disneyprivacycenter.com/",
+      "n_instalacoes": 100000000,
+      "faixa": "10^8"
+    },
+    {
+      "appId": "it.quadronica.leghe",
+      "title": "Leghe Fantacalcio® Serie A",
+      "developer": "Fantacalcio s.r.l.",
+      "genre": "Esportes",
+      "minInstalls": 5000000,
+      "realInstalls": 5115645,
+      "installs": "5.000.000+",
+      "containsAds": true,
+      "privacyPolicy": "https://content.fantacalcio.it/fantacalcio/app/leghe/privacy.html",
+      "n_instalacoes": 5000000,
+      "faixa": "10^6"
+    },
+    {
+      "appId": "horse.prism.owner.app",
+      "title": "Prism Horse Owners",
+      "developer": "Prism Pay Pty Ltd",
+      "genre": "Esportes",
+      "minInstalls": 1000,
+      "realInstalls": 1899,
+      "installs": "1.000+",
+      "containsAds": false,
+      "privacyPolicy": "https://www.prism.horse/policies/privacy",
+      "n_instalacoes": 1000,
+      "faixa": "10^3"
+    },
+    {
+      "appId": "com.dazn",
+      "title": "DAZN - Esportes ao vivo",
+      "developer": "DAZN",
+      "genre": "Esportes",
+      "minInstalls": 50000000,
+      "realInstalls": 93030889,
+      "installs": "50.000.000+",
+      "containsAds": true,
+      "privacyPolicy": "https://www.dazn.com/help/articles/pp-tcs-all",
+      "n_instalacoes": 50000000,
+      "faixa": "10^7"
+    },
+    {
+      "appId": "de.analyticom.cometlive.fsf",
+      "title": "FSF Fótbóltur",
+      "developer": "Fótbóltssamband Føroya",
+      "genre": "Esportes",
+      "minInstalls": 5000,
+      "realInstalls": 5118,
+      "installs": "5.000+",
+      "containsAds": false,
+      "privacyPolicy": "https://www.fsf.fo/fsf/fyrisitingin/datuverndarpolitikkur/",
+      "n_instalacoes": 5000,
+      "faixa": "10^3"
+    },
+    {
+      "appId": "com.homemade.ffm2.adfree",
+      "title": "Fantasy Football Manager Pro",
+      "developer": "Homemade Apps",
+      "genre": "Esportes",
+      "minInstalls": 10000,
+      "realInstalls": 12112,
+      "installs": "10.000+",
+      "containsAds": false,
+      "privacyPolicy": "https://fantasyfootballmanager.app/privacy-pro.html",
+      "n_instalacoes": 10000,
+      "faixa": "10^4"
+    },
+    {
+      "appId": "Com.sktelecom.minit",
+      "title": "T world - SKT 데이터/요금 확인, 맞춤 혜택",
+      "developer": "SKTelecom",
+      "genre": "Estilo de vida",
+      "minInstalls": 50000000,
+      "realInstalls": 85201591,
+      "installs": "50.000.000+",
+      "containsAds": true,
+      "privacyPolicy": "https://privacy.sktelecom.com/view.do?ctg=policy&name=policy",
+      "n_instalacoes": 50000000,
+      "faixa": "10^7"
+    },
+    {
+      "appId": "org.meetingguide",
+      "title": "Meeting Guide",
+      "developer": "A.A. World Services, Inc.",
+      "genre": "Estilo de vida",
+      "minInstalls": 1000000,
+      "realInstalls": 1987082,
+      "installs": "1.000.000+",
+      "containsAds": false,
+      "privacyPolicy": "https://www.aa.org/privacy-app",
+      "n_instalacoes": 1000000,
+      "faixa": "10^6"
+    },
+    {
+      "appId": "com.recetaps.lifewheel",
+      "title": "Roda da Vida: Autoconhecimento",
+      "developer": "Recetaps",
+      "genre": "Estilo de vida",
+      "minInstalls": 10000,
+      "realInstalls": 37027,
+      "installs": "10.000+",
+      "containsAds": true,
+      "privacyPolicy": "https://sites.google.com/view/gamesjfh/lifewheel",
+      "n_instalacoes": 10000,
+      "faixa": "10^4"
+    },
+    {
+      "appId": "ua.gov.u24app",
+      "title": "UNITED24",
+      "developer": "UNITED24",
+      "genre": "Estilo de vida",
+      "minInstalls": 10000,
+      "realInstalls": 17764,
+      "installs": "10.000+",
+      "containsAds": false,
+      "privacyPolicy": "https://u24.gov.ua/app-privacy-notice",
+      "n_instalacoes": 10000,
+      "faixa": "10^4"
+    },
+    {
+      "appId": "com.limatech.dayschallenge.dayschallenge",
+      "title": "21 Days Challenge",
+      "developer": "Kati & Lima",
+      "genre": "Estilo de vida",
+      "minInstalls": 10000000,
+      "realInstalls": 10766616,
+      "installs": "10.000.000+",
+      "containsAds": true,
+      "privacyPolicy": "https://sites.google.com/view/21dayschallenge/home",
+      "n_instalacoes": 10000000,
+      "faixa": "10^7"
+    },
+    {
+      "appId": "com.biller.scg",
+      "title": "가스앱 - 에너지 절약의 시작",
+      "developer": "SCGLAB Co., LTD.",
+      "genre": "Estilo de vida",
+      "minInstalls": 1000000,
+      "realInstalls": 4406036,
+      "installs": "1.000.000+",
+      "containsAds": true,
+      "privacyPolicy": "https://www.gasapp.co.kr/policy",
+      "n_instalacoes": 1000000,
+      "faixa": "10^6"
+    },
+    {
+      "appId": "com.encore.candleapp",
+      "title": "Candle: Couples & Relationship",
+      "developer": "Candle Team",
+      "genre": "Estilo de vida",
+      "minInstalls": 500000,
+      "realInstalls": 700673,
+      "installs": "500.000+",
+      "containsAds": false,
+      "privacyPolicy": "https://www.trycandle.app/privacy",
+      "n_instalacoes": 500000,
+      "faixa": "10^5"
+    },
+    {
+      "appId": "de.lhenne.fits",
+      "title": "Fits – Closet e guarda-roupa",
+      "developer": "L. & J. Henne UG",
+      "genre": "Estilo de vida",
+      "minInstalls": 500000,
+      "realInstalls": 836095,
+      "installs": "500.000+",
+      "containsAds": false,
+      "privacyPolicy": "https://www.fits-app.com/privacy-policy-app",
+      "n_instalacoes": 500000,
+      "faixa": "10^5"
+    },
+    {
+      "appId": "br.com.yazo.unidas2024v2",
+      "title": "Eventos UNIDAS",
+      "developer": "mobLee",
+      "genre": "Eventos",
+      "minInstalls": 1000,
+      "realInstalls": 1116,
+      "installs": "1.000+",
+      "containsAds": false,
+      "privacyPolicy": "https://unidas.yazo.app.br/use-terms",
+      "n_instalacoes": 1000,
+      "faixa": "10^3"
+    },
+    {
+      "appId": "com.sympla.tickets",
+      "title": "Sympla: Ingressos para Eventos",
+      "developer": "Sympla",
+      "genre": "Eventos",
+      "minInstalls": 10000000,
+      "realInstalls": 10608018,
+      "installs": "10.000.000+",
+      "containsAds": false,
+      "privacyPolicy": "https://termos-e-politicas.sympla.com.br/hc/pt-br/articles/360031094431-Vers%C3%A3o-completa",
+      "n_instalacoes": 10000000,
+      "faixa": "10^7"
+    },
+    {
+      "appId": "com.eventiza.organizadores",
+      "title": "Eventiza Organizador",
+      "developer": "Eventiza",
+      "genre": "Eventos",
+      "minInstalls": 1000,
+      "realInstalls": 4918,
+      "installs": "1.000+",
+      "containsAds": false,
+      "privacyPolicy": "https://eventiza.com.br/politica-de-privacidade",
+      "n_instalacoes": 1000,
+      "faixa": "10^3"
+    },
+    {
+      "appId": "com.feverup.fever",
+      "title": "Fever: Eventos & Ingressos",
+      "developer": "Fever Labs",
+      "genre": "Eventos",
+      "minInstalls": 10000000,
+      "realInstalls": 14589472,
+      "installs": "10.000.000+",
+      "containsAds": false,
+      "privacyPolicy": "https://feverup.com/legal/privacy_en.html",
+      "n_instalacoes": 10000000,
+      "faixa": "10^7"
+    },
+    {
+      "appId": "com.ingresse.ticketbooth",
+      "title": "Ingresse - Ingressos e Eventos",
+      "developer": "Ingresse",
+      "genre": "Eventos",
+      "minInstalls": 1000000,
+      "realInstalls": 3844010,
+      "installs": "1.000.000+",
+      "containsAds": false,
+      "privacyPolicy": "https://sobre.ingresse.com/termos-de-privacidade",
+      "n_instalacoes": 1000000,
+      "faixa": "10^6"
+    },
+    {
+      "appId": "air.com.ticket360.Ticket360",
+      "title": "Ticket360 Ingressos e Eventos",
+      "developer": "Ticket360",
+      "genre": "Eventos",
+      "minInstalls": 1000000,
+      "realInstalls": 2486870,
+      "installs": "1.000.000+",
+      "containsAds": false,
+      "privacyPolicy": "https://www.ticket360.com.br/central-de-ajuda",
+      "n_instalacoes": 1000000,
+      "faixa": "10^6"
+    },
+    {
+      "appId": "outgo.android",
+      "title": "Outgo: Crie e viva eventos",
+      "developer": "Outgo",
+      "genre": "Eventos",
+      "minInstalls": 100000,
+      "realInstalls": 369089,
+      "installs": "100.000+",
+      "containsAds": false,
+      "privacyPolicy": "https://coda.io/d/Politica-de-Privacidade-e-Termos-de-uso_dx_o9wYnod4/Politica-de-privacidade-sigilo-e-protecao-de-dados-da-Outgo_suXiwwv5#_luFXaCVg",
+      "n_instalacoes": 100000,
+      "faixa": "10^5"
+    },
+    {
+      "appId": "app.topevent.android",
+      "title": "Planejador de Eventos e Festas",
+      "developer": "Wedding Planner App",
+      "genre": "Eventos",
+      "minInstalls": 100000,
+      "realInstalls": 309194,
+      "installs": "100.000+",
+      "containsAds": true,
+      "privacyPolicy": "https://topevent.app/legal/privacy/",
+      "n_instalacoes": 100000,
+      "faixa": "10^5"
+    },
+    {
+      "appId": "com.lenovo.anyshare.gps",
+      "title": "SHAREit: Compartilhe arquivos",
+      "developer": "Smart Media4U Technology Pte.Ltd.",
+      "genre": "Ferramentas",
+      "minInstalls": 1000000000,
+      "realInstalls": 2581909633,
+      "installs": "1.000.000.000+",
+      "containsAds": true,
+      "privacyPolicy": "https://web.wshareit.com/cdn/shareit/w/privacy/pr_en.html",
+      "n_instalacoes": 1000000000,
+      "faixa": "10^9"
+    },
+    {
+      "appId": "com.google.android.apps.nbu.files",
+      "title": "Files do Google",
+      "developer": "Google LLC",
+      "genre": "Ferramentas",
+      "minInstalls": 5000000000,
+      "realInstalls": 7815906017,
+      "installs": "5.000.000.000+",
+      "containsAds": false,
+      "privacyPolicy": "http://www.google.com/policies/privacy",
+      "n_instalacoes": 5000000000,
+      "faixa": "10^9"
+    },
+    {
+      "appId": "com.overlook.android.fing",
+      "title": "Fing - Ferramentas de rede",
+      "developer": "Fing Limited",
+      "genre": "Ferramentas",
+      "minInstalls": 50000000,
+      "realInstalls": 77292685,
+      "installs": "50.000.000+",
+      "containsAds": false,
+      "privacyPolicy": "https://www.fing.com/fing-privacy-policy",
+      "n_instalacoes": 50000000,
+      "faixa": "10^7"
+    },
+    {
+      "appId": "com.google.android.apps.authenticator2",
+      "title": "Google Authenticator",
+      "developer": "Google LLC",
+      "genre": "Ferramentas",
+      "minInstalls": 100000000,
+      "realInstalls": 333317311,
+      "installs": "100.000.000+",
+      "containsAds": false,
+      "privacyPolicy": "http://www.google.com/policies/privacy",
+      "n_instalacoes": 100000000,
+      "faixa": "10^8"
+    },
+    {
+      "appId": "ch.protonvpn.android",
+      "title": "Proton VPN: Rápida e segura",
+      "developer": "Proton AG",
+      "genre": "Ferramentas",
+      "minInstalls": 100000000,
+      "realInstalls": 126976799,
+      "installs": "100.000.000+",
+      "containsAds": false,
+      "privacyPolicy": "https://proton.me/legal/privacy",
+      "n_instalacoes": 100000000,
+      "faixa": "10^8"
+    },
+    {
+      "appId": "net.dinglisch.android.taskerm",
+      "title": "Tasker",
+      "developer": "joaomgcd",
+      "genre": "Ferramentas",
+      "minInstalls": 1000000,
+      "realInstalls": 2592744,
+      "installs": "1.000.000+",
+      "containsAds": false,
+      "privacyPolicy": "https://tasker.joaoapps.com/privacy.html",
+      "n_instalacoes": 1000000,
+      "faixa": "10^6"
+    },
+    {
+      "appId": "ir.shahbaz.SHZToolBox_demo",
+      "title": "ToolBox",
+      "developer": "Rahgosha",
+      "genre": "Ferramentas",
+      "minInstalls": 5000000,
+      "realInstalls": 6495076,
+      "installs": "5.000.000+",
+      "containsAds": true,
+      "privacyPolicy": "https://tlbxapp.com/privacy/",
+      "n_instalacoes": 5000000,
+      "faixa": "10^6"
+    },
+    {
+      "appId": "com.ahnlab.v3mobilesecurity.soda",
+      "title": "V3 Mobile Security 백신/클리너/보안",
+      "developer": "AhnLab Inc.",
+      "genre": "Ferramentas",
+      "minInstalls": 10000000,
+      "realInstalls": 15992539,
+      "installs": "10.000.000+",
+      "containsAds": true,
+      "privacyPolicy": "https://www.ahnlab.com/ko/etc/privacy-policy",
+      "n_instalacoes": 10000000,
+      "faixa": "10^7"
+    },
+    {
+      "appId": "com.wallet.crypto.trustapp",
+      "title": "Trust: Crypto & Bitcoin Wallet",
+      "developer": "DApps Platform, Inc.",
+      "genre": "Finanças",
+      "minInstalls": 50000000,
+      "realInstalls": 79655942,
+      "installs": "50.000.000+",
+      "containsAds": false,
+      "privacyPolicy": "https://trustwallet.com/privacy-policy/",
+      "n_instalacoes": 50000000,
+      "faixa": "10^7"
+    },
+    {
+      "appId": "com.organizze.android",
+      "title": "Organizze: Controle Financeiro",
+      "developer": "Organizze Tecnologia",
+      "genre": "Finanças",
+      "minInstalls": 1000000,
+      "realInstalls": 3892883,
+      "installs": "1.000.000+",
+      "containsAds": false,
+      "privacyPolicy": "https://www.organizze.com.br/politicas-de-privacidade",
+      "n_instalacoes": 1000000,
+      "faixa": "10^6"
+    },
+    {
+      "appId": "com.myklarnamobile",
+      "title": "Klarna: Pagamento inteligente",
+      "developer": "Klarna Bank AB (publ)",
+      "genre": "Finanças",
+      "minInstalls": 50000000,
+      "realInstalls": 84873009,
+      "installs": "50.000.000+",
+      "containsAds": false,
+      "privacyPolicy": "https://www.klarna.com/international/privacy-policy/",
+      "n_instalacoes": 50000000,
+      "faixa": "10^7"
+    },
+    {
+      "appId": "com.freeman.moneymanager",
+      "title": "Gestor de Despesas e Orçamento",
+      "developer": "Horoscope365",
+      "genre": "Finanças",
+      "minInstalls": 5000000,
+      "realInstalls": 9351741,
+      "installs": "5.000.000+",
+      "containsAds": true,
+      "privacyPolicy": "https://money.quhou123.com/Info/privacyPolicy",
+      "n_instalacoes": 5000000,
+      "faixa": "10^6"
+    },
+    {
+      "appId": "com.google.android.apps.walletnfcrel",
+      "title": "Carteira do Google",
+      "developer": "Google LLC",
+      "genre": "Finanças",
+      "minInstalls": 1000000000,
+      "realInstalls": 2125879093,
+      "installs": "1.000.000.000+",
+      "containsAds": false,
+      "privacyPolicy": "https://policies.google.com/privacy",
+      "n_instalacoes": 1000000000,
+      "faixa": "10^9"
+    },
+    {
+      "appId": "com.picpay",
+      "title": "Banco PicPay: Cartão, Pix e +",
+      "developer": "PicPay",
+      "genre": "Finanças",
+      "minInstalls": 100000000,
+      "realInstalls": 172215130,
+      "installs": "100.000.000+",
+      "containsAds": false,
+      "privacyPolicy": "https://picpay.com/site/privacidade",
+      "n_instalacoes": 100000000,
+      "faixa": "10^8"
+    },
+    {
+      "appId": "com.binance.dev",
+      "title": "Binance Compre Bitcoin Cripto",
+      "developer": "Binance Inc.",
+      "genre": "Finanças",
+      "minInstalls": 100000000,
+      "realInstalls": 222723088,
+      "installs": "100.000.000+",
+      "containsAds": false,
+      "privacyPolicy": "https://www.binance.com/en/privacy",
+      "n_instalacoes": 100000000,
+      "faixa": "10^8"
+    },
+    {
+      "appId": "com.phonepe.app",
+      "title": "PhonePe UPI Payments, Loan App",
+      "developer": "PhonePe",
+      "genre": "Finanças",
+      "minInstalls": 1000000000,
+      "realInstalls": 1000395226,
+      "installs": "1.000.000.000+",
+      "containsAds": true,
+      "privacyPolicy": "http://www.phonepe.com/en/policy.html",
+      "n_instalacoes": 1000000000,
+      "faixa": "10^9"
+    },
+    {
+      "appId": "bible.ai.search",
+      "title": "Bíblia IA: Pesquisa",
+      "developer": "Integral Web Design",
+      "genre": "Livros e referências",
+      "minInstalls": 50000,
+      "realInstalls": 82072,
+      "installs": "50.000+",
+      "containsAds": false,
+      "privacyPolicy": "https://bibleai.com/privacy-policy",
+      "n_instalacoes": 50000,
+      "faixa": "10^4"
+    },
+    {
+      "appId": "br.com.gold360.skeelo",
+      "title": "Skeelo: Audiobooks & Ebooks",
+      "developer": "Skeelo",
+      "genre": "Livros e referências",
+      "minInstalls": 10000000,
+      "realInstalls": 14185945,
+      "installs": "10.000.000+",
+      "containsAds": false,
+      "privacyPolicy": "https://skeelo.app/politica",
+      "n_instalacoes": 10000000,
+      "faixa": "10^7"
+    },
+    {
+      "appId": "com.kobobooks.android",
+      "title": "Ler livros digitais Kobo Books",
+      "developer": "Kobo Books",
+      "genre": "Livros e referências",
+      "minInstalls": 10000000,
+      "realInstalls": 28345441,
+      "installs": "10.000.000+",
+      "containsAds": false,
+      "privacyPolicy": "https://www.kobo.com/privacypolicy",
+      "n_instalacoes": 10000000,
+      "faixa": "10^7"
+    },
+    {
+      "appId": "com.gaudium.skoob",
+      "title": "Skoob - Para quem ama livros!",
+      "developer": "Skeelo",
+      "genre": "Livros e referências",
+      "minInstalls": 1000000,
+      "realInstalls": 4618507,
+      "installs": "1.000.000+",
+      "containsAds": false,
+      "privacyPolicy": "https://www.skoob.com.br/pt/privacy-policies",
+      "n_instalacoes": 1000000,
+      "faixa": "10^6"
+    },
+    {
+      "appId": "egw.estate",
+      "title": "EGW Writings",
+      "developer": "Ellen G. White Estate, Inc.",
+      "genre": "Livros e referências",
+      "minInstalls": 1000000,
+      "realInstalls": 2183870,
+      "installs": "1.000.000+",
+      "containsAds": false,
+      "privacyPolicy": "http://ellenwhite.org/content/article/egw-writings-privacy-policy",
+      "n_instalacoes": 1000000,
+      "faixa": "10^6"
+    },
+    {
+      "appId": "com.google.android.apps.books",
+      "title": "Google Play Livros",
+      "developer": "Google LLC",
+      "genre": "Livros e referências",
+      "minInstalls": 1000000000,
+      "realInstalls": 3846680841,
+      "installs": "1.000.000.000+",
+      "containsAds": false,
+      "privacyPolicy": "https://play.google.com/books/intl/privacy.html",
+      "n_instalacoes": 1000000000,
+      "faixa": "10^9"
+    },
+    {
+      "appId": "audio.books.summaries",
+      "title": "Resumos de Livros e Áudio",
+      "developer": "Riafy Technologies",
+      "genre": "Livros e referências",
+      "minInstalls": 100000,
+      "realInstalls": 101329,
+      "installs": "100.000+",
+      "containsAds": false,
+      "privacyPolicy": "http://cookbookrecipes.in/otherapps/videoFeeds/privacy_general/Privacy_Policy.php?appname=Book%20Summaries",
+      "n_instalacoes": 100000,
+      "faixa": "10^5"
+    },
+    {
+      "appId": "com.optimiliastudios.aquilereader",
+      "title": "Aquile: EPUB PDF eBook Reader",
+      "developer": "Optimilia Studios",
+      "genre": "Livros e referências",
+      "minInstalls": 100000,
+      "realInstalls": 116994,
+      "installs": "100.000+",
+      "containsAds": true,
+      "privacyPolicy": "https://www.aquilereader.in/privacy.html",
+      "n_instalacoes": 100000,
+      "faixa": "10^5"
+    },
+    {
+      "appId": "com.sygic.truck",
+      "title": "Sygic GPS Truck & Caravan",
+      "developer": "Sygic.",
+      "genre": "Mapas e navegação",
+      "minInstalls": 5000000,
+      "realInstalls": 5142067,
+      "installs": "5.000.000+",
+      "containsAds": false,
+      "privacyPolicy": "http://www.sygic.com/company/privacy-policy",
+      "n_instalacoes": 5000000,
+      "faixa": "10^6"
+    },
+    {
+      "appId": "com.sygic.aura",
+      "title": "Sygic Navegação por GPS, Mapas",
+      "developer": "Sygic.",
+      "genre": "Mapas e navegação",
+      "minInstalls": 50000000,
+      "realInstalls": 95773521,
+      "installs": "50.000.000+",
+      "containsAds": false,
+      "privacyPolicy": "https://www.sygic.com/company/privacy-policy",
+      "n_instalacoes": 50000000,
+      "faixa": "10^7"
+    },
+    {
+      "appId": "com.waze",
+      "title": "Waze – GPS e Trânsito ao vivo",
+      "developer": "Waze",
+      "genre": "Mapas e navegação",
+      "minInstalls": 500000000,
+      "realInstalls": 677961676,
+      "installs": "500.000.000+",
+      "containsAds": true,
+      "privacyPolicy": "http://www.waze.com/legal/privacy/",
+      "n_instalacoes": 500000000,
+      "faixa": "10^8"
+    },
+    {
+      "appId": "com.zee.zeev",
+      "title": "Planejador de Rotas VisionMapa",
+      "developer": "PopAppa",
+      "genre": "Mapas e navegação",
+      "minInstalls": 500000,
+      "realInstalls": 702243,
+      "installs": "500.000+",
+      "containsAds": false,
+      "privacyPolicy": "https://www.popappa.com/privacy-policy-routevision/",
+      "n_instalacoes": 500000,
+      "faixa": "10^5"
+    },
+    {
+      "appId": "com.proalab.mywayapp",
+      "title": "MyWay Planejador de Rotas",
+      "developer": "Proalab Limited",
+      "genre": "Mapas e navegação",
+      "minInstalls": 50000,
+      "realInstalls": 91614,
+      "installs": "50.000+",
+      "containsAds": false,
+      "privacyPolicy": "https://mywayroute.com/privacy",
+      "n_instalacoes": 50000,
+      "faixa": "10^4"
+    },
+    {
+      "appId": "com.here.app.maps",
+      "title": "Mapas e navegação do HERE WeGo",
+      "developer": "HERE Europe B.V.",
+      "genre": "Mapas e navegação",
+      "minInstalls": 10000000,
+      "realInstalls": 41386192,
+      "installs": "10.000.000+",
+      "containsAds": false,
+      "privacyPolicy": "https://legal.here.com/en-gb/privacy/here-wego-here-application-or-here-maps-privacy-supplement-updated",
+      "n_instalacoes": 10000000,
+      "faixa": "10^7"
+    },
+    {
+      "appId": "app.organicmaps",
+      "title": "Organic Maps - Mapas offline",
+      "developer": "Organic Maps",
+      "genre": "Mapas e navegação",
+      "minInstalls": 5000000,
+      "realInstalls": 6902712,
+      "installs": "5.000.000+",
+      "containsAds": false,
+      "privacyPolicy": "https://organicmaps.app/privacy",
+      "n_instalacoes": 5000000,
+      "faixa": "10^6"
+    },
+    {
+      "appId": "com.huawei.maps.app",
+      "title": "Petal Maps – GPS & Navigation",
+      "developer": "Petal Maps Team",
+      "genre": "Mapas e navegação",
+      "minInstalls": 100000000,
+      "realInstalls": 308917536,
+      "installs": "100.000.000+",
+      "containsAds": false,
+      "privacyPolicy": "https://privacy.consumer.huawei.com/legal/petal-maps/privacy-statement.htm?country=FR&branchid=5&version=20300300&language=en_DE",
+      "n_instalacoes": 100000000,
+      "faixa": "10^8"
+    },
+    {
+      "appId": "br.com.medsos.sosplantao",
+      "title": "MEDCode: IA Médica Atlas 2.0",
+      "developer": "TEDMED",
+      "genre": "Medicina",
+      "minInstalls": 100000,
+      "realInstalls": 220773,
+      "installs": "100.000+",
+      "containsAds": false,
+      "privacyPolicy": "https://app.medcode.com.br/site/policy",
+      "n_instalacoes": 100000,
+      "faixa": "10^5"
+    },
+    {
+      "appId": "com.wemeds",
+      "title": "WeMEDS - Medicina",
+      "developer": "WeMEDS",
+      "genre": "Medicina",
+      "minInstalls": 1000000,
+      "realInstalls": 1441731,
+      "installs": "1.000.000+",
+      "containsAds": false,
+      "privacyPolicy": "https://www.wemeds.com.br/politica",
+      "n_instalacoes": 1000000,
+      "faixa": "10^6"
+    },
+    {
+      "appId": "br.com.megaleios.medicinadireta",
+      "title": "Medicina Direta",
+      "developer": "Neodel Tecnologia e Software LTDA",
+      "genre": "Medicina",
+      "minInstalls": 5000,
+      "realInstalls": 6507,
+      "installs": "5.000+",
+      "containsAds": false,
+      "privacyPolicy": "https://medicinadireta.com.br/politica-de-privacidade",
+      "n_instalacoes": 5000,
+      "faixa": "10^3"
+    },
+    {
+      "appId": "com.openevidence",
+      "title": "OpenEvidence",
+      "developer": "OpenEvidence",
+      "genre": "Medicina",
+      "minInstalls": 500000,
+      "realInstalls": 518284,
+      "installs": "500.000+",
+      "containsAds": false,
+      "privacyPolicy": "https://www.openevidence.com/global/policies/privacy",
+      "n_instalacoes": 500000,
+      "faixa": "10^5"
+    },
+    {
+      "appId": "com.AnatomyLearning.Anatomy3DViewer3",
+      "title": "Anatomy Learning - Anatomia 3D",
+      "developer": "3D Medical OU",
+      "genre": "Medicina",
+      "minInstalls": 10000000,
+      "realInstalls": 18014900,
+      "installs": "10.000.000+",
+      "containsAds": false,
+      "privacyPolicy": "http://www.anatomylearning.com/ppolicy.html",
+      "n_instalacoes": 10000000,
+      "faixa": "10^7"
+    },
+    {
+      "appId": "fr.doctolib.www",
+      "title": "Doctolib - Your health partner",
+      "developer": "Doctolib SAS",
+      "genre": "Medicina",
+      "minInstalls": 10000000,
+      "realInstalls": 43468050,
+      "installs": "10.000.000+",
+      "containsAds": false,
+      "privacyPolicy": "https://www.doctolib.fr/sante/privacy-policy-fr/",
+      "n_instalacoes": 10000000,
+      "faixa": "10^7"
+    },
+    {
+      "appId": "com.minerva_medical.minerva",
+      "title": "Full Code Medical Simulation",
+      "developer": "Full Code Medical Inc.",
+      "genre": "Medicina",
+      "minInstalls": 1000000,
+      "realInstalls": 2228848,
+      "installs": "1.000.000+",
+      "containsAds": false,
+      "privacyPolicy": "https://fullcodemedical.com/privacy-policy",
+      "n_instalacoes": 1000000,
+      "faixa": "10^6"
+    },
+    {
+      "appId": "com.linkedin.android",
+      "title": "LinkedIn: Perfil Profissional",
+      "developer": "LinkedIn",
+      "genre": "Negócios",
+      "minInstalls": 1000000000,
+      "realInstalls": 2431451428,
+      "installs": "1.000.000.000+",
+      "containsAds": true,
+      "privacyPolicy": "https://www.linkedin.com/legal/privacy-policy",
+      "n_instalacoes": 1000000000,
+      "faixa": "10^9"
+    },
+    {
+      "appId": "com.facebook.pages.app",
+      "title": "Meta Business Suite",
+      "developer": "Meta Platforms, Inc.",
+      "genre": "Negócios",
+      "minInstalls": 100000000,
+      "realInstalls": 190193992,
+      "installs": "100.000.000+",
+      "containsAds": false,
+      "privacyPolicy": "https://www.facebook.com/about/privacy/",
+      "n_instalacoes": 100000000,
+      "faixa": "10^8"
+    },
+    {
+      "appId": "com.app99.driver",
+      "title": "99 Motorista e Entregador",
+      "developer": "99 Tecnologia LTDA",
+      "genre": "Negócios",
+      "minInstalls": 10000000,
+      "realInstalls": 40779713,
+      "installs": "10.000.000+",
+      "containsAds": false,
+      "privacyPolicy": "https://99app.com/legal/privacidade/",
+      "n_instalacoes": 10000000,
+      "faixa": "10^7"
+    },
+    {
+      "appId": "com.facebook.adsmanager",
+      "title": "Anúncios do Facebook",
+      "developer": "Meta Platforms, Inc.",
+      "genre": "Negócios",
+      "minInstalls": 10000000,
+      "realInstalls": 46842191,
+      "installs": "10.000.000+",
+      "containsAds": false,
+      "privacyPolicy": "http://www.facebook.com/policy.php",
+      "n_instalacoes": 10000000,
+      "faixa": "10^7"
+    },
+    {
+      "appId": "com.ubercab.driver",
+      "title": "Uber Driver - para motorista",
+      "developer": "Uber Technologies, Inc.",
+      "genre": "Negócios",
+      "minInstalls": 100000000,
+      "realInstalls": 228167185,
+      "installs": "100.000.000+",
+      "containsAds": false,
+      "privacyPolicy": "http://www.uber.com/privacy",
+      "n_instalacoes": 100000000,
+      "faixa": "10^8"
+    },
+    {
+      "appId": "com.sc.lazada",
+      "title": "Lazada Seller Center",
+      "developer": "Lazada Mobile",
+      "genre": "Negócios",
+      "minInstalls": 5000000,
+      "realInstalls": 8501883,
+      "installs": "5.000.000+",
+      "containsAds": false,
+      "privacyPolicy": "http://www.lazada.com.ph/privacy-policy/",
+      "n_instalacoes": 5000000,
+      "faixa": "10^6"
+    },
+    {
+      "appId": "com.booking.hotelmanager",
+      "title": "Pulse para Booking.com",
+      "developer": "Booking.com Hotels & Vacation Rentals",
+      "genre": "Negócios",
+      "minInstalls": 1000000,
+      "realInstalls": 4879023,
+      "installs": "1.000.000+",
+      "containsAds": false,
+      "privacyPolicy": "https://admin.booking.com/hotel/hoteladmin/privacy.html?lang=xu",
+      "n_instalacoes": 1000000,
+      "faixa": "10^6"
+    },
+    {
+      "appId": "io.halter.mobile",
+      "title": "Halter",
+      "developer": "Halter",
+      "genre": "Negócios",
+      "minInstalls": 5000,
+      "realInstalls": 8855,
+      "installs": "5.000+",
+      "containsAds": false,
+      "privacyPolicy": "https://halterhq.com/legal/privacy-policy",
+      "n_instalacoes": 5000,
+      "faixa": "10^3"
+    },
+    {
+      "appId": "com.tachanfil.jornaisdobrasil",
+      "title": "Jornais Brasileiros",
+      "developer": "MUNBEN",
+      "genre": "Notícias e revistas",
+      "minInstalls": 500000,
+      "realInstalls": 569611,
+      "installs": "500.000+",
+      "containsAds": true,
+      "privacyPolicy": "http://terms.munben.com/bra/en",
+      "n_instalacoes": 500000,
+      "faixa": "10^5"
+    },
+    {
+      "appId": "com.google.android.apps.magazines",
+      "title": "Google Notícias",
+      "developer": "Google LLC",
+      "genre": "Notícias e revistas",
+      "minInstalls": 1000000000,
+      "realInstalls": 4299307337,
+      "installs": "1.000.000.000+",
+      "containsAds": true,
+      "privacyPolicy": "http://www.google.com/policies/privacy",
+      "n_instalacoes": 1000000000,
+      "faixa": "10^9"
+    },
+    {
+      "appId": "br.com.goread.android",
+      "title": "GoRead - Revistas Digitais",
+      "developer": "Abril Comunicações S/A",
+      "genre": "Notícias e revistas",
+      "minInstalls": 1000000,
+      "realInstalls": 1706387,
+      "installs": "1.000.000+",
+      "containsAds": true,
+      "privacyPolicy": "https://goread.com.br/politica-de-privacidade/",
+      "n_instalacoes": 1000000,
+      "faixa": "10^6"
+    },
+    {
+      "appId": "flipboard.app",
+      "title": "Flipboard",
+      "developer": "Flipboard",
+      "genre": "Notícias e revistas",
+      "minInstalls": 500000000,
+      "realInstalls": 886732160,
+      "installs": "500.000.000+",
+      "containsAds": true,
+      "privacyPolicy": "https://about.flipboard.com/privacy-policy/",
+      "n_instalacoes": 500000000,
+      "faixa": "10^8"
+    },
+    {
+      "appId": "co.squidapp.squid",
+      "title": "SQUID - Notícias",
+      "developer": "Squid App",
+      "genre": "Notícias e revistas",
+      "minInstalls": 5000000,
+      "realInstalls": 5596949,
+      "installs": "5.000.000+",
+      "containsAds": true,
+      "privacyPolicy": "https://squidapp.co/privacy-policy-2/",
+      "n_instalacoes": 5000000,
+      "faixa": "10^6"
+    },
+    {
+      "appId": "br.com.verisoft.bancah",
+      "title": "Aya Bancah: revistas e jornais",
+      "developer": "AYA CONTEÚDOS",
+      "genre": "Notícias e revistas",
+      "minInstalls": 500000,
+      "realInstalls": 528942,
+      "installs": "500.000+",
+      "containsAds": false,
+      "privacyPolicy": "https://aya.app.br/ayabancah/politica-de-privacidade",
+      "n_instalacoes": 500000,
+      "faixa": "10^5"
+    },
+    {
+      "appId": "com.globo.g1.app",
+      "title": "G1 Portal de Notícias da Globo",
+      "developer": "Globo Comunicação e Participações S.A.",
+      "genre": "Notícias e revistas",
+      "minInstalls": 10000000,
+      "realInstalls": 13098999,
+      "installs": "10.000.000+",
+      "containsAds": true,
+      "privacyPolicy": "http://www.globo.com/privacidade.html",
+      "n_instalacoes": 10000000,
+      "faixa": "10^7"
+    },
+    {
+      "appId": "com.newspaperdirect.pressreader.android",
+      "title": "PressReader: Notícias Digitais",
+      "developer": "PressReader Inc.",
+      "genre": "Notícias e revistas",
+      "minInstalls": 10000000,
+      "realInstalls": 10916242,
+      "installs": "10.000.000+",
+      "containsAds": false,
+      "privacyPolicy": "https://care.pressreader.com/hc/en-us/articles/205818089-Privacy-Policy",
+      "n_instalacoes": 10000000,
+      "faixa": "10^7"
+    },
+    {
+      "appId": "com.appsgenz.launcherios.pro",
+      "title": "Launcher OS™ Pro",
+      "developer": "Apps Genz",
+      "genre": "Personalização",
+      "minInstalls": 100000,
+      "realInstalls": 235191,
+      "installs": "100.000+",
+      "containsAds": false,
+      "privacyPolicy": "https://appsgenz.com/policy-pro.html",
+      "n_instalacoes": 100000,
+      "faixa": "10^5"
+    },
+    {
+      "appId": "ginlemon.flowerfree",
+      "title": "Smart Launcher 6 ‧ Home Screen",
+      "developer": "Smart Launcher Team",
+      "genre": "Personalização",
+      "minInstalls": 50000000,
+      "realInstalls": 54611915,
+      "installs": "50.000.000+",
+      "containsAds": false,
+      "privacyPolicy": "https://www.smartlauncher.net/privacy",
+      "n_instalacoes": 50000000,
+      "faixa": "10^7"
+    },
+    {
+      "appId": "com.microsoft.launcher",
+      "title": "Microsoft Launcher",
+      "developer": "Microsoft Corporation",
+      "genre": "Personalização",
+      "minInstalls": 50000000,
+      "realInstalls": 69639377,
+      "installs": "50.000.000+",
+      "containsAds": false,
+      "privacyPolicy": "http://go.microsoft.com/fwlink/?LinkId=248686",
+      "n_instalacoes": 50000000,
+      "faixa": "10^7"
+    },
+    {
+      "appId": "com.touchtype.swiftkey",
+      "title": "Teclado Microsoft SwiftKey",
+      "developer": "SwiftKey",
+      "genre": "Personalização",
+      "minInstalls": 1000000000,
+      "realInstalls": 1948466075,
+      "installs": "1.000.000.000+",
+      "containsAds": true,
+      "privacyPolicy": "https://go.microsoft.com/fwlink/?LinkId=521839",
+      "n_instalacoes": 1000000000,
+      "faixa": "10^9"
+    },
+    {
+      "appId": "com.simejikeyboard",
+      "title": "Teclado Emoji Facemoji & Fonts",
+      "developer": "Nexileap",
+      "genre": "Personalização",
+      "minInstalls": 100000000,
+      "realInstalls": 245279699,
+      "installs": "100.000.000+",
+      "containsAds": true,
+      "privacyPolicy": "https://www.facemojikeyboard.com/page/privacy/googleplay/privacy.html",
+      "n_instalacoes": 100000000,
+      "faixa": "10^8"
+    },
+    {
+      "appId": "com.appslab.glass.widgets",
+      "title": "Glass Widgets",
+      "developer": "AppsLab Co.",
+      "genre": "Personalização",
+      "minInstalls": 100000,
+      "realInstalls": 173839,
+      "installs": "100.000+",
+      "containsAds": false,
+      "privacyPolicy": "https://www.termsfeed.com/live/82dc5b72-6d35-48e4-86d9-b8070461a4cb",
+      "n_instalacoes": 100000,
+      "faixa": "10^5"
+    },
+    {
+      "appId": "com.google.android.apps.wallpaper",
+      "title": "Planos de fundo",
+      "developer": "Google LLC",
+      "genre": "Personalização",
+      "minInstalls": 1000000000,
+      "realInstalls": 1395923428,
+      "installs": "1.000.000.000+",
+      "containsAds": false,
+      "privacyPolicy": "http://www.google.com/policies/privacy",
+      "n_instalacoes": 1000000000,
+      "faixa": "10^9"
+    },
+    {
+      "appId": "com.mi.android.globallauncher",
+      "title": "POCO Launcher 2.0",
+      "developer": "Xiaomi Inc.",
+      "genre": "Personalização",
+      "minInstalls": 100000000,
+      "realInstalls": 439691774,
+      "installs": "100.000.000+",
+      "containsAds": true,
+      "privacyPolicy": "https://h5.app.intl.miui.com/launcher/privacy.html",
+      "n_instalacoes": 100000000,
+      "faixa": "10^8"
+    },
+    {
+      "appId": "com.google.android.apps.labs.language.tailwind",
+      "title": "Gemini Notebook",
+      "developer": "Google LLC",
+      "genre": "Produtividade",
+      "minInstalls": 10000000,
+      "realInstalls": 40863651,
+      "installs": "10.000.000+",
+      "containsAds": false,
+      "privacyPolicy": "http://www.google.com/policies/privacy",
+      "n_instalacoes": 10000000,
+      "faixa": "10^7"
+    },
+    {
+      "appId": "com.openai.chatgpt",
+      "title": "ChatGPT",
+      "developer": "OpenAI",
+      "genre": "Produtividade",
+      "minInstalls": 1000000000,
+      "realInstalls": 1567613533,
+      "installs": "1.000.000.000+",
+      "containsAds": true,
+      "privacyPolicy": "https://openai.com/policies/privacy-policy",
+      "n_instalacoes": 1000000000,
+      "faixa": "10^9"
+    },
+    {
+      "appId": "com.google.android.apps.docs.editors.slides",
+      "title": "Google Slides",
+      "developer": "Google LLC",
+      "genre": "Produtividade",
+      "minInstalls": 1000000000,
+      "realInstalls": 1492360617,
+      "installs": "1.000.000.000+",
+      "containsAds": false,
+      "privacyPolicy": "http://www.google.com/policies/privacy",
+      "n_instalacoes": 1000000000,
+      "faixa": "10^9"
+    },
+    {
+      "appId": "com.todoist",
+      "title": "Todoist: To do list–Calendário",
+      "developer": "Todoist Inc.",
+      "genre": "Produtividade",
+      "minInstalls": 10000000,
+      "realInstalls": 49586980,
+      "installs": "10.000.000+",
+      "containsAds": false,
+      "privacyPolicy": "https://www.todoist.com/privacy",
+      "n_instalacoes": 10000000,
+      "faixa": "10^7"
+    },
+    {
+      "appId": "cn.wps.moffice_eng",
+      "title": "WPS Office-PDF,Word,Excel,PPT",
+      "developer": "WPS SOFTWARE PTE. LTD.",
+      "genre": "Produtividade",
+      "minInstalls": 500000000,
+      "realInstalls": 820434825,
+      "installs": "500.000.000+",
+      "containsAds": true,
+      "privacyPolicy": "https://wps.com/privacy-policy/",
+      "n_instalacoes": 500000000,
+      "faixa": "10^8"
+    },
+    {
+      "appId": "com.intsig.camscanner",
+      "title": "CamScanner - scan, criador PDF",
+      "developer": "INTSIG PTE",
+      "genre": "Produtividade",
+      "minInstalls": 500000000,
+      "realInstalls": 572832204,
+      "installs": "500.000.000+",
+      "containsAds": true,
+      "privacyPolicy": "https://v3.camscanner.com/android/privacy?language=en-us",
+      "n_instalacoes": 500000000,
+      "faixa": "10^8"
+    },
+    {
+      "appId": "com.to_do_list_studio.uptodo",
+      "title": "Lista de tarefas, Lembretes",
+      "developer": "Productivity Apps Studio",
+      "genre": "Produtividade",
+      "minInstalls": 100000,
+      "realInstalls": 160048,
+      "installs": "100.000+",
+      "containsAds": true,
+      "privacyPolicy": "https://www.todo-list-studio.com/uptodo/privacy_policy_android",
+      "n_instalacoes": 100000,
+      "faixa": "10^5"
+    },
+    {
+      "appId": "com.youdailyplan",
+      "title": "Plano diário: hábitos",
+      "developer": "youmealplan.com",
+      "genre": "Produtividade",
+      "minInstalls": 10000,
+      "realInstalls": 10507,
+      "installs": "10.000+",
+      "containsAds": false,
+      "privacyPolicy": "https://youdailyplan.com/en/privacy-policy",
+      "n_instalacoes": 10000,
+      "faixa": "10^4"
+    },
+    {
+      "appId": "com.xiaomi.wearable",
+      "title": "Mi Fitness (Xiaomi Wear)",
+      "developer": "Beijing Xiaomi Mobile Software Co.,Ltd",
+      "genre": "Saúde e fitness",
+      "minInstalls": 50000000,
+      "realInstalls": 81392233,
+      "installs": "50.000.000+",
+      "containsAds": false,
+      "privacyPolicy": "https://us.watch.iot.mi.com/html/privacy/index.html?locale=en_US&type=watch_privacy_policy&model=app#/",
+      "n_instalacoes": 50000000,
+      "faixa": "10^7"
+    },
+    {
+      "appId": "com.google.android.apps.fitness",
+      "title": "Fit: Rastream. de atividades",
+      "developer": "Google LLC",
+      "genre": "Saúde e fitness",
+      "minInstalls": 100000000,
+      "realInstalls": 366814354,
+      "installs": "100.000.000+",
+      "containsAds": false,
+      "privacyPolicy": "http://www.google.com/policies/privacy",
+      "n_instalacoes": 100000000,
+      "faixa": "10^8"
+    },
+    {
+      "appId": "com.rarus.gyms",
+      "title": "Fitness - Treino e Exercicio",
+      "developer": "1C-RARUS TAS",
+      "genre": "Saúde e fitness",
+      "minInstalls": 100000,
+      "realInstalls": 435427,
+      "installs": "100.000+",
+      "containsAds": false,
+      "privacyPolicy": "https://baksheevn.wixsite.com/the-gym/privacy",
+      "n_instalacoes": 100000,
+      "faixa": "10^5"
+    },
+    {
+      "appId": "com.google.android.apps.healthdata",
+      "title": "Saúde Connect",
+      "developer": "Google LLC",
+      "genre": "Saúde e fitness",
+      "minInstalls": 500000000,
+      "realInstalls": 941410666,
+      "installs": "500.000.000+",
+      "containsAds": false,
+      "privacyPolicy": "https://policies.google.com/privacy",
+      "n_instalacoes": 500000000,
+      "faixa": "10^8"
+    },
+    {
+      "appId": "com.sec.android.app.shealth",
+      "title": "Samsung Health",
+      "developer": "Samsung Electronics Co.,  Ltd.",
+      "genre": "Saúde e fitness",
+      "minInstalls": 1000000000,
+      "realInstalls": 2276883374,
+      "installs": "1.000.000.000+",
+      "containsAds": false,
+      "privacyPolicy": "https://www.samsunghealth.com/privacy/",
+      "n_instalacoes": 1000000000,
+      "faixa": "10^9"
+    },
+    {
+      "appId": "com.watch.life",
+      "title": "VeryFit",
+      "developer": "Smart Wearable Devices",
+      "genre": "Saúde e fitness",
+      "minInstalls": 10000000,
+      "realInstalls": 10373645,
+      "installs": "10.000.000+",
+      "containsAds": false,
+      "privacyPolicy": "https://life-content.idoocloud.com/page/privacy_policy/en/Veryfit.html",
+      "n_instalacoes": 10000000,
+      "faixa": "10^7"
+    },
+    {
+      "appId": "br.com.tecnofit.AppPersonal",
+      "title": "Tecnofit para Personal Trainer",
+      "developer": "Tecnofit Tecnologia e Sistemas",
+      "genre": "Saúde e fitness",
+      "minInstalls": 100000,
+      "realInstalls": 388130,
+      "installs": "100.000+",
+      "containsAds": false,
+      "privacyPolicy": "https://www.tecnofit.com.br/politica-de-privacidade/",
+      "n_instalacoes": 100000,
+      "faixa": "10^5"
+    },
+    {
+      "appId": "com.classpass.classpass",
+      "title": "ClassPass: fitness e bem-estar",
+      "developer": "ClassPass, LLC",
+      "genre": "Saúde e fitness",
+      "minInstalls": 1000000,
+      "realInstalls": 2960969,
+      "installs": "1.000.000+",
+      "containsAds": false,
+      "privacyPolicy": "http://classpass.com/privacy",
+      "n_instalacoes": 1000000,
+      "faixa": "10^6"
+    },
+    {
+      "appId": "com.instagram.android",
+      "title": "Instagram",
+      "developer": "Instagram",
+      "genre": "Social",
+      "minInstalls": 5000000000,
+      "realInstalls": 7749233631,
+      "installs": "5.000.000.000+",
+      "containsAds": true,
+      "privacyPolicy": "http://instagram.com/legal/privacy/",
+      "n_instalacoes": 5000000000,
+      "faixa": "10^9"
+    },
+    {
+      "appId": "com.yy.hiyo",
+      "title": "Hago- Festa, Conversa, Jogos",
+      "developer": "HAGO",
+      "genre": "Social",
+      "minInstalls": 100000000,
+      "realInstalls": 299309592,
+      "installs": "100.000.000+",
+      "containsAds": true,
+      "privacyPolicy": "https://www.ihago.net/a/license/register-policy-android.html",
+      "n_instalacoes": 100000000,
+      "faixa": "10^8"
+    },
+    {
+      "appId": "com.zhiliaoapp.musically",
+      "title": "TikTok",
+      "developer": "TikTok Pte. Ltd.",
+      "genre": "Social",
+      "minInstalls": 1000000000,
+      "realInstalls": 4676450126,
+      "installs": "1.000.000.000+",
+      "containsAds": true,
+      "privacyPolicy": "https://www.tiktok.com/legal/privacy-policy",
+      "n_instalacoes": 1000000000,
+      "faixa": "10^9"
+    },
+    {
+      "appId": "ru.ok.android",
+      "title": "Одноклассники: Социальная сеть",
+      "developer": "VKL",
+      "genre": "Social",
+      "minInstalls": 100000000,
+      "realInstalls": 282999604,
+      "installs": "100.000.000+",
+      "containsAds": true,
+      "privacyPolicy": "https://ok.ru/privacy",
+      "n_instalacoes": 100000000,
+      "faixa": "10^8"
+    },
+    {
+      "appId": "com.guochao.faceshow",
+      "title": "BuzzCast - Ao Vivo e Chat",
+      "developer": "BuzzCast LIVE",
+      "genre": "Social",
+      "minInstalls": 10000000,
+      "realInstalls": 35904204,
+      "installs": "10.000.000+",
+      "containsAds": false,
+      "privacyPolicy": "https://www.buzzcast.buzz/privacyPolicy",
+      "n_instalacoes": 10000000,
+      "faixa": "10^7"
+    },
+    {
+      "appId": "com.clubhouse.app",
+      "title": "Clubhouse",
+      "developer": "Alpha Exploration Co.",
+      "genre": "Social",
+      "minInstalls": 10000000,
+      "realInstalls": 25074663,
+      "installs": "10.000.000+",
+      "containsAds": false,
+      "privacyPolicy": "https://privacy.clubhouse.com/",
+      "n_instalacoes": 10000000,
+      "faixa": "10^7"
+    },
+    {
+      "appId": "pdb.app",
+      "title": "Pdb: Amigos que Te Entendem",
+      "developer": "Personality Database",
+      "genre": "Social",
+      "minInstalls": 1000000,
+      "realInstalls": 2857065,
+      "installs": "1.000.000+",
+      "containsAds": true,
+      "privacyPolicy": "https://www.personality-database.com/privacy.php",
+      "n_instalacoes": 1000000,
+      "faixa": "10^6"
+    },
+    {
+      "appId": "co.vero.app",
+      "title": "VERO - True Social",
+      "developer": "Vero Labs, Inc.",
+      "genre": "Social",
+      "minInstalls": 5000000,
+      "realInstalls": 5151109,
+      "installs": "5.000.000+",
+      "containsAds": false,
+      "privacyPolicy": "http://www.vero.co/privacy-policy",
+      "n_instalacoes": 5000000,
+      "faixa": "10^6"
+    },
+    {
+      "appId": "br.com.ctncardoso.ctncar",
+      "title": "Drivvo - Controle de Gastos",
+      "developer": "Drivvo",
+      "genre": "Veículos",
+      "minInstalls": 5000000,
+      "realInstalls": 5252751,
+      "installs": "5.000.000+",
+      "containsAds": true,
+      "privacyPolicy": "https://www.drivvo.com/en/service-terms/",
+      "n_instalacoes": 5000000,
+      "faixa": "10^6"
+    },
+    {
+      "appId": "com.usadosbr.usadosbrapp",
+      "title": "Usadosbr",
+      "developer": "Usadosbr",
+      "genre": "Veículos",
+      "minInstalls": 50000,
+      "realInstalls": 89075,
+      "installs": "50.000+",
+      "containsAds": false,
+      "privacyPolicy": "https://www.usadosbr.com/politica-de-privacidade",
+      "n_instalacoes": 50000,
+      "faixa": "10^4"
+    },
+    {
+      "appId": "mrigapps.andriod.fuelcons",
+      "title": "Simply Auto: Gasolina Log",
+      "developer": "Mobifolio",
+      "genre": "Veículos",
+      "minInstalls": 500000,
+      "realInstalls": 943590,
+      "installs": "500.000+",
+      "containsAds": true,
+      "privacyPolicy": "https://simplyauto.app/policy.html",
+      "n_instalacoes": 500000,
+      "faixa": "10^5"
+    },
+    {
+      "appId": "hands.android.webmotors",
+      "title": "Webmotors: Compra e Venda",
+      "developer": "Webmotors S.A.",
+      "genre": "Veículos",
+      "minInstalls": 10000000,
+      "realInstalls": 13716680,
+      "installs": "10.000.000+",
+      "containsAds": true,
+      "privacyPolicy": "https://www.webmotors.com.br/seguranca/politica-de-privacidade/",
+      "n_instalacoes": 10000000,
+      "faixa": "10^7"
+    },
+    {
+      "appId": "br.com.gringo",
+      "title": "Gringo: Licenciamento, IPVA +",
+      "developer": "Gringo - O melhor amigo do(a) motorista",
+      "genre": "Veículos",
+      "minInstalls": 10000000,
+      "realInstalls": 23799639,
+      "installs": "10.000.000+",
+      "containsAds": false,
+      "privacyPolicy": "https://gringo.com.vc/politica-de-privacidade/",
+      "n_instalacoes": 10000000,
+      "faixa": "10^7"
+    },
+    {
+      "appId": "br.com.apprepasse",
+      "title": "Repasse - Carro abaixo da FIPE",
+      "developer": "REPASSE MOTORS BRASIL",
+      "genre": "Veículos",
+      "minInstalls": 100000,
+      "realInstalls": 183621,
+      "installs": "100.000+",
+      "containsAds": false,
+      "privacyPolicy": "https://www.repasses.com.br/politica-de-privacidade",
+      "n_instalacoes": 100000,
+      "faixa": "10^5"
+    },
+    {
+      "appId": "br.com.usemobile.olhonocarro",
+      "title": "Olho no Carro: Consultar Placa",
+      "developer": "Olho no Carro",
+      "genre": "Veículos",
+      "minInstalls": 1000000,
+      "realInstalls": 2549994,
+      "installs": "1.000.000+",
+      "containsAds": false,
+      "privacyPolicy": "https://www.olhonocarro.com.br/politica-de-privacidade/",
+      "n_instalacoes": 1000000,
+      "faixa": "10^6"
+    },
+    {
+      "appId": "com.jtnrdev.vehiclemaintenance",
+      "title": "Vehicle Maintenance Log",
+      "developer": "JtnrDev",
+      "genre": "Veículos",
+      "minInstalls": 50000,
+      "realInstalls": 66828,
+      "installs": "50.000+",
+      "containsAds": false,
+      "privacyPolicy": "https://vehiclemaintenancelogs.com/privacypolicy.html",
+      "n_instalacoes": 50000,
+      "faixa": "10^4"
+    },
+    {
+      "appId": "br.com.voelivre",
+      "title": "Voelivre Buscador de Passagens",
+      "developer": "voelivre",
+      "genre": "Viagem e Turismo",
+      "minInstalls": 500000,
+      "realInstalls": 590161,
+      "installs": "500.000+",
+      "containsAds": false,
+      "privacyPolicy": "https://www.voelivre.com.br/politicadeprivacidade/",
+      "n_instalacoes": 500000,
+      "faixa": "10^5"
+    },
+    {
+      "appId": "com.tripadvisor.tripadvisor",
+      "title": "Tripadvisor: planeje viagens",
+      "developer": "Tripadvisor",
+      "genre": "Viagem e Turismo",
+      "minInstalls": 100000000,
+      "realInstalls": 449302730,
+      "installs": "100.000.000+",
+      "containsAds": true,
+      "privacyPolicy": "https://www.tripadvisor.com/pages/privacy.html",
+      "n_instalacoes": 100000000,
+      "faixa": "10^8"
+    },
+    {
+      "appId": "com.getyourguide.android",
+      "title": "GetYourGuide: Experiências",
+      "developer": "GetYourGuide",
+      "genre": "Viagem e Turismo",
+      "minInstalls": 10000000,
+      "realInstalls": 28307417,
+      "installs": "10.000.000+",
+      "containsAds": false,
+      "privacyPolicy": "https://www.getyourguide.com/c/privacy-policy",
+      "n_instalacoes": 10000000,
+      "faixa": "10^7"
+    },
+    {
+      "appId": "com.wanderlog.android",
+      "title": "Wanderlog Organizador viagens",
+      "developer": "Wanderlog",
+      "genre": "Viagem e Turismo",
+      "minInstalls": 1000000,
+      "realInstalls": 3826194,
+      "installs": "1.000.000+",
+      "containsAds": false,
+      "privacyPolicy": "https://wanderlog.com/privacy",
+      "n_instalacoes": 1000000,
+      "faixa": "10^6"
+    },
+    {
+      "appId": "com.goeuro.rosie",
+      "title": "Omio: Viagens de Ônibus e voos",
+      "developer": "Omio",
+      "genre": "Viagem e Turismo",
+      "minInstalls": 10000000,
+      "realInstalls": 25317970,
+      "installs": "10.000.000+",
+      "containsAds": false,
+      "privacyPolicy": "https://www.omio.com/privacy-policy",
+      "n_instalacoes": 10000000,
+      "faixa": "10^7"
+    },
+    {
+      "appId": "com.booking",
+      "title": "Booking.com",
+      "developer": "Booking.com Hotels & Vacation Rentals",
+      "genre": "Viagem e Turismo",
+      "minInstalls": 500000000,
+      "realInstalls": 877132229,
+      "installs": "500.000.000+",
+      "containsAds": false,
+      "privacyPolicy": "http://www.booking.com/content/privacy.html",
+      "n_instalacoes": 500000000,
+      "faixa": "10^8"
+    },
+    {
+      "appId": "com.grupodc.turismocity",
+      "title": "Turismocity - Voos baratos",
+      "developer": "TURISMOCITY",
+      "genre": "Viagem e Turismo",
+      "minInstalls": 5000000,
+      "realInstalls": 8232855,
+      "installs": "5.000.000+",
+      "containsAds": false,
+      "privacyPolicy": "https://www.turismocity.com.ar/politicas",
+      "n_instalacoes": 5000000,
+      "faixa": "10^6"
+    },
+    {
+      "appId": "com.travel365",
+      "title": "Travel365 - Travel Guides",
+      "developer": "Travel365",
+      "genre": "Viagem e Turismo",
+      "minInstalls": 500000,
+      "realInstalls": 839853,
+      "installs": "500.000+",
+      "containsAds": false,
+      "privacyPolicy": "https://www.travel365.it/privacy.htm",
+      "n_instalacoes": 500000,
+      "faixa": "10^5"
+    },
+    {
+      "appId": "com.ElectoralSimulator",
+      "title": "Simulador de Assento Eleitoral",
+      "developer": "Turion Development",
+      "genre": "Ferramentas",
+      "minInstalls": 50000,
+      "realInstalls": 85314,
+      "installs": "50.000+",
+      "containsAds": false,
+      "privacyPolicy": "https://encargos3d.dudaone.com/en/privacy-policy-turion-development",
+      "n_instalacoes": 50000,
+      "faixa": "10^4",
+      "origem": "topup_cauda"
+    },
+    {
+      "appId": "com.findsolucoes.santanaparaiso",
+      "title": "Prefeitura Aqui",
+      "developer": "Find Soluções",
+      "genre": "Produtividade",
+      "minInstalls": 10000,
+      "realInstalls": 17697,
+      "installs": "10.000+",
+      "containsAds": false,
+      "privacyPolicy": "https://backend.appcidades.com.br/termodeuso/novo/santana_do_paraiso_mg",
+      "n_instalacoes": 10000,
+      "faixa": "10^4",
+      "origem": "topup_cauda"
+    },
+    {
+      "appId": "br.com.sasi.ms.ladario",
+      "title": "Prefeitura de Ladário",
+      "developer": "SAS TECH SOLUTIONS LLC",
+      "genre": "Comunicação",
+      "minInstalls": 100,
+      "realInstalls": 292,
+      "installs": "100+",
+      "containsAds": false,
+      "privacyPolicy": "https://sasi-paje.github.io/sasi-wl-policy-privacy/root/ladario/privacy-policy.html",
+      "n_instalacoes": 100,
+      "faixa": "10^2",
+      "origem": "topup_cauda"
+    },
+    {
+      "appId": "com.easyway.prefeituraconectada",
+      "title": "Prefeitura Conectada",
+      "developer": "Easy Way Tecnologia",
+      "genre": "Ferramentas",
+      "minInstalls": 100,
+      "realInstalls": 422,
+      "installs": "100+",
+      "containsAds": false,
+      "privacyPolicy": "https://prefeituraconectada.com.br/privacidade.html",
+      "n_instalacoes": 100,
+      "faixa": "10^2",
+      "origem": "topup_cauda"
+    },
+    {
+      "appId": "br.com.visual.virtualsiga_app",
+      "title": "Prefeitura São Vicente",
+      "developer": "Visual Sistemas Eletrônicos",
+      "genre": "Produtividade",
+      "minInstalls": 100,
+      "realInstalls": 414,
+      "installs": "100+",
+      "containsAds": false,
+      "privacyPolicy": "https://www.visual.com.br/politica-de-privacidade/",
+      "n_instalacoes": 100,
+      "faixa": "10^2",
+      "origem": "topup_cauda"
+    },
+    {
+      "appId": "br.net.impactopositivo.prefeituracomvc",
+      "title": "Prefeitura.com.vc",
+      "developer": "Impacto Positivo Comércio e Serviço de Informática",
+      "genre": "Ferramentas",
+      "minInstalls": 500,
+      "realInstalls": 963,
+      "installs": "500+",
+      "containsAds": false,
+      "privacyPolicy": "https://prefeitura.com.vc/app/termos",
+      "n_instalacoes": 500,
+      "faixa": "10^2",
+      "origem": "topup_cauda"
+    },
+    {
+      "appId": "com.spacepixel.prefeituracordisburgo",
+      "title": "Prefeitura de Cordisburgo",
+      "developer": "Lucas Cordis",
+      "genre": "Negócios",
+      "minInstalls": 100,
+      "realInstalls": 237,
+      "installs": "100+",
+      "containsAds": false,
+      "privacyPolicy": "https://cordisburgo.mg.gov.br/politica-de-privacidade/",
+      "n_instalacoes": 100,
+      "faixa": "10^2",
+      "origem": "topup_cauda"
+    },
+    {
+      "appId": "br.gov.sp.ribeiraogrande",
+      "title": "Prefeitura de Ribeirão Grande",
+      "developer": "BT Design Soluções Digitais",
+      "genre": "Viagem e Turismo",
+      "minInstalls": 100,
+      "realInstalls": 163,
+      "installs": "100+",
+      "containsAds": false,
+      "privacyPolicy": "https://ribeiraogrande.sp.gov.br/politica-de-privacidade/",
+      "n_instalacoes": 100,
+      "faixa": "10^2",
+      "origem": "topup_cauda"
+    },
+    {
+      "appId": "com.findsolucoes.app_carmodamata",
+      "title": "Prefeitura Carmo da Mata App",
+      "developer": "Find Soluções",
+      "genre": "Produtividade",
+      "minInstalls": 500,
+      "realInstalls": 965,
+      "installs": "500+",
+      "containsAds": false,
+      "privacyPolicy": "https://backend.appcidades.com.br/termodeuso/novo/barao_de_cocais_mg",
+      "n_instalacoes": 500,
+      "faixa": "10^2",
+      "origem": "topup_cauda"
+    },
+    {
+      "appId": "com.carteiradesaude",
+      "title": "Carteira de Saúde",
+      "developer": "Carteira de Saude",
+      "genre": "Medicina",
+      "minInstalls": 5000,
+      "realInstalls": 5419,
+      "installs": "5.000+",
+      "containsAds": false,
+      "privacyPolicy": "https://politicas.carteiradesaude.com",
+      "n_instalacoes": 5000,
+      "faixa": "10^3",
+      "origem": "topup_cauda"
+    },
+    {
+      "appId": "com.simuladododetran",
+      "title": "Simulado Detran: Prova Teórica",
+      "developer": "Orbyon",
+      "genre": "Educação",
+      "minInstalls": 5000,
+      "realInstalls": 6574,
+      "installs": "5.000+",
+      "containsAds": false,
+      "privacyPolicy": "https://orbyon.net.br/politica-privacidade",
+      "n_instalacoes": 5000,
+      "faixa": "10^3",
+      "origem": "topup_cauda"
+    },
+    {
+      "appId": "com.majstudios.simulado_cnh",
+      "title": "Simulado CNH 2026 Prova Detran",
+      "developer": "MAJ Studios",
+      "genre": "Educação",
+      "minInstalls": 5000,
+      "realInstalls": 6653,
+      "installs": "5.000+",
+      "containsAds": true,
+      "privacyPolicy": "https://sites.google.com/view/simuladocnh/in%C3%ADcio",
+      "n_instalacoes": 5000,
+      "faixa": "10^3",
+      "origem": "topup_cauda"
+    },
+    {
+      "appId": "com.jurandir52.simuladosDetran",
+      "title": "Simulados Detran - CNH 2026",
+      "developer": "Jurandir Oliveira",
+      "genre": "Educação",
+      "minInstalls": 5000,
+      "realInstalls": 9260,
+      "installs": "5.000+",
+      "containsAds": true,
+      "privacyPolicy": "https://www.jurandiroliveira.com.br/politica/PoliticaSiluladosDetran.html",
+      "n_instalacoes": 5000,
+      "faixa": "10^3",
+      "origem": "topup_cauda"
+    },
+    {
+      "appId": "com.msaya.brazil.detran.sp",
+      "title": "Simulado Detran SP",
+      "developer": "Derasaty",
+      "genre": "Educação",
+      "minInstalls": 10000,
+      "realInstalls": 36495,
+      "installs": "10.000+",
+      "containsAds": true,
+      "privacyPolicy": "https://msaya.net/terms.php",
+      "n_instalacoes": 10000,
+      "faixa": "10^4",
+      "origem": "topup_cauda"
+    },
+    {
+      "appId": "com.simuladocnhpro",
+      "title": "Simulado CNH Prova Detran 2026",
+      "developer": "PrideTech",
+      "genre": "Ferramentas",
+      "minInstalls": 1000,
+      "realInstalls": 4326,
+      "installs": "1.000+",
+      "containsAds": true,
+      "privacyPolicy": "https://pridetech.vercel.app/politicas/simulado-cnh-pro",
+      "n_instalacoes": 1000,
+      "faixa": "10^3",
+      "origem": "topup_cauda"
+    },
+    {
+      "appId": "com.stanleyfilipe.aprovadetran",
+      "title": "Aprova Detran: Prova Teórica",
+      "developer": "sdotn",
+      "genre": "Educação",
+      "minInstalls": 500,
+      "realInstalls": 552,
+      "installs": "500+",
+      "containsAds": true,
+      "privacyPolicy": "https://www.sdotn.tech/aprova-detran/privacidade",
+      "n_instalacoes": 500,
+      "faixa": "10^2",
+      "origem": "topup_cauda"
+    },
+    {
+      "appId": "br.appasydigital.simuladodetran",
+      "title": "Simulado Detran CNH Prova 26",
+      "developer": "APPSY DIGITAL LTDA",
+      "genre": "Educação",
+      "minInstalls": 10000,
+      "realInstalls": 44865,
+      "installs": "10.000+",
+      "containsAds": true,
+      "privacyPolicy": "https://testedetran.com.br/privacidade",
+      "n_instalacoes": 10000,
+      "faixa": "10^4",
+      "origem": "topup_cauda"
+    },
+    {
+      "appId": "com.simulado_detran_prova_cnh_brasil.app",
+      "title": "Simulado Detran 2026 Prova CNH",
+      "developer": "Next World Apps",
+      "genre": "Educação",
+      "minInstalls": 500,
+      "realInstalls": 651,
+      "installs": "500+",
+      "containsAds": true,
+      "privacyPolicy": "https://luccas-medina.github.io/politica_de_privacidade_app/simulado_detran_privacidade.md",
+      "n_instalacoes": 500,
+      "faixa": "10^2",
+      "origem": "topup_cauda"
+    },
+    {
+      "appId": "br.com.simulado.detran.rj",
+      "title": "Simulado CNH RJ - Prova Detran",
+      "developer": "APPSY DIGITAL LTDA",
+      "genre": "Educação",
+      "minInstalls": 1000,
+      "realInstalls": 1394,
+      "installs": "1.000+",
+      "containsAds": true,
+      "privacyPolicy": "https://simulado-detran-bahia-2.freeprivacypolicy.app/privacy-policy",
+      "n_instalacoes": 1000,
+      "faixa": "10^3",
+      "origem": "topup_cauda"
+    },
+    {
+      "appId": "br.com.starapp.tribunalbarbearia",
+      "title": "Tribunal Barbearia",
+      "developer": "StarApp Sistemas",
+      "genre": "Estilo de vida",
+      "minInstalls": 500,
+      "realInstalls": 991,
+      "installs": "500+",
+      "containsAds": false,
+      "privacyPolicy": "https://docs.appbarber.com.br/termosdeuso-app",
+      "n_instalacoes": 500,
+      "faixa": "10^2",
+      "origem": "topup_cauda"
+    },
+    {
+      "appId": "com.tse.tseaap",
+      "title": "Tribunal Superior Electoral RD",
+      "developer": "Tribunal Superior Electoral",
+      "genre": "Ferramentas",
+      "minInstalls": 500,
+      "realInstalls": 921,
+      "installs": "500+",
+      "containsAds": false,
+      "privacyPolicy": "https://tse.do/politicas-de-privacidad/",
+      "n_instalacoes": 500,
+      "faixa": "10^2",
+      "origem": "topup_cauda"
+    },
+    {
+      "appId": "com.sicap.sicapsecescolar",
+      "title": "Sicap Secretaria Escolar",
+      "developer": "SICAP SOLUÇÕES",
+      "genre": "Educação",
+      "minInstalls": 500,
+      "realInstalls": 969,
+      "installs": "500+",
+      "containsAds": false,
+      "privacyPolicy": "https://sicapsolucoes.com/politica_privacidade/secretaria_escolar.html",
+      "n_instalacoes": 500,
+      "faixa": "10^2",
+      "origem": "topup_cauda"
+    }
+  ],
+  "politicas": {
+    "br.gov.serpro.sougov": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.serpro.cnhe": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.dataprev.carteiradigital": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.economia.receita.rfb": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.dataprev.meuinss": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.dataprev.meucadunico": {
+      "estado": "http_404",
+      "http": 404,
+      "tipo": null
+    },
+    "br.gov.mpdg.siconvcidadao": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.mds.meusocial": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.meugovbr": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.rj.proderj.rjdigital": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.ce.cearaapp": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.meuacgov": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.ce.detran.mobile": {
+      "estado": "falha",
+      "http": null,
+      "tipo": "TimeoutError"
+    },
+    "br.jus.tse.resultados": {
+      "estado": "http_403",
+      "http": 403,
+      "tipo": null
+    },
+    "br.jus.tse.eleitoral.etitulo": {
+      "estado": "http_403",
+      "http": 403,
+      "tipo": null
+    },
+    "br.gov.es.esgov": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.pe.ati.pegov": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.jus.tse.eleitoral.mesarios": {
+      "estado": "http_403",
+      "http": 403,
+      "tipo": null
+    },
+    "br.gov.caixa.fgts.trabalhador": {
+      "estado": "http_302",
+      "http": 302,
+      "tipo": null
+    },
+    "br.gov.sp.prodesp.pptdigital": {
+      "estado": "http_403",
+      "http": 403,
+      "tipo": null
+    },
+    "br.gov.sp.prodesp.sousp": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "com.prefeitura.virtual": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.com.empro.appcidadao1": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.com.ipm.mobile.Atende.Net01415campolargo": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "com.app.salvadordigital": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.franca.sp.cartaservicos": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.sp.cijun.appjun": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.go.imas": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.com.mtmtecnologia.mobilex.niteroi.prefeitura": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "com.itaporadev.prefeituraDeItaporaApp": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.com.gov18.prefeituraevoce": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.go.goiania.outprod01.novoprefeitura24horas": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.pr.maringa.ouvidoriamaringa.ouvidoria_maringa": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.pb.joaopessoa.prefeituraconectada": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.org.curitiba.ici.curitiba156": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.com.primelan.primespotpmv": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "com.araras.apppma": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.com.uppersoft.cariacica": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.rs.portoalegre.app": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "saude.prefeitura.sp.gov.br.autoagendamento": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.saude.acs": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.saude.esusaps.vacinacao": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.saude.esusaps.gestao": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.saude.ac": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.com.duosystem.avancasaude.sp.prod": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.fazenda.receita.mei": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.fazenda.receita.eprocesso": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.caixa.tem": {
+      "estado": "http_302",
+      "http": 302,
+      "tipo": null
+    },
+    "br.com.gabba.Caixa": {
+      "estado": "http_302",
+      "http": 302,
+      "tipo": null
+    },
+    "br.gov.pr.celepar.receita.servicos": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.datasus.cnsdigital": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.saude.ad2": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "com.diegomsilva.savetheworld": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.sp.detran.consultas": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.com.mesotec.detrandf": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "com.celepar.artech.detranpr": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.pe.detran.mobileapp.detran_pe.prod": {
+      "estado": "http_403",
+      "http": 403,
+      "tipo": null
+    },
+    "br.gov.ms.detran.meudetranms": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.rj.proderj.postodigitaldetran": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.sc.detran.servicos.app": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.sp.detran.simulado": {
+      "estado": "http_404",
+      "http": 404,
+      "tipo": null
+    },
+    "com.detranmobile": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "app.detran.go.gov.br.detran": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.ro.detran.centralcidadao": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.pr.celepar.detran.primeirahabilitacao": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.ro.detran.talonario": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.ap.detranap.portalapp": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.ce.detran.funcionario.mobile": {
+      "estado": "falha",
+      "http": null,
+      "tipo": "TimeoutError"
+    },
+    "com.tj.sp.mobile": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.jus.tjce.tjcemobile": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.jus.tjsc.pjscdigital": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.jus.trt5.trt5movel": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.jus.tjrs.superapp.tjrs": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.jus.tjpb.tjpb_mobile": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.jus.tjpe.tjpemais": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.jus.tjpe.tjpeatende": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.tce.sp.portaltcesp": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.jus.tjrj.meutjrj": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.jus.tjrn.jpm": {
+      "estado": "http_403",
+      "http": 403,
+      "tipo": null
+    },
+    "br.jus.stj.cpemobile": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.jus.tjse.apptjse.novo": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.tjro.jus.tjroservicos": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.serpro.smartcert.prod": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.serpro.meuserpro": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.serpro.lince": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.serpro.serprovirtual": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.serpro.idpro.android": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.serpro.serprovisao": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.serpro.biovalid": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.serpro.gip.mobile.radar": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.serpro.gip.mobile.radarmais": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.com.vidaas.sp": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.pr.celepar.seap.paranaprev": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.caixa.bolsafamilia": {
+      "estado": "http_302",
+      "http": 302,
+      "tipo": null
+    },
+    "com.identidadenacional": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.com.thomasgreg.carteira_digital.cofecon": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.com.valid.rnm": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.com.valid.cofen": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.caixa.trabalhador": {
+      "estado": "http_302",
+      "http": 302,
+      "tipo": null
+    },
+    "com.idjovem2": {
+      "estado": "falha",
+      "http": null,
+      "tipo": "ConnectionResetError"
+    },
+    "br.gov.ce.seduc.professoronline": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.ce.seduc.aluno": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.es.sedu.seges.responsaveis": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.se.sefaz.SefazMaisFacil.Android": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.sp.educacao.saladofuturo": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.cliqueescola": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "com.netihc.portaldopaciente": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": ""
+    },
+    "app.govdigital.pinheiraldigital": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.def.mt.defensoria.portal": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.sp.policiamilitar.sp190": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.pr.celepar.sesp.emgpr": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.sc.pm.pmsccidadao": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.sp.policiamilitar.pmesp.app_emergencia": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.sc.pmscpolicial.app_policial": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.sp.cprv": {
+      "estado": "falha",
+      "http": null,
+      "tipo": "URLError"
+    },
+    "cbm.sc.gov.br.cbmsccidadao": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.sp.corpodebombeiros.bombeirosp": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.sp.ssp.bombeiro.avcb": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.rj.cbmerj.rj193android": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.sp.policiamilitar.ccb.app": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "com.cbmmg.services": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.rj.cbmerj.idcbmerjapp": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "com.ssp.cbmma.digital": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.ma.proconapp": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.sp.procon.ranking": {
+      "estado": "http_403",
+      "http": 403,
+      "tipo": null
+    },
+    "com.primelan.procon": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "com.fale.proconuberlandia": {
+      "estado": "http_403",
+      "http": 403,
+      "tipo": null
+    },
+    "br.com.proconcampinagrande": {
+      "estado": "http_404",
+      "http": 404,
+      "tipo": null
+    },
+    "br.gov.mg.fiscalizacaoproconcampinagrande": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.com.consumidor": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.mg.prodaub.fiscalizacaoprocon": {
+      "estado": "http_403",
+      "http": 403,
+      "tipo": null
+    },
+    "br.com.zmcode": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.com.anatel.consumidor": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.ma.maranhaodeencantos": {
+      "estado": "http_404",
+      "http": 404,
+      "tipo": null
+    },
+    "br.gov.app.maranhao": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.ma.bpblapp": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.pe.invturempetur": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "org.sc.cbm.e193": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.sc.gov.ciasc.sed": {
+      "estado": "http_404",
+      "http": 404,
+      "tipo": null
+    },
+    "br.gov.sc.ciasc.detran.vistoria_mobile": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.sc.ciasc.detran.vistoriamobile": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.caixa.loterias.apostas": {
+      "estado": "http_302",
+      "http": 302,
+      "tipo": null
+    },
+    "br.gov.caixa.superapp": {
+      "estado": "http_302",
+      "http": 302,
+      "tipo": null
+    },
+    "br.gov.caixa.sigpm": {
+      "estado": "http_302",
+      "http": 302,
+      "tipo": null
+    },
+    "br.gov.caixa.ecobrancamobile": {
+      "estado": "http_302",
+      "http": 302,
+      "tipo": null
+    },
+    "br.gov.caixa.acoesonlinemobile": {
+      "estado": "http_302",
+      "http": 302,
+      "tipo": null
+    },
+    "br.gov.caixa.cartoes": {
+      "estado": "http_302",
+      "http": 302,
+      "tipo": null
+    },
+    "br.gov.caixa.emmovimento.production": {
+      "estado": "http_520",
+      "http": 520,
+      "tipo": null
+    },
+    "br.gov.caixa.saudecaixamobile": {
+      "estado": "http_302",
+      "http": 302,
+      "tipo": null
+    },
+    "br.gov.caixa.habitacao": {
+      "estado": "http_302",
+      "http": 302,
+      "tipo": null
+    },
+    "br.gov.caixa.fies": {
+      "estado": "http_302",
+      "http": 302,
+      "tipo": null
+    },
+    "br.gov.caixa.dpvat": {
+      "estado": "http_302",
+      "http": 302,
+      "tipo": null
+    },
+    "br.com.conquistaMais": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.pr.celepar.seap.souparana": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.pr.celepar.sefa.dce": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.pr.celepar.paranaautonomo": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.pr.celepar.escolapr.rcdig": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.pr.celepar.escolapr": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.pr.celepar.seab.paranaagro": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.pr.celepar.sefa.mp": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.pr.celepar.farmacia": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.pr.seap.escolapr": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.pr.celepar.sefa.nfparana": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.pr.celepar.detran.pautadigital": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.pr.celepar.sesp.investigacao": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.pr.celepar.sesp.appbotaoparanaense": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.pr.detran.vistoria2": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.br.paranasolidario": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.pr.celepar.appa.apontamento": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.pr.celepar.appacolclassificacao.app": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "gov.pr.celepar.investigacao": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.pr.celepar.appcoleta": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.pr.celepar.srtp": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.pr.celepar.seap.servicosocial": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.pr.celepar.radio.parana.educativa": {
+      "estado": "http_404",
+      "http": 404,
+      "tipo": null
+    },
+    "br.gov.pr.celepar.escolapr.biometria": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.pr.celepar.der.vistoria": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.sp.cijun.appesef": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.sp.cijun.appsol.cajamar": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.sp.cijun.appsol.francodarocha": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.sp.cijun.appesporte": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "com.circulo_2_de_julho": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.ma.ssp.cbm.praiaseguraslz": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.df.detran.ead.metaverso": {
+      "estado": "ausente",
+      "http": null,
+      "tipo": null
+    },
+    "br.gov.ms.detran.vistoriamobile": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.ms.detran.agentedigitalms": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "com.detran.pe.gov.portalservidor.portalservidor": {
+      "estado": "http_403",
+      "http": 403,
+      "tipo": null
+    },
+    "br.gov.rj.cbmerj.caml.app": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.araras.app_fiscalizacao": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.araras.rondapma": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "detranse.fiscaliza": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.com.empro.turismo": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.go.gov.br.goiasdigital": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "com.ssp.go.maisseguranca": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.com.vidaas.go": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "detran.go.gov.br.talonarioeletronico": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.go.agehab.aluguelsocial.twa": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.go.minhavaga": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "com.goinfra.goinfraregistroviagem": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.go.seduc.netescola": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "com.gov.goias.rede.nascer": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.go.meioambiente.alerta": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.go.meioambiente.cimehgoqueimadas.monitor_queimadas_app": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.gointranet": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.educacao.siapapp": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.com.gov18.servicospv": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "com.fiscalizacao.it6pc.appfiscalizacao": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.ce.telessaude": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "com.uece.aplicativoueceoficial": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.ceara.sda": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.ce.sefaz.suanotatemvalor.app": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "com.pocreconhecimentofacil": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.ce.sefaz.meuipva": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.ce.arce.sistemas.conectarce": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.ceara.sda.integrapsj": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.com.cultura.ce": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "com.dpge.suadefensoria.app": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.org.idt.golden": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "com.sap.siappce": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "com.cscmobile": {
+      "estado": "http_500",
+      "http": 500,
+      "tipo": null
+    },
+    "io.ionic.agenteleiturasecult": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.ce.arce.sistemas.taxiapp": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.ce.arce.sistemas.talonarioeletronico": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.ce.sps.hgas": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "com.ce.sesadigital.app": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "application/pdf"
+    },
+    "br.gov.ceara.fazendoascontas": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "com.uece.qrcodescanneruece": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "com.netihc.plannerhc": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "com.netihc.painelgrandesnumeros": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "com.netihc.appfotos": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.jus.tse.jestickers": {
+      "estado": "http_403",
+      "http": 403,
+      "tipo": null
+    },
+    "br.jus.jepessoas": {
+      "estado": "http_403",
+      "http": 403,
+      "tipo": null
+    },
+    "br.jus.tse.dni": {
+      "estado": "http_403",
+      "http": 403,
+      "tipo": null
+    },
+    "br.jus.tre_pa.pat_control": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.jus.trees.pardalmobile": {
+      "estado": "http_403",
+      "http": 403,
+      "tipo": null
+    },
+    "br.jus.tse.BoletimNaMao": {
+      "estado": "http_403",
+      "http": 403,
+      "tipo": null
+    },
+    "br.jus.tse.eleitoral.gel": {
+      "estado": "http_403",
+      "http": 403,
+      "tipo": null
+    },
+    "br.jus.trt5.trt5corporativo": {
+      "estado": "http_502",
+      "http": 502,
+      "tipo": null
+    },
+    "br.gov.ap.apdigital": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.ap.sigrh": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "app.ap.saude": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.com.msbtec.expofeira": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.ap.seloamapa": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "page.martel.guardiaorural": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "com.sefaz.ipva.ipva_app": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "com.sefaz.nfp_app": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "com.prodap.credenciamento_ap": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.ap.amapacarnaval": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.com.msbtec.teadigital": {
+      "estado": "http_404",
+      "http": 404,
+      "tipo": null
+    },
+    "br.gov.ap.sigeduc.professor": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.rj.proderj.identidadedigital": {
+      "estado": "http_503",
+      "http": 503,
+      "tipo": null
+    },
+    "br.tc.tcerj.identidadefuncional": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.rj.proderj.carteirafuncionalrj": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.proderj.rj.bussinesscard": {
+      "estado": "http_503",
+      "http": 503,
+      "tipo": null
+    },
+    "br.gov.rj.sesp.sisp": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.proderj.rj.consultafacilrj": {
+      "estado": "http_503",
+      "http": 503,
+      "tipo": null
+    },
+    "com.jitsiprototiporn": {
+      "estado": "http_503",
+      "http": 503,
+      "tipo": null
+    },
+    "com.segovapp": {
+      "estado": "http_503",
+      "http": 503,
+      "tipo": null
+    },
+    "br.gov.rj.seap.sti.alipen_flutter": {
+      "estado": "http_503",
+      "http": 503,
+      "tipo": null
+    },
+    "br.gov.rj.proderj.eventosrj": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.rj.angra.gsu.app": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.com.defesa_civil_angra.app_dc_angra": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.com.app_gop_angra": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.com.app_ciosp_angra": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.sp.prodesp.acesso": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.sp.prodesp.souconectado": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.sp.infracaoevigilancia": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.sp.agricultura.car": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.sp.educacao.saladofuturo.professores": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.sp.agricultura.metas": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.sp.ssp.antecedentes": {
+      "estado": "http_403",
+      "http": 403,
+      "tipo": null
+    },
+    "br.usp.fm.hc.prodesp.patient": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.sp.fazenda.nfp.app": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "com.moodle.univesp": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.sp.remedioemcasa": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.sp.agriculturaresenhaequideos": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.sp.detran.jogos": {
+      "estado": "http_404",
+      "http": 404,
+      "tipo": null
+    },
+    "br.com.duosystem.remedioagora": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.sp.agricultura.rotasrurais": {
+      "estado": "http_404",
+      "http": 404,
+      "tipo": null
+    },
+    "br.gov.sp.agricultura": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.sp.cptm.mobile": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.ipemobile.app": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.usp.fm.hc.prodesp.professional": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.sp.habitacao.cdhu": {
+      "estado": "http_404",
+      "http": 404,
+      "tipo": null
+    },
+    "br.gov.sp.agricultura.frotasaa": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.sp.gtaequideos": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.sp.denunciaambiental": {
+      "estado": "http_403",
+      "http": 403,
+      "tipo": null
+    },
+    "br.gov.ssp.app_reintegra_sp": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "michel.com.br.holerite": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "pmesp.appemer.mp.android.medidasprotetivas": {
+      "estado": "falha",
+      "http": null,
+      "tipo": "ConnectionResetError"
+    },
+    "br.gov.sp.policiamilitar.ciaf.ciaf_mobile": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "app.govdigital.conectacuritibanos": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.com.monitor.agilizanamao": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "app.govdigital.conectaguaramirim": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "app.govdigital.conectasangao": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "app.govdigital.urussangadigital": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "app.govdigital.conectapalmitos": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "app.govdigital.cnpdigital": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "app.govdigital.conectaigaratinga": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.pb.campinagrande.campinacomvoce": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "com.secti.coresdecampina": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.org.curitiba.ici.appcuritiba": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.org.curitiba.ici.saudeja.curitiba": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.org.curitiba.ici.veredas": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "com.ecofranca": {
+      "estado": "falha",
+      "http": null,
+      "tipo": "URLError"
+    },
+    "br.gov.go.goiania.www10.APControleAntivetorialMobile": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.go.goiania.outprod01.ApAgenteAntivetorial": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "com.digivox.panicbuttonmobile": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.com.mtmtecnologia.mobilex.niteroi.cidadao": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.com.fastmedic.saudemaisuberlandia": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.mg.prodaub.maeuberlandia": {
+      "estado": "http_403",
+      "http": 403,
+      "tipo": null
+    },
+    "br.gov.mg.prodaub.zonaazuldigital": {
+      "estado": "http_403",
+      "http": 403,
+      "tipo": null
+    },
+    "br.gov.mg.prodaub.escolasegura": {
+      "estado": "http_403",
+      "http": 403,
+      "tipo": null
+    },
+    "br.gov.mg.prodaub.udisemdengue": {
+      "estado": "http_403",
+      "http": 403,
+      "tipo": null
+    },
+    "br.gov.mg.prodaub.educacaodigital": {
+      "estado": "http_403",
+      "http": 403,
+      "tipo": null
+    },
+    "br.gov.es.vitoria.vixconecta": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "semop.salvador.ba.gov.br": {
+      "estado": "http_503",
+      "http": 503,
+      "tipo": null
+    },
+    "com.viradasalvador": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.salvador.fiscalizacao": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "com.ba.gov.br.denuncia.app": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.com.sudoesteinformatica.save": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "com.mustachev.carnavaldesalvador2025": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.ba.salvador.sysmobi": {
+      "estado": "falha",
+      "http": null,
+      "tipo": "TimeoutError"
+    },
+    "br.gov.ba.salvador.ouvidoria": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.pr.maringa.feiras_maringa": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "com.conectaservidor": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.pr.maringa.sistema153": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.pr.maringa.empresa_legal": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "com.br.eicon.inmov_actoadministrativo.santos": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "com.prefeituradesantos.guiasantos": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "com.prefeiturasantos.conectaterrasantos": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "com.mulhersantos.mulhersantos": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "com.licitasantos": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.com.eicon.gierpais.santos": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.com.gier.giereducador.santos": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "com.prefeituradesantos.remediofacil": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "com.tribusapp": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.rs.portoalegre.os": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.com.procempa.reurb.campo.app": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.rs.portoalegre.botao_panico": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.com.procempa.horusnextgen": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.com.procempa.skin_scan_app": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.sp.prodam.souprodam": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.sp.prodam.hm0618.hspm": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.sp.prodam.coworking": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.sp.prodam.sampadengue": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.sp.prodam.se1426.appservidor": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.sp.prefeitura.sme.plateia": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.sp.prefeitura.sme.appaluno": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.sp.prodam.sampasaude": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.sp.prodam.sj2301cfapp": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.sp.prodam.gcmapp": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "com.gcm.mensagens": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.serpro.sisgcs": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.serpro.datavalid": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "com.rgsistemas.rgatencaobasica.araruama": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.com.serpro.cidadao.app.araruama": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.ce.seduc.matricula": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "com.SAPI": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "com.ced.sic": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.ce.seduc.quizenem": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.es.sedu.seges.professor": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.es.sedu.seges.gestor": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "com.goodbarber.exercitobr": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.marinhaoficial.app": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.memp.portaldoempreendedor": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.ufsm.lumac.pdsars": {
+      "estado": "http_403",
+      "http": 403,
+      "tipo": null
+    },
+    "com.etro": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.cultura.telabrasil": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.mpdg.siconv": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.infrabr": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.mil.mar.sim.iddigitalmarinha": {
+      "estado": "http_403",
+      "http": 403,
+      "tipo": null
+    },
+    "com.mecenem.app": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.capes.sisuab": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.prf.alertabrasil": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.mil.marinha.dabm.rumb": {
+      "estado": "http_403",
+      "http": 403,
+      "tipo": null
+    },
+    "br.gov.ana.hidroweb": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.minfra.psp": {
+      "estado": "ausente",
+      "http": null,
+      "tipo": null
+    },
+    "br.gov.serpro.pgfn.devedores": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.gov.ibge": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.jus.stj.isgp.app": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.com.originalsoftware.taxifonecliente.movastj": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "com.bem_estar": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.jus.tjpe.nisiaapp": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.jus.tjpb.emsuasmaos": {
+      "estado": "http_403",
+      "http": 403,
+      "tipo": null
+    },
+    "br.tjro.jus.app_tjro_interno": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.jus.tjro.emeronapp": {
+      "estado": "falha",
+      "http": null,
+      "tipo": "TimeoutError"
+    },
+    "br.jus.tjro.quero_conciliar": {
+      "estado": "falha",
+      "http": null,
+      "tipo": "URLError"
+    },
+    "br.com.jusbrasil.lgpd": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.jus.tjse.appoficial": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "com.tjsp.epmmobile": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "com.tjsp.cedulafuncmagapos": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "com.vicegov_panicapp": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.jus.tjrs.app.adocoes": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.jus.tjrj.EscritorioVirtual": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    },
+    "br.jus.tjrj.gabineteweb": {
+      "estado": "ok",
+      "http": 200,
+      "tipo": "text/html"
+    }
+  }
+}

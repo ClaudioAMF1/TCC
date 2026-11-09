@@ -9,11 +9,14 @@ secrets*
 scripts/dados/
 dados/*
 !dados/revisao/
+!dados/segundo_avaliador/
 dados/revisao/pdf/
 dados/revisao/*.bak.csv
 !dados/n3_corpus_*.csv
 !dados/n3_relatorio_*.json
 !dados/controle_ampliado_*.json
+!dados/n3_fichas_*.json
+!dados/classificacao_*.xlsx
 
 # Python
 __pycache__/

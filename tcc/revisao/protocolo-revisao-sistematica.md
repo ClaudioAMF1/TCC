@@ -470,6 +470,25 @@ que sustentam a decisão.
 | 06/11/2026 | 1.1 | O texto do TCC (Seção 2.13) ainda cita a ACM e 22 buscas | Será atualizado com os números finais, ao fim das buscas |
 | 06/11/2026 | 1.2 | Códigos IC1 a IC4 para exclusão por falta de critério de inclusão; regra do código mais específico | A tabela de EC não cobria o que está fora do tema sem se encaixar em EC2 a EC5 |
 | 06/11/2026 | 1.2 | Pré-triagem assistida na F1 (Seção 7.3) | Reduzir o tempo da F1 sem tirar a decisão do autor; concordância medida e reportada. **Pendente: concordância do orientador** |
+| 10/11/2026 | 1.2 | O texto do TCC (Seções 2.13 e 2.14) foi atualizado: sem a ACM, 17 buscas, números da F1 e declaração do uso de IA | Fecha a pendência de 06/11 |
+
+### 12.4 Triagem por título e resumo (F1)
+
+Concluída em 10/11/2026, sobre os 1.249 registros de `dados/revisao/triagem_20261106.csv`.
+
+| Decisão | Registros |
+|---|---|
+| I (inclui) | 214 |
+| T (talvez) | 143 |
+| R (revisão, para a bola de neve) | 6 |
+| E (exclui) | 886: IC1 527, EC3 118, EC2 114, EC5 89, EC4 30, EC6 5, EC1 3 |
+| Seguem para o texto completo (I + T) | 357 |
+
+Sugestão × decisão (Seção 7.3): o autor mudou 148 sugestões (11,8%), 125 delas
+de E para T; κ de Cohen na decisão passa (I ou T) × fica (E ou R) = 0,712
+(`scripts/revisao_triagem.py sugestao`). Como o autor via a sugestão ao decidir,
+esse κ não mede concordância independente; ela é medida no reteste e na
+conferência do orientador (Seção 7.2), sem a sugestão.
 
 ---
 

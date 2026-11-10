@@ -1,38 +1,37 @@
-# Prompts para testar uma segunda IA como avaliadora independente
+# Instruções para a avaliação independente
 
-Objetivo: ver se outra IA, sem ver as sugestões nem as suas decisões, classifica
-como você. Use os arquivos **cegos** de `dados/segundo_avaliador/`: eles não têm
-nenhuma coluna de sugestão, de decisão ou de classificação automática.
+Objetivo: comparar as classificações dos registros sem mostrar as decisões
+anteriores ao segundo avaliador. Use os arquivos **cegos** de
+`dados/segundo_avaliador/`: eles não têm colunas de sugestão, decisão ou
+classificação automática.
 
-**Ordem certa:**
+**Ordem de trabalho:**
 
-1. Termine a **sua** conferência das duas planilhas antes de ver qualquer
-   resposta da outra IA, para não ser influenciado por ela.
-2. Rode os prompts abaixo na outra IA, numa conversa nova.
-3. Me mande as respostas dela e as suas planilhas conferidas: eu calculo a
-   concordância (κ de Cohen) e listo as divergências.
+1. Conclua e salve as decisões antes de consultar respostas de outro avaliador.
+2. Entregue ao segundo avaliador os arquivos cegos e os critérios abaixo.
+3. Reúna as respostas em arquivos separados para calcular a concordância
+   (κ de Cohen) e examinar as divergências.
 
-**Amostra ou tudo?** Comece pelas amostras: 150 artigos e 100 apps, sorteados com
-semente fixa. Elas bastam para medir a concordância. Os arquivos completos
-(1.249 artigos e 396 apps) são grandes, e muitas IAs passam a "chutar" por
-palavra-chave quando o arquivo é longo.
+**Amostras:** 150 artigos e 100 apps, sorteados com semente fixa. Os arquivos
+completos contêm 1.249 artigos e 396 apps e podem ser usados quando houver
+disponibilidade para uma avaliação integral.
 
-| Arquivo | Para qual prompt |
+| Arquivo | Instruções |
 |---|---|
-| `dados/segundo_avaliador/artigos_cego_amostra150.csv` | Prompt 1 |
-| `dados/segundo_avaliador/apps_cego_amostra100.csv` | Prompt 2 |
-| `..._completo.csv` | Os mesmos prompts, se quiser tudo |
+| `dados/segundo_avaliador/artigos_cego_amostra150.csv` | Triagem dos artigos |
+| `dados/segundo_avaliador/apps_cego_amostra100.csv` | Classificação dos apps |
+| `..._completo.csv` | Os mesmos critérios para a avaliação integral |
 
-Os arquivos usam `;` como separador. Anexe o arquivo na conversa e cole o prompt.
+Os arquivos usam `;` como separador.
 
 ---
 
-## Prompt 1: triagem dos artigos
+## 1. Triagem dos artigos
 
 ```
 Você vai atuar como segundo avaliador independente na triagem de uma revisão
-sistemática (Kitchenham e Charters, 2007). Anexei um arquivo CSV (separador ;)
-com registros de artigos: id, titulo, ano, veiculo, tipo, resumo e
+sistemática (Kitchenham e Charters, 2007). O arquivo CSV (separador ;)
+contém registros de artigos: id, titulo, ano, veiculo, tipo, resumo e
 palavras_chave. Para cada registro, decida se o artigo segue para a leitura do
 texto completo, usando SÓ os critérios abaixo.
 
@@ -85,8 +84,7 @@ REGRAS
 - Decida só pelo título, resumo e palavras-chave do arquivo. Não pesquise na
   internet e não use o que você sabe sobre o artigo fora do arquivo.
 - Leia cada registro. Não decida por busca de palavras nem escrevendo código.
-- Trabalhe em ordem, 25 registros por resposta. Eu escrevo "continue" para os
-  próximos.
+- Trabalhe na ordem do arquivo, em lotes de 25 registros.
 - Responda SÓ com linhas CSV, sem comentários antes ou depois, neste formato
   (cabeçalho só na primeira resposta):
   id;decisao;criterio;motivo
@@ -96,12 +94,12 @@ REGRAS
 
 ---
 
-## Prompt 2: classificação dos apps
+## 2. Classificação dos apps
 
 ```
 Você vai atuar como segundo avaliador independente na classificação de
-aplicativos Android candidatos a "aplicativo de governo brasileiro". Anexei um
-arquivo CSV (separador ;) com: appId, titulo, publicador_na_loja,
+aplicativos Android candidatos a "aplicativo de governo brasileiro". O
+arquivo CSV (separador ;) contém: appId, titulo, publicador_na_loja,
 nome_juridico (o nome que a Google Play mostra em "Sobre o desenvolvedor"),
 email, site, situacao e descricao (texto da ficha na Google Play). Para cada
 app, decida três coisas, usando SÓ os critérios abaixo.
@@ -135,8 +133,7 @@ OFICIAL = N, use "-".
 REGRAS
 - Decida só pelos dados do arquivo. Não pesquise na internet.
 - Leia cada linha. Não decida por busca de palavras nem escrevendo código.
-- Trabalhe em ordem, 25 apps por resposta. Eu escrevo "continue" para os
-  próximos.
+- Trabalhe na ordem do arquivo, em lotes de 25 apps.
 - Responda SÓ com linhas CSV, sem comentários antes ou depois, neste formato
   (cabeçalho só na primeira resposta):
   appId;oficial;esfera;sensivel;certeza;motivo
@@ -149,13 +146,10 @@ REGRAS
 
 ## Depois
 
-Junte todas as respostas de cada prompt num arquivo só, com o cabeçalho uma vez:
+Junte as respostas de cada etapa num arquivo só, com o cabeçalho uma vez:
 
-- `dados/segundo_avaliador/resposta_artigos_<nome-da-ia>.csv`
-- `dados/segundo_avaliador/resposta_apps_<nome-da-ia>.csv`
-
-As do ChatGPT já estão no repositório (150 artigos e 100 apps, conferidos em
-09/11).
+- `dados/segundo_avaliador/resposta_artigos_<identificador-do-avaliador>.csv`
+- `dados/segundo_avaliador/resposta_apps_<identificador-do-avaliador>.csv`
 
 **A sua parte** são as planilhas cegas, com as mesmas amostras e nenhuma
 sugestão: `dados/segundo_avaliador/cega_artigos150_claudio.xlsx` e
@@ -169,17 +163,17 @@ python3 scripts/segundo_avaliador.py comparar
 
 O script dá, para artigos e apps:
 
-- a concordância entre você e a outra IA (κ de Cohen), em cada coluna;
-- a concordância entre você e a minha sugestão, para comparar;
-- o κ de Fleiss dos três juntos;
+- a concordância entre o autor e cada segundo avaliador (κ de Cohen), em cada coluna;
+- a concordância com a classificação preliminar, para comparar;
+- o κ de Fleiss entre as classificações disponíveis;
 - a lista das divergências, em `divergencias_artigos.csv` e
   `divergencias_apps.csv`, para você olhar caso a caso.
 
 Enquanto as suas planilhas estiverem em branco, o script não mostra nada, para
 não influenciar as suas decisões. Os 5 apps da amostra que você já validou em
-04/11 ficam fora da comparação com a minha sugestão: nesses, a sugestão é a
+04/11 ficam fora da comparação com a classificação preliminar: nesses, a sugestão é a
 sua própria validação.
 
-**No texto do TCC**, se usar esse resultado, ele entra como verificação
-adicional, ao lado do reteste e da conferência do orientador, com o uso das IAs
-declarado (protocolo, Seção 7.3).
+**No texto do TCC**, reporte o procedimento, o tamanho da amostra, a
+concordância e as divergências. Essa comparação complementa o reteste e a
+conferência do orientador previstos no protocolo (Seção 7.2).

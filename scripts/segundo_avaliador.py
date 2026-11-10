@@ -8,12 +8,12 @@ QUEM É COMPARADO
             dados/segundo_avaliador/cega_artigos150_claudio.xlsx
             dados/segundo_avaliador/cega_apps100_claudio.xlsx
             (ou o mesmo nome em .csv, se ele salvar assim)
-  sugestao  a pré-triagem assistida (protocolo, Seção 7.3): as colunas
+  sugestao  a classificação preliminar (protocolo, Seção 7.3): as colunas
             sugestao_f1 e sugestao_criterio de dados/revisao/triagem_*.csv e
             as colunas "sugerido" de dados/classificacao_396_para_conferir.xlsx
   <nome>    cada arquivo dados/segundo_avaliador/resposta_artigos_<nome>.csv
-            e resposta_apps_<nome>.csv (segundo avaliador; o prompt está em
-            tcc/revisao/prompt-segundo-avaliador.md)
+            e resposta_apps_<nome>.csv (segundo avaliador; instruções em
+            tcc/revisao/instrucoes-segundo-avaliador.md)
 
 O QUE MEDE
 ----------

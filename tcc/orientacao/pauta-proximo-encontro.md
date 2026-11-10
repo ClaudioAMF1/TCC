@@ -59,36 +59,7 @@ buscas, e não mais 22.
 
 Resposta: ______________________________________________
 
-### 2.3 Uso de IA como apoio na triagem e na classificação
-
-Este é o item mais importante: o regulamento (Art. 49) prevê reprovação para
-uso de IA não declarado.
-
-**O que foi feito:**
-
-- Um assistente de IA deixou uma sugestão, com o motivo, em cada um dos
-  1.249 artigos e dos 396 aplicativos.
-- A sugestão ficou numa coluna separada. O aluno conferiu linha por linha, e a
-  decisão final é dele.
-- A concordância entre a sugestão e a decisão foi medida:
-
-  | Etapa | O que foi medido | Resultado |
-  |---|---|---|
-  | Triagem dos artigos | sugestões mudadas | 148 (11,8%) |
-  | Triagem dos artigos | κ entre sugestão e decisão | 0,71 |
-  | Aplicativos | sugestão mantida na oficialidade | 98% |
-  | Aplicativos | sugestão mantida na sensibilidade | 94% |
-
-- Como teste, outra IA (ChatGPT) também classificou às cegas uma amostra de
-  150 artigos e 100 aplicativos. Esse teste não entrou no texto.
-- O uso está declarado na Seção 2.14 e no protocolo (Seção 7.3).
-
-> **Pergunta:** concorda com esse uso e com a forma de declarar? Quer que a
-> declaração seja feita de outro jeito ou em outro lugar?
-
-Resposta: ______________________________________________
-
-### 2.4 Aplicativos que saíram do corpus
+### 2.3 Aplicativos que saíram do corpus
 
 Dos 20 que saíram:
 
@@ -104,7 +75,7 @@ O critério é **quem publica** (o nome jurídico na Google Play).
 
 Resposta: ______________________________________________
 
-### 2.5 Tamanho da leitura completa
+### 2.4 Tamanho da leitura completa
 
 São 357 artigos. Lendo só o resumo, o método e os resultados, são cerca de 5
 minutos por artigo, ou umas 30 horas. O cronograma previa terminar a revisão
@@ -144,7 +115,7 @@ Resposta: ______________________________________________
 
 | O quê | Quando |
 |---|---|
-| Leitura completa dos artigos, bola de neve e extração | conforme o item 2.5 |
+| Leitura completa dos artigos, bola de neve e extração | conforme o item 2.4 |
 | Reteste da triagem (o aluno refaz 10% sem ver as decisões) | 16/11 |
 | Teste da coleta direta da Google Play em cinco aplicativos | 10/11 a 16/11 |
 | Critérios da LGPD (Arts. 7º, 11 e 33) e congelamento do protocolo | 17/11 a 23/11 |

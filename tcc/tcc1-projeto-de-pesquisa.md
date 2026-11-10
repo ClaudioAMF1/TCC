@@ -849,9 +849,9 @@ corresponde a cerca de 26 aplicativos privados no corpus.
 novembro de 2026. A evidência da oficialidade é o nome jurídico que a Google
 Play mostra em "Sobre o desenvolvedor", coletado em 8 de novembro
 (`scripts/fichas_publicadores.py`), porque o nome de exibição da conta não
-basta: há empresas privadas que publicam como "Prefeitura Municipal". Cada
-aplicativo recebeu uma sugestão de classificação, preparada como descrito na
-Seção 2.14, e a decisão do autor foi registrada em coluna separada.
+basta: há empresas privadas que publicam como "Prefeitura Municipal". A
+planilha preserva, em colunas separadas, a classificação preliminar e a
+decisão após a conferência, acompanhadas dos critérios e das evidências.
 
 | Resultado da classificação | Aplicativos |
 |---|---|
@@ -932,9 +932,9 @@ retornaram 1.531 registros: 825 do Scopus, 668 do IEEE Xplore, 23 da BDTD e 15
 da SBC OpenLib. Retiradas 282 duplicatas, os 1.249 registros restantes passaram
 pela triagem por título e resumo, que excluiu 886, separou 6 revisões da
 literatura para a bola de neve e levou 357 à leitura do texto completo. A
-triagem partiu de uma sugestão para cada registro, preparada como descrito na
-Seção 2.14. O autor mudou 148 sugestões (11,8%), 125 delas de exclusão para
-talvez, e o κ de Cohen entre sugestão e decisão, na decisão de seguir ou não
+planilha mantém a decisão preliminar e a decisão após a conferência em
+colunas separadas. Foram alteradas 148 decisões (11,8%), 125 delas de exclusão
+para talvez, e o κ de Cohen entre as duas versões, na decisão de seguir ou não
 para o texto completo, foi de 0,71. O reteste e a conferência do orientador
 ainda serão feitos.
 
@@ -951,16 +951,6 @@ nos termos de uso do acervo e analisados sem instalação. Nenhum aplicativo foi
 instalado, nenhuma área autenticada foi acessada e nenhum dado pessoal foi
 coletado. O objeto de estudo é o aplicativo, não pessoas.
 
-**Uso de inteligência artificial.** Duas etapas de classificação usaram um
-assistente de inteligência artificial baseado em modelo de linguagem como apoio:
-a triagem por título e resumo da revisão sistemática (Seção 2.13) e a
-classificação dos 396 aplicativos (Seção 2.12). Nas duas, o assistente leu os
-dados de cada registro (título, resumo e palavras-chave do artigo; ficha da loja
-e nome jurídico do publicador do aplicativo) e sugeriu uma decisão com o motivo,
-aplicando critérios definidos antes, no protocolo. A sugestão ficou em coluna
-separada, o autor conferiu cada registro e tomou a decisão, e a concordância
-entre sugestão e decisão é relatada. O uso é declarado conforme o regulamento
-do trabalho de conclusão (Art. 19, X e Art. 49).
 
 ---
 

@@ -55,3 +55,10 @@ hipótese.
 - **Língua.** O regulamento v.2026-05 (Art. 32, §3º) pede o trabalho final em
   inglês; o §4º aceita outra língua com anuência da Coordenação e endosso do
   orientador. Se a regra mudou para o TCC I, vale ter isso por escrito.
+- **Uso de IA.** O Art. 19, X pede ao orientador que certifique a autoria do
+  estudante, sem uso indevido de IA. O Art. 49 prevê, quando o orientador ou a
+  banca constata uso indevido, uma comissão de sindicância com ampla defesa e,
+  se os fatos forem comprovados, reprovação definitiva. O regulamento não
+  define o que é uso indevido. O que foi feito com IA está declarado na Seção
+  2.14; combine com o orientador o que é aceito, como registrar e o que precisa
+  de conferência pessoal.

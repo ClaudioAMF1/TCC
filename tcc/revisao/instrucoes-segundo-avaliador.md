@@ -24,6 +24,12 @@ disponibilidade para uma avaliação integral.
 
 Os arquivos usam `;` como separador.
 
+**Registro.** Em 09/11/2026, as duas amostras foram avaliadas pelo ChatGPT
+(OpenAI), com estas instruções. As respostas estão em
+`dados/segundo_avaliador/resposta_artigos_chatgpt.csv` e
+`resposta_apps_chatgpt.csv`. Foi um teste, e o resultado não entra no trabalho.
+As planilhas cegas do autor (`cega_*_claudio.xlsx`) não foram preenchidas.
+
 ---
 
 ## 1. Triagem dos artigos

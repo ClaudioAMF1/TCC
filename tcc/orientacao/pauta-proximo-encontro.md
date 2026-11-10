@@ -1,123 +1,197 @@
-# Pauta do próximo encontro de orientação
+# Roteiro do encontro de orientação (novembro de 2026)
 
 Data: ____/11/2026        Ficha de orientação nº ____ (levar para assinar)
 
-Levar aberto no computador:
+Tempo sugerido: 30 minutos.
 
-- o texto do TCC (`tcc/latex/main.tex` no Overleaf), Seções 2.12 a 2.14;
-- a planilha `dados/revisao/conferencia_orientador_20261110.xlsx` (item 3).
+| Parte | Tempo |
+|---|---|
+| 1. O trabalho em um minuto | 1 min |
+| 2. O que foi feito | 7 min |
+| 3. Resultados até agora | 5 min |
+| 4. Perguntas | 15 min |
+| 5. Avisos rápidos e próximos passos | 2 min |
 
----
-
-## 1. O que foi feito desde o último encontro (2 minutos)
-
-- **Protocolo da revisão sistemática** escrito em 04/11
-  (`tcc/revisao/protocolo-revisao-sistematica.md`).
-- **Buscas** feitas em 06/11 no Scopus, IEEE Xplore, BDTD e SBC OpenLib:
-  1.531 registros, 1.249 sem as duplicatas. As strings acharam os 10 estudos
-  de controle que o Scopus tem.
-- **Triagem por título e resumo** concluída em 10/11: 357 artigos seguem
-  para a leitura completa, 886 saíram e 6 são revisões (servem para a bola de
-  neve).
-- **Classificação dos 396 aplicativos** concluída em 10/11:
-  - 376 são mesmo do governo;
-  - 20 saem;
-  - 100 dos 376 tratam dado de saúde ou biometria.
-
-  A classificação automática de setembro errava a sensibilidade em 28,7% dos
-  aplicativos, a mesma taxa que a amostra de 04/11 tinha mostrado.
-- **Texto atualizado** com esses números (Seções 2.3, 2.5, 2.12, 2.13, 2.14 e
-  cronograma).
+Levar aberto: o texto no Overleaf (36 páginas), com a Seção 2.14 à mão.
 
 ---
 
-## 2. Decisões que precisam da concordância dele
+## 1. O trabalho em um minuto
 
-Para cada item: explicar em uma frase e perguntar se ele concorda. Anotar a
-resposta.
+> "A pergunta é se os aplicativos do governo brasileiro na Google Play trazem
+> SDKs de rastreamento de empresas terceiras e se fazem isso mais ou menos que
+> aplicativos comerciais da mesma categoria e do mesmo porte. São quatro
+> hipóteses:
+>
+> - **H1:** o governo rastreia tanto quanto o mercado;
+> - **H2:** parte dos SDKs não aparece na política de privacidade;
+> - **H3:** os aplicativos com dado de saúde ou biometria não rastreiam menos;
+> - **H4:** a taxa medida depende da ferramenta de detecção.
+>
+> Neste semestre, o objetivo é mostrar que dá para medir tudo isso e montar os
+> dados. A coleta completa e a análise ficam para o Capstone II."
 
-### 2.1 Lacuna reescrita
+---
 
-A busca para o protocolo achou Samarasinghe et al. (2022), um estudo com 1.166
-aplicativos de governo de 71 países: há rastreador do Google em 37% deles.
-Esse estudo não estava na proposta. A lacuna passou a ser o Brasil e a
-comparação com aplicativos comerciais pareados por categoria e porte, que
-ninguém fez (Seção 1.2).
+## 2. O que foi feito, como e com quê
 
-> **Pergunta:** a lacuna, do jeito que ficou, está boa?
+| Etapa | O que foi feito | Como, e com que ferramentas | Resultado |
+|---|---|---|---|
+| Escolha do tema | Quatro temas testados com dados antes de escolher | Shodan, Certificate Transparency, *imphash* de malware e Google Play | Três descartados porque a variável principal não era observável |
+| Corpus do governo | Busca de aplicativos de órgãos públicos | Python com a biblioteca `google-play-scraper`; 21 termos de busca e depois o catálogo de cada publicador | 396 candidatos de 71 publicadores (set/2026) |
+| Grupo de controle | Aplicativos comerciais da mesma categoria e faixa de instalações | Mesmo coletor, por categoria e faixa | 190, depois ampliado para 252 (04/11) |
+| Viabilidade | Cada hipótese conferida antes de baixar qualquer pacote | Critérios escritos antes; intervalo de Wilson; cálculo de poder estatístico | As quatro hipóteses têm instrumento |
+| Fonte dos pacotes (APKs) | Pedido de acesso ao AndroZoo, acervo acadêmico de APKs | Acesso concedido em 17/09; download pelo hash SHA-256, que garante a mesma versão | Só 23% dos aplicativos do governo estão no acervo, contra 84% do controle; o resto será baixado da loja com o `apkeep`, ferramenta da EFF |
+| Detectores | Leitura do código das ferramentas previstas | MobSF 4.5.3, Exodus Privacy e Androguard | O MobSF usa a mesma base do Exodus, então não é independente. Três detectores novos: **A** (Exodus, código), **B** (Exodus, domínios), **C** (lista Disconnect, domínios) |
+| Piloto | 20 APKs passados pelos três detectores | Script `piloto_androzoo.py` (Python e Androguard); conferência das 223 detecções pela evidência | κ de Fleiss de 0,52, que sobe para 0,69 depois da conferência; 72% das detecções do B eram falsas |
+| Classificação do corpus | Para cada aplicativo: quem publica, esfera e dado sensível | Nome jurídico em "Sobre o desenvolvedor" na Google Play; amostra de 32 em 04/11; os 396 em 10/11, com apoio de IA (pergunta 1) | 376 oficiais; 100 com dado de saúde ou biometria |
+| Revisão sistemática | Protocolo, buscas e triagem | Kitchenham e Charters (2007); PRISMA 2020; Scopus via CAPES, IEEE Xplore, BDTD e SBC OpenLib; 11 estudos de controle para validar as buscas; triagem com apoio de IA (pergunta 1) | 1.531 registros, 1.249 sem repetição, 357 para leitura completa |
+| Texto e reprodutibilidade | Redação no modelo ABNT | LaTeX (abnTeX2) no Overleaf; scripts e dados num repositório Git; texto e scripts feitos com apoio de IA (pergunta 1) | 36 páginas |
+
+---
+
+## 3. Resultados até agora
+
+1. **Nenhum aplicativo do governo declara anúncios** (0 de 376), contra 33%
+   do controle. A declaração é feita pelo próprio publicador e trata só de
+   anúncios: ela não mostra quais SDKs existem nem para onde os dados vão.
+   Isso depende da detecção nos APKs e da análise dinâmica, que ainda não foram
+   feitas no corpus completo.
+2. **A ferramenta muda o resultado.** No piloto, a mesma amostra deu de 75% a
+   95% de aplicativos com rastreador, conforme o detector. Isso já indica que a
+   H4 tem fundamento.
+3. **O AndroZoo quase não tem aplicativos do governo**: 23%, contra 84% do
+   controle. Mesmo comparando aplicativos do mesmo porte, a chance de um
+   aplicativo do governo estar no acervo é bem menor: a razão de chances é
+   0,13. Por isso a maior parte terá de ser baixada da loja.
+4. **A classificação automática não basta.** Ela errava o dado sensível em 29%
+   dos aplicativos e deixava passar empresas privadas com nome de prefeitura.
+5. **A literatura já mediu apps de governo de outros países** (Samarasinghe et
+   al., 2022: 71 países, Google em 37%), mas sem o Brasil por esfera, sem
+   comparação com o mercado e com uma só ferramenta. A lacuna foi reescrita
+   com esses três pontos.
+
+---
+
+## 4. Perguntas
+
+A primeira é a mais importante. Nas outras, levo uma proposta, e ele só
+precisa concordar ou corrigir.
+
+### Pergunta 1. O que o senhor aceita no uso de IA que fiz, e como registro?
+
+Contar o que aconteceu, sem diminuir nem aumentar:
+
+> "Usei dois assistentes de IA, e está declarado na Seção 2.14.
+>
+> - **Claude:** redigiu e revisou o texto e o protocolo, escreveu os scripts
+>   e fez a classificação inicial dos 1.249 artigos da triagem e dos 396
+>   aplicativos, como sugestão numa coluna separada.
+> - **ChatGPT:** participou da conferência dessas classificações e alterou
+>   parte delas, revisou trechos do texto e fez um teste às cegas numa amostra,
+>   que não entra nos resultados.
+>
+> Ainda não validei as classificações registro a registro."
+
+Perguntas:
+
+- **O que desse uso o senhor considera aceitável, e o que não?**
+- **Como devo registrar no texto? A Seção 2.14 basta?**
+- **Quais etapas precisam de conferência pessoal minha?** Por exemplo:
+  - validar todas as classificações ou uma amostra;
+  - reescrever o texto com as minhas palavras;
+  - refazer alguma etapa.
 
 Resposta: ______________________________________________
 
-### 2.2 Saída da ACM Digital Library
+### Pergunta 2. Qual deve ser o eixo da discussão: LGPD ou soberania de dados?
 
-A ACM estava prevista, mas exportar os resultados é pago e o IDP não dá acesso.
-Os anais da ACM aparecem no Scopus: os 6 estudos de controle publicados pela
-ACM foram todos achados lá. O que faltar entra pela bola de neve. Ficaram 17
-buscas, e não mais 22.
+> "A justificativa tem dois eixos: a LGPD, nos Arts. 11 (dado sensível) e 33
+> (transferência internacional), e a soberania de dados, pela dependência de
+> empresas estrangeiras. Por enquanto, não tenho evidência de transferência
+> para o exterior: isso depende da detecção nos APKs e da análise dinâmica.
+> **O senhor acha que o eixo deve ser um dos dois, ou os dois com o mesmo
+> peso?**"
 
-> **Pergunta:** concorda em tirar a ACM?
-
-Resposta: ______________________________________________
-
-### 2.3 Aplicativos que saíram do corpus
-
-Dos 20 que saíram:
-
-- 13 são de três empresas privadas que fazem aplicativos para prefeituras e
-  publicam com nome de serviço público;
-- 7 são serviços da área de agricultura do Estado de São Paulo publicados numa
-  conta registrada em nome de uma pessoa, e não do órgão.
-
-O critério é **quem publica** (o nome jurídico na Google Play).
-
-> **Pergunta:** concorda em deixar os 7 da conta de pessoa física fora do
-> corpus?
+Minha proposta: medir como está no plano e discutir pelos dois. A LGPD dá os
+critérios verificáveis; a soberania entra na medida em que a análise dinâmica
+mostrar para onde os dados vão.
 
 Resposta: ______________________________________________
 
-### 2.4 Tamanho da leitura completa
+### Pergunta 3. O que a revisão sistemática precisa ter na entrega de 03/12?
 
-São 357 artigos. Lendo só o resumo, o método e os resultados, são cerca de 5
-minutos por artigo, ou umas 30 horas. O cronograma previa terminar a revisão
-até 16/11.
+> "A triagem deixou 357 artigos para a leitura completa, umas 30 horas. Minha
+> proposta é entregar agora o protocolo, as buscas e a triagem, e ler agora só
+> os 51 sobre aplicativos de governo, LGPD e Brasil, que sustentam a lacuna. O
+> restante da leitura e a extração ficariam para o Capstone II. **Isso atende
+> ao que o senhor espera do projeto?**"
 
-**Proposta:**
+Resposta: ______________________________________________
 
-1. ler primeiro os 214 que já pareciam incluídos;
-2. depois, os 143 marcados como "talvez";
-3. fazer a bola de neve e a extração só sobre o que for incluído.
+### Pergunta 4. A escolha do detector principal é defensável?
 
-> **Perguntas:** o que precisa estar pronto da revisão para a entrega de 03/12?
-> Parte da leitura e da extração pode ficar para o Projeto Capstone II?
+> "Proponho usar o detector A (assinatura de código do Exodus) como medida
+> principal, porque no piloto todas as detecções dele se confirmaram. O C
+> (Disconnect, de outra organização) entraria como verificação independente, e
+> o B só para medir o efeito do método, porque 72% das detecções dele estavam
+> erradas. **Essa divisão é defensável diante da banca, ou o senhor prefere
+> tratar os três como iguais?**"
+
+Resposta: ______________________________________________
+
+### Pergunta 5. Há alguma restrição para baixar os APKs direto da Google Play?
+
+> "Cerca de três quartos dos aplicativos do governo não estão no AndroZoo e
+> terão de ser baixados da loja com o `apkeep`, usando uma conta Google criada
+> só para a pesquisa. Os pacotes não são redistribuídos; só os hashes são
+> publicados. **Vê algum problema ético ou de termos de uso que eu deva tratar
+> no texto, ou que precise de aval do IDP?**"
+
+Resposta: ______________________________________________
+
+### Pergunta 6. A lacuna, como ficou, aguenta a banca?
+
+> "Depois do estudo de Samarasinghe et al. (2022), a originalidade ficou em
+> três pontos: o Brasil, com esfera e dado sensível; a comparação com
+> aplicativos comerciais pareados; e a concordância entre ferramentas. **O
+> senhor vê risco de a banca achar o trabalho repetido?**"
+
+Resposta: ______________________________________________
+
+### Pergunta 7, se der tempo. A análise dinâmica fica no Capstone II?
+
+> "O objetivo 4 prevê, numa subamostra, ver para quais servidores e países os
+> dados realmente vão, com celular e conta próprios. É a única parte que mede
+> a transferência para o exterior, mas é a mais trabalhosa. **Mantemos no
+> Capstone II ou deixamos como trabalho futuro?**"
 
 Resposta: ______________________________________________
 
 ---
 
-## 3. Pedido: conferência da triagem (10 a 15 minutos)
+## 5. Avisos rápidos (só informar; ele corrige se discordar)
 
-O protocolo (Seção 7.2) pede que o orientador decida 20 artigos sorteados sem
-ver a decisão do aluno. Isso mede se outra pessoa chegaria às mesmas
-respostas.
+- **ACM Digital Library fora das buscas:** a exportação é paga e o IDP não dá
+  acesso. Os 6 estudos de controle da ACM foram achados no Scopus.
+- **20 aplicativos saíram do corpus:**
+  - 13 de empresas privadas que publicam com nome de prefeitura;
+  - 7 da área de agricultura de São Paulo publicados numa conta registrada em
+    nome de pessoa física.
 
-- Arquivo: `dados/revisao/conferencia_orientador_20261110.xlsx`. A aba "Como
-  decidir" explica tudo em uma página.
-- Ele lê título e resumo e preenche a coluna DECISÃO (I, T, E ou R).
-- Pode ser no encontro ou depois, por e-mail.
+  O critério é quem publica.
+- **Opcional:** se ele tiver 15 minutos, agora ou por e-mail, pode decidir 20
+  artigos sorteados da triagem (`dados/revisao/conferencia_orientador_20261110.xlsx`).
+  Isso mede se outra pessoa chegaria às mesmas decisões.
 
-> **Pedido:** pode decidir esses 20?
-
-Resposta: ______________________________________________
-
----
-
-## 4. Próximos passos (para combinar as datas)
+### Próximos passos
 
 | O quê | Quando |
 |---|---|
-| Leitura completa dos artigos, bola de neve e extração | conforme o item 2.4 |
-| Reteste da triagem (o aluno refaz 10% sem ver as decisões) | 16/11 |
-| Teste da coleta direta da Google Play em cinco aplicativos | 10/11 a 16/11 |
+| Validação pessoal das classificações (escopo conforme a pergunta 1) | até 23/11 |
+| Teste da coleta direta da Google Play em cinco aplicativos | até 16/11 |
+| Reteste da triagem (refazer 10% sem ver as decisões) | 16/11 |
+| Leitura dos 51 artigos centrais (se ele concordar com a pergunta 3) | até 23/11 |
 | Critérios da LGPD (Arts. 7º, 11 e 33) e congelamento do protocolo | 17/11 a 23/11 |
 | Slides da simulação de defesa | até 24/11 |
 | Entrega da redação | 03/12 |

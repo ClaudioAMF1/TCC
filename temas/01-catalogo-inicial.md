@@ -21,7 +21,7 @@ elas eliminam boa parte das ideias ruins sozinhas.
 | Modalidade **artigo científico** exige aceite em conferência (Capstone I) e em periódico **Qualis ≥ B2** (Capstone II) | Reg., Art. 25, §4º e Art. 29, §1º | **Alto risco.** Aceite em periódico B2 não depende de você, depende de revisores e de prazos de 6–12 meses. Recomendação: **monografia** (ou relatório técnico-científico), e transformar em artigo depois, como o Art. 29, §2º sugere. |
 | Orientador escolhido no 1º bimestre, com termo de aceite | Reg., Art. 10 e Art. 15 | Os orientadores e linhas de pesquisa são apresentados na **aula de 25/08**. O tema tem que ter alguém no corpo docente disposto e capaz de orientar. |
 | 5 encontros obrigatórios com o orientador no 2º bimestre, com ficha assinada | Reg., Art. 19, II e Art. 24 | Burocracia que reprova. Coloque no calendário desde o começo. |
-| Uso indevido de IA = reprovação definitiva + sindicância | Reg., Art. 49 | Cuidado com a distinção: **IA como objeto de pesquisa** é ótimo; **IA escrevendo o TCC por você** é infração. Se o método usar LLM, isso vai declarado e documentado no capítulo de metodologia — o que aliás fortalece o trabalho. |
+| Uso indevido de IA, constatado pelo orientador ou pela banca: comissão de sindicância com ampla defesa; se comprovado, reprovação definitiva e sanções disciplinares | Reg., Art. 19, X e Art. 49 | O regulamento não define "uso indevido", e o Art. 19, X liga o tema à autoria do estudante. Declarar o uso não garante, por si, que ele seja aceito: combine com o orientador o que é permitido e como registrar. |
 
 ### Critérios de avaliação da banca (Reg., Art. 31)
 

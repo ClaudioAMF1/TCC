@@ -178,9 +178,16 @@ python3 scripts/revisao_triagem.py prisma
 
 ## Parte 5. Texto completo, F2 (10/11 a 13/11)
 
-Para cada registro com `I` ou `T` na F1, abra o artigo (DOI, CAFe ou Google
-Acadêmico) e preencha `decisao_f2` (`I` ou `E`) e `criterio_f2`. Se não achar
-o texto, mande um e-mail ao autor; sem resposta em 7 dias, `E` com `EC7`.
+Use a planilha `dados/revisao/leitura_F2_para_preencher.xlsx`, montada em
+10/11 com os 357 registros que tiveram `I` ou `T` na F1. A aba "Como ler"
+explica o passo a passo. Os 214 `I` vêm primeiro, agrupados por tema, e cada
+linha tem o link do artigo, o PDF gratuito quando existe (174 têm) e uma busca
+no Google Acadêmico.
+
+Preencha as colunas verdes: `SUA DECISÃO F2` (`I` ou `E`) e `SEU CRITÉRIO F2`.
+Se não achar o texto, mande um e-mail ao autor; sem resposta em 7 dias, `E` com
+`EC7`. Eu passo as decisões para a `triagem_20261106.csv` (colunas
+`decisao_f2` e `criterio_f2`).
 
 Guarde os PDFs em `dados/revisao/pdf/`, com o `id` no nome (`R0042.pdf`). Eles
 não vão para o repositório.

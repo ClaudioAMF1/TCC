@@ -309,16 +309,27 @@ discutidas, o texto do critério que mais produziu divergência é reescrito e o
 registros excluídos por ele são decididos de novo. O κ, o tamanho da amostra e
 a eventual mudança de critério são reportados.
 
-### 7.3 Registro e conferência das decisões
+### 7.3 Pré-triagem por inteligência artificial e conferência
 
-A planilha da F1 preserva, em colunas separadas, a decisão preliminar, o
-critério, a justificativa e a decisão após a conferência. As alterações ficam
-documentadas para permitir a auditoria da seleção.
+A F1 começou com uma classificação inicial feita por um assistente de
+inteligência artificial (Claude, da Anthropic). Ele leu os 1.249 títulos, e os
+resumos quando o título não bastava, e sugeriu para cada registro uma decisão,
+o código do critério e o motivo. A conferência dessas sugestões contou com a
+participação de outro assistente (ChatGPT, da OpenAI), que alterou parte delas.
 
-O trabalho reporta quantas decisões foram alteradas e o κ de Cohen entre as
-duas versões (`scripts/revisao_triagem.py sugestao`). Essa comparação descreve
-a estabilidade da triagem; não substitui o reteste e a conferência do
-orientador (Seção 7.2), feitos sem mostrar as decisões anteriores.
+A planilha guarda a sugestão e a versão conferida em colunas separadas, e as
+alterações ficam registradas no repositório. O trabalho reporta quantas
+sugestões foram alteradas e o κ de Cohen entre as duas versões
+(`scripts/revisao_triagem.py sugestao`). Como as duas versões foram produzidas
+com apoio de IA, esse κ não mede concordância entre avaliadores humanos.
+
+A validação dos registros pelo autor ainda não foi feita; o escopo dela (todos
+os registros ou uma amostra) é combinado com o orientador. O reteste e a
+conferência do orientador (Seção 7.2) são feitos sem mostrar as decisões
+anteriores. O uso de IA é declarado no texto do trabalho (Seção 2.14), e o que
+é aceito e como registrar são combinados com o orientador, a quem o Art. 19, X
+do regulamento atribui certificar a autoria do trabalho. **Pendente:
+concordância do orientador.**
 
 ### 7.4 Bola de neve
 
@@ -466,8 +477,9 @@ que sustentam a decisão.
 | 06/11/2026 | 1.1 | SOL feita à mão | O site da SBC OpenLib recusa acesso automatizado |
 | 06/11/2026 | 1.1 | O texto do TCC (Seção 2.13) ainda cita a ACM e 22 buscas | Será atualizado com os números finais, ao fim das buscas |
 | 06/11/2026 | 1.2 | Códigos IC1 a IC4 para exclusão por falta de critério de inclusão; regra do código mais específico | A tabela de EC não cobria o que está fora do tema sem se encaixar em EC2 a EC5 |
-| 06/11/2026 | 1.2 | Registro da decisão preliminar e da decisão após a conferência na F1 (Seção 7.3) | Manter a rastreabilidade das alterações e medir a concordância entre as duas versões |
-| 10/11/2026 | 1.2 | O texto do TCC (Seções 2.13 e 2.14) foi atualizado: sem a ACM, 17 buscas, números da F1 e aspectos éticos das etapas executadas | Fecha a pendência de 06/11 |
+| 06/11/2026 | 1.2 | Pré-triagem por IA na F1 (Seção 7.3) | Reduzir o tempo da F1, com a sugestão e a versão conferida em colunas separadas e a concordância entre elas reportada. **Pendente: concordância do orientador** |
+| 10/11/2026 | 1.2 | O texto do TCC (Seções 2.13 e 2.14) foi atualizado: sem a ACM, 17 buscas, números da F1 e declaração do uso de IA | Fecha a pendência de 06/11 |
+| 10/11/2026 | 1.3 | A Seção 7.3 passa a registrar a participação do ChatGPT na conferência e a separar dela a validação pelo autor, ainda não feita | Descrever com precisão o que foi feito com IA e o que foi feito pelo autor |
 
 ### 12.4 Triagem por título e resumo (F1)
 
@@ -483,8 +495,7 @@ Concluída em 10/11/2026, sobre os 1.249 registros de `dados/revisao/triagem_202
 
 Sugestão × decisão (Seção 7.3): o autor mudou 148 sugestões (11,8%), 125 delas
 de E para T; κ de Cohen na decisão passa (I ou T) × fica (E ou R) = 0,712
-(`scripts/revisao_triagem.py sugestao`). Como o autor via a sugestão ao decidir,
-esse κ não mede concordância independente; ela é medida no reteste e na
+(`scripts/revisao_triagem.py sugestao`). Como as duas versões foram produzidas com apoio de IA (Seção 7.3), esse κ não mede concordância entre avaliadores humanos; ela é medida no reteste e na
 conferência do orientador (Seção 7.2), sem a sugestão.
 
 ---

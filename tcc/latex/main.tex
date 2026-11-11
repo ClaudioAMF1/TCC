@@ -1,6 +1,243 @@
 % TCC I (Projeto Capstone I, IDP, 2026.2) -- classe abnTeX2, normas ABNT.
 % No Overleaf: Menu > Compiler = pdfLaTeX. As referências ficam em referencias.bib.
 
+% As referências vão dentro deste arquivo: ao compilar, o LaTeX grava (e
+% sobrescreve) o referencias.bib. Para mudar uma referência, edite aqui.
+\begin{filecontents*}[overwrite]{referencias.bib}
+% Referências do TCC I, no formato do abntex2cite (ABNT, autor-data).
+% Mesmo conteúdo da lista de referências do texto em Markdown.
+% Os dois artigos de Kollnig de 2021 levam 'a' e 'b' no próprio ano: a ABNT
+% pede a letra também na lista, e o abntex2-alf só a põe na citação.
+
+@inproceedings{alecci2024,
+  author    = {Alecci, Marco and others},
+  title     = {{AndroZoo}: a retrospective with a glimpse into the future},
+  booktitle = {Proceedings of the 21st International Conference on Mining Software Repositories},
+  address   = {New York},
+  publisher = {ACM},
+  year      = {2024},
+  pages     = {389--393},
+  note       = {DOI: 10.1145/3643991.3644863}
+}
+
+@inproceedings{allix2016,
+  author    = {Allix, Kevin and Bissyandé, Tegawendé F. and Klein, Jacques and Le Traon, Yves},
+  title     = {{AndroZoo}: collecting millions of {Android} apps for the research community},
+  booktitle = {Proceedings of the 13th International Conference on Mining Software Repositories},
+  address   = {New York},
+  publisher = {ACM},
+  year      = {2016},
+  pages     = {468--471},
+  note       = {DOI: 10.1145/2901739.2903508}
+}
+
+@misc{androguard2026,
+  author        = {{ANDROGUARD}},
+  title         = {Androguard},
+  note          = {Versão 4.1.4},
+  year          = {2026},
+  url           = {https://pypi.org/project/androguard/4.1.4/},
+  urlaccessdate = {20 out. 2026}
+}
+
+@inproceedings{binns2018,
+  author    = {Binns, Reuben and others},
+  title     = {Third party tracking in the mobile ecosystem},
+  booktitle = {Proceedings of the 10th ACM Conference on Web Science},
+  address   = {New York},
+  publisher = {ACM},
+  year      = {2018},
+  pages     = {23--31},
+  note       = {DOI: 10.1145/3201064.3201089}
+}
+
+@misc{brasil2018,
+  author        = {{BRASIL}},
+  title         = {Lei nº 13.709, de 14 de agosto de 2018: Lei Geral de Proteção de Dados Pessoais ({LGPD})},
+  howpublished  = {Diário Oficial da União: seção 1, Brasília, DF, 15 ago. 2018},
+  year          = {2018},
+  url           = {https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm},
+  urlaccessdate = {[preencher na consulta]}
+}
+
+@misc{disconnect2026,
+  author        = {{DISCONNECT}},
+  title         = {Disconnect tracking protection},
+  note          = {Lista de serviços de rastreamento, licença CC BY-NC-SA 4.0},
+  year          = {2026},
+  url           = {https://github.com/disconnectme/disconnect-tracking-protection},
+  urlaccessdate = {20 out. 2026}
+}
+
+@misc{exodus2026,
+  author        = {{EXODUS PRIVACY}},
+  title         = {$\varepsilon$xodus: trackers},
+  note          = {Base de assinaturas de rastreadores},
+  year          = {2026},
+  url           = {https://reports.exodus-privacy.eu.org/en/trackers/},
+  urlaccessdate = {[preencher na execução do piloto]}
+}
+
+@article{fleiss1971,
+  author  = {Fleiss, Joseph L.},
+  title   = {Measuring nominal scale agreement among many raters},
+  journal = {Psychological Bulletin},
+  volume  = {76},
+  number  = {5},
+  pages   = {378--382},
+  year    = {1971},
+  note     = {DOI: 10.1037/h0031619}
+}
+
+@misc{jomingyu2024,
+  author        = {{JOMINGYU}},
+  title         = {google-play-scraper},
+  note          = {Versão 1.2.7},
+  year          = {2024},
+  url           = {https://pypi.org/project/google-play-scraper/},
+  urlaccessdate = {20 out. 2026}
+}
+
+@article{kendall1938,
+  author  = {Kendall, Maurice G.},
+  title   = {A new measure of rank correlation},
+  journal = {Biometrika},
+  volume  = {30},
+  number  = {1-2},
+  pages   = {81--93},
+  year    = {1938},
+  note     = {DOI: 10.1093/biomet/30.1-2.81}
+}
+
+@book{kitchenham2007,
+  author    = {Kitchenham, Barbara and Charters, Stuart},
+  title     = {Guidelines for performing systematic literature reviews in software engineering},
+  publisher = {Keele University; Durham University},
+  address   = {Keele},
+  series    = {Technical Report EBSE-2007-01},
+  year      = {2007}
+}
+
+@article{kollnig2021before,
+  author  = {Kollnig, Konrad and others},
+  title   = {Before and after {GDPR}: tracking in mobile apps},
+  journal = {Internet Policy Review},
+  volume  = {10},
+  number  = {4},
+  year    = {2021a},
+  note     = {DOI: 10.14763/2021.4.1611}
+}
+
+@inproceedings{kollnig2021fait,
+  author    = {Kollnig, Konrad and others},
+  title     = {A fait accompli? {An} empirical study into the absence of consent to third-party tracking in {Android} apps},
+  booktitle = {Proceedings of the 17th Symposium on Usable Privacy and Security},
+  address   = {Berkeley},
+  publisher = {USENIX Association},
+  year      = {2021b},
+  pages     = {181--195}
+}
+
+@article{mantel1959,
+  author  = {Mantel, Nathan and Haenszel, William},
+  title   = {Statistical aspects of the analysis of data from retrospective studies of disease},
+  journal = {Journal of the National Cancer Institute},
+  volume  = {22},
+  number  = {4},
+  pages   = {719--748},
+  year    = {1959}
+}
+
+@misc{mobsf2026,
+  author        = {{MOBSF}},
+  title         = {Mobile Security Framework ({MobSF})},
+  note          = {Versão 4.5.3},
+  year          = {2026},
+  url           = {https://pypi.org/project/mobsf/4.5.3/},
+  urlaccessdate = {20 out. 2026}
+}
+
+@inproceedings{nguyen2022,
+  author    = {Nguyen, Trung Tin and Backes, Michael and Stock, Ben},
+  title     = {Freely given consent? {Studying} consent notice of third-party tracking and its violations of {GDPR} in {Android} apps},
+  booktitle = {Proceedings of the 2022 ACM SIGSAC Conference on Computer and Communications Security},
+  address   = {New York},
+  publisher = {ACM},
+  year      = {2022},
+  pages     = {2369--2383},
+  note       = {DOI: 10.1145/3548606.3560564}
+}
+
+@inproceedings{razaghpanah2018,
+  author    = {Razaghpanah, Abbas and others},
+  title     = {Apps, trackers, privacy, and regulators: a global study of the mobile tracking ecosystem},
+  booktitle = {Proceedings of the Network and Distributed System Security Symposium},
+  address   = {Reston},
+  publisher = {Internet Society},
+  year      = {2018},
+  note       = {DOI: 10.14722/ndss.2018.23353}
+}
+
+@article{wilson1927,
+  author  = {Wilson, Edwin B.},
+  title   = {Probable inference, the law of succession, and statistical inference},
+  journal = {Journal of the American Statistical Association},
+  volume  = {22},
+  number  = {158},
+  pages   = {209--212},
+  year    = {1927},
+  note     = {DOI: 10.1080/01621459.1927.10502953}
+}
+@article{cohen1960,
+  author  = {Cohen, Jacob},
+  title   = {A coefficient of agreement for nominal scales},
+  journal = {Educational and Psychological Measurement},
+  volume  = {20},
+  number  = {1},
+  pages   = {37--46},
+  year    = {1960},
+  note     = {DOI: 10.1177/001316446002000104}
+}
+@article{page2021,
+  author  = {Page, Matthew J. and others},
+  title   = {The {PRISMA} 2020 statement: an updated guideline for reporting systematic reviews},
+  journal = {BMJ},
+  volume  = {372},
+  year    = {2021},
+  note     = {Art. n71. DOI: 10.1136/bmj.n71}
+}
+@inproceedings{samarasinghe2022,
+  author    = {Samarasinghe, Nayanamana and others},
+  title     = {Et tu, {Brute}? {Privacy} analysis of government websites and mobile apps},
+  booktitle = {Proceedings of the ACM Web Conference 2022},
+  address   = {New York},
+  publisher = {ACM},
+  year      = {2022},
+  pages     = {564--575},
+  note       = {DOI: 10.1145/3485447.3512223}
+}
+@inproceedings{wohlin2014,
+  author    = {Wohlin, Claes},
+  title     = {Guidelines for snowballing in systematic literature studies and a replication in software engineering},
+  booktitle = {Proceedings of the 18th International Conference on Evaluation and Assessment in Software Engineering},
+  address   = {New York},
+  publisher = {ACM},
+  year      = {2014},
+  pages     = {1--10},
+  note       = {DOI: 10.1145/2601248.2601268}
+}
+@article{zhang2011,
+  author  = {Zhang, He and Babar, Muhammad Ali and Tell, Paolo},
+  title   = {Identifying relevant studies in software engineering},
+  journal = {Information and Software Technology},
+  volume  = {53},
+  number  = {6},
+  pages   = {625--637},
+  year    = {2011},
+  note     = {DOI: 10.1016/j.infsof.2010.12.010}
+}
+\end{filecontents*}
+
 \documentclass[
   12pt,
   oneside,
@@ -35,6 +272,10 @@
 \newfixedcaption{\tabelacaption}{table}
 \newfixedcaption{\quadrocaption}{quadro}
 
+% NBR 14724:2024 (4.2.2): o trabalho se organiza em seções, não em capítulos;
+% o cabeçalho das páginas diz "Seção"
+\addto\captionsbrazil{\renewcommand{\chaptername}{Seção}}
+
 % título de capítulo sem hifenizar ("EXECU-TADAS")
 \renewcommand{\ABNTEXchapterfontsize}{\LARGE\raggedright}
 
@@ -62,7 +303,7 @@
 }
 
 % ---------------------------------------------------------------- dados do trabalho
-\titulo{Quem mais está dentro do aplicativo? Rastreamento por terceiros e
+\titulo{Quem mais está dentro do aplicativo?: rastreamento por terceiros e
 soberania de dados em aplicativos móveis governamentais brasileiros}
 \autor{Claudio Meireles}
 \local{Brasília}
@@ -101,6 +342,39 @@ Trabalho de Conclusão de Curso.}
 % ---------------------------------------------------------------- pré-textuais
 \imprimircapa
 \imprimirfolhaderosto
+
+\begin{folhadeaprovacao}
+  \begin{center}
+    {\ABNTEXchapterfont\large\imprimirautor}
+
+    \vspace*{\fill}
+    \begin{center}
+      \ABNTEXchapterfont\bfseries\Large\imprimirtitulo
+    \end{center}
+    \vspace*{\fill}
+
+    \hspace{.45\textwidth}
+    \begin{minipage}{.5\textwidth}
+      \imprimirpreambulo
+    \end{minipage}%
+    \vspace*{\fill}
+  \end{center}
+
+  Trabalho aprovado. \imprimirlocal, \rule{1cm}{0.4pt} de \rule{3cm}{0.4pt} de 2026.
+
+  \assinatura{\textbf{\imprimirorientador} \\ Orientador -- IDP}
+  \assinatura{\textbf{Profa. Patrícia da Silva Oliveira} \\ Professora da disciplina Projeto Capstone I -- IDP}
+  \assinatura{\textbf{\rule{6cm}{0.4pt}} \\ Membro da banca de qualificação -- IDP}
+
+  \begin{center}
+    \vspace*{0.5cm}
+    {\large\imprimirlocal}
+    \par
+    {\large\imprimirdata}
+    \vspace*{1cm}
+  \end{center}
+\end{folhadeaprovacao}
+
 
 \begin{resumo}
 Aplicativos móveis do governo brasileiro concentram serviços para os quais o cidadão não tem alternativa, como previdência, saúde e documentos digitais, e parte deles trata dado pessoal sensível nos termos da Lei Geral de Proteção de Dados Pessoais (LGPD). A literatura mostra que a maioria dos aplicativos comerciais embarca bibliotecas de rastreamento de terceiros, e um estudo com 1.166 aplicativos de governo de 71 países encontrou rastreadores do Google em 37\% deles. Nenhum dos estudos consultados, porém, examina o parque governamental brasileiro nem compara aplicativos de governo com uma linha de base pareada. Este trabalho mede a presença de rastreadores de terceiros em aplicativos governamentais brasileiros e a compara com a de aplicativos comerciais de mesma categoria e porte, por análise estática dos pacotes de instalação, fixados por hash. Nesta primeira etapa, foram construídos um corpus de 396 aplicativos candidatos, de 71 publicadores públicos das três esferas de governo, e um grupo de controle de 190 aplicativos comerciais, depois ampliado para 252, e foi verificado, antes de qualquer download, se cada hipótese dispõe de instrumento e de tamanho amostral suficientes. A conferência dos 396 candidatos manteve 376 como oficiais. O principal resultado obtido até aqui é que nenhum dos 376 aplicativos governamentais declara exibir anúncios na Google Play (IC95\% de 0\% a 1,0\%), contra 33,2\% dos aplicativos do controle (IC95\% de 26,9\% a 40,1\%). A declaração de anúncios é feita pelo próprio publicador e é um limite inferior do rastreamento: o resultado não estima a prevalência de rastreadores nem indica para onde os dados são enviados, o que depende da detecção nos pacotes e da análise dinâmica previstas. Um segundo resultado é metodológico: a inspeção do código do MobSF mostrou que sua detecção de rastreadores aplica a base de assinaturas do Exodus Privacy com a mesma regra de casamento, de modo que as duas ferramentas não são detectores independentes, e o instrumento de comparação entre detectores foi redefinido. O terceiro resultado é que o AndroZoo, acervo acadêmico usado como fonte dos pacotes, contém apenas 23,2\% dos aplicativos governamentais, contra 84,2\% do controle. O porte explica parte da diferença, mas, na mesma faixa de instalações, a razão de chances de um aplicativo governamental estar no acervo é de 0,13 (IC95\% de 0,07 a 0,24), e a maior parte do corpus terá de ser coletada direto da loja. Num piloto com 20 aplicativos, a proporção com ao menos um rastreador variou de 75\% a 95\% conforme o detector, e a conferência manual mostrou que 72\% das detecções do detector baseado em domínios eram falsos positivos, vindos de assinaturas que tomam qualquer link do Google ou do Facebook por SDK.
@@ -277,15 +551,15 @@ A pesquisa é quantitativa, observacional e comparativa: mede características d
 
 \end{enumerate}
 
-As etapas 1 a 3 estão concluídas e são descritas no Capítulo~\ref{cap:2}. As demais estão planejadas no Capítulo~\ref{cap:3}.
+As etapas 1 a 3 estão concluídas e são descritas na Seção~\ref{cap:2}. As demais estão planejadas na Seção~\ref{cap:3}.
 
 \section{Estrutura do trabalho}\label{sec:1.9}
 
-Este documento tem dois capítulos além desta introdução. O Capítulo~\ref{cap:2} descreve a metodologia das etapas já executadas e os resultados que elas produziram. O Capítulo~\ref{cap:3} apresenta o plano de atividades até a defesa do Projeto Capstone I e para o Projeto Capstone II, com os riscos identificados. Na versão final da monografia, a revisão bibliográfica, o desenvolvimento e as conclusões serão acrescentados como capítulos próprios.
+Este documento tem três seções além desta introdução. A Seção~\ref{cap:2} descreve a metodologia das etapas já executadas e os resultados que elas produziram. A Seção~\ref{cap:3} apresenta o plano de atividades até a defesa do Projeto Capstone I e para o Projeto Capstone II, com os riscos identificados. A Seção~\ref{cap:4} traz as considerações finais.
 
 \chapter{Metodologia das etapas executadas}\label{cap:2}
 
-Este capítulo descreve o que foi feito até 4 de novembro de 2026. Todos os scripts citados estão no repositório do trabalho, na pasta \texttt{scripts/\allowbreak{}}.
+Esta seção descreve o que foi feito até 10 de novembro de 2026. Todos os scripts citados estão no repositório do trabalho, na pasta \texttt{scripts/\allowbreak{}}.
 
 \section{Escolha do tema por testes de viabilidade}\label{sec:2.1}
 
@@ -762,7 +1036,7 @@ As alterações feitas na conferência estão registradas no repositório do tra
 
 \section{Até a defesa do Projeto Capstone I}\label{sec:3.1}
 
-As datas da disciplina são as do plano de ensino: simulação de defesa em 24/11, 26/11 ou 01/12, conforme a ordem da turma, com 15 minutos de apresentação e 10 de arguição; entrega da redação no Canvas até 03/12; defesa final em 08/12, 10/12 ou 15/12, com 15 minutos de apresentação e 15 de arguição. O regulamento exige cinco encontros de orientação registrados no bimestre.
+As datas da disciplina são as do plano de ensino: simulação de defesa em 24/11, 26/11 ou 01/12, conforme a ordem da turma, com 15 minutos de apresentação e 10 de arguição; entrega da redação no Canvas até 03/12; defesa final em 08/12, 10/12 ou 15/12, com 15 minutos de apresentação e 15 de arguição. O regulamento exige cinco encontros de orientação registrados no bimestre. As atividades já concluídas estão descritas na Seção~\ref{cap:2}; o quadro abaixo traz só o que falta.
 
 \begin{center}
 \begin{minipage}{\textwidth}
@@ -773,16 +1047,14 @@ As datas da disciplina são as do plano de ensino: simulação de defesa em 24/1
 \hline
 \textbf{Período} & \textbf{Atividade} & \textbf{Produto} \\
 \hline
-20/10 a 26/10 & Rodar a etapa de cobertura do piloto. Primeiro encontro de orientação: apresentar este texto e a mudança de detectores da H4 & Tabela de cobertura do AndroZoo; ficha de orientação 1 \\ \hline
-27/10 a 04/11 & Validação manual de uma amostra de 32 aplicativos (feita em 04/11, Seção~\ref{sec:2.12}) & Taxa de erro da classificação automática \\ \hline
-27/10 a 09/11 & Piloto: amostra, download, detecção e concordância nos 20 aplicativos & Números preliminares da H4; ficha de orientação 2 \\ \hline
-03/11 a 16/11 & Revisão sistemática conforme \citeonline{kitchenham2007}: protocolo escrito em 04/11 (Seção~\ref{sec:2.13}); buscas, conferência do conjunto de controle, seleção, bola de neve e extração (buscas e triagem por título e resumo concluídas em 10/11) & Lista de trabalhos selecionados; $\kappa$ da triagem \\ \hline
-10/11 a 16/11 & Testar a coleta direta da Google Play, com hash registrado, em cinco aplicativos fora do AndroZoo & Procedimento de coleta direta definido; ficha de orientação 3 \\ \hline
-10/11 & Classificação da oficialidade, da esfera e da sensibilidade dos 396 aplicativos, com apoio de IA (Seções~\ref{sec:2.12} e~\ref{sec:2.14}) & Corpus com 376 aplicativos; rótulos conferidos para a H3 \\ \hline
+11/11 a 16/11 & Encontro de orientação: uso de IA, eixo da discussão, escopo da revisão e detector principal & Decisões registradas; ficha de orientação \\ \hline
+11/11 a 16/11 & Testar a coleta direta da Google Play, com hash registrado, em cinco aplicativos fora do AndroZoo & Procedimento de coleta direta definido \\ \hline
+16/11 & Reteste da triagem da revisão sistemática: 10\% dos registros, decididos de novo sem ver as decisões anteriores & $\kappa$ do reteste \\ \hline
+11/11 a 23/11 & Leitura do texto completo, bola de neve e extração da revisão sistemática, no escopo combinado com o orientador; seção de revisão bibliográfica & Lista de trabalhos incluídos; seção de revisão bibliográfica \\ \hline
 até 23/11 & Validação das classificações dos artigos e dos aplicativos pelo autor, no escopo combinado com o orientador & Validação registrada no repositório \\ \hline
-17/11 a 23/11 & Traduzir os Arts. 7º, 11 e 33 da LGPD em critérios verificáveis; congelar o protocolo e o plano de análise com data registrada no repositório; preparar a apresentação & Protocolo congelado; slides da simulação; ficha de orientação 4 \\ \hline
+17/11 a 23/11 & Traduzir os Arts. 7º, 11 e 33 da LGPD em critérios verificáveis; congelar o protocolo e o plano de análise com data registrada no repositório; preparar a apresentação & Protocolo congelado; slides da simulação \\ \hline
 24/11 a 01/12 & Simulação de defesa & Apresentação e sugestões da avaliadora \\ \hline
-até 03/12 & Incorporar as sugestões e entregar a redação no modelo ABNT & Redação entregue; ficha de orientação 5 \\ \hline
+até 03/12 & Incorporar as sugestões e entregar a redação no modelo ABNT & Redação entregue; ficha de orientação \\ \hline
 08/12 a 15/12 & Defesa final do Projeto Capstone I & Apresentação \\ \hline
 \end{tabularx}
 \fonte{Elaborado pelo autor (2026).}
@@ -831,6 +1103,14 @@ Atraso nos encontros de orientação & Reprovação por falta de encontros & Age
 \fonte{Elaborado pelo autor (2026).}
 \end{minipage}
 \end{center}
+
+\chapter{Considerações finais}\label{cap:4}
+
+Este projeto propõe medir a presença de SDKs de rastreamento de terceiros em aplicativos Android do governo brasileiro e compará-la com a de aplicativos comerciais de mesma categoria e porte. As etapas executadas indicam que o desenho é viável: o corpus foi construído e conferido, com 376 aplicativos oficiais de 68 publicadores, 100 deles com dado de saúde ou biométrico; o grupo de controle foi ampliado para 252 aplicativos; e cada hipótese tem instrumento e tamanho amostral para ser testada.
+
+Três resultados orientam a etapa seguinte. Nenhum aplicativo do governo declara exibir anúncios, contra um terço do controle, mas essa declaração não mostra quais SDKs existem nem para onde os dados são enviados. No piloto, a proporção de aplicativos com rastreador variou de 75\% a 95\% conforme o detector, o que sustenta a H4 e a conferência das detecções. E o AndroZoo contém apenas 23,2\% dos aplicativos do governo, de modo que a maior parte dos pacotes será obtida diretamente da Google Play, com o hash registrado.
+
+O que falta está no plano da Seção~\ref{cap:3}: a coleta e a detecção em todo o corpus e no controle, o confronto com as declarações dos publicadores, a análise dinâmica de uma subamostra e a análise estatística conforme o plano fixado antes da observação dos resultados.
 
 % ---------------------------------------------------------------- pós-textuais
 \postextual

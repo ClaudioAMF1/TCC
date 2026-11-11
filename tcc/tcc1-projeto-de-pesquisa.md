@@ -10,7 +10,7 @@ segue o modelo ABNT da instituição; este arquivo guarda o conteúdo.
 
 **CLAUDIO MEIRELES**
 
-# QUEM MAIS ESTÁ DENTRO DO APLICATIVO? Rastreamento por terceiros e soberania de dados em aplicativos móveis governamentais brasileiros
+# QUEM MAIS ESTÁ DENTRO DO APLICATIVO?: rastreamento por terceiros e soberania de dados em aplicativos móveis governamentais brasileiros
 
 Projeto de pesquisa apresentado à disciplina Projeto Capstone I do curso de
 Bacharelado em Ciência da Computação do Instituto Brasileiro de Ensino,
@@ -20,6 +20,18 @@ Trabalho de Conclusão de Curso.
 Orientador: Prof. Eduardo Arthur Izycki
 
 Brasília, 2026
+
+---
+
+**FOLHA DE APROVAÇÃO**
+
+Trabalho aprovado. Brasília, ____ de __________ de 2026.
+
+Prof. Eduardo Arthur Izycki, orientador (IDP)
+
+Profa. Patrícia da Silva Oliveira, professora da disciplina Projeto Capstone I (IDP)
+
+__________________, membro da banca de qualificação (IDP)
 
 ---
 
@@ -292,23 +304,17 @@ dois grupos. Os procedimentos são, em ordem:
 8. análise estatística conforme plano fixado antes da observação dos
    resultados.
 
-As etapas 1 a 3 estão concluídas e são descritas no Capítulo 2. As demais estão
-planejadas no Capítulo 3.
+As etapas 1 a 3 estão concluídas e são descritas na Seção 2. As demais estão planejadas na Seção 3.
 
 ### 1.9 Estrutura do trabalho
 
-Este documento tem dois capítulos além desta introdução. O Capítulo 2 descreve a
-metodologia das etapas já executadas e os resultados que elas produziram. O
-Capítulo 3 apresenta o plano de atividades até a defesa do Projeto Capstone I e
-para o Projeto Capstone II, com os riscos identificados. Na versão final da
-monografia, a revisão bibliográfica, o desenvolvimento e as conclusões serão
-acrescentados como capítulos próprios.
+Este documento tem três seções além desta introdução. A Seção 2 descreve a metodologia das etapas já executadas e os resultados que elas produziram. A Seção 3 apresenta o plano de atividades até a defesa do Projeto Capstone I e para o Projeto Capstone II, com os riscos identificados. A Seção 4 traz as considerações finais.
 
 ---
 
 ## 2 METODOLOGIA DAS ETAPAS EXECUTADAS
 
-Este capítulo descreve o que foi feito até 4 de novembro de 2026. Todos os
+Esta seção descreve o que foi feito até 10 de novembro de 2026. Todos os
 scripts citados estão no repositório do trabalho, na pasta `scripts/`.
 
 ### 2.1 Escolha do tema por testes de viabilidade
@@ -950,20 +956,18 @@ As datas da disciplina são as do plano de ensino: simulação de defesa em 24/1
 26/11 ou 01/12, conforme a ordem da turma, com 15 minutos de apresentação e 10
 de arguição; entrega da redação no Canvas até 03/12; defesa final em 08/12,
 10/12 ou 15/12, com 15 minutos de apresentação e 15 de arguição. O regulamento
-exige cinco encontros de orientação registrados no bimestre.
+exige cinco encontros de orientação registrados no bimestre. As atividades já concluídas estão descritas na Seção 2; o quadro abaixo traz só o que falta.
 
 | Período | Atividade | Produto |
 |---|---|---|
-| 20/10 a 26/10 | Rodar a etapa de cobertura do piloto. Primeiro encontro de orientação: apresentar este texto e a mudança de detectores da H4 | Tabela de cobertura do AndroZoo; ficha de orientação 1 |
-| 27/10 a 04/11 | Validação manual de uma amostra de 32 aplicativos (feita em 04/11, Seção 2.12) | Taxa de erro da classificação automática |
-| 27/10 a 09/11 | Piloto: amostra, download, detecção e concordância nos 20 aplicativos | Números preliminares da H4; ficha de orientação 2 |
-| 03/11 a 16/11 | Revisão sistemática conforme Kitchenham e Charters (2007): protocolo escrito em 04/11 (Seção 2.13); buscas, conferência do conjunto de controle, seleção, bola de neve e extração (buscas e triagem por título e resumo concluídas em 10/11) | Lista de trabalhos selecionados; κ da triagem |
-| 10/11 a 16/11 | Testar a coleta direta da Google Play, com hash registrado, em cinco aplicativos fora do AndroZoo | Procedimento de coleta direta definido; ficha de orientação 3 |
-| 10/11 | Classificação da oficialidade, da esfera e da sensibilidade dos 396 aplicativos, com apoio de IA (Seções 2.12 e 2.14) | Corpus com 376 aplicativos; rótulos conferidos para a H3 |
+| 11/11 a 16/11 | Encontro de orientação: uso de IA, eixo da discussão, escopo da revisão e detector principal | Decisões registradas; ficha de orientação |
+| 11/11 a 16/11 | Testar a coleta direta da Google Play, com hash registrado, em cinco aplicativos fora do AndroZoo | Procedimento de coleta direta definido |
+| 16/11 | Reteste da triagem da revisão sistemática: 10% dos registros, decididos de novo sem ver as decisões anteriores | κ do reteste |
+| 11/11 a 23/11 | Leitura do texto completo, bola de neve e extração da revisão sistemática, no escopo combinado com o orientador; seção de revisão bibliográfica | Lista de trabalhos incluídos; seção de revisão bibliográfica |
 | até 23/11 | Validação das classificações dos artigos e dos aplicativos pelo autor, no escopo combinado com o orientador | Validação registrada no repositório |
-| 17/11 a 23/11 | Traduzir os Arts. 7º, 11 e 33 da LGPD em critérios verificáveis; congelar o protocolo e o plano de análise com data registrada no repositório; preparar a apresentação | Protocolo congelado; slides da simulação; ficha de orientação 4 |
+| 17/11 a 23/11 | Traduzir os Arts. 7º, 11 e 33 da LGPD em critérios verificáveis; congelar o protocolo e o plano de análise com data registrada no repositório; preparar a apresentação | Protocolo congelado; slides da simulação |
 | 24/11 a 01/12 | Simulação de defesa | Apresentação e sugestões da avaliadora |
-| até 03/12 | Incorporar as sugestões e entregar a redação no modelo ABNT | Redação entregue; ficha de orientação 5 |
+| até 03/12 | Incorporar as sugestões e entregar a redação no modelo ABNT | Redação entregue; ficha de orientação |
 | 08/12 a 15/12 | Defesa final do Projeto Capstone I | Apresentação |
 
 Fonte: elaborado pelo autor (2026).
@@ -992,6 +996,16 @@ Fonte: elaborado pelo autor (2026).
 | Atraso nos encontros de orientação | Reprovação por falta de encontros | Agendar os cinco encontros já no primeiro deles |
 
 Fonte: elaborado pelo autor (2026).
+
+---
+
+## 4 CONSIDERAÇÕES FINAIS
+
+Este projeto propõe medir a presença de SDKs de rastreamento de terceiros em aplicativos Android do governo brasileiro e compará-la com a de aplicativos comerciais de mesma categoria e porte. As etapas executadas indicam que o desenho é viável: o corpus foi construído e conferido, com 376 aplicativos oficiais de 68 publicadores, 100 deles com dado de saúde ou biométrico; o grupo de controle foi ampliado para 252 aplicativos; e cada hipótese tem instrumento e tamanho amostral para ser testada.
+
+Três resultados orientam a etapa seguinte. Nenhum aplicativo do governo declara exibir anúncios, contra um terço do controle, mas essa declaração não mostra quais SDKs existem nem para onde os dados são enviados. No piloto, a proporção de aplicativos com rastreador variou de 75% a 95% conforme o detector, o que sustenta a H4 e a conferência das detecções. E o AndroZoo contém apenas 23,2% dos aplicativos do governo, de modo que a maior parte dos pacotes será obtida diretamente da Google Play, com o hash registrado.
+
+O que falta está no plano da Seção 3: a coleta e a detecção em todo o corpus e no controle, o confronto com as declarações dos publicadores, a análise dinâmica de uma subamostra e a análise estatística conforme o plano fixado antes da observação dos resultados.
 
 ---
 

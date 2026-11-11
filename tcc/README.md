@@ -17,16 +17,26 @@ escrito; a lacuna foi reescrita depois de achar Samarasinghe et al. (2022).
 
 ## Abrir no Overleaf
 
-1. Compacte os dois arquivos de `latex/` num `.zip` (ou use o que veio no chat).
-2. No Overleaf: **New Project > Upload Project** e escolha o `.zip`.
-3. O compilador padrão (pdfLaTeX) serve. Clique em **Recompile**.
+**Basta o `main.tex`.** Desde 11/11 as referências vão dentro dele: ao
+compilar, o LaTeX grava o `referencias.bib` sozinho e sobrescreve o que houver.
 
-O projeto gera capa, folha de rosto, resumo, abstract, listas de tabelas e de
-quadros, sumário, os três capítulos e as referências no formato ABNT. Foi
-compilado e conferido página por página antes de subir: 30 páginas, sem erro.
+- **Projeto que já existe no Overleaf:** abra o `main.tex` de lá, apague tudo,
+  cole o conteúdo de `tcc/latex/main.tex` e clique em **Recompile**.
+- **Projeto novo:** **New Project > Blank Project**, troque o conteúdo do
+  `main.tex` pelo deste repositório e clique em **Recompile**.
+- O compilador é o padrão (pdfLaTeX).
 
-**Daqui em diante, edite no Overleaf.** O `.md` fica como registro da versão
-de 28/10; se o texto mudar lá, é o `.tex` que vale.
+Os "??" que apareciam no texto eram citações sem referência: o Overleaf estava
+com o `referencias.bib` de 28/10, que não tinha as cinco referências citadas
+depois (Samarasinghe et al., Wohlin, Zhang et al., PRISMA e Cohen).
+
+Para mudar uma referência, edite o bloco `filecontents` no começo do
+`main.tex`. O `tcc/latex/referencias.bib` fica como cópia.
+
+O projeto gera capa, folha de rosto, folha de aprovação, resumo, abstract,
+listas de tabelas e de quadros, sumário, as quatro seções e as referências no
+formato ABNT. Em 11/11, compilado só com o `main.tex`: 38 páginas, sem erro e
+sem referência indefinida.
 
 ## O que mudou em relação à proposta
 

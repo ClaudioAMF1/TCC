@@ -119,13 +119,16 @@ mostrar para onde os dados vão.
 
 Resposta: ______________________________________________
 
-### Pergunta 3. O que a revisão sistemática precisa ter na entrega de 03/12?
+### Pergunta 3. Quanto da revisão precisa estar no texto de 03/12?
 
-> "A triagem deixou 357 artigos para a leitura completa, umas 30 horas. Minha
-> proposta é entregar agora o protocolo, as buscas e a triagem, e ler agora só
-> os 51 sobre aplicativos de governo, LGPD e Brasil, que sustentam a lacuna. O
-> restante da leitura e a extração ficariam para o Capstone II. **Isso atende
-> ao que o senhor espera do projeto?**"
+> "O regulamento (Art. 25, §3º) diz que o projeto deve contemplar toda a
+> fundamentação e a revisão bibliográfica, e o texto ainda não tem uma seção
+> de revisão bibliográfica. A triagem deixou 357 artigos para a leitura
+> completa, umas 30 horas. Minha proposta é ler até 23/11 os 214 que já
+> pareciam incluídos, começando pelos 51 sobre aplicativos de governo, LGPD e
+> Brasil, e escrever com eles essa seção. Os 143 marcados como 'talvez' e a
+> bola de neve viriam depois, registrados no protocolo. **Isso atende ao
+> Art. 25, §3º, do jeito que o senhor entende?**"
 
 Resposta: ______________________________________________
 
@@ -191,7 +194,7 @@ Resposta: ______________________________________________
 | Validação pessoal das classificações (escopo conforme a pergunta 1) | até 23/11 |
 | Teste da coleta direta da Google Play em cinco aplicativos | até 16/11 |
 | Reteste da triagem (refazer 10% sem ver as decisões) | 16/11 |
-| Leitura dos 51 artigos centrais (se ele concordar com a pergunta 3) | até 23/11 |
+| Leitura completa (começando pelos 51 centrais) e seção de revisão bibliográfica, conforme a pergunta 3 | até 23/11 |
 | Critérios da LGPD (Arts. 7º, 11 e 33) e congelamento do protocolo | 17/11 a 23/11 |
 | Slides da simulação de defesa | até 24/11 |
 | Entrega da redação | 03/12 |

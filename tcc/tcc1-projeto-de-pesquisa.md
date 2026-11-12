@@ -5,6 +5,10 @@ das etapas já executadas, plano de atividades e referências. A formatação fi
 segue o modelo ABNT da instituição; este arquivo guarda o conteúdo.
 -->
 
+> **Atenção (12/11/2026):** o texto foi reorganizado no modelo de monografia do IDP e passou a ser mantido só em
+> `tcc/latex/main.tex`. Este arquivo ficou na estrutura anterior e não é mais atualizado.
+
+
 **INSTITUTO BRASILEIRO DE ENSINO, DESENVOLVIMENTO E PESQUISA (IDP)**
 **Bacharelado em Ciência da Computação**
 

@@ -17,26 +17,31 @@ escrito; a lacuna foi reescrita depois de achar Samarasinghe et al. (2022).
 
 ## Abrir no Overleaf
 
-**Basta o `main.tex`.** Desde 11/11 as referências vão dentro dele: ao
-compilar, o LaTeX grava o `referencias.bib` sozinho e sobrescreve o que houver.
+Desde 12/11 o texto segue o modelo de monografia do IDP
+(`disciplina/modelos/Template_final_Monografia_Dissertacao_Tese_2026_uni_IDP.docx`).
+O projeto no Overleaf precisa de dois arquivos:
 
-- **Projeto que já existe no Overleaf:** abra o `main.tex` de lá, apague tudo,
-  cole o conteúdo de `tcc/latex/main.tex` e clique em **Recompile**.
-- **Projeto novo:** **New Project > Blank Project**, troque o conteúdo do
-  `main.tex` pelo deste repositório e clique em **Recompile**.
+- `main.tex`: o texto, com as referências dentro dele. Ao compilar, o LaTeX
+  grava o `referencias.bib` sozinho e sobrescreve o que houver.
+- `logo-idp.png`: o logo da capa, tirado do modelo do IDP. Sem ele, o
+  documento compila, mas a capa sai sem o logo.
+
+Passos:
+
+- **Projeto que já existe:** no menu de arquivos, **Upload** do
+  `logo-idp.png`. Depois abra o `main.tex`, apague tudo, cole o conteúdo de
+  `tcc/latex/main.tex` e clique em **Recompile**.
+- **Projeto novo:** **New Project > Upload Project** com o `.zip` dos dois
+  arquivos.
 - O compilador é o padrão (pdfLaTeX).
-
-Os "??" que apareciam no texto eram citações sem referência: o Overleaf estava
-com o `referencias.bib` de 28/10, que não tinha as cinco referências citadas
-depois (Samarasinghe et al., Wohlin, Zhang et al., PRISMA e Cohen).
 
 Para mudar uma referência, edite o bloco `filecontents` no começo do
 `main.tex`. O `tcc/latex/referencias.bib` fica como cópia.
 
-O projeto gera capa, folha de rosto, folha de aprovação, resumo, abstract,
-listas de tabelas e de quadros, sumário, as quatro seções e as referências no
-formato ABNT. Em 11/11, compilado só com o `main.tex`: 38 páginas, sem erro e
-sem referência indefinida.
+O PDF tem: capa, folha de rosto, espaço da ficha catalográfica, folha de
+aprovação, resumo, abstract, listas de ilustrações, de tabelas e de siglas,
+sumário, as cinco seções do modelo e as referências. Em 12/11 foi compilado
+sem erro e sem referência indefinida: 38 páginas.
 
 ## O que mudou em relação à proposta
 

@@ -40,8 +40,12 @@ Para mudar uma referência, edite o bloco `filecontents` no começo do
 
 O PDF tem: capa, folha de rosto, espaço da ficha catalográfica, folha de
 aprovação, resumo, abstract, listas de ilustrações, de tabelas e de siglas,
-sumário, as cinco seções do modelo e as referências. Em 12/11 foi compilado
-sem erro e sem referência indefinida: 38 páginas.
+sumário, 1 Introdução, 2 Referencial teórico (rascunho para o autor
+reescrever), 3 Procedimentos metodológicos, referências e o Apêndice A, com
+os dados das etapas já executadas. É o projeto de pesquisa: as seções de
+análise dos dados e de considerações finais ficam para a monografia do
+Capstone II. Em 12/11 foi compilado sem erro e sem referência indefinida:
+40 páginas.
 
 ## O que mudou em relação à proposta
 

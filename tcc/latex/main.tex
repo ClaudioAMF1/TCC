@@ -236,6 +236,60 @@
   year    = {2011},
   note     = {DOI: 10.1016/j.infsof.2010.12.010}
 }
+@inproceedings{zhan2020,
+  author    = {Zhan, X. and others},
+  title     = {Automated third-party library detection for {Android} applications: are we there yet?},
+  booktitle = {Proceedings of the 35th IEEE/ACM International Conference on Automated Software Engineering},
+  address   = {New York},
+  publisher = {ACM},
+  year      = {2020},
+  pages     = {919--930},
+  note      = {DOI: 10.1145/3324884.3416582}
+}
+
+@article{zimmeck2019,
+  author  = {Zimmeck, S. and others},
+  title   = {{MAPS}: scaling privacy compliance analysis to a million apps},
+  journal = {Proceedings on Privacy Enhancing Technologies},
+  volume  = {2019},
+  number  = {3},
+  pages   = {66--86},
+  year    = {2019},
+  note    = {DOI: 10.2478/popets-2019-0037}
+}
+
+@inproceedings{slavin2016,
+  author    = {Slavin, R. and others},
+  title     = {Toward a framework for detecting privacy policy violations in {Android} application code},
+  booktitle = {Proceedings of the 38th International Conference on Software Engineering},
+  address   = {New York},
+  publisher = {ACM},
+  year      = {2016},
+  pages     = {25--36},
+  note      = {DOI: 10.1145/2884781.2884855}
+}
+
+@inproceedings{serrano2023,
+  author    = {Serrano, N. and Betarte, G. and Campo, J. D.},
+  title     = {Third-party trackers in {COVID-19} mobile applications can enable privacy leaks},
+  booktitle = {Proceedings of the 12th Latin-American Symposium on Dependable and Secure Computing},
+  address   = {New York},
+  publisher = {ACM},
+  year      = {2023},
+  pages     = {80--89},
+  note      = {DOI: 10.1145/3615366.3615426}
+}
+
+@article{serrano2024,
+  author  = {Serrano, N. and Betarte, G. and Campo, J. D.},
+  title   = {{COVID-19} mobile applications: a study of trackers and data leaks},
+  journal = {Journal of Internet Services and Applications},
+  volume  = {15},
+  number  = {1},
+  pages   = {139--159},
+  year    = {2024},
+  note    = {DOI: 10.5753/jisa.2024.3882}
+}
 \end{filecontents*}
 
 \documentclass[
@@ -303,7 +357,21 @@
 % como no modelo do IDP: (Binns et al., 2018)
 \makeatletter
 \let\ABCIrefinfooriginal\abntrefinfo
-\renewcommand{\abntrefinfo}[3]{\ABCIrefinfooriginal{#1}{#1}{#3}}
+% autores institucionais: maiúsculas na lista de referências (NBR 6023) e
+% maiúsculas e minúsculas na citação (NBR 10520:2023)
+\newcommand{\ABCIinst}[2]{\expandafter\def\csname ABCIinst@\detokenize{#1}\endcsname{#2}}
+\ABCIinst{{ANDROGUARD}}{Androguard}
+\ABCIinst{{BRASIL}}{Brasil}
+\ABCIinst{{DISCONNECT}}{Disconnect}
+\ABCIinst{{EXODUS PRIVACY}}{Exodus Privacy}
+\ABCIinst{{JOMINGYU}}{JoMingyu}
+\ABCIinst{{MOBSF}}{MobSF}
+\newcommand{\ABCIautorcitacao}[1]{%
+  \ifcsname ABCIinst@\detokenize{#1}\endcsname
+    \csname ABCIinst@\detokenize{#1}\endcsname
+  \else #1\fi}
+\renewcommand{\abntrefinfo}[3]{%
+  \ABCIrefinfooriginal{\ABCIautorcitacao{#1}}{\ABCIautorcitacao{#1}}{#3}}
 \makeatother
 
 % capa conforme o modelo do IDP (2026)
@@ -488,7 +556,7 @@ Aplicativos Android incorporam kits de desenvolvimento (SDKs) de terceiros, que 
 
 O tema deste trabalho é o rastreamento por terceiros em aplicativos móveis publicados por órgãos públicos brasileiros, examinado do ponto de vista da proteção de dados e da soberania sobre os dados dos cidadãos.
 
-O problema, as hipóteses e a justificativa estão nas Seções~\ref{sec:problema} a~\ref{sec:1.3}. A Seção~\ref{cap:ref} apresenta o referencial teórico; a Seção~\ref{cap:metodo}, os procedimentos metodológicos, o cronograma e os riscos; a Seção~\ref{cap:dados}, os dados das etapas já executadas; e a Seção~\ref{cap:final}, as considerações finais.
+O problema, as hipóteses e a justificativa estão nas Seções~\ref{sec:problema} a~\ref{sec:1.3}. A Seção~\ref{cap:ref} apresenta o referencial teórico, e a Seção~\ref{cap:metodo}, os procedimentos metodológicos, os resultados esperados, o cronograma e os riscos. Os dados das etapas já executadas estão no Apêndice~\ref{cap:dados}.
 
 \section{Objetivo geral}\label{sec:objetivo-geral}
 
@@ -552,15 +620,53 @@ O trabalho se justifica em três planos.
 
 \chapter{Referencial teórico}\label{cap:ref}
 
-Esta seção reúne os trabalhos em que o projeto se apoia: os estudos que medem o rastreamento por terceiros em aplicativos móveis e os que examinam aplicativos de governo, com a lacuna que deixam. O marco jurídico da LGPD está na justificativa (Seção~\ref{sec:1.3}), e os detectores de rastreadores, na Seção~\ref{sec:2.9}. A seção será ampliada com os trabalhos incluídos na leitura completa da revisão sistemática (Seções~\ref{sec:2.13} e~\ref{sec:revisao-execucao}).
+Esta seção apresenta os conceitos e os trabalhos em que o projeto se apoia. A Seção~\ref{sec:ref-rastreamento} define o rastreamento por terceiros e resume o que se sabe sobre sua presença em aplicativos móveis; a Seção~\ref{sec:ref-regulacao}, o que os estudos observaram depois das leis de proteção de dados; a Seção~\ref{sec:ref-deteccao}, como bibliotecas e rastreadores são detectados e por que a escolha da ferramenta importa; a Seção~\ref{sec:ref-politicas}, os trabalhos que confrontam o que o aplicativo declara com o que ele faz; a Seção~\ref{sec:ref-governo}, os estudos sobre aplicativos de governo e a lacuna que deixam; e a Seção~\ref{sec:ref-lgpd}, o marco jurídico brasileiro. Os estudos citados formam o conjunto de controle da revisão sistemática (Seção~\ref{sec:2.13}), e a seção será ampliada com os trabalhos incluídos na leitura completa.
 
-\section{Rastreamento por terceiros em aplicativos móveis}\label{sec:ref-rastreamento}
+\section{Bibliotecas de terceiros e rastreamento em aplicativos móveis}\label{sec:ref-rastreamento}
 
-Aplicativos Android raramente são escritos do zero. Eles incorporam kits de desenvolvimento (SDKs) de terceiros para medir uso, registrar falhas, enviar notificações e exibir anúncios, e esses componentes podem coletar identificadores do dispositivo e enviá-los aos servidores de quem os fornece. A literatura mede esse fenômeno há quase uma década. A análise de 959 mil aplicativos da Google Play mostrou que a maioria embarca rastreadores de terceiros, que poucos rastreadores dominantes respondem por grande parte dessa presença e que muitos deles operam fora da jurisdição europeia \cite{binns2018}. O tráfego real de aplicativos revelou serviços de rastreamento ausentes das listas usadas para identificá-los \cite{razaghpanah2018}. Estudos posteriores ao Regulamento Geral de Proteção de Dados europeu (GDPR) observaram que o rastreamento pouco mudou com a nova regra, que poucas grandes empresas continuam concentrando a capacidade de rastrear e que o consentimento exigido raramente é obtido de forma válida \cite{kollnig2021before,kollnig2021fait,nguyen2022}.
+Aplicativos Android raramente são escritos do zero. Eles incorporam bibliotecas e kits de desenvolvimento (SDKs) de terceiros, que facilitam o desenvolvimento e oferecem funções como análise de uso, integração com redes sociais e monetização por anúncios \cite{razaghpanah2018}. Quando esses componentes coletam dados de comportamento e permitem identificar o usuário e acompanhá-lo em vários serviços digitais, fala-se em rastreamento por terceiros \cite{binns2018}. Como funcionam dentro do aplicativo, esses serviços são, em grande parte, invisíveis para o usuário e podem rastreá-lo sem consentimento, inclusive entre aplicativos diferentes \cite{razaghpanah2018}.
+
+\citeonline{binns2018} mediram a presença de rastreadores em 959 mil aplicativos das lojas da Google Play dos Estados Unidos e do Reino Unido. A maioria dos aplicativos contém rastreamento de terceiros. A distribuição é de cauda longa: poucos rastreadores dominantes respondem por grande parte da cobertura. A intensidade varia por categoria, e aplicativos de notícias e infantis estão entre os que mais embarcam rastreadores. O estudo mostra ainda que o rastreamento é transnacional, com muitos rastreadores operando em jurisdições fora da União Europeia.
+
+\citeonline{razaghpanah2018} partiram do tráfego real de usuários, coletado por um aplicativo de monitoramento instalado nos próprios aparelhos, e desenvolveram métodos para detectar serviços de publicidade e rastreamento no nível da rede. Identificaram 2.121 desses serviços, dos quais 233 não constavam das listas de bloqueio mais usadas. Ao analisar as políticas de privacidade dos maiores fornecedores, concluíram que compartilhar os dados coletados com subsidiárias e afiliadas é a norma. O resultado expõe um limite das medições baseadas em listas: elas só encontram o que já conhecem.
+
+% A AMPLIAR com os estudos da QR2 (proporção de aplicativos com rastreadores e
+% linha de base) incluídos na leitura completa.
+
+\section{Rastreamento e regulação da proteção de dados}\label{sec:ref-regulacao}
+
+As leis de proteção de dados mudaram pouco esse quadro, segundo os estudos que o mediram. \citeonline{kollnig2021before} compararam quase dois milhões de aplicativos Android de antes e de depois da entrada em vigor do Regulamento Geral de Proteção de Dados europeu (GDPR), em 2018, e observaram pouca mudança na presença de rastreadores e a persistência da concentração da capacidade de rastrear em poucas grandes empresas.
+
+\citeonline{kollnig2021fait} mostraram que a legislação da União Europeia e do Reino Unido exige consentimento para o rastreamento por terceiros, mas que a maioria dos aplicativos analisados rastreia e poucos obtêm o consentimento antes de fazê-lo. As próprias bibliotecas de rastreamento atribuem ao desenvolvedor do aplicativo a tarefa de obter o consentimento, sem oferecer meios robustos para isso.
+
+\citeonline{nguyen2022} estudaram os avisos de consentimento em 239.381 aplicativos. Encontraram 30.160 aplicativos que compartilhavam dados pessoais com terceiros sem sequer tentar obter consentimento e, entre os 13.082 que exibiam aviso, 2.688 (20,54\%) que violavam ao menos um requisito do GDPR, por exemplo ao continuar transmitindo dados depois de o usuário recusar.
+
+\section{Detecção de bibliotecas e de rastreadores}\label{sec:ref-deteccao}
+
+A presença de bibliotecas de terceiros pode ser medida de duas formas. A análise estática examina o pacote de instalação (APK) sem executá-lo: lista as classes do código compilado e os textos que ele contém e os compara com assinaturas conhecidas. A análise dinâmica executa o aplicativo e observa o que ele de fato transmite, como fizeram \citeonline{razaghpanah2018}. A primeira mostra que o código está no pacote, mas não que ele é executado; a segunda mostra o envio, mas exige executar cada aplicativo.
+
+Para a análise estática de bibliotecas existem várias ferramentas. \citeonline{zhan2020} compararam todas as ferramentas de detecção de bibliotecas de terceiros em Android disponíveis publicamente, quanto à eficácia, à eficiência, à resistência à ofuscação de código e à facilidade de uso, e nenhuma foi a melhor em todos os critérios: o LibScout foi o mais eficaz; o LibRadar, o mais rápido e o mais fácil de usar; e o LibPecker, o que melhor resistiu à ofuscação. Ferramentas diferentes podem, portanto, dar respostas diferentes para o mesmo aplicativo, e é esse efeito que a H4 mede.
+
+Para rastreadores, a base mais usada em ferramentas abertas é a do Exodus Privacy, que associa a cada rastreador conhecido uma assinatura de código, um padrão nos nomes das classes do aplicativo, e uma assinatura de rede, um padrão nos domínios que ele contata \cite{exodus2026}. Outras listas, como a da Disconnect, classificam domínios por finalidade, como publicidade, análise de uso e coleta de impressão digital do aparelho \cite{disconnect2026}. Ferramentas de análise de aplicativos, como o MobSF \cite{mobsf2026}, e bibliotecas de extração, como o Androguard \cite{androguard2026}, permitem aplicar essas bases a um pacote. A Seção~\ref{sec:2.9} mostra que essas ferramentas não são todas independentes entre si.
+
+A fonte dos pacotes também importa para a reprodutibilidade. O AndroZoo é um acervo acadêmico com milhões de pacotes Android, no qual cada versão de um aplicativo é obtida pelo seu hash SHA-256 \cite{allix2016,alecci2024}. A loja não oferece isso, porque substitui o pacote a cada atualização.
+
+% A AMPLIAR com os estudos da QR1 (detecção e sua validação) incluídos na
+% leitura completa.
+
+\section{O que o aplicativo declara e o que ele faz}\label{sec:ref-politicas}
+
+Uma linha de trabalhos confronta o que o aplicativo declara com o que ele faz. \citeonline{slavin2016} propuseram um arcabouço semiautomático que liga frases da política de privacidade aos métodos da API do Android que produzem informação sensível e usa análise de fluxo de informação para encontrar desalinhamentos. Nos 477 aplicativos mais populares avaliados, encontraram 341 possíveis violações da política. \citeonline{zimmeck2019} levaram esse tipo de análise de conformidade à escala de cerca de um milhão de aplicativos, com o sistema MAPS, que compara a política de privacidade com as práticas de dados identificadas no código. Esses trabalhos fundamentam a H2, que confronta os SDKs detectados com a política de privacidade e com a seção ``Segurança dos dados'' da Google Play.
+
+% A AMPLIAR com os estudos da QR3 incluídos na leitura completa.
 
 \section{Aplicativos de governo}\label{sec:ref-governo}
 
 Aplicativos de governo também já foram medidos. \citeonline{samarasinghe2022} analisaram 1.166 aplicativos Android governamentais de 71 países e relatam rastreadores do Google em 37\% deles e envio de dados do dispositivo, como modelo e identificador, a rastreadores conhecidos em 23,1\%.
+
+Diferentemente dos sites comerciais, os serviços de governo são financiados com dinheiro público, tratam dados sensíveis e raramente aparecem nas listas dos sites mais acessados, de onde costumam sair as amostras dos estudos de rastreamento \cite{samarasinghe2022}. O mesmo estudo encontrou rastreadores do Google em 17\% de 150.244 sites de governo de 206 países e verificou que 27\% dos aplicativos de governo vazavam informação sensível, como identificadores do usuário e do aparelho, senhas e chaves de API, para terceiros ou, quando enviada sem criptografia, para qualquer atacante na rede.
+
+Os aplicativos lançados por governos e organizações durante a pandemia de COVID-19 foram estudados por \citeonline{serrano2023}: dos 595 aplicativos analisados, 402 tinham ao menos um rastreador, e informações sensíveis eram enviadas aos servidores desses rastreadores. Na versão ampliada do estudo, os autores examinaram como os rastreadores coletam e enviam os dados e apresentaram uma ferramenta aberta para identificar vazamentos de dados sensíveis por bibliotecas de terceiros \cite{serrano2024}. Eles concluem que a inclusão de rastreadores em aplicativos desse tipo, sobretudo quando patrocinados por governos, precisa ser reconsiderada.
 
 A detecção de SDKs de rastreamento por análise estática é método consolidado e já foi aplicada a aplicativos de diversos domínios comerciais e, no estudo de \citeonline{samarasinghe2022}, a aplicativos de governo de vários países. Esse estudo deixa em aberto três pontos, que são os deste trabalho.
 
@@ -575,6 +681,19 @@ A detecção de SDKs de rastreamento por análise estática é método consolida
 \end{enumerate}
 
 Os autores relatam ainda que parte significativa dos aplicativos de governo não pôde ser baixada por restrição de região. É a mesma hipótese levantada aqui para a baixa cobertura do AndroZoo (Seção~\ref{sec:2.10}), e um motivo para coletar os pacotes com conta e região brasileiras. A revisão sistemática, cujo protocolo está descrito na Seção~\ref{sec:2.13}, vai confirmar ou corrigir essa avaliação.
+
+% A AMPLIAR com os estudos da QR4 (aplicativos de governo, inclusive os de
+% COVID-19) incluídos na leitura completa.
+
+\section{Proteção de dados pessoais e soberania de dados}\label{sec:ref-lgpd}
+
+No Brasil, o tratamento de dados pessoais é regido pela Lei Geral de Proteção de Dados Pessoais \cite{brasil2018}. A lei define dado pessoal como a informação relacionada a pessoa natural identificada ou identificável e dado pessoal sensível como, entre outros, o dado referente à saúde e o dado genético ou biométrico, quando vinculado a uma pessoa natural (Art. 5º, I e II). O tratamento só pode ocorrer nas hipóteses previstas em lei (Art. 7º), e as hipóteses para dados sensíveis são mais restritas (Art. 11). O tratamento feito pelo poder público deve atender à sua finalidade pública, na persecução do interesse público (Art. 23). A transferência internacional de dados, definida como a transferência de dados pessoais para país estrangeiro ou organismo internacional (Art. 5º, XV), só é permitida nos casos que a lei enumera (Art. 33).
+
+Essas regras dão os critérios para discutir os resultados. Os estudos da Seção~\ref{sec:ref-rastreamento} mostram que o rastreamento se concentra em poucas empresas e opera em várias jurisdições \cite{binns2018,kollnig2021before}. Quando um aplicativo de serviço público embarca um SDK desse tipo, dados de cidadãos podem ser enviados ao exterior por uma dependência técnica que não foi objeto de decisão do órgão. É nesse sentido que o trabalho usa a expressão soberania de dados: a capacidade de o Estado saber e decidir para onde vão os dados gerados no uso dos seus serviços. Medir a presença desses SDKs é a condição para discutir essa dependência; saber se a transferência de fato ocorre depende da análise dinâmica prevista no quarto objetivo específico (Seção~\ref{sec:1.4}).
+
+% A AMPLIAR com os estudos da QR5 (Brasil, LGPD, transferência internacional e
+% soberania de dados). A definição de soberania de dados acima é operacional e
+% precisa de apoio na literatura.
 
 \chapter{Procedimentos metodológicos}\label{cap:metodo}
 
@@ -600,7 +719,7 @@ A pesquisa é quantitativa, observacional e comparativa: mede características d
 
 \end{enumerate}
 
-Todos os scripts citados estão no repositório do trabalho, na pasta \texttt{scripts/\allowbreak{}}. As etapas 1 a 3 estão concluídas, e os dados que produziram estão na Seção~\ref{cap:dados}. As demais estão no cronograma (Seções~\ref{sec:3.1} e~\ref{sec:3.2}).
+Todos os scripts citados estão no repositório do trabalho, na pasta \texttt{scripts/\allowbreak{}}. As etapas 1 a 3 estão concluídas, e os dados que produziram estão no Apêndice~\ref{cap:dados}. As demais estão no cronograma (Seções~\ref{sec:3.1} e~\ref{sec:3.2}).
 
 \section{Escolha do tema por testes de viabilidade}\label{sec:2.1}
 
@@ -762,9 +881,27 @@ As alterações feitas na conferência estão registradas no repositório do tra
 
 \end{itemize}
 
+\section{Resultados esperados}\label{sec:1.6}
+
+Ao final do trabalho, espera-se obter:
+
+\begin{enumerate}
+
+\item a prevalência de rastreadores no parque governamental, com intervalo de confiança, por esfera e por tratamento de dado sensível;
+
+\item a razão entre as taxas de rastreadores dos aplicativos governamentais e dos comerciais pareados, com tamanho de efeito;
+
+\item a proporção de SDKs detectados que não constam da declaração do publicador;
+
+\item a medida de concordância entre detectores e o efeito da ferramenta sobre a taxa reportada;
+
+\item um conjunto de dados reprodutível, com a lista dos aplicativos, os hashes dos pacotes analisados e os scripts de coleta e análise.
+
+\end{enumerate}
+
 \section{Cronograma até a defesa do Projeto Capstone I}\label{sec:3.1}
 
-As datas da disciplina são as do plano de ensino: simulação de defesa em 24/11, 26/11 ou 01/12, conforme a ordem da turma, com 15 minutos de apresentação e 10 de arguição; entrega da redação no Canvas até 03/12; defesa final em 08/12, 10/12 ou 15/12, com 15 minutos de apresentação e 15 de arguição. O regulamento exige cinco encontros de orientação registrados no bimestre. As atividades já concluídas estão nas Seções~\ref{cap:metodo} e~\ref{cap:dados}; o quadro abaixo traz só o que falta.
+As datas da disciplina são as do plano de ensino: simulação de defesa em 24/11, 26/11 ou 01/12, conforme a ordem da turma, com 15 minutos de apresentação e 10 de arguição; entrega da redação no Canvas até 03/12; defesa final em 08/12, 10/12 ou 15/12, com 15 minutos de apresentação e 15 de arguição. O regulamento exige cinco encontros de orientação registrados no bimestre. As atividades já concluídas estão descritas nesta seção e no Apêndice~\ref{cap:dados}; o quadro abaixo traz só o que falta.
 
 \begin{center}
 \begin{minipage}{\textwidth}
@@ -832,9 +969,16 @@ Atraso nos encontros de orientação & Reprovação por falta de encontros & Age
 \end{minipage}
 \end{center}
 
-\chapter{Apresentação e análise dos dados}\label{cap:dados}
+% ---------------------------------------------------------------- pós-textuais
+\postextual
 
-Esta seção apresenta os dados produzidos pelas etapas executadas até 10 de novembro de 2026 e, ao final, os resultados esperados ao término do trabalho.
+\bibliography{referencias}
+
+\begin{apendicesenv}
+
+\chapter{Dados das etapas já executadas}\label{cap:dados}
+
+Este apêndice reúne os dados produzidos pelas etapas executadas até 10 de novembro de 2026, que fundamentam as decisões de método da Seção~\ref{cap:metodo}.
 
 \section{Verificação de viabilidade por hipótese}\label{sec:2.5}
 
@@ -1168,35 +1312,6 @@ As taxas das Seções~\ref{sec:2.3} a~\ref{sec:2.11} foram calculadas sobre os 3
 
 As 17 buscas, feitas em 6 de novembro de 2026, retornaram 1.531 registros: 825 do Scopus, 668 do IEEE Xplore, 23 da BDTD e 15 da SBC OpenLib. Retiradas 282 duplicatas, os 1.249 registros restantes passaram pela triagem por título e resumo, que excluiu 886, separou 6 revisões da literatura para a bola de neve e levou 357 à leitura do texto completo. A classificação inicial de cada registro foi sugerida por um assistente de inteligência artificial, e a conferência contou com a participação de outro (Seção~\ref{sec:2.14}); a planilha mantém as duas versões em colunas separadas. A conferência alterou 148 sugestões (11,8\%), 125 delas de exclusão para talvez, e o $\kappa$ de Cohen entre as duas versões, na decisão de seguir ou não para o texto completo, foi de 0,71. Como as duas versões foram produzidas com apoio de inteligência artificial, esse valor não mede a concordância entre avaliadores humanos, que será medida no reteste e na conferência do orientador, ainda não feitos.
 
-\section{Resultados esperados}\label{sec:1.6}
-
-Ao final do trabalho, espera-se obter:
-
-\begin{enumerate}
-
-\item a prevalência de rastreadores no parque governamental, com intervalo de confiança, por esfera e por tratamento de dado sensível;
-
-\item a razão entre as taxas de rastreadores dos aplicativos governamentais e dos comerciais pareados, com tamanho de efeito;
-
-\item a proporção de SDKs detectados que não constam da declaração do publicador;
-
-\item a medida de concordância entre detectores e o efeito da ferramenta sobre a taxa reportada;
-
-\item um conjunto de dados reprodutível, com a lista dos aplicativos, os hashes dos pacotes analisados e os scripts de coleta e análise.
-
-\end{enumerate}
-
-\chapter{Considerações finais}\label{cap:final}
-
-Este projeto propõe medir a presença de SDKs de rastreamento de terceiros em aplicativos Android do governo brasileiro e compará-la com a de aplicativos comerciais de mesma categoria e porte. As etapas executadas indicam que o desenho é viável: o corpus foi construído e conferido, com 376 aplicativos oficiais de 68 publicadores, 100 deles com dado de saúde ou biométrico; o grupo de controle foi ampliado para 252 aplicativos; e cada hipótese tem instrumento e tamanho amostral para ser testada.
-
-Três resultados orientam a etapa seguinte. Nenhum aplicativo do governo declara exibir anúncios, contra um terço do controle, mas essa declaração não mostra quais SDKs existem nem para onde os dados são enviados. No piloto, a proporção de aplicativos com rastreador variou de 75\% a 95\% conforme o detector, o que sustenta a H4 e a conferência das detecções. E o AndroZoo contém apenas 23,2\% dos aplicativos do governo, de modo que a maior parte dos pacotes será obtida diretamente da Google Play, com o hash registrado.
-
-O que falta está no cronograma da Seção~\ref{sec:3.2}: a coleta e a detecção em todo o corpus e no controle, o confronto com as declarações dos publicadores, a análise dinâmica de uma subamostra e a análise estatística conforme o plano fixado antes da observação dos resultados.
-
-% ---------------------------------------------------------------- pós-textuais
-\postextual
-
-\bibliography{referencias}
+\end{apendicesenv}
 
 \end{document}

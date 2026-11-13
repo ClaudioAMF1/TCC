@@ -1,83 +1,35 @@
-# TCC I: o texto
+# Projeto Capstone I
 
-**Estado em 04/11/2026:** resumo, abstract, introdução, metodologia das etapas
-executadas e plano de atividades escritos. Piloto concluído: κ de Fleiss 0,52
-com os detectores como são e 0,69 depois da conferência manual; 72% das
-detecções do detector B eram falso positivo. Protocolo da revisão sistemática
-escrito; a lacuna foi reescrita depois de achar Samarasinghe et al. (2022).
+Versão revista em **13/11/2026**. A entrega é um projeto de pesquisa: introdução, referencial teórico e procedimentos metodológicos, com recursos e cronogramas. Os resultados descritos são preparatórios e do piloto. A coleta principal e os testes das hipóteses permanecem previstos para o Capstone II.
 
-| Arquivo | O que é |
+## Arquivos principais
+
+| Arquivo | Conteúdo |
 |---|---|
-| [`tcc1-projeto-de-pesquisa.md`](tcc1-projeto-de-pesquisa.md) | **O texto.** Identificação, resumo, abstract, Cap. 1 Introdução, Cap. 2 Metodologia do que foi feito, Cap. 3 Plano de atividades, referências |
-| [`piloto-passo-a-passo.md`](piloto-passo-a-passo.md) | Como rodar o piloto do AndroZoo, comando por comando |
-| [`coleta-passo-a-passo.md`](coleta-passo-a-passo.md) | Ampliar o controle por categoria e coletar direto da Google Play |
-| [`revisao/protocolo-revisao-sistematica.md`](revisao/protocolo-revisao-sistematica.md) | **Protocolo da revisão sistemática**: questões, strings de cada base, conjunto de controle, critérios, qualidade, extração, cronograma e registros |
-| [`revisao/buscas-passo-a-passo.md`](revisao/buscas-passo-a-passo.md) | Como rodar as 22 buscas, exportar, juntar e triar |
-| [`latex/`](latex/) | **O mesmo texto em LaTeX (abnTeX2, ABNT)**, pronto para o Overleaf: `main.tex` e `referencias.bib` |
+| [latex/main.pdf](latex/main.pdf) | Projeto diagramado no modelo do IDP |
+| [latex/main.tex](latex/main.tex) | Fonte principal do texto |
+| [latex/referencias.bib](latex/referencias.bib) | Referências bibliográficas, editadas neste arquivo |
+| [tcc1-projeto-de-pesquisa.md](tcc1-projeto-de-pesquisa.md) | Espelho de leitura do texto, gerado da fonte LaTeX |
+| [apresentacao/simulacao-defesa-rascunho.pptx](apresentacao/simulacao-defesa-rascunho.pptx) | 14 slides editáveis no modelo do IDP, com notas |
+| [apresentacao/roteiro-simulacao.md](apresentacao/roteiro-simulacao.md) | Roteiro correspondente aos slides |
+| [metodologia/criterios-lgpd.md](metodologia/criterios-lgpd.md) | Dez critérios documentais da LGPD, versão 0.1 para orientação |
+| [revisao/protocolo-revisao-sistematica.md](revisao/protocolo-revisao-sistematica.md) | Protocolo e registros atualizados, versão 1.4 |
+| [../dados/revisao/reteste_F1_20261116.xlsx](../dados/revisao/reteste_F1_20261116.xlsx) | Reteste cego de 125 registros, sem respostas anteriores |
+| [orientacao/pauta-proximo-encontro.md](orientacao/pauta-proximo-encontro.md) | Perguntas e espaço para registrar decisões do orientador |
+| [conformidade.md](conformidade.md) | Exigências atendidas e pendências verificáveis |
 
-## Abrir no Overleaf
+## Compilação no Overleaf ou no computador
 
-Desde 12/11 o texto segue o modelo de monografia do IDP
-(`disciplina/modelos/Template_final_Monografia_Dissertacao_Tese_2026_uni_IDP.docx`).
-O projeto no Overleaf precisa de dois arquivos:
+Use **XeLaTeX**, com `main.tex`, `referencias.bib` e `logo-idp.png` na mesma pasta. São necessários abnTeX2, os pacotes indicados no preâmbulo e a fonte **Times New Roman** instalada ou disponível no projeto com licença de uso. A fonte não é distribuída neste repositório. Se o ambiente não a encontrar, disponibilize a fonte licenciada; não substitua silenciosamente antes da entrega.
 
-- `main.tex`: o texto, com as referências dentro dele. Ao compilar, o LaTeX
-  grava o `referencias.bib` sozinho e sobrescreve o que houver.
-- `logo-idp.png`: o logo da capa, tirado do modelo do IDP. Sem ele, o
-  documento compila, mas a capa sai sem o logo.
+No Overleaf, envie os três arquivos e selecione XeLaTeX. Em uma instalação local configurada: `xelatex main.tex`, `bibtex main`, `xelatex main.tex`, `xelatex main.tex`. As referências não ficam mais embutidas no `main.tex`: edite `referencias.bib`. Após qualquer mudança, regenere o PDF e o espelho Markdown.
 
-Passos:
+## Estado da revisão
 
-- **Projeto que já existe:** no menu de arquivos, **Upload** do
-  `logo-idp.png`. Depois abra o `main.tex`, apague tudo, cole o conteúdo de
-  `tcc/latex/main.tex` e clique em **Recompile**.
-- **Projeto novo:** **New Project > Upload Project** com o `.zip` dos dois
-  arquivos.
-- O compilador é o padrão (pdfLaTeX).
+As buscas produziram 1.531 registros; 282 duplicatas foram removidas. Dos 1.249 restantes, a F1 registra 886 E, 6 R e **357 candidatos à F2** (214 I e 143 T). A F2 consultada em 13/11 está sem decisões preenchidas. Não há número final de estudos incluídos. A lista de referências do documento também contém leis, métodos e ferramentas; ela não equivale à amostra final da revisão.
 
-Para mudar uma referência, edite o bloco `filecontents` no começo do
-`main.tex`. O `tcc/latex/referencias.bib` fica como cópia.
+O reteste está preparado, não realizado. Deve ocorrer no mínimo sete dias depois da primeira avaliação pessoal. O κ só será calculado com as duas avaliações identificadas. A validação pessoal das classificações e a leitura completa continuam pendentes.
 
-O PDF tem: capa, folha de rosto, espaço da ficha catalográfica, folha de
-aprovação, resumo, abstract, listas de ilustrações, de tabelas e de siglas,
-sumário, 1 Introdução, 2 Referencial teórico (rascunho para o autor
-reescrever), 3 Procedimentos metodológicos (com o resumo dos resultados já
-obtidos na Seção 3.8) e referências. É o projeto de pesquisa: as seções de
-análise dos dados e de considerações finais ficam para a monografia do
-Capstone II. Em 12/11 foi compilado sem erro e sem referência indefinida:
-31 páginas.
+## Decisões a confirmar
 
-## O que mudou em relação à proposta
-
-| Ponto | Proposta (16/09) | Texto atual | Por quê |
-|---|---|---|---|
-| Lacuna | Os estudos cobrem só apps comerciais ou de saúde privada; nenhum tem linha de base pareada | Samarasinghe et al. (2022) mediram 1.166 apps de governo de 71 países; a lacuna passa a ser o caso brasileiro (esferas, dado sensível), a linha de base e o instrumento | O estudo foi achado na busca exploratória de 04/11. Ver Seções 1.2 e 2.13 |
-| Fonte dos APKs | AndroZoo | AndroZoo para os 92 apps de governo do acervo (23,2%); Google Play direta, com hash, para os outros 304 | Cobertura medida em 26/10. Ver Seção 2.10 |
-| Detectores da H4 | MobSF, Androguard, Exodus | A (Exodus, código), B (Exodus, rede), C (Disconnect, rede); MobSF como verificação | O MobSF usa a base e a regra do Exodus; o Androguard só extrai. Ver Seção 2.9 |
-| Medida principal | (não definida) | Detector A; C como verificação independente; B só para medir o efeito do método | No piloto, 72% das detecções de B foram falso positivo e B não vê o Firebase Analytics. **Decisão a levar ao orientador** |
-| Menor diferença detectável | 5,1 p.p. | 5,7 a 11,4 p.p. com o controle de 252 (6,0 a 12,3 com 190), conforme a taxa de base | O 5,1 usava taxa de base de 1% (a de anúncios) |
-| Dado sensível | 152 apps | 152 pelo critério automático, provisório; a H3 passa a usar classificação manual dos 396 | A validação de 04/11 mediu 28,6% de erro na sensibilidade automática (Seção 2.12) |
-| Oficialidade | 396 apps de órgão público | 396 candidatos; conferência dos 396 antes da coleta | 2 de 30 sorteados (6,7%) eram de empresa privada |
-| Suporte comum | 92,4% por faixa; 27,4% por categoria | 92,4% por faixa; por categoria, 77,9% com o controle de 190 e 89,1% com o ampliado (252) | O 27,4% vinha de uma rodada anterior ao complemento de apps pequenos e não se reproduz. Ampliação feita em 04/11, Seção 2.11 |
-| Escopo | Rastreadores **e** falhas de configuração de segurança | Só rastreadores | Nenhuma das hipóteses H1 a H4 mede postura de segurança: ela não tinha hipótese nem critério de decisão. Para voltar, precisa de hipótese própria |
-| H3 | "não apresentam postura de proteção superior" | "não apresentam menos rastreadores" | "Postura de proteção" não tinha medida definida |
-| Título | "...postura de segurança e soberania de dados..." | "...e soberania de dados..." | Segue o escopo |
-
-**Essas três últimas mudanças são decisão sua e do orientador.** Se quiser
-manter a postura de segurança, ela volta ao título, aos objetivos e ganha uma
-hipótese.
-
-## O que falta no texto
-
-- Datas de acesso da LGPD e do Exodus nas referências (anotar o dia em que abrir cada link).
-- Passar para o modelo ABNT da instituição antes de 03/12.
-- **Língua.** O regulamento v.2026-05 (Art. 32, §3º) pede o trabalho final em
-  inglês; o §4º aceita outra língua com anuência da Coordenação e endosso do
-  orientador. Se a regra mudou para o TCC I, vale ter isso por escrito.
-- **Uso de IA.** O Art. 19, X pede ao orientador que certifique a autoria do
-  estudante, sem uso indevido de IA. O Art. 49 prevê, quando o orientador ou a
-  banca constata uso indevido, uma comissão de sindicância com ampla defesa e,
-  se os fatos forem comprovados, reprovação definitiva. O regulamento não
-  define o que é uso indevido. O que foi feito com IA está declarado na Seção
-  2.14; combine com o orientador o que é aceito, como registrar e o que precisa
-  de conferência pessoal.
+Confirmar com o orientador o escopo da revisão, detector principal, regras de análise das políticas, recursos e plano estatístico antes da coleta principal. Confirmar a data da simulação e ensaiar para o limite de 15 minutos. Completar titulação, terceiro membro e identificadores da banca; confirmar a aplicação da regra de idioma; entregar as fichas de orientação e o termo de aceite. A entrega no Canvas continua prevista para 03/12 e depende do autor.

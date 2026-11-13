@@ -1,6 +1,6 @@
 # Protocolo da revisão sistemática
 
-**Versão 1.2, 06/11/2026.** Segue as diretrizes de Kitchenham e Charters (2007)
+**Versão 1.4, 13/11/2026.** Segue as diretrizes de Kitchenham e Charters (2007)
 para revisões sistemáticas em engenharia de software, com bola de neve conforme
 Wohlin (2014) e relato do fluxo conforme o PRISMA 2020 (PAGE et al., 2021).
 
@@ -11,7 +11,7 @@ busca, toda alteração entra na Seção 12, com data e motivo, e a versão sobe
 
 ## 1 Contexto e objetivo
 
-O projeto de pesquisa afirma uma lacuna (Seção 1.2 do texto) e apoia quatro
+O projeto de pesquisa apresenta uma lacuna (Seção 1.3 e referencial teórico) e apoia quatro
 hipóteses em resultados de outros trabalhos. A revisão existe para confirmar ou
 corrigir essa lacuna e para dar a cada hipótese a base de comparação que ela
 precisa: como outros detectam rastreadores (H4), que taxas encontram e contra
@@ -283,7 +283,7 @@ bola de neve.
 | Fase | O que se lê | Decisão |
 |---|---|---|
 | F0 | Nada: junção das exportações e remoção de duplicatas pelo script | Automática, por DOI e por título normalizado |
-| F1 | Título, resumo e palavras-chave | `I` inclui, `E` exclui (com o código do critério), `T` talvez. Na dúvida, `T`. `I` e `T` seguem para F2 |
+| F1 | Título, resumo e palavras-chave | `I` inclui, `E` exclui (com critério), `T` talvez e `R` revisão para bola de neve. Na dúvida, `T`. `I` e `T` seguem para F2 |
 | F2 | Texto completo | `I` ou `E`, com o código do critério |
 | F3 | Bola de neve a partir dos incluídos em F2 | Os novos achados passam por F1 e F2 |
 
@@ -293,43 +293,20 @@ fluxograma do PRISMA.
 
 ### 7.2 Confiabilidade com um revisor
 
-A seleção é feita pelo autor. Kitchenham e Charters (2007) recomendam, para um
-revisor único, conferir a consistência das decisões por outra pessoa ou pelo
-próprio revisor depois de um intervalo. As duas conferências são feitas:
+A seleção tem um revisor responsável. O reteste examinará a estabilidade das decisões depois de um intervalo; a conferência do orientador, se ele aceitar, oferecerá uma segunda avaliação. São etapas previstas, ainda sem resultados.
 
-1. **Teste e reteste.** Uma semana depois de terminar a F1, o autor refaz, sem
-   ver a decisão anterior, uma amostra aleatória de 10% dos registros (no
-   mínimo 30), sorteada pelo script com semente fixa.
-2. **Conferência do orientador.** O orientador decide, sem ver a decisão do
-   autor, uma amostra de 20 registros da F1, sorteada da mesma forma.
+1. **Teste e reteste.** Refazer sem consultar decisões anteriores uma amostra aleatória de 10% dos registros, no mínimo 30, pelo menos sete dias depois da primeira avaliação pessoal. Para 1.249 registros, o arredondamento para cima resulta em **125**. A amostra foi preparada em 13/11/2026 com semente **20261116**, usando `random.Random(20261116).sample` sobre a ordem do CSV e ordenação dos sorteados por `id`. O arquivo `dados/revisao/reteste_F1_20261116.xlsx` contém apenas os dados bibliográficos e campos de resposta vazios. O manifesto registra a versão da fonte, o algoritmo e os identificadores.
+2. **Conferência do orientador.** Se houver disponibilidade, decidir os 20 registros de `dados/revisao/conferencia_orientador_20261110.xlsx`, sem consultar as respostas do autor. Se não ocorrer, registrar essa limitação; não apresentar a etapa como executada.
 
-Nos dois casos se calcula o κ de Cohen (COHEN, 1960), com `I` e `T` juntos
-contra `E`, que é a decisão que importa na F1. Se κ < 0,6, as divergências são
-discutidas, o texto do critério que mais produziu divergência é reescrito e os
-registros excluídos por ele são decididos de novo. O κ, o tamanho da amostra e
-a eventual mudança de critério são reportados.
+A data de 16/11 é uma previsão, não comprovação de execução. Preencher as datas reais da primeira avaliação e do reteste. Sem uma primeira avaliação pessoal datada e preservada, comparar com a versão existente mede diferença entre versões, não estabilidade intra-avaliador. Não reabrir a primeira decisão durante o reteste.
 
-### 7.3 Pré-triagem por inteligência artificial e conferência
+Após o preenchimento, comparar por `id` e reportar matriz de contingência, acordo observado, κ de Cohen (COHEN, 1960), tamanho da amostra e divergências. A comparação principal será **I/T versus E/R**, isto é, segue ou não para F2 como estudo primário. Também serão descritas as quatro categorias. Se κ < 0,6, discutir divergências, esclarecer o critério e reexaminar os registros afetados, preservando as decisões anteriores ao consenso. O limiar é uma regra operacional do protocolo, não garantia de validade. Se κ for indefinido por ausência de variação, reportar isso, sem atribuir zero ou um arbitrariamente.
 
-A F1 começou com uma classificação inicial feita por um assistente de
-inteligência artificial (Claude, da Anthropic). Ele leu os 1.249 títulos, e os
-resumos quando o título não bastava, e sugeriu para cada registro uma decisão,
-o código do critério e o motivo. A conferência dessas sugestões contou com a
-participação de outro assistente (ChatGPT, da OpenAI), que alterou parte delas.
+### 7.3 Versões das decisões e validação pessoal
 
-A planilha guarda a sugestão e a versão conferida em colunas separadas, e as
-alterações ficam registradas no repositório. O trabalho reporta quantas
-sugestões foram alteradas e o κ de Cohen entre as duas versões
-(`scripts/revisao_triagem.py sugestao`). Como as duas versões foram produzidas
-com apoio de IA, esse κ não mede concordância entre avaliadores humanos.
+Os arquivos preservam a classificação inicial e a versão posteriormente revista. A versão consultada contém decisões para os 1.249 registros, mas a validação pessoal do autor ainda está pendente. Seu escopo será combinado com o orientador.
 
-A validação dos registros pelo autor ainda não foi feita; o escopo dela (todos
-os registros ou uma amostra) é combinado com o orientador. O reteste e a
-conferência do orientador (Seção 7.2) são feitos sem mostrar as decisões
-anteriores. O uso de IA é declarado no texto do trabalho (Seção 2.14), e o que
-é aceito e como registrar são combinados com o orientador, a quem o Art. 19, X
-do regulamento atribui certificar a autoria do trabalho. **Pendente:
-concordância do orientador.**
+As alterações devem manter identificador, data, decisão anterior, nova decisão, critério e motivo. Uma concordância entre versões não equivale à concordância entre avaliadores independentes. O reteste e a conferência do orientador usam arquivos sem respostas anteriores. A primeira avaliação pessoal deverá ser preservada separadamente antes do reteste, para não substituir a referência pela decisão de consenso.
 
 ### 7.4 Bola de neve
 
@@ -417,18 +394,20 @@ que sustentam a decisão.
 
 ---
 
-## 11 Cronograma
+## 11 Cronograma das etapas pendentes
 
-| Data | Atividade |
-|---|---|
-| 04/11 | Protocolo escrito (esta versão) |
-| até 06/11 | Revisão do protocolo pelo orientador |
-| 05/11 a 06/11 | Buscas e exportações; junção, duplicatas e conferência do conjunto de controle |
-| 06/11 a 10/11 | F1: título e resumo |
-| 10/11 a 13/11 | F2: texto completo |
-| 13/11 a 15/11 | F3: bola de neve; extração e avaliação de qualidade |
-| 16/11 | Reteste de 10% da F1 e κ; lista dos selecionados |
-| 2º ou 3º encontro | Conferência do orientador sobre 20 registros |
+Situação conferida em 13/11/2026: F1 tem decisões registradas; F2 tem **0 de 357** decisões preenchidas. A revisão sistemática ainda não está concluída.
+
+| Prazo previsto | Atividade | Condição |
+|---|---|---|
+| Até 17/11 | Encontro de orientação e definição do escopo da validação pessoal | Registrar a resposta e a ficha do encontro |
+| 16/11 ou data posterior | Reteste cego dos 125 registros | Somente após sete dias da primeira avaliação pessoal; calcular κ depois do preenchimento |
+| Até 23/11 | Priorizar a leitura dos 214 registros I, extrair evidências e ampliar o referencial | Registrar I/E em F2 e não chamar candidato de incluído final |
+| Até 02/12 | Prosseguir com os 143 T, a bola de neve e a síntese | Confirmar volume e sequência com o orientador; explicitar qualquer etapa ainda pendente |
+| Encontro a combinar | Conferência de 20 registros pelo orientador | Opcional, conforme disponibilidade |
+| Até 03/12 | Entregar o projeto com o estado real da revisão | Não apresentar etapas futuras como concluídas |
+
+O prazo não dispensa a fundamentação e revisão bibliográfica exigidas pelo Art. 25, §3º. O orientador deverá avaliar a suficiência da síntese para a entrega; o cronograma não equivale a dispensa institucional.
 
 ---
 
@@ -477,13 +456,14 @@ que sustentam a decisão.
 | 06/11/2026 | 1.1 | SOL feita à mão | O site da SBC OpenLib recusa acesso automatizado |
 | 06/11/2026 | 1.1 | O texto do TCC (Seção 2.13) ainda cita a ACM e 22 buscas | Será atualizado com os números finais, ao fim das buscas |
 | 06/11/2026 | 1.2 | Códigos IC1 a IC4 para exclusão por falta de critério de inclusão; regra do código mais específico | A tabela de EC não cobria o que está fora do tema sem se encaixar em EC2 a EC5 |
-| 06/11/2026 | 1.2 | Pré-triagem por IA na F1 (Seção 7.3) | Reduzir o tempo da F1, com a sugestão e a versão conferida em colunas separadas e a concordância entre elas reportada. **Pendente: concordância do orientador** |
-| 10/11/2026 | 1.2 | O texto do TCC (Seções 2.13 e 2.14) foi atualizado: sem a ACM, 17 buscas, números da F1 e declaração do uso de IA | Fecha a pendência de 06/11 |
-| 10/11/2026 | 1.3 | A Seção 7.3 passa a registrar a participação do ChatGPT na conferência e a separar dela a validação pelo autor, ainda não feita | Descrever com precisão o que foi feito com IA e o que foi feito pelo autor |
+| 06/11/2026 | 1.2 | Classificação inicial da F1 e armazenamento de versões separadas | Preservar o histórico de decisões para conferência |
+| 10/11/2026 | 1.2 | Atualização do texto com a retirada da ACM, as 17 buscas e os números da F1 | Corrigir a descrição das etapas executadas |
+| 10/11/2026 | 1.3 | Separação entre a versão revista das classificações e a validação pessoal, ainda pendente | Evitar confundir versão registrada com avaliação pessoal |
+| 13/11/2026 | 1.4 | Reteste cego de 125 preparado, datas condicionadas ao intervalo, comparação I/T × E/R, F2 e cronograma atualizados | Registrar a preparação sem afirmar execução ou concordância ainda não medidas |
 
 ### 12.4 Triagem por título e resumo (F1)
 
-Concluída em 10/11/2026, sobre os 1.249 registros de `dados/revisao/triagem_20261106.csv`.
+Decisões registradas em 10/11/2026, ainda sujeitas à validação pessoal, sobre os 1.249 registros de `dados/revisao/triagem_20261106.csv`.
 
 | Decisão | Registros |
 |---|---|
@@ -493,17 +473,17 @@ Concluída em 10/11/2026, sobre os 1.249 registros de `dados/revisao/triagem_202
 | E (exclui) | 886: IC1 527, EC3 118, EC2 114, EC5 89, EC4 30, EC6 5, EC1 3 |
 | Seguem para o texto completo (I + T) | 357 |
 
-Sugestão × decisão (Seção 7.3): o autor mudou 148 sugestões (11,8%), 125 delas
-de E para T; κ de Cohen na decisão passa (I ou T) × fica (E ou R) = 0,712
-(`scripts/revisao_triagem.py sugestao`). Como as duas versões foram produzidas com apoio de IA (Seção 7.3), esse κ não mede concordância entre avaliadores humanos; ela é medida no reteste e na
-conferência do orientador (Seção 7.2), sem a sugestão.
+Entre as versões armazenadas, 148 decisões mudaram (11,8%), 125 de E para T; o κ binário entre versões é 0,712, conforme o cálculo existente em `scripts/revisao_triagem.py sugestao`. Esse resultado descreve as versões e não substitui o reteste pessoal nem a conferência do orientador.
+
+### 12.5 Preparação do reteste
+
+Em 13/11/2026, foram produzidos o XLSX, o CSV cego e o manifesto de `reteste_F1_20261116`. Fonte: commit `236470418f16b979606bb115375fdab03fcc0039`, com 1.249 registros. Os 125 campos de decisão estão vazios. κ do reteste: **não calculado**. A preparação não altera as decisões da F1 nem preenche a F2.
 
 ---
 
 ## 13 Ameaças à validade da revisão
 
-- **Um revisor só.** Mitigada pelo reteste e pela conferência do orientador
-  (Seção 7.2), com κ reportado.
+- **Um revisor só.** Mitigação prevista pelo reteste e, se houver disponibilidade, pela conferência do orientador (Seção 7.2). Ainda não há κ dessas etapas.
 - **Cobertura das bases.** NDSS, USENIX Security, SOUPS e PoPETs podem não estar
   indexados por completo no Scopus, na ACM e no IEEE. O conjunto de controle
   mede isso (C02, C04, C07) e a bola de neve compensa.

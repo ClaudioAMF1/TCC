@@ -11,4 +11,4 @@ Preparado em 13/11/2026. A data no nome do arquivo é a previsão, não a data d
 
 O XLSX conta respostas e confere o intervalo entre datas. **Não contém gabarito** em aba oculta, comentários ou fórmulas. O CSV é uma alternativa de preenchimento; não é preciso preencher ambos. Os dois arquivos contêm os mesmos 125 registros, sorteados com semente 20261116, de uma população de 1.249. O manifesto permite reproduzir o sorteio e identificar a versão de origem.
 
-O reteste não decide a inclusão final da revisão. Essa decisão continua na planilha `leitura_F2_para_preencher.xlsx`: em 13/11/2026, havia 357 candidatos e nenhum resultado de F2 registrado.
+O reteste não decide a inclusão final da revisão. Essa decisão continua na planilha `leitura_F2_para_preencher.xlsx`: em 13/11/2026, dos 357 candidatos, 79 tinham proposta registrada (71 I e 8 E), ainda sem validação pessoal, e 278 seguiam em aberto.

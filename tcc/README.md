@@ -13,7 +13,7 @@ Versão revista em **13/11/2026**. A entrega é um projeto de pesquisa: introdu�
 | [apresentacao/simulacao-defesa-rascunho.pptx](apresentacao/simulacao-defesa-rascunho.pptx) | 14 slides editáveis no modelo do IDP, com notas |
 | [apresentacao/roteiro-simulacao.md](apresentacao/roteiro-simulacao.md) | Roteiro correspondente aos slides |
 | [metodologia/criterios-lgpd.md](metodologia/criterios-lgpd.md) | Dez critérios documentais da LGPD, versão 0.1 para orientação |
-| [revisao/protocolo-revisao-sistematica.md](revisao/protocolo-revisao-sistematica.md) | Protocolo e registros atualizados, versão 1.4 |
+| [revisao/protocolo-revisao-sistematica.md](revisao/protocolo-revisao-sistematica.md) | Protocolo e registros atualizados, versão 1.5 |
 | [../dados/revisao/reteste_F1_20261116.xlsx](../dados/revisao/reteste_F1_20261116.xlsx) | Reteste cego de 125 registros, sem respostas anteriores |
 | [orientacao/pauta-proximo-encontro.md](orientacao/pauta-proximo-encontro.md) | Perguntas e espaço para registrar decisões do orientador |
 | [conformidade.md](conformidade.md) | Exigências atendidas e pendências verificáveis |
@@ -26,7 +26,7 @@ No Overleaf, envie os três arquivos e selecione XeLaTeX. Em uma instalação lo
 
 ## Estado da revisão
 
-As buscas produziram 1.531 registros; 282 duplicatas foram removidas. Dos 1.249 restantes, a F1 registra 886 E, 6 R e **357 candidatos à F2** (214 I e 143 T). A F2 consultada em 13/11 está sem decisões preenchidas. Não há número final de estudos incluídos. A lista de referências do documento também contém leis, métodos e ferramentas; ela não equivale à amostra final da revisão.
+As buscas produziram 1.531 registros; 282 duplicatas foram removidas. Dos 1.249 restantes, a F1 registra 886 E, 6 R e **357 candidatos à F2** (214 I e 143 T). A rodada de F2 de 13/11 registra **71 propostas I e 8 E**, sujeitas à validação pessoal. Há 278 decisões em aberto; os 143 T aguardam definição do orientador. As evidências estão em [leitura_F2_registro_20261113.csv](../dados/revisao/leitura_F2_registro_20261113.csv). Não há número final de estudos incluídos. A lista de referências do documento também contém leis, métodos e ferramentas; ela não equivale à amostra final da revisão.
 
 O reteste está preparado, não realizado. Deve ocorrer no mínimo sete dias depois da primeira avaliação pessoal. O κ só será calculado com as duas avaliações identificadas. A validação pessoal das classificações e a leitura completa continuam pendentes.
 

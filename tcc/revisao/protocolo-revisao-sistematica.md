@@ -1,6 +1,6 @@
 # Protocolo da revisão sistemática
 
-**Versão 1.4, 13/11/2026.** Segue as diretrizes de Kitchenham e Charters (2007)
+**Versão 1.5, 13/11/2026.** Segue as diretrizes de Kitchenham e Charters (2007)
 para revisões sistemáticas em engenharia de software, com bola de neve conforme
 Wohlin (2014) e relato do fluxo conforme o PRISMA 2020 (PAGE et al., 2021).
 
@@ -396,7 +396,7 @@ que sustentam a decisão.
 
 ## 11 Cronograma das etapas pendentes
 
-Situação conferida em 13/11/2026: F1 tem decisões registradas; F2 tem **0 de 357** decisões preenchidas. A revisão sistemática ainda não está concluída.
+Situação em 13/11/2026: a F1 tem decisões registradas; a F2 tem **79 propostas em 357 registros: 71 I e 8 E**, sujeitas à validação pessoal. Restam 278 decisões em aberto: 131 por acesso, duas por versão divergente, duas por dúvida de escopo e 143 T aguardando definição do orientador. Foram obtidos 80 textos correspondentes. R0375 é a exclusão adicional por duplicidade comprovada em R0192, sem texto próprio obtido. Não houve contato com autores nem exclusão EC7. A revisão sistemática, a extração e a avaliação de qualidade permanecem em andamento. Ver `dados/revisao/LEIA-ME_leitura_F2_20261113.md` e o registro por ID.
 
 | Prazo previsto | Atividade | Condição |
 |---|---|---|
@@ -460,6 +460,7 @@ O prazo não dispensa a fundamentação e revisão bibliográfica exigidas pelo 
 | 10/11/2026 | 1.2 | Atualização do texto com a retirada da ACM, as 17 buscas e os números da F1 | Corrigir a descrição das etapas executadas |
 | 10/11/2026 | 1.3 | Separação entre a versão revista das classificações e a validação pessoal, ainda pendente | Evitar confundir versão registrada com avaliação pessoal |
 | 13/11/2026 | 1.4 | Reteste cego de 125 preparado, datas condicionadas ao intervalo, comparação I/T × E/R, F2 e cronograma atualizados | Registrar a preparação sem afirmar execução ou concordância ainda não medidas |
+| 13/11/2026 | 1.5 | Rodada documental F2: 71 propostas I, 8 E e registro de acesso e evidências; 143 T preservados | Distinguir propostas da validação pessoal, conferir versões e evitar exclusão por falha de acesso sem cumprir EC7 |
 
 ### 12.4 Triagem por título e resumo (F1)
 
@@ -477,7 +478,7 @@ Entre as versões armazenadas, 148 decisões mudaram (11,8%), 125 de E para T; o
 
 ### 12.5 Preparação do reteste
 
-Em 13/11/2026, foram produzidos o XLSX, o CSV cego e o manifesto de `reteste_F1_20261116`. Fonte: commit `236470418f16b979606bb115375fdab03fcc0039`, com 1.249 registros. Os 125 campos de decisão estão vazios. κ do reteste: **não calculado**. A preparação não altera as decisões da F1 nem preenche a F2.
+Em 13/11/2026, foram produzidos o XLSX, o CSV cego e o manifesto de `reteste_F1_20261116`. Fonte: commit `236470418f16b979606bb115375fdab03fcc0039`, com 1.249 registros. Os 125 campos de decisão estão vazios. κ do reteste: **não calculado**. A preparação do reteste não altera as decisões da F1; o preenchimento parcial da F2 está documentado separadamente nesta versão.
 
 ---
 

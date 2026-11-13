@@ -17,7 +17,7 @@ Fontes: Binns et al. (2018), DOI 10.1145/3201064.3201089; Pohle e Thiel (2020), 
 ## Slide 3
 
 Tempo sugerido: 65 s.
-A literatura já mostra que rastreamento por terceiros é frequente em apps comerciais e se concentra em poucos fornecedores. Binns e colaboradores examinaram cerca de 959 mil aplicativos. Kollnig e colaboradores observaram persistência do rastreamento em comparações anteriores e posteriores ao GDPR, além de problemas de consentimento. Isso não permite atribuir causalidade à lei. O estudo mais próximo é o de Samarasinghe e colaboradores: 1.166 apps de governo de 71 países, com rastreadores do Google em 37%. O referencial também incorpora PoliCheck, para relacionar destinatários e declarações, e avaliações de detectores.
+A literatura já mostra que rastreamento por terceiros é frequente em apps comerciais e se concentra em poucos fornecedores. Binns e colaboradores examinaram cerca de 959 mil aplicativos. Kollnig e colaboradores observaram persistência do rastreamento em comparações anteriores e posteriores ao GDPR, além de problemas de consentimento. Isso não permite atribuir causalidade à lei. O estudo mais próximo é o de Samarasinghe e colaboradores: 1.166 apps de governo de 71 países. Na análise dinâmica, 269 (23,1%) enviaram dados do dispositivo a rastreadores conhecidos. A Seção 5 usa 37,1% para ocorrências de SDKs atribuídas ao Google, por isso esse percentual não será apresentado como proporção de apps. O referencial também incorpora PoliCheck, para relacionar destinatários e declarações, e avaliações de detectores.
 Fontes: Binns et al. (2018), DOI 10.1145/3201064.3201089; Kollnig et al. (2021a), DOI 10.14763/2021.4.1611; Kollnig et al. (2021b), https://www.usenix.org/conference/soups2021/presentation/kollnig; Samarasinghe et al. (2022), DOI 10.1145/3485447.3512223; Andow et al. (2020), https://www.usenix.org/conference/usenixsecurity20/presentation/andow.
 
 ## Slide 4
@@ -71,7 +71,7 @@ Fontes: projeto, Seções 3.6 e 3.8; Allix et al. (2016), DOI 10.1145/2901739.29
 ## Slide 12
 
 Tempo sugerido: 55 s.
-As 17 buscas de 6 de novembro recuperaram 1.531 registros. A deduplicação removeu 282, deixando 1.249. A F1 registra 886 exclusões, seis revisões reservadas para bola de neve e 357 candidatos à leitura completa, sendo 214 inclui e 143 talvez. Em 13 de novembro, a F2 ainda não tinha decisões registradas. Portanto, não há um número final de estudos incluídos. A amostra cega do reteste tem 125 registros e já está pronta para preenchimento, pelo menos sete dias após minha primeira avaliação pessoal. A conferência de 20 registros pelo orientador é opcional.
+As 17 buscas de 6 de novembro recuperaram 1.531 registros. A deduplicação removeu 282, deixando 1.249. A F1 registra 886 exclusões, seis revisões reservadas para bola de neve e 357 candidatos à leitura completa, sendo 214 inclui e 143 talvez. A rodada de 13 de novembro registrou 71 propostas de inclusão e oito de exclusão, ainda sujeitas à minha validação pessoal. Restam 278 decisões em aberto, incluindo os 143 talvez que aguardam definição do orientador. Portanto, não há um número final de estudos incluídos. A amostra cega do reteste tem 125 registros e já está pronta para preenchimento, pelo menos sete dias após minha primeira avaliação pessoal. A conferência de 20 registros pelo orientador é opcional.
 Fontes: dados/revisao/triagem_20261106.csv; dados/revisao/leitura_F2_para_preencher.xlsx; protocolo, Seções 7 e 12; Kitchenham e Charters (2007); Page et al. (2021), DOI 10.1136/bmj.n71.
 
 ## Slide 13

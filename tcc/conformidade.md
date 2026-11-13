@@ -51,7 +51,7 @@ A fonte LaTeX usa XeLaTeX e `referencias.bib` externo. O ambiente de compilaçã
 
 | Pendência | Evidência necessária |
 |---|---|
-| Leitura completa da revisão | Decisões I/E e justificativas na F2. Em 13/11: **0 de 357** preenchidos |
+| Leitura completa da revisão | Decisões I/E e justificativas na F2. Em 13/11: **79 propostas de 357** (71 I, 8 E), ainda sujeitas à validação pessoal. Restam 278 decisões em aberto |
 | Validação pessoal de artigos e apps | Escopo definido com o orientador, decisões e datas preservadas |
 | Reteste da F1 | Preencher os 125 registros cegos, no mínimo sete dias após a primeira avaliação pessoal. κ ainda não calculado |
 | Conferência de 20 pelo orientador | Opcional, conforme disponibilidade. Registrar aceitação, resultado ou limitação |

@@ -22,7 +22,7 @@ No Capstone I, a entrega é o projeto com fundamentação, procedimentos, recurs
 | Fonte dos APKs | Consulta histórica ao AndroZoo | 92/396 candidatos governamentais e 160/190 controles. Teste de coleta direta pendente |
 | Piloto | 20 APKs, assinaturas de código e domínios no pacote | Taxas de detecção de 75%, 95% e 80%; κ original 0,52 e após adjudicação 0,69 |
 | Revisão sistemática | 17 buscas em Scopus, IEEE Xplore, BDTD e SOL | 1.531 registros; 1.249 sem duplicatas; 357 candidatos à F2 |
-| Leitura completa | Planilha F2 | 0 de 357 decisões registradas. Ainda não há número final de incluídos |
+| Leitura completa | Planilha F2 | 79 propostas: 71 I e 8 E, pendentes de validação pessoal. 278 decisões em aberto; ainda não há total final |
 | Reteste | Sorteio cego, semente 20261116 | Planilha com 125 registros pronta, ainda sem respostas ou κ |
 | Recursos e LGPD | Seções 3.13 e 3.14 e matriz complementar | Propostas escritas para validação na orientação |
 | Documento e apresentação | Modelo do IDP | Texto e 14 slides revistos; completar informações da banca e ensaiar |

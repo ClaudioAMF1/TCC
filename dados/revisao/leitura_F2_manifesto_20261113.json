@@ -1,0 +1,46 @@
+{
+  "data": "2026-11-13",
+  "protocolo": "1.5",
+  "total_F2": 357,
+  "escopo": {
+    "F1_I_priorizados": 214,
+    "F1_T_sem_alteracao": 143
+  },
+  "propostas": {
+    "I": 71,
+    "E": 8,
+    "total": 79,
+    "validacao_pessoal": "pendente"
+  },
+  "decisoes_em_aberto": 278,
+  "pendencias_sem_decisao": {
+    "acesso": 131,
+    "versao_correspondente": 2,
+    "escopo": 2,
+    "F1_T": 143
+  },
+  "acesso": {
+    "textos_correspondentes_obtidos": 80,
+    "copias_de_versao_divergente": 2,
+    "nao_obtidos": 132,
+    "sem_texto_correspondente_total": 134
+  },
+  "exclusoes_por_criterio": {
+    "EC1": 3,
+    "EC6": 3,
+    "EC4": 1,
+    "IC1": 1
+  },
+  "nota_contagem": "R0375 é EC1 com base em R0192, embora o texto próprio não tenha sido obtido. Dos 80 textos correspondentes, 78 têm proposta I/E e dois ficam em dúvida de escopo.",
+  "ec7_aplicado": 0,
+  "contatos_com_autores": 0,
+  "fonte_sha256": "423444b3ca349996fa603d84560ec50029049314a385395a313361acee6f2315",
+  "arquivos": [
+    "leitura_F2_para_preencher.xlsx",
+    "leitura_F2_registro_20261113.csv",
+    "leitura_F2_acesso_20261113.json",
+    "leitura_F2_decisoes_20261113.json",
+    "LEIA-ME_leitura_F2_20261113.md"
+  ],
+  "planilha_atualizada_sha256": "811d4a87dc28f3ea191c995949eff28c44288b285d12dad9b4bdb7c856c6a442"
+}

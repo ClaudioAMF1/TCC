@@ -12,7 +12,7 @@ Tempo sugerido: 30 minutos.
 | 4. Perguntas | 15 min |
 | 5. Avisos rápidos e próximos passos | 2 min |
 
-Levar aberto: o texto no Overleaf (36 páginas), com a Seção 2.14 à mão.
+Levar aberto: o texto no Overleaf (31 páginas, no modelo do IDP), com a Seção 3.10 à mão.
 
 ---
 
@@ -82,7 +82,7 @@ precisa concordar ou corrigir.
 
 Contar o que aconteceu, sem diminuir nem aumentar:
 
-> "Usei dois assistentes de IA, e está declarado na Seção 2.14.
+> "Usei dois assistentes de IA, e está declarado na Seção 3.10.
 >
 > - **Claude:** redigiu e revisou o texto e o protocolo, escreveu os scripts
 >   e fez a classificação inicial dos 1.249 artigos da triagem e dos 396
@@ -96,7 +96,7 @@ Contar o que aconteceu, sem diminuir nem aumentar:
 Perguntas:
 
 - **O que desse uso o senhor considera aceitável, e o que não?**
-- **Como devo registrar no texto? A Seção 2.14 basta?**
+- **Como devo registrar no texto? A Seção 3.10 basta?**
 - **Quais etapas precisam de conferência pessoal minha?** Por exemplo:
   - validar todas as classificações ou uma amostra;
   - reescrever o texto com as minhas palavras;
@@ -122,8 +122,8 @@ Resposta: ______________________________________________
 ### Pergunta 3. Quanto da revisão precisa estar no texto de 03/12?
 
 > "O regulamento (Art. 25, §3º) diz que o projeto deve contemplar toda a
-> fundamentação e a revisão bibliográfica, e o texto ainda não tem uma seção
-> de revisão bibliográfica. A triagem deixou 357 artigos para a leitura
+> fundamentação e a revisão bibliográfica, e a Seção 2 do texto (referencial
+> teórico) ainda é um rascunho com os estudos de controle. A triagem deixou 357 artigos para a leitura
 > completa, umas 30 horas. Minha proposta é ler até 23/11 os 214 que já
 > pareciam incluídos, começando pelos 51 sobre aplicativos de governo, LGPD e
 > Brasil, e escrever com eles essa seção. Os 143 marcados como 'talvez' e a

@@ -175,7 +175,7 @@ python3 scripts/revisao_triagem.py prisma
 
 ---
 
-## Parte 5. Texto completo, F2 (até 01/12)
+## Parte 5. Texto completo, F2 (continua no Capstone II)
 
 Use a planilha `dados/revisao/leitura_F2_para_preencher.xlsx`, montada em
 10/11 com os 357 registros que tiveram `I` ou `T` na F1. A aba "Como ler"
@@ -195,7 +195,7 @@ não vão para o repositório.
 
 ---
 
-## Parte 6. Bola de neve, F3 (25/11 a 02/12)
+## Parte 6. Bola de neve, F3 (Capstone II)
 
 Para cada incluído na F2:
 
@@ -216,7 +216,7 @@ como duplicata, e o que é novo entra com id novo para passar pela F1 e pela F2.
 
 ## Parte 7. Conferências da triagem
 
-**Conferência cega (até 23/11).** A amostra de 125 registros já foi sorteada
+**Conferência cega (início do Capstone II).** A amostra de 125 registros já foi sorteada
 (semente 20261116). Siga `dados/revisao/LEIA-ME_reteste_F1.md`: preencha
 `dados/revisao/reteste_F1_20261116.xlsx` sem consultar as decisões antigas e,
 depois, rode:

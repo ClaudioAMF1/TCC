@@ -4,7 +4,7 @@ Repositório do Trabalho de Conclusão de Curso em Ciência da Computação no I
 
 **Tema:** *Quem mais está dentro do aplicativo? Rastreamento por terceiros e soberania de dados em aplicativos móveis governamentais brasileiros.* Orientador: Prof. Eduardo Arthur Izycki. O texto é em português.
 
-**Estado em 15/11/2026:** projeto de pesquisa escrito no modelo do IDP, slides da simulação prontos e leitura completa da revisão sistemática em andamento. O que falta até 03/12 está em [`tcc/conformidade.md`](tcc/conformidade.md).
+**Estado em 15/11/2026:** projeto de pesquisa escrito no modelo do IDP, com 71 estudos da revisão sistemática resumidos no referencial, e slides da simulação prontos. O que falta até 03/12 está em [`tcc/conformidade.md`](tcc/conformidade.md).
 
 ## Onde está cada coisa
 
@@ -29,7 +29,7 @@ Repositório do Trabalho de Conclusão de Curso em Ciência da Computação no I
 | Revisão sistemática | `scripts/revisao_triagem.py`: 17 buscas (Scopus, IEEE Xplore, BDTD, SBC OpenLib), deduplicação, triagem | 1.531 → 1.249 → 357 para leitura completa; 79 propostas (71 I, 8 E) até 13/11 |
 | Texto e apresentação | LaTeX (abnTeX2) no modelo do IDP; 14 slides no modelo do IDP | `tcc/latex/main.pdf`; `tcc/apresentacao/` |
 
-As classificações registradas, de aplicativos e de artigos, ainda serão conferidas pelo autor: a triagem por uma amostra cega de 125 registros, até 23/11; os aplicativos no início do Capstone II.
+As classificações registradas, de aplicativos e de artigos, serão conferidas pelo autor no início do Capstone II, junto com a leitura dos registros da revisão ainda em aberto.
 
 ## Scripts
 

@@ -391,7 +391,7 @@ taxas produzidas por detectores diferentes seria assumir o que a H4 testa.
 | QR2 | Tabela de prevalência por estudo, com população, fonte, detector e linha de base; quantos estudos têm linha de base |
 | QR3 | Taxas de inconsistência entre o declarado e o detectado, com o método de cada estudo |
 | QR4 | Tabela dos estudos de governo: países, número de aplicativos, método, principais achados, o que fica em aberto |
-| QR5 | Lista dos artigos da LGPD discutidos e dos critérios propostos, que alimenta a atividade de 17/11 a 23/11 do plano |
+| QR5 | Lista dos artigos da LGPD discutidos e dos critérios propostos, que alimenta a matriz de critérios da LGPD |
 
 O último produto é o confronto com a lacuna da Seção 1.2 do projeto: cada um
 dos pontos que ela afirma em aberto é confirmado ou corrigido, com os estudos
@@ -403,16 +403,13 @@ que sustentam a decisão.
 
 Situação em 13/11/2026: a F1 tem decisões registradas; a F2 tem **79 propostas em 357 registros: 71 I e 8 E**, ainda não conferidas pelo autor. Restam 278 decisões em aberto: 131 por acesso, duas por versão divergente, duas por dúvida de escopo e 143 T cujo tratamento será definido com o orientador. Foram obtidos 80 textos correspondentes. R0375 é a exclusão adicional por duplicidade comprovada em R0192, sem texto próprio obtido. Não houve contato com autores. Desde a versão 1.6, texto não obtido conta como não recuperado, sem exclusão (Seção 6). A revisão sistemática, a extração e a avaliação de qualidade permanecem em andamento. Ver `dados/revisao/LEIA-ME_leitura_F2_20261113.md` e o registro por ID.
 
-| Prazo previsto | Atividade | Condição |
-|---|---|---|
-| Até 23/11 | Conferência cega dos 125 registros (Seção 7.2) | Calcular κ só depois do preenchimento; examinar cada divergência |
-| Até 23/11 | Definir com o orientador o tratamento dos 143 T | Registrar a decisão e a justificativa |
-| 16/11 a 01/12 | Obter os textos pelo Portal de Periódicos da CAPES; conferir as 79 propostas; decidir os 4 casos pendentes; ler os demais; extração e qualidade | Não chamar proposta de inclusão final antes da conferência |
-| 25/11 a 02/12 | Bola de neve a partir dos incluídos; síntese por QR na Seção 2 do projeto; fluxograma PRISMA final | Explicitar no texto o que ficar pendente |
-| A combinar | Conferência de 20 registros pelo orientador | Opcional, conforme disponibilidade |
-| Até 03/12 | Entregar o projeto com o estado real da revisão | Não apresentar etapas futuras como concluídas |
+Para a entrega do projeto em 03/12, a síntese usa os 71 estudos selecionados até 13/11 (Seção 2.7 do projeto). O restante fica para o início do Capstone II:
 
-O prazo não dispensa a fundamentação e revisão bibliográfica exigidas pelo Art. 25, §3º. O orientador deverá avaliar a suficiência da síntese para a entrega; o cronograma não equivale a dispensa institucional.
+| Prazo previsto | Atividade |
+|---|---|
+| Fevereiro de 2027 | Buscar pelo Portal de Periódicos da CAPES os textos não obtidos e ler os 278 registros em aberto, inclusive os 143 T |
+| Fevereiro de 2027 | Conferência cega dos 125 registros (Seção 7.2) |
+| Fevereiro de 2027 | Bola de neve a partir dos estudos selecionados e atualização da síntese e do fluxograma PRISMA |
 
 ---
 

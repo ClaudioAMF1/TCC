@@ -2,7 +2,7 @@
 
 Gerado em 15/11/2026 a partir de `dados/revisao/leitura_F2_registro_20261113.csv` e da aba Leitura de `dados/revisao/leitura_F2_para_preencher.xlsx`.
 
-São as **71 propostas de inclusão** da rodada de 13/11, agrupadas pela questão de pesquisa (QR) provável. **Ainda não foram conferidas pelo autor.** Ao conferir cada uma na planilha, corrija aqui a QR ou a contribuição, se for o caso. Os estudos confirmados alimentam a síntese da Seção 2 do projeto, uma subseção ou um conjunto de parágrafos por QR, e um quadro de estudos incluídos.
+São as **71 propostas de inclusão** da rodada de 13/11, agrupadas pela questão de pesquisa (QR) provável. A Seção 2.7 do projeto já resume estes estudos, com um quadro e um parágrafo por QR. Use esta lista para escolher e ler os principais de cada grupo e ajustar aquele texto com as suas palavras.
 
 | QR | Propostas |
 |---|---|

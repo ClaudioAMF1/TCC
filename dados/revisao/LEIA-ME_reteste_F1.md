@@ -11,7 +11,7 @@ A classificação F1 registrada para os 1.249 registros não foi feita inteirame
 1. Abra **reteste_F1_20261116.xlsx**, aba **Como decidir**. Leia as regras e preencha a data em B6.
 2. Na aba **Reteste**, leia os 125 registros em ordem e preencha só as células amarelas: decisão, critério e observação. Não consulte as decisões registradas em outras planilhas.
 3. Decisões: **I** segue para o texto completo; **T** (dúvida) também segue; **E** exclui, com o código do critério; **R** é revisão da literatura, reservada para a bola de neve.
-4. Salve com o mesmo nome. Não há intervalo mínimo: faça assim que puder, até 23/11.
+4. Salve com o mesmo nome. Não há intervalo mínimo. A conferência está prevista para o início do Capstone II e não é exigida para a entrega de 03/12.
 
 ## Depois de preencher
 

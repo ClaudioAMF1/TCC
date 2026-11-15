@@ -20,11 +20,11 @@ A entrega do Capstone I é um **projeto de pesquisa**: introdução, referencial
 
 ## Compilação
 
-Use **XeLaTeX**, com `main.tex`, `referencias.bib` e `logo-idp.png` na mesma pasta.
+No Overleaf, envie `main.tex`, `referencias.bib` e `logo-idp.png` para o mesmo projeto e clique em Recompile. O arquivo funciona com qualquer compilador do Overleaf:
 
-- **Overleaf:** envie os três arquivos e escolha Menu > Compiler > XeLaTeX.
-- **No computador:** `xelatex main.tex`, `bibtex main`, `xelatex main.tex`, `xelatex main.tex`.
+- **XeLaTeX (recomendado):** Menu > Compiler > XeLaTeX. Usa Times New Roman se o ambiente tiver essa fonte e, se não tiver, a TeX Gyre Termes, uma Times que vem com o TeX Live.
+- **pdfLaTeX:** usa a Times do próprio LaTeX.
 
-O texto usa a fonte Times New Roman, como pede o modelo do IDP. Se o ambiente não a tiver, troque a linha `\setmainfont{Times New Roman}` por `\setmainfont{TeX Gyre Termes}`, uma Times equivalente que vem com o TeX Live. O fluxograma PRISMA é desenhado com TikZ, que também vem com o TeX Live.
+No computador: `xelatex main.tex`, `bibtex main`, `xelatex main.tex`, `xelatex main.tex`.
 
 Depois de qualquer mudança, gere o PDF de novo e substitua `latex/main.pdf`.

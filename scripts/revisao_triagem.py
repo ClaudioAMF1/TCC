@@ -605,10 +605,27 @@ def binaria(d: str) -> str:
     return "passa" if d in ("I", "T") else "fica"
 
 
+def ler_conferencia(caminho: Path):
+    """CSV de conferência ou o XLSX do reteste (aba Reteste, colunas id e
+    decisao). O XLSX pede openpyxl."""
+    if Path(caminho).suffix.lower() != ".xlsx":
+        return ler_planilha(caminho)
+    try:
+        import openpyxl
+    except ImportError:
+        sys.exit("Para ler .xlsx: pip install openpyxl (ou salve como CSV).")
+    wb = openpyxl.load_workbook(caminho, read_only=True, data_only=True)
+    ws = wb["Reteste"] if "Reteste" in wb.sheetnames else wb.worksheets[0]
+    linhas = ws.iter_rows(values_only=True)
+    cab = [str(c or "").strip() for c in next(linhas)]
+    return [{k: str(v if v is not None else "").strip()
+             for k, v in zip(cab, r) if k} for r in linhas]
+
+
 def concordancia(planilha: Path, conferencia: Path, fase: str):
     orig = {r["id"]: r for r in ler_planilha(planilha)}
     pares, diverg = [], []
-    for c in ler_planilha(conferencia):
+    for c in ler_conferencia(conferencia):
         o = orig.get(c.get("id"))
         a = decisao(o.get(f"decisao_{fase}")) if o else ""
         b = decisao(c.get("decisao"))
@@ -628,6 +645,13 @@ def concordancia(planilha: Path, conferencia: Path, fase: str):
     print(f"  κ de Cohen, mesma divisão:                   {kb:.3f}")
     print(f"  κ de Cohen, I/E/T/R separados:               {k3:.3f}")
     print("  Critério do protocolo: κ ≥ 0,6 na divisão passa/fica.")
+    cats = ["I", "T", "E", "R"]
+    print("\n  Matriz (linhas: triagem registrada; colunas: conferência)")
+    print("         " + "".join(f"{c:>6}" for c in cats))
+    for a in cats:
+        print(f"    {a}    " + "".join(
+            f"{sum(1 for x, y in pares if x == a and y == b):>6}"
+            for b in cats))
     if diverg:
         print("\n  Divergências:")
         for i, a, b, t in diverg:

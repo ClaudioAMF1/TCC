@@ -1,6 +1,6 @@
 # Protocolo da revisão sistemática
 
-**Versão 1.6, 15/11/2026.** Segue as diretrizes de Kitchenham e Charters (2007)
+**Versão 1.7, 15/11/2026.** Segue as diretrizes de Kitchenham e Charters (2007)
 para revisões sistemáticas em engenharia de software, com bola de neve conforme
 Wohlin (2014) e relato do fluxo conforme o PRISMA 2020 (PAGE et al., 2021).
 
@@ -300,20 +300,18 @@ fluxograma do PRISMA.
 
 ### 7.2 Confiabilidade com um revisor
 
-A seleção tem um revisor responsável. O reteste examinará a estabilidade das decisões depois de um intervalo; a conferência do orientador, se ele aceitar, oferecerá uma segunda avaliação. São etapas previstas, ainda sem resultados.
+A seleção tem um revisor responsável. Como a classificação F1 registrada não foi produzida inteiramente pelo autor (Seção 7.3), a consistência da triagem é examinada por uma **conferência cega por amostra**, e não por teste e reteste.
 
-1. **Teste e reteste.** Refazer sem consultar decisões anteriores uma amostra aleatória de 10% dos registros, no mínimo 30, pelo menos sete dias depois da primeira avaliação pessoal. Para 1.249 registros, o arredondamento para cima resulta em **125**. A amostra foi preparada em 13/11/2026 com semente **20261116**, usando `random.Random(20261116).sample` sobre a ordem do CSV e ordenação dos sorteados por `id`. O arquivo `dados/revisao/reteste_F1_20261116.xlsx` contém apenas os dados bibliográficos e campos de resposta vazios. O manifesto registra a versão da fonte, o algoritmo e os identificadores.
+1. **Conferência cega.** O autor classifica, sem consultar as decisões registradas, uma amostra aleatória de 10% dos registros, no mínimo 30. Para 1.249 registros, o arredondamento para cima resulta em **125**. A amostra foi preparada em 13/11/2026 com semente **20261116**, usando `random.Random(20261116).sample` sobre a ordem do CSV e ordenação dos sorteados por `id`. O arquivo `dados/revisao/reteste_F1_20261116.xlsx` (o nome foi mantido para não romper o manifesto) contém apenas os dados bibliográficos e campos de resposta vazios. O manifesto registra a versão da fonte, o algoritmo e os identificadores. Não há intervalo mínimo: a conferência pode ser feita assim que possível.
 2. **Conferência do orientador.** Se houver disponibilidade, decidir os 20 registros de `dados/revisao/conferencia_orientador_20261110.xlsx`, sem consultar as respostas do autor. Se não ocorrer, registrar essa limitação; não apresentar a etapa como executada.
 
-A data de 16/11 é uma previsão, não comprovação de execução. Preencher as datas reais da primeira avaliação e do reteste. Sem uma primeira avaliação pessoal datada e preservada, comparar com a versão existente mede diferença entre versões, não estabilidade intra-avaliador. Não reabrir a primeira decisão durante o reteste.
+Após o preenchimento, comparar com `decisao_f1` por `id` (`python3 scripts/revisao_triagem.py concordancia dados/revisao/reteste_F1_20261116.xlsx`) e reportar matriz de contingência, acordo observado, κ de Cohen (COHEN, 1960), tamanho da amostra e divergências. A comparação principal será **I/T versus E/R**, isto é, segue ou não para F2 como estudo primário. Também serão descritas as quatro categorias. Cada divergência é examinada; a decisão final fica registrada com a decisão anterior, a nova e o motivo. Se κ < 0,6, uma segunda amostra de 125 registros, sorteada com nova semente, será conferida da mesma forma, e a limitação será reportada. O limiar é uma regra operacional do protocolo, não garantia de validade. Se κ for indefinido por ausência de variação, reportar isso, sem atribuir zero ou um arbitrariamente.
 
-Após o preenchimento, comparar por `id` e reportar matriz de contingência, acordo observado, κ de Cohen (COHEN, 1960), tamanho da amostra e divergências. A comparação principal será **I/T versus E/R**, isto é, segue ou não para F2 como estudo primário. Também serão descritas as quatro categorias. Se κ < 0,6, discutir divergências, esclarecer o critério e reexaminar os registros afetados, preservando as decisões anteriores ao consenso. O limiar é uma regra operacional do protocolo, não garantia de validade. Se κ for indefinido por ausência de variação, reportar isso, sem atribuir zero ou um arbitrariamente.
+### 7.3 Versões das decisões
 
-### 7.3 Versões das decisões e validação pessoal
+Os arquivos preservam a classificação inicial sugerida e a versão posteriormente revista na conferência das planilhas. A versão consultada contém decisões para os 1.249 registros. A conferência cega da Seção 7.2 estima o quanto essas decisões coincidem com as do autor.
 
-Os arquivos preservam a classificação inicial e a versão posteriormente revista. A versão consultada contém decisões para os 1.249 registros, mas a validação pessoal do autor ainda está pendente. Seu escopo será combinado com o orientador.
-
-As alterações devem manter identificador, data, decisão anterior, nova decisão, critério e motivo. Uma concordância entre versões não equivale à concordância entre avaliadores independentes. O reteste e a conferência do orientador usam arquivos sem respostas anteriores. A primeira avaliação pessoal deverá ser preservada separadamente antes do reteste, para não substituir a referência pela decisão de consenso.
+As alterações devem manter identificador, data, decisão anterior, nova decisão, critério e motivo. Uma concordância entre versões não equivale à concordância entre avaliadores independentes.
 
 ### 7.4 Bola de neve
 
@@ -403,15 +401,15 @@ que sustentam a decisão.
 
 ## 11 Cronograma das etapas pendentes
 
-Situação em 13/11/2026: a F1 tem decisões registradas; a F2 tem **79 propostas em 357 registros: 71 I e 8 E**, sujeitas à validação pessoal. Restam 278 decisões em aberto: 131 por acesso, duas por versão divergente, duas por dúvida de escopo e 143 T aguardando definição do orientador. Foram obtidos 80 textos correspondentes. R0375 é a exclusão adicional por duplicidade comprovada em R0192, sem texto próprio obtido. Não houve contato com autores. Desde a versão 1.6, texto não obtido conta como não recuperado, sem exclusão (Seção 6). A revisão sistemática, a extração e a avaliação de qualidade permanecem em andamento. Ver `dados/revisao/LEIA-ME_leitura_F2_20261113.md` e o registro por ID.
+Situação em 13/11/2026: a F1 tem decisões registradas; a F2 tem **79 propostas em 357 registros: 71 I e 8 E**, ainda não conferidas pelo autor. Restam 278 decisões em aberto: 131 por acesso, duas por versão divergente, duas por dúvida de escopo e 143 T cujo tratamento será definido com o orientador. Foram obtidos 80 textos correspondentes. R0375 é a exclusão adicional por duplicidade comprovada em R0192, sem texto próprio obtido. Não houve contato com autores. Desde a versão 1.6, texto não obtido conta como não recuperado, sem exclusão (Seção 6). A revisão sistemática, a extração e a avaliação de qualidade permanecem em andamento. Ver `dados/revisao/LEIA-ME_leitura_F2_20261113.md` e o registro por ID.
 
 | Prazo previsto | Atividade | Condição |
 |---|---|---|
-| Até 17/11 | Encontro de orientação e definição do escopo da validação pessoal | Registrar a resposta e a ficha do encontro |
-| 16/11 ou data posterior | Reteste cego dos 125 registros | Somente após sete dias da primeira avaliação pessoal; calcular κ depois do preenchimento |
-| Até 23/11 | Priorizar a leitura dos 214 registros I, extrair evidências e ampliar o referencial | Registrar I/E em F2 e não chamar candidato de incluído final |
-| Até 02/12 | Prosseguir com os 143 T, a bola de neve e a síntese | Confirmar volume e sequência com o orientador; explicitar qualquer etapa ainda pendente |
-| Encontro a combinar | Conferência de 20 registros pelo orientador | Opcional, conforme disponibilidade |
+| Até 23/11 | Conferência cega dos 125 registros (Seção 7.2) | Calcular κ só depois do preenchimento; examinar cada divergência |
+| Até 23/11 | Definir com o orientador o tratamento dos 143 T | Registrar a decisão e a justificativa |
+| 16/11 a 01/12 | Obter os textos pelo Portal de Periódicos da CAPES; conferir as 79 propostas; decidir os 4 casos pendentes; ler os demais; extração e qualidade | Não chamar proposta de inclusão final antes da conferência |
+| 25/11 a 02/12 | Bola de neve a partir dos incluídos; síntese por QR na Seção 2 do projeto; fluxograma PRISMA final | Explicitar no texto o que ficar pendente |
+| A combinar | Conferência de 20 registros pelo orientador | Opcional, conforme disponibilidade |
 | Até 03/12 | Entregar o projeto com o estado real da revisão | Não apresentar etapas futuras como concluídas |
 
 O prazo não dispensa a fundamentação e revisão bibliográfica exigidas pelo Art. 25, §3º. O orientador deverá avaliar a suficiência da síntese para a entrega; o cronograma não equivale a dispensa institucional.
@@ -469,6 +467,7 @@ O prazo não dispensa a fundamentação e revisão bibliográfica exigidas pelo 
 | 13/11/2026 | 1.4 | Reteste cego de 125 preparado, datas condicionadas ao intervalo, comparação I/T × E/R, F2 e cronograma atualizados | Registrar a preparação sem afirmar execução ou concordância ainda não medidas |
 | 13/11/2026 | 1.5 | Rodada documental F2: 71 propostas I, 8 E e registro de acesso e evidências; 143 T preservados | Distinguir propostas da validação pessoal, conferir versões e evitar exclusão por falha de acesso sem cumprir EC7 |
 | 15/11/2026 | 1.6 | EC7 retirado: texto não obtido pelos links, pela CAPES (CAFe) ou por cópias dos autores conta como "não recuperado" no PRISMA, sem pedido ao autor | O PRISMA 2020 já tem essa categoria; a espera de sete dias por resposta não cabe no prazo de 03/12. Nenhum registro havia sido excluído por EC7 |
+| 15/11/2026 | 1.7 | O reteste vira conferência cega por amostra, sem intervalo de sete dias e sem conferência integral prévia; κ < 0,6 leva a uma segunda amostra; Seções 7.2, 7.3, 11, 12.5 e 13 atualizadas | A classificação F1 registrada não foi produzida inteiramente pelo autor; a comparação útil é entre a avaliação cega do autor e essa classificação, e o prazo de 03/12 não comporta a conferência integral dos 1.249 registros |
 
 ### 12.4 Triagem por título e resumo (F1)
 
@@ -484,15 +483,16 @@ Decisões registradas em 10/11/2026, ainda sujeitas à validação pessoal, sobr
 
 Entre as versões armazenadas, 148 decisões mudaram (11,8%), 125 de E para T; o κ binário entre versões é 0,712, conforme o cálculo existente em `scripts/revisao_triagem.py sugestao`. Esse resultado descreve as versões e não substitui o reteste pessoal nem a conferência do orientador.
 
-### 12.5 Preparação do reteste
+### 12.5 Preparação da conferência cega
 
-Em 13/11/2026, foram produzidos o XLSX, o CSV cego e o manifesto de `reteste_F1_20261116`. Fonte: commit `236470418f16b979606bb115375fdab03fcc0039`, com 1.249 registros. Os 125 campos de decisão estão vazios. κ do reteste: **não calculado**. A preparação do reteste não altera as decisões da F1; o preenchimento parcial da F2 está documentado separadamente nesta versão.
+Em 13/11/2026, foram produzidos o XLSX, o CSV cego e o manifesto de `reteste_F1_20261116`, preparados como reteste e usados, desde a versão 1.7, como conferência cega por amostra (Seção 7.2). Fonte: commit `236470418f16b979606bb115375fdab03fcc0039`, com 1.249 registros. Os 125 campos de decisão estão vazios. κ: **não calculado**. A preparação não altera as decisões da F1.
 
 ---
 
 ## 13 Ameaças à validade da revisão
 
-- **Um revisor só.** Mitigação prevista pelo reteste e, se houver disponibilidade, pela conferência do orientador (Seção 7.2). Ainda não há κ dessas etapas.
+- **Um revisor só.** Mitigação pela conferência cega por amostra e, se houver disponibilidade, pela conferência do orientador (Seção 7.2). Ainda não há κ dessas etapas.
+- **Textos não recuperados.** Estudos sem texto completo acessível ficam fora da síntese; são listados por `id` e contados no fluxograma do PRISMA.
 - **Cobertura das bases.** NDSS, USENIX Security, SOUPS e PoPETs podem não estar
   indexados por completo no Scopus, na ACM e no IEEE. O conjunto de controle
   mede isso (C02, C04, C07) e a bola de neve compensa.

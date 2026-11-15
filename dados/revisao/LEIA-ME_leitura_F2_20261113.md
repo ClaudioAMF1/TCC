@@ -58,4 +58,4 @@ Em R0229, a Seção 5 informa 611/1.647 (37,1%) ocorrências de SDKs atribuídas
 - `leitura_F2_acesso_20261113.json`: tentativas de obtenção, URLs, falhas e identificação das cópias.
 - `leitura_F2_manifesto_20261113.json`: escopo, contagens e hashes da planilha.
 
-O próximo passo é conferir as propostas, resolver os quatro casos e tentar os textos restantes pela CAPES/CAFe ou por cópias autorizadas. Depois, preencher a extração e a avaliação de qualidade dos incluídos e ampliar a síntese bibliográfica. PDFs e textos integrais não são redistribuídos nestes arquivos. O reteste da F1 continua separado e sem respostas preenchidas.
+O próximo passo é conferir as propostas, resolver os quatro casos e tentar os textos restantes pela CAPES/CAFe ou por cópias autorizadas. Depois, preencher a extração e a avaliação de qualidade dos incluídos e ampliar a síntese bibliográfica. PDFs e textos integrais não são redistribuídos nestes arquivos. A conferência cega da F1 (antigo reteste) continua separada e sem respostas preenchidas.

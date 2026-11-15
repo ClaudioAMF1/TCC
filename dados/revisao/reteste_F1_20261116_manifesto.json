@@ -2,7 +2,7 @@
   "preparado_em": "2026-11-13",
   "data_prevista": "2026-11-16",
   "status": "preparado, nao realizado",
-  "regra_data": "pelo menos 7 dias depois da primeira avaliacao pessoal concluida",
+  "regra_data": "sem intervalo minimo desde 15/11/2026 (protocolo 1.7); antes: 7 dias apos a primeira avaliacao pessoal",
   "fonte": "dados/revisao/triagem_20261106.csv",
   "commit_fonte": "236470418f16b979606bb115375fdab03fcc0039",
   "sha256_fonte": "3523e2ecfb84bd1958652e57fe7e5bc61a5609c20774469fe1ed055bc87d3b24",
@@ -151,5 +151,6 @@
     "observacao"
   ],
   "decisoes_previas_incluidas": false,
-  "kappa": null
+  "kappa": null,
+  "uso": "conferencia cega por amostra, comparada com decisao_f1 da fonte (protocolo 1.7, Secao 7.2)"
 }

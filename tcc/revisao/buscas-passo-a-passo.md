@@ -175,7 +175,7 @@ python3 scripts/revisao_triagem.py prisma
 
 ---
 
-## Parte 5. Texto completo, F2 (10/11 a 13/11)
+## Parte 5. Texto completo, F2 (até 01/12)
 
 Use a planilha `dados/revisao/leitura_F2_para_preencher.xlsx`, montada em
 10/11 com os 357 registros que tiveram `I` ou `T` na F1. A aba "Como ler"
@@ -195,7 +195,7 @@ não vão para o repositório.
 
 ---
 
-## Parte 6. Bola de neve, F3 (13/11 a 15/11)
+## Parte 6. Bola de neve, F3 (25/11 a 02/12)
 
 Para cada incluído na F2:
 
@@ -216,29 +216,21 @@ como duplicata, e o que é novo entra com id novo para passar pela F1 e pela F2.
 
 ## Parte 7. Conferências da triagem
 
-**Reteste (16/11, uma semana depois da F1):**
+**Conferência cega (até 23/11).** A amostra de 125 registros já foi sorteada
+(semente 20261116). Siga `dados/revisao/LEIA-ME_reteste_F1.md`: preencha
+`dados/revisao/reteste_F1_20261116.xlsx` sem consultar as decisões antigas e,
+depois, rode:
 
 ```bash
-python3 scripts/revisao_triagem.py amostra --nome reteste
+python3 scripts/revisao_triagem.py concordancia dados/revisao/reteste_F1_20261116.xlsx
 ```
 
-Abra o arquivo `dados/revisao/conferencia_reteste_AAAAMMDD.csv`, que vem sem as
-decisões antigas, e decida de novo cada linha na coluna `decisao`. Depois:
+**Orientador (opcional).** A amostra de 20 registros está em
+`dados/revisao/conferencia_orientador_20261110.xlsx`. Se ele aceitar, rode o
+`concordancia` com a planilha preenchida.
 
-```bash
-python3 scripts/revisao_triagem.py concordancia dados/revisao/conferencia_reteste_AAAAMMDD.csv
-```
-
-**Orientador (no 2º ou 3º encontro):**
-
-```bash
-python3 scripts/revisao_triagem.py amostra --nome orientador --n 20 --semente 7
-```
-
-Leve a planilha para ele decidir e rode o `concordancia` com ela.
-
-O protocolo pede κ ≥ 0,6 nas duas. Abaixo disso, me mande as divergências que
-o script lista.
+O protocolo pede κ ≥ 0,6. Abaixo disso, uma segunda amostra de 125 é conferida
+(protocolo, Seção 7.2).
 
 ---
 

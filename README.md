@@ -1,273 +1,71 @@
 # TCC — Projeto Capstone I (IDP, 2026.2)
 
-Repositório de trabalho do meu Trabalho de Conclusão de Curso em Ciência da Computação
-no IDP. Reúne o material da disciplina, a busca pelo tema, os testes de viabilidade que
-foram feitos e os scripts que os produziram.
+Repositório do Trabalho de Conclusão de Curso em Ciência da Computação no IDP.
 
-**Estado atual: dois finalistas.** Seis temas foram testados empiricamente antes de
-qualquer um virar desenho. Três caíram com evidência, um ficou inconclusivo, e **dois
-passaram**:
+**Tema:** *Quem mais está dentro do aplicativo? Rastreamento por terceiros e soberania de dados em aplicativos móveis governamentais brasileiros.* Orientador: Prof. Eduardo Arthur Izycki. O texto é em português.
 
-| | Tema | Situação |
+**Estado em 15/11/2026:** projeto de pesquisa escrito no modelo do IDP, slides da simulação prontos e leitura completa da revisão sistemática em andamento. O que falta até 03/12 está em [`tcc/conformidade.md`](tcc/conformidade.md).
+
+## Onde está cada coisa
+
+| Pasta | Conteúdo |
+|---|---|
+| [`tcc/`](tcc/README.md) | **O projeto** (LaTeX e PDF), a apresentação, o protocolo da revisão, os critérios da LGPD e a pauta do orientador |
+| `dados/` | Corpus, controle, fichas e planilhas da revisão sistemática. APKs, PDFs de artigos e listas grandes ficam fora (ver `.gitignore`) |
+| `scripts/` | Coleta, piloto, revisão e testes de viabilidade |
+| `disciplina/` | Plano de ensino, regulamento, aulas, listas, normas ABNT e modelos do IDP |
+| `seminario/` | Seminário de análise de artigo (AV1), concluído |
+| `temas/`, `desenhos/`, `descartados/` | Histórico da escolha do tema: catálogo, testes de viabilidade e propostas |
+
+## O trabalho, etapa por etapa
+
+| Etapa | Como foi feita | Resultado |
 |---|---|---|
-| **N3** | Rastreamento por terceiros em apps móveis governamentais | ✅ 4 portas abertas · AndroZoo concedido · achado próprio |
-| **S3** | Falsificação de e-mail em domínios públicos | ✅ 4 portas abertas · 3 achados · hipótese principal caiu |
+| Escolha do tema | Seis temas testados com scripts antes do desenho | N3 (este tema) escolhido; ver `temas/` e `descartados/` |
+| Corpus | `scripts/teste_viabilidade_n3.py`: 21 termos na Google Play e catálogo de cada órgão (setembro); `scripts/fichas_publicadores.py`: nome jurídico do publicador | 396 candidatos; 376 oficiais na classificação preliminar (85 federais, 199 estaduais, 92 municipais); 100 com dado sensível |
+| Controle comercial | `scripts/teste_viabilidade_n3_robusto.py` e `scripts/ampliar_controle.py` (04/11) | 190 → 252 aplicativos |
+| Pacotes | `scripts/piloto_androzoo.py` (AndroZoo, acesso concedido em 17/09) | Acervo cobre 23,2% do governo e 84,2% do controle |
+| Piloto dos detectores | 20 APKs; A = Exodus por código, B = Exodus por domínio, C = Disconnect | 75%, 95% e 80%; κ 0,52, ou 0,69 sem os falsos positivos de B |
+| Revisão sistemática | `scripts/revisao_triagem.py`: 17 buscas (Scopus, IEEE Xplore, BDTD, SBC OpenLib), deduplicação, triagem | 1.531 → 1.249 → 357 para leitura completa; 79 propostas (71 I, 8 E) até 13/11 |
+| Texto e apresentação | LaTeX (abnTeX2) no modelo do IDP; 14 slides no modelo do IDP | `tcc/latex/main.pdf`; `tcc/apresentacao/` |
 
-A proposta formal do N3 está em `desenhos/N3-proposta-formal.md`; o registro do S3 em
-`desenhos/S3-falsificacao-email.md`. O seminário de 29/09 foi preparado **com o N3**:
-ver `seminario/README.md`.
+As classificações registradas, de aplicativos e de artigos, ainda serão conferidas pelo autor: a triagem por uma amostra cega de 125 registros, até 23/11; os aplicativos no início do Capstone II.
 
----
+## Scripts
 
-## 1. Como o repositório está organizado
-
-```
-disciplina/     Plano de ensino, regulamento do TCC, slides das aulas e listas
-seminario/      Seminário de análise de artigo (29/09 e 01/10) e material fornecido
-temas/          A busca pelo tema: catálogo, estado da arte, avaliação da área
-desenhos/       Desenhos experimentais completos dos candidatos que avançaram
-tcc/            O texto do TCC I e o passo a passo do piloto
-descartados/    Temas testados e rejeitados, com a evidência que os derrubou
-scripts/        Ferramentas escritas para testar a viabilidade de cada tema
-dados/          Coletas. Versionados só planilhas e relatórios pequenos (repositório privado); APKs e listas grandes ficam fora (ver .gitignore)
-```
-
-### `disciplina/`
-| Arquivo | Para quê |
-|---|---|
-| `Plano de Ensino - Projeto Capstone I.pdf` | Cronograma, avaliação, prazos |
-| `Regulamento TCC CIC v.2026-05 -- VIGENTE.pdf` | Regras formais: modalidades, orientação, banca |
-| `aulas/` | Slides 01 a 16 — metodologia, maturidade em pesquisa, questões de pesquisa, análise crítica de propostas, escrita da monografia, artigo científico (15 e 16). As aulas 09 e 10 não estão aqui |
-| `listas/` | Listas de exercícios da disciplina e guias de estudo correspondentes |
-| `normas/` | ABNT NBR 14724:2024 (trabalhos acadêmicos), NBR 6023:2018 (referências), NBR 6022:2018 (artigo em periódico) e o guia de referências do IEEE. **As normas da ABNT são exemplares licenciados, com dados de quem comprou: só podem ficar aqui enquanto o repositório for privado** |
-| `modelos/` | Modelo de slides do IDP, para a simulação e a defesa |
-
-### `seminario/`
-Atividade de 29/09 e 01/10, 15 minutos, **4 dos 6 pontos da AV1**. Artigo: Nguyen,
-Backes e Stock, *Freely Given Consent?*, ACM CCS 2022. **A apresentação está na
-versão final.** O índice da pasta é o [`seminario/README.md`](seminario/README.md).
-
-| Arquivo | Conteúdo |
-|---|---|
-| `apresentacao/` | **A versão final** — 23 slides + 2 de apoio, `.pptx` e `.pdf`, e o relatório da revisão |
-| `roteiro.md` e `roteiro.pdf` | **O que falar em cada slide**, com o tempo e o relógio acumulado |
-| `plano-de-execucao.md` | O que falta: testar no aplicativo, ensaiar, as perguntas prováveis |
-| `enunciado-da-atividade.md` | O enunciado transcrito e onde cada exigência está atendida |
-| `protocolo-de-busca.md` | Itens 1 e 2: as três buscas, o funil, os finalistas, as métricas com data |
-| `analise-da-estrutura.md` | Item 3: os sete blocos, com recortes do artigo conferidos no PDF |
-| `pesquisa/` | **Os prints**: uma pasta por busca e uma de métricas, com nomes que dizem o que cada um mostra |
-| `material-fornecido/` | PDFs disponibilizados pela professora |
-
-### `temas/`
-| Arquivo | Conteúdo |
-|---|---|
-| `01-catalogo-inicial.md` | Primeiro leque de 9 temas, com as restrições que o regulamento impõe |
-| `02-estado-da-arte.md` | Checagem de literatura de cada tema: o que já foi feito, onde há espaço, veredito |
-| `03-temas-cyber.md` | Temas em cibersegurança compatíveis com o orientador pretendido |
-| `04-avaliacao-da-area.md` | Avaliação honesta da área como escolha de TCC + temas de menor custo de tempo |
-| `05-teste-genealogia-malware.md` | Teste de viabilidade da genealogia do malware bancário brasileiro e por que ele ficou inconclusivo |
-| `06-temas-de-pergunta-simples.md` | Quatro temas cuja pergunta cabe numa frase, com custo, armadilha e teste de viabilidade de cada um |
-
-### `desenhos/`
-Desenhos experimentais completos — problema de pesquisa nas três partes exigidas pela
-disciplina, hipóteses falsificáveis, corpus, instrumentos, plano estatístico, ética,
-ameaças à validade e divisão entre Capstone I e II.
-
-| Arquivo | Tema | Situação |
-|---|---|---|
-| `N3-proposta-formal.md` | **Proposta que vai ao orientador** — quadrante, hipóteses, método, ética, pendências formais | ⭐ **finalista** |
-| `N3-apps-governamentais.md` | Desenho experimental detalhado do mesmo tema | ✅ corpus verificado (396 apps) |
-| `N3-acesso-androzoo.md` | Solicitação de acesso ao AndroZoo, obrigações de uso e citação | ✅ concedido 17/09 |
-| `S3-falsificacao-email.md` | **Segundo finalista** — SPF/DKIM/DMARC no setor público, os três achados e a hipótese que caiu | ⭐ **finalista** |
-| `arquivados/T1-seguranca-codigo-llm.md` | Segurança do código gerado por LLM | ⏸️ forte, sem encaixe com o orientador |
-| `arquivados/T3-lgpd-sites-saude.md` | LGPD Art. 11 em sites de saúde | ⏸️ viável, pouco técnico |
-
-### `tcc/`
-O texto do Projeto Capstone I: resumo, abstract, introdução, metodologia das etapas
-executadas e plano de atividades. Índice e mudanças em relação à proposta em
-[`tcc/README.md`](tcc/README.md).
-
-| Arquivo | Conteúdo |
-|---|---|
-| `tcc1-projeto-de-pesquisa.md` | **O texto**, com referências conferidas |
-| `piloto-passo-a-passo.md` | Como rodar o piloto do AndroZoo no seu computador, comando por comando |
-| `revisao/protocolo-revisao-sistematica.md` | **Protocolo da revisão sistemática** (Kitchenham e Charters): cinco questões, 22 buscas, conjunto de controle de 11 estudos, critérios, qualidade, extração |
-| `revisao/buscas-passo-a-passo.md` | Como rodar cada busca, exportar e fazer a triagem com o script |
-
-### `descartados/`
-| Arquivo | Por que caiu |
-|---|---|
-| `N1-infraestrutura-critica.md` | A variável independente (o setor do operador) é inobservável nos dados |
-
----
-
-## 2. Restrições que o regulamento impõe
-
-Extraídas do `disciplina/Regulamento TCC CIC v.2026-05`:
-
-- Trabalho **individual** (Art. 6º).
-- Texto final em inglês (Art. 32, §3º), salvo anuência da Coordenação com endosso do
-  orientador (§4º). **O TCC I está sendo escrito em português.**
-- Modalidade *artigo científico* exige **aceite em periódico Qualis ≥ B2** para aprovar em
-  Capstone II (Art. 29, §1º) — risco alto, fora do controle do aluno.
-- Orientador precisa de **titulação stricto sensu em tecnologia ou engenharias** (Art. 13, §1º)
-  e pode ter no máximo **3 orientandos novos por semestre** (Art. 13, §6º).
-- **5 encontros obrigatórios** com o orientador no 2º bimestre, com ficha assinada
-  (Art. 19, II e Art. 24) — requisito de aprovação, reprova por si só.
-- Primeiro critério da banca: **quadrante tema–problema–hipótese–marco teórico** (Art. 31, I).
-
-E das aulas 04 a 08:
-- O objetivo deve usar verbo **verificável** — *medir*, *comparar*, *demonstrar*. Os verbos
-  *propor*, *estudar* e *apresentar* são apontados como inadequados.
-- **"Evite o fundamento vazio"**: justificar um tema apenas pela ausência de estudo anterior
-  não basta. É preciso mostrar o que outros fizeram e no que o seu difere.
-- Tema interdisciplinar custa **três revisões bibliográficas**, não uma.
-
----
-
-## 3. O que já foi testado
-
-Cada tema candidato passou por um teste de viabilidade **antes** de virar desenho
-experimental. Os resultados:
-
-| Tema | Teste | Resultado |
-|---|---|---|
-| **N1** — ICS exposta no Brasil | Contagem e facetas no Shodan | ❌ **Descartado.** Os mesmos hosts respondem em Modbus, IEC-104 e EtherNet/IP ao mesmo tempo — comportamento de honeypot e de nuvem, não de equipamento industrial. O conjunto confirmado está atrás de provedores de acesso, ocultando o operador. |
-| **CT** — abuso de marca em Certificate Transparency | 20 mil entradas de log, casamento por token | ❌ **Descartado.** Zero imitações reais. Phishing moderno raramente põe a marca no domínio, o que impõe teto de recall por construção. |
-| **N3** — apps móveis governamentais | Busca e expansão por catálogo na Play Store | ✅ **Confirmado.** 396 aplicativos de 71 publicadores públicos distintos, três esferas representadas, publicador identificado na origem. |
-| **N3** — segunda rodada, por hipótese | Seis portas medidas antes de baixar qualquer APK | ✅ **As quatro hipóteses têm instrumento.** Menor célula de esfera 35; 152 apps com dado do Art. 11; 92,4% do corpus dentro da amplitude do controle; 81,6% das políticas de privacidade acessíveis; menor diferença detectável entre 6,0 e 12,3 p.p., conforme a taxa de base. E um achado: **0 de 396 apps de governo exibem anúncio, contra 33,2% do controle comercial.** |
-| **Genealogia do malware bancário BR** | imphash de 1.764 amostras brasileiras × 2.104 de controle, no MalwareBazaar | ⚠️ **Inconclusivo.** O rótulo de família marca a campanha, não o payload: 85% do acervo brasileiro são containers (zip/iso/lnk/msi), onde imphash não existe. Testar de verdade exigiria desempacotar malware vivo em VM isolada. Detalhes em `temas/05-teste-genealogia-malware.md`. |
-| **S3** — falsificação de e-mail no setor público | SPF, DKIM, DMARC, MX e NS de 121 domínios públicos | ✅ **Confirmado, com ressalva.** 81,8% têm DMARC, mas só **18,2% recusam** a mensagem falsificada — adotaram e pararam antes de proteger. O estadual é o pior estrato. E **45% da amostra tem o correio institucional na Microsoft ou no Google**. A hipótese de herança por fornecedor **não sobreviveu** ao corte de circularidade. Detalhes em `desenhos/S3-falsificacao-email.md`. |
-
-Os descartes são material de TCC, não tempo perdido: sustentam a seção de metodologia e
-demonstram a postura que as aulas 04 a 08 cobram — hipótese falsificável, verificação
-empírica, disposição de abandonar o que não se sustenta.
-
-**Três correções de instrumento ficaram registradas**, e valem por si: em todas, o número
-agregado dizia "inviável" enquanto a distribuição por trás dele dizia "erro de medida".
-O casamento por substring (`pix` em `capixaba`, `sus` em `Direct Cursus`), o imphash medido
-sobre containers em vez de binários, e a auto-hospedagem contada como fornecedor terceiro.
-
----
-
-## 4. Scripts
-
-Todos são de leitura passiva de fontes públicas. Nenhum acessa sistema de terceiros,
-nenhum explora falha, nenhum baixa conteúdo de área autenticada.
+Todos leem fontes públicas. Nenhum acessa área autenticada de terceiros nem explora falha.
 
 | Script | O que faz |
 |---|---|
-| `teste_viabilidade_n1.py` | Consulta o Shodan (contagens e facetas) para dimensionar a exposição de ICS no Brasil |
-| `ct_direto.py` | Lê os logs de Certificate Transparency direto pela API padrão (RFC 6962) e procura imitação de marca brasileira |
-| `teste_viabilidade_n3.py` | Enumera aplicativos governamentais na Play Store por termo e por catálogo de publicador |
-| `teste_viabilidade_n3_robusto.py` | Mede a **porta de cada hipótese** antes de baixar APK: pareamento (H1), política de privacidade acessível (H2), povoamento das células (H3), potência estatística, e um sinal preliminar da variável dependente |
-| `piloto_androzoo.py` | **Piloto da H4**: cobertura do AndroZoo, sorteio de 20 apps, download pelo hash, três detectores (Exodus código, Exodus rede, Disconnect) e κ de Fleiss / τ de Kendall. Passo a passo em `tcc/piloto-passo-a-passo.md` |
-| `ampliar_controle.py` | Procura comerciais nas células categoria × faixa de instalações em que o controle falta, para o suporte comum da H1. `--diagnostico` só mede |
-| `fichas_publicadores.py` | Ficha atual de cada app do corpus na Google Play e o **nome jurídico** do publicador ("Sobre o desenvolvedor"), evidência para a classificação manual dos 396 |
-| `revisao_triagem.py` | Revisão sistemática: junta as exportações do Scopus, ACM, IEEE, SOL e BDTD, tira duplicatas, confere o conjunto de controle, sorteia o reteste, calcula o κ da triagem e dá os números do PRISMA. Passo a passo em `tcc/revisao/buscas-passo-a-passo.md` |
-| `coleta_google_play.py` | Baixa APKs direto da Google Play pelo `apkeep`, registra SHA-256 e versão e guarda o base junto dos do AndroZoo. Passo a passo em `tcc/coleta-passo-a-passo.md` |
-| `teste_viabilidade_malware.py` | Consulta metadados de famílias de malware bancário no MalwareBazaar e mede compartilhamento de imphash entre famílias, com grupo de controle não brasileiro |
-| `teste_viabilidade_s3.py` | Consulta SPF, DKIM, DMARC, MX e NS de domínios públicos brasileiros e mede se há **variação** a explicar e se a postura é herdada do fornecedor de TI |
+| `teste_viabilidade_n3.py` | Enumera aplicativos governamentais na Google Play por termo e por catálogo de publicador |
+| `teste_viabilidade_n3_robusto.py` | Verifica, antes de baixar APK, se cada hipótese tem instrumento: pareamento, políticas acessíveis, células e potência |
+| `fichas_publicadores.py` | Ficha de cada app e nome jurídico do publicador, evidência para a classificação |
+| `ampliar_controle.py` | Procura comerciais nas células categoria × faixa em que o controle falta |
+| `piloto_androzoo.py` | Piloto da H4: cobertura do AndroZoo, sorteio de 20 apps, três detectores, κ e τ. Passo a passo em `tcc/piloto-passo-a-passo.md` |
+| `coleta_google_play.py` | Baixa APKs direto da Google Play e registra SHA-256 e versão. Passo a passo em `tcc/coleta-passo-a-passo.md` |
+| `revisao_triagem.py` | Revisão sistemática: junta as exportações, tira duplicatas, confere o conjunto de controle, compara a conferência cega (`concordancia`) e dá os números do PRISMA (`prisma`). Passo a passo em `tcc/revisao/buscas-passo-a-passo.md` |
+| `segundo_avaliador.py` | Compara classificações de avaliadores diferentes (κ de Cohen e de Fleiss) |
+| `teste_viabilidade_n1.py`, `ct_direto.py`, `teste_viabilidade_malware.py`, `teste_viabilidade_s3.py` | Testes de viabilidade dos temas descartados |
 
 ### Como rodar
 
-> **O projeto fica em `~/Projetos/TCC`, fora do iCloud.** Na pasta Documentos
-> sincronizada, o macOS tira arquivos do disco e o git passa a falhar com
-> `mmap failed: Operation canceled`.
+> O projeto fica em `~/Projetos/TCC`, fora do iCloud: na pasta Documentos sincronizada, o macOS tira arquivos do disco e o git falha com `mmap failed`.
 
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
 
-python3 scripts/teste_viabilidade_n3.py --expandir
-python3 scripts/ct_direto.py --entradas 20000 --logs 1
+python3 scripts/revisao_triagem.py prisma          # números do fluxograma PRISMA
+python3 scripts/revisao_triagem.py concordancia dados/revisao/reteste_F1_20261116.xlsx
+python3 scripts/piloto_androzoo.py autoteste        # sem rede
 ```
 
-O teste robusto do N3 reaproveita a saída do anterior. Ele tem autoteste offline:
+Para compilar o projeto, veja [`tcc/README.md`](tcc/README.md).
 
-```bash
-python3 scripts/teste_viabilidade_n3_robusto.py --autoteste       # valida a lógica, sem rede
-python3 scripts/teste_viabilidade_n3_robusto.py --limite 40        # rodada curta (~5 min)
-python3 scripts/teste_viabilidade_n3_robusto.py                    # completo (~40 min)
-```
+## Regras do repositório
 
-O piloto do AndroZoo tem autoteste offline; o resto está em `tcc/piloto-passo-a-passo.md`:
-
-```bash
-python3 scripts/piloto_androzoo.py autoteste
-```
-
-O teste de malware exige uma chave gratuita do MalwareBazaar (auth.abuse.ch):
-
-```bash
-export MALWAREBAZAAR_API_KEY="..."
-python3 scripts/teste_viabilidade_malware.py
-```
-
-> Esse script lê **apenas metadados** — hashes, tipo de arquivo, data e assinatura.
-> Nenhuma amostra de malware é baixada.
-
-O teste do S3 (falsificação de e-mail) não exige chave **nem instalação**: usa o
-`dig`, que já vem no macOS e no Linux. Se o `dnspython` estiver instalado, ele é
-preferido por ser mais rápido.
-
-```bash
-python3 scripts/teste_viabilidade_s3.py --autoteste   # valida a lógica, sem rede
-python3 scripts/teste_viabilidade_s3.py               # ~2 a 5 min
-python3 scripts/teste_viabilidade_s3.py --motor dig   # força o dig
-```
-
-O script do Shodan exige uma chave em variável de ambiente:
-
-```bash
-export SHODAN_API_KEY="..."
-python3 scripts/teste_viabilidade_n1.py --apenas-contagem
-```
-
-> A chave **nunca** vai para o repositório. O `.gitignore` cobre `.env`, `*.key` e o
-> diretório `dados/`.
-
----
-
-## 5. Calendário
-
-| Data | Marco |
-|---|---|
-| 10/09 | Entrega da **Lista de Exercícios 01** (impressa) — enunciado e guia de estudo em `disciplina/listas/` |
-| **29/09 e 01/10** | **Seminário de análise de artigo científico** (4 dos 6 pontos da AV1) — plano em `seminario/` |
-| Out–Nov | 5 encontros de orientação, com ficha assinada e entregue mensalmente |
-| 24/11 a 01/12 | Simulação de defesa |
-| **03/12** | **Entrega da redação do TCC I no Canvas** — prazo duro |
-| 08 a 15/12 | Defesa final / qualificação perante banca |
-
----
-
-## 6. O que falta
-
-- **Seminário.** A apresentação está na versão final. Falta testar no aplicativo em que
-  vai ser apresentada e ensaiar com cronômetro — ver `seminario/plano-de-execucao.md`.
-- ~~**Tema definitivo.**~~ Definido: **N3**. Proposta formal em `desenhos/N3-proposta-formal.md`.
-- ~~**Rodar o teste robusto.**~~ Rodado em 17/09: as quatro hipóteses têm instrumento.
-- **Conferir à mão** as 43 políticas que deram `403` e `302` — são bloqueio de agente e
-  redirecionamento, não ausência de documento. Eleva a taxa da H2.
-- ~~**Revisar 30 linhas ao acaso.**~~ Feito em 04/11 (amostra sistemática de 30 + 2 casos
-  conhecidos): 6,7% de publicador privado, esfera sem erro, **28,6% de erro na sensibilidade**.
-  Próximo: classificar oficialidade e sensibilidade à mão nos 396 (Seção 2.12 do texto).
-- ~~**Orientador.**~~ O Prof. Eduardo Arthur Izycki aprovou o tema e assinou o termo de
-  aceite (Art. 10 e Art. 15). Seguem os **5 encontros de orientação** com ficha assinada
-  (Art. 19, II e Art. 24).
-- ~~**Acesso ao AndroZoo.**~~ Concedido em 17/09, menos de 6h após o pedido. A chave é de
-  **uso individual** e vive só em variável de ambiente; o uso do acervo **obriga a citar**
-  dois trabalhos — ver `desenhos/N3-acesso-androzoo.md`.
-- **Piloto de 20 aplicativos** — cobertura e amostra rodadas em 26/10. O AndroZoo tem só
-  **92 dos 396 apps de governo (23,2%)**, contra 84,2% do controle: os outros 304 vão ser
-  coletados direto da Google Play. Piloto concluído em 28/10: κ 0,52 com os detectores
-  como são, 0,69 depois da conferência; 72% das detecções do detector B eram falso positivo.
-- **Texto do TCC I** — versão em `tcc/`, com os números do piloto. Falta a passagem para o
-  modelo ABNT da instituição.
-- **Revisão sistemática** — protocolo escrito em 04/11 (`tcc/revisao/`). A busca exploratória
-  achou Samarasinghe et al. (WWW 2022): 1.166 apps de governo de 71 países, só com o MobSF e
-  sem linha de base. A lacuna do texto foi reescrita em cima dele. Próximo: rodar as 22 buscas.
-- **Modalidade.** Monografia é o caminho de menor risco. Artigo científico depende de
-  aceite em periódico Qualis B2, o que não está sob controle do aluno.
+- O repositório é **privado**. As normas ABNT em `disciplina/normas/` são exemplares licenciados com dados de quem comprou, e `dados/revisao/` traz resumos que as bases não permitem redistribuir: os dois saem antes de qualquer publicação.
+- Chaves e tokens (AndroZoo, Google Play, Shodan, MalwareBazaar) ficam só em variáveis de ambiente, nunca em arquivo versionado.
+- APKs e PDFs de artigos (`dados/revisao/pdf/`) nunca são versionados nem redistribuídos.
+- Dados pessoais e tráfego identificável não entram no repositório.

@@ -50,11 +50,11 @@ Outro achado: o AndroZoo tinha só 92 dos 396 candidatos do governo, 23,2%, cont
 
 ## Slide 12. Revisão sistemática (55 s)
 
-A fundamentação vem de uma revisão sistemática, seguindo Kitchenham e o PRISMA 2020, com cinco questões de pesquisa. Fiz 17 buscas no Scopus, IEEE Xplore, BDTD e SBC OpenLib, que retornaram 1.531 registros, ou 1.249 sem duplicatas. Para validar as buscas, usei 11 estudos que tinham de aparecer; os 10 que o Scopus indexa foram encontrados. Na triagem por título e resumo, 357 seguiram para a leitura completa, que está em andamento: até agora, 71 propostas de inclusão. Uma amostra cega de 125 registros vai medir a consistência da triagem.
+A fundamentação vem de uma revisão sistemática, seguindo Kitchenham e o PRISMA 2020, com cinco questões de pesquisa. Fiz 17 buscas no Scopus, IEEE Xplore, BDTD e SBC OpenLib, que retornaram 1.531 registros, ou 1.249 sem duplicatas. Para validar as buscas, usei 11 estudos que tinham de aparecer; os 10 que o Scopus indexa foram encontrados. Na triagem por título e resumo, 357 seguiram para a leitura completa, que selecionou 71 estudos até agora. Esses estudos estão resumidos no referencial teórico, agrupados por assunto. A leitura do restante continua no Capstone II.
 
 ## Slide 13. Limitações e próximos passos (65 s)
 
-As limitações: achar o código de um SDK no pacote não prova que ele roda nem que envia dados, e por isso há a análise dinâmica numa subamostra. O estudo cobre só Android e Google Play. O controle não é uma amostra aleatória do mercado. E os detectores compartilham bases ou métodos de extração. Até a entrega de 3 de dezembro, faço a conferência cega da triagem, termino a leitura completa e escrevo a síntese no referencial. Com o orientador, defino o detector principal, os critérios da LGPD e o plano de análise. No Capstone II vêm a conferência dos aplicativos, a coleta, a detecção, as políticas e a análise dinâmica.
+As limitações: achar o código de um SDK no pacote não prova que ele roda nem que envia dados, e por isso há a análise dinâmica numa subamostra. O estudo cobre só Android e Google Play. O controle não é uma amostra aleatória do mercado. E os detectores compartilham bases ou métodos de extração. Até a entrega de 3 de dezembro, reviso a síntese dos estudos no referencial e passo o projeto pelo orientador. No Capstone II, termino a revisão, confiro as classificações e defino com o orientador o detector principal e o plano de análise. Depois vêm a coleta, a detecção, o confronto com as políticas e a análise dinâmica.
 
 ## Slide 14. Encerramento (10 s)
 
@@ -83,7 +83,7 @@ Baixando da Google Play com conta própria, registrando o hash e sem redistribui
 A capacidade do Estado de saber e decidir para onde vão os dados gerados nos seus serviços. Mede-se pela dependência de SDKs de terceiros e, na subamostra, pelos destinos observados. A nacionalidade do fornecedor ou o país de um IP não provam, sozinhos, uma transferência internacional.
 
 **Quantos artigos a revisão incluiu?**
-A leitura completa está em andamento. Diga o número da data da apresentação, como "proposta de inclusão" enquanto não estiver conferido, e mostre que o fluxograma PRISMA está no texto.
+Até agora, 71 estudos selecionados, resumidos na Seção 2.7 do projeto. A leitura dos registros restantes continua no Capstone II, e o fluxograma da revisão está na Figura 1.
 
 **Por que o controle não é aleatório?**
 A busca da loja ordena por relevância e quase não devolve aplicativos comerciais pequenos. O pareamento por categoria e faixa reduz esse problema, a H1 fica restrita às células com controle e a limitação é declarada.
@@ -92,15 +92,15 @@ A busca da loja ordena por relevância e quase não devolve aplicativos comercia
 O κ desconta o acordo esperado ao acaso. Como prevalência muito alta deixa o κ instável, ele será reportado junto com os acordos positivo e negativo.
 
 **Como as classificações foram feitas e conferidas?**
-Responda como de fato aconteceu, incluindo as ferramentas usadas e o que o orientador avaliou, e explique como a conferência cega e a conferência dos aplicativos vão medir e corrigir a classificação.
+Responda como de fato aconteceu, incluindo as ferramentas usadas e o que o orientador avaliou. As duas classificações serão conferidas no início do Capstone II.
 
 ## Fontes de cada slide
 
 | Slide | Onde está no projeto |
 |---|---|
-| 2 a 4 | Seções 1 e 2; Binns et al. (2018); Kollnig et al. (2021a, 2021b); Samarasinghe et al. (2022) |
+| 2 a 4 | Seções 1 e 2; Binns et al. (2018b); Kollnig et al. (2021a, 2021b); Samarasinghe et al. (2022) |
 | 5 e 6 | Seções 1.1 a 1.4 e 3.10 |
 | 7 | Seções 3.1 a 3.5 |
 | 8 a 11 | Seção 3.6 |
-| 12 | Seção 3.7 e Figura 1; protocolo da revisão |
+| 12 | Seções 2.7 e 3.7 e Figura 1 |
 | 13 | Seções 3.9, 3.12 e 3.13 |

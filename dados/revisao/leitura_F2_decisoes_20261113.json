@@ -1,0 +1,832 @@
+[
+  {
+    "id": "R0007",
+    "decisao": "I",
+    "criterio": "",
+    "paginas_lidas": "2, 9–11",
+    "trechos": "Seções 5–6 e Tabela 2",
+    "motivo": "Compara cinco ferramentas de detecção com conjuntos de referência e métricas quantitativas",
+    "observacao": "Versão ampliada de R0020, conforme página 2",
+    "validacao_pessoal": "pendente"
+  },
+  {
+    "id": "R0015",
+    "decisao": "I",
+    "criterio": "",
+    "paginas_lidas": "6–8",
+    "trechos": "Seção 4 e Tabela 5",
+    "motivo": "Avalia detecção de bibliotecas sob ofuscação com referência construída pela compilação",
+    "observacao": "",
+    "validacao_pessoal": "pendente"
+  },
+  {
+    "id": "R0019",
+    "decisao": "I",
+    "criterio": "",
+    "paginas_lidas": "6–7",
+    "trechos": "Seção IV e Tabela I",
+    "motivo": "Avalia ATVHunter com bibliotecas e versões de referência em aplicativos Android",
+    "observacao": "",
+    "validacao_pessoal": "pendente"
+  },
+  {
+    "id": "R0020",
+    "decisao": "E",
+    "criterio": "EC1",
+    "paginas_lidas": "1; R0007: 2",
+    "trechos": "Identificação e declaração de extensão em R0007",
+    "motivo": "Versão anterior do estudo ampliado R0007",
+    "observacao": "Manter R0007 e vincular as duas versões",
+    "validacao_pessoal": "pendente"
+  },
+  {
+    "id": "R0030",
+    "decisao": "I",
+    "criterio": "",
+    "paginas_lidas": "7–8",
+    "trechos": "Seção IV e Tabelas II–III",
+    "motivo": "Avalia precisão e revocação do LibPecker com conjuntos de referência",
+    "observacao": "",
+    "validacao_pessoal": "pendente"
+  },
+  {
+    "id": "R0055",
+    "decisao": "I",
+    "criterio": "",
+    "paginas_lidas": "3, 9–10",
+    "trechos": "Método, seção 5 e Tabela 3",
+    "motivo": "Avalia o impacto da otimização e o desempenho do detector LibHunter",
+    "observacao": "",
+    "validacao_pessoal": "pendente"
+  },
+  {
+    "id": "R0064",
+    "decisao": "I",
+    "criterio": "",
+    "paginas_lidas": "1, 6–7",
+    "trechos": "Seções III–IV e Tabelas I–IV",
+    "motivo": "Avalia LibD em aplicativos Android e compara detecções com conferência manual",
+    "observacao": "Versão ampliada de R0067, conforme página 1",
+    "validacao_pessoal": "pendente"
+  },
+  {
+    "id": "R0067",
+    "decisao": "E",
+    "criterio": "EC1",
+    "paginas_lidas": "1; R0064: 1",
+    "trechos": "Identificação e declaração de versão preliminar em R0064",
+    "motivo": "Versão anterior do estudo ampliado R0064",
+    "observacao": "Manter R0064 e vincular as duas versões",
+    "validacao_pessoal": "pendente"
+  },
+  {
+    "id": "R0071",
+    "decisao": "I",
+    "criterio": "",
+    "paginas_lidas": "8–9",
+    "trechos": "Seções 4–5 e Tabela 2",
+    "motivo": "Avalia detecção de bibliotecas em aplicativos iOS com referência e métricas",
+    "observacao": "IC1 inclui aplicativos móveis; não misturar esta população aos resultados Android",
+    "validacao_pessoal": "pendente"
+  },
+  {
+    "id": "R0076",
+    "decisao": "I",
+    "criterio": "",
+    "paginas_lidas": "8–9",
+    "trechos": "Seções 5.1–5.3 e Tabelas 5–6",
+    "motivo": "Avalia LibScan com aplicativos e versões de bibliotecas de referência",
+    "observacao": "",
+    "validacao_pessoal": "pendente"
+  },
+  {
+    "id": "R0077",
+    "decisao": "I",
+    "criterio": "",
+    "paginas_lidas": "5",
+    "trechos": "Seção III e Tabela I",
+    "motivo": "Avalia separação de bibliotecas em 300 aplicativos com conferência manual",
+    "observacao": "",
+    "validacao_pessoal": "pendente"
+  },
+  {
+    "id": "R0088",
+    "decisao": "I",
+    "criterio": "",
+    "paginas_lidas": "7, 9",
+    "trechos": "Seção 5 e Tabela 1",
+    "motivo": "Avalia reconhecimento de código e bibliotecas Android sob diferentes ofuscações",
+    "observacao": "",
+    "validacao_pessoal": "pendente"
+  },
+  {
+    "id": "R0093",
+    "decisao": "I",
+    "criterio": "",
+    "paginas_lidas": "6–7",
+    "trechos": "Seção 4.1 e Tabela 3",
+    "motivo": "Avalia ORLIS com aplicativos ofuscados e referência derivada dos registros de transformação",
+    "observacao": "",
+    "validacao_pessoal": "pendente"
+  },
+  {
+    "id": "R0070",
+    "decisao": "I",
+    "criterio": "",
+    "paginas_lidas": "6–7",
+    "trechos": "Seção 5.1 e Tabela 2",
+    "motivo": "Avalia LibID com aplicativos sintéticos e bibliotecas conhecidas sob ofuscação",
+    "observacao": "Limiares ajustados no conjunto sintético: considerar na avaliação de qualidade",
+    "validacao_pessoal": "pendente"
+  },
+  {
+    "id": "R0094",
+    "decisao": "I",
+    "criterio": "",
+    "paginas_lidas": "6–8",
+    "trechos": "Seção IV e Tabela III",
+    "motivo": "Avalia LibAttention com referência de dependências e divisão treino e teste",
+    "observacao": "",
+    "validacao_pessoal": "pendente"
+  },
+  {
+    "id": "R0105",
+    "decisao": "I",
+    "criterio": "",
+    "paginas_lidas": "5–8",
+    "trechos": "Seções 4–6 e Tabelas 2–3",
+    "motivo": "Detecta bibliotecas e mede sua presença em aplicativos Android",
+    "observacao": "Versões diferentes podem compartilhar o mesmo perfil",
+    "validacao_pessoal": "pendente"
+  },
+  {
+    "id": "R0109",
+    "decisao": "I",
+    "criterio": "",
+    "paginas_lidas": "7–9",
+    "trechos": "Seções 5.1–5.3 e Tabelas 2 e 4",
+    "motivo": "Avalia LIBLOOM com bibliotecas de referência e diferentes ofuscadores",
+    "observacao": "",
+    "validacao_pessoal": "pendente"
+  },
+  {
+    "id": "R0129",
+    "decisao": "I",
+    "criterio": "",
+    "paginas_lidas": "6–7",
+    "trechos": "Seção 4 e Tabelas 2–3",
+    "motivo": "Avalia SAD e compara identificação de bibliotecas e versões",
+    "observacao": "Discute erros da referência e diferenças na contagem de falsos positivos",
+    "validacao_pessoal": "pendente"
+  },
+  {
+    "id": "R0209",
+    "decisao": "I",
+    "criterio": "",
+    "paginas_lidas": "5–7",
+    "trechos": "Seções V–VI e Tabela II",
+    "motivo": "Avalia detecção de publicidade por tráfego HTTP e redesenho de interface",
+    "observacao": "PDF possui uma folha de repositório adicional ao artigo",
+    "validacao_pessoal": "pendente"
+  },
+  {
+    "id": "R0312",
+    "decisao": "I",
+    "criterio": "",
+    "paginas_lidas": "8–10",
+    "trechos": "Seção VI e Tabelas I–II",
+    "motivo": "Detecta vazamentos por análise diferencial de tráfego e compara ferramentas",
+    "observacao": "A conferência manual não elimina todas as possibilidades de falsos negativos",
+    "validacao_pessoal": "pendente"
+  },
+  {
+    "id": "R0399",
+    "decisao": "I",
+    "criterio": "",
+    "paginas_lidas": "6, 9–15",
+    "trechos": "Seções 3–4 e Tabelas 1–3",
+    "motivo": "Analisa bibliotecas de publicidade por grafos de comportamento de rede",
+    "observacao": "Não converter reconhecimento de padrões em garantia de segurança do aplicativo",
+    "validacao_pessoal": "pendente"
+  },
+  {
+    "id": "R0414",
+    "decisao": "I",
+    "criterio": "",
+    "paginas_lidas": "1, 4–6, 11–12",
+    "trechos": "Design and implementation, Evaluation e Tabela 4",
+    "motivo": "Analisa rastreamento de terceiros em WebViews de aplicativos Android",
+    "observacao": "Não é estudo restrito à navegação web fora de aplicativos",
+    "validacao_pessoal": "pendente"
+  },
+  {
+    "id": "R0845",
+    "decisao": "I",
+    "criterio": "",
+    "paginas_lidas": "1–4",
+    "trechos": "Seções 2–4, Figura 1 e Tabela 1",
+    "motivo": "Constrói e caracteriza base de bibliotecas Android a partir de dependências",
+    "observacao": "Artigo revisado por pares de 5 páginas; dataset, sem confundir tamanho com precisão de detecção",
+    "validacao_pessoal": "pendente"
+  },
+  {
+    "id": "R0895",
+    "decisao": "I",
+    "criterio": "",
+    "paginas_lidas": "1, 7–8",
+    "trechos": "Método e seção IV.A, Tabela IV",
+    "motivo": "Analisa comunicação de aplicativos com terceiros e compara detecção à referência manual",
+    "observacao": "Comunicação invisível na interface não prova, por si só, vazamento de dados pessoais",
+    "validacao_pessoal": "pendente"
+  },
+  {
+    "id": "R0074",
+    "decisao": "E",
+    "criterio": "EC6",
+    "paginas_lidas": "1, 4",
+    "trechos": "Identificação do artigo e extensão de 4 páginas",
+    "motivo": "Artigo curto de quatro páginas, excluído pelo EC6 do protocolo",
+    "observacao": "Pode ser citado como contexto, sem integrar o conjunto de estudos primários incluídos",
+    "validacao_pessoal": "pendente"
+  },
+  {
+    "id": "R0036",
+    "decisao": "E",
+    "criterio": "EC6",
+    "paginas_lidas": "1–4 (extensão)",
+    "trechos": "Identificação do artigo e extensão de 4 páginas",
+    "motivo": "Artigo curto de quatro páginas, excluído pelo EC6 do protocolo",
+    "observacao": "O link original estava indisponível; texto recuperado na página do autor",
+    "validacao_pessoal": "pendente"
+  },
+  {
+    "id": "R0092",
+    "decisao": "I",
+    "criterio": "",
+    "paginas_lidas": "1, 4, 16–17",
+    "trechos": "Método estático e Evaluation, Figura 3",
+    "motivo": "Mede aproveitamento de permissões por bibliotecas em mil aplicativos Android",
+    "observacao": "Não equiparar possibilidade de acesso a transmissão observada",
+    "validacao_pessoal": "pendente"
+  },
+  {
+    "id": "R0136",
+    "decisao": "I",
+    "criterio": "",
+    "paginas_lidas": "1, 6–7",
+    "trechos": "Seção 4 e Tabela 1",
+    "motivo": "Mede conexões a rastreadores antes e depois do consentimento em apps Android",
+    "observacao": "Teste de 15 segundos limita a cobertura de comportamento",
+    "validacao_pessoal": "pendente"
+  },
+  {
+    "id": "R0168",
+    "decisao": "I",
+    "criterio": "",
+    "paginas_lidas": "1, 3, 5",
+    "trechos": "Seções III–IV e Tabela II",
+    "motivo": "Analisa tráfego de aplicativos e identifica serviços de publicidade e rastreamento",
+    "observacao": "",
+    "validacao_pessoal": "pendente"
+  },
+  {
+    "id": "R0184",
+    "decisao": "I",
+    "criterio": "",
+    "paginas_lidas": "1, 4–5",
+    "trechos": "Método de captura e seção V, Tabela III",
+    "motivo": "Mede dados pessoais enviados a redes de anúncios por aplicativos em diferentes locais",
+    "observacao": "Localização é dado rastreado por terceiros em apps reais, não motivo para EC3",
+    "validacao_pessoal": "pendente"
+  },
+  {
+    "id": "R0178",
+    "decisao": "I",
+    "criterio": "",
+    "paginas_lidas": "9–10, 17",
+    "trechos": "Methodology e Tabela 1",
+    "motivo": "Compara presença de rastreadores em aplicativos antes e depois da GDPR",
+    "observacao": "Reutiliza a base de 2017 de R0376 e acrescenta nova coleta; amostras não independentes",
+    "validacao_pessoal": "pendente"
+  },
+  {
+    "id": "R0248",
+    "decisao": "I",
+    "criterio": "",
+    "paginas_lidas": "4–6",
+    "trechos": "Seção IV e Tabelas I–II",
+    "motivo": "Avalia exposição de dados de usuários a bibliotecas publicitárias em aplicativos reais",
+    "observacao": "Distinguir demonstração de acesso possível de coleta efetiva na população",
+    "validacao_pessoal": "pendente"
+  },
+  {
+    "id": "R0292",
+    "decisao": "I",
+    "criterio": "",
+    "paginas_lidas": "8–9, 12",
+    "trechos": "Seção 5 e Tabela 1",
+    "motivo": "Mede presença e concentração de rastreadores em apps e sites",
+    "observacao": "Separar denominadores de aplicativos e websites",
+    "validacao_pessoal": "pendente"
+  },
+  {
+    "id": "R0376",
+    "decisao": "I",
+    "criterio": "",
+    "paginas_lidas": "3, 5",
+    "trechos": "Seções 3–4 e Tabela 1",
+    "motivo": "Mede presença de domínios de rastreadores no código de aplicativos Android",
+    "observacao": "Domínio encontrado no bytecode não comprova transmissão",
+    "validacao_pessoal": "pendente"
+  },
+  {
+    "id": "R0567",
+    "decisao": "I",
+    "criterio": "",
+    "paginas_lidas": "4–6, 8–9",
+    "trechos": "Seções V–VI e Tabelas III–V",
+    "motivo": "Analisa tráfego e políticas de privacidade de aplicativos de saúde mental",
+    "observacao": "Cobertura dinâmica limitada; a revisão de políticas também inclui apps não testados dinamicamente",
+    "validacao_pessoal": "pendente"
+  },
+  {
+    "id": "R0579",
+    "decisao": "I",
+    "criterio": "",
+    "paginas_lidas": "9, 12, 16–17",
+    "trechos": "Seções 3–4 e Tabela 2",
+    "motivo": "Combina análise estática, tráfego e políticas de aplicativos de saúde mental",
+    "observacao": "Análise dinâmica cobre 19 dos 27 apps",
+    "validacao_pessoal": "pendente"
+  },
+  {
+    "id": "R0648",
+    "decisao": "I",
+    "criterio": "",
+    "paginas_lidas": "2–3, 5–6",
+    "trechos": "Methods e Results, Tabela 1",
+    "motivo": "Confronta políticas e transmissões de apps de saúde, incluindo serviços terceiros",
+    "observacao": "Apps acreditados pelo NHS não são todos publicados pelo governo",
+    "validacao_pessoal": "pendente"
+  },
+  {
+    "id": "R0705",
+    "decisao": "I",
+    "criterio": "",
+    "paginas_lidas": "8–11, 13, 15–16",
+    "trechos": "Methodology e achados da auditoria",
+    "motivo": "Analisa SDKs e declarações de privacidade em 14 aplicativos de acompanhamento infantil",
+    "observacao": "Manifesto e permissões não comprovam transmissão; examinar essa limitação na qualidade",
+    "validacao_pessoal": "pendente"
+  },
+  {
+    "id": "R1145",
+    "decisao": "I",
+    "criterio": "",
+    "paginas_lidas": "1, 3–4",
+    "trechos": "Método de identificação e Tabelas 1–3",
+    "motivo": "Mede integração de bibliotecas publicitárias e distingue analytics de exibição de anúncios",
+    "observacao": "Não excluir por EC4: há medidas diretas da presença e uso de bibliotecas publicitárias",
+    "validacao_pessoal": "pendente"
+  },
+  {
+    "id": "R1214",
+    "decisao": "",
+    "criterio": "",
+    "paginas_lidas": "2–4",
+    "trechos": "Seções III–IV e Tabela I",
+    "motivo": "Confirmar se a análise de permissões atribui práticas a terceiros além de vulnerabilidades gerais",
+    "observacao": "Texto obtido, escopo do IC1 ainda em dúvida; decisão deixada em branco",
+    "validacao_pessoal": "pendente"
+  },
+  {
+    "id": "R0005",
+    "decisao": "I",
+    "criterio": "",
+    "paginas_lidas": "3–4, 6",
+    "trechos": "Seções 4–5 e Tabela 1",
+    "motivo": "Confronta rastreadores, tráfego e rótulos de privacidade em 152 apps de saúde",
+    "observacao": "",
+    "validacao_pessoal": "pendente"
+  },
+  {
+    "id": "R0102",
+    "decisao": "E",
+    "criterio": "EC4",
+    "paginas_lidas": "1–2, 4–5",
+    "trechos": "Seções II–III e Tabelas III–V",
+    "motivo": "Filtra bibliotecas para detectar malware, sem avaliar a detecção das bibliotecas",
+    "observacao": "Comparação é com descrição do aplicativo, voltada à detecção de código malicioso",
+    "validacao_pessoal": "pendente"
+  },
+  {
+    "id": "R0449",
+    "decisao": "I",
+    "criterio": "",
+    "paginas_lidas": "4, 7–8",
+    "trechos": "Seções III–IV e Tabelas I–III",
+    "motivo": "Confronta fluxos de dados de saúde com declarações das políticas de apps",
+    "observacao": "A ausência de falsos negativos na conferência relatada não garante cobertura completa",
+    "validacao_pessoal": "pendente"
+  },
+  {
+    "id": "R0436",
+    "decisao": "I",
+    "criterio": "",
+    "paginas_lidas": "13–15",
+    "trechos": "Seções 5–6, comparação de formulários e código",
+    "motivo": "Compara coleta identificada estaticamente com declarações de segurança de dados",
+    "observacao": "A amostra de 20 casos discrepantes não estima prevalência geral; análise estática não comprova envio",
+    "validacao_pessoal": "pendente"
+  },
+  {
+    "id": "R0500",
+    "decisao": "I",
+    "criterio": "",
+    "paginas_lidas": "3, 6–7",
+    "trechos": "Método ATPChecker e Tabela IV",
+    "motivo": "Analisa fluxos de dados em bibliotecas e inconsistências nas políticas",
+    "observacao": "Separar bibliotecas coletadas, binários analisados e políticas disponíveis nos denominadores",
+    "validacao_pessoal": "pendente"
+  },
+  {
+    "id": "R0504",
+    "decisao": "I",
+    "criterio": "",
+    "paginas_lidas": "6, 11–12",
+    "trechos": "Método e Figuras 7–8",
+    "motivo": "Confronta indicadores estáticos de coleta com rótulos Data Safety",
+    "observacao": "Permissões e indicadores semânticos são aproximações de coleta, não transmissões observadas",
+    "validacao_pessoal": "pendente"
+  },
+  {
+    "id": "R0513",
+    "decisao": "",
+    "criterio": "",
+    "paginas_lidas": "1, 4, 11–13",
+    "trechos": "Seção 3, Seção 4 e Tabela 5",
+    "motivo": "Cópia de 2023 difere da avaliação publicada em 2024",
+    "observacao": "Cópia: 2.998 políticas; registro publicado: MiniDetector, 3.369 políticas e avaliação ampliada. Obter versão correspondente antes de decidir",
+    "validacao_pessoal": "pendente"
+  },
+  {
+    "id": "R0527",
+    "decisao": "I",
+    "criterio": "",
+    "paginas_lidas": "1, 6–9",
+    "trechos": "Seção 4.3, Tabela 1 e Seção 5.2",
+    "motivo": "Combina Exodus e Lumen para comparar rastreadores, tráfego e políticas",
+    "observacao": "18 aplicativos de videoconferência; separar permissões, assinaturas e tráfego observado",
+    "validacao_pessoal": "pendente"
+  },
+  {
+    "id": "R0552",
+    "decisao": "I",
+    "criterio": "",
+    "paginas_lidas": "1, 5, 9",
+    "trechos": "Arquitetura, Tabela 4 e avaliação da Seção 4.4",
+    "motivo": "Compara fluxos de dados de aplicativos iOS com rótulos de privacidade",
+    "observacao": "População iOS separada de Android; avaliação geral relata precisão e revocação distintas",
+    "validacao_pessoal": "pendente"
+  },
+  {
+    "id": "R0581",
+    "decisao": "I",
+    "criterio": "",
+    "paginas_lidas": "1, 5–6",
+    "trechos": "Implementação 3PDroid e Tabela IV",
+    "motivo": "Monitora acesso a dados por aplicativos e bibliotecas confrontando políticas",
+    "observacao": "Distinguir acesso local a APIs de envio efetivo de dados; métricas por tarefa",
+    "validacao_pessoal": "pendente"
+  },
+  {
+    "id": "R0600",
+    "decisao": "I",
+    "criterio": "",
+    "paginas_lidas": "1, 5, 7, 10",
+    "trechos": "Tabelas IV–V e Seções III–IV",
+    "motivo": "Compara bibliotecas presentes com políticas geradas e avalia detecção estática",
+    "observacao": "Estudo iOS; métricas de permissões não equivalem a métricas de identificação de bibliotecas",
+    "validacao_pessoal": "pendente"
+  },
+  {
+    "id": "R0643",
+    "decisao": "I",
+    "criterio": "",
+    "paginas_lidas": "1, 4–6, 9–11",
+    "trechos": "Seções 3–6 e Tabela 2",
+    "motivo": "Localiza comportamentos de processamento, compartilhamento, publicidade e análise em código Android",
+    "observacao": "Avalia segmentos de código e rótulos; não estima prevalência de rastreadores em aplicativos",
+    "validacao_pessoal": "pendente"
+  },
+  {
+    "id": "R0556",
+    "decisao": "",
+    "criterio": "",
+    "paginas_lidas": "1, 4–8",
+    "trechos": "Método e resultados sobre o aplicativo JAKI",
+    "motivo": "Dúvida entre privacidade governamental da QR4 e delimitação operacional do IC1",
+    "observacao": "Pesquisa jurídica e entrevistas sobre JAKI, sem análise técnica de bibliotecas ou fluxos; confirmar abrangência de estudos qualitativos de governo",
+    "validacao_pessoal": "pendente"
+  },
+  {
+    "id": "R0565",
+    "decisao": "E",
+    "criterio": "IC1",
+    "paginas_lidas": "1–7, 10–11, 13–14",
+    "trechos": "Metodologia na página 4 e discussão jurídica",
+    "motivo": "Revisão narrativa sem estudo primário ou análise de LGPD ou transferência internacional",
+    "observacao": "Manter como revisão relevante para busca de referências, fora da síntese de estudos primários",
+    "validacao_pessoal": "pendente"
+  },
+  {
+    "id": "R0584",
+    "decisao": "I",
+    "criterio": "",
+    "paginas_lidas": "1, 3–5",
+    "trechos": "Método, Tabela 1 e resultados de transmissão transfronteiriça",
+    "motivo": "Avalia políticas de aplicativos públicos incluindo requisitos de transferência internacional",
+    "observacao": "Análise documental de 30 políticas; não mede tráfego nem comprova conformidade operacional",
+    "validacao_pessoal": "pendente"
+  },
+  {
+    "id": "R0662",
+    "decisao": "I",
+    "criterio": "",
+    "paginas_lidas": "1, 4–5, 7",
+    "trechos": "Seção 3, Tabela 1 e Seção 4.2",
+    "motivo": "Compara tráfego de aplicativos públicos finlandeses com políticas e destinatários",
+    "observacao": "32 apps no método; percentuais da Tabela 1 aparentam denominador 34, conferir antes de citar",
+    "validacao_pessoal": "pendente"
+  },
+  {
+    "id": "R0743",
+    "decisao": "I",
+    "criterio": "",
+    "paginas_lidas": "1, 5–8, 11–12",
+    "trechos": "Método, governança do Monitora Covid-19 e Figura 1",
+    "motivo": "Analisa aplicativo público brasileiro, rastreadores, documentação e proteção de dados",
+    "observacao": "Estudo de caso qualitativo; não extrapolar para prevalência no corpus nacional",
+    "validacao_pessoal": "pendente"
+  },
+  {
+    "id": "R1239",
+    "decisao": "E",
+    "criterio": "EC6",
+    "paginas_lidas": "1–4",
+    "trechos": "Texto completo com quatro páginas",
+    "motivo": "Artigo curto de quatro páginas, excluído pelo EC6 vigente",
+    "observacao": "Tema pertinente ao Conecte SUS, mas extensão confirmada no PDF",
+    "validacao_pessoal": "pendente"
+  },
+  {
+    "id": "R0423",
+    "decisao": "I",
+    "criterio": "",
+    "paginas_lidas": "1, 6–7, 10, 12, 35–36, 40–41",
+    "trechos": "Seção 3.3 e Tabela 10",
+    "motivo": "Analisa fluxos de dados de aplicativos COVID-19 com conferência manual",
+    "observacao": "92 apps; avisos estáticos e registros locais não comprovam envio a terceiros",
+    "validacao_pessoal": "pendente"
+  },
+  {
+    "id": "R0433",
+    "decisao": "I",
+    "criterio": "",
+    "paginas_lidas": "1, 6, 15, 24, 34",
+    "trechos": "Desenho, monitoramento em execução e Tabela 4",
+    "motivo": "Analisa acesso efetivo a dados e políticas de 28 aplicativos COVID-19",
+    "observacao": "Monitoramento de permissões e análise de vulnerabilidades não equivalem a captura de transmissões",
+    "validacao_pessoal": "pendente"
+  },
+  {
+    "id": "R0476",
+    "decisao": "I",
+    "criterio": "",
+    "paginas_lidas": "1, 6, 11–12",
+    "trechos": "Método e Tabelas 2–5",
+    "motivo": "Mede bibliotecas de rastreamento em aplicativos COVID-19 com MobSF",
+    "observacao": "Separa contagem de rastreadores das verificações funcionais da API GAEN",
+    "validacao_pessoal": "pendente"
+  },
+  {
+    "id": "R0693",
+    "decisao": "I",
+    "criterio": "",
+    "paginas_lidas": "1, 3–5",
+    "trechos": "Corpus APP-BR, Tabela 3 e Seção 6",
+    "motivo": "Analisa políticas de aplicativos no Brasil sob a LGPD",
+    "observacao": "82 políticas distintas; declarações não comprovam práticas e consentimento não é a única base legal",
+    "validacao_pessoal": "pendente"
+  },
+  {
+    "id": "R0701",
+    "decisao": "",
+    "criterio": "",
+    "paginas_lidas": "1, 4–5 (leitura visual)",
+    "trechos": "Proposta LGPDCheck e desenho experimental",
+    "motivo": "PDF obtido é o plano de 2023, não a avaliação publicada em 2025",
+    "observacao": "Página da editora confirma estudo concluído com quatro autores em 2025; obter versão correspondente ao DOI antes de decidir",
+    "validacao_pessoal": "pendente"
+  },
+  {
+    "id": "R0668",
+    "decisao": "I",
+    "criterio": "",
+    "paginas_lidas": "1, 3–6",
+    "trechos": "Método e critérios de proteção e compartilhamento",
+    "motivo": "Examina governança e armazenamento internacional de dados do NZ COVID Tracer",
+    "observacao": "Avaliação documental e contextual; não mede tráfego nem prevalência de SDKs",
+    "validacao_pessoal": "pendente"
+  },
+  {
+    "id": "R0710",
+    "decisao": "I",
+    "criterio": "",
+    "paginas_lidas": "1, 6, 10–11",
+    "trechos": "Método e Tabelas 1–2",
+    "motivo": "Compara regras e destinos declarados de transferência internacional em aplicativos",
+    "observacao": "Análise de políticas e interfaces; autores não verificam cumprimento operacional",
+    "validacao_pessoal": "pendente"
+  },
+  {
+    "id": "R0047",
+    "decisao": "I",
+    "criterio": "",
+    "paginas_lidas": "1–2, 5–6, 8, 10",
+    "trechos": "Método, atribuição manual e Tabelas 1–2",
+    "motivo": "Detecta e atribui identificadores persistentes a SDKs de rastreamento Android",
+    "observacao": "Distinguir amostras por loja e versões do Android na comparação de prevalência",
+    "validacao_pessoal": "pendente"
+  },
+  {
+    "id": "R0057",
+    "decisao": "I",
+    "criterio": "",
+    "paginas_lidas": "1, 3–5",
+    "trechos": "Avaliação e análise de privacidade, Tabela 4",
+    "motivo": "Mede bibliotecas de publicidade e outros terceiros em aplicativos infantis",
+    "observacao": "Acurácia do classificador infantil não é acurácia da detecção de bibliotecas",
+    "validacao_pessoal": "pendente"
+  },
+  {
+    "id": "R0060",
+    "decisao": "I",
+    "criterio": "",
+    "paginas_lidas": "2, 7, 10–11",
+    "trechos": "Análise de fluxo, avaliação e Tabela 3",
+    "motivo": "Analisa fluxos de dados e práticas de SDKs iOS contra políticas",
+    "observacao": "População iOS; separar avaliação de APIs, propagação de dados e inconsistências",
+    "validacao_pessoal": "pendente"
+  },
+  {
+    "id": "R0085",
+    "decisao": "I",
+    "criterio": "",
+    "paginas_lidas": "2, 7, 11–12",
+    "trechos": "PICOSCAN, Tabela 3 e medição da Seção 6",
+    "motivo": "Avalia configuração de privacidade de SDKs e riscos em aplicativos Android",
+    "observacao": "Métricas avaliadas contra amostras manuais; assinatura e inicialização não bastam para inferir transmissão",
+    "validacao_pessoal": "pendente"
+  },
+  {
+    "id": "R0138",
+    "decisao": "I",
+    "criterio": "",
+    "paginas_lidas": "1, 3, 5",
+    "trechos": "Método e Tabela IV",
+    "motivo": "Mede bibliotecas de rastreamento em bloqueadores Android e compara controles",
+    "observacao": "97 bloqueadores e 500 aplicativos de referência; análise por dicionário de assinaturas",
+    "validacao_pessoal": "pendente"
+  },
+  {
+    "id": "R0249",
+    "decisao": "I",
+    "criterio": "",
+    "paginas_lidas": "1, 4–5, 7, 9",
+    "trechos": "Método e análise de tráfego da Seção 4.4",
+    "motivo": "Compara avisos de consentimento com transmissão de dados a terceiros",
+    "observacao": "Inferências jurídicas delimitadas pelos autores; não generalizar ausência de consentimento a toda base legal",
+    "validacao_pessoal": "pendente"
+  },
+  {
+    "id": "R0229",
+    "decisao": "I",
+    "criterio": "",
+    "paginas_lidas": "3, 5, 7–8",
+    "trechos": "Seções 3.4, 3.5 e 5; Tabela 2",
+    "motivo": "Mede SDKs e tráfego de dados em aplicativos governamentais",
+    "observacao": "Os 37,1% são 611/1.647 ocorrências de SDKs na Seção 5; não tratar como proporção dos 1.166 apps. Tráfego limitado por execução e pinning",
+    "validacao_pessoal": "pendente"
+  },
+  {
+    "id": "R0468",
+    "decisao": "I",
+    "criterio": "",
+    "paginas_lidas": "1, 6, 9",
+    "trechos": "Anotações da Tabela I e validação da análise estática na Tabela IV",
+    "motivo": "Confronta práticas de coleta e compartilhamento com políticas de apps",
+    "observacao": "Teste de 40 apps combina tráfego, inspeção estática e documentação; compartilhamento restrito a dez publicadores de bibliotecas",
+    "validacao_pessoal": "pendente"
+  },
+  {
+    "id": "R0641",
+    "decisao": "I",
+    "criterio": "",
+    "paginas_lidas": "1, 4, 7",
+    "trechos": "Framework de fluxos; Seção 5.2 e Tabela 1",
+    "motivo": "Compara fluxos estáticos de dados com políticas de aplicativos Android",
+    "observacao": "375 dos 477 apps processados; 341 violações potenciais confirmadas manualmente. Fluxo estático não comprova transmissão em execução",
+    "validacao_pessoal": "pendente"
+  },
+  {
+    "id": "R0120",
+    "decisao": "I",
+    "criterio": "",
+    "paginas_lidas": "1, 8–9, 12",
+    "trechos": "Seções 3.3–3.4 e Tabela 2",
+    "motivo": "Mede categorias de SDKs de terceiros em jogos Android",
+    "observacao": "41 apps selecionados intencionalmente; presença estática sem prova de ativação, transmissão ou autenticidade criptográfica dos APKs",
+    "validacao_pessoal": "pendente"
+  },
+  {
+    "id": "R0192",
+    "decisao": "I",
+    "criterio": "",
+    "paginas_lidas": "1–4, 6, 20",
+    "trechos": "Método 3.1, Tabela 2 e relação com Serrano et al. 2023c",
+    "motivo": "Analisa rastreadores e coleta de dados em aplicativos da COVID-19",
+    "observacao": "Versão ampliada de R0375; reter somente esta. 595 APKs de fontes mistas; separar detecção estática e análise aprofundada de bibliotecas",
+    "validacao_pessoal": "pendente"
+  },
+  {
+    "id": "R0216",
+    "decisao": "I",
+    "criterio": "",
+    "paginas_lidas": "1, 4, 15",
+    "trechos": "Seção 2 e análise de rastreadores em 4.3",
+    "motivo": "Detecta rastreadores em aplicativos oficiais europeus de rastreamento de contatos",
+    "observacao": "26 apps; 17 sem rastreadores detectados. MobSF usa Exodus; essas saídas não são detectores independentes",
+    "validacao_pessoal": "pendente"
+  },
+  {
+    "id": "R0417",
+    "decisao": "I",
+    "criterio": "",
+    "paginas_lidas": "1, 4, 7",
+    "trechos": "Seção 3, Tabela 1 e Figuras 2–3",
+    "motivo": "Confronta dados enviados a terceiros com políticas de apps Android e iOS",
+    "observacao": "Reanalisa base de tráfego de Zang et al.; amostras intencionais de 15 apps por sistema. Não contar a coleta original como nova população independente",
+    "validacao_pessoal": "pendente"
+  },
+  {
+    "id": "R0471",
+    "decisao": "I",
+    "criterio": "",
+    "paginas_lidas": "1, 3, 6",
+    "trechos": "Seção 3.1, Tabela 1 e Seção 4.1",
+    "motivo": "Analisa dados pessoais declarados por aplicativos reais da COVID-19",
+    "observacao": "122 apps e suas políticas; evidência documental de coleta e privacidade, sem medir tráfego ou SDKs. Usar para QR4, não para prevalência de rastreadores",
+    "validacao_pessoal": "pendente"
+  },
+  {
+    "id": "R0545",
+    "decisao": "I",
+    "criterio": "",
+    "paginas_lidas": "1, 8, 16–17",
+    "trechos": "Seção 4.1 e Tabela 4 da avaliação",
+    "motivo": "Confronta permissões de aplicativos e SDKs com políticas de privacidade",
+    "observacao": "Androguard identifica APIs; métricas da Tabela 4 medem classificação textual de permissões, não confirmação de transmissão de dados",
+    "validacao_pessoal": "pendente"
+  },
+  {
+    "id": "R0760",
+    "decisao": "I",
+    "criterio": "",
+    "paginas_lidas": "1, 13, 16",
+    "trechos": "Seção 3: termos do Grindr à luz da LGPD",
+    "motivo": "Analisa LGPD aplicada ao tratamento de dados sensíveis em aplicativo",
+    "observacao": "Análise jurídica e documental elegível pela exceção QR5; não demonstra tecnicamente quais dados foram transmitidos",
+    "validacao_pessoal": "pendente"
+  },
+  {
+    "id": "R0442",
+    "decisao": "I",
+    "criterio": "",
+    "paginas_lidas": "2–3, 9–10",
+    "trechos": "Seção 4, Tabelas 2–3 e caracterização da Seção 5",
+    "motivo": "Confronta fluxos observados e destinatários com políticas de aplicativos Android",
+    "observacao": "PDF publicado inclui capa adicional; 13.796 apps com fluxos observados e política utilizável. Não generalizar para todos os apps da loja",
+    "validacao_pessoal": "pendente"
+  },
+  {
+    "id": "R0375",
+    "decisao": "E",
+    "criterio": "EC1",
+    "paginas_lidas": "R0192: 2–3, 20",
+    "trechos": "Declaração de versão ampliada e referência com DOI idêntico",
+    "motivo": "Versão anterior substituída por R0192, ampliada e revisada em 2024",
+    "observacao": "Texto próprio não obtido; duplicidade documental confirmada no texto de R0192 e no DOI 10.1145/3615366.3615426. Exclusão não é por falta de acesso",
+    "validacao_pessoal": "pendente"
+  }
+]

@@ -1,74 +1,30 @@
-# TCC I: o texto
+# Projeto Capstone I
 
-**Estado em 04/11/2026:** resumo, abstract, introdução, metodologia das etapas
-executadas e plano de atividades escritos. Piloto concluído: κ de Fleiss 0,52
-com os detectores como são e 0,69 depois da conferência manual; 72% das
-detecções do detector B eram falso positivo. Protocolo da revisão sistemática
-escrito; a lacuna foi reescrita depois de achar Samarasinghe et al. (2022).
+A entrega do Capstone I é um **projeto de pesquisa**: introdução, referencial teórico e procedimentos metodológicos, com recursos e cronogramas. A coleta principal e os testes das hipóteses ficam para o Capstone II. O estado e o que falta estão em [conformidade.md](conformidade.md).
 
-| Arquivo | O que é |
+## Arquivos
+
+| Arquivo | Conteúdo |
 |---|---|
-| [`tcc1-projeto-de-pesquisa.md`](tcc1-projeto-de-pesquisa.md) | **O texto.** Identificação, resumo, abstract, Cap. 1 Introdução, Cap. 2 Metodologia do que foi feito, Cap. 3 Plano de atividades, referências |
-| [`piloto-passo-a-passo.md`](piloto-passo-a-passo.md) | Como rodar o piloto do AndroZoo, comando por comando |
-| [`coleta-passo-a-passo.md`](coleta-passo-a-passo.md) | Ampliar o controle por categoria e coletar direto da Google Play |
-| [`revisao/protocolo-revisao-sistematica.md`](revisao/protocolo-revisao-sistematica.md) | **Protocolo da revisão sistemática**: questões, strings de cada base, conjunto de controle, critérios, qualidade, extração, cronograma e registros |
-| [`revisao/buscas-passo-a-passo.md`](revisao/buscas-passo-a-passo.md) | Como rodar as 22 buscas, exportar, juntar e triar |
-| [`latex/`](latex/) | **O mesmo texto em LaTeX (abnTeX2, ABNT)**, pronto para o Overleaf: `main.tex` e `referencias.bib` |
+| [latex/main.pdf](latex/main.pdf) | O projeto, no modelo do IDP |
+| [latex/main.tex](latex/main.tex) | Fonte do texto |
+| [latex/referencias.bib](latex/referencias.bib) | Referências |
+| [apresentacao/simulacao-defesa-rascunho.pptx](apresentacao/simulacao-defesa-rascunho.pptx) | 14 slides no modelo do IDP, com a fala de cada slide nas notas |
+| [apresentacao/roteiro-simulacao.md](apresentacao/roteiro-simulacao.md) | Fala de cada slide, tempos e perguntas prováveis |
+| [revisao/protocolo-revisao-sistematica.md](revisao/protocolo-revisao-sistematica.md) | Protocolo e registros da revisão sistemática |
+| [revisao/sintese-F2-propostas.md](revisao/sintese-F2-propostas.md) | As 71 propostas de inclusão por questão de pesquisa, base da síntese da Seção 2 |
+| [revisao/buscas-passo-a-passo.md](revisao/buscas-passo-a-passo.md) | Como as buscas e a triagem foram feitas e como seguir |
+| [metodologia/criterios-lgpd.md](metodologia/criterios-lgpd.md) | Matriz de dez critérios documentais da LGPD |
+| [orientacao/pauta-proximo-encontro.md](orientacao/pauta-proximo-encontro.md) | Decisões a tomar com o orientador |
+| [piloto-passo-a-passo.md](piloto-passo-a-passo.md), [coleta-passo-a-passo.md](coleta-passo-a-passo.md) | Como rodar o piloto e a coleta direta |
 
-## Abrir no Overleaf
+## Compilação
 
-**Basta o `main.tex`.** Desde 11/11 as referências vão dentro dele: ao
-compilar, o LaTeX grava o `referencias.bib` sozinho e sobrescreve o que houver.
+Use **XeLaTeX**, com `main.tex`, `referencias.bib` e `logo-idp.png` na mesma pasta.
 
-- **Projeto que já existe no Overleaf:** abra o `main.tex` de lá, apague tudo,
-  cole o conteúdo de `tcc/latex/main.tex` e clique em **Recompile**.
-- **Projeto novo:** **New Project > Blank Project**, troque o conteúdo do
-  `main.tex` pelo deste repositório e clique em **Recompile**.
-- O compilador é o padrão (pdfLaTeX).
+- **Overleaf:** envie os três arquivos e escolha Menu > Compiler > XeLaTeX.
+- **No computador:** `xelatex main.tex`, `bibtex main`, `xelatex main.tex`, `xelatex main.tex`.
 
-Os "??" que apareciam no texto eram citações sem referência: o Overleaf estava
-com o `referencias.bib` de 28/10, que não tinha as cinco referências citadas
-depois (Samarasinghe et al., Wohlin, Zhang et al., PRISMA e Cohen).
+O texto usa a fonte Times New Roman, como pede o modelo do IDP. Se o ambiente não a tiver, troque a linha `\setmainfont{Times New Roman}` por `\setmainfont{TeX Gyre Termes}`, uma Times equivalente que vem com o TeX Live. O fluxograma PRISMA é desenhado com TikZ, que também vem com o TeX Live.
 
-Para mudar uma referência, edite o bloco `filecontents` no começo do
-`main.tex`. O `tcc/latex/referencias.bib` fica como cópia.
-
-O projeto gera capa, folha de rosto, folha de aprovação, resumo, abstract,
-listas de tabelas e de quadros, sumário, as quatro seções e as referências no
-formato ABNT. Em 11/11, compilado só com o `main.tex`: 38 páginas, sem erro e
-sem referência indefinida.
-
-## O que mudou em relação à proposta
-
-| Ponto | Proposta (16/09) | Texto atual | Por quê |
-|---|---|---|---|
-| Lacuna | Os estudos cobrem só apps comerciais ou de saúde privada; nenhum tem linha de base pareada | Samarasinghe et al. (2022) mediram 1.166 apps de governo de 71 países; a lacuna passa a ser o caso brasileiro (esferas, dado sensível), a linha de base e o instrumento | O estudo foi achado na busca exploratória de 04/11. Ver Seções 1.2 e 2.13 |
-| Fonte dos APKs | AndroZoo | AndroZoo para os 92 apps de governo do acervo (23,2%); Google Play direta, com hash, para os outros 304 | Cobertura medida em 26/10. Ver Seção 2.10 |
-| Detectores da H4 | MobSF, Androguard, Exodus | A (Exodus, código), B (Exodus, rede), C (Disconnect, rede); MobSF como verificação | O MobSF usa a base e a regra do Exodus; o Androguard só extrai. Ver Seção 2.9 |
-| Medida principal | (não definida) | Detector A; C como verificação independente; B só para medir o efeito do método | No piloto, 72% das detecções de B foram falso positivo e B não vê o Firebase Analytics. **Decisão a levar ao orientador** |
-| Menor diferença detectável | 5,1 p.p. | 5,7 a 11,4 p.p. com o controle de 252 (6,0 a 12,3 com 190), conforme a taxa de base | O 5,1 usava taxa de base de 1% (a de anúncios) |
-| Dado sensível | 152 apps | 152 pelo critério automático, provisório; a H3 passa a usar classificação manual dos 396 | A validação de 04/11 mediu 28,6% de erro na sensibilidade automática (Seção 2.12) |
-| Oficialidade | 396 apps de órgão público | 396 candidatos; conferência dos 396 antes da coleta | 2 de 30 sorteados (6,7%) eram de empresa privada |
-| Suporte comum | 92,4% por faixa; 27,4% por categoria | 92,4% por faixa; por categoria, 77,9% com o controle de 190 e 89,1% com o ampliado (252) | O 27,4% vinha de uma rodada anterior ao complemento de apps pequenos e não se reproduz. Ampliação feita em 04/11, Seção 2.11 |
-| Escopo | Rastreadores **e** falhas de configuração de segurança | Só rastreadores | Nenhuma das hipóteses H1 a H4 mede postura de segurança: ela não tinha hipótese nem critério de decisão. Para voltar, precisa de hipótese própria |
-| H3 | "não apresentam postura de proteção superior" | "não apresentam menos rastreadores" | "Postura de proteção" não tinha medida definida |
-| Título | "...postura de segurança e soberania de dados..." | "...e soberania de dados..." | Segue o escopo |
-
-**Essas três últimas mudanças são decisão sua e do orientador.** Se quiser
-manter a postura de segurança, ela volta ao título, aos objetivos e ganha uma
-hipótese.
-
-## O que falta no texto
-
-- Datas de acesso da LGPD e do Exodus nas referências (anotar o dia em que abrir cada link).
-- Passar para o modelo ABNT da instituição antes de 03/12.
-- **Língua.** O regulamento v.2026-05 (Art. 32, §3º) pede o trabalho final em
-  inglês; o §4º aceita outra língua com anuência da Coordenação e endosso do
-  orientador. Se a regra mudou para o TCC I, vale ter isso por escrito.
-- **Uso de IA.** O Art. 19, X pede ao orientador que certifique a autoria do
-  estudante, sem uso indevido de IA. O Art. 49 prevê, quando o orientador ou a
-  banca constata uso indevido, uma comissão de sindicância com ampla defesa e,
-  se os fatos forem comprovados, reprovação definitiva. O regulamento não
-  define o que é uso indevido. O que foi feito com IA está declarado na Seção
-  2.14; combine com o orientador o que é aceito, como registrar e o que precisa
-  de conferência pessoal.
+Depois de qualquer mudança, gere o PDF de novo e substitua `latex/main.pdf`.

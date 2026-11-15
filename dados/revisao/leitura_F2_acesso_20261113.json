@@ -1,0 +1,3620 @@
+[
+  {
+    "id": "R0007",
+    "titulo": "A Systematic Assessment on Android Third-Party Library Detection Tools",
+    "url_tentada": "https://arxiv.org/pdf/2108.01964",
+    "data": "2026-11-13",
+    "status": "obtido",
+    "url": "https://arxiv.org/pdf/2108.01964",
+    "paginas": 24,
+    "sha256": "ca678b872da4f4bbfd34c7894caec23369fa44706b8ee57bfbd223c56ebd8489",
+    "caracteres": 178774
+  },
+  {
+    "id": "R0015",
+    "titulo": "An Empirical Study on the Robustness of Android Third-Party Library Detection Tools Against Advanced Obfuscation",
+    "url_tentada": "https://aoa0.github.io/pubs/icse26.pdf",
+    "data": "2026-11-13",
+    "status": "obtido",
+    "url": "https://aoa0.github.io/pubs/icse26.pdf",
+    "paginas": 13,
+    "sha256": "347aa11e3f09ade6bc00c62fc4097b7f6b1cb87942497df47b746af54282cb6a",
+    "caracteres": 121014
+  },
+  {
+    "id": "R0019",
+    "titulo": "ATVHunter: Reliable version detection of third-party libraries for vulnerability identification in android applications",
+    "url_tentada": "https://arxiv.org/pdf/2102.08172",
+    "data": "2026-11-13",
+    "status": "obtido",
+    "url": "https://arxiv.org/pdf/2102.08172",
+    "paginas": 13,
+    "sha256": "d9cc8db8b3879f8b781e199150f2f03b7e5e444993d9dd79ca73480d2dbc49c6",
+    "caracteres": 94754
+  },
+  {
+    "id": "R0020",
+    "titulo": "Automated Third-Party Library Detection for Android Applications: Are We There Yet?",
+    "url_tentada": "https://lilicoding.github.io/papers/zhan2020automated.pdf",
+    "data": "2026-11-13",
+    "status": "obtido",
+    "url": "https://lilicoding.github.io/papers/zhan2020automated.pdf",
+    "paginas": 12,
+    "sha256": "a3303d49bad4817558f60674ad321a83cc978e5e337d3bf679a7332b5e2653f0",
+    "caracteres": 99673
+  },
+  {
+    "id": "R0030",
+    "titulo": "Detecting third-party libraries in Android applications with high precision and recall",
+    "url_tentada": "https://www.cs.ucdavis.edu/~hchen/paper/zhang2018.pdf",
+    "data": "2026-11-13",
+    "status": "obtido",
+    "url": "https://www.cs.ucdavis.edu/~hchen/paper/zhang2018.pdf",
+    "paginas": 12,
+    "sha256": "50a12dc37a54df5cb9059be29a626edd9e61a4e0d183a4297244a9d098633ca7",
+    "caracteres": 93212
+  },
+  {
+    "id": "R0031",
+    "titulo": "Detection and Privacy Leakage Analysis of Third-Party Libraries in Android Apps",
+    "url_tentada": "https://doi.org/10.1007/978-3-031-25538-0_30",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "Resposta não é PDF",
+    "segunda_verificacao": [
+      {
+        "url": "https://doi.org/10.1007/978-3-031-25538-0_30",
+        "url_final": "https://link.springer.com/chapter/10.1007/978-3-031-25538-0_30?error=cookies_not_supported&code=76ae13af-f2fc-41d8-bca3-32f7bd9e0de9",
+        "resultado": "Página HTML",
+        "links_pdf": [
+          "https://link.springer.com/content/pdf/10.1007/978-3-031-25538-0_30.pdf"
+        ]
+      },
+      {
+        "url": "https://link.springer.com/content/pdf/10.1007/978-3-031-25538-0_30.pdf",
+        "url_final": "https://link.springer.com/chapter/10.1007/978-3-031-25538-0_30?error=cookies_not_supported&code=b0b99bcb-5219-41a5-bc8a-b827bdba3fdd",
+        "resultado": "Página HTML",
+        "links_pdf": [
+          "https://link.springer.com/content/pdf/10.1007/978-3-031-25538-0_30.pdf"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "R0033",
+    "titulo": "Detection Technology of Mobile Application Third-Party Library Based on Binary Tree Model",
+    "url_tentada": "https://doi.org/10.1109/ccdc58219.2023.10326824",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "Resposta não é PDF",
+    "segunda_verificacao": [
+      {
+        "url": "https://doi.org/10.1109/ccdc58219.2023.10326824",
+        "url_final": "https://ieeexplore.ieee.org/document/10326824/",
+        "resultado": "Página HTML",
+        "links_pdf": []
+      }
+    ]
+  },
+  {
+    "id": "R0036",
+    "titulo": "DroidNative: A Greedy-Constructed Large-Scale Indexing for Android Native Libraries",
+    "url_tentada": "https://sen-chen.github.io/pdf/C57-A-Mobile2025-DroidNative%20A%20Greedy-Constructed%20Large-Scale%20Indexing%20for%20Android%20Native%20Libraries.pdf",
+    "data": "2026-11-13",
+    "tentativas_anteriores": [
+      {
+        "url": "https://sen-chen.github.io/img_cs/pdf/A-Mobile2025-DroidNative%20A%20Greedy-Constructed%20Large-Scale%20Indexing%20for%20Android%20Native%20Libraries.pdf",
+        "erro": "HTTP Error 404: Not Found"
+      }
+    ],
+    "status": "obtido",
+    "url": "https://sen-chen.github.io/pdf/C57-A-Mobile2025-DroidNative%20A%20Greedy-Constructed%20Large-Scale%20Indexing%20for%20Android%20Native%20Libraries.pdf",
+    "paginas": 4,
+    "sha256": "de817f762ed946175732435cb4e1237b962f2a20239516fb87525488cf9ad464",
+    "caracteres": 33399
+  },
+  {
+    "id": "R0051",
+    "titulo": "Graph Structure-based Clustering Algorithm for Android Third-party Libraries",
+    "url_tentada": "https://iopscience.iop.org/article/10.1088/1755-1315/428/1/012009/pdf",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "Resposta não é PDF",
+    "segunda_verificacao": [
+      {
+        "url": "https://iopscience.iop.org/article/10.1088/1755-1315/428/1/012009/pdf",
+        "url_final": "https://validate.perfdrive.com/fb803c746e9148689b3984a31fccd902/?ssa=2b9c7a8b-31e3-45f2-ae60-f79325116657&ssb=78375276834&ssc=https%3A%2F%2Fiopscience.iop.org%2Farticle%2F10.1088%2F1755-1315%2F428%2F1%2F012009%2Fpdf&ssi=9143edce-cnvj-49e7-92e6-d29509fec996&ssk=botmanager_support@radware.com&ssm=55628722716267375109149040797150&ssn=babcdde2a0d25d0f4f0c3ed7818ef27dc95814f2fc5d-d90f-47c3-835069&sso=64a8b822-fccf5163b912af99432a5f3667adab74ca9146a99dba4c2e&ssp=44540535701794507914179450897415430&ssq=06411467539884217848575398689981245218886&ssr=OTAuOTYuMTc2LjE2Ng==&sst=Mozilla/5.0&ssu=&ssv=&ssw=&ssx=eyJ1em14IjoiN2ZjMDAwNjE5NzU2ZWEtYWRkMy00ZWJjLWFiMWQtMjMzOTk1ZjkzYTk1MS0xNzk0NTc1Mzk4OTUwMC0wMGQyZjhmMzU2NTVjMTU3ODZlMTAiLCJfX3V6bWYiOiI3ZjkwMDAxNGYyZmM1ZC1kOTBmLTQ3YzMtODgyMi1mY2NmNTE2M2I5MTIxLTE3OTQ1NzUzOTg5NTAwLTAwNTU3NzJmMDI4ZmRjYzRkOGMxMCIsInJkIjoiaW9wLm9yZyJ9",
+        "resultado": "Página HTML",
+        "links_pdf": []
+      },
+      {
+        "url": "https://doi.org/10.1088/1755-1315/428/1/012009",
+        "url_final": "https://validate.perfdrive.com/fb803c746e9148689b3984a31fccd902/?ssa=9ba0bfa4-33c0-4b27-942e-d0f79dc57599&ssb=12721257897&ssc=https%3A%2F%2Fiopscience.iop.org%2Farticle%2F10.1088%2F1755-1315%2F428%2F1%2F012009&ssi=839196c4-cnvj-4102-8d3c-b0d64645b790&ssk=botmanager_support@radware.com&ssm=66839333780181045105801405822692&ssn=1be24826870aacd4af358066d75aa8047f2f72aaf270-7329-4a50-97b361&sso=8cc1735c-d3de9da1e4262a5fe76263d7005c3d17525fc23a62e0077f&ssp=70289355381794552224179458835601440&ssq=65845367541261408547375412321070081402802&ssr=OTAuOTYuMTc2LjE2Ng==&sst=Mozilla/5.0&ssu=&ssv=&ssw=&ssx=eyJ1em14IjoiN2ZjMDAwMmVjODJjYTYtYzNjNy00N2I2LWE3M2EtZDFhNTM5OTc2YWZjMS0xNzk0NTc1NDEyNjMyMC0wMGQ0YjllNWNiNTg4YmVlYzY0MTAiLCJfX3V6bWYiOiI3ZjkwMDA3MmFhZjI3MC03MzI5LTRhNTAtOTM1Yy1kM2RlOWRhMWU0MjYxLTE3OTQ1NzU0MTI2MzIwLTAwNWRiY2M5ZDU1NWMwYTAzNjAxMCIsInJkIjoiaW9wLm9yZyJ9",
+        "resultado": "Página HTML",
+        "links_pdf": []
+      }
+    ]
+  },
+  {
+    "id": "R0055",
+    "titulo": "How Does Code Optimization Impact Third-party Library Detection for Android Applications?",
+    "url_tentada": "https://xzf1234.github.io/pdfs/ASE24_LibHunter.pdf",
+    "data": "2026-11-13",
+    "status": "obtido",
+    "url": "https://xzf1234.github.io/pdfs/ASE24_LibHunter.pdf",
+    "paginas": 13,
+    "sha256": "84df7749bf5bf089ea803859f7dd0aaf3e3a51d2e54716cf0ea09e78b543c041",
+    "caracteres": 121068
+  },
+  {
+    "id": "R0056",
+    "titulo": "Identify and Inspect Libraries in Android Applications",
+    "url_tentada": "https://doi.org/10.1007/s11277-018-5456-4",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "Resposta não é PDF",
+    "segunda_verificacao": [
+      {
+        "url": "https://doi.org/10.1007/s11277-018-5456-4",
+        "url_final": "https://link.springer.com/article/10.1007/s11277-018-5456-4?error=cookies_not_supported&code=16603db7-fd44-457d-a6cf-2fed475e3cf8",
+        "resultado": "Página HTML",
+        "links_pdf": [
+          "https://link.springer.com/content/pdf/10.1007/s11277-018-5456-4.pdf"
+        ]
+      },
+      {
+        "url": "https://link.springer.com/content/pdf/10.1007/s11277-018-5456-4.pdf",
+        "url_final": "https://link.springer.com/article/10.1007/s11277-018-5456-4?error=cookies_not_supported&code=e9230e5d-78bb-493f-a8c1-63ae5edc6cc8",
+        "resultado": "Página HTML",
+        "links_pdf": [
+          "https://link.springer.com/content/pdf/10.1007/s11277-018-5456-4.pdf"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "R0064",
+    "titulo": "Large-Scale Third-Party Library Detection in Android Markets",
+    "url_tentada": "https://faculty.ist.psu.edu/wu/papers/LibD-TSE-18.pdf",
+    "data": "2026-11-13",
+    "tentativas_anteriores": [
+      {
+        "url": "https://doi.org/10.1109/tse.2018.2872958",
+        "erro": "Resposta não é PDF"
+      }
+    ],
+    "status": "obtido",
+    "url": "https://faculty.ist.psu.edu/wu/papers/LibD-TSE-18.pdf",
+    "paginas": 23,
+    "sha256": "0d1b09dee8432d8f04be9ac9cc64b489f331b1495084139b08a165f2d0d34b3c",
+    "caracteres": 187617
+  },
+  {
+    "id": "R0067",
+    "titulo": "LibD: Scalable and precise third-party library detection in android markets",
+    "url_tentada": "https://faculty.ist.psu.edu/wu/papers/LibD.pdf",
+    "data": "2026-11-13",
+    "tentativas_anteriores": [
+      {
+        "url": "https://doi.org/10.1109/icse.2017.38",
+        "erro": "Resposta não é PDF"
+      }
+    ],
+    "status": "obtido",
+    "url": "https://faculty.ist.psu.edu/wu/papers/LibD.pdf",
+    "paginas": 12,
+    "sha256": "651ca669915eacb87ca2c7970173e0c51051d9bc6c2fa0d71b3ef9346726aaca",
+    "caracteres": 93510
+  },
+  {
+    "id": "R0069",
+    "titulo": "LibHunter: An Unsupervised Approach for Third-party Library Detection without Prior Knowledge",
+    "url_tentada": "https://doi.org/10.1109/iscc55528.2022.9912796",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "Resposta não é PDF",
+    "segunda_verificacao": [
+      {
+        "url": "https://doi.org/10.1109/iscc55528.2022.9912796",
+        "url_final": "https://ieeexplore.ieee.org/document/9912796/",
+        "resultado": "Página HTML",
+        "links_pdf": []
+      }
+    ]
+  },
+  {
+    "id": "R0070",
+    "titulo": "LibiD: Reliable identification of obfuscated third-party android libraries",
+    "url_tentada": "https://www.cl.cam.ac.uk/~jz448/publication/LibID.pdf",
+    "data": "2026-11-13",
+    "tentativas_anteriores": [
+      {
+        "url": "https://doi.org/10.17863/cam.40688",
+        "erro": "Resposta não é PDF"
+      }
+    ],
+    "status": "obtido",
+    "url": "https://www.cl.cam.ac.uk/~jz448/publication/LibID.pdf",
+    "paginas": 11,
+    "sha256": "1839994bcbb0eaabfb45c721637e282709fd34d47c723a9d3268576590715dae",
+    "caracteres": 93750
+  },
+  {
+    "id": "R0071",
+    "titulo": "LibKit: Detecting Third-Party Libraries in iOS Apps",
+    "url_tentada": "https://software.imdea.org/~alessandra.gorla/papers/Dominguez-LibKit-FSE23.pdf",
+    "data": "2026-11-13",
+    "tentativas_anteriores": [
+      {
+        "url": "https://dl.acm.org/doi/pdf/10.1145/3611643.3616344",
+        "erro": "HTTP Error 403: Forbidden"
+      }
+    ],
+    "status": "obtido",
+    "url": "https://software.imdea.org/~alessandra.gorla/papers/Dominguez-LibKit-FSE23.pdf",
+    "paginas": 12,
+    "sha256": "e15877083361058d1ab5a9aa0aaf54192dfd207751cd1fc047430be79be3f58b",
+    "caracteres": 106128
+  },
+  {
+    "id": "R0072",
+    "titulo": "LibPass: An Entropy-Guided Black-Box Adversarial Attack Against Third-Party Library Detection Tools in the Wild",
+    "url_tentada": "https://doi.org/10.1109/tdsc.2025.3639708",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "Resposta não é PDF",
+    "segunda_verificacao": [
+      {
+        "url": "https://doi.org/10.1109/tdsc.2025.3639708",
+        "url_final": "https://ieeexplore.ieee.org/document/11275815/",
+        "resultado": "Página HTML",
+        "links_pdf": []
+      }
+    ]
+  },
+  {
+    "id": "R0073",
+    "titulo": "Libra: Library Identification in Obfuscated Android Apps",
+    "url_tentada": "https://doi.org/10.1007/978-3-031-49187-0_11",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "Resposta não é PDF",
+    "segunda_verificacao": [
+      {
+        "url": "https://doi.org/10.1007/978-3-031-49187-0_11",
+        "url_final": "https://link.springer.com/chapter/10.1007/978-3-031-49187-0_11?error=cookies_not_supported&code=c69ed885-bf8c-4a68-8cbd-30b53796f9b7",
+        "resultado": "Página HTML",
+        "links_pdf": [
+          "https://link.springer.com/content/pdf/10.1007/978-3-031-49187-0_11.pdf"
+        ]
+      },
+      {
+        "url": "https://link.springer.com/content/pdf/10.1007/978-3-031-49187-0_11.pdf",
+        "url_final": "https://link.springer.com/chapter/10.1007/978-3-031-49187-0_11?error=cookies_not_supported&code=7701748b-aa9a-4896-a64a-b09cbbb940b4",
+        "resultado": "Página HTML",
+        "links_pdf": [
+          "https://link.springer.com/content/pdf/10.1007/978-3-031-49187-0_11.pdf"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "R0074",
+    "titulo": "LibRadar: Fast and accurate detection of third-party libraries in Android apps",
+    "url_tentada": "https://yaoguopku.github.io/papers/Ma-ICSE-16.pdf",
+    "data": "2026-11-13",
+    "tentativas_anteriores": [
+      {
+        "url": "https://doi.org/10.1145/2889160.2889178",
+        "erro": "HTTP Error 403: Forbidden"
+      }
+    ],
+    "status": "obtido",
+    "url": "https://yaoguopku.github.io/papers/Ma-ICSE-16.pdf",
+    "paginas": 4,
+    "sha256": "45f14886c380e8f57144cbcc325e42f66590ff70648c9ac1c3d7552d5033dccb",
+    "caracteres": 37278
+  },
+  {
+    "id": "R0075",
+    "titulo": "LibRoad: Rapid, Online, and Accurate Detection of TPLs on Android",
+    "url_tentada": "https://doi.org/10.1109/tmc.2020.3003336",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "Resposta não é PDF",
+    "segunda_verificacao": [
+      {
+        "url": "https://doi.org/10.1109/tmc.2020.3003336",
+        "url_final": "https://ieeexplore.ieee.org/document/9120346/",
+        "resultado": "Página HTML",
+        "links_pdf": []
+      }
+    ]
+  },
+  {
+    "id": "R0076",
+    "titulo": "LibScan: Towards More Precise Third-Party Library Identification for Android Applications",
+    "url_tentada": "https://www.usenix.org/system/files/usenixsecurity23-wu-yafei.pdf",
+    "data": "2026-11-13",
+    "tentativas_anteriores": [
+      {
+        "url": "https://www.scopus.com/pages/publications/85176134125?origin=resultslist",
+        "erro": "Resposta não é PDF"
+      }
+    ],
+    "status": "obtido",
+    "url": "https://www.usenix.org/system/files/usenixsecurity23-wu-yafei.pdf",
+    "paginas": 19,
+    "sha256": "9060b6569d2792c58972feda9f67a6f19028fdf469c5aadfb2c39ebcd95ecc55",
+    "caracteres": 132146
+  },
+  {
+    "id": "R0077",
+    "titulo": "LibSift: Automated detection of third-party libraries in android applications",
+    "url_tentada": "https://personal.ntu.edu.sg/elpwang/PDF_web/07890569.pdf",
+    "data": "2026-11-13",
+    "tentativas_anteriores": [
+      {
+        "url": "https://doi.org/10.1109/apsec.2016.017",
+        "erro": "Resposta não é PDF"
+      }
+    ],
+    "status": "obtido",
+    "url": "https://personal.ntu.edu.sg/elpwang/PDF_web/07890569.pdf",
+    "paginas": 8,
+    "sha256": "72506de667873cbe5897b1581c6113d8cb3bcf863ac4b1fa1f57c906614d1b1a",
+    "caracteres": 57440
+  },
+  {
+    "id": "R0078",
+    "titulo": "LibSleuth: Semantic-Aware and Lightweight Third-Party Library Detection for Android Software Supply Chain Security",
+    "url_tentada": "https://doi.org/10.1109/icivc70586.2026.11686618",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "Resposta não é PDF",
+    "segunda_verificacao": [
+      {
+        "url": "https://doi.org/10.1109/icivc70586.2026.11686618",
+        "url_final": "https://ieeexplore.ieee.org/document/11686618/",
+        "resultado": "Página HTML",
+        "links_pdf": []
+      }
+    ]
+  },
+  {
+    "id": "R0088",
+    "titulo": "Obfuscation-resilient code recognition in android apps",
+    "url_tentada": "https://pure.tugraz.at/ws/portalfiles/portal/23858230/main.pdf",
+    "data": "2026-11-13",
+    "tentativas_anteriores": [
+      {
+        "url": "http://openlib.tugraz.at/5e5cf3e5ed9d4",
+        "erro": "Resposta não é PDF"
+      }
+    ],
+    "status": "obtido",
+    "url": "https://tugraz.elsevierpure.com/ws/portalfiles/portal/23858230/main.pdf",
+    "paginas": 10,
+    "sha256": "85a9ea8342cbd1a562db1d0db2f60873fadafe88e756f2de2d019958cb88b1de",
+    "caracteres": 87338
+  },
+  {
+    "id": "R0089",
+    "titulo": "Obfuscation-resilient detection of Android third-party libraries using multi-scale code dependency fusion",
+    "url_tentada": "https://doi.org/10.1016/j.inffus.2024.102908",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "Resposta não é PDF",
+    "segunda_verificacao": [
+      {
+        "url": "https://doi.org/10.1016/j.inffus.2024.102908",
+        "url_final": "https://linkinghub.elsevier.com/retrieve/pii/S1566253524006869",
+        "resultado": "Página HTML",
+        "links_pdf": []
+      }
+    ]
+  },
+  {
+    "id": "R0093",
+    "titulo": "ORLIS: Obfuscation-resilient library detection for Android",
+    "url_tentada": "https://haowei-wu.github.io/msoft18.pdf",
+    "data": "2026-11-13",
+    "tentativas_anteriores": [
+      {
+        "url": "https://doi.org/10.1145/3197231.3197248",
+        "erro": "HTTP Error 403: Forbidden"
+      }
+    ],
+    "status": "obtido",
+    "url": "https://haowei-wu.github.io/msoft18.pdf",
+    "paginas": 11,
+    "sha256": "58fef2cf2232be4f62c57a8e7797212e6de96fed3f8633acf1844e2466cc0f36",
+    "caracteres": 81135
+  },
+  {
+    "id": "R0094",
+    "titulo": "Pay Your Attention on Lib! Android Third-Party Library Detection via Feature Language Model",
+    "url_tentada": "https://aoa0.github.io/pubs/saner25.pdf",
+    "data": "2026-11-13",
+    "tentativas_anteriores": [
+      {
+        "url": "https://doi.org/10.1109/saner64311.2025.00028",
+        "erro": "Resposta não é PDF"
+      }
+    ],
+    "status": "obtido",
+    "url": "https://aoa0.github.io/pubs/saner25.pdf",
+    "paginas": 12,
+    "sha256": "e5b088dec4a3576419dfd03fa2bc79f1b41f1f6dcf8cd4e56a7886db1ce7c3f8",
+    "caracteres": 86665
+  },
+  {
+    "id": "R0105",
+    "titulo": "Reliable third-party library detection in Android and its security applications",
+    "url_tentada": "https://svenbugiel.de/publication/derr-16-ccs/derr-16-ccs.pdf",
+    "data": "2026-11-13",
+    "tentativas_anteriores": [
+      {
+        "url": "https://doi.org/10.1145/2976749.2978333",
+        "erro": "HTTP Error 403: Forbidden"
+      }
+    ],
+    "status": "obtido",
+    "url": "https://svenbugiel.de/publication/derr-16-ccs/derr-16-ccs.pdf",
+    "paginas": 12,
+    "sha256": "557ea869a6c46b285cb589efe6f7ff43730370c9c4c9f1f5d234ffa4fca539f2",
+    "caracteres": 98753
+  },
+  {
+    "id": "R0109",
+    "titulo": "Scalably Detecting Third-Party Android Libraries With Two-Stage Bloom Filtering",
+    "url_tentada": "https://rucsesec.github.io/papers/TSE2022.pdf",
+    "data": "2026-11-13",
+    "tentativas_anteriores": [
+      {
+        "url": "https://doi.org/10.1109/tse.2022.3215628",
+        "erro": "Resposta não é PDF"
+      }
+    ],
+    "status": "obtido",
+    "url": "https://rucsesec.github.io/papers/TSE2022.pdf",
+    "paginas": 14,
+    "sha256": "d6ff6a5ce676cca4abc0957c4b37e5e84a3b11a110a041916b941ecfa06307df",
+    "caracteres": 101903
+  },
+  {
+    "id": "R0111",
+    "titulo": "Securing android applications via edge assistant third-party library detection",
+    "url_tentada": "https://doi.org/10.1016/j.cose.2018.07.024",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "Resposta não é PDF",
+    "segunda_verificacao": [
+      {
+        "url": "https://doi.org/10.1016/j.cose.2018.07.024",
+        "url_final": "https://linkinghub.elsevier.com/retrieve/pii/S0167404818311301",
+        "resultado": "Página HTML",
+        "links_pdf": []
+      }
+    ]
+  },
+  {
+    "id": "R0113",
+    "titulo": "Shrunk, Yet Complete: Code Shrinking-Resilient Android Third-Party Library Detection",
+    "url_tentada": "https://doi.org/10.1109/ase63991.2025.00294",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "Resposta não é PDF",
+    "segunda_verificacao": [
+      {
+        "url": "https://doi.org/10.1109/ase63991.2025.00294",
+        "url_final": "https://ieeexplore.ieee.org/document/11334437/",
+        "resultado": "Página HTML",
+        "links_pdf": []
+      }
+    ]
+  },
+  {
+    "id": "R0118",
+    "titulo": "The hidden complexities of Android TPL detection: An empirical analysis of techniques, challenges, and effectiveness",
+    "url_tentada": "https://doi.org/10.1016/j.cose.2025.104672",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "Resposta não é PDF",
+    "segunda_verificacao": [
+      {
+        "url": "https://doi.org/10.1016/j.cose.2025.104672",
+        "url_final": "https://linkinghub.elsevier.com/retrieve/pii/S016740482500361X",
+        "resultado": "Página HTML",
+        "links_pdf": []
+      }
+    ]
+  },
+  {
+    "id": "R0122",
+    "titulo": "Towards Global Matches for Third-Party Library Detection in Android",
+    "url_tentada": "https://doi.org/10.1145/3744916.3764541",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "HTTP Error 403: Forbidden",
+    "segunda_verificacao": [
+      {
+        "url": "https://doi.org/10.1145/3744916.3764541",
+        "erro": "HTTP Error 403: Forbidden"
+      }
+    ]
+  },
+  {
+    "id": "R0124",
+    "titulo": "TPL-Benchmark: A Comprehensive Benchmark for Third-Party Library Detection in Android Applications",
+    "url_tentada": "https://doi.org/10.1109/tifs.2026.3729505",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "Resposta não é PDF",
+    "segunda_verificacao": [
+      {
+        "url": "https://doi.org/10.1109/tifs.2026.3729505",
+        "url_final": "https://ieeexplore.ieee.org/document/11679014/",
+        "resultado": "Página HTML",
+        "links_pdf": []
+      }
+    ]
+  },
+  {
+    "id": "R0125",
+    "titulo": "Understanding and Conquering the Difficulties in Identifying Third-Party Libraries From Millions of Android Apps",
+    "url_tentada": "https://doi.org/10.1109/tbdata.2021.3093244",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "Resposta não é PDF",
+    "segunda_verificacao": [
+      {
+        "url": "https://doi.org/10.1109/tbdata.2021.3093244",
+        "url_final": "https://ieeexplore.ieee.org/document/9468421/",
+        "resultado": "Página HTML",
+        "links_pdf": []
+      }
+    ]
+  },
+  {
+    "id": "R0129",
+    "titulo": "Version-level Third-Party Library Detection in Android Applications via Class Structural Similarity",
+    "url_tentada": "https://arxiv.org/pdf/2504.13547",
+    "data": "2026-11-13",
+    "tentativas_anteriores": [
+      {
+        "url": "https://doi.org/10.1145/3756681.3756933",
+        "erro": "HTTP Error 403: Forbidden"
+      }
+    ],
+    "status": "obtido",
+    "url": "https://arxiv.org/pdf/2504.13547",
+    "paginas": 12,
+    "sha256": "0961d1e4d50b86293be9954f8a59a86e9d480bd359414afcd1052e879de3bee1",
+    "caracteres": 94491
+  },
+  {
+    "id": "R0165",
+    "titulo": "ANDetect: A Third-party Ad Network Libraries Detection Framework for Android Applications",
+    "url_tentada": "https://dl.acm.org/doi/pdf/10.1145/3627106.3627182",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "HTTP Error 403: Forbidden",
+    "segunda_verificacao": [
+      {
+        "url": "https://dl.acm.org/doi/pdf/10.1145/3627106.3627182",
+        "erro": "HTTP Error 403: Forbidden"
+      },
+      {
+        "url": "https://doi.org/10.1145/3627106.3627182",
+        "erro": "HTTP Error 403: Forbidden"
+      }
+    ]
+  },
+  {
+    "id": "R0209",
+    "titulo": "Detection of Android ad library focusing on HTTP connections and view object redraw behaviors",
+    "url_tentada": "https://catalog.lib.kyushu-u.ac.jp/opac_download_md/1498304/icoin2015_kajiwara.pdf",
+    "data": "2026-11-13",
+    "status": "obtido",
+    "url": "https://catalog.lib.kyushu-u.ac.jp/opac_download_md/1498304/icoin2015_kajiwara.pdf",
+    "paginas": 7,
+    "sha256": "a5adbf8ff03b2f1ac402e505c501206b055a68ac54b4f8f2584ea87e06565821",
+    "caracteres": 45141
+  },
+  {
+    "id": "R0312",
+    "titulo": "Obfuscation-Resilient Privacy Leak Detection for Mobile Apps Through Differential Analysis",
+    "url_tentada": "https://www.ndss-symposium.org/wp-content/uploads/2017/09/ndss2017_05A-4_Continella_paper.pdf",
+    "data": "2026-11-13",
+    "tentativas_anteriores": [
+      {
+        "url": "https://doi.org/10.14722/ndss.2017.23465",
+        "erro": "Resposta não é PDF"
+      }
+    ],
+    "status": "obtido",
+    "url": "https://www.ndss-symposium.org/wp-content/uploads/2017/09/ndss2017_05A-4_Continella_paper.pdf",
+    "paginas": 15,
+    "sha256": "f41821109eeee81bec4480c5213d3ee21329aea3fa73f7a3c823a952c1ac276f",
+    "caracteres": 126878
+  },
+  {
+    "id": "R0399",
+    "titulo": "Using ad-related network behavior to distinguish ad libraries",
+    "url_tentada": "https://www.mdpi.com/2076-3417/8/10/1852/pdf?version=1539076543",
+    "data": "2026-11-13",
+    "status": "obtido",
+    "url": "https://www.mdpi.com/2076-3417/8/10/1852/pdf?version=1539076543",
+    "paginas": 18,
+    "sha256": "a33671a75170458b5495068828d2b30b5ee092d71b1535483cde6e9b1d69586e",
+    "caracteres": 47608
+  },
+  {
+    "id": "R0414",
+    "titulo": "WTDetect: a third-party website tracking detection framework for android applications",
+    "url_tentada": "https://link.springer.com/content/pdf/10.1186/s42400-025-00391-4.pdf",
+    "data": "2026-11-13",
+    "status": "obtido",
+    "url": "https://link.springer.com/content/pdf/10.1186/s42400-025-00391-4.pdf?error=cookies_not_supported&code=d04b648c-8aa6-483e-952a-57672ebef287",
+    "paginas": 20,
+    "sha256": "a2d40bfb1aa74cef307db2e104ab2245b3d464bebe3ce36065f92d582fc99c51",
+    "caracteres": 110700
+  },
+  {
+    "id": "R0845",
+    "titulo": "AndroLibZoo: A Reliable Dataset of Libraries Based on Software Dependency Analysis",
+    "url_tentada": "https://arxiv.org/pdf/2307.12609",
+    "data": "2026-11-13",
+    "status": "obtido",
+    "url": "https://arxiv.org/pdf/2307.12609",
+    "paginas": 5,
+    "sha256": "1c8014793daa210376444e8051a89f387513083fe96a73e87ee74c34f62fa597",
+    "caracteres": 44881
+  },
+  {
+    "id": "R0895",
+    "titulo": "Covert Communication in Mobile Applications (T)",
+    "url_tentada": "https://people.csail.mit.edu/rinard/paper/ase15.pdf",
+    "data": "2026-11-13",
+    "tentativas_anteriores": [
+      {
+        "url": "http://hdl.handle.net/1721.1/99941",
+        "erro": "Resposta não é PDF"
+      }
+    ],
+    "status": "obtido",
+    "url": "https://people.csail.mit.edu/rinard/paper/ase15.pdf",
+    "paginas": 11,
+    "sha256": "6f6f5bb403b9e8f733f06a397f7eb0ccefbadca4174c7ed37da20c1d8f866711",
+    "caracteres": 103515
+  },
+  {
+    "id": "R1045",
+    "titulo": "Mobile App Third-Party Library traffic discovery method based on short text classification and clustering",
+    "url_tentada": "https://doi.org/10.1109/ispds51347.2020.00024",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "Resposta não é PDF",
+    "segunda_verificacao": [
+      {
+        "url": "https://doi.org/10.1109/ispds51347.2020.00024",
+        "url_final": "https://ieeexplore.ieee.org/document/9258528/",
+        "resultado": "Página HTML",
+        "links_pdf": []
+      }
+    ]
+  },
+  {
+    "id": "R0006",
+    "titulo": "A Security and Privacy Assessment of Mobile Ride-Sharing Applications",
+    "url_tentada": "https://doi.org/10.1109/southeastcon63549.2026.11476248",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "Resposta não é PDF",
+    "segunda_verificacao": [
+      {
+        "url": "https://doi.org/10.1109/southeastcon63549.2026.11476248",
+        "url_final": "https://ieeexplore.ieee.org/document/11476248/",
+        "resultado": "Página HTML",
+        "links_pdf": []
+      }
+    ]
+  },
+  {
+    "id": "R0026",
+    "titulo": "CRiOS: Toward large-scale iOS application analysis",
+    "url_tentada": "https://megele.io/crios-spsm2016.pdf",
+    "data": "2026-11-13",
+    "tentativas_anteriores": [
+      {
+        "url": "https://doi.org/10.1145/2994459.2994473",
+        "erro": "HTTP Error 403: Forbidden"
+      }
+    ],
+    "status": "pendente",
+    "erro": "HTTP Error 522: Unknown",
+    "segunda_verificacao": [
+      {
+        "url": "https://megele.io/crios-spsm2016.pdf",
+        "erro": "The read operation timed out"
+      },
+      {
+        "url": "https://doi.org/10.1145/2994459.2994473",
+        "erro": "HTTP Error 403: Forbidden"
+      }
+    ]
+  },
+  {
+    "id": "R0038",
+    "titulo": "Dynamic privacy leakage analysis of android third-party libraries",
+    "url_tentada": "https://doi.org/10.1109/icdis.2018.00051",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "Resposta não é PDF",
+    "segunda_verificacao": [
+      {
+        "url": "https://doi.org/10.1109/icdis.2018.00051",
+        "url_final": "https://ieeexplore.ieee.org/document/8367775/",
+        "resultado": "Página HTML",
+        "links_pdf": []
+      }
+    ]
+  },
+  {
+    "id": "R0047",
+    "titulo": "Exploring Covert Third-party Identifiers through External Storage in the Android New Era",
+    "url_tentada": "https://www.usenix.org/system/files/usenixsecurity24-dong-zikan.pdf",
+    "data": "2026-11-13",
+    "tentativas_anteriores": [
+      {
+        "url": "https://www.scopus.com/pages/publications/85204978540?origin=resultslist",
+        "erro": "Resposta não é PDF"
+      }
+    ],
+    "status": "obtido",
+    "url": "https://www.usenix.org/system/files/usenixsecurity24-dong-zikan.pdf",
+    "paginas": 19,
+    "sha256": "b61135ba12edfb10a19fe67ea4fd711f010dfc77c5cc55884a84c792e69cf291",
+    "caracteres": 126080
+  },
+  {
+    "id": "R0057",
+    "titulo": "Identifying and analyzing the privacy of apps for kids",
+    "url_tentada": "https://yaoguopku.github.io/papers/Liu-HotMobile-16.pdf",
+    "data": "2026-11-13",
+    "tentativas_anteriores": [
+      {
+        "url": "http://dl.acm.org/ft_gateway.cfm?id=2873597&type=pdf",
+        "erro": "HTTP Error 403: Forbidden"
+      }
+    ],
+    "status": "obtido",
+    "url": "https://yaoguopku.github.io/papers/Liu-HotMobile-16.pdf",
+    "paginas": 6,
+    "sha256": "3ffc247940db7fde08a145a132677bebae8814d584e5395c2e0f25845de793f3",
+    "caracteres": 48128
+  },
+  {
+    "id": "R0060",
+    "titulo": "iHunter: Hunting Privacy Violations at Scale in the Software Supply Chain on iOS",
+    "url_tentada": "https://www.usenix.org/system/files/usenixsecurity24-liu-dexin.pdf",
+    "data": "2026-11-13",
+    "tentativas_anteriores": [
+      {
+        "url": "https://www.scopus.com/pages/publications/85205030712?origin=resultslist",
+        "erro": "Resposta não é PDF"
+      }
+    ],
+    "status": "obtido",
+    "url": "https://www.usenix.org/system/files/usenixsecurity24-liu-dexin.pdf",
+    "paginas": 19,
+    "sha256": "33162c5e6866b522ed6ea0b2a34ce0c57c573a073b632f33b56d877267ad8c5b",
+    "caracteres": 136220
+  },
+  {
+    "id": "R0085",
+    "titulo": "Navigating the Privacy Compliance Maze: Understanding Risks with Privacy-Configurable Mobile SDKs",
+    "url_tentada": "https://www.usenix.org/system/files/usenixsecurity24-zhang-yifan.pdf",
+    "data": "2026-11-13",
+    "tentativas_anteriores": [
+      {
+        "url": "https://www.scopus.com/pages/publications/85205021240?origin=resultslist",
+        "erro": "Resposta não é PDF"
+      }
+    ],
+    "status": "obtido",
+    "url": "https://www.usenix.org/system/files/usenixsecurity24-zhang-yifan.pdf",
+    "paginas": 19,
+    "sha256": "810a1308f98f689b4aa03c25789752e099182ac76f28337d6fb4b204113c406f",
+    "caracteres": 129821
+  },
+  {
+    "id": "R0092",
+    "titulo": "Opportunistic Permission Exploitation of Third-Party Libraries in Android Apps",
+    "url_tentada": "https://link.springer.com/content/pdf/10.1007/s42979-026-05054-w.pdf",
+    "data": "2026-11-13",
+    "status": "obtido",
+    "url": "https://link.springer.com/content/pdf/10.1007/s42979-026-05054-w.pdf?error=cookies_not_supported&code=2e73c75b-ea15-49d2-be77-c812f9303162",
+    "paginas": 19,
+    "sha256": "0b7895c9633b426fa0c42a9ca7e007d5c0544c923abae64a55f0b1129376d3a9",
+    "caracteres": 88875
+  },
+  {
+    "id": "R0096",
+    "titulo": "PIChecker: Automatic Privacy Detector for Third Party Libraries in Android Apps",
+    "url_tentada": "https://doi.org/10.1145/3793655.3793721",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "HTTP Error 403: Forbidden",
+    "segunda_verificacao": [
+      {
+        "url": "https://doi.org/10.1145/3793655.3793721",
+        "erro": "HTTP Error 403: Forbidden"
+      }
+    ]
+  },
+  {
+    "id": "R0104",
+    "titulo": "Reaper: Real-time app analysis for augmenting the android permission system",
+    "url_tentada": "https://doi.org/10.1145/3292006.3300027",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "HTTP Error 403: Forbidden",
+    "segunda_verificacao": [
+      {
+        "url": "https://doi.org/10.1145/3292006.3300027",
+        "erro": "HTTP Error 403: Forbidden"
+      }
+    ]
+  },
+  {
+    "id": "R0117",
+    "titulo": "The AppChk Crowd-Sourcing Platform: Which Third Parties are iOS Apps Talking To?",
+    "url_tentada": "https://doi.org/10.1007/978-3-030-78120-0_15",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "Resposta não é PDF",
+    "segunda_verificacao": [
+      {
+        "url": "https://doi.org/10.1007/978-3-030-78120-0_15",
+        "url_final": "https://link.springer.com/chapter/10.1007/978-3-030-78120-0_15?error=cookies_not_supported&code=c978bfad-a544-4516-a300-bf3b758ca7e6",
+        "resultado": "Página HTML",
+        "links_pdf": [
+          "https://link.springer.com/content/pdf/10.1007/978-3-030-78120-0_15.pdf"
+        ]
+      },
+      {
+        "url": "https://link.springer.com/content/pdf/10.1007/978-3-030-78120-0_15.pdf",
+        "url_final": "https://link.springer.com/chapter/10.1007/978-3-030-78120-0_15?error=cookies_not_supported&code=84bfc8c0-4b3f-4065-8804-0833d3a8484a",
+        "resultado": "Página HTML",
+        "links_pdf": [
+          "https://link.springer.com/content/pdf/10.1007/978-3-030-78120-0_15.pdf"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "R0119",
+    "titulo": "The Price to Play: A Privacy Analysis of Free and Paid Games in the Android Ecosystem",
+    "url_tentada": "https://hal.science/hal-03559973v1/document",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "HTTP Error 403: Forbidden",
+    "segunda_verificacao": [
+      {
+        "url": "https://hal.science/hal-03559973v1/document",
+        "erro": "HTTP Error 403: Forbidden"
+      },
+      {
+        "url": "https://doi.org/10.1145/3485447.3512279",
+        "erro": "HTTP Error 403: Forbidden"
+      }
+    ]
+  },
+  {
+    "id": "R0120",
+    "titulo": "Third-Party Service Categories in Android Mobile Gaming Apps: A Static Empirical Analysis",
+    "url_tentada": "https://doi.org/10.3390/fi18100505",
+    "data": "2026-11-13",
+    "status": "obtido",
+    "erro": "Resposta não é PDF",
+    "url": "https://www.mdpi.com/1999-5903/18/10/505/pdf",
+    "paginas": 24,
+    "sha256": "d7e4468f7377ede92c0b3d05db638f4c1f5392510eee1e66cbe89d4fb80e20aa",
+    "caracteres": 124720,
+    "segunda_verificacao": [
+      {
+        "url": "https://doi.org/10.3390/fi18100505",
+        "url_final": "https://www.mdpi.com/1999-5903/18/10/505",
+        "resultado": "Página HTML",
+        "links_pdf": [
+          "https://www.mdpi.com/1999-5903/18/10/505/pdf"
+        ]
+      },
+      {
+        "url": "https://www.mdpi.com/1999-5903/18/10/505/pdf",
+        "url_final": "https://www.mdpi.com/1999-5903/18/10/505/pdf",
+        "resultado": "PDF obtido"
+      }
+    ]
+  },
+  {
+    "id": "R0134",
+    "titulo": "A Comprehensive Study on Third-Party User Tracking in Mobile Applications",
+    "url_tentada": "https://iris.univr.it/retrieve/f0c14a30-64f4-4e65-a384-229bbd252225/ARES2023.pdf",
+    "data": "2026-11-13",
+    "tentativas_anteriores": [
+      {
+        "url": "https://dl.acm.org/doi/pdf/10.1145/3600160.3605079",
+        "erro": "HTTP Error 403: Forbidden"
+      }
+    ],
+    "status": "pendente",
+    "erro": "HTTP Error 403: Forbidden",
+    "segunda_verificacao": [
+      {
+        "url": "https://iris.univr.it/retrieve/f0c14a30-64f4-4e65-a384-229bbd252225/ARES2023.pdf",
+        "erro": "HTTP Error 403: Forbidden"
+      },
+      {
+        "url": "https://doi.org/10.1145/3600160.3605079",
+        "erro": "HTTP Error 403: Forbidden"
+      }
+    ]
+  },
+  {
+    "id": "R0136",
+    "titulo": "A fait accompli? An empirical study into the absence of consent to third-party tracking in Android apps",
+    "url_tentada": "http://arxiv.org/pdf/2106.09407",
+    "data": "2026-11-13",
+    "status": "obtido",
+    "url": "https://arxiv.org/pdf/2106.09407",
+    "paginas": 15,
+    "sha256": "a6c41863313b1e6c7d97798b5cf60401593771ca74673a65bf87a43166ab3bfe",
+    "caracteres": 99701
+  },
+  {
+    "id": "R0138",
+    "titulo": "A first look at mobile Ad-Blocking apps",
+    "url_tentada": "https://imikr4m.github.io/files/ikram_mpptools_nca.pdf",
+    "data": "2026-11-13",
+    "tentativas_anteriores": [
+      {
+        "url": "https://doi.org/10.1109/nca.2017.8171376",
+        "erro": "Resposta não é PDF"
+      }
+    ],
+    "status": "obtido",
+    "url": "https://imikr4m.github.io/files/ikram_mpptools_nca.pdf",
+    "paginas": 8,
+    "sha256": "04e5bf3dbc6c4a208f3e3e71d21fb563b94446c206503ddc33f4878e05eae668",
+    "caracteres": 57150
+  },
+  {
+    "id": "R0146",
+    "titulo": "A Study of the Security and Privacy Risks in Health-Related Mobile Applications in India",
+    "url_tentada": "https://doi.org/10.1109/ccis63231.2024.10932131",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "Resposta não é PDF",
+    "segunda_verificacao": [
+      {
+        "url": "https://doi.org/10.1109/ccis63231.2024.10932131",
+        "url_final": "https://ieeexplore.ieee.org/document/10932131/",
+        "resultado": "Página HTML",
+        "links_pdf": []
+      }
+    ]
+  },
+  {
+    "id": "R0159",
+    "titulo": "An Analysis of Web Tracking Domains in Mobile Applications",
+    "url_tentada": "https://doi.org/10.1145/3447535.3462507",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "HTTP Error 403: Forbidden",
+    "segunda_verificacao": [
+      {
+        "url": "https://doi.org/10.1145/3447535.3462507",
+        "erro": "HTTP Error 403: Forbidden"
+      }
+    ]
+  },
+  {
+    "id": "R0163",
+    "titulo": "Analysis of Permissions and Trackers in Android Apps Targeting Children Under Thirteen",
+    "url_tentada": "https://doi.org/10.1007/978-3-031-94855-8_5",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "Resposta não é PDF",
+    "segunda_verificacao": [
+      {
+        "url": "https://doi.org/10.1007/978-3-031-94855-8_5",
+        "url_final": "https://link.springer.com/chapter/10.1007/978-3-031-94855-8_5?error=cookies_not_supported&code=1a3105c1-f75b-45f4-b15c-4ca3f49e30a6",
+        "resultado": "Página HTML",
+        "links_pdf": [
+          "https://link.springer.com/content/pdf/10.1007/978-3-031-94855-8_5.pdf"
+        ]
+      },
+      {
+        "url": "https://link.springer.com/content/pdf/10.1007/978-3-031-94855-8_5.pdf",
+        "url_final": "https://link.springer.com/chapter/10.1007/978-3-031-94855-8_5?error=cookies_not_supported&code=097d61ae-7de4-43b7-a888-d741f02f7b27",
+        "resultado": "Página HTML",
+        "links_pdf": [
+          "https://link.springer.com/content/pdf/10.1007/978-3-031-94855-8_5.pdf"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "R0166",
+    "titulo": "Android smartphone third party advertising library data leak analysis",
+    "url_tentada": "https://doi.org/10.1109/mass.2014.131",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "Resposta não é PDF",
+    "segunda_verificacao": [
+      {
+        "url": "https://doi.org/10.1109/mass.2014.131",
+        "url_final": "https://ieeexplore.ieee.org/document/7035776/",
+        "resultado": "Página HTML",
+        "links_pdf": []
+      }
+    ]
+  },
+  {
+    "id": "R0168",
+    "titulo": "Apps, Trackers, Privacy, and Regulators A Global Study of the Mobile Tracking Ecosystem",
+    "url_tentada": "https://doi.org/10.14722/ndss.2018.23353",
+    "data": "2026-11-13",
+    "status": "obtido",
+    "url": "https://www.ndss-symposium.org/wp-content/uploads/2018/02/ndss2018_05B-3_Razaghpanah_paper.pdf",
+    "paginas": 15,
+    "sha256": "1614662095e4f3c12c5a2e4271f706a77ff6728572a202807f9a08aa035ae41f",
+    "caracteres": 152777
+  },
+  {
+    "id": "R0169",
+    "titulo": "Are Our Animals Leaking Information about Us? Security and Privacy Evaluation of Animal-related Apps",
+    "url_tentada": "https://doi.org/10.1109/eurospw55150.2022.00012",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "Resposta não é PDF",
+    "segunda_verificacao": [
+      {
+        "url": "https://doi.org/10.1109/eurospw55150.2022.00012",
+        "url_final": "https://ieeexplore.ieee.org/document/9799417/",
+        "resultado": "Página HTML",
+        "links_pdf": []
+      }
+    ]
+  },
+  {
+    "id": "R0176",
+    "titulo": "Automatic Transmission: An Empirical Study of Data Privacy in the Connected Vehicle Ecosystem",
+    "url_tentada": "https://dl.acm.org/doi/pdf/10.1145/3777912.3839795?download=true",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "HTTP Error 403: Forbidden",
+    "segunda_verificacao": [
+      {
+        "url": "https://dl.acm.org/doi/pdf/10.1145/3777912.3839795?download=true",
+        "erro": "HTTP Error 403: Forbidden"
+      },
+      {
+        "url": "https://doi.org/10.1145/3777912.3839795",
+        "erro": "HTTP Error 403: Forbidden"
+      }
+    ]
+  },
+  {
+    "id": "R0178",
+    "titulo": "Before and after GDPR: Tracking in mobile apps",
+    "url_tentada": "https://policyreview.info/pdf/policyreview-2021-4-1611.pdf",
+    "data": "2026-11-13",
+    "status": "obtido",
+    "url": "https://policyreview.info/pdf/policyreview-2021-4-1611.pdf",
+    "paginas": 30,
+    "sha256": "f2e293919e04876add4faaa97d24e1872ee6f74b5bbcb7225923d228fe3a93cc",
+    "caracteres": 74689
+  },
+  {
+    "id": "R0179",
+    "titulo": "Block Me if You Can: A Large-Scale Study of Tracker-Blocking Tools",
+    "url_tentada": "https://doi.org/10.1109/eurosp.2017.26",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "Resposta não é PDF",
+    "segunda_verificacao": [
+      {
+        "url": "https://doi.org/10.1109/eurosp.2017.26",
+        "url_final": "https://ieeexplore.ieee.org/document/7961988/",
+        "resultado": "Página HTML",
+        "links_pdf": []
+      }
+    ]
+  },
+  {
+    "id": "R0184",
+    "titulo": "Characterizing Location-based Mobile Tracking in Mobile Ad Networks",
+    "url_tentada": "https://arxiv.org/pdf/1903.09916",
+    "data": "2026-11-13",
+    "status": "obtido",
+    "url": "https://arxiv.org/pdf/1903.09916",
+    "paginas": 10,
+    "sha256": "3b2c93b2e60cbc93331fe094ecbe8782d0712804e430fea7a17c63aa12abe90b",
+    "caracteres": 72581
+  },
+  {
+    "id": "R0217",
+    "titulo": "Do partner apps offer the same level of privacy protection? The case of wearable applications",
+    "url_tentada": "https://doi.org/10.1109/percomworkshops51409.2021.9431018",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "Resposta não é PDF",
+    "segunda_verificacao": [
+      {
+        "url": "https://doi.org/10.1109/percomworkshops51409.2021.9431018",
+        "url_final": "https://ieeexplore.ieee.org/document/9431018/",
+        "resultado": "Página HTML",
+        "links_pdf": []
+      }
+    ]
+  },
+  {
+    "id": "R0218",
+    "titulo": "Do you know who is talking to your wearable smartband?",
+    "url_tentada": "https://ebooks.iospress.nl/pdf/doi/10.3233/SHTI200711",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "Resposta não é PDF",
+    "segunda_verificacao": [
+      {
+        "url": "https://ebooks.iospress.nl/pdf/doi/10.3233/SHTI200711",
+        "url_final": "https://ebooks.iospress.nl/DOI/10.3233/SHTI200711",
+        "resultado": "Página HTML",
+        "links_pdf": []
+      },
+      {
+        "url": "https://doi.org/10.3233/shti200711",
+        "url_final": "https://ebooks.iospress.nl/doi/10.3233/SHTI200711",
+        "resultado": "Página HTML",
+        "links_pdf": []
+      }
+    ]
+  },
+  {
+    "id": "R0226",
+    "titulo": "Empirical security and privacy analysis of mobile symptom checking apps on google play",
+    "url_tentada": "https://doi.org/10.5220/0010520106650673",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "Resposta não é PDF",
+    "segunda_verificacao": [
+      {
+        "url": "https://doi.org/10.5220/0010520106650673",
+        "url_final": "https://www.scitepress.org/Link.aspx?doi=10.5220/0010520106650673",
+        "resultado": "Página HTML",
+        "links_pdf": []
+      }
+    ]
+  },
+  {
+    "id": "R0238",
+    "titulo": "Exploring the Eastern Frontier: A First Look at Mobile App Tracking in China",
+    "url_tentada": "https://doi.org/10.1007/978-3-030-44081-7_19",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "Resposta não é PDF",
+    "segunda_verificacao": [
+      {
+        "url": "https://doi.org/10.1007/978-3-030-44081-7_19",
+        "url_final": "https://link.springer.com/chapter/10.1007/978-3-030-44081-7_19?error=cookies_not_supported&code=4b12174b-137d-4557-9260-442c4634f8eb",
+        "resultado": "Página HTML",
+        "links_pdf": [
+          "https://link.springer.com/content/pdf/10.1007/978-3-030-44081-7_19.pdf"
+        ]
+      },
+      {
+        "url": "https://link.springer.com/content/pdf/10.1007/978-3-030-44081-7_19.pdf",
+        "url_final": "https://link.springer.com/chapter/10.1007/978-3-030-44081-7_19?error=cookies_not_supported&code=ae932cd8-7d16-4d4b-a4bb-96ca4712a8e8",
+        "resultado": "Página HTML",
+        "links_pdf": [
+          "https://link.springer.com/content/pdf/10.1007/978-3-030-44081-7_19.pdf"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "R0243",
+    "titulo": "Fingerprinting SDKs for Mobile Apps and Where to Find Them: Understanding the Market for Device Fingerprinting",
+    "url_tentada": "https://doi.org/10.1145/3719027.3744877",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "HTTP Error 403: Forbidden",
+    "segunda_verificacao": [
+      {
+        "url": "https://doi.org/10.1145/3719027.3744877",
+        "erro": "HTTP Error 403: Forbidden"
+      }
+    ]
+  },
+  {
+    "id": "R0248",
+    "titulo": "Free for All! Assessing User Data Exposure to Advertising Libraries on Android",
+    "url_tentada": "https://doi.org/10.14722/ndss.2016.23082",
+    "data": "2026-11-13",
+    "status": "obtido",
+    "url": "https://www.ndss-symposium.org/wp-content/uploads/2017/09/free-for-all-assessing-user-data-exposure-advertising-libraries-android.pdf",
+    "paginas": 15,
+    "sha256": "318da33bcdd479b40e99da799e395748d41067e9f918a22e299086fe13d6b572",
+    "caracteres": 142716
+  },
+  {
+    "id": "R0249",
+    "titulo": "Freely Given Consent?: Studying Consent Notice of Third-Party Tracking and Its Violations of GDPR in Android Apps",
+    "url_tentada": "https://cispa.saarland/group/stock/papers/nguyen2022consent.pdf",
+    "data": "2026-11-13",
+    "tentativas_anteriores": [
+      {
+        "url": "https://doi.org/10.60882/cispa.24614397",
+        "erro": "HTTP Error 403: Forbidden"
+      }
+    ],
+    "status": "obtido",
+    "url": "https://cispa.saarland/group/stock/papers/nguyen2022consent.pdf",
+    "paginas": 15,
+    "sha256": "1ab1bab1593a3dcbcbb94e77be5df56025aad5cdafe22b25fb90654676b86a76",
+    "caracteres": 126195
+  },
+  {
+    "id": "R0254",
+    "titulo": "Goodbye Tracking? Impact of iOS App Tracking Transparency and Privacy Labels",
+    "url_tentada": "https://cris.maastrichtuniversity.nl/en/publications/db468b81-b513-4900-a330-e3896cb42d11",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "Resposta não é PDF",
+    "segunda_verificacao": [
+      {
+        "url": "https://cris.maastrichtuniversity.nl/en/publications/db468b81-b513-4900-a330-e3896cb42d11",
+        "url_final": "https://cris.maastrichtuniversity.nl/en/publications/goodbye-tracking-impact-of-ios-app-tracking-transparency-and-priv/",
+        "resultado": "Página HTML",
+        "links_pdf": [
+          "https://cris.maastrichtuniversity.nl/files/139816360/Kollnig_2022_Goodbye_Tracking_Impact_of_iOS.pdf"
+        ]
+      },
+      {
+        "url": "https://doi.org/10.1145/3531146.3533116",
+        "erro": "HTTP Error 403: Forbidden"
+      },
+      {
+        "url": "https://cris.maastrichtuniversity.nl/files/139816360/Kollnig_2022_Goodbye_Tracking_Impact_of_iOS.pdf",
+        "erro": "HTTP Error 403: Forbidden"
+      }
+    ]
+  },
+  {
+    "id": "R0260",
+    "titulo": "Heimdall: Illuminating the hidden depths of third-party tracking in android applications",
+    "url_tentada": "https://doi.org/10.1109/trustcom50675.2020.00094",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "Resposta não é PDF",
+    "segunda_verificacao": [
+      {
+        "url": "https://doi.org/10.1109/trustcom50675.2020.00094",
+        "url_final": "https://ieeexplore.ieee.org/document/9343230/",
+        "resultado": "Página HTML",
+        "links_pdf": []
+      }
+    ]
+  },
+  {
+    "id": "R0267",
+    "titulo": "I just wanted to track my steps! Blocking unwanted traffic of Fitbit devices",
+    "url_tentada": "https://dl.acm.org/doi/pdf/10.1145/3567445.3567457",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "HTTP Error 403: Forbidden",
+    "segunda_verificacao": [
+      {
+        "url": "https://dl.acm.org/doi/pdf/10.1145/3567445.3567457",
+        "erro": "HTTP Error 403: Forbidden"
+      },
+      {
+        "url": "https://doi.org/10.1145/3567445.3567457",
+        "erro": "HTTP Error 403: Forbidden"
+      }
+    ]
+  },
+  {
+    "id": "R0292",
+    "titulo": "Measuring third-party tracker power across web and mobile",
+    "url_tentada": "https://arxiv.org/pdf/1802.02507",
+    "data": "2026-11-13",
+    "status": "obtido",
+    "url": "https://arxiv.org/pdf/1802.02507",
+    "paginas": 21,
+    "sha256": "33ef96d7a68cf32e8c3eae9d223f6e23dc2b9ddd73126780960e772db0f787ab",
+    "caracteres": 89693
+  },
+  {
+    "id": "R0298",
+    "titulo": "Mobile applications: Analyzing private data leakage using third party connections",
+    "url_tentada": "https://doi.org/10.1109/icacci.2015.7275584",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "Resposta não é PDF",
+    "segunda_verificacao": [
+      {
+        "url": "https://doi.org/10.1109/icacci.2015.7275584",
+        "url_final": "https://ieeexplore.ieee.org/document/7275584",
+        "resultado": "Página HTML",
+        "links_pdf": []
+      }
+    ]
+  },
+  {
+    "id": "R0299",
+    "titulo": "Mobile health and privacy: Cross sectional study",
+    "url_tentada": "https://www.bmj.com/content/bmj/373/bmj.n1248.full.pdf",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "HTTP Error 403: Forbidden",
+    "segunda_verificacao": [
+      {
+        "url": "https://www.bmj.com/content/bmj/373/bmj.n1248.full.pdf",
+        "erro": "HTTP Error 403: Forbidden"
+      },
+      {
+        "url": "https://doi.org/10.1136/bmj.n1248",
+        "erro": "HTTP Error 403: Forbidden"
+      }
+    ]
+  },
+  {
+    "id": "R0307",
+    "titulo": "No Place to Hide: Privacy Exposure in Anti-stalkerware Apps and Support Websites",
+    "url_tentada": "https://doi.org/10.1007/978-3-031-47748-5_2",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "Resposta não é PDF",
+    "segunda_verificacao": [
+      {
+        "url": "https://doi.org/10.1007/978-3-031-47748-5_2",
+        "url_final": "https://link.springer.com/chapter/10.1007/978-3-031-47748-5_2?error=cookies_not_supported&code=c479fa2f-4473-477e-ab58-b78e8f2df145",
+        "resultado": "Página HTML",
+        "links_pdf": [
+          "https://link.springer.com/content/pdf/10.1007/978-3-031-47748-5_2.pdf"
+        ]
+      },
+      {
+        "url": "https://link.springer.com/content/pdf/10.1007/978-3-031-47748-5_2.pdf",
+        "url_final": "https://link.springer.com/chapter/10.1007/978-3-031-47748-5_2?error=cookies_not_supported&code=3e772223-46dc-4bae-b57b-8751b30b0153",
+        "resultado": "Página HTML",
+        "links_pdf": [
+          "https://link.springer.com/content/pdf/10.1007/978-3-031-47748-5_2.pdf"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "R0308",
+    "titulo": "No Salvation from Trackers: Privacy Analysis of Religious Websites and Mobile Apps",
+    "url_tentada": "https://doi.org/10.1007/978-3-031-25734-6_10",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "Resposta não é PDF",
+    "segunda_verificacao": [
+      {
+        "url": "https://doi.org/10.1007/978-3-031-25734-6_10",
+        "url_final": "https://link.springer.com/chapter/10.1007/978-3-031-25734-6_10?error=cookies_not_supported&code=9c9e03e1-9d94-470e-99fc-53c7b6f02f8a",
+        "resultado": "Página HTML",
+        "links_pdf": [
+          "https://link.springer.com/content/pdf/10.1007/978-3-031-25734-6_10.pdf"
+        ]
+      },
+      {
+        "url": "https://link.springer.com/content/pdf/10.1007/978-3-031-25734-6_10.pdf",
+        "url_final": "https://link.springer.com/chapter/10.1007/978-3-031-25734-6_10?error=cookies_not_supported&code=90738dfe-881d-4f18-97bf-968eaad3becd",
+        "resultado": "Página HTML",
+        "links_pdf": [
+          "https://link.springer.com/content/pdf/10.1007/978-3-031-25734-6_10.pdf"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "R0310",
+    "titulo": "Not Seen, Not Heard in the Digital World! Measuring Privacy Practices in Children's Apps",
+    "url_tentada": "https://dl.acm.org/doi/pdf/10.1145/3543507.3583327",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "HTTP Error 403: Forbidden",
+    "segunda_verificacao": [
+      {
+        "url": "https://dl.acm.org/doi/pdf/10.1145/3543507.3583327",
+        "erro": "HTTP Error 403: Forbidden"
+      },
+      {
+        "url": "https://doi.org/10.1145/3543507.3583327",
+        "erro": "HTTP Error 403: Forbidden"
+      }
+    ]
+  },
+  {
+    "id": "R0331",
+    "titulo": "Privacy in Chinese iOS apps and impact of the personal information protection law",
+    "url_tentada": "https://doi.org/10.1016/j.clsr.2024.106041",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "Resposta não é PDF",
+    "segunda_verificacao": [
+      {
+        "url": "https://doi.org/10.1016/j.clsr.2024.106041",
+        "url_final": "https://linkinghub.elsevier.com/retrieve/pii/S0267364924001079",
+        "resultado": "Página HTML",
+        "links_pdf": []
+      }
+    ]
+  },
+  {
+    "id": "R0333",
+    "titulo": "Privacy issues in Android applications: the cases of GPS navigators and fitness trackers",
+    "url_tentada": "https://doi.org/10.1504/ijeg.2022.123245",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "Resposta não é PDF",
+    "segunda_verificacao": [
+      {
+        "url": "https://doi.org/10.1504/ijeg.2022.123245",
+        "url_final": "https://www.inderscience.com/filter.php?id=123245",
+        "resultado": "Página HTML",
+        "links_pdf": []
+      }
+    ]
+  },
+  {
+    "id": "R0337",
+    "titulo": "Privacy risk analysis and mitigation of analytics libraries in the android ecosystem",
+    "url_tentada": "https://doi.org/10.1109/tmc.2019.2903186",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "Resposta não é PDF",
+    "segunda_verificacao": [
+      {
+        "url": "https://doi.org/10.1109/tmc.2019.2903186",
+        "url_final": "https://ieeexplore.ieee.org/document/8660581/",
+        "resultado": "Página HTML",
+        "links_pdf": []
+      }
+    ]
+  },
+  {
+    "id": "R0357",
+    "titulo": "Should you use the app for that? Comparing the privacy implications of app-and web-based online services",
+    "url_tentada": "https://doi.org/10.1145/2987443.2987456",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "HTTP Error 403: Forbidden",
+    "segunda_verificacao": [
+      {
+        "url": "https://doi.org/10.1145/2987443.2987456",
+        "erro": "HTTP Error 403: Forbidden"
+      }
+    ]
+  },
+  {
+    "id": "R0376",
+    "titulo": "Third party tracking in the mobile ecosystem",
+    "url_tentada": "https://arxiv.org/pdf/1804.03603",
+    "data": "2026-11-13",
+    "status": "obtido",
+    "url": "https://arxiv.org/pdf/1804.03603",
+    "paginas": 9,
+    "sha256": "f0bb3ed316de4fed4f6b4979f812b1a1f8f9cc5ba4a26ccd775072b9efd010a1",
+    "caracteres": 67597
+  },
+  {
+    "id": "R0383",
+    "titulo": "\"Tracking the Trackers\" of children's first personal data in mobile applications: Using static analysis and privacy policy evaluation to explore the data-sharing capabilities and practices of baby apps",
+    "url_tentada": "https://doi.org/10.1145/3764687.3769936",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "HTTP Error 403: Forbidden",
+    "segunda_verificacao": [
+      {
+        "url": "https://doi.org/10.1145/3764687.3769936",
+        "erro": "HTTP Error 403: Forbidden"
+      }
+    ]
+  },
+  {
+    "id": "R0390",
+    "titulo": "Understanding the evolution of mobile app ecosystems: A longitudinal measurement study of Google play",
+    "url_tentada": "https://doi.org/10.1145/3308558.3313611",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "HTTP Error 403: Forbidden",
+    "segunda_verificacao": [
+      {
+        "url": "https://doi.org/10.1145/3308558.3313611",
+        "erro": "HTTP Error 403: Forbidden"
+      }
+    ]
+  },
+  {
+    "id": "R0540",
+    "titulo": "How Many Hands in the Cookie Jar? Examining Privacy Implications of Popular Apps in India",
+    "url_tentada": "https://doi.org/10.1109/eurosp60621.2024.00046",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "Resposta não é PDF",
+    "segunda_verificacao": [
+      {
+        "url": "https://doi.org/10.1109/eurosp60621.2024.00046",
+        "url_final": "https://ieeexplore.ieee.org/document/10629034/",
+        "resultado": "Página HTML",
+        "links_pdf": []
+      }
+    ]
+  },
+  {
+    "id": "R0567",
+    "titulo": "Mobile Mental Health Apps: Alternative Intervention or Intrusion?",
+    "url_tentada": "https://arxiv.org/pdf/2206.10728",
+    "data": "2026-11-13",
+    "status": "obtido",
+    "url": "https://arxiv.org/pdf/2206.10728",
+    "paginas": 11,
+    "sha256": "d74a9d1ae0a12af23f44efdd5dbd650f22772c51809a8d46cbc6c359354b2303",
+    "caracteres": 68284
+  },
+  {
+    "id": "R0579",
+    "titulo": "On the privacy of mental health apps: An empirical investigation and its implications for app development",
+    "url_tentada": "https://link.springer.com/content/pdf/10.1007/s10664-022-10236-0.pdf",
+    "data": "2026-11-13",
+    "status": "obtido",
+    "url": "https://link.springer.com/content/pdf/10.1007/s10664-022-10236-0.pdf?error=cookies_not_supported&code=66eef857-af70-45fa-8809-fe062d6a48d0",
+    "paginas": 42,
+    "sha256": "c7c37dc71d2d9dcee0384f5eeccde7800b53f7022e19eca090b0475e2978f0ec",
+    "caracteres": 200330
+  },
+  {
+    "id": "R0580",
+    "titulo": "On the Security and Privacy of AI-Based Mobile Health Chatbots",
+    "url_tentada": "https://doi.org/10.1007/978-3-032-14782-0_9",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "Resposta não é PDF",
+    "segunda_verificacao": [
+      {
+        "url": "https://doi.org/10.1007/978-3-032-14782-0_9",
+        "url_final": "https://link.springer.com/chapter/10.1007/978-3-032-14782-0_9?error=cookies_not_supported&code=e43596ca-db3f-4d83-9eb0-fd658e55d3e5",
+        "resultado": "Página HTML",
+        "links_pdf": [
+          "https://link.springer.com/content/pdf/10.1007/978-3-032-14782-0_9.pdf"
+        ]
+      },
+      {
+        "url": "https://link.springer.com/content/pdf/10.1007/978-3-032-14782-0_9.pdf",
+        "url_final": "https://link.springer.com/chapter/10.1007/978-3-032-14782-0_9?error=cookies_not_supported&code=6169c4be-c705-48b2-87a4-4dc6e66ee68f",
+        "resultado": "Página HTML",
+        "links_pdf": [
+          "https://link.springer.com/content/pdf/10.1007/978-3-032-14782-0_9.pdf"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "R0648",
+    "titulo": "Unaddressed privacy risks in accredited health and wellness apps: A cross-sectional systematic assessment",
+    "url_tentada": "https://bmcmedicine.biomedcentral.com/track/pdf/10.1186/s12916-015-0444-y",
+    "data": "2026-11-13",
+    "status": "obtido",
+    "url": "https://link.springer.com/content/pdf/10.1186/s12916-015-0444-y.pdf?error=cookies_not_supported&code=1b4a033b-2c8e-4dbc-a7d9-de7df42100c2",
+    "paginas": 13,
+    "sha256": "cfbf341a7aa142dafaa75d7b246ba4a4c1a8a193a9be5e3e0f0ed47aa0558db8",
+    "caracteres": 80998
+  },
+  {
+    "id": "R0705",
+    "titulo": "Extraction-by-design: Auditing infrastructures of datafication in baby-tracking apps",
+    "url_tentada": "https://policyreview.info/pdf/policyreview-2026-1-2087.pdf",
+    "data": "2026-11-13",
+    "status": "obtido",
+    "url": "https://policyreview.info/pdf/policyreview-2026-1-2087.pdf",
+    "paginas": 34,
+    "sha256": "758571a966e74c1e5b6eec9864b4e0f0262acd1c1ee48eb88e721cac7b7f6a0e",
+    "caracteres": 79894
+  },
+  {
+    "id": "R0823",
+    "titulo": "An Empirical Study of Privacy Leakage Vulnerability in Third-Party Android Logs Libraries",
+    "url_tentada": "https://doi.org/10.1109/saner67736.2026.00057",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "Resposta não é PDF",
+    "segunda_verificacao": [
+      {
+        "url": "https://doi.org/10.1109/saner67736.2026.00057",
+        "url_final": "https://ieeexplore.ieee.org/document/11576657/",
+        "resultado": "Página HTML",
+        "links_pdf": []
+      }
+    ]
+  },
+  {
+    "id": "R0832",
+    "titulo": "An Investigation into Android In-App Ad Practice: Implications for App Developers",
+    "url_tentada": "https://doi.org/10.1109/infocom.2018.8486010",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "Resposta não é PDF",
+    "segunda_verificacao": [
+      {
+        "url": "https://doi.org/10.1109/infocom.2018.8486010",
+        "url_final": "https://ieeexplore.ieee.org/document/8486010/",
+        "resultado": "Página HTML",
+        "links_pdf": []
+      }
+    ]
+  },
+  {
+    "id": "R0931",
+    "titulo": "Devils in Your Apps: Vulnerabilities and User Privacy Exposure in Mobile Notification Systems",
+    "url_tentada": "https://doi.org/10.1109/dsn58367.2023.00017",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "Resposta não é PDF",
+    "segunda_verificacao": [
+      {
+        "url": "https://doi.org/10.1109/dsn58367.2023.00017",
+        "url_final": "https://ieeexplore.ieee.org/document/10202604/",
+        "resultado": "Página HTML",
+        "links_pdf": []
+      }
+    ]
+  },
+  {
+    "id": "R0994",
+    "titulo": "How Does Misconfiguration of Analytic Services Compromise Mobile Privacy?",
+    "url_tentada": "https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9284006",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "HTTP Error 418: Unknown",
+    "segunda_verificacao": [
+      {
+        "url": "https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9284006",
+        "erro": "HTTP Error 418: Unknown"
+      }
+    ]
+  },
+  {
+    "id": "R1033",
+    "titulo": "MAdLens: Investigating Into Android In-App Ad Practice at API Granularity",
+    "url_tentada": "https://doi.org/10.1109/tmc.2019.2953609",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "Resposta não é PDF",
+    "segunda_verificacao": [
+      {
+        "url": "https://doi.org/10.1109/tmc.2019.2953609",
+        "url_final": "https://ieeexplore.ieee.org/document/8901140/",
+        "resultado": "Página HTML",
+        "links_pdf": []
+      }
+    ]
+  },
+  {
+    "id": "R1145",
+    "titulo": "Studying Ad Library Integration Strategies of Top Free-to-Download Apps",
+    "url_tentada": "https://arxiv.org/pdf/2104.00182",
+    "data": "2026-11-13",
+    "status": "obtido",
+    "url": "https://arxiv.org/pdf/2104.00182",
+    "paginas": 16,
+    "sha256": "12646210251f8213db83fa7bdcbd6348ff53375d38dc3f7694e310e1a2793e39",
+    "caracteres": 133550
+  },
+  {
+    "id": "R1214",
+    "titulo": "“Your Doctor is Spying on You”: An Analysis of Data Practices in Mobile Healthcare Applications",
+    "url_tentada": "https://arxiv.org/pdf/2510.06015",
+    "data": "2026-11-13",
+    "status": "obtido",
+    "url": "https://arxiv.org/pdf/2510.06015",
+    "paginas": 10,
+    "sha256": "0677bd70b34b06f8b8c5098de1a581a8a55a23add7b71e14aa2d012c9c6ad1e6",
+    "caracteres": 70248
+  },
+  {
+    "id": "R0005",
+    "titulo": "A Qualitative Analysis Framework for mHealth Privacy Practices",
+    "url_tentada": "https://arxiv.org/pdf/2405.17971",
+    "data": "2026-11-13",
+    "status": "obtido",
+    "url": "https://arxiv.org/pdf/2405.17971",
+    "paginas": 8,
+    "sha256": "d1eb40451f10bf1d9ff9139496406d33b4e208a302b4146d910ffd674efb4150",
+    "caracteres": 69539
+  },
+  {
+    "id": "R0028",
+    "titulo": "Detecting Inconsistent Privacy Statements Between Mobile Vehicle Apps and Their Third-Party Integrations",
+    "url_tentada": "https://doi.org/10.1007/978-981-95-3480-7_32",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "Resposta não é PDF",
+    "segunda_verificacao": [
+      {
+        "url": "https://doi.org/10.1007/978-981-95-3480-7_32",
+        "url_final": "https://link.springer.com/chapter/10.1007/978-981-95-3480-7_32?error=cookies_not_supported&code=6dcf7fb9-c6db-42af-8789-7aef97dd8eda",
+        "resultado": "Página HTML",
+        "links_pdf": [
+          "https://link.springer.com/content/pdf/10.1007/978-981-95-3480-7_32.pdf"
+        ]
+      },
+      {
+        "url": "https://link.springer.com/content/pdf/10.1007/978-981-95-3480-7_32.pdf",
+        "url_final": "https://link.springer.com/chapter/10.1007/978-981-95-3480-7_32?error=cookies_not_supported&code=7b867d63-a58f-49b3-9511-860547d78364",
+        "resultado": "Página HTML",
+        "links_pdf": [
+          "https://link.springer.com/content/pdf/10.1007/978-981-95-3480-7_32.pdf"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "R0032",
+    "titulo": "Detection of Inconsistencies between Guidance Pages and Actual Data Collection of Third-party SDKs in Android Apps",
+    "url_tentada": "https://dl.acm.org/doi/pdf/10.1145/3647632.3647991",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "HTTP Error 403: Forbidden",
+    "segunda_verificacao": [
+      {
+        "url": "https://dl.acm.org/doi/pdf/10.1145/3647632.3647991",
+        "erro": "HTTP Error 403: Forbidden"
+      },
+      {
+        "url": "https://doi.org/10.1145/3647632.3647991",
+        "erro": "HTTP Error 403: Forbidden"
+      }
+    ]
+  },
+  {
+    "id": "R0043",
+    "titulo": "Evaluating the Privacy Policy of Android Apps: A Privacy Policy Compliance Study for Popular Apps in China and Europe",
+    "url_tentada": "https://downloads.hindawi.com/journals/sp/2022/2508690.pdf",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "HTTP Error 403: Forbidden",
+    "segunda_verificacao": [
+      {
+        "url": "https://downloads.hindawi.com/journals/sp/2022/2508690.pdf",
+        "erro": "HTTP Error 403: Forbidden"
+      },
+      {
+        "url": "https://doi.org/10.1155/2022/2508690",
+        "erro": "HTTP Error 403: Forbidden"
+      }
+    ]
+  },
+  {
+    "id": "R0084",
+    "titulo": "Navigating Developers' Quagmire: LLM-Enabled Privacy Compliance Analysis for SDK Integrations",
+    "url_tentada": "https://doi.org/10.1109/sp63933.2026.00126",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "Resposta não é PDF",
+    "segunda_verificacao": [
+      {
+        "url": "https://doi.org/10.1109/sp63933.2026.00126",
+        "url_final": "https://ieeexplore.ieee.org/document/11573406/",
+        "resultado": "Página HTML",
+        "links_pdf": []
+      }
+    ]
+  },
+  {
+    "id": "R0102",
+    "titulo": "Re-checking app behavior against app description in the context of third-party libraries",
+    "url_tentada": "https://doi.org/10.18293/seke2018-180",
+    "data": "2026-11-13",
+    "status": "obtido",
+    "url": "http://ksiresearchorg.ipage.com/seke/seke18paper/seke18paper_180.pdf",
+    "paginas": 6,
+    "sha256": "adf6de6126abdfb9e692a251b6869785715eafc0e9e31d858ded081b44607631",
+    "caracteres": 46625
+  },
+  {
+    "id": "R0239",
+    "titulo": "Exposing Android social applications: linking data leakage to privacy policies",
+    "url_tentada": "https://doi.org/10.1080/23742917.2019.1630093",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "HTTP Error 403: Forbidden",
+    "segunda_verificacao": [
+      {
+        "url": "https://doi.org/10.1080/23742917.2019.1630093",
+        "erro": "HTTP Error 403: Forbidden"
+      }
+    ]
+  },
+  {
+    "id": "R0291",
+    "titulo": "Losing Control to Data-Hungry Apps: A Mixed-Methods Approach to Mobile App Privacy",
+    "url_tentada": "https://sintef.brage.unit.no/sintef-xmlui/bitstream/11250/2500379/5/Losing_Control_to_Data-Hungry_Apps_A_Mix%2b%25281%2529.pdf",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "HTTP Error 503: Service Unavailable",
+    "segunda_verificacao": [
+      {
+        "url": "https://sintef.brage.unit.no/sintef-xmlui/bitstream/11250/2500379/5/Losing_Control_to_Data-Hungry_Apps_A_Mix%2b%25281%2529.pdf",
+        "erro": "HTTP Error 503: Service Unavailable"
+      },
+      {
+        "url": "https://doi.org/10.1177/0894439318777706",
+        "erro": "HTTP Error 403: Forbidden"
+      }
+    ]
+  },
+  {
+    "id": "R0412",
+    "titulo": "Withdrawing is believing? Detecting Inconsistencies between Withdrawal Choices and Third-party Data Collections in Mobile Apps",
+    "url_tentada": "https://doi.org/10.1109/sp54263.2024.00014",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "Resposta não é PDF",
+    "segunda_verificacao": [
+      {
+        "url": "https://doi.org/10.1109/sp54263.2024.00014",
+        "url_final": "https://ieeexplore.ieee.org/document/10646600/",
+        "resultado": "Página HTML",
+        "links_pdf": []
+      }
+    ]
+  },
+  {
+    "id": "R0417",
+    "titulo": "A comparative study of android and iOS mobile applications’ data handling practices versus compliance to privacy policy",
+    "url_tentada": "https://inria.hal.science/hal-01883630",
+    "data": "2026-11-13",
+    "status": "obtido",
+    "erro": "HTTP Error 403: Forbidden",
+    "url": "https://link.springer.com/content/pdf/10.1007/978-3-319-92925-5_20.pdf?error=cookies_not_supported&code=e137ffeb-06f8-4445-aa65-1a383cbf379c",
+    "paginas": 13,
+    "sha256": "67312dd22a9a11ceae44f65e5e01e19cefedd876a71b2d62e7e0baac7ced6104",
+    "caracteres": 37415,
+    "segunda_verificacao": [
+      {
+        "url": "https://inria.hal.science/hal-01883630",
+        "erro": "HTTP Error 403: Forbidden"
+      },
+      {
+        "url": "https://doi.org/10.1007/978-3-319-92925-5_20",
+        "url_final": "https://link.springer.com/chapter/10.1007/978-3-319-92925-5_20?error=cookies_not_supported&code=b928c70c-4d3a-4fc3-a157-97c91fc4e108",
+        "resultado": "Página HTML",
+        "links_pdf": [
+          "https://link.springer.com/content/pdf/10.1007/978-3-319-92925-5_20.pdf"
+        ]
+      },
+      {
+        "url": "https://link.springer.com/content/pdf/10.1007/978-3-319-92925-5_20.pdf",
+        "url_final": "https://link.springer.com/content/pdf/10.1007/978-3-319-92925-5_20.pdf?error=cookies_not_supported&code=e137ffeb-06f8-4445-aa65-1a383cbf379c",
+        "resultado": "PDF obtido"
+      }
+    ]
+  },
+  {
+    "id": "R0427",
+    "titulo": "A Framework for Scanning Privacy Information based on Static Analysis",
+    "url_tentada": "https://doi.org/10.1109/qrs57517.2022.00116",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "Resposta não é PDF",
+    "segunda_verificacao": [
+      {
+        "url": "https://doi.org/10.1109/qrs57517.2022.00116",
+        "url_final": "https://ieeexplore.ieee.org/document/10062424/",
+        "resultado": "Página HTML",
+        "links_pdf": []
+      }
+    ]
+  },
+  {
+    "id": "R0435",
+    "titulo": "A Sensitive Data Leakage Detection and Privacy Policy Analyzing Application for Android Systems (PriVot)",
+    "url_tentada": "https://doi.org/10.1109/icac54203.2021.9671075",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "Resposta não é PDF",
+    "segunda_verificacao": [
+      {
+        "url": "https://doi.org/10.1109/icac54203.2021.9671075",
+        "url_final": "https://ieeexplore.ieee.org/document/9671075/",
+        "resultado": "Página HTML",
+        "links_pdf": []
+      }
+    ]
+  },
+  {
+    "id": "R0436",
+    "titulo": "A study of privacy-related data collected by Android apps",
+    "url_tentada": "https://link.springer.com/content/pdf/10.1007/s10515-025-00589-3.pdf",
+    "data": "2026-11-13",
+    "status": "obtido",
+    "url": "https://link.springer.com/content/pdf/10.1007/s10515-025-00589-3.pdf?error=cookies_not_supported&code=4f9a27b6-5854-487a-b79e-0fdf65c8c229",
+    "paginas": 31,
+    "sha256": "9897b450f53db08bdc8b48ff81548ee08860362efcd9e7a509d831f5b1b1ee0e",
+    "caracteres": 89223
+  },
+  {
+    "id": "R0441",
+    "titulo": "Abandon All Hope Ye Who Enter Here: A Dynamic, Longitudinal Investigation of Android's Data Safety Section",
+    "url_tentada": "https://www.scopus.com/pages/publications/85205005931?origin=resultslist",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "Resposta não é PDF",
+    "segunda_verificacao": [
+      {
+        "url": "https://www.scopus.com/pages/publications/85205005931?origin=resultslist",
+        "url_final": "https://www.scopus.com/pages/publications/85205005931?origin=resultslist",
+        "resultado": "Página HTML",
+        "links_pdf": []
+      }
+    ]
+  },
+  {
+    "id": "R0442",
+    "titulo": "Actions speak louder than words: Entity-sensitive privacy policy and data flow analysis with policheck",
+    "url_tentada": "https://files.usenix.org/s3fs-public/cdn/sec20-andow.pdf",
+    "data": "2026-11-13",
+    "status": "obtido",
+    "erro": "Resposta não é PDF",
+    "segunda_verificacao": [
+      {
+        "url": "https://www.scopus.com/pages/publications/85091944761?origin=resultslist",
+        "url_final": "https://www.scopus.com/pages/publications/85091944761?origin=resultslist",
+        "resultado": "Página HTML",
+        "links_pdf": []
+      }
+    ],
+    "url": "https://files.usenix.org/s3fs-public/cdn/sec20-andow.pdf",
+    "paginas": 19,
+    "sha256": "87978462e8eb9ceb92580a7496985f23821db968a81fb89070396bdb1f78efdf",
+    "caracteres": 135371,
+    "tentativa_anterior": {
+      "id": "R0442",
+      "titulo": "Actions speak louder than words: Entity-sensitive privacy policy and data flow analysis with policheck",
+      "url_tentada": "https://www.scopus.com/pages/publications/85091944761?origin=resultslist",
+      "data": "2026-11-13",
+      "status": "pendente",
+      "erro": "Resposta não é PDF",
+      "segunda_verificacao": [
+        {
+          "url": "https://www.scopus.com/pages/publications/85091944761?origin=resultslist",
+          "url_final": "https://www.scopus.com/pages/publications/85091944761?origin=resultslist",
+          "resultado": "Página HTML",
+          "links_pdf": []
+        }
+      ]
+    }
+  },
+  {
+    "id": "R0449",
+    "titulo": "An empirical evaluation of GDPR compliance violations in android mhealth apps",
+    "url_tentada": "https://arxiv.org/pdf/2008.05864",
+    "data": "2026-11-13",
+    "status": "obtido",
+    "url": "https://arxiv.org/pdf/2008.05864",
+    "paginas": 12,
+    "sha256": "4d79fb712d5e03927993a5babb8596969a75b9198addf10834da63023a6faf76",
+    "caracteres": 94430
+  },
+  {
+    "id": "R0464",
+    "titulo": "Assessing Privacy Disclosure Compliance of Android Third-Party SDKs",
+    "url_tentada": "https://scholars.cityu.edu.hk/en/publications/35696144-2624-46ce-ac7e-937fbb5ffec6",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "Resposta não é PDF",
+    "segunda_verificacao": [
+      {
+        "url": "https://scholars.cityu.edu.hk/en/publications/35696144-2624-46ce-ac7e-937fbb5ffec6",
+        "url_final": "https://scholars.cityu.edu.hk/en/publications/assessing-privacy-disclosure-compliance-of-android-third-party-sd/",
+        "resultado": "Página HTML",
+        "links_pdf": [
+          "https://scholars.cityu.edu.hk/files/492822151/470248300.pdf"
+        ]
+      },
+      {
+        "url": "https://doi.org/10.1109/tse.2026.3676979",
+        "url_final": "https://ieeexplore.ieee.org/document/11456198/",
+        "resultado": "Página HTML",
+        "links_pdf": []
+      },
+      {
+        "url": "https://scholars.cityu.edu.hk/files/492822151/470248300.pdf",
+        "erro": "HTTP Error 403: Forbidden"
+      }
+    ]
+  },
+  {
+    "id": "R0466",
+    "titulo": "Assessment of the Data Sharing and Privacy Practices of Smartphone Apps for Depression and Smoking Cessation",
+    "url_tentada": "https://jamanetwork.com/journals/jamanetworkopen/articlepdf/2730782/huckvale_2019_oi_190111.pdf",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "HTTP Error 403: Forbidden",
+    "segunda_verificacao": [
+      {
+        "url": "https://jamanetwork.com/journals/jamanetworkopen/articlepdf/2730782/huckvale_2019_oi_190111.pdf",
+        "erro": "HTTP Error 403: Forbidden"
+      },
+      {
+        "url": "https://doi.org/10.1001/jamanetworkopen.2019.2542",
+        "erro": "HTTP Error 403: Forbidden"
+      }
+    ]
+  },
+  {
+    "id": "R0468",
+    "titulo": "Automated Analysis of Privacy Requirements for Mobile Apps",
+    "url_tentada": "https://www.privacyassistant.org/media/publications/NDSS17.pdf",
+    "data": "2026-11-13",
+    "status": "obtido",
+    "erro": "Resposta não é PDF",
+    "segunda_verificacao": [
+      {
+        "url": "https://doi.org/10.14722/ndss.2017.23034",
+        "url_final": "https://www.ndss-symposium.org/ndss2017/ndss-2017-programme/automated-analysis-privacy-requirements-mobile-apps/",
+        "resultado": "Página HTML",
+        "links_pdf": []
+      }
+    ],
+    "url": "https://www.privacyassistant.org/media/publications/NDSS17.pdf",
+    "paginas": 15,
+    "sha256": "ac0f453c5c3e3d8831f56807f4c78c3729260d03f21fd1750b6e700d007561a6",
+    "caracteres": 128826,
+    "tentativa_anterior": {
+      "id": "R0468",
+      "titulo": "Automated Analysis of Privacy Requirements for Mobile Apps",
+      "url_tentada": "https://doi.org/10.14722/ndss.2017.23034",
+      "data": "2026-11-13",
+      "status": "pendente",
+      "erro": "Resposta não é PDF",
+      "segunda_verificacao": [
+        {
+          "url": "https://doi.org/10.14722/ndss.2017.23034",
+          "url_final": "https://www.ndss-symposium.org/ndss2017/ndss-2017-programme/automated-analysis-privacy-requirements-mobile-apps/",
+          "resultado": "Página HTML",
+          "links_pdf": []
+        }
+      ]
+    }
+  },
+  {
+    "id": "R0482",
+    "titulo": "Consistency Analysis of Data-Usage Purposes in Mobile Apps",
+    "url_tentada": "https://dl.acm.org/doi/pdf/10.1145/3460120.3484536",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "HTTP Error 403: Forbidden",
+    "segunda_verificacao": [
+      {
+        "url": "https://dl.acm.org/doi/pdf/10.1145/3460120.3484536",
+        "erro": "HTTP Error 403: Forbidden"
+      },
+      {
+        "url": "https://doi.org/10.1145/3460120.3484536",
+        "erro": "HTTP Error 403: Forbidden"
+      }
+    ]
+  },
+  {
+    "id": "R0500",
+    "titulo": "Demystifying Privacy Policy of Third-Party Libraries in Mobile Apps",
+    "url_tentada": "https://arxiv.org/pdf/2301.12348",
+    "data": "2026-11-13",
+    "status": "obtido",
+    "url": "https://arxiv.org/pdf/2301.12348",
+    "paginas": 13,
+    "sha256": "1cd7b9e803d963345b9c189c4c971a36f46d459e2bd880b72d62548414f0f275",
+    "caracteres": 104566
+  },
+  {
+    "id": "R0504",
+    "titulo": "Detecting the Inconsistency between Android Apps’ Data Collection and Google Play’s Data Safety Using Static Analysis",
+    "url_tentada": "https://reference-global.com/2/v2/download/article/10.2478/cait-2025-0007.pdf",
+    "data": "2026-11-13",
+    "status": "obtido",
+    "url": "https://reference-global.com/download/article/10.2478/cait-2025-0007.pdf",
+    "paginas": 16,
+    "sha256": "32f5712d936b8ffa577213339533d2d0506db762813a376bfa432405a378e496",
+    "caracteres": 42799
+  },
+  {
+    "id": "R0512",
+    "titulo": "Do Android App Developers Accurately Report Collection of Privacy-Related Data?",
+    "url_tentada": "https://doi.org/10.1145/3691621.3694949",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "HTTP Error 403: Forbidden",
+    "segunda_verificacao": [
+      {
+        "url": "https://doi.org/10.1145/3691621.3694949",
+        "erro": "HTTP Error 403: Forbidden"
+      }
+    ]
+  },
+  {
+    "id": "R0513",
+    "titulo": "Do as You Say: Consistency Detection of Data Practice in Program Code and Privacy Policy in Mini-App",
+    "url_tentada": "https://arxiv.org/pdf/2302.13860",
+    "data": "2026-11-13",
+    "status": "versao_divergente",
+    "url": "https://arxiv.org/pdf/2302.13860",
+    "paginas": 23,
+    "sha256": "1329a8ca15a1d15a19da755730f27408fdf60b6f2851f4b7cb4d5822049f3ab3",
+    "caracteres": 145905,
+    "url_publicacao_confirmada": "https://doi.org/10.1109/TSE.2024.3479288",
+    "nota_versao": "PDF de 2023 difere do resumo do registro de 2024: método MiniDetector e 3.369 políticas na versão publicada"
+  },
+  {
+    "id": "R0521",
+    "titulo": "Enhancing Transparency and Accountability of TPLs with PBOM: A Privacy Bill of Materials",
+    "url_tentada": "https://doi.org/10.1145/3689944.3696159",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "HTTP Error 403: Forbidden",
+    "segunda_verificacao": [
+      {
+        "url": "https://doi.org/10.1145/3689944.3696159",
+        "erro": "HTTP Error 403: Forbidden"
+      }
+    ]
+  },
+  {
+    "id": "R0527",
+    "titulo": "Exploring Personal Data Processing in Video Conferencing Apps",
+    "url_tentada": "https://www.mdpi.com/2079-9292/12/5/1247/pdf?version=1678104151",
+    "data": "2026-11-13",
+    "status": "obtido",
+    "url": "https://www.mdpi.com/2079-9292/12/5/1247/pdf?version=1678104151",
+    "paginas": 25,
+    "sha256": "74679a64a8f9f28ce59c9b4747095558fd3cf918207d6a6ddfccf847f930a399",
+    "caracteres": 141975
+  },
+  {
+    "id": "R0532",
+    "titulo": "Giving without Notifying: Assessing Compliance of Data Transmission in Android Apps",
+    "url_tentada": "https://doi.org/10.1145/3691620.3695528",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "HTTP Error 403: Forbidden",
+    "segunda_verificacao": [
+      {
+        "url": "https://doi.org/10.1145/3691620.3695528",
+        "erro": "HTTP Error 403: Forbidden"
+      }
+    ]
+  },
+  {
+    "id": "R0534",
+    "titulo": "GUILeak: Tracing Privacy Policy Claims on User Input Data for Android Applications",
+    "url_tentada": "https://dl.acm.org/doi/pdf/10.1145/3180155.3180196",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "HTTP Error 403: Forbidden",
+    "segunda_verificacao": [
+      {
+        "url": "https://dl.acm.org/doi/pdf/10.1145/3180155.3180196",
+        "erro": "HTTP Error 403: Forbidden"
+      },
+      {
+        "url": "https://doi.org/10.1145/3180155.3180196",
+        "erro": "HTTP Error 403: Forbidden"
+      }
+    ]
+  },
+  {
+    "id": "R0541",
+    "titulo": "How private is your mental health app data? An empirical study of mental health app privacy policies and practices",
+    "url_tentada": "https://doi.org/10.1016/j.ijlp.2019.04.002",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "Resposta não é PDF",
+    "segunda_verificacao": [
+      {
+        "url": "https://doi.org/10.1016/j.ijlp.2019.04.002",
+        "url_final": "https://linkinghub.elsevier.com/retrieve/pii/S0160252718302681",
+        "resultado": "Página HTML",
+        "links_pdf": []
+      }
+    ]
+  },
+  {
+    "id": "R0545",
+    "titulo": "Intelligent analysis of android application privacy policy and permission consistency",
+    "url_tentada": "https://doi.org/10.1007/s10462-024-10798-z",
+    "data": "2026-11-13",
+    "status": "obtido",
+    "erro": "Resposta não é PDF",
+    "url": "https://link.springer.com/content/pdf/10.1007/s10462-024-10798-z.pdf?error=cookies_not_supported&code=e0a33f9c-da8d-486e-8f82-287eacbb82dc",
+    "paginas": 21,
+    "sha256": "9afd98190d2a6abf075173304d5e3f004ebd3305f8dfce711fb147f2544682a9",
+    "caracteres": 91304,
+    "segunda_verificacao": [
+      {
+        "url": "https://doi.org/10.1007/s10462-024-10798-z",
+        "url_final": "https://link.springer.com/article/10.1007/s10462-024-10798-z?error=cookies_not_supported&code=87d654d8-86b1-4c0a-842e-5f85ecbc10d4",
+        "resultado": "Página HTML",
+        "links_pdf": [
+          "https://link.springer.com/content/pdf/10.1007/s10462-024-10798-z.pdf"
+        ]
+      },
+      {
+        "url": "https://link.springer.com/content/pdf/10.1007/s10462-024-10798-z.pdf",
+        "url_final": "https://link.springer.com/content/pdf/10.1007/s10462-024-10798-z.pdf?error=cookies_not_supported&code=e0a33f9c-da8d-486e-8f82-287eacbb82dc",
+        "resultado": "PDF obtido"
+      }
+    ]
+  },
+  {
+    "id": "R0548",
+    "titulo": "IoTPrivComp: A Measurement Study of Privacy Compliance in IoT Apps",
+    "url_tentada": "https://doi.org/10.1007/978-3-031-17146-8_29",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "Resposta não é PDF",
+    "segunda_verificacao": [
+      {
+        "url": "https://doi.org/10.1007/978-3-031-17146-8_29",
+        "url_final": "https://link.springer.com/chapter/10.1007/978-3-031-17146-8_29?error=cookies_not_supported&code=36baa659-926c-458e-91de-f634088fb5dd",
+        "resultado": "Página HTML",
+        "links_pdf": [
+          "https://link.springer.com/content/pdf/10.1007/978-3-031-17146-8_29.pdf"
+        ]
+      },
+      {
+        "url": "https://link.springer.com/content/pdf/10.1007/978-3-031-17146-8_29.pdf",
+        "url_final": "https://link.springer.com/chapter/10.1007/978-3-031-17146-8_29?error=cookies_not_supported&code=9deb9fd6-da14-4be7-9c40-7246e53dd92a",
+        "resultado": "Página HTML",
+        "links_pdf": [
+          "https://link.springer.com/content/pdf/10.1007/978-3-031-17146-8_29.pdf"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "R0552",
+    "titulo": "Lalaine: Measuring and Characterizing Non-Compliance of Apple Privacy Labels",
+    "url_tentada": "http://arxiv.org/pdf/2206.06274",
+    "data": "2026-11-13",
+    "status": "obtido",
+    "url": "https://arxiv.org/pdf/2206.06274",
+    "paginas": 19,
+    "sha256": "6b09e9ba4567d2b1a7be0f4eee84f2f3f7f1c1d1cd8dcf872ab3fee448f68cb9",
+    "caracteres": 130606
+  },
+  {
+    "id": "R0560",
+    "titulo": "Measuring Compliance Implications of Third-party Libraries’ Privacy Label Disclosure Guidelines",
+    "url_tentada": "https://doi.org/10.1145/3658644.3670371",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "HTTP Error 403: Forbidden",
+    "segunda_verificacao": [
+      {
+        "url": "https://doi.org/10.1145/3658644.3670371",
+        "erro": "HTTP Error 403: Forbidden"
+      }
+    ]
+  },
+  {
+    "id": "R0571",
+    "titulo": "Natural language processing for mobile app privacy compliance",
+    "url_tentada": "https://www.scopus.com/pages/publications/85063277266?origin=resultslist",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "Resposta não é PDF",
+    "segunda_verificacao": [
+      {
+        "url": "https://www.scopus.com/pages/publications/85063277266?origin=resultslist",
+        "url_final": "https://www.scopus.com/pages/publications/85063277266?origin=resultslist",
+        "resultado": "Página HTML",
+        "links_pdf": []
+      }
+    ]
+  },
+  {
+    "id": "R0576",
+    "titulo": "NLP-Based Detecting Privacy Policy and Behavior Inconsistencies in Android Apps",
+    "url_tentada": "https://doi.org/10.1007/978-981-95-0129-8_27",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "Resposta não é PDF",
+    "segunda_verificacao": [
+      {
+        "url": "https://doi.org/10.1007/978-981-95-0129-8_27",
+        "url_final": "https://link.springer.com/chapter/10.1007/978-981-95-0129-8_27?error=cookies_not_supported&code=37f5e512-df83-4efd-9019-dbc681db9616",
+        "resultado": "Página HTML",
+        "links_pdf": [
+          "https://link.springer.com/content/pdf/10.1007/978-981-95-0129-8_27.pdf"
+        ]
+      },
+      {
+        "url": "https://link.springer.com/content/pdf/10.1007/978-981-95-0129-8_27.pdf",
+        "url_final": "https://link.springer.com/chapter/10.1007/978-981-95-0129-8_27?error=cookies_not_supported&code=81f569b6-258f-4d3d-8ecc-3e218e28c3e8",
+        "resultado": "Página HTML",
+        "links_pdf": [
+          "https://link.springer.com/content/pdf/10.1007/978-981-95-0129-8_27.pdf"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "R0581",
+    "titulo": "On the (Un)Reliability of Privacy Policies in Android Apps",
+    "url_tentada": "https://arxiv.org/pdf/2004.08559",
+    "data": "2026-11-13",
+    "status": "obtido",
+    "url": "https://arxiv.org/pdf/2004.08559",
+    "paginas": 9,
+    "sha256": "882b230079276771998da7e8b286f31b61dd9e278b01ddb77f45d72df93f9a60",
+    "caracteres": 64371
+  },
+  {
+    "id": "R0588",
+    "titulo": "Practical Exploration and Research on AI-Based Privacy Compliance Testing for Automotive Apps",
+    "url_tentada": "https://doi.org/10.1109/aiotc71250.2026.11688636",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "Resposta não é PDF",
+    "segunda_verificacao": [
+      {
+        "url": "https://doi.org/10.1109/aiotc71250.2026.11688636",
+        "url_final": "https://ieeexplore.ieee.org/document/11688636/",
+        "resultado": "Página HTML",
+        "links_pdf": []
+      }
+    ]
+  },
+  {
+    "id": "R0590",
+    "titulo": "PriAgent: A Collaborative Multi-Agent Framework for Auditing Android Privacy Compliance",
+    "url_tentada": "https://doi.org/10.1609/aaai.v40i2.37135",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "Resposta não é PDF",
+    "segunda_verificacao": [
+      {
+        "url": "https://doi.org/10.1609/aaai.v40i2.37135",
+        "url_final": "https://ojs.aaai.org/index.php/AAAI/article/view/37135",
+        "resultado": "Página HTML",
+        "links_pdf": []
+      }
+    ]
+  },
+  {
+    "id": "R0591",
+    "titulo": "PriLabel: Toward Comprehensively Uncovering Omitted Disclosures in Privacy Labels of Android Apps on a Large Scale",
+    "url_tentada": "https://doi.org/10.1109/tifs.2026.3683285",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "Resposta não é PDF",
+    "segunda_verificacao": [
+      {
+        "url": "https://doi.org/10.1109/tifs.2026.3683285",
+        "url_final": "https://ieeexplore.ieee.org/document/11480172/",
+        "resultado": "Página HTML",
+        "links_pdf": []
+      }
+    ]
+  },
+  {
+    "id": "R0600",
+    "titulo": "PrivacyFlash Pro: Automating Privacy Policy Generation for Mobile Apps",
+    "url_tentada": "https://doi.org/10.14722/ndss.2021.24100",
+    "data": "2026-11-13",
+    "status": "obtido",
+    "url": "https://www.ndss-symposium.org/wp-content/uploads/ndss2021_7C-3_24100_paper.pdf",
+    "paginas": 18,
+    "sha256": "68ad3d2fc2ce4bf7ca484334c95dd627663dfdfc1c6a7448c353991229dd85c2",
+    "caracteres": 129773
+  },
+  {
+    "id": "R0606",
+    "titulo": "PVDetector: A detector of privacy-policy violations for android apps",
+    "url_tentada": "https://doi.org/10.1145/2897073.2897720",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "HTTP Error 403: Forbidden",
+    "segunda_verificacao": [
+      {
+        "url": "https://doi.org/10.1145/2897073.2897720",
+        "erro": "HTTP Error 403: Forbidden"
+      }
+    ]
+  },
+  {
+    "id": "R0613",
+    "titulo": "Research on Intelligent Joint Detection Technology for Application Privacy Behavior Compliance",
+    "url_tentada": "https://doi.org/10.1109/trustcom63139.2024.00198",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "Resposta não é PDF",
+    "segunda_verificacao": [
+      {
+        "url": "https://doi.org/10.1109/trustcom63139.2024.00198",
+        "url_final": "https://ieeexplore.ieee.org/document/10945244/",
+        "resultado": "Página HTML",
+        "links_pdf": []
+      }
+    ]
+  },
+  {
+    "id": "R0616",
+    "titulo": "SDKPrivacyLens: Automated Detection of SDK Privacy Compliance in Apps via LLM-KG Fusion",
+    "url_tentada": "https://doi.org/10.1109/icftic68075.2025.11325092",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "Resposta não é PDF",
+    "segunda_verificacao": [
+      {
+        "url": "https://doi.org/10.1109/icftic68075.2025.11325092",
+        "url_final": "https://ieeexplore.ieee.org/document/11325092/",
+        "resultado": "Página HTML",
+        "links_pdf": []
+      }
+    ]
+  },
+  {
+    "id": "R0620",
+    "titulo": "Sharing is Not Always Caring: Delving Into Personal Data Transfer Compliance in Android Apps",
+    "url_tentada": "https://ieeexplore.ieee.org/ielx7/6287639/6514899/10379677.pdf",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "HTTP Error 418: Unknown",
+    "segunda_verificacao": [
+      {
+        "url": "https://ieeexplore.ieee.org/ielx7/6287639/6514899/10379677.pdf",
+        "erro": "HTTP Error 418: Unknown"
+      },
+      {
+        "url": "https://doi.org/10.1109/access.2024.3349425",
+        "url_final": "https://ieeexplore.ieee.org/document/10379677/",
+        "resultado": "Página HTML",
+        "links_pdf": []
+      }
+    ]
+  },
+  {
+    "id": "R0641",
+    "titulo": "Toward a framework for detecting privacy policy violations in android application code",
+    "url_tentada": "https://www.cs.cmu.edu/~breaux/publications/slavin-icse16.pdf",
+    "data": "2026-11-13",
+    "status": "obtido",
+    "erro": "HTTP Error 403: Forbidden",
+    "segunda_verificacao": [
+      {
+        "url": "http://dl.acm.org/ft_gateway.cfm?id=2884855&type=pdf",
+        "erro": "HTTP Error 403: Forbidden"
+      },
+      {
+        "url": "https://doi.org/10.1145/2884781.2884855",
+        "erro": "HTTP Error 403: Forbidden"
+      }
+    ],
+    "url": "https://www.cs.cmu.edu/~breaux/publications/slavin-icse16.pdf",
+    "paginas": 12,
+    "sha256": "56c9161a08aacca13b27b21bb50d12f87641bd23e878cd242761358a22094b37",
+    "caracteres": 96926,
+    "tentativa_anterior": {
+      "id": "R0641",
+      "titulo": "Toward a framework for detecting privacy policy violations in android application code",
+      "url_tentada": "http://dl.acm.org/ft_gateway.cfm?id=2884855&type=pdf",
+      "data": "2026-11-13",
+      "status": "pendente",
+      "erro": "HTTP Error 403: Forbidden",
+      "segunda_verificacao": [
+        {
+          "url": "http://dl.acm.org/ft_gateway.cfm?id=2884855&type=pdf",
+          "erro": "HTTP Error 403: Forbidden"
+        },
+        {
+          "url": "https://doi.org/10.1145/2884781.2884855",
+          "erro": "HTTP Error 403: Forbidden"
+        }
+      ]
+    }
+  },
+  {
+    "id": "R0642",
+    "titulo": "Toward LLM-Driven GDPR Compliance Checking for Android Apps",
+    "url_tentada": "https://dl.acm.org/doi/pdf/10.1145/3696630.3728508",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "HTTP Error 403: Forbidden",
+    "segunda_verificacao": [
+      {
+        "url": "https://dl.acm.org/doi/pdf/10.1145/3696630.3728508",
+        "erro": "HTTP Error 403: Forbidden"
+      },
+      {
+        "url": "https://doi.org/10.1145/3696630.3728508",
+        "erro": "HTTP Error 403: Forbidden"
+      }
+    ]
+  },
+  {
+    "id": "R0643",
+    "titulo": "Towards Fine-Grained Localization of Privacy Behaviors",
+    "url_tentada": "https://arxiv.org/pdf/2305.15314",
+    "data": "2026-11-13",
+    "status": "obtido",
+    "url": "https://arxiv.org/pdf/2305.15314",
+    "paginas": 26,
+    "sha256": "ea2becab10598ad59d83fffeadaf179725c4533b215d87d975b8545f10452754",
+    "caracteres": 101874
+  },
+  {
+    "id": "R0645",
+    "titulo": "Transparency and Consent Challenges in mHealth Apps: An Interdisciplinary Study of Privacy Policies, Data Sharing, and Dark Patterns",
+    "url_tentada": "https://doi.org/10.1007/978-3-032-07901-5_1",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "Resposta não é PDF",
+    "segunda_verificacao": [
+      {
+        "url": "https://doi.org/10.1007/978-3-032-07901-5_1",
+        "url_final": "https://link.springer.com/chapter/10.1007/978-3-032-07901-5_1?error=cookies_not_supported&code=2ffe1142-e7cd-4c31-8ae1-641380528156",
+        "resultado": "Página HTML",
+        "links_pdf": [
+          "https://link.springer.com/content/pdf/10.1007/978-3-032-07901-5_1.pdf"
+        ]
+      },
+      {
+        "url": "https://link.springer.com/content/pdf/10.1007/978-3-032-07901-5_1.pdf",
+        "url_final": "https://link.springer.com/chapter/10.1007/978-3-032-07901-5_1?error=cookies_not_supported&code=17768c97-2547-40ad-a155-e84b1f2241d5",
+        "resultado": "Página HTML",
+        "links_pdf": [
+          "https://link.springer.com/content/pdf/10.1007/978-3-032-07901-5_1.pdf"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "R0658",
+    "titulo": "VioScan: Deep Learning-driven Analysis of Compliance and Consistency in Android Applications",
+    "url_tentada": "https://doi.org/10.1109/cyberscitech68397.2025.00134",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "Resposta não é PDF",
+    "segunda_verificacao": [
+      {
+        "url": "https://doi.org/10.1109/cyberscitech68397.2025.00134",
+        "url_final": "https://ieeexplore.ieee.org/document/11323403/",
+        "resultado": "Página HTML",
+        "links_pdf": []
+      }
+    ]
+  },
+  {
+    "id": "R0716",
+    "titulo": "Is It a Trap? A Large-scale Empirical Study And Comprehensive Assessment of Online Automated Privacy Policy Generators for Mobile Apps",
+    "url_tentada": "https://www.scopus.com/pages/publications/85201166922?origin=resultslist",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "Resposta não é PDF",
+    "segunda_verificacao": [
+      {
+        "url": "https://www.scopus.com/pages/publications/85201166922?origin=resultslist",
+        "url_final": "https://www.scopus.com/pages/publications/85201166922?origin=resultslist",
+        "resultado": "Página HTML",
+        "links_pdf": []
+      }
+    ]
+  },
+  {
+    "id": "R0859",
+    "titulo": "Automatic Detection for Privacy Violations in Android Applications",
+    "url_tentada": "https://doi.org/10.1109/jiot.2021.3109785",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "Resposta não é PDF",
+    "segunda_verificacao": [
+      {
+        "url": "https://doi.org/10.1109/jiot.2021.3109785",
+        "url_final": "https://ieeexplore.ieee.org/document/9527317/",
+        "resultado": "Página HTML",
+        "links_pdf": []
+      }
+    ]
+  },
+  {
+    "id": "R0924",
+    "titulo": "Detecting Privacy Non-Compliance in Wearable Apps via Knowledge Graphs and LLMs",
+    "url_tentada": "https://doi.org/10.1109/wimob66857.2025.11257567",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "Resposta não é PDF",
+    "segunda_verificacao": [
+      {
+        "url": "https://doi.org/10.1109/wimob66857.2025.11257567",
+        "url_final": "https://ieeexplore.ieee.org/document/11257567/",
+        "resultado": "Página HTML",
+        "links_pdf": []
+      }
+    ]
+  },
+  {
+    "id": "R1073",
+    "titulo": "Plaintext in the Wild: Investigating Secure Connection Label Accuracy for Android Apps",
+    "url_tentada": "https://doi.org/10.1109/scam67354.2025.00022",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "Resposta não é PDF",
+    "segunda_verificacao": [
+      {
+        "url": "https://doi.org/10.1109/scam67354.2025.00022",
+        "url_final": "https://ieeexplore.ieee.org/document/11190309/",
+        "resultado": "Página HTML",
+        "links_pdf": []
+      }
+    ]
+  },
+  {
+    "id": "R1081",
+    "titulo": "Privacy Consistency Analyzer for Android Applications",
+    "url_tentada": "https://doi.org/10.1109/espre.2018.00011",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "Resposta não é PDF",
+    "segunda_verificacao": [
+      {
+        "url": "https://doi.org/10.1109/espre.2018.00011",
+        "url_final": "https://ieeexplore.ieee.org/document/8501329/",
+        "resultado": "Página HTML",
+        "links_pdf": []
+      }
+    ]
+  },
+  {
+    "id": "R1095",
+    "titulo": "PTPDroid: Detecting Violated User Privacy Disclosures to Third-Parties of Android Apps",
+    "url_tentada": "https://doi.org/10.1109/icse48619.2023.00050",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "Resposta não é PDF",
+    "segunda_verificacao": [
+      {
+        "url": "https://doi.org/10.1109/icse48619.2023.00050",
+        "url_final": "https://ieeexplore.ieee.org/document/10172832/",
+        "resultado": "Página HTML",
+        "links_pdf": []
+      }
+    ]
+  },
+  {
+    "id": "R1178",
+    "titulo": "“Trust Me Over My Privacy Policy”: Privacy Discrepancies in Romantic AI Chatbot Apps",
+    "url_tentada": "https://doi.org/10.1109/eurospw61312.2024.00060",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "Resposta não é PDF",
+    "segunda_verificacao": [
+      {
+        "url": "https://doi.org/10.1109/eurospw61312.2024.00060",
+        "url_final": "https://ieeexplore.ieee.org/document/10628933/",
+        "resultado": "Página HTML",
+        "links_pdf": []
+      }
+    ]
+  },
+  {
+    "id": "R0225",
+    "titulo": "Electronic Monitoring Smartphone Apps: An Analysis of Risks from Technical, Human-Centered, and Legal Perspectives",
+    "url_tentada": "https://www.scopus.com/pages/publications/85140956295?origin=resultslist",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "Resposta não é PDF",
+    "segunda_verificacao": [
+      {
+        "url": "https://www.scopus.com/pages/publications/85140956295?origin=resultslist",
+        "url_final": "https://www.scopus.com/pages/publications/85140956295?origin=resultslist",
+        "resultado": "Página HTML",
+        "links_pdf": []
+      }
+    ]
+  },
+  {
+    "id": "R0229",
+    "titulo": "Et tu, Brute? Privacy Analysis of Government Websites and Mobile Apps",
+    "url_tentada": "https://users.encs.concordia.ca/~mmannan/publications/govt-privacy-WWW2022.pdf",
+    "data": "2026-11-13",
+    "status": "obtido",
+    "erro": "HTTP Error 403: Forbidden",
+    "segunda_verificacao": [
+      {
+        "url": "https://doi.org/10.1145/3485447.3512223",
+        "erro": "HTTP Error 403: Forbidden"
+      }
+    ],
+    "url": "https://users.encs.concordia.ca/~mmannan/publications/govt-privacy-WWW2022.pdf",
+    "paginas": 12,
+    "sha256": "9543c75fe6ebe4021fa854b569f765b064311d7bdec32cc6d1fadea234adc3d6",
+    "caracteres": 100950,
+    "tentativa_anterior": {
+      "id": "R0229",
+      "titulo": "Et tu, Brute? Privacy Analysis of Government Websites and Mobile Apps",
+      "url_tentada": "https://doi.org/10.1145/3485447.3512223",
+      "data": "2026-11-13",
+      "status": "pendente",
+      "erro": "HTTP Error 403: Forbidden",
+      "segunda_verificacao": [
+        {
+          "url": "https://doi.org/10.1145/3485447.3512223",
+          "erro": "HTTP Error 403: Forbidden"
+        }
+      ]
+    }
+  },
+  {
+    "id": "R0447",
+    "titulo": "An analysis of privacy policies of public COVID-19 apps: Evidence from India",
+    "url_tentada": "https://doi.org/10.1002/pa.2801",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "HTTP Error 403: Forbidden",
+    "segunda_verificacao": [
+      {
+        "url": "https://doi.org/10.1002/pa.2801",
+        "erro": "HTTP Error 403: Forbidden"
+      }
+    ]
+  },
+  {
+    "id": "R0556",
+    "titulo": "Legal Protection of Personal Data Security in Indonesian Local Government Apps: Al Farabi's Perspective",
+    "url_tentada": "https://ejournal.umm.ac.id/index.php/legality/article/download/34623/15367",
+    "data": "2026-11-13",
+    "status": "obtido",
+    "url": "https://ejournal.umm.ac.id/index.php/legality/article/download/34623/15367",
+    "paginas": 19,
+    "sha256": "265008bc7b79235605b12157d449704b17adbd18b50d0a715c7e3bc3905ca171",
+    "caracteres": 68842
+  },
+  {
+    "id": "R0561",
+    "titulo": "Measuring the Security of Indonesian Local Goverment Mobile Apps",
+    "url_tentada": "https://doi.org/10.1016/j.procs.2024.03.136",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "Resposta não é PDF",
+    "segunda_verificacao": [
+      {
+        "url": "https://doi.org/10.1016/j.procs.2024.03.136",
+        "url_final": "https://linkinghub.elsevier.com/retrieve/pii/S1877050924004940",
+        "resultado": "Página HTML",
+        "links_pdf": []
+      }
+    ]
+  },
+  {
+    "id": "R0565",
+    "titulo": "Mobile apps for health surveillance: Balancing public health needs with the privacy of personal data",
+    "url_tentada": "https://systems.enpress-publisher.com/index.php/jipd/article/download/5703/4248",
+    "data": "2026-11-13",
+    "status": "obtido",
+    "url": "https://systems.enpress-publisher.com/index.php/jipd/article/download/5703/4248",
+    "paginas": 24,
+    "sha256": "42ef53a945b748c7b5635da64434150a681618cdb69c244a62748ad013a38ab1",
+    "caracteres": 89945
+  },
+  {
+    "id": "R0584",
+    "titulo": "Personal Information Protection and Privacy Policy Compliance of Health Code Apps in China: Scale Development and Content Analysis",
+    "url_tentada": "https://mhealth.jmir.org/2023/1/e48714/PDF",
+    "data": "2026-11-13",
+    "status": "obtido",
+    "url": "https://mhealth.jmir.org/2023/1/e48714/PDF",
+    "paginas": 10,
+    "sha256": "f898ef4dce2bf6825ed7ef6774467294efae264a58acd910fd2563d0047cda7c",
+    "caracteres": 67700
+  },
+  {
+    "id": "R0596",
+    "titulo": "Privacy policies of e-governance initiatives: Evidence from India",
+    "url_tentada": "https://doi.org/10.1002/pa.2160",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "HTTP Error 403: Forbidden",
+    "segunda_verificacao": [
+      {
+        "url": "https://doi.org/10.1002/pa.2160",
+        "erro": "HTTP Error 403: Forbidden"
+      }
+    ]
+  },
+  {
+    "id": "R0638",
+    "titulo": "The corona crisis, data protection and tracking apps in the EU: The Czech and Austrian COVID-19 mobile phone apps in the battle against the virus",
+    "url_tentada": "https://cjir.iir.cz/index.php/cjir/article/download/62/46",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "HTTP Error 466: Unknown",
+    "segunda_verificacao": [
+      {
+        "url": "https://cjir.iir.cz/index.php/cjir/article/download/62/46",
+        "erro": "HTTP Error 466: Unknown"
+      },
+      {
+        "url": "https://doi.org/10.32422/mv-cjir.1764",
+        "erro": "HTTP Error 466: Unknown"
+      }
+    ]
+  },
+  {
+    "id": "R0660",
+    "titulo": "Vulnerabilities in Government Mobile Applications: Evaluating the Security of Mobile Apps in Indonesia and Malaysia",
+    "url_tentada": "https://doi.org/10.1109/cspa64953.2025.10933214",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "Resposta não é PDF",
+    "segunda_verificacao": [
+      {
+        "url": "https://doi.org/10.1109/cspa64953.2025.10933214",
+        "url_final": "https://ieeexplore.ieee.org/document/10933214/",
+        "resultado": "Página HTML",
+        "links_pdf": []
+      }
+    ]
+  },
+  {
+    "id": "R0662",
+    "titulo": "Where Does Your Data Go? Comparing Network Traffic and Privacy Policies of Public Sector Mobile Applications",
+    "url_tentada": "https://www.utupub.fi/bitstreams/b126a38a-2846-4152-a6b3-f30903bc6c9f/download",
+    "data": "2026-11-13",
+    "status": "obtido",
+    "url": "https://www.utupub.fi/server/api/core/bitstreams/b126a38a-2846-4152-a6b3-f30903bc6c9f/content",
+    "paginas": 13,
+    "sha256": "0ca180dd2277978591bbc7e9e40fbf1c38e3867309b61457e3fd014ee91efa02",
+    "caracteres": 36162
+  },
+  {
+    "id": "R0743",
+    "titulo": "Smart Pandemic Surveillance?: A Neo-Materialist Analysis of the “Monitora Covid-19” Application in Brazil",
+    "url_tentada": "https://ojs.library.queensu.ca/index.php/surveillance-and-society/article/download/14282/10071",
+    "data": "2026-11-13",
+    "status": "obtido",
+    "url": "https://ojs.library.queensu.ca/index.php/surveillance-and-society/article/download/14282/10071",
+    "paginas": 18,
+    "sha256": "49c37fb74e3f3a75b3562867efcaeb206d961372b0a445ac4c282bc5f45734f3",
+    "caracteres": 79959
+  },
+  {
+    "id": "R1239",
+    "titulo": "Avaliação dos Termos de Uso, Política de Privacidade e Coleta de Dados do Conecte SUS",
+    "url_tentada": "https://sol.sbc.org.br/index.php/ihc_estendido/article/download/22046/21869",
+    "data": "2026-11-13",
+    "status": "obtido",
+    "url": "https://sol.sbc.org.br/index.php/ihc_estendido/article/download/22046/21869",
+    "paginas": 4,
+    "sha256": "e66b6c3802cd5cf87d70a15a31bdc7f4d6838b7ead015a0a684759cc9f47eab9",
+    "caracteres": 11902
+  },
+  {
+    "id": "R0160",
+    "titulo": "An Empirical Assessment of Global COVID-19 Contact Tracing Applications",
+    "url_tentada": "https://doi.org/10.1109/icse-companion52605.2021.00074",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "Resposta não é PDF",
+    "segunda_verificacao": [
+      {
+        "url": "https://doi.org/10.1109/icse-companion52605.2021.00074",
+        "url_final": "https://ieeexplore.ieee.org/document/9402587/",
+        "resultado": "Página HTML",
+        "links_pdf": []
+      }
+    ]
+  },
+  {
+    "id": "R0192",
+    "titulo": "COVID-19 Mobile Applications: A Study of Trackers and Data Leaks",
+    "url_tentada": "http://dx.doi.org/10.5753/jisa.2024.3882",
+    "data": "2026-11-13",
+    "status": "obtido",
+    "erro": "Resposta não é PDF",
+    "url": "https://journals-sol.sbc.org.br/index.php/jisa/article/download/3882/2795",
+    "paginas": 21,
+    "sha256": "deef35a9500fe7281ab709faeb4cf79e985718906a74fe4388743b80ec34587e",
+    "caracteres": 136850,
+    "segunda_verificacao": [
+      {
+        "url": "http://dx.doi.org/10.5753/jisa.2024.3882",
+        "url_final": "https://journals-sol.sbc.org.br/index.php/jisa/article/view/3882",
+        "resultado": "Página HTML",
+        "links_pdf": [
+          "https://journals-sol.sbc.org.br/index.php/jisa/article/download/3882/2795",
+          "https://journals-sol.sbc.org.br/index.php/jisa/article/view/3882/2795"
+        ]
+      },
+      {
+        "url": "https://doi.org/10.5753/jisa.2024.3882",
+        "url_final": "https://journals-sol.sbc.org.br/index.php/jisa/article/view/3882",
+        "resultado": "Página HTML",
+        "links_pdf": [
+          "https://journals-sol.sbc.org.br/index.php/jisa/article/download/3882/2795",
+          "https://journals-sol.sbc.org.br/index.php/jisa/article/view/3882/2795"
+        ]
+      },
+      {
+        "url": "https://journals-sol.sbc.org.br/index.php/jisa/article/download/3882/2795",
+        "url_final": "https://journals-sol.sbc.org.br/index.php/jisa/article/download/3882/2795",
+        "resultado": "PDF obtido"
+      }
+    ]
+  },
+  {
+    "id": "R0193",
+    "titulo": "COVID-19 One Year on-Security and Privacy Review of Contact Tracing Mobile Apps",
+    "url_tentada": "https://ink.library.smu.edu.sg/context/sis_research/article/7440/viewcontent/PCSI_2021_03_0019_preprint.pdf",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "Resposta não é PDF",
+    "segunda_verificacao": [
+      {
+        "url": "https://ink.library.smu.edu.sg/context/sis_research/article/7440/viewcontent/PCSI_2021_03_0019_preprint.pdf",
+        "url_final": "https://ink.library.smu.edu.sg/cgi/viewcontent.cgi?params=/context/sis_research/article/7440/&path_info=PCSI_2021_03_0019_preprint.pdf",
+        "resultado": "Página HTML",
+        "links_pdf": []
+      },
+      {
+        "url": "https://doi.org/10.1109/mprv.2021.3115478",
+        "url_final": "https://ieeexplore.ieee.org/document/9580462/",
+        "resultado": "Página HTML",
+        "links_pdf": []
+      }
+    ]
+  },
+  {
+    "id": "R0200",
+    "titulo": "Data Management and Privacy Policy of COVID-19 Contact-Tracing Apps: Systematic Review and Content Analysis",
+    "url_tentada": "https://doi.org/10.2196/35195",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "Resposta não é PDF",
+    "segunda_verificacao": [
+      {
+        "url": "https://doi.org/10.2196/35195",
+        "url_final": "https://mhealth.jmir.org/2022/7/e35195",
+        "resultado": "Página HTML",
+        "links_pdf": []
+      }
+    ]
+  },
+  {
+    "id": "R0216",
+    "titulo": "Dissecting contact tracing apps in the Android platform",
+    "url_tentada": "https://doi.org/10.1371/journal.pone.0251867",
+    "data": "2026-11-13",
+    "status": "obtido",
+    "erro": "Resposta não é PDF",
+    "url": "https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0251867&type=printable",
+    "paginas": 28,
+    "sha256": "cd1f94a77680c0c8ca61aab5200e648a48185f73ad7f12e8eaebbec9cd1e2726",
+    "caracteres": 155227,
+    "segunda_verificacao": [
+      {
+        "url": "https://doi.org/10.1371/journal.pone.0251867",
+        "url_final": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0251867",
+        "resultado": "Página HTML",
+        "links_pdf": [
+          "https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0251867&type=printable"
+        ]
+      },
+      {
+        "url": "https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0251867&type=printable",
+        "url_final": "https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0251867&type=printable",
+        "resultado": "PDF obtido"
+      }
+    ]
+  },
+  {
+    "id": "R0375",
+    "titulo": "Third-Party Trackers in COVID-19 Mobile Applications Can Enable Privacy Leaks",
+    "url_tentada": "https://dl.acm.org/doi/pdf/10.1145/3615366.3615426",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "HTTP Error 403: Forbidden",
+    "segunda_verificacao": [
+      {
+        "url": "https://dl.acm.org/doi/pdf/10.1145/3615366.3615426",
+        "erro": "HTTP Error 403: Forbidden"
+      },
+      {
+        "url": "https://doi.org/10.1145/3615366.3615426",
+        "erro": "HTTP Error 403: Forbidden"
+      }
+    ]
+  },
+  {
+    "id": "R0422",
+    "titulo": "A European approach to COVID-19 apps? A landscape analysis of apps stores in the initial stages of the health crisis",
+    "url_tentada": "https://doi.org/10.5210/fm.v27i3.12412",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "Resposta não é PDF",
+    "segunda_verificacao": [
+      {
+        "url": "https://doi.org/10.5210/fm.v27i3.12412",
+        "url_final": "https://firstmonday.org/ojs/index.php/fm/article/view/12412",
+        "resultado": "Página HTML",
+        "links_pdf": []
+      }
+    ]
+  },
+  {
+    "id": "R0423",
+    "titulo": "A first look at Android applications in Google Play related to COVID-19",
+    "url_tentada": "https://link.springer.com/content/pdf/10.1007/s10664-021-09943-x.pdf",
+    "data": "2026-11-13",
+    "status": "obtido",
+    "url": "https://link.springer.com/content/pdf/10.1007/s10664-021-09943-x.pdf?error=cookies_not_supported&code=6f0cecf7-7c45-43a2-b9d3-1d9b8ca96f11",
+    "paginas": 49,
+    "sha256": "065b1d30f133219b6278ecb74bab7e649b957d422c35db2f37dfbf046bf6533c",
+    "caracteres": 154752
+  },
+  {
+    "id": "R0424",
+    "titulo": "A First Look at Privacy Analysis of COVID-19 Contact-Tracing Mobile Applications",
+    "url_tentada": "https://ieeexplore.ieee.org/ielx7/6488907/9585129/09199262.pdf",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "HTTP Error 418: Unknown",
+    "segunda_verificacao": [
+      {
+        "url": "https://ieeexplore.ieee.org/ielx7/6488907/9585129/09199262.pdf",
+        "erro": "HTTP Error 418: Unknown"
+      },
+      {
+        "url": "https://doi.org/10.1109/jiot.2020.3024180",
+        "url_final": "https://ieeexplore.ieee.org/document/9199262/",
+        "resultado": "Página HTML",
+        "links_pdf": []
+      }
+    ]
+  },
+  {
+    "id": "R0433",
+    "titulo": "A privacy and security analysis of early-deployed COVID-19 contact tracing Android apps",
+    "url_tentada": "https://link.springer.com/content/pdf/10.1007/s10664-020-09934-4.pdf",
+    "data": "2026-11-13",
+    "status": "obtido",
+    "url": "https://link.springer.com/content/pdf/10.1007/s10664-020-09934-4.pdf?error=cookies_not_supported&code=520ecab0-fa3f-4365-a379-d7973f71d183",
+    "paginas": 51,
+    "sha256": "f74bfa05d55859ef509ccceda842f90550b1337eff3a86b4a2b1cd60450e179c",
+    "caracteres": 201520
+  },
+  {
+    "id": "R0437",
+    "titulo": "A Study on Contact Tracing Apps for Covid-19: Privacy and Security Perspective",
+    "url_tentada": "https://doi.org/10.14704/web/v18i1/web18093",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "HTTP Error 403: Forbidden",
+    "segunda_verificacao": [
+      {
+        "url": "https://doi.org/10.14704/web/v18i1/web18093",
+        "erro": "HTTP Error 403: Forbidden"
+      }
+    ]
+  },
+  {
+    "id": "R0450",
+    "titulo": "An evaluation of privacy policies used in digital contact tracing apps for COVID-19",
+    "url_tentada": "https://doi.org/10.21037/jphe-22-27",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "Resposta não é PDF",
+    "segunda_verificacao": [
+      {
+        "url": "https://doi.org/10.21037/jphe-22-27",
+        "url_final": "https://jphe.amegroups.org/article/view/8450/html",
+        "resultado": "Página HTML",
+        "links_pdf": [
+          "https://jphe.amegroups.org/article/view/8450/pdf"
+        ]
+      },
+      {
+        "url": "https://jphe.amegroups.org/article/view/8450/pdf",
+        "url_final": "https://jphe.amegroups.org/article/view/8450/pdf",
+        "resultado": "Página HTML",
+        "links_pdf": [
+          "https://jphe.amegroups.org/article/view/8450/pdf"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "R0471",
+    "titulo": "Balancing privacy at the time of pandemic: global observation",
+    "url_tentada": "https://doi.org/10.11591/ijphs.v12i3.21480",
+    "data": "2026-11-13",
+    "status": "obtido",
+    "erro": "Resposta não é PDF",
+    "url": "https://ijphs.iaescore.com/index.php/IJPHS/article/download/21480/13833",
+    "paginas": 11,
+    "sha256": "af52d614c835c061216ddc0bf0d06e76e73f1abba9f030af960cf4133fd02ff2",
+    "caracteres": 61215,
+    "segunda_verificacao": [
+      {
+        "url": "https://doi.org/10.11591/ijphs.v12i3.21480",
+        "url_final": "https://ijphs.iaescore.com/index.php/IJPHS/article/view/21480",
+        "resultado": "Página HTML",
+        "links_pdf": [
+          "https://ijphs.iaescore.com/index.php/IJPHS/article/download/21480/13833"
+        ]
+      },
+      {
+        "url": "https://ijphs.iaescore.com/index.php/IJPHS/article/download/21480/13833",
+        "url_final": "https://ijphs.iaescore.com/index.php/IJPHS/article/download/21480/13833",
+        "resultado": "PDF obtido"
+      }
+    ]
+  },
+  {
+    "id": "R0476",
+    "titulo": "Checking Contact Tracing App Implementations with Bespoke Static Analysis",
+    "url_tentada": "https://link.springer.com/content/pdf/10.1007/s42979-022-01357-w.pdf",
+    "data": "2026-11-13",
+    "status": "obtido",
+    "url": "https://link.springer.com/content/pdf/10.1007/s42979-022-01357-w.pdf?error=cookies_not_supported&code=a38f7239-0e03-4996-8d30-ea313551f140",
+    "paginas": 15,
+    "sha256": "50e70cddf686f3eed46f7b965e1e96c00230dd0eb8e9effbbdc4ad4c2b5b6ceb",
+    "caracteres": 84403
+  },
+  {
+    "id": "R0487",
+    "titulo": "Covid-19 digital Contact-tracing: A doorway to well-being or a backdoor to security vulnerabilities?",
+    "url_tentada": "https://doi.org/10.1109/bigdata52589.2021.9671880",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "Resposta não é PDF",
+    "segunda_verificacao": [
+      {
+        "url": "https://doi.org/10.1109/bigdata52589.2021.9671880",
+        "url_final": "https://ieeexplore.ieee.org/document/9671880/",
+        "resultado": "Página HTML",
+        "links_pdf": []
+      }
+    ]
+  },
+  {
+    "id": "R0592",
+    "titulo": "Privacy Analysis of COVID-19 Contact Tracing Apps in the EU",
+    "url_tentada": "http://urn.kb.se/resolve?urn=urn:nbn:se:bth-21237",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "Resposta não é PDF",
+    "segunda_verificacao": [
+      {
+        "url": "http://urn.kb.se/resolve?urn=urn:nbn:se:bth-21237",
+        "url_final": "https://bth.diva-portal.org/smash/record.jsf?pid=diva2:1537157",
+        "resultado": "Página HTML",
+        "links_pdf": []
+      },
+      {
+        "url": "https://doi.org/10.1007/978-3-030-70852-8_13",
+        "url_final": "https://link.springer.com/chapter/10.1007/978-3-030-70852-8_13?error=cookies_not_supported&code=2a67d80f-9ec0-4d1a-bee9-4f79fc9f1a8d",
+        "resultado": "Página HTML",
+        "links_pdf": [
+          "https://link.springer.com/content/pdf/10.1007/978-3-030-70852-8_13.pdf"
+        ]
+      },
+      {
+        "url": "https://link.springer.com/content/pdf/10.1007/978-3-030-70852-8_13.pdf",
+        "url_final": "https://link.springer.com/chapter/10.1007/978-3-030-70852-8_13?error=cookies_not_supported&code=6fd7014b-96a9-4d46-88ad-2286a2f6c567",
+        "resultado": "Página HTML",
+        "links_pdf": [
+          "https://link.springer.com/content/pdf/10.1007/978-3-030-70852-8_13.pdf"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "R0617",
+    "titulo": "Security Testing of Android Based Covid Tracer Applications",
+    "url_tentada": "https://doi.org/10.1109/csde50874.2020.9411579",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "Resposta não é PDF",
+    "segunda_verificacao": [
+      {
+        "url": "https://doi.org/10.1109/csde50874.2020.9411579",
+        "url_final": "https://ieeexplore.ieee.org/document/9411579/",
+        "resultado": "Página HTML",
+        "links_pdf": []
+      }
+    ]
+  },
+  {
+    "id": "R0640",
+    "titulo": "Three models of big data governance: A comparative analysis of privacy policies of contact tracing apps in China, Singapore, and Germany",
+    "url_tentada": "https://doi.org/10.1016/j.tele.2026.102401",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "Resposta não é PDF",
+    "segunda_verificacao": [
+      {
+        "url": "https://doi.org/10.1016/j.tele.2026.102401",
+        "url_final": "https://linkinghub.elsevier.com/retrieve/pii/S0736585326000377",
+        "resultado": "Página HTML",
+        "links_pdf": []
+      }
+    ]
+  },
+  {
+    "id": "R0644",
+    "titulo": "Tracing the Tracing Apps: A Technical Response to Covid in Cultural Comparison",
+    "url_tentada": "https://doi.org/10.48417/technolang.2023.02.10",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "Resposta não é PDF",
+    "segunda_verificacao": [
+      {
+        "url": "https://doi.org/10.48417/technolang.2023.02.10",
+        "url_final": "https://soctech.spbstu.ru/en/article/2023.11.10/",
+        "resultado": "Página HTML",
+        "links_pdf": []
+      }
+    ]
+  },
+  {
+    "id": "R0676",
+    "titulo": "Analyzing the essential attributes of nationally issued COVID-19 contact tracing apps: Open-source intelligence approach and content analysis",
+    "url_tentada": "https://doi.org/10.2196/27232",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "Resposta não é PDF",
+    "segunda_verificacao": [
+      {
+        "url": "https://doi.org/10.2196/27232",
+        "url_final": "https://mhealth.jmir.org/2021/3/e27232",
+        "resultado": "Página HTML",
+        "links_pdf": []
+      }
+    ]
+  },
+  {
+    "id": "R0838",
+    "titulo": "Analyzing Security and Privacy Concerns of Contact Tracing Applications",
+    "url_tentada": "https://doi.org/10.1109/icdh52753.2021.00052",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "Resposta não é PDF",
+    "segunda_verificacao": [
+      {
+        "url": "https://doi.org/10.1109/icdh52753.2021.00052",
+        "url_final": "https://ieeexplore.ieee.org/document/9581230/",
+        "resultado": "Página HTML",
+        "links_pdf": []
+      }
+    ]
+  },
+  {
+    "id": "R0439",
+    "titulo": "A wild data controller appeared! Opacity in personal data protection documentation of Pokémon mobile games",
+    "url_tentada": "https://doi.org/10.1016/j.clsr.2026.106346",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "Resposta não é PDF",
+    "segunda_verificacao": [
+      {
+        "url": "https://doi.org/10.1016/j.clsr.2026.106346",
+        "url_final": "https://linkinghub.elsevier.com/retrieve/pii/S2212473X26000878",
+        "resultado": "Página HTML",
+        "links_pdf": []
+      }
+    ]
+  },
+  {
+    "id": "R0693",
+    "titulo": "Data practices in apps from Brazil: What do privacy policies inform us about?",
+    "url_tentada": "https://sol.sbc.org.br/journals/index.php/jis/article/download/2954/2176",
+    "data": "2026-11-13",
+    "status": "obtido",
+    "url": "https://journals-sol.sbc.org.br/index.php/jis/article/download/2954/2176",
+    "paginas": 8,
+    "sha256": "54a2fe98dddec1231fb9ffb3a458869f4669745ebd0a73bb4e37fb587d3a6852",
+    "caracteres": 52043
+  },
+  {
+    "id": "R0701",
+    "titulo": "Experimental Evaluation of a Checklist-Based Inspection Technique to Verify the Compliance of Software Systems with the Brazilian General Data Protection Law",
+    "url_tentada": "https://arxiv.org/pdf/2308.14874",
+    "data": "2026-11-13",
+    "status": "versao_divergente",
+    "url": "https://arxiv.org/pdf/2308.14874",
+    "paginas": 7,
+    "sha256": "dd2a13c9603513f4b155134a99e3955d28182cb169b374d693e3ba9a964222dd",
+    "caracteres": 2599,
+    "url_publicacao_confirmada": "https://link.springer.com/article/10.1007/s10664-025-10681-7",
+    "nota_versao": "PDF de 2023 (plano de estudo); registro alvo é avaliação publicada em 2025, com resultados e autoria ampliada"
+  },
+  {
+    "id": "R0702",
+    "titulo": "Exploring Large Language Models for Compliance Violation Detection in Android Apps",
+    "url_tentada": "https://doi.org/10.1145/3774748.3795659",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "HTTP Error 403: Forbidden",
+    "segunda_verificacao": [
+      {
+        "url": "https://doi.org/10.1145/3774748.3795659",
+        "erro": "HTTP Error 403: Forbidden"
+      }
+    ]
+  },
+  {
+    "id": "R0760",
+    "titulo": "(UN)PROTECTION OF SENSITIVE PERSONAL DATA IN \"GRINDR'S\" TERMS OF USE: THE VULNERABILITY OF LGBTQIAPN+ USERS IN ROMANTIC AND SEXUAL RELATIONSHIP APPLICATIONS; [A (DES)PROTEÇÃO DE DADOS PESSOAIS SENSÍVEIS NOS TERMOS DE USO DO “GRINDR”: A VULNERABILIDADE DE USUÁRIOS LGBTQIAPN+ EM APLICATIVOS DE RELACIONAMENTOS AMOROSOS E SEXUAIS]",
+    "url_tentada": "https://doi.org/10.69881/rcaap.v29i1.52360",
+    "data": "2026-11-13",
+    "status": "obtido",
+    "erro": "Resposta não é PDF",
+    "url": "https://periodicos.ufmg.br/index.php/caap/article/download/52360/44943",
+    "paginas": 26,
+    "sha256": "0902530050f5fd3a17e60d0d7a47439ff3fc174472a037ca9a5bf4b37d92a8e0",
+    "caracteres": 76279,
+    "segunda_verificacao": [
+      {
+        "url": "https://doi.org/10.69881/rcaap.v29i1.52360",
+        "url_final": "https://periodicos.ufmg.br/index.php/caap/article/view/52360",
+        "resultado": "Página HTML",
+        "links_pdf": [
+          "https://periodicos.ufmg.br/index.php/caap/article/download/52360/44943",
+          "https://periodicos.ufmg.br/index.php/caap/article/view/52360/44943",
+          "https://periodicos.ufmg.br/index.php/caap/article/view/52360/44944"
+        ]
+      },
+      {
+        "url": "https://periodicos.ufmg.br/index.php/caap/article/download/52360/44943",
+        "url_final": "https://periodicos.ufmg.br/index.php/caap/article/download/52360/44943",
+        "resultado": "PDF obtido"
+      }
+    ]
+  },
+  {
+    "id": "R1225",
+    "titulo": "Entre taps e direitos: proteção de dados pessoais, privacidade e liberdade no aplicativo Grindr",
+    "url_tentada": "https://bdtd.ibict.br/vufind/Record/UFJF_3dc3ee4ce850ab4e50eab0452facf799",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "Resposta não é PDF",
+    "segunda_verificacao": [
+      {
+        "url": "https://bdtd.ibict.br/vufind/Record/UFJF_3dc3ee4ce850ab4e50eab0452facf799",
+        "url_final": "https://bdtd.ibict.br/vufind/Record/UFJF_3dc3ee4ce850ab4e50eab0452facf799",
+        "resultado": "Página HTML",
+        "links_pdf": []
+      }
+    ]
+  },
+  {
+    "id": "R1227",
+    "titulo": "Gestão de dados pessoais e sensíveis pela administração pública federal: desafios, modelos e possíveis impactos com a nova lei",
+    "url_tentada": "https://bdtd.ibict.br/vufind/Record/CEUB_6bbad324d8af58420b0a8555fbef2305",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "Resposta não é PDF",
+    "segunda_verificacao": [
+      {
+        "url": "https://bdtd.ibict.br/vufind/Record/CEUB_6bbad324d8af58420b0a8555fbef2305",
+        "url_final": "https://bdtd.ibict.br/vufind/Record/CEUB_6bbad324d8af58420b0a8555fbef2305",
+        "resultado": "Página HTML",
+        "links_pdf": []
+      }
+    ]
+  },
+  {
+    "id": "R1230",
+    "titulo": "O direito à proteção de dados na era da hiperconexão: uma análise empírica dos termos de uso e de privacidade dos aplicativos de celular",
+    "url_tentada": "https://bdtd.ibict.br/vufind/Record/CEUB_41234419d0bc24fe4aa29594198c3ee8",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "Resposta não é PDF",
+    "segunda_verificacao": [
+      {
+        "url": "https://bdtd.ibict.br/vufind/Record/CEUB_41234419d0bc24fe4aa29594198c3ee8",
+        "url_final": "https://bdtd.ibict.br/vufind/Record/CEUB_41234419d0bc24fe4aa29594198c3ee8",
+        "resultado": "Página HTML",
+        "links_pdf": []
+      }
+    ]
+  },
+  {
+    "id": "R0509",
+    "titulo": "Digital Markets and Hidden Noncompliance",
+    "url_tentada": "https://doi.org/10.2139/ssrn.4709913",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "Resposta não é PDF",
+    "segunda_verificacao": [
+      {
+        "url": "https://doi.org/10.2139/ssrn.4709913",
+        "url_final": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4709913",
+        "resultado": "Página HTML",
+        "links_pdf": [
+          "https://papers.ssrn.com/sol3/Delivery.cfm?abstractid=4709913"
+        ]
+      },
+      {
+        "url": "https://doi.org/10.1086/742146",
+        "erro": "HTTP Error 403: Forbidden"
+      },
+      {
+        "url": "https://papers.ssrn.com/sol3/Delivery.cfm?abstractid=4709913",
+        "url_final": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4709913",
+        "resultado": "Página HTML",
+        "links_pdf": [
+          "https://papers.ssrn.com/sol3/Delivery.cfm?abstractid=4709913"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "R0603",
+    "titulo": "Public Health Data and International Privacy Rules and Practices: A Case Study of Singapore",
+    "url_tentada": "https://doi.org/10.1007/978-3-031-39841-4_4",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "Resposta não é PDF",
+    "segunda_verificacao": [
+      {
+        "url": "https://doi.org/10.1007/978-3-031-39841-4_4",
+        "url_final": "https://link.springer.com/chapter/10.1007/978-3-031-39841-4_4?error=cookies_not_supported&code=c203fd28-d2fc-4292-8ff4-cfb55ed33650",
+        "resultado": "Página HTML",
+        "links_pdf": [
+          "https://link.springer.com/content/pdf/10.1007/978-3-031-39841-4_4.pdf"
+        ]
+      },
+      {
+        "url": "https://link.springer.com/content/pdf/10.1007/978-3-031-39841-4_4.pdf",
+        "url_final": "https://link.springer.com/chapter/10.1007/978-3-031-39841-4_4?error=cookies_not_supported&code=3dac9ff7-9e66-4e0d-9e38-207be0403fc6",
+        "resultado": "Página HTML",
+        "links_pdf": [
+          "https://link.springer.com/content/pdf/10.1007/978-3-031-39841-4_4.pdf"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "R0667",
+    "titulo": "A document analysis of international data transfer terms in smartwatch privacy policies: inadequacies and recommendations for improvements",
+    "url_tentada": "https://www.tandfonline.com/doi/pdf/10.1080/13600869.2025.2510440?needAccess=true",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "HTTP Error 403: Forbidden",
+    "segunda_verificacao": [
+      {
+        "url": "https://www.tandfonline.com/doi/pdf/10.1080/13600869.2025.2510440?needAccess=true",
+        "erro": "HTTP Error 403: Forbidden"
+      },
+      {
+        "url": "https://doi.org/10.1080/13600869.2025.2510440",
+        "erro": "HTTP Error 403: Forbidden"
+      }
+    ]
+  },
+  {
+    "id": "R0668",
+    "titulo": "A Māori data governance assessment of the NZ COVID Tracer app",
+    "url_tentada": "https://link.springer.com/content/pdf/10.1007/s44155-024-00092-2.pdf",
+    "data": "2026-11-13",
+    "status": "obtido",
+    "url": "https://link.springer.com/content/pdf/10.1007/s44155-024-00092-2.pdf?error=cookies_not_supported&code=9d120988-189d-4610-912d-d6b5cafc200d",
+    "paginas": 14,
+    "sha256": "30eaf94f5de0f0b8b7a30843920eefb72075a398699debd5536feee5a9b46195",
+    "caracteres": 46655
+  },
+  {
+    "id": "R0680",
+    "titulo": "Automated GDPR compliance assessment for cross-border personal data transfers in android applications",
+    "url_tentada": "https://doi.org/10.1016/j.cose.2023.103262",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "Resposta não é PDF",
+    "segunda_verificacao": [
+      {
+        "url": "https://doi.org/10.1016/j.cose.2023.103262",
+        "url_final": "https://linkinghub.elsevier.com/retrieve/pii/S0167404823001724",
+        "resultado": "Página HTML",
+        "links_pdf": []
+      }
+    ]
+  },
+  {
+    "id": "R0710",
+    "titulo": "Going global: Comparing chinese mobile applications’ data and user privacy governance at home and abroad",
+    "url_tentada": "https://policyreview.info/pdf/policyreview-2020-3-1502.pdf",
+    "data": "2026-11-13",
+    "status": "obtido",
+    "url": "https://policyreview.info/pdf/policyreview-2020-3-1502.pdf",
+    "paginas": 22,
+    "sha256": "69e34e3b911e891fd0dbb8e11700595c1e58987639370ab7aacbc5c13e9d78fb",
+    "caracteres": 81870
+  },
+  {
+    "id": "R0718",
+    "titulo": "Making apps, owning data: Digital sovereignty and public authorities’ arrangements to “byte” back",
+    "url_tentada": "https://doi.org/10.1177/13505084241246073",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "HTTP Error 403: Forbidden",
+    "segunda_verificacao": [
+      {
+        "url": "https://doi.org/10.1177/13505084241246073",
+        "erro": "HTTP Error 403: Forbidden"
+      }
+    ]
+  },
+  {
+    "id": "R0737",
+    "titulo": "Reliability of IP Geolocation Services for Assessing the Compliance of International Data Transfers",
+    "url_tentada": "https://doi.org/10.1109/eurospw55150.2022.00024",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "Resposta não é PDF",
+    "segunda_verificacao": [
+      {
+        "url": "https://doi.org/10.1109/eurospw55150.2022.00024",
+        "url_final": "https://ieeexplore.ieee.org/document/9799336/",
+        "resultado": "Página HTML",
+        "links_pdf": []
+      }
+    ]
+  },
+  {
+    "id": "R0982",
+    "titulo": "GDPR Compliance Assessment for Cross-Border Personal Data Transfers in Android Apps",
+    "url_tentada": "https://doi.org/10.1109/access.2021.3053130",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "Resposta não é PDF",
+    "segunda_verificacao": [
+      {
+        "url": "https://doi.org/10.1109/access.2021.3053130",
+        "url_final": "https://ieeexplore.ieee.org/document/9328756/",
+        "resultado": "Página HTML",
+        "links_pdf": []
+      }
+    ]
+  },
+  {
+    "id": "R0531",
+    "titulo": "GDPR Compliance in Privacy Policies of Mobile Apps: An Overview of the State-of-Practice",
+    "url_tentada": "https://orbilu.uni.lu/bitstream/10993/65263/1/AASCB%20-%20RE%20IIT%202025.pdf",
+    "data": "2026-11-13",
+    "status": "pendente",
+    "erro": "HTTP Error 503: Service Unavailable",
+    "segunda_verificacao": [
+      {
+        "url": "https://orbilu.uni.lu/bitstream/10993/65263/1/AASCB%20-%20RE%20IIT%202025.pdf",
+        "erro": "HTTP Error 503: Service Unavailable"
+      },
+      {
+        "url": "https://doi.org/10.1109/re63999.2025.00038",
+        "url_final": "https://ieeexplore.ieee.org/document/11190357/",
+        "resultado": "Página HTML",
+        "links_pdf": []
+      }
+    ]
+  }
+]

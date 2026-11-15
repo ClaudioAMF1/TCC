@@ -141,7 +141,7 @@ linha, preencha:
 | Coluna | O que pôr |
 |---|---|
 | `decisao_f1` | `I` inclui, `E` exclui, `T` talvez, `R` revisão da literatura |
-| `criterio_f1` | Se `E`: o código do critério (EC1 a EC7), o primeiro que se aplica |
+| `criterio_f1` | Se `E`: o código do critério (EC1 a EC6 ou IC1 a IC4), o mais específico |
 | `observacao` | Opcional: o porquê, em poucas palavras, quando não for óbvio |
 
 Os critérios, em uma linha cada (o texto completo está na Seção 6 do
@@ -155,7 +155,6 @@ protocolo):
 | EC4 | usa bibliotecas de terceiros só para outro fim (malware, clones), sem medir rastreamento nem avaliar a detecção |
 | EC5 | só mede opinião ou intenção de uso das pessoas, nada sobre os aplicativos |
 | EC6 | é resumo, pôster, artigo de até 4 páginas, editorial ou preprint |
-| EC7 | (só na F2) o texto completo não está disponível |
 
 Regras práticas:
 
@@ -176,7 +175,7 @@ python3 scripts/revisao_triagem.py prisma
 
 ---
 
-## Parte 5. Texto completo, F2 (10/11 a 13/11)
+## Parte 5. Texto completo, F2 (até 01/12)
 
 Use a planilha `dados/revisao/leitura_F2_para_preencher.xlsx`, montada em
 10/11 com os 357 registros que tiveram `I` ou `T` na F1. A aba "Como ler"
@@ -185,8 +184,10 @@ linha tem o link do artigo, o PDF gratuito quando existe (174 têm) e uma busca
 no Google Acadêmico.
 
 Preencha as colunas verdes: `SUA DECISÃO F2` (`I` ou `E`) e `SEU CRITÉRIO F2`.
-Se não achar o texto, mande um e-mail ao autor; sem resposta em 7 dias, `E` com
-`EC7`. Eu passo as decisões para a `triagem_20261106.csv` (colunas
+Se a editora pedir login, entre pelo Portal de Periódicos da CAPES (Acesso
+CAFe). Se mesmo assim não achar o texto, marque `não` em `CONSEGUIU O TEXTO?` e
+deixe a decisão em branco: o registro conta como não recuperado no PRISMA, sem
+e-mail ao autor (o EC7 saiu na versão 1.6 do protocolo). Eu passo as decisões para a `triagem_20261106.csv` (colunas
 `decisao_f2` e `criterio_f2`).
 
 Guarde os PDFs em `dados/revisao/pdf/`, com o `id` no nome (`R0042.pdf`). Eles
@@ -194,7 +195,7 @@ não vão para o repositório.
 
 ---
 
-## Parte 6. Bola de neve, F3 (13/11 a 15/11)
+## Parte 6. Bola de neve, F3 (25/11 a 02/12)
 
 Para cada incluído na F2:
 
@@ -215,29 +216,21 @@ como duplicata, e o que é novo entra com id novo para passar pela F1 e pela F2.
 
 ## Parte 7. Conferências da triagem
 
-**Reteste (16/11, uma semana depois da F1):**
+**Conferência cega (até 23/11).** A amostra de 125 registros já foi sorteada
+(semente 20261116). Siga `dados/revisao/LEIA-ME_reteste_F1.md`: preencha
+`dados/revisao/reteste_F1_20261116.xlsx` sem consultar as decisões antigas e,
+depois, rode:
 
 ```bash
-python3 scripts/revisao_triagem.py amostra --nome reteste
+python3 scripts/revisao_triagem.py concordancia dados/revisao/reteste_F1_20261116.xlsx
 ```
 
-Abra o arquivo `dados/revisao/conferencia_reteste_AAAAMMDD.csv`, que vem sem as
-decisões antigas, e decida de novo cada linha na coluna `decisao`. Depois:
+**Orientador (opcional).** A amostra de 20 registros está em
+`dados/revisao/conferencia_orientador_20261110.xlsx`. Se ele aceitar, rode o
+`concordancia` com a planilha preenchida.
 
-```bash
-python3 scripts/revisao_triagem.py concordancia dados/revisao/conferencia_reteste_AAAAMMDD.csv
-```
-
-**Orientador (no 2º ou 3º encontro):**
-
-```bash
-python3 scripts/revisao_triagem.py amostra --nome orientador --n 20 --semente 7
-```
-
-Leve a planilha para ele decidir e rode o `concordancia` com ela.
-
-O protocolo pede κ ≥ 0,6 nas duas. Abaixo disso, me mande as divergências que
-o script lista.
+O protocolo pede κ ≥ 0,6. Abaixo disso, uma segunda amostra de 125 é conferida
+(protocolo, Seção 7.2).
 
 ---
 

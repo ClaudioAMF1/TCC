@@ -1,48 +1,68 @@
-# Conformidade com o que a disciplina exige (conferida em 11/11/2026)
+# Estado do projeto e pendências
 
-Fontes:
+Atualização: **15/11/2026**. Este é o único lugar com o que já atende às exigências e o que falta. Fontes: Regulamento TCC CIC v.2026-05, Plano de Ensino do Projeto Capstone I, modelo de monografia do IDP (2026) e normas ABNT (NBR 14724:2024, NBR 15287:2025, NBR 10520:2023, NBR 6023).
 
-- **Reg.:** Regulamento TCC CIC v.2026-05;
-- **Plano:** Plano de Ensino do Projeto Capstone I;
-- **Aulas 05/06:** elementos da pesquisa;
-- **Aulas 13/14:** escrita da monografia;
-- **NBR 14724:2024:** trabalhos acadêmicos.
+## Datas e peso na nota
 
-Legenda: **ok** = atendido; **feito** = corrigido em 11/11; **falta** = ainda não
-atendido; **confirmar** = depende de informação que não está no repositório.
+A nota do 2º bimestre é (2 × simulação + 4 × texto + 3 × defesa final) ÷ 9. O texto é o que mais pesa.
 
-## Conteúdo do projeto
-
-| Exigência | Fonte | Situação |
+| Data | O quê | Formato |
 |---|---|---|
-| Introdução, justificativa, objetivos, metodologia e cronograma | Plano, objetivos específicos | ok (Seções 1, 2 e 3) |
-| Tema, problema, hipótese e marco teórico | Reg., Art. 31, I | Tema, problema e hipóteses ok; **marco teórico falta** (ver abaixo) |
-| Objetivo geral e específicos verificáveis; procedimento metodológico; hipótese; justificativa; resultados esperados; limitações | Aulas 05/06 | ok (Seções 1.3 a 1.8) |
-| **Toda a fundamentação e a revisão bibliográfica** | Reg., Art. 25, §3º; Art. 9º, §1º; Aulas 13/14 | **falta**: o texto não tem seção de revisão bibliográfica (fundamentação teórica e trabalhos correlatos) |
-| Cronograma só com o que falta | — | feito (Seção 3.1) |
-| Uso de IA declarado | Reg., Art. 19, X e Art. 49 | ok (Seção 2.14); **confirmar** com o orientador o que é aceito |
+| 19/11 | Aula sobre estrutura e redação | Levar as dúvidas marcadas com ❓ abaixo |
+| 24/11, 26/11 ou 01/12 | Simulação de defesa | 15 min de apresentação + 10 de perguntas da professora |
+| **03/12** | **Entrega do texto no Canvas** | PDF; sem prorrogação (Reg., Art. 34) |
+| 08/12, 10/12 ou 15/12 | Defesa final | 15 min de apresentação + 15 de perguntas da banca |
 
-## Forma (ABNT NBR 14724:2024)
+## O que já atende
 
-| Exigência | Item da norma | Situação |
+| Exigência | Onde está |
+|---|---|
+| Tema, problema, hipóteses e marco teórico (Reg., Art. 31, I) | Seções 1.1 a 1.5 e 2 |
+| Metodologia, recursos e cronograma (NBR 15287) | Seções 3, 3.11, 3.13 e 3.14 |
+| Revisão bibliográfica (Reg., Art. 25, §3º) | Seção 2 e protocolo na Seção 3.7, com fluxograma PRISMA. **A síntese dos incluídos ainda falta** (ver abaixo) |
+| Capa, folha de rosto, resumo, abstract, listas e sumário | Modelo do IDP |
+| Formatação | A4; margens 3/2 cm; Times 12; espaçamento 1,5; recuo 1,25 cm; seções primárias em maiúsculas e negrito; paginação no alto à direita a partir da introdução; quadros com bordas e tabela com linhas horizontais; citações autor-data em maiúsculas e minúsculas; referências em ordem alfabética |
+| Idioma | Português, decidido |
+| Termo de aceite de orientação (Reg., Art. 25, §1º) | Assinado e enviado |
+| Fichas de orientação (Reg., Arts. 22 e 24) | Sob controle do autor |
+
+## O que falta no texto (até 03/12)
+
+| # | Tarefa | Quem | Prazo |
+|---|---|---|---|
+| 1 | Baixar pelo Portal de Periódicos da CAPES os textos ainda não obtidos: filtrar "CONSEGUIU O TEXTO?" = "não" na planilha `dados/revisao/leitura_F2_para_preencher.xlsx` | Você | até 25/11 |
+| 2 | Conferir as 79 propostas da F2 e decidir os 4 casos em aberto (R0513, R0701, R1214, R0556) | Você | até 27/11 |
+| 3 | Preencher a conferência cega de 125 registros (`dados/revisao/LEIA-ME_reteste_F1.md`) | Você | até 23/11 |
+| 4 | Calcular acordo e κ da conferência cega e levar o resultado para a Seção 3.7 | Eu, depois do item 3 | 1 dia |
+| 5 | Ler os textos obtidos e os 143 "talvez", conforme a regra combinada com o orientador; bola de neve | Você | até 01/12 |
+| 6 | Escrever a síntese dos estudos incluídos na Seção 2, por questão de pesquisa, a partir de `tcc/revisao/sintese-F2-propostas.md` | Você, com rascunho meu se quiser | 25/11 a 02/12 |
+| 7 | Atualizar o fluxograma PRISMA, o resumo, o abstract e a Seção 3.7 com os números finais | Eu | 02/12 |
+| 8 | Colocar no texto as decisões do orientador (detector principal, matriz da LGPD, plano de análise, 143 "talvez") | Eu, depois do encontro | 1 dia |
+| 9 | Incorporar as sugestões da simulação | Você e eu | até 02/12 |
+| 10 | Folha de aprovação: titulação do orientador, terceiro membro e IDs Lattes ou ORCID. ❓ Perguntar se o projeto precisa dessa folha | Você | até 02/12 |
+| 11 | ❓ Confirmar se o abstract vai em corpo 10 (instrução escrita do modelo) ou 12 | Você | 19/11 |
+| 12 | Compilar no Overleaf com XeLaTeX, conferir o PDF (sem "??", sumário e páginas certos) e enviar no Canvas | Você | 02/12 |
+
+## O que falta na apresentação
+
+| # | Tarefa | Prazo |
 |---|---|---|
-| Capa | 4.1.1 | ok |
-| Subtítulo precedido de dois-pontos | 4.1.1, d | feito |
-| Folha de rosto com a natureza do trabalho e o orientador | 4.2.1.1 | ok |
-| Folha de aprovação | 4.2.1.3 | feito; **confirmar** o terceiro membro da banca e as titulações |
-| Resumo e abstract, de 150 a 500 palavras, com palavras-chave | 4.2.1.7 e NBR 6028 | ok (437 e 427 palavras) |
-| Sumário | 4.2.1.13 e NBR 6027 | ok |
-| Introdução, desenvolvimento e **parte conclusiva** | 4.2.2 | feito (Seção 4, Considerações finais) |
-| Organização em **seções**, não em capítulos | 4.2.2 | feito (texto e cabeçalhos) |
-| Referências | 4.2.3.1 e NBR 6023 | ok (todas as citações têm referência) |
+| 1 | Confirmar a data da sua simulação com a Profa. Patrícia | 19/11 |
+| 2 | Ensaiar com cronômetro pelo menos três vezes, uma gravada, usando `tcc/apresentacao/roteiro-simulacao.md` (fala de cerca de 12 min) | antes da simulação |
+| 3 | Na véspera, atualizar os números do slide 12 (propostas de inclusão) | véspera |
+| 4 | Levar PPTX e PDF num pen drive e testar o projetor | dia |
+| 5 | Anotar as sugestões da avaliadora | dia |
+| 6 | Para a defesa final, atualizar os slides com o texto entregue e ensaiar 15 min | até 08/12 |
 
-## Regras que dependem de fora do texto
+## Decisões com o orientador
 
-| Exigência | Fonte | Situação |
-|---|---|---|
-| Seguir os manuais e o modelo do IDP | Reg., Art. 32 e Art. 47 | **confirmar**: o manual e o modelo do IDP não estão no repositório |
-| Trabalho final em língua inglesa; outra língua só com anuência da Coordenação e justificativa endossada pelo orientador | Reg., Art. 32, §3º e §4º | **confirmar** com a professora se vale para o projeto do Capstone I; o texto está em português |
-| Cinco encontros com o orientador, com formulário assinado e entregue mensalmente | Reg., Art. 22 e Art. 24, §1º e §2º | **confirmar** quantos já foram feitos e entregues |
-| Termo de aceite da orientação depositado | Reg., Art. 25, §1º | **confirmar** |
-| Simulação de defesa: 15 min de apresentação e 10 de perguntas | Plano, aulas 33 a 35 | rascunho dos slides em `tcc/apresentacao/` |
-| Entrega da redação no Canvas | Plano, aula 36 | até 03/12 |
+Detector principal, tratamento dos 143 "talvez", matriz da LGPD e plano de análise: ver [orientacao/pauta-proximo-encontro.md](orientacao/pauta-proximo-encontro.md).
+
+## Decidido
+
+| Assunto | Decisão |
+|---|---|
+| Texto completo não obtido | Conta como "não recuperado" no PRISMA, sem e-mail ao autor (protocolo 1.6) |
+| Consistência da triagem | Conferência cega de 125 registros, sem intervalo mínimo; κ < 0,6 leva a uma segunda amostra (protocolo 1.7) |
+| Classificação dos aplicativos | Conferida no início do Capstone II, antes do download, porque só é usada na coleta principal |
+| Teste da coleta direta em cinco aplicativos | Início do Capstone II |

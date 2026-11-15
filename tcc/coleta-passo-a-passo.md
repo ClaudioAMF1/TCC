@@ -58,6 +58,8 @@ cobertura.
 
 ## Parte B. Coletar direto da Google Play (teste com 5 apps)
 
+**Quando:** no início do Capstone II (fevereiro de 2027), junto com a conferência da classificação dos aplicativos. Não é necessário para a entrega de 03/12.
+
 **Para quê:** o AndroZoo tem só 92 dos 396 apps de governo. O resto precisa vir
 da loja, com o hash registrado. O teste mostra se a coleta funciona,
 principalmente nos apps pequenos.

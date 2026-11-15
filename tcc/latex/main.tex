@@ -1,5 +1,6 @@
 % TCC I (Projeto Capstone I, IDP, 2026.2) -- classe abnTeX2, normas ABNT.
-% No Overleaf: Menu > Compiler = XeLaTeX. As referências ficam em referencias.bib.
+% Compila com XeLaTeX (recomendado), LuaLaTeX ou pdfLaTeX.
+% As referências ficam em referencias.bib.
 
 \documentclass[
   12pt,
@@ -10,9 +11,22 @@
   brazil
 ]{abntex2}
 
-\usepackage{fontspec}
-\setmainfont{Times New Roman}
-\setsansfont{Times New Roman}
+% Fonte Times, como pede o modelo do IDP, com qualquer compilador
+\usepackage{iftex}
+\ifTUTeX
+  % XeLaTeX ou LuaLaTeX: Times New Roman; se o ambiente não a tiver,
+  % TeX Gyre Termes, uma Times que vem com o TeX Live
+  \usepackage{fontspec}
+  \IfFontExistsTF{Times New Roman}
+    {\setmainfont{Times New Roman}\setsansfont{Times New Roman}}
+    {\setmainfont{TeX Gyre Termes}\setsansfont{TeX Gyre Termes}}
+\else
+  % pdfLaTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{mathptmx}
+  \renewcommand{\sfdefault}{ptm}
+\fi
 \usepackage{amsmath}
 \usepackage{graphicx}
 \usepackage{indentfirst}

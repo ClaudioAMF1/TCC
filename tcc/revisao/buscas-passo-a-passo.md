@@ -141,7 +141,7 @@ linha, preencha:
 | Coluna | O que pôr |
 |---|---|
 | `decisao_f1` | `I` inclui, `E` exclui, `T` talvez, `R` revisão da literatura |
-| `criterio_f1` | Se `E`: o código do critério (EC1 a EC7), o primeiro que se aplica |
+| `criterio_f1` | Se `E`: o código do critério (EC1 a EC6 ou IC1 a IC4), o mais específico |
 | `observacao` | Opcional: o porquê, em poucas palavras, quando não for óbvio |
 
 Os critérios, em uma linha cada (o texto completo está na Seção 6 do
@@ -155,7 +155,6 @@ protocolo):
 | EC4 | usa bibliotecas de terceiros só para outro fim (malware, clones), sem medir rastreamento nem avaliar a detecção |
 | EC5 | só mede opinião ou intenção de uso das pessoas, nada sobre os aplicativos |
 | EC6 | é resumo, pôster, artigo de até 4 páginas, editorial ou preprint |
-| EC7 | (só na F2) o texto completo não está disponível |
 
 Regras práticas:
 
@@ -185,8 +184,10 @@ linha tem o link do artigo, o PDF gratuito quando existe (174 têm) e uma busca
 no Google Acadêmico.
 
 Preencha as colunas verdes: `SUA DECISÃO F2` (`I` ou `E`) e `SEU CRITÉRIO F2`.
-Se não achar o texto, mande um e-mail ao autor; sem resposta em 7 dias, `E` com
-`EC7`. Eu passo as decisões para a `triagem_20261106.csv` (colunas
+Se a editora pedir login, entre pelo Portal de Periódicos da CAPES (Acesso
+CAFe). Se mesmo assim não achar o texto, marque `não` em `CONSEGUIU O TEXTO?` e
+deixe a decisão em branco: o registro conta como não recuperado no PRISMA, sem
+e-mail ao autor (o EC7 saiu na versão 1.6 do protocolo). Eu passo as decisões para a `triagem_20261106.csv` (colunas
 `decisao_f2` e `criterio_f2`).
 
 Guarde os PDFs em `dados/revisao/pdf/`, com o `id` no nome (`R0042.pdf`). Eles

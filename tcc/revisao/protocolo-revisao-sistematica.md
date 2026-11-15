@@ -1,6 +1,6 @@
 # Protocolo da revisão sistemática
 
-**Versão 1.5, 13/11/2026.** Segue as diretrizes de Kitchenham e Charters (2007)
+**Versão 1.6, 15/11/2026.** Segue as diretrizes de Kitchenham e Charters (2007)
 para revisões sistemáticas em engenharia de software, com bola de neve conforme
 Wohlin (2014) e relato do fluxo conforme o PRISMA 2020 (PAGE et al., 2021).
 
@@ -263,7 +263,14 @@ Um registro é incluído quando atende a **todos** os critérios de inclusão e 
 | EC4 | Usa a detecção de bibliotecas só como meio para outro fim (malware, reempacotamento, clones), sem medir rastreamento e sem avaliar a detecção |
 | EC5 | Mede só a percepção ou a intenção de uso das pessoas (questionário, entrevista, modelo de aceitação), sem nenhuma medida sobre os aplicativos |
 | EC6 | Resumo, pôster, artigo curto de até 4 páginas, editorial, tutorial ou palestra; preprint sem revisão por pares (exceção: 7.4) |
-| EC7 | Texto completo indisponível pelas fontes da Seção 3 e sem resposta do autor em 7 dias |
+
+Texto completo não obtido não é critério de exclusão. O texto é procurado pelos
+links da planilha, pelo Portal de Periódicos da CAPES (Acesso CAFe) e por cópias
+dos autores; sem nenhuma dessas fontes, o registro é contado como "não
+recuperado" no fluxograma do PRISMA 2020 e listado por `id`, sem pedido ao
+autor. Na `triagem_20261106.csv`, fica com `decisao_f2` vazia e `NR` em
+`criterio_f2`. O código EC7, que previa esse pedido, saiu na versão 1.6 sem ter sido
+aplicado.
 
 Um registro que não atende a um critério de inclusão é excluído com o código
 desse critério (IC1 a IC4). Quando mais de um código se aplica, usa-se o mais
@@ -396,7 +403,7 @@ que sustentam a decisão.
 
 ## 11 Cronograma das etapas pendentes
 
-Situação em 13/11/2026: a F1 tem decisões registradas; a F2 tem **79 propostas em 357 registros: 71 I e 8 E**, sujeitas à validação pessoal. Restam 278 decisões em aberto: 131 por acesso, duas por versão divergente, duas por dúvida de escopo e 143 T aguardando definição do orientador. Foram obtidos 80 textos correspondentes. R0375 é a exclusão adicional por duplicidade comprovada em R0192, sem texto próprio obtido. Não houve contato com autores nem exclusão EC7. A revisão sistemática, a extração e a avaliação de qualidade permanecem em andamento. Ver `dados/revisao/LEIA-ME_leitura_F2_20261113.md` e o registro por ID.
+Situação em 13/11/2026: a F1 tem decisões registradas; a F2 tem **79 propostas em 357 registros: 71 I e 8 E**, sujeitas à validação pessoal. Restam 278 decisões em aberto: 131 por acesso, duas por versão divergente, duas por dúvida de escopo e 143 T aguardando definição do orientador. Foram obtidos 80 textos correspondentes. R0375 é a exclusão adicional por duplicidade comprovada em R0192, sem texto próprio obtido. Não houve contato com autores. Desde a versão 1.6, texto não obtido conta como não recuperado, sem exclusão (Seção 6). A revisão sistemática, a extração e a avaliação de qualidade permanecem em andamento. Ver `dados/revisao/LEIA-ME_leitura_F2_20261113.md` e o registro por ID.
 
 | Prazo previsto | Atividade | Condição |
 |---|---|---|
@@ -461,6 +468,7 @@ O prazo não dispensa a fundamentação e revisão bibliográfica exigidas pelo 
 | 10/11/2026 | 1.3 | Separação entre a versão revista das classificações e a validação pessoal, ainda pendente | Evitar confundir versão registrada com avaliação pessoal |
 | 13/11/2026 | 1.4 | Reteste cego de 125 preparado, datas condicionadas ao intervalo, comparação I/T × E/R, F2 e cronograma atualizados | Registrar a preparação sem afirmar execução ou concordância ainda não medidas |
 | 13/11/2026 | 1.5 | Rodada documental F2: 71 propostas I, 8 E e registro de acesso e evidências; 143 T preservados | Distinguir propostas da validação pessoal, conferir versões e evitar exclusão por falha de acesso sem cumprir EC7 |
+| 15/11/2026 | 1.6 | EC7 retirado: texto não obtido pelos links, pela CAPES (CAFe) ou por cópias dos autores conta como "não recuperado" no PRISMA, sem pedido ao autor | O PRISMA 2020 já tem essa categoria; a espera de sete dias por resposta não cabe no prazo de 03/12. Nenhum registro havia sido excluído por EC7 |
 
 ### 12.4 Triagem por título e resumo (F1)
 

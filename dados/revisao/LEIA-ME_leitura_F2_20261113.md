@@ -35,7 +35,7 @@ Os 143 registros T da F1 não receberam preenchimento. As colunas A:M e R da aba
 | R0102 | EC4 | Bibliotecas usadas como filtro em análise de comportamento/malware; não avalia detecção de bibliotecas ou rastreamento |
 | R0565 | IC1 | Texto declara ser revisão, sem estudo primário pertinente ao IC1; pode apoiar fundamentação e bola de neve |
 
-EC6 segue a regra de até quatro páginas do protocolo atual. Não foi aplicado apenas pelo metadado de páginas da planilha, que contém imprecisões. **Nenhuma exclusão EC7 foi aplicada e nenhum pedido foi enviado aos autores.** EC7 exige a tentativa de contato e sete dias sem resposta.
+EC6 segue a regra de até quatro páginas do protocolo atual. Não foi aplicado apenas pelo metadado de páginas da planilha, que contém imprecisões. **Nenhuma exclusão EC7 foi aplicada e nenhum pedido foi enviado aos autores.** EC7 exige a tentativa de contato e sete dias sem resposta. *Atualização de 15/11/2026: o EC7 saiu do protocolo (versão 1.6). Texto não obtido, inclusive pela CAPES, conta como não recuperado no PRISMA, sem e-mail ao autor. Na aba "Como ler" da planilha, ignore as linhas sobre EC7.*
 
 ## Quatro casos para resolver
 

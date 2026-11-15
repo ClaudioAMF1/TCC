@@ -34,7 +34,10 @@ DECISÕES NA PLANILHA
 --------------------
     decisao_f1 / decisao_f2:  I inclui, E exclui, T talvez (só na F1),
                               R revisão da literatura (fonte de bola de neve)
-    criterio_f1 / criterio_f2: código do critério de exclusão (EC1 a EC7)
+    criterio_f1 / criterio_f2: código do critério de exclusão (EC1 a EC6,
+                               IC1 a IC4). NR em criterio_f2, com decisao_f2
+                               vazia: texto completo não recuperado
+                               (protocolo 1.6; não é exclusão)
 
 Tudo fica em dados/revisao/, que é versionado enquanto o repositório for
 privado. As exportações do Scopus trazem o resumo, e os termos de uso não
@@ -670,7 +673,7 @@ def prisma(planilha: Path, pasta: Path):
                 c = r.get("criterio_f1") or "sem código"
                 exc1[c] = exc1.get(c, 0) + 1
         nao_obtidos = [r for r in passam
-                       if (r.get("criterio_f2") or "").upper() == "EC7"]
+                       if (r.get("criterio_f2") or "").strip().upper() == "NR"]
         avaliados = [r for r in passam if decisao(r.get("decisao_f2"))
                      and r not in nao_obtidos]
         exc2 = {}
@@ -686,7 +689,7 @@ def prisma(planilha: Path, pasta: Path):
               + ", ".join(f"{k} {v}" for k, v in sorted(exc1.items())))
         print(f"    Revisões (bola de neve):       {f1.count('R')}")
         print(f"    Buscados em texto completo:    {len(passam)}")
-        print(f"    Não obtidos (EC7):             {len(nao_obtidos)}")
+        print(f"    Não recuperados (NR):          {len(nao_obtidos)}")
         print(f"    Avaliados em F2:               {len(avaliados)}"
               f"  (sem decisão: {len(passam) - len(nao_obtidos) - len(avaliados)})")
         print(f"    Excluídos em F2:               {sum(exc2.values())}  "

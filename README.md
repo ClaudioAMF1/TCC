@@ -4,7 +4,7 @@ Repositório do Trabalho de Conclusão de Curso em Ciência da Computação no I
 
 **Tema:** *Quem mais está dentro do aplicativo? Rastreamento por terceiros e soberania de dados em aplicativos móveis governamentais brasileiros.* Orientador: Prof. Eduardo Arthur Izycki. O texto é em português.
 
-**Estado em 15/11/2026:** projeto de pesquisa escrito no modelo do IDP, com 71 estudos da revisão sistemática resumidos no referencial, e slides da simulação prontos. O que falta até 03/12 está em [`tcc/conformidade.md`](tcc/conformidade.md).
+**Estado em 15/11/2026:** projeto de pesquisa escrito no modelo do IDP, com as 71 propostas de inclusão da revisão sistemática resumidas no referencial, e slides da simulação prontos. O que falta até 03/12 está em [`tcc/conformidade.md`](tcc/conformidade.md).
 
 ## Onde está cada coisa
 

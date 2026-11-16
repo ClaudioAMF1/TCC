@@ -50,7 +50,7 @@ Outro achado: o AndroZoo tinha só 92 dos 396 candidatos do governo, 23,2%, cont
 
 ## Slide 12. Revisão sistemática (55 s)
 
-A fundamentação vem de uma revisão sistemática, seguindo Kitchenham e o PRISMA 2020, com cinco questões de pesquisa. Fiz 17 buscas no Scopus, IEEE Xplore, BDTD e SBC OpenLib, que retornaram 1.531 registros, ou 1.249 sem duplicatas. Para validar as buscas, usei 11 estudos que tinham de aparecer; os 10 que o Scopus indexa foram encontrados. Na triagem por título e resumo, 357 seguiram para a leitura completa, que selecionou 71 estudos até agora. Esses estudos estão resumidos no referencial teórico, agrupados por assunto. A leitura do restante continua no Capstone II.
+A fundamentação vem de uma revisão sistemática, seguindo Kitchenham e o PRISMA 2020, com cinco questões de pesquisa. Fiz 17 buscas no Scopus, IEEE Xplore, BDTD e SBC OpenLib, que retornaram 1.531 registros, ou 1.249 sem duplicatas. Para validar as buscas, usei 11 estudos que tinham de aparecer; os 10 que o Scopus indexa foram encontrados. Na triagem por título e resumo, 357 seguiram para a leitura completa, que registrou até agora 71 propostas de inclusão, ainda a conferir. Elas estão resumidas no referencial teórico, agrupadas por assunto. A leitura do restante continua no Capstone II.
 
 ## Slide 13. Limitações e próximos passos (65 s)
 
@@ -83,7 +83,7 @@ Baixando da Google Play com conta própria, registrando o hash e sem redistribui
 A capacidade do Estado de saber e decidir para onde vão os dados gerados nos seus serviços. Mede-se pela dependência de SDKs de terceiros e, na subamostra, pelos destinos observados. A nacionalidade do fornecedor ou o país de um IP não provam, sozinhos, uma transferência internacional.
 
 **Quantos artigos a revisão incluiu?**
-Até agora, 71 estudos selecionados, resumidos na Seção 2.7 do projeto. A leitura dos registros restantes continua no Capstone II, e o fluxograma da revisão está na Figura 1.
+Até agora, 71 propostas de inclusão, ainda a conferir, resumidas na Seção 2.7 do projeto. A leitura dos registros restantes continua no Capstone II, e o fluxograma da revisão está na Figura 1.
 
 **Por que o controle não é aleatório?**
 A busca da loja ordena por relevância e quase não devolve aplicativos comerciais pequenos. O pareamento por categoria e faixa reduz esse problema, a H1 fica restrita às células com controle e a limitação é declarada.

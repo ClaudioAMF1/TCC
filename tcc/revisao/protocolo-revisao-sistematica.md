@@ -403,7 +403,7 @@ que sustentam a decisão.
 
 Situação em 13/11/2026: a F1 tem decisões registradas; a F2 tem **79 propostas em 357 registros: 71 I e 8 E**, ainda não conferidas pelo autor. Restam 278 decisões em aberto: 131 por acesso, duas por versão divergente, duas por dúvida de escopo e 143 T cujo tratamento será definido com o orientador. Foram obtidos 80 textos correspondentes. R0375 é a exclusão adicional por duplicidade comprovada em R0192, sem texto próprio obtido. Não houve contato com autores. Desde a versão 1.6, texto não obtido conta como não recuperado, sem exclusão (Seção 6). A revisão sistemática, a extração e a avaliação de qualidade permanecem em andamento. Ver `dados/revisao/LEIA-ME_leitura_F2_20261113.md` e o registro por ID.
 
-Para a entrega do projeto em 03/12, a síntese usa os 71 estudos selecionados até 13/11 (Seção 2.7 do projeto). O restante fica para o início do Capstone II:
+Para a entrega do projeto em 03/12, a síntese usa as 71 propostas de inclusão registradas até 13/11, ainda a conferir (Seção 2.7 do projeto). O restante fica para o início do Capstone II:
 
 | Prazo previsto | Atividade |
 |---|---|

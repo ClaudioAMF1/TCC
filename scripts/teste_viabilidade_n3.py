@@ -46,7 +46,7 @@ except ImportError:
         "    cd ~/Projetos/TCC\n"
         "    python3 -m venv .venv\n"
         "    source .venv/bin/activate\n"
-        "    pip install google-play-scraper cryptography\n\n"
+        "    pip install google-play-scraper\n\n"
         "Depois rode o script de novo. Em terminal novo, reative com\n"
         "    source .venv/bin/activate"
     )

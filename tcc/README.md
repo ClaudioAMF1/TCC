@@ -1,6 +1,6 @@
 # Projeto Capstone I
 
-A entrega do Capstone I é um **projeto de pesquisa**: introdução, referencial teórico e procedimentos metodológicos, com recursos e cronogramas. A coleta principal e os testes das hipóteses ficam para o Capstone II. O estado e o que falta estão em [conformidade.md](conformidade.md).
+A entrega do Capstone I é um **projeto de pesquisa**: introdução, referencial teórico e procedimentos metodológicos, com recursos e cronograma. A coleta principal e os testes das hipóteses ficam para o Capstone II. O estado e o que falta estão em [conformidade.md](conformidade.md).
 
 ## Arquivos
 
@@ -15,7 +15,6 @@ A entrega do Capstone I é um **projeto de pesquisa**: introdução, referencial
 | [revisao/sintese-F2-propostas.md](revisao/sintese-F2-propostas.md) | As 71 propostas de inclusão por questão de pesquisa, base da síntese da Seção 2 |
 | [revisao/buscas-passo-a-passo.md](revisao/buscas-passo-a-passo.md) | Como as buscas e a triagem foram feitas e como seguir |
 | [metodologia/criterios-lgpd.md](metodologia/criterios-lgpd.md) | Matriz de dez critérios documentais da LGPD |
-| [orientacao/pauta-proximo-encontro.md](orientacao/pauta-proximo-encontro.md) | Decisões a tomar com o orientador |
 | [piloto-passo-a-passo.md](piloto-passo-a-passo.md), [coleta-passo-a-passo.md](coleta-passo-a-passo.md) | Como rodar o piloto e a coleta direta |
 
 ## Compilação

@@ -356,7 +356,7 @@ O trabalho se justifica em três planos.
 
 \chapter{Referencial teórico}\label{cap:ref}
 
-Esta seção apresenta os conceitos e os trabalhos em que o projeto se apoia. A Seção~\ref{sec:ref-rastreamento} define o rastreamento por terceiros e resume o que se sabe sobre sua presença em aplicativos móveis; a Seção~\ref{sec:ref-regulacao}, o que os estudos observaram depois das leis de proteção de dados; a Seção~\ref{sec:ref-deteccao}, como bibliotecas e rastreadores são detectados e por que a escolha da ferramenta importa; a Seção~\ref{sec:ref-politicas}, os trabalhos que confrontam o que o aplicativo declara com o que ele faz; a Seção~\ref{sec:ref-governo}, os estudos sobre aplicativos de governo e a lacuna que deixam; a Seção~\ref{sec:ref-lgpd}, o marco jurídico brasileiro; e a Seção~\ref{sec:ref-sintese}, os estudos selecionados na revisão sistemática (Seção~\ref{sec:2.13}), organizados pelas questões que a revisão procura responder.
+Esta seção apresenta os conceitos e os trabalhos em que o projeto se apoia. A Seção~\ref{sec:ref-rastreamento} define o rastreamento por terceiros e resume o que se sabe sobre sua presença em aplicativos móveis; a Seção~\ref{sec:ref-regulacao}, o que os estudos observaram depois das leis de proteção de dados; a Seção~\ref{sec:ref-deteccao}, como bibliotecas e rastreadores são detectados e por que a escolha da ferramenta importa; a Seção~\ref{sec:ref-politicas}, os trabalhos que confrontam o que o aplicativo declara com o que ele faz; a Seção~\ref{sec:ref-governo}, os estudos sobre aplicativos de governo e a lacuna que deixam; a Seção~\ref{sec:ref-lgpd}, o marco jurídico brasileiro; e a Seção~\ref{sec:ref-sintese}, as propostas de inclusão da revisão sistemática (Seção~\ref{sec:2.13}), organizadas pelas questões que a revisão procura responder.
 
 \section{Bibliotecas de terceiros e rastreamento em aplicativos móveis}\label{sec:ref-rastreamento}
 
@@ -480,13 +480,13 @@ A pesquisa é quantitativa, observacional e comparativa: mede características d
 
 \end{enumerate}
 
-Todos os scripts citados estão no repositório do trabalho, na pasta \texttt{scripts/\allowbreak{}}. A construção do corpus e do controle e os testes de viabilidade foram executados. A obtenção e a detecção foram ensaiadas em 20 pacotes, ainda sem execução no corpus completo. Os resultados preliminares estão na Seção~\ref{sec:preliminares}, e as etapas restantes, no cronograma (Seções~\ref{sec:3.1} e~\ref{sec:3.2}).
+A coleta e a análise são feitas por scripts próprios em Python, guardados com os dados e as decisões registradas para permitir a reprodução. A construção do corpus e do controle e os testes de viabilidade foram executados. A obtenção e a detecção foram ensaiadas em 20 pacotes, ainda sem execução no corpus completo. Os resultados preliminares estão na Seção~\ref{sec:preliminares}, e as etapas restantes, no cronograma (Seção~\ref{sec:3.2}).
 
 O tema foi escolhido depois de testes de viabilidade. Outros três foram testados antes: sistemas de controle industrial expostos no Brasil, abuso de marca em registros de Certificate Transparency e genealogia de malware bancário brasileiro. Os dois primeiros foram descartados porque a variável principal não era observável ou não ocorreu nos dados, e o terceiro ficou inconclusivo porque 85\% das amostras brasileiras eram containers, aos quais o método não se aplica. No tema escolhido, a variável que separa os grupos, o publicador do aplicativo, vem identificada pela própria loja. O nome exibido, porém, precisa ser confrontado com o nome jurídico e o vínculo institucional, porque um nome de serviço público não garante oficialidade.
 
 \section{Construção do corpus governamental}\label{sec:2.2}
 
-\textbf{Fonte e ferramenta.} Os metadados foram obtidos da Google Play com a biblioteca \texttt{google-\allowbreak{}play-\allowbreak{}scraper} \cite{jomingyu2024}, com país Brasil e idioma português. O script é \texttt{scripts/\allowbreak{}teste\_\allowbreak{}viabilidade\_\allowbreak{}n3.\allowbreak{}py}.
+\textbf{Fonte e ferramenta.} Os metadados foram obtidos da Google Play com a biblioteca \texttt{google-\allowbreak{}play-\allowbreak{}scraper} \cite{jomingyu2024}, com país Brasil e idioma português.
 
 \textbf{Busca.} Foram usados 21 termos ligados a serviço público: ``gov.br'', ``governo federal'', ``governo do estado'', ``prefeitura'', ``ministério da saúde'', ``receita federal'', ``INSS'', ``SUS'', ``detran'', ``tribunal'', ``SERPRO'', ``Dataprev'', ``carteira digital'', ``cadastro único'', ``meu INSS'', ``secretaria estadual'', ``secretaria municipal'', ``defensoria'', ``polícia militar'', ``corpo de bombeiros'' e ``procon'', com até 30 resultados por termo.
 
@@ -498,7 +498,7 @@ O tema foi escolhido depois de testes de viabilidade. Outros três foram testado
 
 \section{Caracterização do corpus}\label{sec:2.3}
 
-Em 17 de setembro de 2026, a ficha completa de cada um dos 396 candidatos foi obtida na Google Play, sem nenhuma remoção. O script é \texttt{scripts/\allowbreak{}teste\_\allowbreak{}viabilidade\_\allowbreak{}n3\_\allowbreak{}robusto.\allowbreak{}py}, e cada aplicativo recebeu três classificações automáticas.
+Em 17 de setembro de 2026, a ficha completa de cada um dos 396 candidatos foi obtida na Google Play, sem nenhuma remoção. Cada aplicativo recebeu três classificações automáticas.
 
 \textbf{Esfera de governo}, pelo nome do publicador, testando primeiro os sinais municipais, depois os estaduais e por último os federais, porque ``municipal'' é menos ambíguo que ``secretaria''. Resultado: 85 federais, 206 estaduais, 95 municipais e 10 indeterminados (2,5\%). Na conferência dos 396 (Seção~\ref{sec:preliminares}), a esfera difere da regra automática em 18 dos 376 aplicativos oficiais, 7 deles indeterminados pela regra.
 
@@ -514,7 +514,7 @@ A busca da loja ordena por relevância e quase nunca devolve um aplicativo comer
 
 \section{Ampliação do controle por categoria}\label{sec:2.11}
 
-Em 4 de novembro de 2026, o controle foi ampliado dentro de cada categoria, com o script \texttt{scripts/\allowbreak{}ampliar\_\allowbreak{}controle.\allowbreak{}py}. Para cada célula de categoria e faixa de instalações em que havia aplicativo governamental e menos de dois comerciais, o script buscou na Google Play pelo nome da categoria, por termos genéricos e pelas palavras mais frequentes nos títulos dos aplicativos governamentais daquela categoria, que trazem aplicativos comerciais do mesmo assunto. Foram aceitos apenas aplicativos de publicador não oficial, da mesma categoria e de uma das faixas em falta, com teto de 80 fichas lidas por categoria. As faixas abaixo de $10^{2}$ ficaram de fora, porque os aplicativos governamentais nelas já saem da H1 pela restrição ao suporte comum. A base da Tabela~\ref{tabela:14} são os 394 candidatos governamentais que informam o número de instalações.
+Em 4 de novembro de 2026, o controle foi ampliado dentro de cada categoria. Para cada célula de categoria e faixa de instalações em que havia aplicativo governamental e menos de dois comerciais, a busca na Google Play usou o nome da categoria, termos genéricos e as palavras mais frequentes nos títulos dos aplicativos governamentais daquela categoria, que trazem aplicativos comerciais do mesmo assunto. Foram aceitos apenas aplicativos de publicador não oficial, da mesma categoria e de uma das faixas em falta, com teto de 80 fichas lidas por categoria. As faixas abaixo de $10^{2}$ ficaram de fora, porque os aplicativos governamentais nelas já saem da H1 pela restrição ao suporte comum. A base da Tabela~\ref{tabela:14} são os 394 candidatos governamentais que informam o número de instalações.
 
 \begin{center}
 \begin{minipage}{\textwidth}
@@ -576,7 +576,7 @@ As etapas já executadas produziram os resultados que orientam o método da cole
 
 \textbf{Anúncios declarados.} Nenhum dos 376 aplicativos oficiais declara exibir anúncios na Google Play (IC95\% de 0\% a 1,0\%), contra 33,2\% dos 190 aplicativos do controle (IC95\% de 26,9\% a 40,1\%), com os intervalos calculados pelo método de \citeonline{wilson1927}. A declaração é feita pelo próprio publicador e trata só de anúncios: não indica quais SDKs o aplicativo embarca nem para onde os dados vão.
 
-\textbf{Fonte dos pacotes.} O acesso acadêmico ao AndroZoo foi concedido em 17 de setembro de 2026; a chave é individual e não é gravada no repositório. Na consulta histórica, o acervo continha 92 dos 396 candidatos governamentais (23,2\%), contra 160 dos 190 controles originais (84,2\%). Esses denominadores antecedem a redução do corpus a 376 e a ampliação do controle a 252. Na mesma faixa de instalações, a razão de chances de \citeonline{mantel1959} de um aplicativo governamental estar no acervo é de 0,13 (IC95\% de 0,07 a 0,24). Por isso, a maior parte do corpus será baixada direto da Google Play, com o hash registrado.
+\textbf{Fonte dos pacotes.} O acesso acadêmico ao AndroZoo foi concedido em 17 de setembro de 2026; a chave é individual e não é compartilhada. Na consulta histórica, o acervo continha 92 dos 396 candidatos governamentais (23,2\%), contra 160 dos 190 controles originais (84,2\%). Esses denominadores antecedem a redução do corpus a 376 e a ampliação do controle a 252. Na mesma faixa de instalações, a razão de chances de \citeonline{mantel1959} de um aplicativo governamental estar no acervo é de 0,13 (IC95\% de 0,07 a 0,24). Por isso, a maior parte do corpus será baixada direto da Google Play, com o hash registrado.
 
 \textbf{Piloto dos detectores.} Em 20 aplicativos do AndroZoo, a proporção com ao menos um rastreador foi de 75\%, 95\% e 80\% conforme o detector (A, B e C), e o $\kappa$ de Fleiss sobre a presença de rastreador foi de 0,52. A conferência das 223 detecções segundo a evidência que as produziu classificou 88 das 123 detecções do detector B (71,5\%) como falsos positivos potenciais, sobretudo porque assinaturas amplas também casam com domínios de uso geral do Google ou do Facebook. Ao desconsiderar essas detecções em uma análise de sensibilidade, o $\kappa$ passa de 0,52 para 0,69. Daí a proposta, a confirmar com o orientador, de usar A como medida principal, C como comparação com outra base e B para examinar o efeito do método. B e C procuram domínios em textos do APK, não tráfego observado. A adjudicação usa a evidência dos próprios detectores e não constitui uma verdade de referência independente; a mudança do $\kappa$ é uma análise de sensibilidade do piloto.
 
@@ -584,7 +584,7 @@ As etapas já executadas produziram os resultados que orientam o método da cole
 
 \section{Protocolo da revisão sistemática}\label{sec:2.13}
 
-A revisão segue \citeonline{kitchenham2007}, com bola de neve conforme \citeonline{wohlin2014} e relato do fluxo conforme o PRISMA 2020 \cite{page2021}. O protocolo completo está no repositório do trabalho, em \texttt{tcc/\allowbreak{}revisao/\allowbreak{}protocolo-\allowbreak{}revisao-\allowbreak{}sistematica.\allowbreak{}md}; esta seção resume as decisões.
+A revisão segue \citeonline{kitchenham2007}, com bola de neve conforme \citeonline{wohlin2014} e relato do fluxo conforme o PRISMA 2020 \cite{page2021}. Esta seção resume as decisões do protocolo, que registra as strings, os critérios e cada alteração com data e motivo.
 
 \textbf{Origem.} Uma busca exploratória feita na preparação do protocolo encontrou \citeonline{samarasinghe2022}, estudo de aplicativos de governo de 71 países que não estava entre os consultados quando a lacuna foi escrita na proposta. A lacuna foi reescrita (Seção~\ref{sec:ref-governo}), e o episódio fixou duas decisões: a revisão cobre aplicativos de governo de qualquer país, e as strings de busca são validadas contra estudos que precisam ser achados.
 
@@ -601,14 +601,14 @@ A revisão segue \citeonline{kitchenham2007}, com bola de neve conforme \citeonl
 
 \begin{figure}[htbp]
 \centering
-\caption{Fluxo da revisão sistemática, conforme o PRISMA 2020}\label{fig:prisma}
+\caption{Fluxo parcial da revisão sistemática (adaptado do PRISMA 2020)}\label{fig:prisma}
 \begin{tikzpicture}[
   font=\footnotesize,
   caixa/.style={draw, rectangle, align=left, text width=7.2cm, inner sep=4pt},
   lateral/.style={draw, rectangle, align=left, text width=6.2cm, inner sep=4pt},
   seta/.style={-{Stealth[length=2mm]}, semithick},
   node distance=5mm and 7mm]
-\node[caixa] (id) {Registros identificados em 17 buscas, em 6 nov. 2026 (n = 1.531): Scopus 825; IEEE Xplore 668; BDTD 23; SBC OpenLib 15};
+\node[caixa] (id) {Registros identificados em 17 buscas em quatro bases, em 6 nov. 2026 (n = 1.531): Scopus 825; IEEE Xplore 668; BDTD 23; SBC OpenLib 15};
 \node[lateral, right=of id] (dup) {Duplicatas removidas (n = 282)};
 \node[caixa, below=of id] (tri) {Registros triados por título, resumo e palavras-chave (n = 1.249)};
 \node[lateral, right=of tri] (exc1) {Excluídos (n = 886): IC1 527; EC3 118; EC2 114; EC5 89; EC4 30; EC6 5; EC1 3\\Revisões reservadas para a bola de neve (n = 6)};
@@ -626,7 +626,8 @@ A revisão segue \citeonline{kitchenham2007}, com bola de neve conforme \citeonl
 \draw[seta] (busca) -- (nr);
 \draw[seta] (aval) -- (exc2);
 \end{tikzpicture}
-\fonte{Elaborado pelo autor (2026), com o modelo de \citeonline{page2021}. Situação em 15 nov. 2026; a leitura dos registros em aberto continua no Projeto Capstone II.}
+\fonte{Elaborado pelo autor (2026), com o modelo de \citeonline{page2021}. Situação em 15 nov. 2026.}
+\nota{Foram obtidos 80 textos correspondentes (71 propostas I, 7 propostas E e 2 dúvidas de escopo). A oitava proposta E se baseia na versão ampliada do mesmo estudo. As decisões aguardam conferência pessoal.}
 \end{figure}
 
 \textbf{Conferência cega da triagem.} Uma amostra de 125 registros, 10\% dos 1.249 arredondados para cima, já foi sorteada com semente fixa e registrada em manifesto. No início do Projeto Capstone II, o autor classificará esses registros por título, resumo e palavras-chave, sem acesso às decisões registradas, e o resultado será comparado com a triagem na decisão binária (I ou T seguem para o texto completo; E ou R não seguem) e nas quatro categorias, com o acordo observado, o $\kappa$ e a matriz de confusão. Cada divergência será examinada. Se o $\kappa$ ficar abaixo de 0,6, uma segunda amostra de 125 registros será conferida.
@@ -718,31 +719,8 @@ Cada item receberá um resultado: \emph{documentado}, \emph{indício de inconsis
 
 Para a H2, serão contados pares aplicativo--SDK, com distinção entre menção nominal, declaração por categoria, ausência de menção e política indisponível. O denominador incluirá apenas pares com detecção confirmada e política recuperada; políticas indisponíveis serão informadas à parte. Declarações genéricas serão objeto de análise de sensibilidade. A expressão fluxo não declarado será reservada aos casos em que o fluxo foi observado, enquanto a detecção estática produzirá uma comparação documental.
 
-Na análise dinâmica, país do ponto de rede, país da entidade destinatária e localização documentada de tratamento serão campos distintos. A nacionalidade do fornecedor e a geolocalização de um IP não demonstram, isoladamente, uma transferência internacional. A matriz separará transferência, coleta internacional direta e situação indeterminada, observando as distinções da Resolução nº 19/2024 \cite{anpd2024}. O roteiro completo, com dez critérios e ficha de evidências, está em \texttt{tcc/\allowbreak{}metodologia/\allowbreak{}criterios-lgpd.md}.
+Na análise dinâmica, país do ponto de rede, país da entidade destinatária e localização documentada de tratamento serão campos distintos. A nacionalidade do fornecedor e a geolocalização de um IP não demonstram, isoladamente, uma transferência internacional. A matriz separará transferência, coleta internacional direta e situação indeterminada, observando as distinções da Resolução nº 19/2024 \cite{anpd2024}. A matriz tem dez critérios e uma ficha de evidências por aplicativo.
 
-
-\section{Cronograma até a defesa do Projeto Capstone I}\label{sec:3.1}
-
-As datas da disciplina são as do plano de ensino: simulação de defesa em 24/11, 26/11 ou 01/12, conforme a ordem da turma, com 15 minutos de apresentação e 10 de arguição; entrega da redação no Canvas até 03/12; defesa final em 08/12, 10/12 ou 15/12, com 15 minutos de apresentação e 15 de arguição. As atividades já concluídas estão descritas nas seções anteriores; o quadro abaixo traz só o que falta.
-
-\begin{center}
-\begin{minipage}{\textwidth}
-\centering
-\small
-\quadrocaption{Cronograma até a defesa do Projeto Capstone I}\label{quadro:16}
-\begin{tabularx}{\textwidth}{|l|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|}
-\hline
-\textbf{Período} & \textbf{Atividade} & \textbf{Produto} \\
-\hline
-16/11 a 01/12 & Leitura dos principais estudos selecionados e revisão da síntese do referencial teórico & Seção~\ref{sec:ref-sintese} revista \\ \hline
-até 01/12 & Revisão do projeto pelo orientador & Ajustes incorporados \\ \hline
-24/11 a 01/12 & Simulação de defesa & Sugestões da avaliadora \\ \hline
-até 03/12 & Incorporação das sugestões e entrega da redação no Canvas & Projeto entregue \\ \hline
-08/12 a 15/12 & Defesa final do Projeto Capstone I & Apresentação \\ \hline
-\end{tabularx}
-\fonte{Elaborado pelo autor (2026).}
-\end{minipage}
-\end{center}
 
 \section{Cronograma do Projeto Capstone II (2027.1)}\label{sec:3.2}
 

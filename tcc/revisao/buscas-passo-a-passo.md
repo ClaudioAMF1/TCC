@@ -225,10 +225,6 @@ depois, rode:
 python3 scripts/revisao_triagem.py concordancia dados/revisao/reteste_F1_20261116.xlsx
 ```
 
-**Orientador (opcional).** A amostra de 20 registros está em
-`dados/revisao/conferencia_orientador_20261110.xlsx`. Se ele aceitar, rode o
-`concordancia` com a planilha preenchida.
-
 O protocolo pede κ ≥ 0,6. Abaixo disso, uma segunda amostra de 125 é conferida
 (protocolo, Seção 7.2).
 

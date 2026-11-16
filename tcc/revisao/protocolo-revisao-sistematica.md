@@ -302,9 +302,7 @@ fluxograma do PRISMA.
 
 A seleção tem um revisor responsável. Como a classificação F1 registrada não foi produzida inteiramente pelo autor (Seção 7.3), a consistência da triagem é examinada por uma **conferência cega por amostra**, e não por teste e reteste.
 
-1. **Conferência cega.** O autor classifica, sem consultar as decisões registradas, uma amostra aleatória de 10% dos registros, no mínimo 30. Para 1.249 registros, o arredondamento para cima resulta em **125**. A amostra foi preparada em 13/11/2026 com semente **20261116**, usando `random.Random(20261116).sample` sobre a ordem do CSV e ordenação dos sorteados por `id`. O arquivo `dados/revisao/reteste_F1_20261116.xlsx` (o nome foi mantido para não romper o manifesto) contém apenas os dados bibliográficos e campos de resposta vazios. O manifesto registra a versão da fonte, o algoritmo e os identificadores. Não há intervalo mínimo: a conferência pode ser feita assim que possível.
-2. **Conferência do orientador.** Se houver disponibilidade, decidir os 20 registros de `dados/revisao/conferencia_orientador_20261110.xlsx`, sem consultar as respostas do autor. Se não ocorrer, registrar essa limitação; não apresentar a etapa como executada.
-
+O autor classifica, sem consultar as decisões registradas, uma amostra aleatória de 10% dos registros, no mínimo 30. Para 1.249 registros, o arredondamento para cima resulta em **125**. A amostra foi preparada em 13/11/2026 com semente **20261116**, usando `random.Random(20261116).sample` sobre a ordem do CSV e ordenação dos sorteados por `id`. O arquivo `dados/revisao/reteste_F1_20261116.xlsx` (o nome foi mantido para não romper o manifesto) contém apenas os dados bibliográficos e campos de resposta vazios. O manifesto registra a versão da fonte, o algoritmo e os identificadores. Não há intervalo mínimo: a conferência pode ser feita assim que possível.
 Após o preenchimento, comparar com `decisao_f1` por `id` (`python3 scripts/revisao_triagem.py concordancia dados/revisao/reteste_F1_20261116.xlsx`) e reportar matriz de contingência, acordo observado, κ de Cohen (COHEN, 1960), tamanho da amostra e divergências. A comparação principal será **I/T versus E/R**, isto é, segue ou não para F2 como estudo primário. Também serão descritas as quatro categorias. Cada divergência é examinada; a decisão final fica registrada com a decisão anterior, a nova e o motivo. Se κ < 0,6, uma segunda amostra de 125 registros, sorteada com nova semente, será conferida da mesma forma, e a limitação será reportada. O limiar é uma regra operacional do protocolo, não garantia de validade. Se κ for indefinido por ausência de variação, reportar isso, sem atribuir zero ou um arbitrariamente.
 
 ### 7.3 Versões das decisões
@@ -403,7 +401,7 @@ que sustentam a decisão.
 
 Situação em 13/11/2026: a F1 tem decisões registradas; a F2 tem **79 propostas em 357 registros: 71 I e 8 E**, ainda não conferidas pelo autor. Restam 278 decisões em aberto: 131 por acesso, duas por versão divergente, duas por dúvida de escopo e 143 T cujo tratamento será definido com o orientador. Foram obtidos 80 textos correspondentes. R0375 é a exclusão adicional por duplicidade comprovada em R0192, sem texto próprio obtido. Não houve contato com autores. Desde a versão 1.6, texto não obtido conta como não recuperado, sem exclusão (Seção 6). A revisão sistemática, a extração e a avaliação de qualidade permanecem em andamento. Ver `dados/revisao/LEIA-ME_leitura_F2_20261113.md` e o registro por ID.
 
-Para a entrega do projeto em 03/12, a síntese usa os 71 estudos selecionados até 13/11 (Seção 2.7 do projeto). O restante fica para o início do Capstone II:
+Para a entrega do projeto em 03/12, a síntese usa as 71 propostas de inclusão registradas até 13/11, ainda a conferir (Seção 2.7 do projeto). O restante fica para o início do Capstone II:
 
 | Prazo previsto | Atividade |
 |---|---|
@@ -488,7 +486,7 @@ Em 13/11/2026, foram produzidos o XLSX, o CSV cego e o manifesto de `reteste_F1_
 
 ## 13 Ameaças à validade da revisão
 
-- **Um revisor só.** Mitigação pela conferência cega por amostra e, se houver disponibilidade, pela conferência do orientador (Seção 7.2). Ainda não há κ dessas etapas.
+- **Um revisor só.** Mitigação pela conferência cega por amostra (Seção 7.2). Ainda não há κ dessa etapa.
 - **Textos não recuperados.** Estudos sem texto completo acessível ficam fora da síntese; são listados por `id` e contados no fluxograma do PRISMA.
 - **Cobertura das bases.** NDSS, USENIX Security, SOUPS e PoPETs podem não estar
   indexados por completo no Scopus, na ACM e no IEEE. O conjunto de controle

@@ -3,20 +3,18 @@
 *.key
 secrets*
 
-# Dados coletados. O repositório é privado: versionam-se as planilhas e os
-# relatórios pequenos, para não depender de uma cópia só. APKs, listas grandes
-# do AndroZoo e PDFs de artigos ficam sempre fora.
+# Dados coletados. Versionam-se só as planilhas e os relatórios necessários.
+# Ficam sempre fora: APKs, listas do AndroZoo, PDFs de artigos e as fichas dos
+# publicadores (n3_fichas_*.json), que trazem contatos e podem ser geradas de
+# novo com scripts/fichas_publicadores.py.
 scripts/dados/
 dados/*
 !dados/revisao/
-!dados/segundo_avaliador/
 dados/revisao/pdf/
 dados/revisao/*.bak.csv
 !dados/n3_corpus_*.csv
 !dados/n3_relatorio_*.json
 !dados/controle_ampliado_*.json
-!dados/n3_fichas_*.json
-!dados/classificacao_*.xlsx
 
 # Python
 __pycache__/

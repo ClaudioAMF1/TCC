@@ -42,7 +42,7 @@ Um primeiro dado, tirado dos metadados da loja: nenhum dos 376 aplicativos do go
 
 ## Slide 10. Piloto dos detectores (60 s)
 
-O piloto testou o instrumento em 20 pacotes do AndroZoo, com três detectores. O A procura o código do SDK, com a base do Exodus. O B procura domínios dentro do pacote, também com a base do Exodus. O C procura domínios com a lista da Disconnect. O A achou rastreador em 75% dos aplicativos, o B em 95% e o C em 80%: mesma amostra, taxas diferentes. O κ de Fleiss foi 0,52. Conferindo uma a uma as 223 detecções, 88 das 123 do B eram falsas, 71,5%, porque qualquer link do Google conta como SDK. Sem esses falsos positivos, o κ sobe para 0,69. Por isso proponho usar o A como medida principal, o que ainda vou confirmar com o orientador.
+O piloto testou o instrumento em 20 pacotes do AndroZoo, com três detectores. O A procura o código do SDK, com a base do Exodus. O B procura domínios dentro do pacote, também com a base do Exodus. O C procura domínios com a lista da Disconnect. O A achou rastreador em 75% dos aplicativos, o B em 95% e o C em 80%: mesma amostra, taxas diferentes. O κ de Fleiss foi 0,52. Na adjudicação das 223 detecções, 88 das 123 do B (71,5%) foram classificadas como falsos positivos potenciais, sobretudo por referências a domínios genéricos. Desconsiderando essas detecções numa análise de sensibilidade, o κ passa de 0,52 para 0,69. Essa classificação não equivale a uma validação independente por verdade de referência. Por isso proponho usar o A como medida principal, o que ainda vou confirmar com o orientador.
 
 ## Slide 11. Onde estão os pacotes (40 s)
 
@@ -50,7 +50,7 @@ Outro achado: o AndroZoo tinha só 92 dos 396 candidatos do governo, 23,2%, cont
 
 ## Slide 12. Revisão sistemática (55 s)
 
-A fundamentação vem de uma revisão sistemática, seguindo Kitchenham e o PRISMA 2020, com cinco questões de pesquisa. Fiz 17 buscas no Scopus, IEEE Xplore, BDTD e SBC OpenLib, que retornaram 1.531 registros, ou 1.249 sem duplicatas. Para validar as buscas, usei 11 estudos que tinham de aparecer; os 10 que o Scopus indexa foram encontrados. Na triagem por título e resumo, 357 seguiram para a leitura completa, que selecionou 71 estudos até agora. Esses estudos estão resumidos no referencial teórico, agrupados por assunto. A leitura do restante continua no Capstone II.
+A fundamentação vem de uma revisão sistemática, seguindo Kitchenham e o PRISMA 2020, com cinco questões de pesquisa. Fiz 17 buscas no Scopus, IEEE Xplore, BDTD e SBC OpenLib, que retornaram 1.531 registros, ou 1.249 sem duplicatas. Para validar as buscas, usei 11 estudos que tinham de aparecer; os 10 que o Scopus indexa foram encontrados. Na triagem por título e resumo, 357 registros foram encaminhados à fase de texto completo. Dos 214 inicialmente priorizados para obtenção, foram recuperados 80 textos correspondentes: 71 receberam proposta de inclusão, 7 de exclusão e 2 ficaram com dúvida de escopo. Houve ainda uma exclusão por evidência de versão ampliada. A Seção 2.7 apresenta uma síntese provisória dos 71; a validação das decisões e a leitura do restante continuam pendentes.
 
 ## Slide 13. Limitações e próximos passos (65 s)
 
@@ -74,7 +74,7 @@ O caso brasileiro separado por esfera e por dado sensível, a comparação com c
 Não. A análise estática mostra presença de código. O envio só é observado na análise dinâmica da subamostra. O texto separa presença, transmissão observada e declaração.
 
 **Se o detector B errou 71,5%, por que mantê-lo?**
-Ele não é a medida principal. Como A e B usam a mesma base com métodos diferentes, a diferença entre eles mede o efeito do método, que é o que a H4 discute.
+Ele não é a medida principal proposta. Como A e B usam a mesma base com métodos diferentes, a diferença ilustra o efeito do método, que a H4 pretende medir. Os 88 casos foram considerados falsos positivos potenciais na adjudicação interna, não confirmados por um padrão de referência externo.
 
 **Como você vai obter os pacotes que o AndroZoo não tem? Isso é permitido?**
 Baixando da Google Play com conta própria, registrando o hash e sem redistribuir os pacotes. O procedimento será testado em cinco aplicativos no início do Capstone II.
@@ -83,7 +83,7 @@ Baixando da Google Play com conta própria, registrando o hash e sem redistribui
 A capacidade do Estado de saber e decidir para onde vão os dados gerados nos seus serviços. Mede-se pela dependência de SDKs de terceiros e, na subamostra, pelos destinos observados. A nacionalidade do fornecedor ou o país de um IP não provam, sozinhos, uma transferência internacional.
 
 **Quantos artigos a revisão incluiu?**
-Até agora, 71 estudos selecionados, resumidos na Seção 2.7 do projeto. A leitura dos registros restantes continua no Capstone II, e o fluxograma da revisão está na Figura 1.
+Até 13/11, há 71 propostas de inclusão, não 71 inclusões definitivamente validadas. A Seção 2.7 traz a síntese provisória. Faltam 278 registros em aberto e a conferência pessoal das propostas registradas.
 
 **Por que o controle não é aleatório?**
 A busca da loja ordena por relevância e quase não devolve aplicativos comerciais pequenos. O pareamento por categoria e faixa reduz esse problema, a H1 fica restrita às células com controle e a limitação é declarada.

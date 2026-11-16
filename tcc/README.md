@@ -7,6 +7,7 @@ A entrega do Capstone I é um **projeto de pesquisa**: introdução, referencial
 | Arquivo | Conteúdo |
 |---|---|
 | [latex/main.pdf](latex/main.pdf) | O projeto, no modelo do IDP |
+| [latex/main.docx](latex/main.docx) | O mesmo projeto em Word, gerado a partir do `main.tex`. Mudanças feitas no Word não voltam para o LaTeX |
 | [latex/main.tex](latex/main.tex) | Fonte do texto |
 | [latex/referencias.bib](latex/referencias.bib) | Referências |
 | [apresentacao/simulacao-defesa-rascunho.pptx](apresentacao/simulacao-defesa-rascunho.pptx) | 14 slides no modelo do IDP, com a fala de cada slide nas notas |
@@ -26,4 +27,4 @@ No Overleaf, envie `main.tex`, `referencias.bib` e `logo-idp.png` para o mesmo p
 
 No computador: `xelatex main.tex`, `bibtex main`, `xelatex main.tex`, `xelatex main.tex`.
 
-Depois de qualquer mudança, gere o PDF de novo e substitua `latex/main.pdf`.
+Depois de qualquer mudança, gere o PDF de novo e substitua `latex/main.pdf`. O `main.docx` também precisa ser gerado de novo para acompanhar o texto.

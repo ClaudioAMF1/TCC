@@ -1,6 +1,6 @@
 # Roteiro da simulação de defesa
 
-Versão de 15/11/2026. São 15 minutos de apresentação e 10 de perguntas. As falas abaixo somam cerca de 12 minutos, o que deixa folga para pausas. O mesmo texto está nas notas de cada slide. Ensaie com cronômetro pelo menos três vezes e grave uma delas.
+Versão de 16/11/2026. São 15 minutos de apresentação e 10 de perguntas. As falas abaixo somam cerca de 12 minutos, o que deixa folga para pausas. O mesmo texto está nas notas de cada slide. Ensaie com cronômetro pelo menos três vezes e grave uma delas.
 
 Não é para decorar palavra por palavra: leia algumas vezes e fale com as suas palavras, mantendo os números exatos.
 
@@ -10,7 +10,7 @@ Bom dia. Meu nome é Claudio, e meu projeto se chama "Quem mais está dentro do 
 
 ## Slide 2. Por que este tema (50 s)
 
-Hoje muito serviço público passa pelo celular: o Meu INSS e o Meu SUS Digital têm mais de 50 milhões de instalações cada um. Quase nenhum aplicativo é escrito do zero. Ele incorpora SDKs, que são bibliotecas prontas de outros fornecedores, para medir o uso, enviar notificações ou mostrar anúncios. Alguns desses SDKs coletam identificadores do aparelho e dados de uso. Num aplicativo comercial, o usuário pode trocar de serviço. No do INSS, não: quem paga o benefício é o INSS. Por isso vale perguntar quem mais está dentro desses aplicativos.
+Hoje muito serviço público passa pelo celular: o Meu INSS e o Meu SUS Digital têm mais de 50 milhões de instalações cada um. Quase nenhum aplicativo é escrito do zero. Como mostra o esquema, além do código do próprio órgão, ele incorpora SDKs, que são bibliotecas prontas de outras empresas, para medir o uso, enviar notificações ou mostrar mapas. O código do órgão conversa com o servidor do órgão; já os SDKs podem enviar identificadores do aparelho e dados de uso para os servidores das empresas que os fornecem. Num aplicativo comercial, o usuário pode trocar de serviço. No do INSS, não: quem paga o benefício é o INSS. Por isso vale perguntar quem mais recebe os dados desses aplicativos.
 
 ## Slide 3. O que a literatura já sabe (60 s)
 
@@ -34,11 +34,11 @@ O método é quantitativo, observacional e comparativo, em seis passos. Primeiro
 
 ## Slide 8. Corpus (50 s)
 
-A busca encontrou 396 candidatos. Conferindo o nome jurídico de cada publicador, que a loja mostra em "Sobre o desenvolvedor", 376 ficaram como oficiais: 85 federais, 199 estaduais e 92 municipais. Saíram 20: 13 eram empresas privadas usando nome de serviço público e 7 eram contas de pessoa física. Entre os 376, 100 tratam dado de saúde ou biométrico. O controle comercial tem 252 aplicativos. Essa classificação ainda será conferida antes da coleta principal.
+A busca encontrou 396 candidatos. Conferindo o nome jurídico de cada publicador, que a loja mostra em "Sobre o desenvolvedor", 376 ficaram como oficiais. No gráfico, são 85 federais, 199 estaduais e 92 municipais; a parte escura de cada barra mostra os que tratam dado de saúde ou biometria, 100 no total. Saíram 20: 13 eram empresas privadas usando nome de serviço público e 7 eram contas de pessoa física. O controle comercial tem 252 aplicativos. Essa classificação ainda é preliminar e será conferida antes da coleta principal.
 
 ## Slide 9. Anúncios declarados (45 s)
 
-Um primeiro dado, tirado dos metadados da loja: nenhum dos 376 aplicativos do governo declara exibir anúncios, contra 63 dos 190 aplicativos do controle original, ou 33,2%. Mas isso fala só de anúncio, e quem declara é o próprio publicador. Um aplicativo sem anúncio pode ter um SDK de análise de uso, por exemplo. Quem vai dizer quais SDKs existem é a análise dos pacotes.
+Um primeiro dado, tirado dos metadados da loja: nenhum dos 376 aplicativos do governo declara exibir anúncios, contra 63 dos 190 aplicativos do controle original, ou 33,2%. No gráfico, as linhas mostram o intervalo de confiança de 95%: no governo, de 0 a 1%; no controle, de 27% a 40%. Mas isso fala só de anúncio, e quem declara é o próprio publicador. Um aplicativo sem anúncio pode ter um SDK de análise de uso, por exemplo. Quem vai dizer quais SDKs existem é a análise dos pacotes.
 
 ## Slide 10. Piloto dos detectores (60 s)
 

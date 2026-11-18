@@ -6,7 +6,7 @@ Atualização: 18/11/2026.
 
 | Exigência | Data | Situação |
 |---|---|---|
-| Simulação de defesa: 15 min de apresentação e 10 de perguntas | terça, 24/11 | Slides aprovados verbalmente pelo orientador em 18/11. Falta ensaiar |
+| Simulação de defesa: 15 min de apresentação e 10 de perguntas | terça, 24/11, por volta das 10h30 (confirmado) | Slides aprovados verbalmente pelo orientador em 18/11. Falta ensaiar |
 | Projeto em PDF no Canvas, no modelo do IDP | até 03/12 | Escrito. Falta incorporar os comentários do orientador e da simulação |
 | Defesa final: 15 min de apresentação e 15 de perguntas | 08/12, 10/12 ou 15/12 | Usa os mesmos slides, atualizados |
 
@@ -14,7 +14,7 @@ Atualização: 18/11/2026.
 
 | # | O quê | Até |
 |---|---|---|
-| 1 | Confirmar no Canvas o dia e o horário da simulação | 19/11 |
+| 1 | ~~Confirmar no Canvas o dia e o horário da simulação~~ Feito: 24/11, por volta das 10h30 | 19/11 |
 | 2 | Estudar pelo guia, partes 1 a 8 | 21/11 |
 | 3 | Ensaiar a apresentação com cronômetro pelo menos três vezes, uma delas gravada (guia, parte 13) | 23/11 |
 | 4 | Treinar as perguntas sem olhar as respostas (guia, partes 14, 15 e 16) | 23/11 |

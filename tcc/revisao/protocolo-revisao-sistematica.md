@@ -399,12 +399,13 @@ que sustentam a decisão.
 
 ## 11 Cronograma das etapas pendentes
 
-Situação em 13/11/2026: a F1 tem decisões registradas; a F2 tem **79 propostas em 357 registros: 71 I e 8 E**, ainda não conferidas pelo autor. Restam 278 decisões em aberto: 131 por acesso, duas por versão divergente, duas por dúvida de escopo e 143 T cujo tratamento será definido com o orientador. Foram obtidos 80 textos correspondentes. R0375 é a exclusão adicional por duplicidade comprovada em R0192, sem texto próprio obtido. Não houve contato com autores. Desde a versão 1.6, texto não obtido conta como não recuperado, sem exclusão (Seção 6). A revisão sistemática, a extração e a avaliação de qualidade permanecem em andamento. Ver `dados/revisao/LEIA-ME_leitura_F2_20261113.md` e o registro por ID.
+Situação em 21/11/2026: a F1 tem decisões registradas; a F2 tem **79 propostas em 357 registros: 71 I e 8 E**. Em 21/11, o autor conferiu 18 delas (12 I e 6 E, cinco com ressalvas), com leitura integral e avaliação QA1–QA8; as outras 61 (59 I e 2 E) ainda não foram conferidas. Restam 278 decisões em aberto: 131 por acesso, duas por versão divergente, duas por dúvida de escopo e 143 T cujo tratamento será definido com o orientador. Foram obtidos 80 textos correspondentes. R0375 é a exclusão adicional por duplicidade comprovada em R0192, sem texto próprio obtido. Não houve contato com autores. Desde a versão 1.6, texto não obtido conta como não recuperado, sem exclusão (Seção 6). A revisão sistemática, a extração e a avaliação de qualidade permanecem em andamento. Ver `dados/revisao/LEIA-ME_leitura_F2_20261113.md`, `dados/revisao/RELATORIO_auditoria_documental_F2_20261121.md` e o registro por ID em `dados/revisao/leitura_F2_registro_20261121_validacao_parcial.csv`.
 
-Para a entrega do projeto em 03/12, a síntese usa as 71 propostas de inclusão registradas até 13/11, ainda a conferir (Seção 2.7 do projeto). O restante fica para o início do Capstone II:
+Para a entrega do projeto em 03/12, a síntese usa as 71 propostas de inclusão registradas até 13/11, 12 delas conferidas pelo autor em 21/11 (Seção 2.7 do projeto). O restante fica para o início do Capstone II:
 
 | Prazo previsto | Atividade |
 |---|---|
+| Fevereiro de 2027 | Conferir as 61 decisões da F2 ainda não conferidas, com leitura integral e avaliação QA1–QA8 |
 | Fevereiro de 2027 | Buscar pelo Portal de Periódicos da CAPES os textos não obtidos e ler os 278 registros em aberto, inclusive os 143 T |
 | Fevereiro de 2027 | Conferência cega dos 125 registros (Seção 7.2) |
 | Fevereiro de 2027 | Bola de neve a partir dos estudos selecionados e atualização da síntese e do fluxograma PRISMA |
@@ -463,6 +464,7 @@ Para a entrega do projeto em 03/12, a síntese usa as 71 propostas de inclusão 
 | 13/11/2026 | 1.5 | Rodada documental F2: 71 propostas I, 8 E e registro de acesso e evidências; 143 T preservados | Distinguir propostas da validação pessoal, conferir versões e evitar exclusão por falha de acesso sem cumprir EC7 |
 | 15/11/2026 | 1.6 | EC7 retirado: texto não obtido pelos links, pela CAPES (CAFe) ou por cópias dos autores conta como "não recuperado" no PRISMA, sem pedido ao autor | O PRISMA 2020 já tem essa categoria; a espera de sete dias por resposta não cabe no prazo de 03/12. Nenhum registro havia sido excluído por EC7 |
 | 15/11/2026 | 1.7 | O reteste vira conferência cega por amostra, sem intervalo de sete dias e sem conferência integral prévia; κ < 0,6 leva a uma segunda amostra; Seções 7.2, 7.3, 11, 12.5 e 13 atualizadas | A classificação F1 registrada não foi produzida inteiramente pelo autor; a comparação útil é entre a avaliação cega do autor e essa classificação, e o prazo de 03/12 não comporta a conferência integral dos 1.249 registros |
+| 21/11/2026 | 1.8 | Conferência pelo autor de 18 das 79 decisões da F2 (12 I e 6 E), com leitura integral e QA1–QA8; Seção 11 atualizada | Registrar a validação feita e separar as 61 decisões ainda não conferidas |
 
 ### 12.4 Triagem por título e resumo (F1)
 

@@ -1,12 +1,12 @@
 # Roteiro da simulação de defesa
 
-Versão de 21/11/2026, com o foco sugerido pelo orientador: o confronto entre o que os aplicativos do governo declaram e o que eles fazem, à luz da LGPD. Os aplicativos comerciais ficam só como contexto. São 15 minutos de apresentação e 10 de perguntas. As falas abaixo somam cerca de 12 minutos, o que deixa folga para pausas. O mesmo texto está nas notas de cada slide. Ensaie com cronômetro pelo menos três vezes e grave uma delas.
+Versão revisada em 21/11/2026, com foco nas declarações de privacidade dos aplicativos governamentais e nos indícios técnicos obtidos na análise dos pacotes. Os aplicativos comerciais ficam só como contexto. São 15 minutos de apresentação e 10 de perguntas. As falas abaixo somam cerca de 12 minutos, o que deixa folga para pausas. O mesmo texto está nas notas de cada slide. Ensaie com cronômetro pelo menos três vezes e grave uma delas.
 
 Não é para decorar palavra por palavra: leia algumas vezes e fale com as suas palavras, mantendo os números exatos.
 
 ## Slide 1. Abertura (30 s)
 
-Bom dia. Meu nome é Claudio, e meu projeto se chama "Quem mais está dentro do aplicativo?". Eu investigo se os aplicativos oficiais do governo brasileiro carregam bibliotecas de rastreamento de outras empresas e se o que eles fazem com os dados bate com o que declaram ao cidadão. Neste semestre, a entrega é o projeto: o problema, o método e os testes que mostram que ele é viável. A coleta principal fica para o Capstone II.
+Bom dia. Meu nome é Claudio, e meu projeto se chama "Quem mais está dentro do aplicativo?". Meu trabalho investiga quais componentes de terceiros estão presentes em aplicativos do governo e se as informações publicadas sobre coleta e compartilhamento de dados são compatíveis com esses componentes. A presença de um SDK, sozinha, não prova envio de dados. Neste semestre, a entrega é o projeto: o problema, o método e os testes que mostram que ele é viável. A coleta principal fica para o Capstone II.
 
 ## Slide 2. Por que este tema (50 s)
 
@@ -18,19 +18,19 @@ Binns e colegas analisaram cerca de 959 mil aplicativos da Google Play e mostrar
 
 ## Slide 4. O que este trabalho acrescenta (50 s)
 
-São três coisas. Primeiro, o caso brasileiro: no estudo internacional, o Brasil aparece só em exemplos, sem separar esfera de governo nem os aplicativos que tratam dados sensíveis. Segundo, o confronto entre o que o aplicativo declara e o que ele faz. O governo tem de cumprir a LGPD e a política de privacidade que ele mesmo publica; então cada SDK encontrado, e cada destino de dados observado, vai ser comparado com o que o aplicativo diz ao cidadão. Se não bate, é um sinal de alerta. Terceiro, o instrumento: vou rodar mais de um detector sobre os mesmos pacotes e medir quanto eles concordam, porque a taxa publicada depende da ferramenta usada.
+São três coisas. Primeiro, o caso brasileiro: no estudo internacional, o Brasil aparece só em exemplos, sem separar esfera de governo nem os aplicativos que tratam dados sensíveis. Segundo, o confronto entre as declarações de privacidade e o que pode ser identificado tecnicamente. Vou verificar a função dos SDKs e as categorias e finalidades declaradas. Onde houver observação de tráfego, também vou comparar os destinatários efetivos. Uma divergência é um indício a investigar, não prova isolada de ilegalidade. Terceiro, o instrumento: vou rodar mais de um detector sobre os mesmos pacotes e medir quanto eles concordam, porque a taxa publicada depende da ferramenta usada.
 
 ## Slide 5. Pergunta e objetivos (50 s)
 
-A pergunta de pesquisa é: em que medida os aplicativos oficiais do governo brasileiro embarcam SDKs de rastreamento de terceiros sem declará-los ao cidadão? A resposta é um número, e não um sim ou não. O objetivo geral é medir a proporção de SDKs e de envios de dados que não aparecem no que esses aplicativos declaram, à luz da LGPD. Os objetivos específicos são: confirmar quais aplicativos são de fato oficiais; detectar os SDKs por esfera de governo e por tratamento de dado sensível; confrontar o que for encontrado com a política de privacidade e com a seção "Segurança dos dados" da loja; observar numa subamostra para onde os dados vão, inclusive se saem do país; e medir a concordância entre os detectores.
+A pergunta é: em que medida a presença de SDKs de rastreamento em aplicativos governamentais é compatível com o que eles informam sobre coleta e compartilhamento de dados? O objetivo é medir as divergências documentais e, numa subamostra, comparar o que foi declarado com os fluxos de rede observados, sem confundir presença de código com envio de dados. Os objetivos específicos são: confirmar quais aplicativos são de fato oficiais; detectar os SDKs por esfera de governo e por tratamento de dado sensível; confrontar o que for encontrado com a política de privacidade e com a seção "Segurança dos dados" da loja; observar numa subamostra para onde os dados vão, inclusive se saem do país; e medir a concordância entre os detectores.
 
 ## Slide 6. Hipóteses (70 s)
 
-São duas hipóteses, cada uma com um critério definido antes da coleta. A principal, H1, diz que pelo menos 10% dos pares aplicativo–SDK não têm declaração compatível na política de privacidade ou na loja; eu a rejeito se o limite superior do intervalo de confiança ficar abaixo de 10%. O limiar é conservador: Andow e colegas encontraram declarações ausentes ou incorretas em até 42,4% dos casos. H2 diz que os aplicativos que tratam dado de saúde ou biométrico não rastreiam menos que os outros do governo. A concordância entre detectores não é hipótese, e sim uma checagem do instrumento, feita antes: se o κ de Fleiss ficar abaixo de 0,6, a taxa depende da ferramenta, e isso entra como limitação. Os 252 aplicativos comerciais que separei ficam só como contexto, sem teste de hipótese: a referência principal é a lei e o que o próprio aplicativo declara. Esses critérios serão congelados com o orientador antes da análise principal.
+Tenho uma hipótese central e uma secundária. A H2 pergunta se ao menos 10% dos pares aplicativo–SDK apresentam divergência material entre a função do componente e as categorias de dados e finalidades declaradas. Esses 10% são um limiar operacional do estudo, não uma tolerância prevista na LGPD. Andow e colegas encontraram até 42,4% de inconsistências em outra população e com outro método, portanto não é uma taxa diretamente comparável. A H3 analisa se os aplicativos com dados sensíveis apresentam menor prevalência de SDKs do que os demais do governo. A antiga comparação comercial, H1, permanece apenas como contexto. A antiga H4 virou checagem de concordância dos detectores, não teste independente da pesquisa.
 
 ## Slide 7. Método (60 s)
 
-O método é quantitativo e observacional, em seis passos. Primeiro, o corpus: busquei aplicativos na Google Play com 21 termos ligados a serviço público e depois expandi pelo catálogo de cada órgão encontrado. Segundo, uma referência de 252 aplicativos comerciais, que serve só de contexto. Terceiro, os pacotes: a versão atual de cada aplicativo, baixada da Google Play com o hash registrado; o AndroZoo, que é um acervo acadêmico, serve para outra pessoa reproduzir a análise e para medir quanto a versão arquivada está defasada. Quarto, a detecção, com uma checagem do instrumento: mais de um detector sobre os mesmos pacotes. Quinto, o confronto com a política de privacidade e com a seção "Segurança dos dados" da loja, que é o centro do trabalho. Sexto, a estatística, com o plano congelado antes. O corpus, a referência comercial e um piloto com 20 pacotes já foram feitos.
+O método tem seis etapas. Primeiro, confirmar os aplicativos oficiais encontrados na Google Play. Segundo, caracterizar o corpus por esfera e tipo de serviço. Terceiro, obter a versão atual dos pacotes, quando tecnicamente disponível, registrando o hash; o AndroZoo será usado para reprodutibilidade e comparação de versões. Quarto, identificar os SDKs e verificar se os detectores concordam. Quinto, confrontar cada componente com as categorias de dados e finalidades informadas nas políticas e na seção "Segurança dos dados". Sexto, calcular as proporções de divergência. A observação dinâmica de uma subamostra complementará a análise. Os dados e o piloto já realizados demonstram viabilidade, não resultados finais.
 
 ## Slide 8. Corpus (50 s)
 
@@ -46,7 +46,7 @@ O piloto testou o instrumento em 20 pacotes do AndroZoo, com três detectores. O
 
 ## Slide 11. Onde estão os pacotes (40 s)
 
-Outro achado: o AndroZoo tinha só 92 dos 396 candidatos do governo, 23,2%, contra 84,2% dos aplicativos comerciais. Mesmo comparando aplicativos da mesma faixa de instalações, a chance de um aplicativo do governo estar no acervo é bem menor. Por isso, todos os aplicativos vão ser baixados da loja, na versão atual, com o hash registrado; o AndroZoo fica para reproduzir a análise e medir a defasagem.
+Na consulta histórica, encontrei no AndroZoo apenas 92 dos 396 candidatos governamentais, ou 23,2%. Isso mostra que depender exclusivamente desse acervo poderia deixar a maior parte do corpus de fora. Vou priorizar as versões disponíveis na Google Play e documentar as limitações de coleta. As versões arquivadas no AndroZoo permitem avaliar mudanças entre versões e tornar parte da análise reproduzível.
 
 ## Slide 12. Revisão sistemática (55 s)
 
@@ -54,11 +54,11 @@ A fundamentação vem de uma revisão sistemática, seguindo Kitchenham e o PRIS
 
 ## Slide 13. Limitações e próximos passos (65 s)
 
-As limitações: achar o código de um SDK no pacote não prova que ele roda nem que envia dados, e por isso há a análise dinâmica numa subamostra. O estudo cobre só Android e Google Play. As políticas costumam declarar categorias de dados, e não a lista de SDKs; por isso o confronto separa a menção ao SDK pelo nome, a declaração por categoria e a ausência de menção. A seleção da revisão tem um revisor, e os detectores compartilham bases ou métodos de extração. Até a entrega de 3 de dezembro, ajusto o texto a esse foco e passo o projeto pelo orientador. No Capstone II, termino a revisão, confiro as classificações e defino com o orientador o detector principal e o plano de análise. Depois vêm a coleta, a detecção, o confronto com as políticas e a análise dinâmica.
+As limitações: achar o código de um SDK no pacote não prova que ele roda nem que envia dados, e por isso há a análise dinâmica numa subamostra. O estudo cobre só Android e Google Play. As políticas costumam declarar categorias de dados, e não a lista de SDKs; por isso o confronto separa a menção ao SDK pelo nome, a declaração por categoria e a ausência de menção. A seleção da revisão tem um revisor, e os detectores compartilham bases ou métodos de extração. Até 3 de dezembro, incorporo os comentários do orientador e da simulação e faço a revisão final do texto. No Capstone II, termino a revisão, confiro as classificações e defino com o orientador o detector principal e o plano de análise. Depois vêm a coleta, a detecção, o confronto com as políticas e a análise dinâmica.
 
 ## Slide 14. Encerramento (10 s)
 
-A pergunta que fica é: o que os aplicativos do governo fazem com os nossos dados bate com o que eles dizem? Obrigado.
+A pergunta que orienta o trabalho é simples: as práticas associadas aos componentes de terceiros nos aplicativos do governo são compatíveis com o que é informado ao cidadão? Obrigado.
 
 ---
 
@@ -73,20 +73,20 @@ O caso brasileiro separado por esfera e por dado sensível, o confronto entre o 
 **Ter o SDK no pacote prova que dados são enviados?**
 Não. A análise estática mostra presença de código. O envio só é observado na análise dinâmica da subamostra. O texto separa presença, transmissão observada e declaração.
 
-**Se o detector B errou 71,5%, por que mantê-lo?**
+**Se o detector B teve 71,5% das detecções questionadas, por que mantê-lo?**
 Ele não é a medida principal proposta. Como A e B usam a mesma base com métodos diferentes, a diferença ilustra o efeito do método, que a checagem do instrumento mede. Os 88 casos foram considerados falsos positivos potenciais na adjudicação interna, não confirmados por um padrão de referência externo.
 
 **Como você vai obter os pacotes? Isso é permitido?**
 Todos na versão atual da Google Play, que é a que o cidadão instala, com conta própria, registrando o hash e sem redistribuir os pacotes. O AndroZoo serve para outra pessoa reproduzir a análise e para medir a defasagem entre a versão arquivada e a atual. A coleta será testada em cinco aplicativos no início do Capstone II.
 
-**Por que o limiar de 10% na H1?**
-É conservador. Andow e colegas, com o PoliCheck, encontraram declarações ausentes ou incorretas em até 42,4% dos casos. Se o limite superior do intervalo ficar abaixo de 10%, a aderência dos aplicativos do governo é bem maior do que a literatura costuma encontrar.
+**Por que o limiar de 10% na H2?**
+É um limiar operacional definido para tornar a hipótese testável e identificar uma magnitude de divergência considerada relevante. O estudo de Andow encontrou até 42,4% com outra unidade de análise e outro método; serve de contexto, não de comparação direta, nem de parâmetro legal.
 
 **O que "soberania de dados" quer dizer no seu trabalho?**
 A capacidade do Estado de saber e decidir para onde vão os dados gerados nos seus serviços. Mede-se pela dependência de SDKs de terceiros e, na subamostra, pelos destinos observados. A presença de SDK de empresa estrangeira já mostra dependência de fornecedores estrangeiros; dizer que dados foram para o exterior exige a análise dinâmica. A nacionalidade do fornecedor ou o país de um IP não provam, sozinhos, uma transferência internacional.
 
 **A ANPD não é uma autoridade?**
-Desde a Lei 15.352/2026, é a Agência Nacional de Proteção de Dados, autarquia de natureza especial vinculada ao Ministério da Justiça e Segurança Pública. Os guias da ANPD citados no texto são anteriores e saíram com o nome antigo.
+A ANPD tornou-se autarquia especial em 2022. Em 2026, a Lei 15.352 a transformou em agência reguladora, com a denominação Agência Nacional de Proteção de Dados. Os documentos anteriores preservam o nome institucional vigente à época.
 
 **Quantos artigos a revisão incluiu?**
 Até 13/11, foram registradas 71 propostas de inclusão e 8 de exclusão. Em 21/11 conferi 18 dessas decisões (12 inclusões e 6 exclusões), com leitura integral e avaliação de qualidade. As outras 61 e os 278 registros em aberto ficam para o início do Capstone II. A Seção 2.7 traz a síntese provisória.
@@ -94,8 +94,8 @@ Até 13/11, foram registradas 71 propostas de inclusão e 8 de exclusão. Em 21/
 **Por que você não compara com aplicativos comerciais?**
 O governo tem obrigações próprias: a LGPD e a política de privacidade que ele mesmo publica. Por isso a referência principal é essa, e não o mercado. Uma comparação justa com o mercado exigiria uma amostra comercial sem viés, que a busca da loja não oferece, porque ela ordena por relevância e quase não devolve aplicativos comerciais pequenos. Os 252 comerciais ficam como contexto, sem teste de hipótese.
 
-**O que conta como SDK declarado?**
-Separo três casos: a política cita o SDK ou o fornecedor pelo nome; a política ou a seção "Segurança dos dados" cita a categoria de dado e a finalidade; ou não há menção. Política indisponível é contada à parte. A política costuma declarar categorias, e não a lista de SDKs, por isso essa separação importa.
+**O que conta como declaração compatível?**
+A política não precisa necessariamente listar cada SDK pelo nome. Primeiro, identifico a função de coleta ou compartilhamento atribuída ao componente. Depois, verifico se a política ou a seção "Segurança dos dados" descreve categorias de dados e finalidades compatíveis. Informação insuficiente e política indisponível são registradas à parte, sem serem automaticamente tratadas como omissão.
 
 **Por que mudou o foco desde a proposta?**
 Por sugestão do orientador. Comparar com o mercado exigiria montar uma amostra comercial sem viés, um trabalho grande que não responde à pergunta mais importante: se o governo faz o que diz. O confronto com a própria declaração e com a LGPD responde a isso diretamente.
@@ -111,7 +111,7 @@ Responda como de fato aconteceu, incluindo as ferramentas usadas e o que o orien
 | Slide | Onde está no projeto |
 |---|---|
 | 2 a 4 | Seções 1 e 2; Binns et al. (2018b); Kollnig et al. (2021a, 2021b); Samarasinghe et al. (2022) |
-| 5 e 6 | Seções 1.1 a 1.4 e 3.10 (o texto será ajustado a este foco até 03/12) |
+| 5 e 6 | Problema, objetivos, hipóteses e resultados esperados no texto-fonte atualizado |
 | 7 | Seções 3.1 a 3.5 |
 | 8 a 11 | Seção 3.6 |
 | 12 | Seções 2.7 e 3.7 e Figura 1 |

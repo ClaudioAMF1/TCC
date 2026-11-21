@@ -1,32 +1,44 @@
 # O que falta
 
-Atualização: 15/11/2026.
+Atualização: 21/11/2026.
 
 ## O que a disciplina exige
 
 | Exigência | Data | Situação |
 |---|---|---|
-| Projeto em PDF no Canvas, com introdução, referencial teórico, metodologia, recursos e cronograma, no modelo do IDP | até 03/12 | Escrito. Falta você revisar a Seção 2.7 (item 1 abaixo) |
-| Simulação de defesa: 15 min de apresentação e 10 de perguntas | 24/11, 26/11 ou 01/12 | Slides e fala prontos |
+| Simulação de defesa: 15 min de apresentação e 10 de perguntas | terça, 24/11, por volta das 10h30 (confirmado) | Slides aprovados verbalmente pelo orientador em 18/11. Falta ensaiar |
+| Projeto em PDF no Canvas, no modelo do IDP | até 03/12 | Escrito. Comentários do orientador e foco sugerido por ele em 21/11 (declarado × feito, comerciais só como contexto) já aplicados. Falta incorporar a simulação |
 | Defesa final: 15 min de apresentação e 15 de perguntas | 08/12, 10/12 ou 15/12 | Usa os mesmos slides, atualizados |
 
-Termo de aceite e fichas de orientação: resolvidos. Idioma: português.
+## Até a simulação (24/11)
 
-## O que você precisa fazer
+| # | O quê | Até |
+|---|---|---|
+| 1 | ~~Confirmar no Canvas o dia e o horário da simulação~~ Feito: 24/11, por volta das 10h30 | 19/11 |
+| 2 | Estudar pelo guia, partes 1 a 8 | 21/11 |
+| 3 | Ensaiar a apresentação com cronômetro pelo menos três vezes, uma delas gravada (guia, parte 13) | 23/11 |
+| 4 | Treinar as perguntas sem olhar as respostas (guia, partes 14, 15 e 16) | 23/11 |
+| 5 | Levar os slides em PDF e em .pptx, num pendrive e na nuvem | 24/11 |
+| 6 | Fazer o ensaio da apresentação que o orientador ofereceu, de preferência na segunda | 23/11 |
+| 7 | Substituir no Overleaf o `main.tex` com o novo foco e avisar o orientador | 23/11 |
 
-| # | O quê | Por quê | Até |
-|---|---|---|---|
-| 1 | Ler os principais estudos da Seção 2.7 e ajustar o texto dela com as suas palavras. O que cada estudo faz está em `tcc/revisao/sintese-F2-propostas.md` | O regulamento exige a revisão bibliográfica no projeto (Art. 25, §3º), e a banca pergunta sobre o que você cita | 01/12 |
-| 2 | Ensaiar a apresentação com cronômetro, usando a fala que está nas notas dos slides | A simulação vale nota, e o controle do tempo é um critério | véspera da simulação |
-| 3 | Mandar o projeto ao orientador, pedir ajustes e perguntar quem será o terceiro membro da banca | Ele orienta a parte teórica, e a folha de aprovação precisa dos nomes | 01/12 |
-| 4 | Compilar no Overleaf (XeLaTeX) e enviar o PDF no Canvas | É a entrega | 02/12 |
+## Até a entrega (03/12)
 
-Se o orientador ou a avaliadora pedirem mudanças, me mande o que pediram que eu ajusto o texto e os slides.
+| # | O quê | Até |
+|---|---|---|
+| 1 | Quando os comentários do orientador chegarem, mandar para o Claude aplicar no texto. Se não chegarem até 27/11, mandar um lembrete a ele | 27/11 |
+| 2 | Anotar as perguntas e sugestões da banca na simulação e mandar para o Claude aplicar | 25/11 |
+| 3 | Decidir com o orientador se a Caixa fica no corpus (com uma frase explicando o critério) ou sai | com os comentários |
+| 4 | Se a disciplina informar o terceiro examinador, passar o nome para a folha de aprovação; se não, a linha fica em branco | 01/12 |
+| 5 | Conferir o PDF final gerado pelo Claude e enviar no Canvas | 03/12 |
+
+O texto não muda enquanto o orientador comenta, para não perder os comentários dele. Todas as mudanças entram de uma vez, depois dos comentários e da simulação.
 
 ## Fica para o Capstone II
 
 Nada disto é exigido para 03/12. O texto já diz que essas etapas vêm depois.
 
+- Conferência das 61 decisões da leitura completa ainda não conferidas (18 das 79 foram conferidas em 21/11).
 - Leitura dos 278 registros da revisão ainda em aberto, inclusive buscando os textos pela CAPES, e bola de neve.
 - Conferência cega de 125 registros da triagem.
 - Conferência da classificação dos 376 aplicativos.

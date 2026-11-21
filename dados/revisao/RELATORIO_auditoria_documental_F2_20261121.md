@@ -50,7 +50,7 @@ As fontes e observações **por ID** estão nas colunas adicionadas de `leitura_
 
 ## Registros ainda sem validação científica concluída
 
-Os **61** registros com proposta I/E não examinados nesta rodada e os **278** sem decisão continuam dependentes de conferência individual dos textos corretos ou definição dos critérios. O código `validacao_pessoal` segue **pendente nas 357 linhas**, pois significa a conferência assumida e registrada pelo autor, não uma execução automática. Não é correto transformá-lo em `validado` sem concluir a etapa correspondente.
+Os **61** registros com proposta I/E não examinados nesta rodada e os **278** sem decisão continuam dependentes de conferência individual dos textos corretos ou definição dos critérios. No arquivo histórico de 13/11, `validacao_pessoal` permanece `pendente` em 357 linhas. **Atualização de 21/11:** o autor informou ter conferido os pareceres desta auditoria e concordado com eles. O novo arquivo `leitura_F2_registro_20261121_validacao_parcial.csv` registra essa confirmação em 18 registros (13 sem ressalvas adicionais e cinco com ressalvas), mantendo 339 pendentes. A concordância é com os pareceres documentais: não implica leitura integral, extração ou conclusão das perguntas QA1–QA8.
 
 A conferência cega de 125 registros F1 permanece uma etapa **diferente** da F2: não deve ser simulada a partir da classificação inicial ou de decisões já visíveis, sob pena de invalidar o caráter cego e o κ de Cohen.
 
@@ -66,3 +66,7 @@ Descrever **71 propostas preliminares de inclusão**, não 71 inclusões definit
 
 ---
 **Limitação de escopo:** esta auditoria verifica dados, fontes e coerência de uma parte dos artigos; não substitui uma revisão F2 integral, a decisão acadêmica de inclusão pelo autor ou o aval do orientador.
+
+## Registro da concordância do autor (21/11/2026)
+
+O autor confirmou, nesta data, que conferiu os resultados comunicados da auditoria documental e concorda com os pareceres. A confirmação foi registrada em **12 propostas I** e **6 propostas E**, incluindo cinco registros com ressalvas. O arquivo original de 13/11 não foi sobrescrito; a versão atualizada foi criada em `dados/revisao/leitura_F2_registro_20261121_validacao_parcial.csv`, com campos `data_validacao_pessoal` e `escopo_validacao_pessoal` para preservar a proveniência. Os 339 demais registros não foram validados pessoalmente nesta etapa. A amostra cega da F1 continua intacta.

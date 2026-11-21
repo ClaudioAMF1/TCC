@@ -1,6 +1,6 @@
 # Protocolo da revisão sistemática
 
-**Versão 1.8, 21/11/2026.** Segue as diretrizes de Kitchenham e Charters (2007)
+**Versão 1.11, 21/11/2026.** Segue as diretrizes de Kitchenham e Charters (2007)
 para revisões sistemáticas em engenharia de software, com bola de neve conforme
 Wohlin (2014) e relato do fluxo conforme o PRISMA 2020 (PAGE et al., 2021).
 
@@ -461,7 +461,7 @@ Para a entrega do projeto em 03/12, a síntese usa as 71 propostas de inclusão 
 | 21/11/2026 | 1.8 | Conferência pelo autor de 18 das 79 decisões da F2 (12 I e 6 E), com leitura integral e QA1–QA8; Seção 11 atualizada | Registrar a validação feita e separar as 61 decisões ainda não conferidas |
 | 21/11/2026 | 1.9 | Hipóteses renumeradas após a mudança de foco sugerida pelo orientador: a principal (H1) passa a ser o confronto entre o detectado e o declarado; a comparação com aplicativos comerciais vira contexto; a de dado sensível passa a H2 e a de concordância entre detectores, a H3. Coluna "Serve a" da Seção 2 atualizada | Simplificar o desenho: o poder público responde à LGPD e às próprias declarações, e uma amostra comercial sem viés exigiria trabalho desproporcional |
 | 21/11/2026 | 1.10 | A concordância entre detectores deixa de ser hipótese e passa a checagem do instrumento, por sugestão do orientador; ficam duas hipóteses (H1, declaração; H2, dado sensível) | O foco é a aderência às declarações; a concordância mede o instrumento, e não os aplicativos |
-| 21/11/2026 | 1.8 | Padronizada a identificação com a proposta original: H2 = transparência como foco; H3 = dados sensíveis; H1 comercial = contexto; H4 = checagem do instrumento. O recorte e os critérios permanecem. | Evitar que renumerar hipóteses entre texto, slides e protocolo gere confusão na banca; sem refazer busca ou contagens |
+| 21/11/2026 | 1.11 | Padronizada a identificação com a proposta original: H2 = transparência como foco; H3 = dados sensíveis; H1 comercial = contexto; H4 = checagem do instrumento. O recorte e os critérios permanecem. | Evitar que renumerar hipóteses entre texto, slides e protocolo gere confusão na banca; sem refazer busca ou contagens |
 
 ### 12.4 Triagem por título e resumo (F1)
 

@@ -7,7 +7,7 @@ Atualização: 21/11/2026.
 | Exigência | Data | Situação |
 |---|---|---|
 | Simulação de defesa: 15 min de apresentação e 10 de perguntas | terça, 24/11, por volta das 10h30 (confirmado) | Slides aprovados verbalmente pelo orientador em 18/11. Falta ensaiar |
-| Projeto em PDF no Canvas, no modelo do IDP | até 03/12 | Escrito. Recorte alinhado às orientações de 21/11: correspondência entre achados técnicos e declarações; referência comercial apenas contextual. Revisar PDF e incorporar comentários da simulação |
+| Projeto em PDF no Canvas, no modelo do IDP | até 03/12 | Texto-fonte revisto conforme as orientações de 21/11. **Ainda falta recompilar PDF/DOCX e substituir os slides binários versionados**; depois incorporar observações da simulação |
 | Defesa final: 15 min de apresentação e 15 de perguntas | 08/12, 10/12 ou 15/12 | Usa os mesmos slides, atualizados |
 
 ## Até a simulação (24/11)

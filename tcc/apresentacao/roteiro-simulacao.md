@@ -26,11 +26,11 @@ A pergunta de pesquisa é: em que medida os aplicativos oficiais do governo bras
 
 ## Slide 6. Hipóteses (70 s)
 
-São três hipóteses, cada uma com um critério definido antes da coleta. A principal, H1, diz que pelo menos 10% dos pares aplicativo–SDK não têm declaração compatível na política de privacidade ou na loja; eu a rejeito se o limite superior do intervalo de confiança ficar abaixo de 10%. H2 diz que os aplicativos que tratam dado de saúde ou biométrico não rastreiam menos que os outros do governo. H3 diz que a concordância entre detectores é baixa, com κ de Fleiss abaixo de 0,6. Os 252 aplicativos comerciais que separei ficam só como contexto, sem teste de hipótese: a referência principal é a lei e o que o próprio aplicativo declara. Esses critérios serão congelados com o orientador antes da análise principal.
+São duas hipóteses, cada uma com um critério definido antes da coleta. A principal, H1, diz que pelo menos 10% dos pares aplicativo–SDK não têm declaração compatível na política de privacidade ou na loja; eu a rejeito se o limite superior do intervalo de confiança ficar abaixo de 10%. O limiar é conservador: Andow e colegas encontraram declarações ausentes ou incorretas em até 42,4% dos casos. H2 diz que os aplicativos que tratam dado de saúde ou biométrico não rastreiam menos que os outros do governo. A concordância entre detectores não é hipótese, e sim uma checagem do instrumento, feita antes: se o κ de Fleiss ficar abaixo de 0,6, a taxa depende da ferramenta, e isso entra como limitação. Os 252 aplicativos comerciais que separei ficam só como contexto, sem teste de hipótese: a referência principal é a lei e o que o próprio aplicativo declara. Esses critérios serão congelados com o orientador antes da análise principal.
 
 ## Slide 7. Método (60 s)
 
-O método é quantitativo e observacional, em seis passos. Primeiro, o corpus: busquei aplicativos na Google Play com 21 termos ligados a serviço público e depois expandi pelo catálogo de cada órgão encontrado. Segundo, uma referência de 252 aplicativos comerciais, que serve só de contexto. Terceiro, os pacotes: o AndroZoo, que é um acervo acadêmico, quando o aplicativo está lá, e a própria loja nos demais casos, sempre com o hash registrado. Quarto, a detecção, com mais de um detector. Quinto, o confronto com a política de privacidade e com a seção "Segurança dos dados" da loja, que é o centro do trabalho. Sexto, a estatística, com o plano congelado antes. O corpus, a referência comercial e um piloto com 20 pacotes já foram feitos.
+O método é quantitativo e observacional, em seis passos. Primeiro, o corpus: busquei aplicativos na Google Play com 21 termos ligados a serviço público e depois expandi pelo catálogo de cada órgão encontrado. Segundo, uma referência de 252 aplicativos comerciais, que serve só de contexto. Terceiro, os pacotes: a versão atual de cada aplicativo, baixada da Google Play com o hash registrado; o AndroZoo, que é um acervo acadêmico, serve para outra pessoa reproduzir a análise e para medir quanto a versão arquivada está defasada. Quarto, a detecção, com uma checagem do instrumento: mais de um detector sobre os mesmos pacotes. Quinto, o confronto com a política de privacidade e com a seção "Segurança dos dados" da loja, que é o centro do trabalho. Sexto, a estatística, com o plano congelado antes. O corpus, a referência comercial e um piloto com 20 pacotes já foram feitos.
 
 ## Slide 8. Corpus (50 s)
 
@@ -46,7 +46,7 @@ O piloto testou o instrumento em 20 pacotes do AndroZoo, com três detectores. O
 
 ## Slide 11. Onde estão os pacotes (40 s)
 
-Outro achado: o AndroZoo tinha só 92 dos 396 candidatos do governo, 23,2%, contra 84,2% dos aplicativos comerciais. Mesmo comparando aplicativos da mesma faixa de instalações, a chance de um aplicativo do governo estar no acervo é bem menor. Então a maior parte do corpus vai ser baixada direto da loja, com o hash de cada pacote registrado.
+Outro achado: o AndroZoo tinha só 92 dos 396 candidatos do governo, 23,2%, contra 84,2% dos aplicativos comerciais. Mesmo comparando aplicativos da mesma faixa de instalações, a chance de um aplicativo do governo estar no acervo é bem menor. Por isso, todos os aplicativos vão ser baixados da loja, na versão atual, com o hash registrado; o AndroZoo fica para reproduzir a análise e medir a defasagem.
 
 ## Slide 12. Revisão sistemática (55 s)
 
@@ -74,13 +74,19 @@ O caso brasileiro separado por esfera e por dado sensível, o confronto entre o 
 Não. A análise estática mostra presença de código. O envio só é observado na análise dinâmica da subamostra. O texto separa presença, transmissão observada e declaração.
 
 **Se o detector B errou 71,5%, por que mantê-lo?**
-Ele não é a medida principal proposta. Como A e B usam a mesma base com métodos diferentes, a diferença ilustra o efeito do método, que a H3 pretende medir. Os 88 casos foram considerados falsos positivos potenciais na adjudicação interna, não confirmados por um padrão de referência externo.
+Ele não é a medida principal proposta. Como A e B usam a mesma base com métodos diferentes, a diferença ilustra o efeito do método, que a checagem do instrumento mede. Os 88 casos foram considerados falsos positivos potenciais na adjudicação interna, não confirmados por um padrão de referência externo.
 
-**Como você vai obter os pacotes que o AndroZoo não tem? Isso é permitido?**
-Baixando da Google Play com conta própria, registrando o hash e sem redistribuir os pacotes. O procedimento será testado em cinco aplicativos no início do Capstone II.
+**Como você vai obter os pacotes? Isso é permitido?**
+Todos na versão atual da Google Play, que é a que o cidadão instala, com conta própria, registrando o hash e sem redistribuir os pacotes. O AndroZoo serve para outra pessoa reproduzir a análise e para medir a defasagem entre a versão arquivada e a atual. A coleta será testada em cinco aplicativos no início do Capstone II.
+
+**Por que o limiar de 10% na H1?**
+É conservador. Andow e colegas, com o PoliCheck, encontraram declarações ausentes ou incorretas em até 42,4% dos casos. Se o limite superior do intervalo ficar abaixo de 10%, a aderência dos aplicativos do governo é bem maior do que a literatura costuma encontrar.
 
 **O que "soberania de dados" quer dizer no seu trabalho?**
-A capacidade do Estado de saber e decidir para onde vão os dados gerados nos seus serviços. Mede-se pela dependência de SDKs de terceiros e, na subamostra, pelos destinos observados. A nacionalidade do fornecedor ou o país de um IP não provam, sozinhos, uma transferência internacional.
+A capacidade do Estado de saber e decidir para onde vão os dados gerados nos seus serviços. Mede-se pela dependência de SDKs de terceiros e, na subamostra, pelos destinos observados. A presença de SDK de empresa estrangeira já mostra dependência de fornecedores estrangeiros; dizer que dados foram para o exterior exige a análise dinâmica. A nacionalidade do fornecedor ou o país de um IP não provam, sozinhos, uma transferência internacional.
+
+**A ANPD não é uma autoridade?**
+Desde a Lei 15.352/2026, é a Agência Nacional de Proteção de Dados, autarquia de natureza especial vinculada ao Ministério da Justiça e Segurança Pública. Os guias da ANPD citados no texto são anteriores e saíram com o nome antigo.
 
 **Quantos artigos a revisão incluiu?**
 Até 13/11, foram registradas 71 propostas de inclusão e 8 de exclusão. Em 21/11 conferi 18 dessas decisões (12 inclusões e 6 exclusões), com leitura integral e avaliação de qualidade. As outras 61 e os 278 registros em aberto ficam para o início do Capstone II. A Seção 2.7 traz a síntese provisória.

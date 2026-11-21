@@ -225,7 +225,7 @@ Espaço destinado à ficha catalográfica.
 
 \begin{resumo}
 \SingleSpacing
-Este projeto investiga a presença de SDKs de rastreamento de terceiros em aplicativos Android publicados por órgãos e entidades públicas brasileiras e propõe compará-la com a de aplicativos comerciais de mesma categoria e faixa de instalações. A literatura documenta rastreamento em diferentes populações de aplicativos, divergências entre detecção técnica e declarações de privacidade e limitações dos instrumentos de medição. A proteção de dados pessoais e a soberania de dados orientam a discussão dos resultados. O desenho é quantitativo, observacional e comparativo, com análise estática de pacotes identificados por hash, confronto com políticas de privacidade e observação dinâmica de uma subamostra. As etapas preparatórias produziram 396 candidatos governamentais, dos quais 376 foram mantidos como oficiais na classificação preliminar, e 252 controles comerciais. Na coleta de metadados, nenhum dos 376 aplicativos mantidos declarou anúncios, contra 63 dos 190 controles originais. Essa declaração não mede a presença de rastreadores. Uma consulta histórica ao AndroZoo localizou 92 dos 396 candidatos governamentais e 160 dos 190 controles, indicando a necessidade de testar uma fonte complementar de pacotes. Em um piloto com 20 aplicativos, a proporção com detecções variou de 75\% a 95\% entre três detectores, e a adjudicação mostrou a importância de distinguir assinaturas de código de referências a domínios. A revisão sistemática recuperou 1.531 registros, manteve 1.249 após a deduplicação e encaminhou 357 à avaliação de texto completo, com 71 propostas preliminares de inclusão ainda pendentes de conferência. O projeto define recursos, critérios documentais da LGPD, procedimentos de conferência das classificações e cronograma. A coleta principal e os testes das hipóteses permanecem previstos para o Projeto Capstone II.
+Este projeto investiga a presença de SDKs de rastreamento de terceiros em aplicativos Android publicados por órgãos e entidades públicas brasileiras e propõe compará-la com a de aplicativos comerciais de mesma categoria e faixa de instalações. A literatura documenta rastreamento em diferentes populações de aplicativos, divergências entre detecção técnica e declarações de privacidade e limitações dos instrumentos de medição. A proteção de dados pessoais e a soberania de dados orientam a discussão dos resultados. O desenho é quantitativo, observacional e comparativo, com análise estática de pacotes identificados por hash, confronto com políticas de privacidade e observação dinâmica de uma subamostra. As etapas preparatórias produziram 396 candidatos governamentais, dos quais 376 foram mantidos como oficiais na classificação preliminar, e 252 controles comerciais. Na coleta de metadados, nenhum dos 376 aplicativos mantidos declarou anúncios, contra 63 dos 190 controles originais. Essa declaração não mede a presença de rastreadores. Uma consulta histórica ao AndroZoo localizou 92 dos 396 candidatos governamentais e 160 dos 190 controles, indicando a necessidade de testar uma fonte complementar de pacotes. Em um piloto com 20 aplicativos, a proporção com detecções variou de 75\% a 95\% entre três detectores, e a adjudicação mostrou a importância de distinguir assinaturas de código de referências a domínios. A revisão sistemática recuperou 1.531 registros, manteve 1.249 após a deduplicação e encaminhou 357 à avaliação de texto completo, com 71 propostas preliminares de inclusão ainda a validar. O projeto define recursos, critérios documentais da LGPD, procedimentos de conferência das classificações e cronograma. A coleta principal e os testes das hipóteses permanecem previstos para o Projeto Capstone II.
 
 \vspace{2\baselineskip}
 \noindent\textbf{Palavras-chave:} rastreamento por terceiros; aplicativos governamentais; privacidade; LGPD; análise estática.
@@ -292,7 +292,13 @@ Aplicativos Android incorporam kits de desenvolvimento (SDKs) de terceiros, que 
 
 O tema deste trabalho é o rastreamento por terceiros em aplicativos móveis publicados por órgãos públicos brasileiros, examinado do ponto de vista da proteção de dados e da soberania sobre os dados dos cidadãos.
 
-O problema, as hipóteses e a justificativa estão nas Seções~\ref{sec:problema} a~\ref{sec:1.3}. A Seção~\ref{cap:ref} apresenta o referencial teórico, e a Seção~\ref{cap:metodo}, os procedimentos metodológicos, os resultados esperados, o cronograma e os riscos. Os resultados das etapas já executadas estão na Seção~\ref{sec:preliminares}.
+O problema, os objetivos, as hipóteses e a justificativa estão nas Seções~\ref{sec:problema} a~\ref{sec:1.3}. A Seção~\ref{cap:ref} apresenta o referencial teórico, e a Seção~\ref{cap:metodo}, os procedimentos metodológicos, os resultados esperados, o cronograma e os riscos. Os resultados das etapas já executadas estão na Seção~\ref{sec:preliminares}.
+
+\section{Problema}\label{sec:problema}
+
+Os aplicativos móveis oficiais do governo brasileiro embarcam SDKs de rastreamento de terceiros, e em que medida esse comportamento difere do de aplicativos comerciais de mesma categoria e porte?
+
+A revisão sistemática (Seção~\ref{sec:2.13}) procurou estudos sobre aplicativos de governo, inclusive brasileiros. Entre as propostas de inclusão registradas até aqui, os trabalhos sobre o Brasil examinam um único aplicativo, o Monitora Covid-19 \cite{lemos2022}, ou as políticas de privacidade de aplicativos à luz da LGPD \cite{reis2023}; nenhum mede a presença de SDKs de rastreamento no conjunto dos aplicativos de governo brasileiros. O estudo mais próximo, de \citeonline{samarasinghe2022}, analisou aplicativos de governo de 71 países, mas não oferece a comparação aqui proposta entre aplicativos brasileiros e controles comerciais pareados, com avaliação da concordância entre detectores sobre as mesmas versões dos pacotes. A lacuna está detalhada na Seção~\ref{sec:ref-governo}.
 
 \section{Objetivo geral}\label{sec:objetivo-geral}
 
@@ -313,14 +319,6 @@ Medir a prevalência de SDKs de rastreamento de terceiros em aplicativos móveis
 \item Medir a concordância entre detectores de rastreadores e o efeito da escolha da ferramenta sobre a taxa reportada.
 
 \end{enumerate}
-
-\section{Problema}\label{sec:problema}
-
-Os aplicativos móveis oficiais do governo brasileiro embarcam SDKs de rastreamento de terceiros, e em que medida esse comportamento difere do de aplicativos comerciais de mesma categoria e porte?
-
-A lacuna que motiva a pergunta está detalhada na Seção~\ref{sec:ref-governo}: o estudo mais próximo, de \citeonline{samarasinghe2022}, não oferece a comparação aqui proposta entre aplicativos brasileiros e controles comerciais pareados, com avaliação da concordância entre detectores sobre as mesmas versões dos pacotes.
-
-\textbf{Relevância.} O prestador responsável por um benefício público não pode ser livremente substituído pelo cidadão, embora possam existir canais presenciais ou digitais alternativos. Essa dependência institucional torna relevante examinar a necessidade e a transparência da participação de terceiros no aplicativo.
 
 \section{Hipóteses}\label{sec:1.5}
 
@@ -346,7 +344,7 @@ H4 & A concordância entre detectores sobre o mesmo pacote é baixa, de modo que
 
 \section{Justificativa}\label{sec:1.3}
 
-O trabalho se justifica em três planos.
+O prestador responsável por um benefício público não pode ser livremente substituído pelo cidadão, embora possam existir canais presenciais ou digitais alternativos. Essa dependência institucional torna relevante examinar a necessidade e a transparência da participação de terceiros no aplicativo, e esse exame se justifica em três planos.
 
 \textbf{Jurídico.} A LGPD define como sensível o dado referente à saúde e o dado biométrico (Art. 5º, II), restringe as hipóteses de seu tratamento (Art. 11), vincula o tratamento feito pelo poder público à sua finalidade pública (Art. 23) e limita a transferência internacional de dados pessoais a casos específicos (Art. 33) \cite{brasil2018}. Se um aplicativo de saúde publicado por um órgão público envia identificadores a um terceiro, a base legal desse envio precisa existir e ser demonstrável.
 
@@ -383,7 +381,7 @@ Para a análise estática de bibliotecas existem várias ferramentas. \citeonlin
 
 Para rastreadores, uma base usada por ferramentas abertas é a do Exodus Privacy, que associa a cada rastreador conhecido uma assinatura de código, um padrão nos nomes das classes do aplicativo, e uma assinatura de rede, um padrão nos domínios que ele contata \cite{exodus2026}. Outras listas, como a da Disconnect, classificam domínios por finalidade, como publicidade, análise de uso e coleta de impressão digital do aparelho \cite{disconnect2026}. Ferramentas de análise de aplicativos, como o MobSF \cite{mobsf2026}, e bibliotecas de extração, como o Androguard \cite{androguard2026}, permitem aplicar essas bases a um pacote. A Seção~\ref{sec:2.9} mostra que essas ferramentas não são todas independentes entre si. A avaliação ampliada de \citeonline{zhan2022} também mede precisão, revocação e identificação de versões. A combinação de ferramentas exige comparar unidades equivalentes e documentar as dependências entre bases, métodos de extração e critérios de adjudicação.
 
-A fonte dos pacotes também importa para a reprodutibilidade. O AndroZoo é um acervo acadêmico com milhões de pacotes Android, no qual cada versão de um aplicativo é obtida pelo seu hash SHA-256 \cite{allix2016,alecci2024}. A disponibilidade na loja pode mudar com atualizações e restrições de distribuição; o estudo registrará a origem e a versão de cada pacote.
+A fonte dos pacotes também importa para a reprodutibilidade. O AndroZoo é um acervo acadêmico com milhões de pacotes Android, no qual cada versão de um aplicativo é obtida pelo seu hash SHA-256 \cite{allix2016,alecci2024}. Por isso ele é a fonte preferida do projeto: outro pesquisador pode baixar exatamente o mesmo arquivo analisado. A Google Play entrega apenas a versão vigente, que muda a cada atualização, e pode restringir a distribuição por região; repositórios alternativos não garantem que o pacote seja o publicado pelo desenvolvedor. Os aplicativos ausentes do acervo serão baixados direto da Google Play, com o hash registrado (Seção~\ref{sec:preliminares}), e o estudo registrará a origem e a versão de cada pacote.
 
 
 \section{O que o aplicativo declara e o que ele faz}\label{sec:ref-politicas}
@@ -399,7 +397,7 @@ Diferentemente dos sites comerciais, os serviços de governo são financiados co
 
 Na versão ampliada de seu estudo sobre aplicativos da COVID-19, \citeonline{serrano2024} identificaram rastreadores em 402 de 595 aplicativos por assinaturas do Exodus e examinaram o código de bibliotecas para caracterizar a coleta e o envio de dados. Os pacotes vieram da Google Play, do AndroZoo, de um conjunto no Zenodo e de repositórios alternativos. Essa combinação evidencia a necessidade de registrar origem e versão dos pacotes. O artigo também apresenta o SAPITO, ferramenta para apoiar a identificação de fluxos de dados em bibliotecas. A publicação anterior \cite{serrano2023} é a versão preliminar do mesmo estudo e não é contada separadamente. A presença estática de uma assinatura e a análise de código de uma biblioteca não demonstram que todos os aplicativos transmitiram dados em execução.
 
-A detecção de SDKs de rastreamento por análise estática é método consolidado e já foi aplicada a aplicativos de diversos domínios comerciais e, no estudo de \citeonline{samarasinghe2022}, a aplicativos de governo de vários países. Esse estudo deixa em aberto três pontos, que são os deste trabalho.
+A detecção de SDKs de rastreamento por análise estática é método consolidado e já foi aplicada a aplicativos de diversos domínios comerciais e, no estudo de \citeonline{samarasinghe2022}, a aplicativos de governo de vários países. Esse estudo deixa em aberto três pontos, que este trabalho pretende abordar:
 
 \begin{enumerate}
 
@@ -422,7 +420,7 @@ Essas regras dão os critérios para discutir os resultados. O guia da ANPD para
 
 \section{Estudos com proposta de inclusão na revisão sistemática}\label{sec:ref-sintese}
 
-A etapa inicial de obtenção e exame dos textos registrou, até 13 de novembro de 2026, 71 propostas preliminares de inclusão, ainda não validadas pessoalmente e sujeitas à conclusão da leitura dos registros pendentes (Seção~\ref{sec:2.13}). O Quadro~\ref{quadro:sintese} os agrupa pela questão de pesquisa a que respondem. Os parágrafos seguintes resumem o que cada grupo acrescenta ao projeto; os estudos já apresentados nas seções anteriores são retomados só quando necessário.
+A etapa inicial de obtenção e exame dos textos registrou, até 13 de novembro de 2026, 71 propostas preliminares de inclusão, que serão validadas pelo autor e estão sujeitas à conclusão da leitura dos registros pendentes (Seção~\ref{sec:2.13}). O Quadro~\ref{quadro:sintese} os agrupa pela questão de pesquisa a que respondem. Os parágrafos seguintes resumem o que cada grupo acrescenta ao projeto; os estudos já apresentados nas seções anteriores são retomados só quando necessário.
 
 \begin{center}
 \begin{minipage}{\textwidth}
@@ -597,7 +595,7 @@ A revisão segue \citeonline{kitchenham2007}, com bola de neve conforme \citeonl
 \textbf{Seleção e qualidade.} Há quatro critérios de inclusão e seis de exclusão. A triagem é feita por título e resumo e depois pelo texto completo, e cada exclusão leva o código do critério que a motivou. Texto completo não obtido não é motivo de exclusão: o registro é contado como não recuperado no fluxograma do PRISMA. Como a seleção tem um revisor responsável, a consistência da triagem será examinada por uma conferência cega de 10\% dos registros, com o $\kappa$ de Cohen \cite{cohen1960} e o mesmo limiar de 0,6 usado na H4. A qualidade é avaliada por oito perguntas, das quais duas, a reprodutibilidade e a validação da detecção, medem o que a H4 discute; a nota não exclui estudos.
 
 
-\textbf{Execução da triagem.} As 17 buscas de 6 de novembro de 2026 retornaram 1.531 registros. Após a remoção de 282 duplicatas, os 1.249 registros receberam decisões de F1: 886 exclusões, 6 revisões reservadas para a bola de neve e 357 encaminhamentos ao texto completo (214 inclui e 143 talvez). Esses 357 registros são candidatos, não o total final de estudos incluídos. Em 13 de novembro de 2026, a busca de textos dos 214 registros I da F1 obteve 80 publicações correspondentes. Dos 80 textos correspondentes obtidos, o exame de resumo, método e resultados registrou 71 propostas de inclusão, 7 de exclusão e 2 dúvidas de escopo. Uma exclusão adicional (EC1) foi sustentada pela declaração de ampliação em artigo posterior, sem obtenção do texto correspondente à versão anterior, totalizando 8 propostas de exclusão. As 79 propostas de decisão (71 I e 8 E) têm justificativa e evidência documental registradas, mas permanecem pendentes de conferência pessoal. A síntese provisória das 71 propostas de inclusão está na Seção~\ref{sec:ref-sintese}. Permanecem 278 registros em aberto: 131 sem texto obtido, 2 com divergência de versão, 2 com dúvida de escopo e os 143 registros T. A leitura desses registros, com a busca dos textos pelo Portal de Periódicos da CAPES, e a bola de neve ficam para o início do Projeto Capstone II; os textos que continuarem indisponíveis serão relatados como não recuperados. A Figura~\ref{fig:prisma} resume o fluxo até esta etapa.
+\textbf{Execução da triagem.} As 17 buscas de 6 de novembro de 2026 retornaram 1.531 registros. Após a remoção de 282 duplicatas, os 1.249 registros receberam decisões de F1: 886 exclusões, 6 revisões reservadas para a bola de neve e 357 encaminhamentos ao texto completo (214 inclui e 143 talvez). Esses 357 registros são candidatos, não o total final de estudos incluídos. Em 13 de novembro de 2026, a busca de textos dos 214 registros I da F1 obteve 80 publicações correspondentes. Dos 80 textos correspondentes obtidos, o exame de resumo, método e resultados registrou 71 propostas de inclusão, 7 de exclusão e 2 dúvidas de escopo. Uma exclusão adicional (EC1) foi sustentada pela declaração de ampliação em artigo posterior, sem obtenção do texto correspondente à versão anterior, totalizando 8 propostas de exclusão. As 79 propostas de decisão (71 I e 8 E) têm justificativa e evidência documental registradas e serão validadas pelo autor no início do Projeto Capstone II. A síntese provisória das 71 propostas de inclusão está na Seção~\ref{sec:ref-sintese}. Permanecem 278 registros em aberto: 131 sem texto obtido, 2 com divergência de versão, 2 com dúvida de escopo e os 143 registros T. A leitura desses registros, com a busca dos textos pelo Portal de Periódicos da CAPES, e a bola de neve ficam para o início do Projeto Capstone II; os textos que continuarem indisponíveis serão relatados como não recuperados. A Figura~\ref{fig:prisma} resume o fluxo até esta etapa.
 
 \begin{figure}[htbp]
 \centering
@@ -627,7 +625,7 @@ A revisão segue \citeonline{kitchenham2007}, com bola de neve conforme \citeonl
 \draw[seta] (aval) -- (exc2);
 \end{tikzpicture}
 \fonte{Elaborado pelo autor (2026), com o modelo de \citeonline{page2021}. Situação em 15 nov. 2026.}
-\nota{Os 357 registros encaminhados se dividem em 278 em aberto, 71 propostas de inclusão e 8 de exclusão. As 2 dúvidas de escopo estão entre os 80 textos obtidos e também entre os 278 em aberto. A oitava proposta E se baseia na versão ampliada do mesmo estudo. As decisões aguardam conferência pessoal.}
+\nota{Os 357 registros encaminhados se dividem em 278 em aberto, 71 propostas de inclusão e 8 de exclusão. As 2 dúvidas de escopo estão entre os 80 textos obtidos e também entre os 278 em aberto. A oitava proposta E se baseia na versão ampliada do mesmo estudo. As decisões serão validadas pelo autor no início do Projeto Capstone II.}
 \end{figure}
 
 \textbf{Conferência cega da triagem.} Uma amostra de 125 registros, 10\% dos 1.249 arredondados para cima, já foi sorteada com semente fixa e registrada em manifesto. No início do Projeto Capstone II, o autor classificará esses registros por título, resumo e palavras-chave, sem acesso às decisões registradas, e o resultado será comparado com a triagem na decisão binária (I ou T seguem para o texto completo; E ou R não seguem) e nas quatro categorias, com o acordo observado, o $\kappa$ e a matriz de confusão. Cada divergência será examinada. Se o $\kappa$ ficar abaixo de 0,6, uma segunda amostra de 125 registros será conferida.

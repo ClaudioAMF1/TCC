@@ -1,6 +1,6 @@
 # Leitura F2: rodada de 13/11/2026
 
-> **Atualização de 21/11/2026:** após examinar e concordar com os 18 pareceres da auditoria documental, o autor confirmou essas 18 decisões (12 I, 6 E; cinco com ressalvas). O registro atualizado está em `dados/revisao/leitura_F2_registro_20261121_validacao_parcial.csv`. Os 339 restantes seguem pendentes. O arquivo datado de 13/11 foi preservado como histórico; a confirmação não equivale a concluir leitura integral ou QA1–QA8.
+> **Atualização de 21/11/2026:** após examinar e concordar com os 18 pareceres da auditoria documental, o autor confirmou essas 18 decisões (12 I, 6 E; cinco com ressalvas). O registro atualizado está em `dados/revisao/leitura_F2_registro_20261121_validacao_parcial.csv`. Os 339 restantes seguem pendentes. **Complemento informado pelo autor em 21/11:** a leitura integral e a avaliação QA1–QA8 também foram concluídas para esses 18 registros, conforme declaração registrada no CSV atualizado; as notas individuais não foram anexadas. O arquivo datado de 13/11 foi preservado como histórico.
 
 A planilha contém **71 propostas de inclusão e 8 de exclusão**, com páginas e justificativas. A validação pessoal permanece pendente. Os 357 registros continuam sendo o conjunto encaminhado pela F1; 71 não é o número final da revisão.
 

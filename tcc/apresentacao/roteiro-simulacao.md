@@ -50,7 +50,7 @@ Outro achado: o AndroZoo tinha só 92 dos 396 candidatos do governo, 23,2%, cont
 
 ## Slide 12. Revisão sistemática (55 s)
 
-A fundamentação vem de uma revisão sistemática, seguindo Kitchenham e o PRISMA 2020, com cinco questões de pesquisa. Fiz 17 buscas no Scopus, IEEE Xplore, BDTD e SBC OpenLib, que retornaram 1.531 registros, ou 1.249 sem duplicatas. Para validar as buscas, usei 11 estudos que tinham de aparecer; os 10 que o Scopus indexa foram encontrados. Na triagem por título e resumo, 357 registros foram encaminhados à fase de texto completo. Dos 214 inicialmente priorizados para obtenção, foram recuperados 80 textos correspondentes: 71 receberam proposta de inclusão, 7 de exclusão e 2 ficaram com dúvida de escopo. Houve ainda uma exclusão por evidência de versão ampliada. A Seção 2.7 apresenta uma síntese provisória dos 71; a validação das decisões e a leitura do restante continuam pendentes.
+A fundamentação vem de uma revisão sistemática, seguindo Kitchenham e o PRISMA 2020, com cinco questões de pesquisa. Fiz 17 buscas no Scopus, IEEE Xplore, BDTD e SBC OpenLib, que retornaram 1.531 registros, ou 1.249 sem duplicatas. Para validar as buscas, usei 11 estudos que tinham de aparecer; os 10 que o Scopus indexa foram encontrados. Na triagem por título e resumo, 357 registros foram encaminhados à fase de texto completo. Dos 214 inicialmente priorizados para obtenção, foram recuperados 80 textos correspondentes: 71 receberam proposta de inclusão, 7 de exclusão e 2 ficaram com dúvida de escopo. Houve ainda uma exclusão por evidência de versão ampliada. A Seção 2.7 apresenta uma síntese provisória dos 71. Em 21/11 conferi 18 das 79 decisões, com leitura integral e avaliação de qualidade; as outras 61 e a leitura do restante ficam para o Capstone II.
 
 ## Slide 13. Limitações e próximos passos (65 s)
 
@@ -83,7 +83,7 @@ Baixando da Google Play com conta própria, registrando o hash e sem redistribui
 A capacidade do Estado de saber e decidir para onde vão os dados gerados nos seus serviços. Mede-se pela dependência de SDKs de terceiros e, na subamostra, pelos destinos observados. A nacionalidade do fornecedor ou o país de um IP não provam, sozinhos, uma transferência internacional.
 
 **Quantos artigos a revisão incluiu?**
-Até 13/11, há 71 propostas de inclusão, não 71 inclusões definitivamente validadas. A Seção 2.7 traz a síntese provisória. Faltam 278 registros em aberto e a conferência pessoal das propostas registradas.
+Até 13/11, foram registradas 71 propostas de inclusão e 8 de exclusão. Em 21/11 conferi 18 dessas decisões (12 inclusões e 6 exclusões), com leitura integral e avaliação de qualidade. As outras 61 e os 278 registros em aberto ficam para o início do Capstone II. A Seção 2.7 traz a síntese provisória.
 
 **Por que o controle não é aleatório?**
 A busca da loja ordena por relevância e quase não devolve aplicativos comerciais pequenos. O pareamento por categoria e faixa reduz esse problema, a H1 fica restrita às células com controle e a limitação é declarada.

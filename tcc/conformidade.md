@@ -1,6 +1,6 @@
 # O que falta
 
-Atualização: 18/11/2026.
+Atualização: 21/11/2026.
 
 ## O que a disciplina exige
 
@@ -36,6 +36,7 @@ O texto não muda enquanto o orientador comenta, para não perder os comentário
 
 Nada disto é exigido para 03/12. O texto já diz que essas etapas vêm depois.
 
+- Conferência das 61 decisões da leitura completa ainda não conferidas (18 das 79 foram conferidas em 21/11).
 - Leitura dos 278 registros da revisão ainda em aberto, inclusive buscando os textos pela CAPES, e bola de neve.
 - Conferência cega de 125 registros da triagem.
 - Conferência da classificação dos 376 aplicativos.

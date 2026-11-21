@@ -30,3 +30,15 @@ Comece pelos que aparecem nos slides: Binns, Kollnig, Samarasinghe e Andow. Ando
 | Ferramentas da QR1 | LibPecker (Zhang et al., 2018), ORLIS (Wang et al., 2018), LibID (Zhang et al., 2019), LibD (Li et al., 2020), ATVHunter (Zhan et al., 2021), LibScan (Wu et al., 2023), LIBLOOM (Huang et al., 2023), LibAttention (Pan et al., 2025) e SAD (Zhou et al., 2025): confira se cada nome corresponde ao estudo | 2.7 | A conferir | |
 | ANPD (2022), guia de cookies | As orientações valem, de forma geral, para tecnologias semelhantes de rastreamento em dispositivos móveis (p. 6); a finalidade de cada categoria de cookie deve ser específica e informada ao titular (p. 14) | 2.6 | Conferido em 21/11 no PDF oficial | 21/11 |
 | Lei nº 15.352/2026 | Transformou a ANPD em Agência Nacional de Proteção de Dados, autarquia de natureza especial vinculada ao Ministério da Justiça e Segurança Pública; DOU de 25/02/2026, ed. 37-B, seção 1, extra B, p. 1 | 2.6 e Referências | A conferir: a ementa da referência foi tirada de uma reprodução não oficial (IRIB). Compare com o DOU | |
+
+## Verificações pontuais adicionais (21/11/2026)
+
+Esta seção complementa o quadro de conferência **sem marcar como inteiramente lidos** os artigos cujas tabelas e métodos não foram examinados em detalhe:
+
+- **Andow et al. (2020):** a apresentação oficial da USENIX descreve 13.796 aplicativos e até 42,4% com declarações ausentes ou incorretas sobre fluxos sensíveis. O percentual é por aplicativo e usa o PoliCheck; **não é taxa de pares aplicativo–SDK** nem base legal para o limiar da H2. Fonte: https://www.usenix.org/conference/usenixsecurity20/presentation/andow
+- **Samarasinghe et al. (2022):** o artigo informa 1.166 aplicativos Android governamentais de 71 países e o resultado de 269/1.166 referentes a vazamento de dados do dispositivo. A discussão deve respeitar os diferentes tipos de destinatário e cenário observados. Fonte: https://users.encs.concordia.ca/~mmannan/publications/govt-privacy-WWW2022.pdf
+- **Binns et al. (2018):** a ficha do repositório de Oxford confirma a amostra de aproximadamente 959 mil aplicativos das lojas dos EUA e Reino Unido e a análise estática. Fonte: https://ora.ox.ac.uk/objects/uuid:b981733e-a641-4793-be59-12f2b8099a82
+- **Leis 14.460/2022 e 15.352/2026:** conforme a base jurídica oficial da ANPD, a instituição tornou-se autarquia especial em 2022 e agência reguladora em 2026. Fonte: https://www.gov.br/anpd/pt-br/acesso-a-informacao/institucional/base-juridica
+- **Guia de cookies ANPD (2022):** é orientação oficial útil para transparência e tecnologias semelhantes, mas não constitui automaticamente prova de infração no caso de um SDK detectado. Fonte: https://www.gov.br/anpd/pt-br/centrais-de-conteudo/materiais-educativos-e-publicacoes/guia-orientativo-cookies-e-protecao-de-dados-pessoais.pdf
+
+As verificações anteriores de escopo e as declarações de QA do autor permanecem nos respectivos registros; este complemento não simula uma segunda avaliação independente.

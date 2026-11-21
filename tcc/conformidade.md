@@ -7,7 +7,7 @@ Atualização: 21/11/2026.
 | Exigência | Data | Situação |
 |---|---|---|
 | Simulação de defesa: 15 min de apresentação e 10 de perguntas | terça, 24/11, por volta das 10h30 (confirmado) | Slides aprovados verbalmente pelo orientador em 18/11. Falta ensaiar |
-| Projeto em PDF no Canvas, no modelo do IDP | até 03/12 | Escrito. Falta incorporar os comentários do orientador e da simulação |
+| Projeto em PDF no Canvas, no modelo do IDP | até 03/12 | Escrito. Comentários do orientador e foco sugerido por ele em 21/11 (declarado × feito, comerciais só como contexto) já aplicados. Falta incorporar a simulação |
 | Defesa final: 15 min de apresentação e 15 de perguntas | 08/12, 10/12 ou 15/12 | Usa os mesmos slides, atualizados |
 
 ## Até a simulação (24/11)
@@ -19,6 +19,8 @@ Atualização: 21/11/2026.
 | 3 | Ensaiar a apresentação com cronômetro pelo menos três vezes, uma delas gravada (guia, parte 13) | 23/11 |
 | 4 | Treinar as perguntas sem olhar as respostas (guia, partes 14, 15 e 16) | 23/11 |
 | 5 | Levar os slides em PDF e em .pptx, num pendrive e na nuvem | 24/11 |
+| 6 | Fazer o ensaio da apresentação que o orientador ofereceu, de preferência na segunda | 23/11 |
+| 7 | Substituir no Overleaf o `main.tex` com o novo foco e avisar o orientador | 23/11 |
 
 ## Até a entrega (03/12)
 

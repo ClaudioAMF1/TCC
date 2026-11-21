@@ -14,9 +14,9 @@ busca, toda alteração entra na Seção 12, com data e motivo, e a versão sobe
 O projeto de pesquisa apresenta uma lacuna (Seção 1.3 e referencial teórico) e apoia quatro
 hipóteses em resultados de outros trabalhos. A revisão existe para confirmar ou
 corrigir essa lacuna e para dar a cada hipótese a base de comparação que ela
-precisa: como outros detectam rastreadores (H4), que taxas encontram e contra
-que linha de base (H1), como confrontam o detectado com o declarado (H2) e o
-que já se sabe de aplicativos de governo (H1 e H3). Ela também fornece os
+precisa: como outros detectam rastreadores (H3), que taxas encontram e em que
+populações (contexto e H2), como confrontam o detectado com o declarado (H1) e o
+que já se sabe de aplicativos de governo (H1 e H2). Ela também fornece os
 critérios jurídicos que o plano prevê para a LGPD.
 
 **Busca exploratória.** Antes deste protocolo, uma busca exploratória achou
@@ -32,10 +32,10 @@ a busca não pode se limitar aos trabalhos já conhecidos.
 
 | QR | Pergunta | Serve a | String |
 |---|---|---|---|
-| QR1 | Como os estudos detectam SDKs de rastreamento e bibliotecas de terceiros em aplicativos Android, e como verificam a validade dessas detecções (verdade de referência, conferência manual, concordância entre ferramentas)? | H4 | S1 |
-| QR2 | Que proporção de aplicativos com ao menos um rastreador os estudos reportam, em que populações, com que fonte de pacotes e contra que linha de base? | H1 | S2 |
-| QR3 | Como os estudos confrontam os SDKs ou os fluxos de dados detectados com a política de privacidade ou com os rótulos de privacidade da loja, e que taxas de inconsistência encontram? | H2 | S3 |
-| QR4 | Que estudos examinam rastreamento por terceiros ou privacidade em aplicativos publicados por governos, inclusive os de enfrentamento da COVID-19, e o que encontram? | H1, H3, lacuna | S4a, S4b |
+| QR1 | Como os estudos detectam SDKs de rastreamento e bibliotecas de terceiros em aplicativos Android, e como verificam a validade dessas detecções (verdade de referência, conferência manual, concordância entre ferramentas)? | H3 | S1 |
+| QR2 | Que proporção de aplicativos com ao menos um rastreador os estudos reportam, em que populações, com que fonte de pacotes e contra que linha de base? | Contexto; H2 | S2 |
+| QR3 | Como os estudos confrontam os SDKs ou os fluxos de dados detectados com a política de privacidade ou com os rótulos de privacidade da loja, e que taxas de inconsistência encontram? | H1 | S3 |
+| QR4 | Que estudos examinam rastreamento por terceiros ou privacidade em aplicativos publicados por governos, inclusive os de enfrentamento da COVID-19, e o que encontram? | H1, H2, lacuna | S4a, S4b |
 | QR5 | Que trabalhos tratam do rastreamento ou da privacidade em aplicativos no Brasil ou à luz da LGPD, ou da transferência internacional de dados coletados por aplicativos? | Discussão jurídica; critérios dos Arts. 7º, 11 e 33 | S5a, S5b |
 
 **PICOC** (KITCHENHAM; CHARTERS, 2007):
@@ -347,7 +347,7 @@ incluídos e é usada na síntese da QR2, que é reportada com e sem os estudos 
 nota menor que 4. Trabalhos não empíricos da QR5 (análises jurídicas) não
 recebem nota; são identificados como tal e usados na discussão jurídica.
 
-As perguntas QA4 e QA5 medem diretamente o que a H4 discute. A distribuição das
+As perguntas QA4 e QA5 medem diretamente o que a H3 discute. A distribuição das
 notas nelas é, por si, um resultado da revisão.
 
 ---
@@ -380,8 +380,8 @@ O formulário é uma planilha com uma linha por estudo incluído:
 
 A síntese é narrativa e organizada por QR, com uma tabela por pergunta. Não há
 metanálise: as ferramentas, as bases de assinaturas e as populações diferem
-entre os estudos, e essa heterogeneidade é justamente o objeto da H4. Juntar
-taxas produzidas por detectores diferentes seria assumir o que a H4 testa.
+entre os estudos, e essa heterogeneidade é justamente o objeto da H3. Juntar
+taxas produzidas por detectores diferentes seria assumir o que a H3 testa.
 
 | QR | Produto da síntese |
 |---|---|
@@ -465,6 +465,7 @@ Para a entrega do projeto em 03/12, a síntese usa as 71 propostas de inclusão 
 | 15/11/2026 | 1.6 | EC7 retirado: texto não obtido pelos links, pela CAPES (CAFe) ou por cópias dos autores conta como "não recuperado" no PRISMA, sem pedido ao autor | O PRISMA 2020 já tem essa categoria; a espera de sete dias por resposta não cabe no prazo de 03/12. Nenhum registro havia sido excluído por EC7 |
 | 15/11/2026 | 1.7 | O reteste vira conferência cega por amostra, sem intervalo de sete dias e sem conferência integral prévia; κ < 0,6 leva a uma segunda amostra; Seções 7.2, 7.3, 11, 12.5 e 13 atualizadas | A classificação F1 registrada não foi produzida inteiramente pelo autor; a comparação útil é entre a avaliação cega do autor e essa classificação, e o prazo de 03/12 não comporta a conferência integral dos 1.249 registros |
 | 21/11/2026 | 1.8 | Conferência pelo autor de 18 das 79 decisões da F2 (12 I e 6 E), com leitura integral e QA1–QA8; Seção 11 atualizada | Registrar a validação feita e separar as 61 decisões ainda não conferidas |
+| 21/11/2026 | 1.9 | Hipóteses renumeradas após a mudança de foco sugerida pelo orientador: a principal (H1) passa a ser o confronto entre o detectado e o declarado; a comparação com aplicativos comerciais vira contexto; a de dado sensível passa a H2 e a de concordância entre detectores, a H3. Coluna "Serve a" da Seção 2 atualizada | Simplificar o desenho: o poder público responde à LGPD e às próprias declarações, e uma amostra comercial sem viés exigiria trabalho desproporcional |
 
 ### 12.4 Triagem por título e resumo (F1)
 

@@ -15,7 +15,7 @@ São as **71 propostas de inclusão** da rodada de 13/11, agrupadas pela questã
 | QR5: soberania ou transferência internacional de dados | 2 |
 | **Total** | **71** |
 
-Como usar na redação: para cada QR, diga o que os estudos mediram, com qual método e o que encontraram; destaque o que sustenta ou contradiz H1 a H4 e o que continua em aberto para o caso brasileiro. Não some taxas de estudos diferentes (Seção 3.7, Síntese).
+Como usar na redação: para cada QR, diga o que os estudos mediram, com qual método e o que encontraram; destaque o que sustenta ou contradiz H1 a H3 e o que continua em aberto para o caso brasileiro. Não some taxas de estudos diferentes (Seção 3.7, Síntese).
 
 ## QR1: detecção de bibliotecas ou SDKs de terceiros
 

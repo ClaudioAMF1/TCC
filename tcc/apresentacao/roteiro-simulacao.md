@@ -1,6 +1,6 @@
 # Roteiro da simulação de defesa
 
-Versão de 22/11/2026, igual às notas da apresentação `TCC1_apresentacao_revisao_redacional_20261121.pptx`. São 15 minutos de apresentação e 10 de perguntas. As falas somam cerca de 9 minutos, num ritmo calmo, o que deixa folga para pausas. Ensaie com cronômetro pelo menos três vezes e grave uma delas.
+Versão de 22/11/2026, igual às notas da apresentação `apresentacao_TCC1_revisada.pptx` (no repositório, `simulacao-defesa-rascunho.pptx`). São 15 minutos de apresentação e 10 de perguntas. As falas somam cerca de 9 minutos, num ritmo calmo, o que deixa folga para pausas. Ensaie com cronômetro pelo menos três vezes e grave uma delas.
 
 Não é para decorar palavra por palavra: leia algumas vezes e fale com as suas palavras, mantendo os números exatos.
 
@@ -104,7 +104,10 @@ Por sugestão do orientador. Comparar com o mercado exigiria montar uma amostra 
 O κ desconta o acordo esperado ao acaso. Como prevalência muito alta deixa o κ instável, ele será reportado junto com os acordos positivo e negativo.
 
 **Como as classificações foram feitas e conferidas?**
-Responda como de fato aconteceu, incluindo as ferramentas usadas e o que o orientador avaliou. As duas classificações serão conferidas no início do Capstone II.
+A classificação inicial foi organizada em planilhas e scripts, com critérios definidos no protocolo. Até agora, conferi 18 propostas de decisão da F2; as outras 61 propostas e os 278 registros sem decisão ainda precisam ser examinados. O corpus de aplicativos também passará por conferência antes da coleta principal. Não apresento essas etapas pendentes como concluídas.
+
+**Você utilizou inteligência artificial no trabalho?**
+Sim. Usei ChatGPT e Claude como apoio na elaboração e depuração dos scripts em Python, no levantamento bibliográfico inicial, na localização de referências metodológicas e na revisão de clareza da redação. As sugestões não substituem as publicações originais nem as verificações previstas no protocolo. As decisões metodológicas e a interpretação do trabalho continuam sob minha responsabilidade. Esse uso está declarado na seção de procedimentos metodológicos do TCC.
 
 ## Fontes de cada slide
 

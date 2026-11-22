@@ -22,11 +22,11 @@ São três coisas. Primeiro, o caso brasileiro: no estudo internacional, o Brasi
 
 ## Slide 5. Pergunta e objetivos (50 s)
 
-A pergunta é: em que medida a presença de SDKs de rastreamento em aplicativos governamentais é compatível com o que eles informam sobre coleta e compartilhamento de dados? O objetivo é medir as divergências documentais e, numa subamostra, comparar o que foi declarado com os fluxos de rede observados, sem confundir presença de código com envio de dados. Os objetivos específicos são: confirmar quais aplicativos são de fato oficiais; detectar os SDKs por esfera de governo e por tratamento de dado sensível; confrontar o que for encontrado com a política de privacidade e com a seção "Segurança dos dados" da loja; observar numa subamostra para onde os dados vão, inclusive se saem do país; e medir a concordância entre os detectores.
+A pergunta de pesquisa é: em que medida os aplicativos móveis oficiais do governo brasileiro embarcam SDKs de rastreamento de terceiros e enviam dados a terceiros sem que isso esteja declarado nas políticas de privacidade e na seção “Segurança dos dados” da Google Play? O objetivo geral é medir a proporção de SDKs e de envios de dados sem declaração compatível. A presença de código é examinada na análise estática; os envios só podem ser confirmados pela análise dinâmica de uma subamostra. Os objetivos específicos são: confirmar quais aplicativos são de fato oficiais; detectar os SDKs por esfera de governo e por tratamento de dado sensível; confrontar o que for encontrado com a política de privacidade e com a seção "Segurança dos dados" da loja; observar numa subamostra para onde os dados vão, inclusive se saem do país; e medir a concordância entre os detectores.
 
 ## Slide 6. Hipóteses (70 s)
 
-Tenho uma hipótese central e uma secundária. A H2 pergunta se ao menos 10% dos pares aplicativo–SDK apresentam divergência material entre a função do componente e as categorias de dados e finalidades declaradas. Esses 10% são um limiar operacional do estudo, não uma tolerância prevista na LGPD. Andow e colegas encontraram até 42,4% de inconsistências em outra população e com outro método, portanto não é uma taxa diretamente comparável. A H3 analisa se os aplicativos com dados sensíveis apresentam menor prevalência de SDKs do que os demais do governo. A antiga comparação comercial, H1, permanece apenas como contexto. A antiga H4 virou checagem de concordância dos detectores, não teste independente da pesquisa.
+Tenho uma hipótese central e uma secundária. A H1 propõe que ao menos 10% dos pares aplicativo–SDK identificados não tenham declaração compatível na política de privacidade e na seção “Segurança dos dados”. A declaração por categoria de dados e finalidade pode ser suficiente: não se exige que a política liste nominalmente todos os SDKs. Esses 10% são um limiar operacional do estudo, não uma tolerância prevista na LGPD. Andow e colegas encontraram até 42,4% de inconsistências em outra população e com outro método, portanto não é uma taxa diretamente comparável. A H2 analisa se aplicativos com dados sensíveis apresentam menor prevalência de SDKs do que os demais do governo. A comparação comercial permanece apenas como contexto. A concordância dos detectores é uma checagem do instrumento, sem numeração como hipótese.
 
 ## Slide 7. Método (60 s)
 
@@ -79,7 +79,7 @@ Ele não é a medida principal proposta. Como A e B usam a mesma base com métod
 **Como você vai obter os pacotes? Isso é permitido?**
 Todos na versão atual da Google Play, que é a que o cidadão instala, com conta própria, registrando o hash e sem redistribuir os pacotes. O AndroZoo serve para outra pessoa reproduzir a análise e para medir a defasagem entre a versão arquivada e a atual. A coleta será testada em cinco aplicativos no início do Capstone II.
 
-**Por que o limiar de 10% na H2?**
+**Por que o limiar de 10% na H1?**
 É um limiar operacional definido para tornar a hipótese testável e identificar uma magnitude de divergência considerada relevante. O estudo de Andow encontrou até 42,4% com outra unidade de análise e outro método; serve de contexto, não de comparação direta, nem de parâmetro legal.
 
 **O que "soberania de dados" quer dizer no seu trabalho?**
@@ -89,7 +89,7 @@ A capacidade do Estado de saber e decidir para onde vão os dados gerados nos se
 A ANPD tornou-se autarquia especial em 2022. Em 2026, a Lei 15.352 a transformou em agência reguladora, com a denominação Agência Nacional de Proteção de Dados. Os documentos anteriores preservam o nome institucional vigente à época.
 
 **Quantos artigos a revisão incluiu?**
-Até 13/11, foram registradas 71 propostas de inclusão e 8 de exclusão. Em 21/11 conferi 18 dessas decisões (12 inclusões e 6 exclusões), com leitura integral e avaliação de qualidade. As outras 61 e os 278 registros em aberto ficam para o início do Capstone II. A Seção 2.7 traz a síntese provisória.
+Até 13/11, foram registradas 71 propostas de inclusão e 8 de exclusão. Em 21/11, conferi 18 das 79 decisões, com leitura integral e avaliação de qualidade (12 propostas de inclusão e seis de exclusão). As notas QA por critério ainda não estão anexadas. As outras 61 e os 278 registros em aberto ficam para o início do Capstone II. A Seção 2.7 traz a síntese provisória.
 
 **Por que você não compara com aplicativos comerciais?**
 O governo tem obrigações próprias: a LGPD e a política de privacidade que ele mesmo publica. Por isso a referência principal é essa, e não o mercado. Uma comparação justa com o mercado exigiria uma amostra comercial sem viés, que a busca da loja não oferece, porque ela ordena por relevância e quase não devolve aplicativos comerciais pequenos. Os 252 comerciais ficam como contexto, sem teste de hipótese.

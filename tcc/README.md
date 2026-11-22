@@ -2,7 +2,7 @@
 
 A entrega do Capstone I é um **projeto de pesquisa**: introdução, referencial teórico e procedimentos metodológicos, com recursos e cronograma. A coleta principal e os testes das hipóteses ficam para o Capstone II. O estado e o que falta estão em [conformidade.md](conformidade.md).
 
-**Revisão de 21/11/2026:** o foco é o confronto entre SDKs identificados em aplicativos governamentais e as declarações de coleta e compartilhamento (H2). H3 estuda diferenças entre aplicativos governamentais com e sem dados sensíveis. A comparação comercial (antiga H1) é apenas contextual, e a antiga H4 é checagem do instrumento. O texto-fonte `latex/main.tex`, o roteiro `apresentacao/roteiro-simulacao.md` e o [conteúdo atualizado dos slides](apresentacao/CONTEUDO_SLIDES_FOCO_H2_20261121.md) incorporam o recorte. **Os binários PDF/DOCX/PPTX anteriormente versionados ainda precisam ser recompilados ou substituídos** antes de usados como material final.
+**Revisão de 21/11/2026:** o foco é o confronto entre SDKs identificados em aplicativos governamentais e as declarações de coleta e compartilhamento (H1). H2 examina diferenças entre aplicativos governamentais com e sem dados sensíveis. A comparação comercial é apenas contextual e a concordância entre detectores é checagem do instrumento, sem número de hipótese. O texto-fonte `latex/main.tex`, o roteiro `apresentacao/roteiro-simulacao.md` e o [conteúdo atualizado dos slides](apresentacao/CONTEUDO_SLIDES_FOCO_H2_20261121.md) incorporam o recorte. **Os binários PDF/DOCX/PPTX anteriormente versionados ainda precisam ser recompilados ou substituídos** antes de usados como material final.
 
 ## Arquivos
 

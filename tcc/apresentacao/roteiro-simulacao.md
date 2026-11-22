@@ -14,7 +14,7 @@ Boa parte dos serviços públicos passou para o celular. Aplicativos como Meu IN
 
 ## Slide 3. O que a literatura já demonstrou (40 s)
 
-A literatura oferece três pontos de partida. Binns e colaboradores examinaram aproximadamente 959 mil aplicativos e encontraram referências a rastreadores distribuídas de maneira concentrada em poucas empresas; a medição é principalmente estática. Kollnig e outros autores discutiram o cenário anterior e posterior ao GDPR e os desafios de consentimento, sem que uma comparação temporal prove, isoladamente, o efeito de uma lei. Samarasinghe e colaboradores analisaram 1.166 aplicativos de governo de 71 países e observaram 269 que transmitiam dados do dispositivo a rastreadores conhecidos. Esses resultados justificam investigar o contexto brasileiro com atenção às declarações de privacidade.
+A literatura oferece três pontos de partida. Binns e colaboradores examinaram aproximadamente 959 mil aplicativos e encontraram referências a rastreadores distribuídas de maneira concentrada em poucas empresas; a medição é principalmente estática. Kollnig e outros autores discutiram o cenário anterior e posterior ao GDPR e os desafios de consentimento, sem que uma comparação temporal prove, isoladamente, o efeito de uma lei. Samarasinghe e colaboradores analisaram 1.166 aplicativos de governo de 71 países: 37% tinham rastreadores do Google, e 27% enviavam informações sensíveis, como identificadores, a terceiros ou sem criptografia. Esses resultados justificam investigar o contexto brasileiro com atenção às declarações de privacidade.
 
 ## Slide 4. Lacuna e contribuição proposta (40 s)
 

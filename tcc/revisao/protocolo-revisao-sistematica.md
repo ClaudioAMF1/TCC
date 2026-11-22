@@ -467,6 +467,7 @@ Para a entrega do projeto em 03/12, a síntese usa as 71 propostas de inclusão 
 | 21/11/2026 | 1.8 | Conferência pelo autor de 18 das 79 decisões da F2 (12 I e 6 E), com leitura integral e QA1–QA8; Seção 11 atualizada | Registrar a validação feita e separar as 61 decisões ainda não conferidas |
 | 21/11/2026 | 1.9 | Hipóteses renumeradas após a mudança de foco sugerida pelo orientador: a principal (H1) passa a ser o confronto entre o detectado e o declarado; a comparação com aplicativos comerciais vira contexto; a de dado sensível passa a H2 e a de concordância entre detectores, a H3. Coluna "Serve a" da Seção 2 atualizada | Simplificar o desenho: o poder público responde à LGPD e às próprias declarações, e uma amostra comercial sem viés exigiria trabalho desproporcional |
 | 21/11/2026 | 1.10 | A concordância entre detectores deixa de ser hipótese e passa a checagem do instrumento, por sugestão do orientador; ficam duas hipóteses (H1, declaração; H2, dado sensível) | O foco é a aderência às declarações; a concordância mede o instrumento, e não os aplicativos |
+| 22/11/2026 | 1.11 | Conferência dos números e detalhes de método dos estudos citados no texto (`conferir-estudos-citados.md`); em Samarasinghe et al. (2022), de acesso fechado, o texto passa a usar os números do resumo oficial (37% e 27%) e a descrição pública do método | Pedido do orientador em 21/11: a banca pode perguntar sobre qualquer número citado |
 
 ### 12.4 Triagem por título e resumo (F1)
 

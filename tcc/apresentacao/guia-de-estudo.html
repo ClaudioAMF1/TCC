@@ -1,0 +1,1691 @@
+<title>Guia do Capstone I</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: guia dividido em partes (uma por vez, pelo endereço #parte); menu lateral no computador e barra de partes no celular; texto em coluna de ~70 caracteres; cada item segue a mesma ficha de campos. */
+:root{
+  --bg:#F4F7FB; --surface:#FFFFFF; --ink:#132034; --muted:#536176; --line:#D8E0EB;
+  --accent:#1F5FA8; --accent-soft:#E5EEF9;
+  --ok:#1D7149; --ok-soft:#E3F3EA; --warn:#8A5A00; --warn-soft:#FBF0D9; --next:#5E45A0; --next-soft:#EEE8F9; --risk:#A23B2A; --risk-soft:#FBE7E3;
+  --serif:"Source Serif 4", Georgia, "Times New Roman", serif;
+  --sans:"Source Sans 3", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --mono:"JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  --s1:4px; --s2:8px; --s3:12px; --s4:16px; --s5:24px; --s6:32px; --s7:48px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0E1520; --surface:#152030; --ink:#E3EAF3; --muted:#9BA9BC; --line:#26354A;
+    --accent:#86B6EE; --accent-soft:#1A2D47;
+    --ok:#62C695; --ok-soft:#14302A; --warn:#E3AE52; --warn-soft:#33291A; --next:#B9A1EA; --next-soft:#282245; --risk:#F08C78; --risk-soft:#3A1F1B;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0E1520; --surface:#152030; --ink:#E3EAF3; --muted:#9BA9BC; --line:#26354A;
+  --accent:#86B6EE; --accent-soft:#1A2D47;
+  --ok:#62C695; --ok-soft:#14302A; --warn:#E3AE52; --warn-soft:#33291A; --next:#B9A1EA; --next-soft:#282245; --risk:#F08C78; --risk-soft:#3A1F1B;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6;
+  padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px));padding-block:0}
+a{color:var(--accent)}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
+.wrap{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:250px minmax(0,1fr);gap:var(--s7);padding-block:var(--s6) var(--s7)}
+@media (max-width:980px){.wrap{grid-template-columns:minmax(0,1fr);gap:var(--s4);padding-top:var(--s3)}}
+/* menu lateral */
+.menu{position:sticky;top:calc(env(safe-area-inset-top, 0px) + 16px);align-self:start;max-height:calc(100vh - 32px);overflow:auto;font-size:15px}
+.menu .marca{font-family:var(--serif);font-weight:700;font-size:18px;margin:0 0 var(--s3);line-height:1.25}
+.menu ol{list-style:none;margin:0;padding:0;display:grid;gap:2px;counter-reset:m}
+.menu li{counter-increment:m}
+.menu a{display:grid;grid-template-columns:26px minmax(0,1fr);padding:6px 8px;border-radius:6px;color:var(--ink);text-decoration:none}
+.menu a::before{content:counter(m);font-family:var(--mono);font-size:13px;color:var(--muted);padding-top:2px}
+.menu a:hover{background:var(--accent-soft)}
+.menu a.ativo{background:var(--accent-soft);color:var(--accent);font-weight:700}
+.menu a.ativo::before{color:var(--accent)}
+/* barra de partes no celular */
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top, 0px);z-index:10;background:var(--bg)}
+.barra{display:none}
+@media (max-width:980px){
+  .menu{display:none}
+  .barra{display:block;position:sticky;top:env(safe-area-inset-top, 0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line);
+    margin-left:calc(-1 * max(16px, env(safe-area-inset-left, 0px)));margin-right:calc(-1 * max(16px, env(safe-area-inset-right, 0px)))}
+  .barra ol{list-style:none;margin:0;padding:8px max(16px, env(safe-area-inset-right, 0px)) 8px max(16px, env(safe-area-inset-left, 0px));display:flex;gap:6px;overflow-x:auto;scrollbar-width:none}
+  .barra ol::-webkit-scrollbar{display:none}
+  .barra li{margin:0;flex:none}
+  .barra a{display:block;padding:6px 12px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink);text-decoration:none;font-size:14.5px;white-space:nowrap}
+  .barra a.ativo{background:var(--accent);border-color:var(--accent);color:var(--surface);font-weight:700}
+}
+main{min-width:0;max-width:780px}
+/* tipografia */
+h1,h2,h3{font-family:var(--serif);text-wrap:balance;line-height:1.2;color:var(--ink)}
+h1{font-size:clamp(30px,5vw,44px);margin:var(--s2) 0 var(--s4)}
+h2{font-size:clamp(26px,3.6vw,34px);margin:0 0 var(--s3)}
+h3{font-size:22px;margin:var(--s6) 0 var(--s3)}
+h4{font-family:var(--sans);font-size:16.5px;margin:var(--s5) 0 var(--s2)}
+p{margin:0 0 var(--s4)}
+ul,ol{margin:0 0 var(--s4);padding-left:1.3em}
+li{margin-bottom:6px}
+.eyebrow{font-size:13px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:var(--s2)}
+.lead{font-size:19px}
+.muted{color:var(--muted)}
+code{font-family:var(--mono);font-size:.86em;background:var(--accent-soft);padding:1px 5px;border-radius:4px;overflow-wrap:anywhere}
+.parte > header{padding-bottom:var(--s4);border-bottom:1px solid var(--line);margin-bottom:var(--s5)}
+.nesta{font-size:15px;color:var(--muted);margin:var(--s3) 0 0}
+.nesta a{color:var(--muted)}
+.bloco{padding-block:var(--s4) var(--s2);scroll-margin-top:80px}
+.bloco + .bloco{border-top:1px solid var(--line);margin-top:var(--s4);padding-top:var(--s5)}
+.bloco > h3:first-child{margin-top:0}
+/* estados */
+.chip{display:inline-block;font-size:12.5px;font-weight:700;letter-spacing:.02em;padding:2px 9px;border-radius:999px;white-space:nowrap;vertical-align:2px;text-decoration:none}
+.chip.feito{background:var(--ok-soft);color:var(--ok)}
+.chip.ensaio{background:var(--warn-soft);color:var(--warn)}
+.chip.conf{background:var(--risk-soft);color:var(--risk)}
+.chip.c2{background:var(--next-soft);color:var(--next)}
+.chip.med{background:var(--accent-soft);color:var(--accent)}
+a.chip.med:hover{text-decoration:underline}
+.legenda{display:flex;flex-wrap:wrap;gap:var(--s2) var(--s4);margin:var(--s4) 0;font-size:15px;align-items:center}
+/* caixas */
+.box{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:var(--s4) var(--s5);margin:0 0 var(--s4)}
+.box > :last-child{margin-bottom:0}
+.dizer,.atencao,.conta{border-radius:0 10px 10px 0;padding:var(--s3) var(--s4);margin:0 0 var(--s4)}
+.dizer{border-left:4px solid var(--accent);background:var(--accent-soft)}
+.atencao{border-left:4px solid var(--warn);background:var(--warn-soft)}
+.conta{border-left:4px solid var(--line);background:var(--bg);font-variant-numeric:tabular-nums}
+.rot{display:block;font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;margin-bottom:4px}
+.dizer .rot{color:var(--accent)} .atencao .rot{color:var(--warn)} .conta .rot{color:var(--muted)}
+.dizer > :last-child,.atencao > :last-child,.conta > :last-child{margin-bottom:0}
+.tres{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s3);margin:0 0 var(--s4)}
+.duas{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--s3);margin:0 0 var(--s4)}
+@media (max-width:680px){.tres,.duas{grid-template-columns:minmax(0,1fr)}}
+.tres .box,.duas .box{margin:0;padding:var(--s4)}
+.tres h4,.duas h4{margin-top:0}
+/* tabelas */
+.tbl{overflow-x:auto;margin:0 0 var(--s4);border:1px solid var(--line);border-radius:10px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:15px;min-width:480px}
+th,td{text-align:left;vertical-align:top;padding:9px 12px;border-bottom:1px solid var(--line)}
+th{font-size:13px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);background:var(--bg)}
+tr:last-child td{border-bottom:0}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+td.c,th.c{text-align:center;font-variant-numeric:tabular-nums}
+/* fichas */
+.ficha{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:var(--s5);margin:0 0 var(--s5);scroll-margin-top:80px}
+.ficha > h3{margin:0 0 var(--s2);display:flex;gap:var(--s3);align-items:baseline;flex-wrap:wrap}
+.ficha > h3 .idx{font-family:var(--mono);font-size:15px;color:var(--accent);flex:none}
+.ficha > .sub{color:var(--muted);margin:0 0 var(--s4);font-size:16px}
+.ficha dl{display:grid;grid-template-columns:160px minmax(0,1fr);gap:var(--s3) var(--s4);margin:0}
+.ficha dt{font-weight:700;font-size:13px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;padding-top:4px}
+.ficha dd{margin:0;min-width:0}
+.ficha dd > :last-child{margin-bottom:0}
+@media (max-width:640px){.ficha{padding:var(--s4)}.ficha dl{grid-template-columns:minmax(0,1fr);gap:var(--s1) 0}.ficha dt{padding-top:var(--s3)}}
+/* mapa do projeto */
+.mapa{list-style:none;margin:0 0 var(--s4);padding:0;display:grid;gap:6px}
+.mapa li{margin:0;display:grid;grid-template-columns:30px minmax(0,1fr) auto;gap:var(--s3);align-items:start;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:var(--s3) var(--s4)}
+.mapa .k{font-family:var(--mono);font-weight:600;color:var(--accent)}
+.mapa strong{display:block}
+.mapa .meds{display:flex;flex-wrap:wrap;gap:4px;margin-top:6px}
+.mapa .sec{font-size:13px;color:var(--muted)}
+@media (max-width:560px){.mapa li{grid-template-columns:26px minmax(0,1fr)}.mapa li > .chip{grid-column:2;justify-self:start}}
+/* grade dos detectores */
+.grade{display:grid;grid-template-columns:110px repeat(2,minmax(0,1fr));gap:6px;margin:0 0 var(--s4);font-size:15px}
+.grade div{padding:var(--s3);border-radius:8px}
+.grade .cab,.grade .lin{color:var(--muted);font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:.05em;display:flex}
+.grade .cab{align-items:flex-end}.grade .lin{align-items:center}
+.grade .cel{background:var(--bg);border:1px solid var(--line)}
+.grade .cel b{font-family:var(--mono);font-size:20px;color:var(--accent);display:block}
+.grade .vazia{border:1px dashed var(--line);color:var(--muted)}
+@media (max-width:520px){.grade{grid-template-columns:72px repeat(2,minmax(0,1fr));font-size:14px}}
+/* prisma */
+.prisma{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:var(--s2) var(--s4);margin:0 0 var(--s4);font-size:15px}
+.prisma .p{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:var(--s2) var(--s3)}
+.prisma .p.lado{background:var(--bg)}
+.prisma .p b{font-family:var(--mono)}
+@media (max-width:600px){.prisma{grid-template-columns:minmax(0,1fr)}.prisma .p.lado{margin-left:var(--s5)}}
+/* números e perguntas */
+.numeros{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:var(--s3);margin:0 0 var(--s4)}
+.numeros div{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:var(--s3) var(--s4)}
+.numeros b{display:block;font-family:var(--mono);font-size:21px;color:var(--accent);font-variant-numeric:tabular-nums;line-height:1.3}
+.numeros span{font-size:14.5px;color:var(--muted)}
+.qa{margin:0 0 var(--s4);padding:0 0 var(--s4);border-bottom:1px solid var(--line)}
+.qa:last-child{border-bottom:0}
+.qa h4{margin:0 0 var(--s2);font-size:17px}
+.qa p{margin:0}
+/* glossário */
+.filtro{display:flex;gap:var(--s3);align-items:center;flex-wrap:wrap;margin:0 0 var(--s4)}
+.filtro label{font-weight:700}
+.filtro input{font:inherit;font-size:16px;padding:8px 12px;border-radius:8px;border:1px solid var(--line);background:var(--surface);color:var(--ink);width:min(100%,340px)}
+.gl{margin:0}
+.gl > div{padding:var(--s2) 0;border-bottom:1px solid var(--line)}
+.gl dt{font-weight:700}
+.gl dd{margin:2px 0 0}
+.gl .onde{font-size:14.5px;color:var(--muted)}
+.chip.prio{background:var(--accent);color:var(--surface)}
+.chip.fora{background:var(--warn-soft);color:var(--warn)}
+.teste details{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:var(--s3) var(--s4);margin:0 0 var(--s2)}
+.teste summary{cursor:pointer;font-weight:600;line-height:1.45}
+.teste details[open] summary{color:var(--accent)}
+.teste details p{margin:var(--s2) 0 0}
+.plano td:first-child{white-space:nowrap;font-weight:600}
+/* navegação entre partes */
+.passos{display:flex;justify-content:space-between;gap:var(--s3);flex-wrap:wrap;margin-top:var(--s6);padding-top:var(--s4);border-top:1px solid var(--line)}
+.passos a{display:block;max-width:48%;min-width:0;padding:var(--s3) var(--s4);border:1px solid var(--line);border-radius:10px;background:var(--surface);text-decoration:none;color:var(--ink)}
+.passos a span{display:block;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.passos a.prox{margin-left:auto;text-align:right}
+@media (max-width:520px){.passos a{max-width:100%;flex:1 1 100%}}
+/* fala completa nas fichas dos slides */
+.ficha details summary{cursor:pointer;color:var(--accent);font-weight:600}
+.ficha details p{margin:var(--s2) 0 0;color:var(--ink)}
+.ficha .sub{font-variant-numeric:tabular-nums}
+</style>
+<div class="wrap">
+  <nav class="menu" aria-label="Partes do guia">
+    <p class="marca">Guia do Capstone I</p>
+    <ol id="lista-partes"></ol>
+  </nav>
+
+  <main>
+    <nav class="barra" aria-label="Partes do guia"><ol id="barra-partes"></ol></nav>
+
+    <!-- 1 INÍCIO -->
+    <section class="parte" id="inicio" data-view data-titulo="Início">
+      <header>
+        <p class="eyebrow">Projeto Capstone I · Ciência da Computação · IDP 2026.2 · versão final de 22/11/2026</p>
+        <h1>Quem mais está dentro do aplicativo?</h1>
+        <p class="lead">Este guia explica o TCC de ponta a ponta, na versão final que você entrega e apresenta. Cada número vem do <code>main.tex</code> final, do protocolo da revisão ou dos slides. Quando algo vai além do texto, o guia avisa com <span class="chip fora">fora do texto</span>.</p>
+        <p class="nesta">Nesta parte: <a href="#inicio--como">como usar</a> · <a href="#inicio--plano">plano até 24/11</a> · <a href="#inicio--nao">o que nunca dizer</a></p>
+      </header>
+
+      <div class="bloco" id="inicio--como">
+        <h3>Como usar este guia</h3>
+        <p>São 17 partes. Use o menu (no celular, a barra no topo) para trocar de parte. No fim de cada parte há um botão para a seguinte.</p>
+        <div class="duas">
+          <div class="box"><h4>Para entender</h4><p>Partes 2 a 12, na ordem do texto: o projeto, o que mudou, a pergunta e as hipóteses, a justificativa, o referencial, a LGPD, o método, os detectores, as medidas estatísticas, a revisão e o restante do capítulo 3.</p></div>
+          <div class="box"><h4>Para treinar</h4><p>Partes 13 a 17: a apresentação slide a slide, as perguntas da banca, os números de cor, o teste e o glossário. A parte 10 explica κ, IC95% e razão de prevalências com contas feitas com os números do seu trabalho.</p></div>
+        </div>
+        <div class="legenda" aria-label="Legenda dos estados">
+          <span class="chip feito">Feito</span><span class="muted">já executado</span>
+          <span class="chip ensaio">Piloto</span><span class="muted">testado em pequena escala</span>
+          <span class="chip conf">A conferir</span><span class="muted">registrado, falta a sua conferência</span>
+          <span class="chip c2">Capstone II</span><span class="muted">fev. a jun. de 2027</span>
+        </div>
+      </div>
+
+      <div class="bloco" id="inicio--plano">
+        <h3>Plano até a simulação</h3>
+        <p>A simulação é na <b>terça, 24/11</b>, na sala 105, entre 10h e 11h40, só com a professora Patrícia. Pelo plano de ensino, cada aluno tem <b>25 minutos: 15 de exposição e 10 de perguntas</b>. Seu roteiro dá cerca de 10 minutos em ritmo normal e 12 em ritmo calmo.</p>
+        <div class="tbl"><table class="plano">
+          <thead><tr><th>Quando</th><th>O que fazer</th></tr></thead>
+          <tbody>
+            <tr><td>Domingo, 22/11</td><td>Ler as partes 2 a 7 (projeto, mudanças, pergunta, justificativa, referencial e LGPD). Ensaiar uma vez com o roteiro na mão.</td></tr>
+            <tr><td>Segunda, 23/11</td><td>Ler as partes 8 a 12 (método, detectores, medidas, revisão, ética e cronograma). Ensaiar três vezes com cronômetro e gravar uma. Responder em voz alta as perguntas da parte 14.</td></tr>
+            <tr><td>Terça, 24/11, de manhã</td><td>Revisar a parte 15 (números de cor) e fazer o teste da parte 16. Um último ensaio, sem ler.</td></tr>
+          </tbody>
+        </table></div>
+        <div class="dizer"><span class="rot">Regra de ouro</span><p>Fale com as suas palavras, mas mantenha os números exatos. Se não souber uma resposta, diga o que o texto afirma e o que ainda será feito no Capstone II. Nunca invente um resultado.</p></div>
+      </div>
+
+      <div class="bloco" id="inicio--nao">
+        <h3>O que nunca dizer</h3>
+        <p>Estas frases estavam em versões antigas ou contradizem o texto final. Evite cada uma.</p>
+        <div class="tbl"><table>
+          <thead><tr><th>Não diga</th><th>Diga</th></tr></thead>
+          <tbody>
+            <tr><td>"Os aplicativos do governo violam a LGPD."</td><td>"Uma divergência entre o declarado e o detectado é um sinal de alerta, não prova de infração."</td></tr>
+            <tr><td>"Os dados vão para o exterior."</td><td>"SDK de empresa estrangeira mostra dependência de fornecedores estrangeiros. Envio ao exterior só a análise dinâmica pode mostrar."</td></tr>
+            <tr><td>"Vou comparar o governo com o mercado" ou "grupo de controle comercial".</td><td>"Os 252 comerciais são uma referência descritiva, só contexto, sem teste de hipótese."</td></tr>
+            <tr><td>"H3" ou "H4".</td><td>"São duas hipóteses. A concordância entre detectores é uma checagem do instrumento."</td></tr>
+            <tr><td>"Incluí 71 estudos."</td><td>"Há 71 propostas de inclusão. Conferi 18 das 79 decisões; as outras ficam para fevereiro."</td></tr>
+            <tr><td>"75% dos apps do governo têm rastreador."</td><td>"No piloto, com 20 pacotes de teste, a taxa variou de 75% a 95% conforme o detector. O piloto não testa hipótese."</td></tr>
+            <tr><td>"Samarasinghe achou 269 apps (23,1%)."</td><td>"Samarasinghe: 1.166 apps de 71 países; 37% com rastreadores do Google e 27% enviando informação sensível a terceiros ou sem criptografia."</td></tr>
+            <tr><td>"O AndroZoo é a fonte principal."</td><td>"Todos os apps serão baixados na versão atual da Google Play. O AndroZoo serve para reprodutibilidade e para medir a defasagem."</td></tr>
+            <tr><td>"Autoridade Nacional de Proteção de Dados."</td><td>"Agência Nacional de Proteção de Dados, desde a Lei 15.352/2026."</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+    </section>
+
+    <!-- 2 O PROJETO -->
+    <section class="parte" id="projeto" data-view data-titulo="O projeto em um minuto" hidden>
+      <header>
+        <p class="eyebrow">Parte 2</p>
+        <h2>O projeto em um minuto</h2>
+        <p class="nesta">Nesta parte: <a href="#projeto--fala">a fala de 30 segundos</a> · <a href="#projeto--tres">três evidências que não se misturam</a> · <a href="#projeto--mapa">o que já foi feito e o que falta</a> · <a href="#projeto--estrutura">a estrutura do texto</a></p>
+      </header>
+
+      <div class="bloco" id="projeto--fala">
+        <h3>A fala de 30 segundos</h3>
+        <div class="dizer"><span class="rot">Para abrir ou responder "do que trata o seu trabalho?"</span><p>Muitos serviços públicos passaram para o celular, como o Meu INSS e o Meu SUS Digital, cada um com mais de 50 milhões de instalações. Esses aplicativos embutem SDKs, que são componentes de outras empresas, e alguns coletam identificadores e dados de uso. Meu trabalho mede, nos aplicativos oficiais do governo brasileiro, quantos SDKs de rastreamento e envios de dados não estão declarados na política de privacidade e na seção "Segurança dos dados" da Google Play. A referência é a LGPD e a própria declaração do órgão, não o mercado. No Capstone I eu entrego o problema, o método e um piloto de viabilidade; a coleta e os testes ficam para o Capstone II.</p></div>
+        <p><b>Por que importa, em uma frase:</b> quem precisa do INSS não pode trocar de aplicativo, então o Estado tem de saber e informar quem participa do serviço e quais dados recebe.</p>
+      </div>
+
+      <div class="bloco" id="projeto--tres">
+        <h3>Três evidências que não se misturam</h3>
+        <p>Esta distinção responde metade das perguntas da banca. O texto sempre separa:</p>
+        <div class="tres">
+          <div class="box"><h4>Presença</h4><p>O código do SDK está dentro do pacote (APK). Medida por <b>análise estática</b>, sem rodar o app. Mostra que o código existe, não que ele roda nem que envia dados.</p></div>
+          <div class="box"><h4>Transmissão</h4><p>O app, rodando, enviou dados a algum destino. Medida por <b>análise dinâmica</b>, observando o tráfego. Só numa subamostra, porque exige instalar e operar cada app.</p></div>
+          <div class="box"><h4>Declaração</h4><p>O que o órgão diz na política de privacidade e na seção "Segurança dos dados". É um documento: pode estar certo, ser genérico, incompleto ou faltar.</p></div>
+        </div>
+        <div class="atencao"><span class="rot">Consequência</span><p>"Fluxo não declarado" só se usa quando o envio foi <b>observado</b> na análise dinâmica e não há declaração compatível. Com SDK detectado no código, o confronto é documental: par aplicativo–SDK com ou sem declaração compatível.</p></div>
+      </div>
+
+      <div class="bloco" id="projeto--mapa">
+        <h3>O que já foi feito e o que falta</h3>
+        <ol class="mapa">
+          <li><span class="k">1</span><div><strong>Corpus governamental</strong><span class="sec">590 apps encontrados; 396 candidatos de 71 publicadores; 376 oficiais após conferência (Seções 3.1, 3.2 e 3.6)</span></div><span class="chip feito">Feito</span></li>
+          <li><span class="k">2</span><div><strong>Referência comercial</strong><span class="sec">190 e depois 252 apps, só como contexto (3.3 e 3.4)</span></div><span class="chip feito">Feito</span></li>
+          <li><span class="k">3</span><div><strong>Viabilidade das hipóteses</strong><span class="sec">323 de 396 com política acessível; 100 sensíveis; menor célula com 26 apps (3.6)</span></div><span class="chip feito">Feito</span></li>
+          <li><span class="k">4</span><div><strong>Exame dos detectores e piloto</strong><span class="sec">MobSF usa a base do Exodus; detectores A, B e C; 20 pacotes; κ 0,52 (3.5 e 3.6)</span></div><span class="chip ensaio">Piloto</span></li>
+          <li><span class="k">5</span><div><strong>Revisão sistemática</strong><span class="sec">1.531 registros, 1.249 triados, 357 à leitura completa, 71 propostas de inclusão (3.7)</span></div><span class="chip conf">A conferir</span></li>
+          <li><span class="k">6</span><div><strong>Conferência das 61 decisões, 278 registros abertos, bola de neve</strong><span class="sec">Fevereiro de 2027 (3.13)</span></div><span class="chip c2">Capstone II</span></li>
+          <li><span class="k">7</span><div><strong>Download da versão atual, detecção e confronto com as declarações (H1)</strong><span class="sec">Março de 2027</span></div><span class="chip c2">Capstone II</span></li>
+          <li><span class="k">8</span><div><strong>H2 e análise dinâmica da subamostra</strong><span class="sec">Abril de 2027</span></div><span class="chip c2">Capstone II</span></li>
+          <li><span class="k">9</span><div><strong>Estatística, redação final e defesa</strong><span class="sec">Maio e junho de 2027</span></div><span class="chip c2">Capstone II</span></li>
+        </ol>
+      </div>
+
+      <div class="bloco" id="projeto--estrutura">
+        <h3>A estrutura do texto</h3>
+        <p>O PDF tem 44 páginas (45 no Overleaf, com pdfLaTeX). Use esta tabela para dizer "isso está na Seção X".</p>
+        <div class="tbl"><table>
+          <thead><tr><th>Seção</th><th>Conteúdo</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td>Introdução: contexto, Meu INSS e Meu SUS Digital, Samarasinghe, foco nas declarações</td></tr>
+            <tr><td>1.1 a 1.5</td><td>Problema · Objetivo geral · Objetivos específicos · Hipóteses (Quadro 1) · Justificativa</td></tr>
+            <tr><td>2.1 a 2.4</td><td>SDKs e rastreamento · regulação e consentimento · detecção e fonte dos pacotes · o declarado e o feito</td></tr>
+            <tr><td>2.5</td><td>Aplicativos de governo: Samarasinghe, Serrano e as três questões em aberto</td></tr>
+            <tr><td>2.6</td><td>LGPD, ANPD (Leis 14.460 e 15.352), guias da ANPD, Resolução 19/2024 e soberania de dados</td></tr>
+            <tr><td>2.7</td><td>Os 71 estudos com proposta de inclusão, por questão (Quadro 2), e os seis que orientam o projeto</td></tr>
+            <tr><td>3 (abertura)</td><td>As oito etapas, a decisão sobre a análise dinâmica e a declaração de uso de IA</td></tr>
+            <tr><td>3.1 a 3.4</td><td>Corpus · caracterização · referência comercial · ampliação da referência</td></tr>
+            <tr><td>3.5</td><td>Verificação dos detectores (Quadro 3: A, B e C)</td></tr>
+            <tr><td>3.6</td><td>Viabilidade, anúncios, fonte dos pacotes, piloto e validação do corpus</td></tr>
+            <tr><td>3.7</td><td>Protocolo da revisão sistemática e fluxograma PRISMA (Figura 1)</td></tr>
+            <tr><td>3.8 a 3.14</td><td>Ética · limitações · resultados esperados e plano de análise · recursos · critérios da LGPD · cronograma · riscos</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+    </section>
+
+    <!-- 3 O QUE MUDOU -->
+    <section class="parte" id="mudancas" data-view data-titulo="O que mudou e por quê" hidden>
+      <header>
+        <p class="eyebrow">Parte 3</p>
+        <h2>O que mudou e por quê</h2>
+        <p class="lead">O desenho final nasceu das sugestões do orientador em 21/11. A professora pode perguntar "por que o foco é esse?". Esta parte dá a resposta e lista tudo o que ele pediu.</p>
+        <p class="nesta">Nesta parte: <a href="#mudancas--antes">antes e agora</a> · <a href="#mudancas--porque">por que mudou</a> · <a href="#mudancas--audio">o áudio</a> · <a href="#mudancas--comentarios">os comentários</a> · <a href="#mudancas--email">o e-mail</a></p>
+      </header>
+
+      <div class="bloco" id="mudancas--antes">
+        <h3>Antes e agora</h3>
+        <div class="tbl"><table>
+          <thead><tr><th>Ponto</th><th>Versão antiga</th><th>Versão final</th></tr></thead>
+          <tbody>
+            <tr><td>Pergunta</td><td>Governo rastreia mais ou menos que apps comerciais pareados?</td><td>Em que medida há SDKs e envios sem declaração compatível?</td></tr>
+            <tr><td>Referência</td><td>Grupo de controle comercial</td><td>A LGPD e a declaração do próprio órgão; os 252 comerciais são só contexto</td></tr>
+            <tr><td>Hipóteses</td><td>Quatro (H1 a H4)</td><td>Duas: H1 (declaração, principal) e H2 (dado sensível); concordância vira checagem do instrumento</td></tr>
+            <tr><td>Fonte dos pacotes</td><td>AndroZoo preferido; Google Play para os que faltassem</td><td>Versão atual da Google Play para todos; AndroZoo para reprodutibilidade e defasagem</td></tr>
+            <tr><td>ANPD</td><td>Autoridade</td><td>Agência (Lei 15.352/2026); autarquia especial desde 2022 (Lei 14.460/2022)</td></tr>
+            <tr><td>Soberania</td><td>Dados no exterior a partir da presença de SDK</td><td>Presença = dependência de fornecedores estrangeiros; exterior só com análise dinâmica</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+
+      <div class="bloco" id="mudancas--porque">
+        <h3>Por que mudou</h3>
+        <div class="dizer"><span class="rot">Resposta pronta</span><p>Por sugestão do orientador. Comparar com o mercado exigiria uma amostra comercial sem viés, e a busca da loja não oferece isso: ela ordena por relevância e quase não devolve apps comerciais pequenos. Além disso, o governo tem obrigações próprias: a LGPD e a política que ele mesmo publica. Se o que o app declara difere do que ele embarca, isso já é um sinal de alerta, sem precisar do mercado.</p></div>
+      </div>
+
+      <div class="bloco" id="mudancas--audio">
+        <h3>O que o orientador pediu no áudio</h3>
+        <div class="tbl"><table>
+          <thead><tr><th class="c">#</th><th>Pedido</th><th>Onde está</th></tr></thead>
+          <tbody>
+            <tr><td class="c">1</td><td>Elogio: ideia clara; a revisão atende até mais do que precisa</td><td>Sem ação</td></tr>
+            <tr><td class="c">2</td><td>Não comparar governo com comercial (ônus de coleta sem viés)</td><td>1.4, 3.3 e 3.4</td></tr>
+            <tr><td class="c">3</td><td>Usar os comerciais como exemplo, não como benchmark</td><td>3.3 e slide 6</td></tr>
+            <tr><td class="c">4</td><td>Governo tem de obedecer à lei; dizer uma coisa e fazer outra é "red flag"</td><td>1.5 e 2.5</td></tr>
+            <tr><td class="c">5</td><td>Contribuição: o que o app faz sem o órgão perceber, via SDK</td><td>Introdução, 1.5 e 2.6</td></tr>
+            <tr><td class="c">6</td><td>A comparação vira contexto; a hipótese principal é a aderência à LGPD e à declaração</td><td>H1 (1.4)</td></tr>
+            <tr><td class="c">7</td><td>Problema e objetivo com "em que medida": resposta quantitativa, não binária</td><td>1.1 e 1.2</td></tr>
+            <tr><td class="c">8</td><td>No referencial, escolher poucos estudos e justificar sumariamente</td><td>2.7 (seis estudos)</td></tr>
+            <tr><td class="c">9</td><td>Tirar o parágrafo que justificava a escolha do tema contra outros</td><td>Removido</td></tr>
+            <tr><td class="c">10</td><td>Não fazer ajustes profundos: o Capstone I apresenta a ideia geral</td><td>Respeitado</td></tr>
+            <tr><td class="c">11</td><td>Ajustar o PowerPoint</td><td>Slides 4 a 7, 9 e 14</td></tr>
+            <tr><td class="c">12</td><td>Ofereceu um ensaio com ele</td><td>Você decidiu não fazer</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+
+      <div class="bloco" id="mudancas--comentarios">
+        <h3>Os seis comentários no Overleaf</h3>
+        <div class="tbl"><table>
+          <thead><tr><th class="c">#</th><th>Comentário</th><th>Resposta no texto</th></tr></thead>
+          <tbody>
+            <tr><td class="c">1</td><td>"Colocar o problema antes dos objetivos"</td><td>1.1 Problema, 1.2 Objetivo geral, 1.3 Objetivos específicos</td></tr>
+            <tr><td class="c">2</td><td>"Jogar a relevância na justificativa, em texto corrido"</td><td>Abertura da 1.5</td></tr>
+            <tr><td class="c">3</td><td>"Dizer que pesquisou artigos do caso brasileiro"</td><td>Lemos, Vaz e Reis na 1.1</td></tr>
+            <tr><td class="c">4</td><td>"Explicar por que escolheu essa fonte de pacotes"</td><td>2.3 (atualizada pelo e-mail)</td></tr>
+            <tr><td class="c">5</td><td>"Essa frase parece incompleta"</td><td>2.5, antes das três questões</td></tr>
+            <tr><td class="c">6</td><td>"Esse aqui talvez seja bom revisar" (conferência das decisões)</td><td>18 de 79 conferidas em 21/11; 61 para fevereiro (3.7)</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+
+      <div class="bloco" id="mudancas--email">
+        <h3>O que ele pediu no e-mail de 21/11</h3>
+        <div class="tbl"><table>
+          <thead><tr><th class="c">#</th><th>Pedido</th><th>Onde está</th></tr></thead>
+          <tbody>
+            <tr><td class="c">1</td><td>Foco na aderência ao declarado; a antiga H2 vira o foco, a H1 vira contexto, a H4 vira checagem do instrumento</td><td>1.4 e 3.5</td></tr>
+            <tr><td class="c">2</td><td>Reescrever só o problema e o objetivo geral</td><td>1.1 e 1.2</td></tr>
+            <tr><td class="c">3</td><td>Referencial com quantidade boa; não acrescentar</td><td>Nenhum estudo novo na síntese</td></tr>
+            <tr><td class="c">4</td><td>Justificar o limiar de 10%</td><td>1.4, com Andow et al.</td></tr>
+            <tr><td class="c">5</td><td>Versão atual da Google Play para todos; AndroZoo para reprodutibilidade e defasagem</td><td>2.3, etapas do cap. 3, 3.6, limitações e riscos</td></tr>
+            <tr><td class="c">6</td><td>Citar a Lei 15.352/2026</td><td>2.6 e lista de siglas</td></tr>
+            <tr><td class="c">7</td><td>Usar o guia de cookies da ANPD</td><td>2.6 (p. 6 e 14) e 3.12</td></tr>
+            <tr><td class="c">8</td><td>SDK já permite falar em "dependência de fornecedores estrangeiros"</td><td>Introdução, 1.5 e 2.6</td></tr>
+            <tr><td class="c">9</td><td>Dados no exterior exigem análise dinâmica: avaliar se compensa</td><td>Parágrafo na abertura do cap. 3</td></tr>
+            <tr><td class="c">10</td><td>Deixar os 278 registros para fevereiro</td><td>3.7, Figura 1, cronograma e slide 12</td></tr>
+            <tr><td class="c">11</td><td>Conferir os estudos com números ou detalhes de método</td><td><code>conferir-estudos-citados.md</code></td></tr>
+            <tr><td class="c">12</td><td>Declarar a ferramenta de IA ou reescrever</td><td>Declaração na abertura do cap. 3</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+    </section>
+
+    <!-- 4 PERGUNTA E HIPÓTESES -->
+    <section class="parte" id="pergunta" data-view data-titulo="Pergunta, objetivos e hipóteses" hidden>
+      <header>
+        <p class="eyebrow">Parte 4 · Seções 1.1 a 1.4</p>
+        <h2>Pergunta, objetivos e hipóteses</h2>
+        <p class="nesta">Nesta parte: <a href="#pergunta--problema">o problema</a> · <a href="#pergunta--objetivos">os objetivos</a> · <a href="#pergunta--h1">H1</a> · <a href="#pergunta--limiar">o limiar de 10%</a> · <a href="#pergunta--h2">H2</a> · <a href="#pergunta--checagem">a checagem do instrumento</a></p>
+      </header>
+
+      <div class="bloco" id="pergunta--problema">
+        <h3>O problema (1.1)</h3>
+        <div class="box"><p><b>"Em que medida os aplicativos móveis oficiais do governo brasileiro embarcam SDKs de rastreamento de terceiros e enviam dados a terceiros sem que isso esteja declarado em suas políticas de privacidade e na seção 'Segurança dos dados' da Google Play?"</b></p></div>
+        <p>Leia a pergunta em quatro pedaços:</p>
+        <ul>
+          <li><b>"Em que medida"</b>: a resposta é uma proporção com intervalo de confiança, não um sim ou não. Foi pedido do orientador.</li>
+          <li><b>"Oficiais do governo brasileiro"</b>: federal, estadual e municipal, com publicador conferido pelo nome jurídico.</li>
+          <li><b>"Embarcam SDKs" e "enviam dados"</b>: são as duas evidências, presença (estática) e transmissão (dinâmica, na subamostra).</li>
+          <li><b>"Sem que isso esteja declarado"</b>: o confronto é com dois documentos, a política de privacidade e a seção "Segurança dos dados".</li>
+        </ul>
+        <p>O segundo parágrafo da 1.1 diz que a busca achou estudos brasileiros sobre apps específicos, o Monitora Covid-19 (Lemos et al., 2022) e o Conecte SUS (Vaz et al., 2022), e análises de políticas à luz da LGPD (Reis et al., 2023). Nenhum cobre o conjunto dos apps de governo brasileiros. Samarasinghe et al. (2022) é a referência internacional mais próxima, mas não separa o Brasil nem mede a concordância entre detectores.</p>
+      </div>
+
+      <div class="bloco" id="pergunta--objetivos">
+        <h3>Os objetivos (1.2 e 1.3)</h3>
+        <p><b>Objetivo geral:</b> medir a proporção de SDKs de rastreamento de terceiros e de envios de dados sem declaração compatível nos aplicativos móveis governamentais brasileiros, à luz da LGPD, distinguindo a evidência estática dos fluxos de rede efetivamente observados.</p>
+        <div class="tbl"><table>
+          <thead><tr><th class="c">#</th><th>Objetivo específico</th><th>Como será feito</th><th>Serve a</th></tr></thead>
+          <tbody>
+            <tr><td class="c">1</td><td>Consolidar e validar manualmente o corpus, com critérios e taxa de erro da classificação automática</td><td>Conferência dos 376 antes da coleta (fevereiro)</td><td>Tudo</td></tr>
+            <tr><td class="c">2</td><td>Quantificar os SDKs por aplicativo, esfera e dado sensível</td><td>Análise estática dos pacotes</td><td>H2</td></tr>
+            <tr><td class="c">3</td><td>Confrontar os SDKs com a política e a "Segurança dos dados"</td><td>Matriz documental, par aplicativo–SDK</td><td>H1</td></tr>
+            <tr><td class="c">4</td><td>Na subamostra dinâmica, ver destinos e jurisdições e se estão declarados</td><td>Dispositivo e conta próprios, tráfego observado</td><td>Soberania</td></tr>
+            <tr><td class="c">5</td><td>Medir a concordância entre detectores e o efeito da ferramenta na taxa</td><td>κ de Fleiss, acordos positivo e negativo, τ de Kendall</td><td>Checagem</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+
+      <div class="bloco" id="pergunta--h1">
+        <h3>H1, a hipótese principal (Quadro 1)</h3>
+        <div class="box">
+          <p><b>Enunciado:</b> ao menos 10% dos pares aplicativo–SDK detectados não terão declaração compatível na política de privacidade e na seção "Segurança dos dados", consideradas as categorias de dados e as finalidades.</p>
+          <p><b>Critério de rejeição:</b> limite superior do IC95% da proporção de pares sem declaração compatível abaixo de 10%, com agrupamento por aplicativo. Documentos não recuperados ou insuficientes são reportados à parte.</p>
+        </div>
+        <h4>A unidade é o par aplicativo–SDK</h4>
+        <p>Se um app tem três SDKs de rastreamento, ele gera três pares. Cada par recebe a função do componente e uma de cinco classes (Seção 3.12):</p>
+        <ol>
+          <li><b>Menção nominal:</b> a política cita o SDK pelo nome.</li>
+          <li><b>Categoria e finalidade compatíveis:</b> não cita o nome, mas declara os dados e a finalidade que o SDK usa (por exemplo, "dados de uso para análise").</li>
+          <li><b>Ausência de declaração compatível.</b></li>
+          <li><b>Informação insuficiente.</b></li>
+          <li><b>Política indisponível.</b></li>
+        </ol>
+        <p>Não citar o nome comercial do SDK, sozinho, não é omissão. A estimativa principal usa só pares com detecção confirmada, função identificada e documentos que permitem avaliar; os outros vão à parte e entram em análises de sensibilidade.</p>
+        <div class="conta"><span class="rot">Como ler o resultado · exemplo inventado</span>
+          <p>Imagine 1.000 pares avaliáveis. Se 180 não têm declaração compatível, a proporção é 18%, com IC95% por volta de 15% a 21%. O limite superior não fica abaixo de 10%, então a H1 <b>não é rejeitada</b>: os dados são compatíveis com "ao menos 10% sem declaração".</p>
+          <p>Se fossem 50 pares (5%), com IC95% por volta de 3,8% a 6,5%, o limite superior ficaria abaixo de 10% e a H1 <b>seria rejeitada</b>: a aderência seria maior que o patamar.</p>
+        </div>
+        <div class="atencao"><span class="rot">Por que "agrupamento por aplicativo"</span><p>Pares do mesmo app não são independentes: o mesmo órgão escreveu a política para todos. Tratar 1.000 pares como 1.000 observações independentes deixaria o intervalo estreito demais. O IC95% considera que vários pares vêm do mesmo app. O método exato será fechado com o orientador antes da coleta.</p></div>
+      </div>
+
+      <div class="bloco" id="pergunta--limiar">
+        <h3>O limiar de 10%</h3>
+        <div class="dizer"><span class="rot">Resposta pronta</span><p>É um critério operacional do estudo: ao menos um par sem declaração compatível em cada dez pares avaliáveis. Não é uma tolerância da LGPD; a lei não admite percentual de omissão. Andow et al. (2020) encontraram até 42,4% dos aplicativos declarando de forma incorreta ou omitindo fluxos de dados sensíveis, mas com outra população e outra unidade de análise. Esse resultado mostra a importância do problema, não serve para comparar taxas.</p></div>
+      </div>
+
+      <div class="bloco" id="pergunta--h2">
+        <h3>H2, a hipótese secundária</h3>
+        <div class="box">
+          <p><b>Enunciado:</b> aplicativos que tratam dado sensível não apresentam menor prevalência de SDKs de rastreamento que os demais governamentais.</p>
+          <p><b>Critério de rejeição:</b> limite superior do IC95% da razão de prevalências sensível/não sensível abaixo de 1, com ajuste por esfera, categoria e porte quando houver suporte.</p>
+        </div>
+        <p><b>A intuição:</b> quem trata saúde ou biometria deveria ser mais cuidadoso e embarcar menos rastreadores. A H2 afirma o contrário, que não é menos. Ela só cai se os sensíveis rastrearem <b>claramente</b> menos.</p>
+        <ul>
+          <li><b>Desfecho:</b> presença de ao menos um SDK de rastreamento no app (sim ou não).</li>
+          <li><b>Medida:</b> razão de prevalências (RP), por regressão de Poisson com variância robusta (Zou, 2004).</li>
+          <li><b>Medida secundária:</b> quantidade de SDKs por app; se houver sobredispersão, modelo binomial negativo.</li>
+          <li><b>Grupos:</b> 100 apps com dado de saúde ou biométrico entre os 376. A menor célula esfera × sensibilidade tem 26 apps.</li>
+          <li><b>"Dado sensível"</b> segue a LGPD (Art. 5º, II): saúde e biometria. Previdência e assistência social ficaram fora, porque não são dado sensível por si.</li>
+        </ul>
+        <div class="conta"><span class="rot">Exemplo inventado</span><p>70 de 100 sensíveis com rastreador (70%) e 220 de 276 não sensíveis (79,7%): RP = 0,70 ÷ 0,797 = 0,88. Se o IC95% fosse 0,76 a 1,02, o limite superior passaria de 1 e a H2 não seria rejeitada. Se fosse 0,70 a 0,95, seria rejeitada: os sensíveis rastreariam menos.</p></div>
+      </div>
+
+      <div class="bloco" id="pergunta--checagem">
+        <h3>A checagem do instrumento</h3>
+        <p>Não é hipótese. É uma verificação feita antes de interpretar as taxas: os detectores concordam entre si nos mesmos pacotes?</p>
+        <ul>
+          <li><b>Medidas:</b> κ de Fleiss com IC95%, concordâncias positiva e negativa e, como complemento, τ de Kendall.</li>
+          <li><b>Limiar operacional:</b> 0,6. Abaixo disso, o texto discute a instabilidade da medida, porque a taxa passa a depender da ferramenta.</li>
+          <li><b>Cuidado:</b> concordância alta não prova acurácia. Dois detectores podem errar juntos.</li>
+        </ul>
+        <div class="dizer"><span class="rot">Se perguntarem "por que não é hipótese?"</span><p>Porque ela não diz nada sobre os aplicativos; ela mede o instrumento. Foi sugestão do orientador: o foco do trabalho é a aderência às declarações, e a concordância só diz o quanto posso confiar na taxa medida.</p></div>
+        <p>O piloto não testa nenhuma hipótese. Antes da coleta principal, as regras de classificação e o plano de análise serão congelados com o orientador.</p>
+      </div>
+    </section>
+
+    <!-- 5 JUSTIFICATIVA E LACUNA -->
+    <section class="parte" id="justificativa" data-view data-titulo="Justificativa e lacuna" hidden>
+      <header>
+        <p class="eyebrow">Parte 5 · Seções 1.5 e 2.5</p>
+        <h2>Justificativa e lacuna</h2>
+        <p class="nesta">Nesta parte: <a href="#justificativa--abertura">a abertura</a> · <a href="#justificativa--planos">os três planos</a> · <a href="#justificativa--lacuna">as três questões em aberto</a></p>
+      </header>
+
+      <div class="bloco" id="justificativa--abertura">
+        <h3>A abertura da justificativa</h3>
+        <p>Quem precisa de um benefício do INSS ou de um serviço de saúde pública nem sempre pode escolher outro fornecedor. Por isso é importante saber que empresas participam dos apps oficiais e que informações podem receber. Este trecho veio da antiga "Relevância", movida para cá por pedido do orientador.</p>
+      </div>
+
+      <div class="bloco" id="justificativa--planos">
+        <h3>Os três planos</h3>
+        <div class="tres">
+          <div class="box"><h4>Jurídico</h4><p>A LGPD define saúde e biometria como dado sensível (Art. 5º, II), restringe seu tratamento (Art. 11), vincula o poder público à finalidade pública (Art. 23) e limita a transferência internacional (Art. 33). Se o envio não aparece na política do órgão, é sinal de alerta, mas não prova falta de base legal.</p></div>
+          <div class="box"><h4>Soberania de dados</h4><p>O rastreamento se concentra em poucas empresas estrangeiras, como Google e Facebook (Binns; Kollnig 2021a). SDK estrangeiro já permite falar em dependência de fornecedores estrangeiros. Dados no exterior exigem observar o tráfego, o que a subamostra dinâmica fará.</p></div>
+          <div class="box"><h4>Metodológico</h4><p>Duas ferramentas podem examinar o mesmo pacote e achar quantidades diferentes de rastreadores. Antes de dizer que a taxa é dos apps, é preciso saber quanto ela depende do detector.</p></div>
+        </div>
+        <div class="atencao"><span class="rot">Detalhe para corrigir antes de 03/12</span><p>A frase de abertura fala em "aspectos jurídico, tecnológico e metodológico", mas os rótulos são Jurídico, <b>Soberania de dados</b> e Metodológico. Troque "tecnológico" por "de soberania de dados" para ficar coerente. Não afeta a apresentação.</p></div>
+      </div>
+
+      <div class="bloco" id="justificativa--lacuna">
+        <h3>A lacuna: três questões em aberto (2.5)</h3>
+        <ol>
+          <li><b>O caso brasileiro.</b> Samarasinghe montou a amostra a partir de links para a Google Play em sites de governo, identificando o governo pelos e-mails e sites dos desenvolvedores. Os resultados não são separados para o Brasil, nem por esfera, nem por dado sensível (o recorte da H2).</li>
+          <li><b>O declarado e o feito.</b> Para os apps de governo brasileiros, não foi encontrado o confronto de cada SDK e destino com a política e a "Segurança dos dados" (H1). Para o poder público, a divergência é sinal de alerta por si só, sem depender do mercado.</li>
+          <li><b>O instrumento.</b> Samarasinghe mediu SDKs e envios sem relatar concordância entre detectores. Aqui, detectores diferentes serão aplicados às mesmas versões, com a mesma unidade de detecção.</li>
+        </ol>
+        <div class="dizer"><span class="rot">Se perguntarem "e se a lacuna já tiver sido preenchida?"</span><p>A lacuna está delimitada à literatura examinada até agora. Ela será reavaliada depois da leitura dos 278 registros em aberto e da bola de neve, em fevereiro.</p></div>
+      </div>
+    </section>
+
+    <!-- 6 REFERENCIAL -->
+    <section class="parte" id="referencial" data-view data-titulo="Referencial teórico" hidden>
+      <header>
+        <p class="eyebrow">Parte 6 · Seções 2.1 a 2.5 e 2.7</p>
+        <h2>Referencial teórico, estudo por estudo</h2>
+        <p class="lead">Todos os números abaixo foram conferidos em 22/11 no resumo ou no texto do próprio artigo. Saiba ao menos o número e a lição de cada um.</p>
+        <p class="nesta">Nesta parte: <a href="#referencial--21">2.1 SDKs e rastreamento</a> · <a href="#referencial--22">2.2 regulação</a> · <a href="#referencial--23">2.3 detecção</a> · <a href="#referencial--24">2.4 declarado e feito</a> · <a href="#referencial--25">2.5 governo</a> · <a href="#referencial--27">2.7 os 71 estudos</a></p>
+      </header>
+
+      <div class="bloco" id="referencial--21">
+        <h3>2.1 Bibliotecas de terceiros e rastreamento</h3>
+        <p>Apps quase nunca são escritos do zero: incorporam SDKs para análise de uso, redes sociais e anúncios. Quando esses componentes coletam comportamento e permitem identificar e acompanhar o usuário em vários serviços, fala-se em <b>rastreamento por terceiros</b>.</p>
+        <div class="tbl"><table>
+          <thead><tr><th>Estudo</th><th>Número</th><th>A lição para o seu trabalho</th></tr></thead>
+          <tbody>
+            <tr><td>Binns et al. (2018)</td><td class="n">959 mil apps</td><td>Google Play dos EUA e do Reino Unido. A maioria tem rastreamento; cauda longa (poucos rastreadores dominam); notícias e infantis embarcam mais; rastreamento transnacional. Medida estática.</td></tr>
+            <tr><td>Razaghpanah et al. (2018)</td><td class="n">2.121 serviços; 233 fora das listas</td><td>Partiram do tráfego real de usuários. Listas de bloqueio só acham o que já conhecem. Compartilhar com afiliadas é a norma.</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+
+      <div class="bloco" id="referencial--22">
+        <h3>2.2 Rastreamento e regulação</h3>
+        <div class="tbl"><table>
+          <thead><tr><th>Estudo</th><th>Número</th><th>A lição</th></tr></thead>
+          <tbody>
+            <tr><td>Kollnig et al. (2021a), antes e depois do GDPR</td><td class="n">quase 2 milhões de apps</td><td>Pouca mudança na presença de rastreadores; concentração em poucas empresas. Antes e depois descreve tendência, mas não prova efeito causal da lei.</td></tr>
+            <tr><td>Kollnig et al. (2021b), "A fait accompli?"</td><td class="n">1.297 apps</td><td>A lei da UE e do Reino Unido exige consentimento; a maioria rastreia e poucos pedem antes. As bibliotecas jogam a tarefa para o desenvolvedor, sem meios robustos.</td></tr>
+            <tr><td>Nguyen et al. (2022)</td><td class="n">239.381 apps; 30.160; 2.688 de 13.082 (20,54%)</td><td>30.160 compartilhavam dados sem tentar consentimento; entre os 13.082 com aviso, 2.688 violavam ao menos um requisito do GDPR, como continuar enviando depois da recusa.</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+
+      <div class="bloco" id="referencial--23">
+        <h3>2.3 Detecção de bibliotecas e de rastreadores</h3>
+        <p><b>Estática</b> examina o APK sem executar: lista as classes e os textos e compara com assinaturas. <b>Dinâmica</b> executa o app e observa o que ele envia. A primeira mostra que o código está lá; a segunda mostra o envio, mas exige rodar cada app.</p>
+        <div class="box">
+          <h4>Zhan et al. (2020; 2022): nenhuma ferramenta vence em tudo</h4>
+          <ul>
+            <li><b>LibScout:</b> a mais eficaz.</li>
+            <li><b>LibRadar:</b> a mais rápida (5,53 s por app em média) e a mais fácil de usar.</li>
+            <li><b>ORLIS:</b> a que melhor resiste a ofuscadores e técnicas de ofuscação.</li>
+            <li><b>LibPecker:</b> o melhor desempenho geral nos testes com ofuscação.</li>
+          </ul>
+          <p>Lição: ferramentas diferentes dão respostas diferentes para o mesmo app. É esse efeito, aplicado a detectores de rastreadores, que a checagem do instrumento mede.</p>
+        </div>
+        <p><b>Bases de rastreadores:</b> o <b>Exodus Privacy</b> associa a cada rastreador uma assinatura de código (padrão nos nomes de classes) e uma de rede (padrão nos domínios). A <b>Disconnect</b> classifica domínios por finalidade: publicidade, análise de uso, impressão digital. O <b>MobSF</b> e o <b>Androguard</b> aplicam essas bases a um pacote.</p>
+        <p><b>A fonte dos pacotes</b> fecha a seção: a Google Play dá a versão que o cidadão instala, mas muda a cada atualização e pode restringir por região; o AndroZoo guarda cada versão pelo hash SHA-256, e qualquer pesquisador baixa o mesmo arquivo. Decisão: todos na versão atual da Google Play, com hash; AndroZoo, quando tiver o app, para reprodutibilidade e defasagem. Repositórios alternativos não serão usados.</p>
+      </div>
+
+      <div class="bloco" id="referencial--24">
+        <h3>2.4 O que o aplicativo declara e o que ele faz</h3>
+        <div class="tbl"><table>
+          <thead><tr><th>Estudo</th><th>Número</th><th>A lição</th></tr></thead>
+          <tbody>
+            <tr><td>Slavin et al. (2016)</td><td class="n">477 apps; 341 possíveis violações</td><td>Ligaram trechos de políticas a métodos da API do Android que lidam com dados sensíveis.</td></tr>
+            <tr><td>Zimmeck et al. (2019), MAPS</td><td class="n">cerca de 1 milhão (1.035.853)</td><td>Levou o confronto entre política e código para grande escala.</td></tr>
+            <tr><td>Andow et al. (2020), PoliCheck</td><td class="n">13.796 apps; até 42,4%</td><td>Não basta saber a categoria do dado; é preciso saber quem recebe. Até 42,4% dos apps declaravam de forma incorreta ou omitiam fluxos de dados sensíveis. Por isso cada registro seu separa componente, destinatário, categoria e finalidade.</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+
+      <div class="bloco" id="referencial--25">
+        <h3>2.5 Aplicativos de governo</h3>
+        <div class="box">
+          <h4>Samarasinghe et al. (2022), o estudo mais próximo</h4>
+          <ul>
+            <li>1.166 apps Android de governo de 71 países (e 150.244 sites de 206 países).</li>
+            <li>37% dos apps tinham rastreadores do Google.</li>
+            <li>27% enviavam informações sensíveis (identificadores do usuário ou do aparelho, senhas, chaves de API) a terceiros ou por conexões sem criptografia.</li>
+            <li>Apps achados pelos links para a Google Play nos sites de governo; muitos não puderam ser baixados por restrição geográfica.</li>
+            <li>Governo é financiado com dinheiro público, trata dados sensíveis e não aparece nas listas dos sites mais acessados, de onde saem as amostras comuns.</li>
+          </ul>
+          <p class="muted">Fonte dos números: resumo oficial do artigo e nota da Universidade Concordia (17/05/2022). O número "269 (23,1%)" saiu do texto porque não foi confirmado em fonte aberta.</p>
+        </div>
+        <div class="box">
+          <h4>Serrano et al. (2024), apps da COVID-19</h4>
+          <ul>
+            <li>Rastreadores em 402 de 595 apps, por assinaturas do Exodus; 58 rastreadores diferentes.</li>
+            <li>Pacotes: 356 da Google Play, 152 do AndroZoo, 8 de um conjunto no Zenodo e 79 de repositórios de APK.</li>
+            <li>Apresentam o SAPITO, ferramenta aberta para achar possíveis vazamentos por bibliotecas.</li>
+            <li>A versão de 2023 é preliminar do mesmo estudo e não conta à parte.</li>
+          </ul>
+          <p>Lição: misturar fontes de pacotes exige registrar origem e versão. Presença de assinatura não demonstra envio.</p>
+        </div>
+      </div>
+
+      <div class="bloco" id="referencial--27">
+        <h3>2.7 Os 71 estudos com proposta de inclusão</h3>
+        <p>Até 13/11, a leitura completa registrou 71 propostas de inclusão; 12 delas você já conferiu. Elas se dividem pelas cinco questões da revisão (Quadro 2):</p>
+        <div class="tbl"><table>
+          <thead><tr><th>Questão</th><th class="n">Estudos</th><th>O que o grupo acrescenta</th></tr></thead>
+          <tbody>
+            <tr><td>QR1. Detecção de bibliotecas e SDKs</td><td class="n">22</td><td>Detectores como LibPecker, ORLIS, LibID, LibD, ATVHunter, LibScan, LIBLOOM, LibAttention e SAD. O resultado depende do detector e da referência: fundamenta a checagem. Não valida os seus três detectores.</td></tr>
+            <tr><td>QR2. Rastreadores e envio a terceiros</td><td class="n">20</td><td>Presença (estática) separada de envio (dinâmico). Populações específicas: saúde, saúde mental, infantis, bebês, jogos. Contexto do mercado, não grupo de comparação.</td></tr>
+            <tr><td>QR3. Declarado e feito</td><td class="n">15</td><td>Política contra fluxos. Baalous (2025) e Khedkar (2026) usam a "Segurança dos dados"; Xiao (2023) os rótulos da Apple. Rótulos declaram categorias, não SDKs: daí as classes da H1.</td></tr>
+            <tr><td>QR4. Aplicativos de governo</td><td class="n">10</td><td>Samarasinghe; Carlsson (32 apps finlandeses, tráfego contra política, dados fora da Europa); Lemos (Monitora Covid-19); vários estudos de apps da COVID-19.</td></tr>
+            <tr><td>QR5. Brasil, LGPD e transferência</td><td class="n">4</td><td>Reis (políticas no Brasil à luz da LGPD); Rodrigues (dados sensíveis em termos de uso); Jia (apps chineses); Sterling (app oficial da Nova Zelândia).</td></tr>
+          </tbody>
+        </table></div>
+        <h4>Os seis que orientam o projeto</h4>
+        <div class="tbl"><table>
+          <thead><tr><th>Estudo</th><th>Por que foi escolhido</th></tr></thead>
+          <tbody>
+            <tr><td>Samarasinghe et al. (2022)</td><td>Mede apps de governo</td></tr>
+            <tr><td>Carlsson et al. (2022)</td><td>Mede apps de governo e confronta o tráfego com as políticas. É o mais próximo do que você propõe</td></tr>
+            <tr><td>Andow et al. (2020)</td><td>Método de confronto entre declarado e observado</td></tr>
+            <tr><td>Binns et al. (2018)</td><td>Presença de rastreadores em grande escala</td></tr>
+            <tr><td>Lemos et al. (2022)</td><td>Caso brasileiro: rastreadores, permissões e documentação do Monitora Covid-19</td></tr>
+            <tr><td>Reis et al. (2023)</td><td>Caso brasileiro: políticas à luz da LGPD</td></tr>
+          </tbody>
+        </table></div>
+        <div class="atencao"><span class="rot">Pegadinhas possíveis</span>
+          <ul>
+            <li><b>Carlsson:</b> fale do escopo (32 apps, tráfego contra política, dados fora da Europa em alguns casos). Não cite porcentagens da tabela deles.</li>
+            <li><b>Vaz et al. (2022)</b> aparece no Problema, mas não está entre os 71: é um trabalho de 4 páginas da trilha de pôsteres do IHC, e o critério EC6 deixa trabalhos curtos fora da revisão. Ele avaliou termos de uso, política e coleta do Conecte SUS, com percurso cognitivo e questionário.</li>
+            <li><b>Síntese:</b> narrativa, por questão, sem metanálise, porque as taxas da literatura vêm de detectores e populações diferentes.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7 LGPD -->
+    <section class="parte" id="lgpd" data-view data-titulo="LGPD, ANPD e soberania" hidden>
+      <header>
+        <p class="eyebrow">Parte 7 · Seções 2.6 e 3.12</p>
+        <h2>LGPD, ANPD e soberania de dados</h2>
+        <p class="nesta">Nesta parte: <a href="#lgpd--artigos">os artigos da LGPD</a> · <a href="#lgpd--anpd">a ANPD e os guias</a> · <a href="#lgpd--soberania">soberania de dados</a> · <a href="#lgpd--matriz">a matriz de análise</a></p>
+      </header>
+
+      <div class="bloco" id="lgpd--artigos">
+        <h3>Os artigos da LGPD que o texto usa</h3>
+        <div class="tbl"><table>
+          <thead><tr><th>Artigo</th><th>O que diz</th><th>Para que serve no trabalho</th></tr></thead>
+          <tbody>
+            <tr><td>Art. 5º, I</td><td>Dado pessoal: informação de pessoa natural identificada ou identificável</td><td>Identificadores enviados por SDKs podem ser dado pessoal</td></tr>
+            <tr><td>Art. 5º, II</td><td>Dado sensível: entre outros, saúde, genético e biométrico</td><td>Define o grupo "sensível" da H2</td></tr>
+            <tr><td>Art. 5º, XV</td><td>Transferência internacional: para país estrangeiro ou organismo internacional</td><td>O que só a análise dinâmica pode sustentar</td></tr>
+            <tr><td>Art. 7º</td><td>Hipóteses legais (bases) para tratar dados pessoais</td><td>Primeiro eixo da matriz</td></tr>
+            <tr><td>Art. 11</td><td>Hipóteses mais restritas para dado sensível</td><td>Segundo eixo da matriz</td></tr>
+            <tr><td>Art. 23</td><td>Poder público trata dados para sua finalidade pública</td><td>Por isso o consentimento não é exigido de toda operação do governo</td></tr>
+            <tr><td>Art. 33</td><td>Transferência internacional só nos casos da lei</td><td>Terceiro eixo da matriz</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+
+      <div class="bloco" id="lgpd--anpd">
+        <h3>A ANPD e os documentos oficiais</h3>
+        <ul>
+          <li><b>Lei 14.460/2022:</b> transformou a ANPD em autarquia de natureza especial.</li>
+          <li><b>Lei 15.352/2026</b> (25 de fevereiro de 2026): consolidou a ANPD como agência reguladora, com o nome <b>Agência Nacional de Proteção de Dados</b>, vinculada ao Ministério da Justiça e Segurança Pública. Os guias anteriores mantêm a autoria da época ("Autoridade").</li>
+          <li><b>Guia da ANPD para o poder público (2023):</b> orienta a análise de bases legais, finalidades e compartilhamentos.</li>
+          <li><b>Guia sobre cookies (2022):</b> vale, de forma geral, para tecnologias semelhantes de rastreamento em dispositivos móveis (p. 6) e pede finalidade específica e informada ao titular para cada categoria (p. 14). Apoia o confronto entre SDK embarcado e declaração.</li>
+          <li><b>Resolução CD/ANPD nº 19/2024:</b> distingue transferência internacional de coleta internacional e disciplina os mecanismos de transferência.</li>
+        </ul>
+        <div class="dizer"><span class="rot">"A ANPD não é uma autoridade?"</span><p>Virou autarquia especial em 2022 e, com a Lei 15.352 de 2026, agência reguladora com o nome Agência Nacional de Proteção de Dados. Os documentos anteriores conservam o nome da época.</p></div>
+      </div>
+
+      <div class="bloco" id="lgpd--soberania">
+        <h3>Soberania de dados</h3>
+        <p>Pohle e Thiel (2020) mostram que "soberania digital" tem sentidos diferentes, ligados à capacidade de decisão de Estados, organizações e indivíduos. O trabalho usa um <b>recorte operacional</b>:</p>
+        <div class="box"><p><b>Soberania de dados</b> é a capacidade de o Estado saber e decidir para onde vão os dados gerados no uso dos seus serviços.</p></div>
+        <div class="tres">
+          <div class="box"><h4>Presença de SDK estrangeiro</h4><p>Permite falar em dependência de fornecedores estrangeiros.</p></div>
+          <div class="box"><h4>Dados no exterior</h4><p>Exige observar o tráfego (análise dinâmica).</p></div>
+          <div class="box"><h4>Transferência internacional</h4><p>Exige ainda identificar os agentes e a operação (4º objetivo).</p></div>
+        </div>
+        <div class="atencao"><span class="rot">Não presuma</span><p>Nem que o órgão desconhece a decisão técnica, nem que todo SDK envia dados ao exterior. A nacionalidade do fornecedor e a geolocalização de um IP não provam, sozinhas, transferência internacional.</p></div>
+      </div>
+
+      <div class="bloco" id="lgpd--matriz">
+        <h3>A matriz de análise da LGPD (3.12)</h3>
+        <p>É uma proposta a validar com o orientador, não algo já aplicado. A unidade de registro reúne: aplicativo, hash do pacote, destinatário, categoria de dado, finalidade e cenário de execução.</p>
+        <ul>
+          <li><b>Três eixos:</b> hipótese legal (Art. 7º), enquadramento de dado sensível (Art. 11) e transferência internacional (Art. 33).</li>
+          <li><b>Quatro resultados por item:</b> documentado, indício de inconsistência, não verificável ou não aplicável, sempre com evidência e justificativa.</li>
+          <li>Documento ausente é "não verificável", sem presumir que falta base legal. "Documentado" também não certifica conformidade.</li>
+          <li><b>Análise dinâmica:</b> país do ponto de rede, país da entidade destinatária e local documentado de tratamento são campos separados. A matriz separa transferência, coleta internacional direta e situação indeterminada.</li>
+          <li>Dez critérios e uma ficha de evidências por aplicativo.</li>
+        </ul>
+        <div class="dizer"><span class="rot">"Você vai dizer que o app é ilegal?"</span><p>Não. A análise aponta pontos de atenção à luz da LGPD. Nenhuma classificação, sozinha, certifica infração. A discussão jurídica não substitui uma análise jurídica do caso concreto, e isso está nas limitações.</p></div>
+      </div>
+    </section>
+
+    <!-- 8 MÉTODO -->
+    <section class="parte" id="metodo" data-view data-titulo="Método: corpus e preparação" hidden>
+      <header>
+        <p class="eyebrow">Parte 8 · Capítulo 3, Seções 3.1 a 3.4 e 3.6</p>
+        <h2>Método: corpus e preparação</h2>
+        <p class="nesta">Nesta parte: <a href="#metodo--etapas">as oito etapas</a> · <a href="#metodo--dinamica">a decisão sobre a análise dinâmica</a> · <a href="#metodo--ia">o uso de IA</a> · <a href="#metodo--corpus">o corpus</a> · <a href="#metodo--carac">a caracterização</a> · <a href="#metodo--validacao">a validação</a> · <a href="#metodo--ref">a referência comercial</a> · <a href="#metodo--viab">viabilidade e anúncios</a> · <a href="#metodo--fonte">a fonte dos pacotes</a></p>
+      </header>
+
+      <div class="bloco" id="metodo--etapas">
+        <h3>As oito etapas</h3>
+        <p>Estudo <b>quantitativo e observacional</b>: parte dos pacotes e dos documentos publicados, sem modificar código ou serviço.</p>
+        <ol>
+          <li>Construção do corpus por buscas na Google Play e pelo catálogo de cada publicador oficial. <span class="chip feito">Feito</span></li>
+          <li>Caracterização por metadados e montagem da referência comercial, só como contexto. <span class="chip feito">Feito</span></li>
+          <li>Verificação de viabilidade de cada hipótese antes do download. <span class="chip feito">Feito</span></li>
+          <li>Versão atual de cada pacote na Google Play, com hash; versão arquivada no AndroZoo quando houver. <span class="chip c2">Capstone II</span></li>
+          <li>Detecção de rastreadores e checagem do instrumento. <span class="chip ensaio">Piloto</span></li>
+          <li>Confronto dos SDKs e destinos com as declarações e a LGPD. <span class="chip c2">Capstone II</span></li>
+          <li>Análise dinâmica de uma subamostra, com dispositivo e conta próprios. <span class="chip c2">Capstone II</span></li>
+          <li>Estatística conforme plano congelado antes da análise principal. <span class="chip c2">Capstone II</span></li>
+        </ol>
+      </div>
+
+      <div class="bloco" id="metodo--dinamica">
+        <h3>A decisão sobre a análise dinâmica</h3>
+        <p>O orientador escreveu "avalia se compensa o esforço". A resposta do texto:</p>
+        <ul>
+          <li>Fica numa <b>subamostra</b>, porque exige instalar e operar cada app.</li>
+          <li>Compensa porque é o <b>único modo</b> de ver para onde os dados vão e se esses destinos estão declarados (4º objetivo). Sem ela, o trabalho afirma dependência de fornecedores estrangeiros, mas não envio ao exterior.</li>
+          <li>O <b>tamanho</b> será definido com o orientador no início do Capstone II, conforme o tempo no cronograma (abril).</li>
+          <li>Se não couber no prazo, o 4º objetivo vira <b>limitação</b> e as conclusões sobre soberania ficam restritas à dependência.</li>
+        </ul>
+        <p><b>Certificate pinning:</b> alguns apps aceitam só o certificado do próprio servidor, o que impede ler o tráfego com um proxy. O cronograma prevê medir a taxa desse bloqueio.</p>
+      </div>
+
+      <div class="bloco" id="metodo--ia">
+        <h3>A declaração de uso de IA</h3>
+        <p>Está na abertura do capítulo 3, em primeira pessoa:</p>
+        <ul>
+          <li><b>Ferramentas:</b> ChatGPT (OpenAI) e Claude (Anthropic).</li>
+          <li><b>Para quê:</b> elaboração, revisão e depuração de scripts em Python; levantamento bibliográfico inicial; localização e organização de referências metodológicas; revisão da clareza de trechos da redação.</li>
+          <li><b>Limite:</b> as sugestões não são evidência científica; as referências são confrontadas com as publicações originais; as classificações pendentes seguem identificadas no protocolo.</li>
+          <li><b>Responsabilidade:</b> problema, hipóteses, procedimentos e interpretação são seus.</li>
+        </ul>
+      </div>
+
+      <div class="bloco" id="metodo--corpus">
+        <h3>3.1 Construção do corpus</h3>
+        <ul>
+          <li><b>Ferramenta:</b> biblioteca <code>google-play-scraper</code>, país Brasil e idioma português.</li>
+          <li><b>Busca:</b> 21 termos de serviço público ("gov.br", "prefeitura", "INSS", "SUS", "detran", "tribunal", "SERPRO", "Dataprev", "procon", entre outros), até 30 resultados por termo.</li>
+          <li><b>Classificação do publicador:</b> candidato se o nome do publicador tem sinal de órgão ("prefeitura", "secretaria", "tribunal", "ministério", "detran") ou está numa lista de órgãos conhecidos sem esse sinal. A lista existe porque o publicador do gov.br federal, dono do Meu INSS e do Meu SUS Digital, se chama "Serviços e Informações do Brasil", e empresas públicas como Celepar (PR) e Prodam (São Paulo) não têm sinal no nome.</li>
+          <li><b>Palavra inteira:</b> o casamento é por palavra, não por trecho, para não achar o sinal dentro de outra palavra.</li>
+          <li><b>Expansão por catálogo:</b> para cada publicador oficial, busca pelo nome exato. "A busca por termo encontra uma amostra; a busca pelo publicador encontra o catálogo dele."</li>
+          <li><b>Resultado (3/9/2026):</b> 590 apps distintos; 396 com publicador classificado como órgão, de 71 publicadores.</li>
+        </ul>
+      </div>
+
+      <div class="bloco" id="metodo--carac">
+        <h3>3.2 Caracterização (17/9/2026)</h3>
+        <p>A ficha completa dos 396 foi obtida na Google Play. Cada app recebeu três classificações automáticas:</p>
+        <div class="tbl"><table>
+          <thead><tr><th>Classificação</th><th>Como</th><th>Resultado automático</th></tr></thead>
+          <tbody>
+            <tr><td>Esfera</td><td>Pelo nome do publicador: sinais municipais, depois estaduais, depois federais ("municipal" é menos ambíguo que "secretaria")</td><td>85 federais, 206 estaduais, 95 municipais, 10 indeterminados (2,5%)</td></tr>
+            <tr><td>Dado sensível</td><td>Palavras-chave no título e na descrição, em quatro grupos</td><td>152 (38,4%): 125 saúde, 28 previdência, 17 biometria, 5 assistência (um app pode estar em mais de um)</td></tr>
+            <tr><td>Faixa de instalações</td><td>Ordem de grandeza do mínimo informado: 10⁰ a 10⁹</td><td>Dois apps não informam</td></tr>
+          </tbody>
+        </table></div>
+        <p>A regra automática de sensibilidade é mais ampla que a LGPD (previdência e assistência não são sensíveis por si). Por isso a H2 usa a classificação conferida, e não a automática.</p>
+      </div>
+
+      <div class="bloco" id="metodo--validacao">
+        <h3>Validação do corpus (3.6)</h3>
+        <ol>
+          <li><b>Amostra (4/11/2026):</b> 30 apps sorteados sistematicamente e dois casos adicionais. Dois publicadores eram privados (6,7%). Entre os 28 oficiais, 8 classificações de sensibilidade divergiram (28,6%).</li>
+          <li>A divergência alta levou à <b>conferência dos 396</b>, com o nome jurídico que a Google Play mostra em "Sobre o desenvolvedor" como evidência.</li>
+          <li><b>Ficaram 376 oficiais:</b> 85 federais, 199 estaduais e 92 municipais. Destes, <b>100</b> tratam dado de saúde ou biométrico.</li>
+          <li><b>Saíram 20:</b> 13 empresas privadas com nome de serviço público e 7 apps publicados em conta de pessoa física.</li>
+          <li>Entre os 376, a regra automática e a conferência divergiram em <b>108 casos de sensibilidade (28,7%)</b>, nos dois sentidos. A esfera divergiu em 18 dos 376, 7 deles indeterminados pela regra.</li>
+        </ol>
+        <div class="atencao"><span class="rot">Status</span><p>A classificação é preliminar. Você vai conferi-la antes da coleta principal (fevereiro), e cada mudança terá data e justificativa.</p></div>
+      </div>
+
+      <div class="bloco" id="metodo--ref">
+        <h3>3.3 e 3.4 A referência comercial</h3>
+        <p><b>Não é grupo de comparação.</b> Serve de contexto descritivo, como na declaração de anúncios, e não entra em teste de hipótese.</p>
+        <ul>
+          <li><b>Montagem:</b> para cada categoria da loja presente no corpus, busca com o nome da categoria e termos genéricos ("app", "grátis", "brasil", "online", "digital", "fácil"), lendo os resultados pelo início e pelo fim da lista. Até 8 apps por categoria, no máximo 2 por faixa de instalações. Publicadores oficiais excluídos.</li>
+          <li><b>Complemento:</b> a busca ordena por relevância e quase não devolve apps pequenos. Para as faixas 10² a 10⁵, entraram apps de publicadores não oficiais da busca inicial, até 12 por faixa. A primeira referência tem <b>190</b>, 22 do complemento.</li>
+          <li><b>Ampliação (4/11/2026):</b> nas faixas com app de governo e menos de dois comerciais, busca com nome da categoria, termos genéricos e palavras frequentes nos títulos dos apps de governo. Até 80 fichas lidas por categoria. Passou de 190 para <b>252</b>. Os 62 novos ainda não foram cruzados com o AndroZoo.</li>
+          <li><b>Limitação:</b> não é amostra aleatória do mercado; os 22 do complemento vieram de buscas com termos de governo.</li>
+        </ul>
+      </div>
+
+      <div class="bloco" id="metodo--viab">
+        <h3>Viabilidade e anúncios declarados (3.6)</h3>
+        <p><b>Viabilidade:</b> antes de baixar qualquer pacote, verificou-se se cada hipótese tem instrumento, com critérios escritos antes:</p>
+        <ul>
+          <li><b>H1:</b> 323 dos 396 candidatos (81,6%) têm política de privacidade acessível.</li>
+          <li><b>H2:</b> com a classificação conferida, a menor célula esfera × sensibilidade tem 26 apps, e há 100 apps sensíveis.</li>
+          <li><b>Checagem:</b> ensaiada no piloto.</li>
+        </ul>
+        <div class="numeros">
+          <div><b>0 de 376</b><span>apps oficiais declaram anúncios · IC95% 0% a 1,0%</span></div>
+          <div><b>63 de 190 (33,2%)</b><span>comerciais da primeira referência · IC95% 26,9% a 40,1%</span></div>
+        </div>
+        <p>Intervalos pelo método de Wilson. A declaração é feita pelo publicador e trata só de anúncios: não diz quais SDKs o app embarca nem para onde os dados vão. É um exemplo do confronto que o projeto propõe: a declaração vem do publicador; só o pacote mostra o que ele contém.</p>
+      </div>
+
+      <div class="bloco" id="metodo--fonte">
+        <h3>A fonte dos pacotes (3.6)</h3>
+        <ul>
+          <li><b>Acesso ao AndroZoo:</b> concedido em 17/9/2026. A chave é individual e não é compartilhada.</li>
+          <li><b>Consulta histórica:</b> 92 dos 396 candidatos de governo (23,2%) contra 160 dos 190 comerciais (84,2%). Os denominadores são anteriores à redução a 376 e à ampliação a 252.</li>
+          <li><b>Mesma faixa de instalações:</b> razão de chances de Mantel–Haenszel de 0,13 (IC95% 0,07 a 0,24) para um app de governo estar no acervo.</li>
+          <li><b>Decisão:</b> todos na versão atual da Google Play, com hash. AndroZoo para reprodutibilidade e para medir a defasagem entre a versão arquivada e a atual.</li>
+        </ul>
+        <div class="dizer"><span class="rot">"Por que não usar só o AndroZoo?"</span><p>Porque ele tinha só 23,2% dos candidatos de governo, e a versão arquivada pode não ser a que o cidadão instala. A versão atual da Google Play é a que importa para o cidadão; o AndroZoo garante que outra pessoa baixe o mesmo arquivo, nos apps que ele tiver.</p></div>
+        <p><b>Teste:</b> a coleta na Google Play será testada em cinco apps no início do Capstone II. Se o download for bloqueado, registram-se os não obtidos e usa-se a versão do AndroZoo, com a defasagem informada.</p>
+      </div>
+    </section>
+
+    <!-- 9 DETECTORES -->
+    <section class="parte" id="detectores" data-view data-titulo="Detectores e piloto" hidden>
+      <header>
+        <p class="eyebrow">Parte 9 · Seções 3.5 e 3.6</p>
+        <h2>Detectores e piloto</h2>
+        <p class="nesta">Nesta parte: <a href="#detectores--descobertas">as duas descobertas</a> · <a href="#detectores--abc">A, B e C</a> · <a href="#detectores--google">o caso do Google Ads</a> · <a href="#detectores--piloto">o piloto</a> · <a href="#detectores--proposta">a proposta</a></p>
+      </header>
+
+      <div class="bloco" id="detectores--descobertas">
+        <h3>As duas descobertas que mudaram o desenho</h3>
+        <p>A proposta previa MobSF, Androguard e Exodus. Antes do piloto, o código de cada um foi examinado:</p>
+        <div class="duas">
+          <div class="box"><h4>O MobSF usa a base do Exodus</h4><p>No MobSF 4.5.3, o módulo de rastreadores baixa a base do Exodus, lista as classes de cada arquivo DEX e aplica as mesmas expressões regulares. A base tem 432 rastreadores: 428 com assinatura de código e 260 com assinatura de rede. Comparar MobSF com Exodus só mede diferenças de implementação; a concordância seria alta por construção.</p></div>
+          <div class="box"><h4>O Androguard não é detector</h4><p>Ele extrai classes, textos e recursos do pacote, mas não tem base de rastreadores. É o extrator sobre o qual os detectores trabalham.</p></div>
+        </div>
+      </div>
+
+      <div class="bloco" id="detectores--abc">
+        <h3>Os detectores A, B e C (Quadro 3)</h3>
+        <div class="grade" role="table" aria-label="Detectores por base e método">
+          <div class="cab" role="columnheader"></div><div class="cab" role="columnheader">Assinatura de código (classes do DEX)</div><div class="cab" role="columnheader">Domínios nos textos do pacote</div>
+          <div class="lin" role="rowheader">Exodus</div><div class="cel" role="cell"><b>A</b>15 de 20 (75%)</div><div class="cel" role="cell"><b>B</b>19 de 20 (95%)</div>
+          <div class="lin" role="rowheader">Disconnect</div><div class="vazia" role="cell">não usado</div><div class="cel" role="cell"><b>C</b>16 de 20 (80%)</div>
+        </div>
+        <ul>
+          <li><b>A contra B:</b> mesma base, métodos diferentes. Mede o <b>efeito do método</b>.</li>
+          <li><b>B contra C:</b> mesmo método, bases diferentes. Mede o <b>efeito da base</b>.</li>
+          <li><b>MobSF:</b> entra como verificação de implementação do detector A.</li>
+          <li><b>Disconnect:</b> só as categorias publicidade, análise de uso e impressão digital invasiva. Conteúdo e redes sociais ficam de fora, porque incluem <code>google.com</code> e <code>facebook.com</code> e dariam falso positivo em quase todo app. Esse parâmetro é reportado, porque afeta a taxa.</li>
+        </ul>
+        <div class="atencao"><span class="rot">Atenção</span><p>B e C procuram domínios escritos dentro do APK. Isso <b>não</b> é tráfego observado.</p></div>
+      </div>
+
+      <div class="bloco" id="detectores--google">
+        <h3>O caso do "Google Ads"</h3>
+        <p>Na base do Exodus, a assinatura de rede do "Google Ads" é a expressão <code>\.google\.com</code>, que casa com qualquer subdomínio do Google. Num APK de teste, um link para <code>maps.google.com</code> bastou para o detector B apontar "Google Ads", enquanto o A, que procura o código do SDK, não achou nada.</p>
+        <p>Por isso o script registra, para cada detecção, a classe ou o domínio que a produziu, e as detecções do piloto foram conferidas uma a uma.</p>
+      </div>
+
+      <div class="bloco" id="detectores--piloto">
+        <h3>O piloto em números</h3>
+        <div class="numeros">
+          <div><b>20</b><span>pacotes de teste do AndroZoo</span></div>
+          <div><b>75% · 95% · 80%</b><span>com ao menos um rastreador (A, B, C)</span></div>
+          <div><b>κ = 0,52</b><span>κ de Fleiss sobre a presença de rastreador</span></div>
+          <div><b>223</b><span>detecções conferidas pela evidência</span></div>
+          <div><b>88 de 123 (71,5%)</b><span>detecções de B marcadas como falso positivo potencial</span></div>
+          <div><b>κ = 0,69</b><span>sem essas 88, em análise de sensibilidade</span></div>
+        </div>
+        <p>O motivo principal dos falsos positivos de B: assinaturas amplas casam com domínios de uso geral do Google ou do Facebook.</p>
+        <div class="atencao"><span class="rot">Os três cuidados</span><ul>
+          <li>A conferência usa a evidência dos próprios detectores; <b>não</b> é uma verdade de referência independente.</li>
+          <li>A subida de 0,52 para 0,69 é análise de sensibilidade do piloto, não validação.</li>
+          <li>São 20 pacotes de teste: não estimam a taxa dos apps de governo.</li>
+        </ul></div>
+      </div>
+
+      <div class="bloco" id="detectores--proposta">
+        <h3>A proposta (a confirmar com o orientador)</h3>
+        <ul>
+          <li><b>A</b> como medida principal: procura o código do SDK, o mais próximo de "o SDK está no app".</li>
+          <li><b>C</b> como comparação com outra base.</li>
+          <li><b>B</b> para examinar o efeito do método.</li>
+        </ul>
+        <p>O detector principal será definido e o plano congelado com o orientador em fevereiro.</p>
+        <p><b>Armazenamento:</b> o piloto ocupou cerca de 518 MB para 20 pacotes. Só para dimensionar: 376 apps dariam cerca de 9,7 GB de APKs, ou 16,3 GB com os 252 comerciais. Reserva inicial de 100 GB e cópia de segurança separada.</p>
+      </div>
+    </section>
+
+    <!-- 10 ESTATÍSTICA -->
+    <section class="parte" id="estatistica" data-view data-titulo="As medidas, explicadas" hidden>
+      <header>
+        <p class="eyebrow">Parte 10 · Seções 1.4, 3.6, 3.7 e 3.10</p>
+        <h2>As medidas, explicadas</h2>
+        <p class="lead">Cada medida com o que ela responde, onde entra no trabalho e uma conta feita com os seus números.</p>
+        <p class="nesta">Nesta parte: <a href="#estatistica--onde">onde cada uma entra</a> · <a href="#estatistica--ic">IC95%</a> · <a href="#estatistica--wilson">Wilson</a> · <a href="#estatistica--rp">razão de prevalências</a> · <a href="#estatistica--mh">Mantel–Haenszel</a> · <a href="#estatistica--fleiss">κ de Fleiss</a> · <a href="#estatistica--acordos">acordos positivo e negativo</a> · <a href="#estatistica--cohen">κ de Cohen</a> · <a href="#estatistica--tau">τ de Kendall</a> · <a href="#estatistica--outras">outras ideias</a></p>
+      </header>
+
+      <div class="bloco" id="estatistica--onde">
+        <h3>Onde cada medida entra</h3>
+        <div class="tbl"><table>
+          <thead><tr><th>Medida</th><th>Pergunta que responde</th><th>Onde</th></tr></thead>
+          <tbody>
+            <tr><td>Proporção com IC95% agrupado por app</td><td>Que fração dos pares app–SDK não tem declaração compatível?</td><td>H1</td></tr>
+            <tr><td>Razão de prevalências (Poisson robusta)</td><td>Os apps sensíveis têm menos rastreador que os demais?</td><td>H2</td></tr>
+            <tr><td>Binomial negativa</td><td>Quantos SDKs por app, se a contagem variar demais</td><td>H2, secundária</td></tr>
+            <tr><td>κ de Fleiss, acordos positivo e negativo, τ de Kendall</td><td>Os detectores concordam nos mesmos pacotes?</td><td>Checagem do instrumento</td></tr>
+            <tr><td>κ de Cohen</td><td>A sua triagem cega concorda com a triagem registrada?</td><td>Revisão sistemática</td></tr>
+            <tr><td>IC de Wilson</td><td>Qual a incerteza de 0 de 376 e de 63 de 190?</td><td>Anúncios declarados</td></tr>
+            <tr><td>Razão de chances de Mantel–Haenszel</td><td>Governo tem menos chance de estar no AndroZoo, na mesma faixa de instalações?</td><td>Fonte dos pacotes</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+
+      <div class="bloco" id="estatistica--ic">
+        <h3>Intervalo de confiança de 95% (IC95%)</h3>
+        <p>É a faixa de valores plausíveis para o valor verdadeiro, dada a amostra. Se o estudo fosse repetido muitas vezes, 95% dos intervalos calculados assim conteriam o valor verdadeiro.</p>
+        <p>As duas hipóteses usam o <b>limite</b> do intervalo, e não só a estimativa. Assim, uma estimativa de 8% com intervalo até 12% não rejeita a H1, porque 10% ainda é plausível.</p>
+        <div class="atencao"><span class="rot">Frase do texto</span><p>"A ausência de rejeição de uma hipótese não será apresentada como prova do contrário." Não rejeitar significa só que os dados não descartam a hipótese.</p></div>
+      </div>
+
+      <div class="bloco" id="estatistica--wilson">
+        <h3>Intervalo de Wilson</h3>
+        <p>A fórmula mais conhecida, proporção ± 1,96 × erro-padrão, falha com proporções perto de 0% ou 100%. Com 0 de 376, ela daria um intervalo de 0% a 0%, como se não houvesse incerteza nenhuma. O método de Wilson (1927) funciona nesses casos.</p>
+        <div class="conta"><span class="rot">Conta · 0 de 376 apps de governo declaram anúncios</span>
+          <p>Quando não há nenhum caso, o limite superior de Wilson é z² ÷ (n + z²), com z = 1,96 e z² = 3,84.</p>
+          <p>3,84 ÷ (376 + 3,84) = 3,84 ÷ 379,84 = 0,0101, ou seja, <b>1,0%</b>. O IC95% vai de 0% a 1,0%.</p>
+          <p>Para os comerciais, 63 de 190 (33,2%), o mesmo método dá 26,9% a 40,1%.</p>
+        </div>
+      </div>
+
+      <div class="bloco" id="estatistica--rp">
+        <h3>Prevalência, razão de prevalências e Poisson robusta</h3>
+        <p><b>Prevalência</b> é a proporção com a característica: de cada 100 apps, quantos têm ao menos um rastreador. <b>Razão de prevalências (RP)</b> divide a prevalência de um grupo pela de outro. RP = 1 é igualdade; RP abaixo de 1, o primeiro grupo tem menos.</p>
+        <p><b>Por que Poisson com variância robusta (Zou, 2004)?</b> Ela estima a RP diretamente e permite ajustar por esfera, categoria e porte. A regressão logística, mais comum, estima razão de chances, que exagera a diferença quando o desfecho é frequente, como aqui.</p>
+        <div class="conta"><span class="rot">Conta · por que não razão de chances · números inventados</span>
+          <p>70% dos sensíveis e 80% dos demais com rastreador. RP = 0,70 ÷ 0,80 = <b>0,875</b> (12,5% a menos).</p>
+          <p>Chances: 0,70 ÷ 0,30 = 2,33 e 0,80 ÷ 0,20 = 4,00. Razão de chances = 2,33 ÷ 4,00 = <b>0,58</b>, que sugere uma diferença bem maior do que a real.</p>
+        </div>
+        <p><b>Binomial negativa:</b> para a contagem de SDKs por app. A regressão de Poisson supõe variância igual à média; quando a variância é maior (sobredispersão), a binomial negativa se ajusta melhor.</p>
+      </div>
+
+      <div class="bloco" id="estatistica--mh">
+        <h3>Razão de chances de Mantel–Haenszel</h3>
+        <p>Compara a chance de estar no AndroZoo entre governo e comerciais <b>dentro de cada faixa de instalações</b> e combina as faixas. Isso importa porque apps populares têm mais chance de estar no acervo, e os dois grupos têm distribuições de instalações diferentes.</p>
+        <div class="conta"><span class="rot">Conta</span>
+          <p>Sem estratificar: governo 92 dentro e 304 fora, chance 92 ÷ 304 = 0,30. Comerciais 160 dentro e 30 fora, chance 160 ÷ 30 = 5,33. Razão bruta = 0,30 ÷ 5,33 = 0,057.</p>
+          <p>Estratificada por faixa, como está no texto: <b>0,13 (IC95% 0,07 a 0,24)</b>. Na mesma faixa de instalações, a chance de um app de governo estar no acervo é cerca de 13% da de um comercial, perto de 8 vezes menor. O intervalo não inclui 1, então a diferença não é acaso.</p>
+        </div>
+      </div>
+
+      <div class="bloco" id="estatistica--fleiss">
+        <h3>κ de Fleiss (lê-se "capa de Fleiss")</h3>
+        <p>Mede a concordância entre <b>três ou mais avaliadores</b> que classificam os mesmos itens, descontando a concordância que aconteceria por acaso. No seu caso, os avaliadores são os detectores A, B e C; os itens são os 20 pacotes; a classificação é "tem ou não tem rastreador".</p>
+        <p class="muted">Fórmula: κ = (P̄ − Pₑ) ÷ (1 − Pₑ), em que P̄ é a concordância observada média e Pₑ a esperada por acaso. κ = 1 é concordância perfeita; κ = 0 é o que o acaso daria.</p>
+        <div class="conta"><span class="rot">Conta com o seu piloto</span>
+          <p>Os números publicados (A achou rastreador em 15, B em 19, C em 16 dos 20, e κ = 0,52) só são compatíveis com esta distribuição: 15 pacotes em que os três acharam; 1 em que nenhum achou; 1 em que só B e C acharam; 3 em que só B achou.</p>
+          <p><b>1. Concordância por pacote.</b> Com três detectores, há três pares. Se os três concordam, 3 de 3 pares concordam (1). Se ficam 2 contra 1, só 1 dos 3 pares concorda (1/3).</p>
+          <p><b>2. Concordância observada.</b> P̄ = (16 × 1 + 4 × 1/3) ÷ 20 = 17,33 ÷ 20 = <b>0,867</b>.</p>
+          <p><b>3. Concordância por acaso.</b> Houve 50 "sim" em 60 classificações: p = 0,833. Pₑ = 0,833² + 0,167² = 0,694 + 0,028 = <b>0,722</b>.</p>
+          <p><b>4. κ.</b> (0,867 − 0,722) ÷ (1 − 0,722) = 0,144 ÷ 0,278 = <b>0,52</b>.</p>
+        </div>
+        <div class="dizer"><span class="rot">Como explicar em voz alta</span><p>Os detectores concordaram em 87% dos casos, o que parece muito. Mas como quase todo app tem rastreador, o acaso sozinho já daria 72%. O κ mede o ganho sobre o acaso, e esse ganho foi de 0,52, abaixo do limiar de 0,6. Por isso digo que os detectores não são equivalentes.</p></div>
+      </div>
+
+      <div class="bloco" id="estatistica--acordos">
+        <h3>Acordos positivo e negativo</h3>
+        <p>Quando quase tudo é "sim", o κ fica instável: muda muito com poucos casos. Por isso o texto reporta junto as proporções de acordo positivo (sobre o "sim") e negativo (sobre o "não").</p>
+        <div class="conta"><span class="rot">Conta · A contra B no piloto</span>
+          <p>Ambos sim: 15. Só B sim: 4. Só A sim: 0. Ambos não: 1.</p>
+          <p>Acordo positivo = 2 × 15 ÷ (2 × 15 + 0 + 4) = 30 ÷ 34 = <b>0,88</b>.</p>
+          <p>Acordo negativo = 2 × 1 ÷ (2 × 1 + 0 + 4) = 2 ÷ 6 = <b>0,33</b>.</p>
+          <p>Leitura: concordam bem em "tem rastreador", mas quase nunca em "não tem". B diz "sim" onde A diz "não".</p>
+        </div>
+      </div>
+
+      <div class="bloco" id="estatistica--cohen">
+        <h3>κ de Cohen (lê-se "capa de Cohen")</h3>
+        <p>É o κ para <b>dois</b> avaliadores. No trabalho, entra na revisão sistemática: em fevereiro, você classifica às cegas 125 registros (10% de 1.249, arredondado para cima) e compara com a triagem registrada.</p>
+        <ul>
+          <li>Comparação binária: I ou T seguem para o texto completo; E ou R não seguem. E também nas quatro categorias.</li>
+          <li>Reporta acordo observado, κ e matriz de confusão; cada divergência é examinada.</li>
+          <li>Se o κ ficar abaixo de 0,6, uma segunda amostra de 125 é conferida.</li>
+        </ul>
+        <div class="conta"><span class="rot">Conta de exemplo · A contra B do piloto, só para treinar</span>
+          <p>Acordo observado: (15 + 1) ÷ 20 = 0,80.</p>
+          <p>Por acaso: 0,75 × 0,95 + 0,25 × 0,05 = 0,7125 + 0,0125 = 0,725.</p>
+          <p>κ = (0,80 − 0,725) ÷ (1 − 0,725) = 0,075 ÷ 0,275 = <b>0,27</b>. Mesmo com 80% de acordo, o κ é baixo.</p>
+        </div>
+      </div>
+
+      <div class="bloco" id="estatistica--tau">
+        <h3>τ de Kendall (lê-se "tau de Kendall")</h3>
+        <p>Mede se dois detectores <b>ordenam</b> os apps da mesma forma pelo número de rastreadores. Compara todos os pares de apps: o par é concordante se os dois detectores dizem que o mesmo app tem mais rastreadores, e discordante se discordam. τ = (concordantes − discordantes) ÷ total de pares. Vai de −1 a 1.</p>
+        <div class="conta"><span class="rot">Conta inventada · 4 apps</span>
+          <p>Detector A conta 1, 2, 3 e 4 rastreadores; detector C conta 1, 3, 2 e 4. Dos 6 pares de apps, 5 estão na mesma ordem e 1 está invertido. τ = (5 − 1) ÷ 6 = <b>0,67</b>.</p>
+        </div>
+        <p>No texto, o τ é complementar e não tem limiar. Com empates, usa-se a versão τ-b, que os corrige.</p>
+      </div>
+
+      <div class="bloco" id="estatistica--outras">
+        <h3>Outras ideias que podem aparecer</h3>
+        <ul>
+          <li><b>Limiar de 0,6.</b> É operacional, usado tanto na checagem quanto na triagem cega. <span class="chip fora">fora do texto</span> Em escalas comuns de interpretação do κ, como a de Landis e Koch (1977), valores de 0,61 a 0,80 são lidos como concordância substancial. Essa escala não está citada no texto; se perguntarem, diga que o 0,6 é um ponto de corte operacional usual.</li>
+          <li><b>Análise de sensibilidade.</b> Refazer a conta mudando uma decisão (tirar falsos positivos, tratar declarações genéricas de outro jeito) para ver se o resultado se mantém.</li>
+          <li><b>Plano congelado.</b> Regras de classificação, detector principal, tratamento de versões, declarações genéricas e comparações múltiplas são fixados com o orientador antes da coleta. Assim ninguém muda a regra depois de ver o resultado.</li>
+          <li><b>Concordância não é acurácia.</b> Dois detectores podem concordar e estar errados juntos. Acurácia exigiria uma referência independente, que o piloto não tem.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 11 REVISÃO -->
+    <section class="parte" id="revisao" data-view data-titulo="Revisão sistemática" hidden>
+      <header>
+        <p class="eyebrow">Parte 11 · Seção 3.7 e Figura 1</p>
+        <h2>Revisão sistemática</h2>
+        <p class="nesta">Nesta parte: <a href="#revisao--base">as bases do método</a> · <a href="#revisao--qr">as cinco questões</a> · <a href="#revisao--fontes">fontes e strings</a> · <a href="#revisao--criterios">critérios</a> · <a href="#revisao--fluxo">o fluxo em números</a> · <a href="#revisao--falta">o que falta</a></p>
+      </header>
+
+      <div class="bloco" id="revisao--base">
+        <h3>As bases do método</h3>
+        <ul>
+          <li><b>Kitchenham e Charters (2007):</b> o guia de revisão sistemática em engenharia de software.</li>
+          <li><b>Wohlin (2014):</b> a bola de neve, para trás (referências dos incluídos) e para a frente (quem os cita).</li>
+          <li><b>PRISMA 2020 (Page et al., 2021):</b> o modelo do fluxograma.</li>
+          <li><b>Origem:</b> uma busca exploratória achou Samarasinghe, que não estava entre os estudos da proposta. A lacuna foi reescrita, e isso fixou duas decisões: a revisão cobre apps de governo de qualquer país, e as strings são validadas contra estudos que precisam ser achados.</li>
+        </ul>
+      </div>
+
+      <div class="bloco" id="revisao--qr">
+        <h3>As cinco questões</h3>
+        <div class="tbl"><table>
+          <thead><tr><th>Questão</th><th>Tema</th><th>Serve a</th></tr></thead>
+          <tbody>
+            <tr><td>QR1</td><td>Métodos de detecção e sua validação</td><td>Checagem do instrumento</td></tr>
+            <tr><td>QR2</td><td>Prevalência de rastreadores</td><td>Contexto do mercado e H2</td></tr>
+            <tr><td>QR3</td><td>Confronto entre o declarado e o detectado</td><td>H1</td></tr>
+            <tr><td>QR4</td><td>Apps de governo, inclusive da COVID-19</td><td>H1, H2 e lacuna</td></tr>
+            <tr><td>QR5</td><td>Brasil, LGPD e transferência internacional</td><td>Discussão jurídica</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+
+      <div class="bloco" id="revisao--fontes">
+        <h3>Fontes e strings</h3>
+        <ul>
+          <li><b>Scopus:</b> base principal. <b>IEEE Xplore:</b> QR1 a QR4. <b>SBC OpenLib</b> e <b>BDTD:</b> produção nacional. Bola de neve a partir dos incluídos.</li>
+          <li><b>ACM Digital Library:</b> saiu na versão 1.1 do protocolo, porque exportar os resultados exige assinatura que a instituição não tem, e os anais da ACM estão em grande parte no Scopus.</li>
+          <li><b>17 buscas</b>, de 2015 a 2026, em inglês e português.</li>
+          <li><b>Validação das strings:</b> 11 estudos conhecidos formam um conjunto de controle, na linha do padrão quase-ouro de Zhang et al. (2011). Cada string tem de recuperar os de controle que a base indexa; se falhar, o termo é acrescentado e a busca refeita. As buscas recuperaram os 10 que o Scopus indexa; o 11º não está no Scopus.</li>
+        </ul>
+      </div>
+
+      <div class="bloco" id="revisao--criterios">
+        <h3>Critérios de inclusão, exclusão e qualidade</h3>
+        <div class="duas">
+          <div class="box"><h4>Inclusão (4)</h4><ul>
+            <li><b>IC1:</b> estudo primário que mede, detecta ou analisa rastreamento, bibliotecas, SDKs ou fluxos de dados em apps (QR1 a QR4), ou LGPD e transferência internacional aplicadas a serviços digitais (QR5).</li>
+            <li><b>IC2:</b> revisão por pares, ou tese ou dissertação defendida.</li>
+            <li><b>IC3:</b> inglês ou português.</li>
+            <li><b>IC4:</b> de 2015 a 2026.</li>
+          </ul></div>
+          <div class="box"><h4>Exclusão (6)</h4><ul>
+            <li><b>EC1:</b> duplicata ou versão anterior; fica a mais completa.</li>
+            <li><b>EC2:</b> não trata de apps móveis (exceto jurídicos da QR5).</li>
+            <li><b>EC3:</b> "rastreamento" em outro sentido (localização física, olhar, contatos).</li>
+            <li><b>EC4:</b> detecção de bibliotecas só como meio (malware, clones).</li>
+            <li><b>EC5:</b> só percepção de pessoas, sem medida dos apps.</li>
+            <li><b>EC6:</b> resumo, pôster, artigo de até 4 páginas, editorial, preprint sem revisão.</li>
+          </ul></div>
+        </div>
+        <p><b>Regras:</b> triagem por título e resumo, depois leitura completa; cada exclusão leva o código do critério. Texto não obtido não é motivo de exclusão: conta como "não recuperado" no PRISMA.</p>
+        <p><b>Qualidade (QA1 a QA8):</b> objetivo explícito; população descrita; pacotes identificáveis; detecção reproduzível; detecção validada com números; inferência; ameaças à validade; dados ou código disponíveis. A nota descreve, não exclui. QA4 e QA5 medem o que a checagem do instrumento discute.</p>
+      </div>
+
+      <div class="bloco" id="revisao--fluxo">
+        <h3>O fluxo em números</h3>
+        <div class="prisma">
+          <div class="p">Identificados em 17 buscas, 6/11/2026: <b>1.531</b><br>Scopus 825 · IEEE 668 · BDTD 23 · SBC OpenLib 15</div><div class="p lado">Duplicatas removidas: <b>282</b></div>
+          <div class="p">Triados por título e resumo: <b>1.249</b></div><div class="p lado">Excluídos: <b>886</b> (IC1 527 · EC3 118 · EC2 114 · EC5 89 · EC4 30 · EC6 5 · EC1 3) · revisões para a bola de neve: <b>6</b></div>
+          <div class="p">Encaminhados à leitura completa: <b>357</b> (214 "inclui" e 143 "talvez")</div><div class="p lado">Em aberto: <b>278</b> = 131 sem texto + 2 versões divergentes + 2 dúvidas de escopo + 143 "talvez"</div>
+          <div class="p">Textos obtidos: <b>80</b> → 71 propostas I, 7 E e 2 dúvidas</div><div class="p lado">Exclusões propostas: <b>8</b> = 7 com texto + 1 EC1 (versão ampliada posterior)</div>
+          <div class="p">Propostas de inclusão: <b>71</b></div><div class="p lado">Conferidas por você em 21/11: <b>18 de 79</b> (12 I e 6 E)</div>
+        </div>
+        <div class="conta"><span class="rot">Para não se perder nas contas</span>
+          <p>1.531 − 282 = 1.249. Depois: 886 + 6 + 357 = 1.249.</p>
+          <p>Os 214 "inclui": 80 textos obtidos + 131 sem texto + 2 versões divergentes + 1 EC1 = 214.</p>
+          <p>Os 357: 71 propostas I + 8 propostas E + 278 em aberto = 357. As 2 dúvidas de escopo estão entre os 80 obtidos e também entre os 278.</p>
+          <p>Decisões: 71 + 8 = 79. Conferidas 18, faltam 61.</p>
+        </div>
+      </div>
+
+      <div class="bloco" id="revisao--falta">
+        <h3>O que falta (fevereiro de 2027)</h3>
+        <ul>
+          <li>Conferir as 61 decisões restantes.</li>
+          <li>Ler os 278 registros em aberto, buscando os textos pelo Portal de Periódicos da CAPES (acesso CAFe); o que seguir indisponível é relatado como não recuperado.</li>
+          <li>Bola de neve.</li>
+          <li>Conferência cega dos 125 registros (κ de Cohen).</li>
+        </ul>
+        <p><b>Síntese:</b> narrativa, por questão, sem metanálise. As taxas da literatura vêm de detectores e populações diferentes; somá-las ignoraria o efeito da ferramenta.</p>
+        <div class="dizer"><span class="rot">"Foi o orientador que deixou para fevereiro?"</span><p>Sim. Ele concordou em deixar os 278 registros em aberto para o início do Capstone II, quando também confiro as outras 61 decisões. Por isso as 71 são propostas, não inclusões finais.</p></div>
+      </div>
+    </section>
+
+    <!-- 12 ÉTICA, LIMITAÇÕES, CRONOGRAMA -->
+    <section class="parte" id="etica" data-view data-titulo="Ética, limites e cronograma" hidden>
+      <header>
+        <p class="eyebrow">Parte 12 · Seções 3.8 a 3.11, 3.13 e 3.14</p>
+        <h2>Ética, limitações, resultados, recursos, cronograma e riscos</h2>
+        <p class="nesta">Nesta parte: <a href="#etica--etica">ética</a> · <a href="#etica--limites">limitações</a> · <a href="#etica--resultados">resultados esperados</a> · <a href="#etica--recursos">recursos</a> · <a href="#etica--crono">cronograma</a> · <a href="#etica--riscos">riscos</a></p>
+      </header>
+
+      <div class="bloco" id="etica--etica">
+        <h3>3.8 Aspectos éticos e validação</h3>
+        <ul>
+          <li>Até agora: só metadados públicos da Google Play e políticas publicadas. Os pacotes do piloto vieram do AndroZoo, examinados estaticamente, nas condições do acervo.</li>
+          <li>Não houve análise dinâmica nem pessoas como sujeitos de pesquisa. O objeto são os apps e seus componentes.</li>
+          <li>Na dinâmica: dispositivo e conta próprios; credenciais, tokens e identificadores pessoais retirados de qualquer material publicado.</li>
+          <li>Pendências declaradas: 61 decisões e 278 registros na revisão; conferência dos 376 apps (oficialidade, esfera, sensibilidade). Cada alteração terá data e justificativa.</li>
+        </ul>
+        <div class="dizer"><span class="rot">"Precisa de comitê de ética?"</span><p>No desenho atual, não há participação de pessoas: o objeto são os aplicativos. A análise dinâmica usa dispositivo e conta próprios, e nada que identifique alguém é publicado. Se o desenho mudar, isso será revisto com o orientador.</p></div>
+      </div>
+
+      <div class="bloco" id="etica--limites">
+        <h3>3.9 Limitações</h3>
+        <ol>
+          <li>Estática mostra presença, não execução nem envio; a subamostra dinâmica mede essa diferença em parte dos apps.</li>
+          <li>Só Android e só Google Play.</li>
+          <li>Versão atual da Google Play com hash; só os apps que estão no AndroZoo (92 de 396 na consulta) podem ser obtidos com o mesmo arquivo por terceiros; para esses, a defasagem é medida.</li>
+          <li>Políticas e "Segurança dos dados" declaram categorias e finalidades, não a lista de SDKs; o confronto distingue menção nominal, por categoria e ausência.</li>
+          <li>A referência comercial não é amostra aleatória do mercado; só contexto.</li>
+          <li>A declaração de anúncios é feita pelo próprio publicador.</li>
+          <li>A revisão tem um revisor responsável; consistência estimada por amostra; textos não recuperados podem deixar estudos de fora.</li>
+          <li>A discussão jurídica aponta pontos de atenção; não substitui análise jurídica do caso concreto.</li>
+        </ol>
+      </div>
+
+      <div class="bloco" id="etica--resultados">
+        <h3>3.10 Resultados esperados e plano de análise</h3>
+        <ol>
+          <li>Prevalência de rastreadores no parque governamental, com IC, por esfera e por dado sensível.</li>
+          <li>Proporção de pares app–SDK sem declaração compatível e, na dinâmica, de destinos não declarados, inclusive no exterior.</li>
+          <li>Lista das divergências entre declarado e observado em cada app.</li>
+          <li>Concordância entre detectores e efeito da ferramenta na taxa.</li>
+          <li>Conjunto de dados reprodutível: lista dos apps, hashes e scripts.</li>
+        </ol>
+        <p>O relatório traz estimativas, IC95%, pacotes não recuperados e casos sem documentação suficiente. O detector principal, as regras para versões e declarações genéricas e as comparações múltiplas são definidos com o orientador antes da coleta.</p>
+      </div>
+
+      <div class="bloco" id="etica--recursos">
+        <h3>3.11 Recursos</h3>
+        <p>Sem orçamento de compra: reaproveitamento do equipamento do pesquisador e programas abertos (Python, Androguard, MobSF, bases Exodus e Disconnect, ferramentas de inspeção de rede e Git). Fontes: Scopus, IEEE Xplore, SBC OpenLib, BDTD e Portal da CAPES via CAFe. Pacotes: Google Play na região brasileira e AndroZoo (acesso já obtido). Versões e hashes das bases são fixados antes da coleta. Armazenamento: reserva de 100 GB e cópia separada.</p>
+      </div>
+
+      <div class="bloco" id="etica--crono">
+        <h3>3.13 Cronograma do Capstone II (2027.1)</h3>
+        <div class="tbl"><table class="plano">
+          <thead><tr><th>Mês</th><th>Atividade</th></tr></thead>
+          <tbody>
+            <tr><td>Fevereiro</td><td>Fechar a revisão (61 decisões, 278 registros, bola de neve, conferência cega); conferir os 376 apps; testar a coleta em cinco apps; definir o detector principal e congelar o plano com o orientador</td></tr>
+            <tr><td>Março</td><td>Baixar a versão atual de todo o corpus na Google Play e as arquivadas no AndroZoo; detecção e checagem do instrumento; confronto com as declarações (H1)</td></tr>
+            <tr><td>Abril</td><td>Sensíveis contra não sensíveis (H2); análise dinâmica da subamostra: destinos, jurisdição e taxa de bloqueio por certificate pinning</td></tr>
+            <tr><td>Maio</td><td>Estatística pelo plano congelado: H1, H2 e defasagem entre versões; contagens e descrição da referência comercial; aviso aos órgãos de achados graves antes de publicar</td></tr>
+            <tr><td>Junho</td><td>Redação final, publicação do conjunto de dados e defesa</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+
+      <div class="bloco" id="etica--riscos">
+        <h3>3.14 Riscos e contingências</h3>
+        <div class="tbl"><table>
+          <thead><tr><th>Risco</th><th>Contingência</th></tr></thead>
+          <tbody>
+            <tr><td>AndroZoo com pouca cobertura (ocorreu: 23,2%)</td><td>Versão atual de todos na loja com SHA-256; AndroZoo onde houver; limitação declarada</td></tr>
+            <tr><td>Download bloqueado na Google Play</td><td>Testar em cinco apps; registrar os não obtidos; usar o AndroZoo com a defasagem informada</td></tr>
+            <tr><td>Versão do AndroZoo muito antiga</td><td>Medir e reportar a defasagem por app</td></tr>
+            <tr><td>Prevalência muito alta ou baixa</td><td>κ instável: reportar acordos positivo e negativo</td></tr>
+            <tr><td>Política genérica ou indisponível</td><td>Classes da H1 e análise de sensibilidade</td></tr>
+            <tr><td>Achado grave de um órgão</td><td>Avisar antes o órgão e, se couber, o CTIR Gov e a ANPD, com prazo definido com o orientador</td></tr>
+            <tr><td>Muitos textos não recuperados</td><td>Portal da CAPES e cópias dos autores; listar e discutir como limitação</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+    </section>
+
+    <!-- 13 APRESENTAÇÃO -->
+    <section class="parte" id="apresentacao" data-view data-titulo="A apresentação, slide a slide" hidden>
+      <header>
+        <p class="eyebrow">Parte 13 · 14 slides · cerca de 10 minutos de fala</p>
+        <h2>A apresentação, slide a slide</h2>
+        <p class="lead">Para cada slide: o que aparece, a mensagem em uma frase, os números e a pergunta mais provável. A fala completa, igual às notas do PowerPoint, abre ao tocar em "Fala completa".</p>
+        <p class="nesta">Slides: <a href="#apresentacao--s1">1</a> · <a href="#apresentacao--s2">2</a> · <a href="#apresentacao--s3">3</a> · <a href="#apresentacao--s4">4</a> · <a href="#apresentacao--s5">5</a> · <a href="#apresentacao--s6">6</a> · <a href="#apresentacao--s7">7</a> · <a href="#apresentacao--s8">8</a> · <a href="#apresentacao--s9">9</a> · <a href="#apresentacao--s10">10</a> · <a href="#apresentacao--s11">11</a> · <a href="#apresentacao--s12">12</a> · <a href="#apresentacao--s13">13</a> · <a href="#apresentacao--s14">14</a></p>
+      </header>
+
+      <article class="ficha" id="apresentacao--s1">
+        <h3><span class="idx">01</span>Abertura</h3>
+        <p class="sub">40 s · título, seu nome, orientador</p>
+        <dl>
+          <dt>Mensagem</dt><dd><p>O trabalho olha os SDKs de terceiros nos apps Android oficiais e se o que o governo informa ao cidadão bate com a evidência técnica. Neste semestre: problema, método e piloto.</p></dd>
+          <dt>Fala completa</dt><dd><details><summary>Abrir</summary><p>Bom dia. Esta é a apresentação do meu projeto de Capstone I, intitulado “Quem mais está dentro do aplicativo?”. A pesquisa se concentra nos aplicativos Android oficiais do governo brasileiro e na transparência sobre os SDKs de terceiros. Quero entender quais desses componentes estão presentes e se o que é informado ao cidadão sobre a coleta e o compartilhamento de dados é compatível com a evidência técnica. O objetivo deste semestre é apresentar um problema bem definido, o método e um piloto de viabilidade. A coleta principal e os testes das hipóteses serão realizados no Capstone II.</p></details></dd>
+        </dl>
+      </article>
+
+      <article class="ficha" id="apresentacao--s2">
+        <h3><span class="idx">02</span>Por que investigar as declarações dos apps públicos?</h3>
+        <p class="sub">40 s · motivação e fluxo ilustrativo (app do governo → serviço de terceiro)</p>
+        <dl>
+          <dt>Mensagem</dt><dd><p>Serviços essenciais estão no celular; o app embute SDKs que podem coletar dados. No setor público o cidadão não escolhe outro prestador. Biblioteca instalada não é transmissão observada.</p></dd>
+          <dt>Números</dt><dd><p>Meu INSS e Meu SUS Digital, mais de 50 milhões de instalações cada (coleta de setembro de 2026; está no texto, não no slide).</p></dd>
+          <dt>Pergunta provável</dt><dd><p><b>"O que é um SDK?"</b> Um kit de desenvolvimento de outra empresa, com funções prontas, como mapas, notificações ou análise de uso, que roda dentro do app.</p></dd>
+          <dt>Fala completa</dt><dd><details><summary>Abrir</summary><p>Boa parte dos serviços públicos passou para o celular. Aplicativos como Meu INSS e Meu SUS Digital são usados por milhões de pessoas e frequentemente constituem a principal porta de entrada para esses serviços. Um aplicativo Android não contém apenas código desenvolvido pelo órgão responsável: ele pode integrar SDKs de mapas, notificações, análise de uso e outros serviços. Alguns componentes podem coletar identificadores ou informações de utilização. Essa possibilidade exige transparência, especialmente no setor público, onde a escolha de prestador pelo cidadão costuma ser limitada. Ressalto que encontrar uma biblioteca instalada não equivale a observar transmissão de dados.</p></details></dd>
+        </dl>
+      </article>
+
+      <article class="ficha" id="apresentacao--s3">
+        <h3><span class="idx">03</span>O que a literatura já demonstrou</h3>
+        <p class="sub">40 s · três cartões: Binns, Kollnig, Samarasinghe</p>
+        <dl>
+          <dt>Mensagem</dt><dd><p>Rastreadores são comuns e concentrados; regulação sozinha mudou pouco; apps de governo também rastreiam. Falta o panorama do governo brasileiro.</p></dd>
+          <dt>Números</dt><dd><p>Binns: 959 mil apps. Kollnig: antes e depois do GDPR, sem efeito causal. Samarasinghe: 1.166 apps de 71 países; 37% com rastreadores do Google; 27% enviando dados sensíveis a terceiros ou sem criptografia.</p></dd>
+          <dt>Pergunta provável</dt><dd><p><b>"O que há de novo em relação a Samarasinghe?"</b> O caso brasileiro separado por esfera e por dado sensível; o confronto entre o que cada app declara e o que embarca e envia; e a checagem dos detectores sobre as mesmas versões.</p></dd>
+          <dt>Fala completa</dt><dd><details><summary>Abrir</summary><p>A literatura oferece três pontos de partida. Binns e colaboradores examinaram aproximadamente 959 mil aplicativos e encontraram referências a rastreadores distribuídas de maneira concentrada em poucas empresas; a medição é principalmente estática. Kollnig e outros autores discutiram o cenário anterior e posterior ao GDPR e os desafios de consentimento, sem que uma comparação temporal prove, isoladamente, o efeito de uma lei. Samarasinghe e colaboradores analisaram 1.166 aplicativos de governo de 71 países: 37% tinham rastreadores do Google, e 27% enviavam informações sensíveis, como identificadores, a terceiros ou sem criptografia. Esses resultados justificam investigar o contexto brasileiro com atenção às declarações de privacidade.</p></details></dd>
+        </dl>
+      </article>
+
+      <article class="ficha" id="apresentacao--s4">
+        <h3><span class="idx">04</span>Lacuna e contribuição proposta</h3>
+        <p class="sub">40 s · corpus brasileiro · transparência · checagem do método</p>
+        <dl>
+          <dt>Mensagem</dt><dd><p>Três contribuições: estudar os apps federais, estaduais e municipais com atenção a dados sensíveis; confrontar SDKs com o que é declarado; verificar a diferença entre detectores. Divergência não é prova de infração.</p></dd>
+          <dt>Pergunta provável</dt><dd><p><b>"Como sabe que ninguém fez isso?"</b> A lacuna está delimitada à literatura examinada até agora e será reavaliada depois da leitura dos 278 registros e da bola de neve.</p></dd>
+          <dt>Fala completa</dt><dd><details><summary>Abrir</summary><p>A contribuição esperada tem três partes. Primeiro, estudar sistematicamente aplicativos federais, estaduais e municipais brasileiros, distinguindo serviços que podem tratar dados sensíveis. Segundo, confrontar a presença e a função dos SDKs com as categorias de dados e finalidades declaradas na política de privacidade e na seção Segurança dos dados da Google Play. Para uma subamostra, o confronto será ampliado aos fluxos efetivamente observados. Terceiro, verificar as diferenças entre detectores, porque a prevalência reportada pode variar conforme o instrumento. Uma divergência não é prova automática de infração à LGPD; é uma evidência para exame adicional.</p></details></dd>
+        </dl>
+      </article>
+
+      <article class="ficha" id="apresentacao--s5">
+        <h3><span class="idx">05</span>Pergunta e objetivos</h3>
+        <p class="sub">45 s · pergunta, objetivo geral e os cinco objetivos específicos</p>
+        <dl>
+          <dt>Mensagem</dt><dd><p>A pergunta começa com "em que medida": a resposta é uma proporção. Evidência estática e de tráfego são apresentadas separadas.</p></dd>
+          <dt>Objetivos</dt><dd><p>Conferir o corpus · detectar SDKs · comparar declarações · observar fluxos · verificar detectores.</p></dd>
+          <dt>Fala completa</dt><dd><details><summary>Abrir</summary><p>No texto do TCC, a pergunta foi formulada assim: “Em que medida os aplicativos móveis oficiais do governo brasileiro embarcam SDKs de rastreamento de terceiros e enviam dados a terceiros sem que isso esteja declarado em suas políticas de privacidade e na seção Segurança dos dados da Google Play?”. O objetivo geral é medir a proporção de SDKs e de envios sem declaração compatível nos aplicativos governamentais brasileiros, à luz da LGPD. Para isso vou confirmar o corpus, detectar os componentes, comparar as declarações, observar uma subamostra dinamicamente e conferir a concordância dos detectores. A evidência estática e a de tráfego serão apresentadas separadamente.</p></details></dd>
+        </dl>
+      </article>
+
+      <article class="ficha" id="apresentacao--s6">
+        <h3><span class="idx">06</span>Hipóteses e verificação do instrumento</h3>
+        <p class="sub">60 s · o slide mais longo e o mais perguntado</p>
+        <dl>
+          <dt>Mensagem</dt><dd><p>H1 principal: ao menos 1 em cada 10 pares app–SDK sem declaração compatível, com IC95%; é limiar do estudo, não da lei. H2 secundária: sensíveis não rastreiam menos. Comerciais são contexto; detectores são checagem.</p></dd>
+          <dt>Pergunta provável</dt><dd><p><b>"Por que 10%?"</b> Ver a <a href="#pergunta--limiar">resposta pronta</a>. <b>"O que é declaração compatível?"</b> Pode ser por categoria de dado e finalidade, sem citar o nome do SDK.</p></dd>
+          <dt>Fala completa</dt><dd><details><summary>Abrir</summary><p>A H1 é a principal: ao menos 10% dos pares aplicativo–SDK identificados não teriam declaração compatível, considerando categorias de dados e finalidades, e não apenas o nome comercial da biblioteca. O critério utiliza um intervalo de confiança de 95%. O limiar de 10% corresponde a ao menos um par sem declaração compatível em cada dez pares que possam ser avaliados. É uma escolha operacional para o teste, e não uma margem permitida pela LGPD. Andow relatou que até 42,4% dos aplicativos declaravam de forma incorreta ou omitiam fluxos de dados sensíveis, mas com outro método e outra população, de modo que não posso comparar diretamente as duas taxas. A H2 é secundária: procura verificar se aplicativos governamentais que tratam dados sensíveis têm prevalência de SDKs menor do que os demais. A hipótese considera que essa prevalência não é menor. Os comerciais ficam como contexto; concordância entre detectores é checagem do instrumento sem hipótese própria.</p></details></dd>
+        </dl>
+      </article>
+
+      <article class="ficha" id="apresentacao--s7">
+        <h3><span class="idx">07</span>Procedimentos metodológicos</h3>
+        <p class="sub">40 s · seis passos</p>
+        <dl>
+          <dt>Mensagem</dt><dd><p>Quantitativo e observacional: corpus, caracterização, pacotes atuais da Google Play com SHA-256, detectores, declaração contra evidência, proporções com IC95% e subamostra dinâmica.</p></dd>
+          <dt>Pergunta provável</dt><dd><p><b>"Como vai obter os pacotes? É permitido?"</b> Versão atual da Google Play, com conta própria, hash registrado e sem redistribuir os pacotes. Teste em cinco apps no início do Capstone II.</p></dd>
+          <dt>Fala completa</dt><dd><details><summary>Abrir</summary><p>O método é quantitativo e observacional. Primeiro, delimitar e conferir os aplicativos oficiais encontrados na Google Play. Segundo, caracterizá-los por esfera e tipo de serviço. Terceiro, obter a versão atual na Google Play quando possível, com data, versão e SHA-256. O AndroZoo será fonte complementar para reprodutibilidade e para medir defasagem entre a versão arquivada e a que o usuário instala. Quarto, aplicar os detectores e examinar suas divergências. Quinto, comparar resultados técnicos com políticas de privacidade e declarações na loja. Sexto, calcular proporções e intervalos e, para uma subamostra, observar fluxos de rede em cenários documentados.</p></details></dd>
+        </dl>
+      </article>
+
+      <article class="ficha" id="apresentacao--s8">
+        <h3><span class="idx">08</span>Corpus governamental preliminar</h3>
+        <p class="sub">35 s · 396 · 376 · 100 e barras por esfera</p>
+        <dl>
+          <dt>Números</dt><dd><p>396 candidatos; 376 oficiais (85 federais, 199 estaduais, 92 municipais); 100 com possível tratamento sensível; 20 excluídos (13 empresas privadas, 7 contas de pessoa física); 108 divergências da regra automática (28,7%).</p></dd>
+          <dt>Pergunta provável</dt><dd><p><b>"Como decide que um app é oficial?"</b> Pelo nome jurídico do publicador em "Sobre o desenvolvedor". A classificação ainda será conferida antes da coleta.</p></dd>
+          <dt>Fala completa</dt><dd><details><summary>Abrir</summary><p>A busca inicial produziu 396 aplicativos candidatos. Pela classificação preliminar de seus publicadores, 376 foram mantidos como oficiais: 85 federais, 199 estaduais e 92 municipais. Entre eles, 100 foram classificados preliminarmente como relacionados a serviços que podem tratar dados sensíveis, como saúde ou biometria. Vinte candidatos foram excluídos nesta etapa por divergências de titularidade. Esses números descrevem o corpus preparatório; a classificação ainda será conferida antes da coleta principal. O gráfico apresenta a distribuição por esfera, e não uma medida de rastreadores encontrados.</p></details></dd>
+        </dl>
+      </article>
+
+      <article class="ficha" id="apresentacao--s9">
+        <h3><span class="idx">09</span>O que significa declarar anúncios?</h3>
+        <p class="sub">40 s · 0% contra 33,2%</p>
+        <dl>
+          <dt>Números</dt><dd><p>0 de 376 apps de governo declaram anúncios (IC95% 0% a 1,0%); 63 de 190 comerciais (33,2%; IC95% 26,9% a 40,1%).</p></dd>
+          <dt>Mensagem</dt><dd><p>A declaração de anúncios não diz quais SDKs o app embarca. O grupo comercial é só contexto, não controle.</p></dd>
+          <dt>Pergunta provável</dt><dd><p><b>"Então o governo não rastreia?"</b> Não dá para concluir isso. Não exibir anúncio não impede SDK de análise de uso ou de rastreamento. É exatamente o confronto que o projeto propõe.</p></dd>
+          <dt>Fala completa</dt><dd><details><summary>Abrir</summary><p>Um dado descritivo da Google Play é a declaração de anúncios. Entre os 376 aplicativos governamentais classificados preliminarmente como oficiais, nenhum declarou exibir anúncios. Na primeira referência comercial, a informação aparece em 63 dos 190 aplicativos, ou 33,2%. Os intervalos de confiança mostrados dizem respeito apenas a essa declaração feita pelos publicadores. Não significam que os aplicativos do governo não incorporem SDKs de análise de uso ou de rastreamento. Também não uso a referência comercial como grupo de controle, pois sua coleta não foi planejada para um teste inferencial equivalente.</p></details></dd>
+        </dl>
+      </article>
+
+      <article class="ficha" id="apresentacao--s10">
+        <h3><span class="idx">10</span>Piloto: detectores não são equivalentes</h3>
+        <p class="sub">40 s · A 75% · B 95% · C 80%</p>
+        <dl>
+          <dt>Números</dt><dd><p>20 pacotes; A 15 de 20, B 19 de 20, C 16 de 20; κ de Fleiss 0,52; 88 de 123 detecções de B questionadas (71,5%); κ 0,69 na análise de sensibilidade.</p></dd>
+          <dt>Pergunta provável</dt><dd><p><b>"Se B errou tanto, por que mantê-lo?"</b> Ele não é a medida principal proposta. Como A e B usam a mesma base com métodos diferentes, a diferença mostra o efeito do método. Os 88 são falsos positivos potenciais pela adjudicação interna, não confirmados por referência externa.</p></dd>
+          <dt>Fala completa</dt><dd><details><summary>Abrir</summary><p>No piloto, utilizei 20 pacotes arquivados no AndroZoo e três detectores. O detector A buscou assinaturas de código na base do Exodus; B procurou assinaturas de rede em textos do pacote usando a mesma base; C utilizou assinaturas da Disconnect sobre os mesmos textos. As proporções de pacotes com detecção foram 75%, 95% e 80%, respectivamente. O kappa de Fleiss foi 0,52. Uma adjudicação interna considerou 88 de 123 detecções do B potenciais falsos positivos, principalmente por domínios genéricos. Retirá-las na análise de sensibilidade elevou o kappa a 0,69, mas isso não constitui validação independente por padrão de referência.</p></details></dd>
+        </dl>
+      </article>
+
+      <article class="ficha" id="apresentacao--s11">
+        <h3><span class="idx">11</span>Fonte dos APKs e reprodutibilidade</h3>
+        <p class="sub">35 s · 23,2% contra 84,2%</p>
+        <dl>
+          <dt>Números</dt><dd><p>AndroZoo tinha 92 de 396 candidatos de governo (23,2%) e 160 de 190 comerciais (84,2%).</p></dd>
+          <dt>Mensagem</dt><dd><p>Depender só do acervo deixaria muitos apps oficiais de fora. Fonte principal: versão atual da Google Play com hash, data e falhas registradas. AndroZoo: versões específicas, defasagem e reprodutibilidade.</p></dd>
+          <dt>Fala completa</dt><dd><details><summary>Abrir</summary><p>Uma limitação prática apareceu na busca por pacotes. O AndroZoo possuía apenas 92 dos 396 candidatos governamentais da consulta histórica, ou 23,2%; na primeira referência comercial eram 160 de 190, ou 84,2%. Isso indica que depender apenas do acervo acadêmico poderia deixar muitos aplicativos oficiais de fora. Por isso o plano prevê coletar as versões atuais disponibilizadas na Google Play, com registro de hash, data e eventuais falhas. O AndroZoo continua relevante para recuperar versões específicas, medir defasagem e possibilitar reprodutibilidade onde os arquivos estiverem disponíveis.</p></details></dd>
+        </dl>
+      </article>
+
+      <article class="ficha" id="apresentacao--s12">
+        <h3><span class="idx">12</span>Revisão bibliográfica: situação atual</h3>
+        <p class="sub">45 s · 1.531 → 1.249 → 357 → 71</p>
+        <dl>
+          <dt>Números</dt><dd><p>1.531 registros; 1.249 após deduplicação; 357 à leitura completa; 71 propostas de inclusão e 8 de exclusão; 278 em aberto (131 sem texto, 2 versões, 2 de escopo, 143 "talvez"); 18 de 79 decisões conferidas.</p></dd>
+          <dt>Pergunta provável</dt><dd><p><b>"Quantos artigos a revisão incluiu?"</b> 71 propostas, ainda não finais. Conferi 18 das 79 decisões; as outras 61 e os 278 abertos ficam para o início do Capstone II, com a concordância do orientador.</p></dd>
+          <dt>Fala completa</dt><dd><details><summary>Abrir</summary><p>A revisão sistemática seguiu um protocolo baseado em Kitchenham e no relato PRISMA 2020. As buscas retornaram 1.531 registros, reduzidos a 1.249 após deduplicação. A triagem encaminhou 357 registros para a leitura completa. Destes, há 71 propostas de inclusão e oito de exclusão, e 278 registros ainda sem decisão. Até 21 de novembro, eu conferi 18 das 79 decisões registradas, com leitura integral e avaliação de qualidade declarada. As notas individuais de QA1 a QA8 ainda não estão anexadas à planilha. Portanto, as 71 inclusões são propostas preliminares; o orientador concordou em deixar os 278 registros em aberto para o Capstone II, quando também confiro as outras 61 decisões.</p></details></dd>
+        </dl>
+      </article>
+
+      <article class="ficha" id="apresentacao--s13">
+        <h3><span class="idx">13</span>Limitações e próximos passos</h3>
+        <p class="sub">45 s · limitações à esquerda, linha do tempo à direita</p>
+        <dl>
+          <dt>Mensagem</dt><dd><p>Assinatura de código não prova execução nem envio; políticas declaram categorias sem nomear SDKs; limitações de seleção, classificação, versões e detectores. Até 03/12: ajustes. Fevereiro: revisão e corpus. Março e abril: coleta, SDKs e declarações. Maio e junho: análise, discussão jurídica e defesa.</p></dd>
+          <dt>Fala completa</dt><dd><details><summary>Abrir</summary><p>Entre as limitações, destaco que uma assinatura de código não prova execução nem transmissão, e que as políticas de privacidade podem declarar categorias de dados e finalidades sem nomear todos os SDKs. Há ainda limitações na seleção da revisão, na classificação do corpus, na disponibilidade de versões e na independência dos detectores. Até a entrega do Capstone I, a prioridade é incorporar o retorno do orientador e da simulação. No Capstone II serão concluídas a leitura e as decisões dos artigos pendentes, além da conferência das classificações do corpus, seguida da coleta das versões atuais, do confronto documental, da análise dinâmica de subamostra, da avaliação estatística e da discussão jurídica fundamentada.</p></details></dd>
+        </dl>
+      </article>
+
+      <article class="ficha" id="apresentacao--s14">
+        <h3><span class="idx">14</span>Conclusão</h3>
+        <p class="sub">35 s · "Problema definido. Método viável. Resultados ainda preliminares."</p>
+        <dl>
+          <dt>Mensagem</dt><dd><p>O foco não é comparar governo e mercado, mas verificar se o que os apps públicos declaram é compatível com os componentes identificados e, onde houver observação dinâmica, com os fluxos.</p></dd>
+          <dt>Fala completa</dt><dd><details><summary>Abrir</summary><p>Para concluir, o Capstone I apresenta um problema delimitado, um desenho metodológico e dados preparatórios suficientes para demonstrar viabilidade. O foco não é comparar o governo ao mercado, mas verificar se aquilo que os aplicativos públicos declaram sobre tratamento de dados é compatível com os componentes identificados e, onde houver observação dinâmica, com os fluxos realmente transmitidos. Essa distinção é fundamental para produzir resultados defensáveis sobre privacidade, transparência e dependência de fornecedores. Obrigado. Estou à disposição para as perguntas.</p></details></dd>
+        </dl>
+      </article>
+    </section>
+
+    <!-- 14 PERGUNTAS -->
+    <section class="parte" id="perguntas" data-view data-titulo="Perguntas da banca" hidden>
+      <header>
+        <p class="eyebrow">Parte 14 · treine em voz alta</p>
+        <h2>Perguntas da banca</h2>
+        <p class="lead">As do roteiro, mais as difíceis. Leia a pergunta, responda em voz alta e só depois confira.</p>
+        <p class="nesta">Nesta parte: <a href="#perguntas--desenho">desenho</a> · <a href="#perguntas--dados">dados e coleta</a> · <a href="#perguntas--estat">estatística</a> · <a href="#perguntas--lei">lei e ética</a> · <a href="#perguntas--revisao">revisão e IA</a> · <a href="#perguntas--criticas">críticas ao trabalho</a></p>
+      </header>
+
+      <div class="bloco" id="perguntas--desenho">
+        <h3>Desenho do estudo</h3>
+        <div class="qa"><h4>Qual é a sua pergunta de pesquisa, em uma frase?</h4><p>Em que medida os apps oficiais do governo brasileiro embarcam SDKs de rastreamento e enviam dados a terceiros sem que isso esteja declarado na política de privacidade e na seção "Segurança dos dados" da Google Play.</p></div>
+        <div class="qa"><h4>Por que não comparar com apps comerciais?</h4><p>O governo tem obrigações próprias: a LGPD e a política que ele mesmo publica. Uma comparação justa exigiria uma amostra comercial sem viés, que a busca da loja não oferece, porque ordena por relevância e quase não devolve apps pequenos. Os 252 comerciais ficam como contexto, sem teste de hipótese.</p></div>
+        <div class="qa"><h4>Por que mudou o foco desde a proposta?</h4><p>Por sugestão do orientador. A comparação com o mercado dava muito trabalho e não respondia à pergunta mais importante: se o governo faz o que diz. O confronto com a própria declaração e com a LGPD responde a isso diretamente.</p></div>
+        <div class="qa"><h4>Ter o SDK no pacote prova que dados são enviados?</h4><p>Não. A análise estática mostra presença de código. O envio só é observado na análise dinâmica da subamostra. O texto separa presença, transmissão observada e declaração.</p></div>
+        <div class="qa"><h4>O que conta como declaração compatível?</h4><p>A política não precisa citar cada SDK pelo nome. Primeiro identifico a função de coleta ou compartilhamento do componente; depois vejo se a política ou a "Segurança dos dados" descreve categorias de dados e finalidades compatíveis. Informação insuficiente e política indisponível são registradas à parte, sem virar omissão automaticamente.</p></div>
+        <div class="qa"><h4>O que acontece se a H1 for rejeitada? E se não for?</h4><p>Rejeitar significa que o limite superior do IC95% ficou abaixo de 10%: a aderência às declarações é maior que o patamar. Não rejeitar significa que os dados não descartam que ao menos 10% dos pares estejam sem declaração compatível. Em nenhum dos casos isso vira prova de conformidade ou de infração.</p></div>
+        <div class="qa"><h4>Por que a concordância entre detectores não é hipótese?</h4><p>Porque ela não fala dos aplicativos, fala do instrumento. Ela diz quanto posso confiar na taxa medida. Foi sugestão do orientador.</p></div>
+        <div class="qa"><h4>O que "soberania de dados" quer dizer no seu trabalho?</h4><p>A capacidade de o Estado saber e decidir para onde vão os dados gerados nos seus serviços. SDK de empresa estrangeira já mostra dependência de fornecedores estrangeiros; dizer que dados foram ao exterior exige a análise dinâmica. Nacionalidade do fornecedor ou país de um IP não provam, sozinhos, transferência internacional.</p></div>
+        <div class="qa"><h4>Qual o tamanho da subamostra dinâmica?</h4><p>Será definido com o orientador no início do Capstone II, conforme o tempo no cronograma. Se não couber no prazo, o quarto objetivo vira limitação e a conclusão sobre soberania fica restrita à dependência de fornecedores.</p></div>
+      </div>
+
+      <div class="bloco" id="perguntas--dados">
+        <h3>Dados e coleta</h3>
+        <div class="qa"><h4>Como você decide que um app é oficial? Por que 20 saíram?</h4><p>Pelo nome jurídico do publicador, que a loja mostra em "Sobre o desenvolvedor". Treze eram empresas privadas com nome de serviço público e sete eram contas de pessoa física. A classificação será conferida antes da coleta principal.</p></div>
+        <div class="qa"><h4>Como você obtém os pacotes? Isso é permitido?</h4><p>Todos na versão atual da Google Play, que é a que o cidadão instala, com conta própria, registrando o hash e sem redistribuir os pacotes. O AndroZoo serve para outra pessoa reproduzir a análise e para medir a defasagem. A coleta será testada em cinco apps no início do Capstone II.</p></div>
+        <div class="qa"><h4>Se a fonte principal é a Google Play, por que o piloto usou o AndroZoo?</h4><p>O piloto testou os detectores, não a fonte. O acesso ao AndroZoo já estava liberado e dá arquivos identificados por hash, bons para testar o método. A decisão de baixar a versão atual de todos na Google Play veio depois, com a cobertura de 23,2% e a sugestão do orientador.</p></div>
+        <div class="qa"><h4>E se a Google Play bloquear o download?</h4><p>Está nos riscos: testar em cinco apps, registrar os não obtidos e, para eles, usar a versão do AndroZoo com a defasagem informada.</p></div>
+        <div class="qa"><h4>Por que só Android?</h4><p>Android é o sistema dominante no Brasil e permite obter e examinar o pacote. A limitação está declarada: o estudo cobre só Android e só a Google Play. <span class="chip fora">fora do texto</span> a frase sobre o Android ser dominante; o texto só registra a limitação.</p></div>
+        <div class="qa"><h4>Por que a classificação de sensibilidade divergiu tanto (28,7%)?</h4><p>A regra automática usava palavras-chave e era mais ampla que a LGPD: incluía previdência e assistência social, que não são dado sensível por si. A conferência usou o critério da lei (saúde e biometria). Por isso a H2 usa a classificação conferida, e ela ainda será revista antes da coleta.</p></div>
+        <div class="qa"><h4>Os 376 são todos os apps de governo do Brasil?</h4><p>Não. São os encontrados por 21 termos de busca e pela expansão do catálogo de cada publicador oficial, em setembro de 2026. É o corpus do estudo, não um censo. A conferência de fevereiro pode mudar o número.</p></div>
+      </div>
+
+      <div class="bloco" id="perguntas--estat">
+        <h3>Estatística</h3>
+        <div class="qa"><h4>Por que o limiar de 10%?</h4><p>É um critério operacional: ao menos um par sem declaração compatível em cada dez avaliáveis. Não é tolerância da LGPD. Andow encontrou até 42,4% dos apps com declarações incorretas ou omissas, mas com outra unidade e outro método; serve de contexto, não de comparação direta.</p></div>
+        <div class="qa"><h4>Por que κ e não só a porcentagem de acordo?</h4><p>O κ desconta o acordo esperado ao acaso. No piloto, o acordo bruto foi de cerca de 87%, mas o acaso sozinho daria 72%, porque quase todo app tem rastreador. Como prevalência muito alta deixa o κ instável, ele é reportado junto com os acordos positivo e negativo.</p></div>
+        <div class="qa"><h4>κ de 0,52 é ruim?</h4><p>Fica abaixo do limiar operacional de 0,6. Mostra que a taxa depende do detector, e por isso o projeto mede isso. Sem os 88 falsos positivos potenciais de B, sobe para 0,69, mas isso é análise de sensibilidade, não validação.</p></div>
+        <div class="qa"><h4>Qual a diferença entre κ de Cohen e κ de Fleiss?</h4><p>Cohen compara dois avaliadores (a sua triagem cega com a registrada). Fleiss compara três ou mais (os detectores A, B e C).</p></div>
+        <div class="qa"><h4>Por que razão de prevalências e não razão de chances?</h4><p>Porque o desfecho, ter rastreador, é frequente. Nesse caso a razão de chances exagera a diferença. A regressão de Poisson com variância robusta estima a razão de prevalências diretamente e permite ajuste.</p></div>
+        <div class="qa"><h4>Por que o IC da H1 é "agrupado por aplicativo"?</h4><p>Os pares de um mesmo app não são independentes: a mesma política vale para todos os SDKs dele. Tratar cada par como independente deixaria o intervalo estreito demais.</p></div>
+        <div class="qa"><h4>O que significa a razão de chances de 0,13?</h4><p>Na mesma faixa de instalações, a chance de um app de governo estar no AndroZoo é cerca de 13% da de um comercial. O IC95% vai de 0,07 a 0,24, então não é acaso. Foi o dado que levou a baixar todos na Google Play.</p></div>
+        <div class="qa"><h4>De onde vem o limiar de 0,6?</h4><p>É um ponto de corte operacional, usado tanto na checagem do instrumento quanto na conferência cega da triagem. <span class="chip fora">fora do texto</span> Em escalas usuais de interpretação, acima de 0,6 se lê como concordância substancial.</p></div>
+      </div>
+
+      <div class="bloco" id="perguntas--lei">
+        <h3>Lei e ética</h3>
+        <div class="qa"><h4>O governo precisa de consentimento para usar SDKs?</h4><p>Não necessariamente. O poder público trata dados para sua finalidade pública (Art. 23), e o texto diz que o consentimento não será exigido de toda operação. A matriz examina a hipótese legal (Art. 7º), o dado sensível (Art. 11) e a transferência (Art. 33).</p></div>
+        <div class="qa"><h4>A ANPD não é uma autoridade?</h4><p>Virou autarquia especial em 2022 (Lei 14.460). Em 2026, a Lei 15.352 a consolidou como agência reguladora, com o nome Agência Nacional de Proteção de Dados. Os documentos anteriores mantêm o nome da época.</p></div>
+        <div class="qa"><h4>Você vai acusar órgãos de violar a LGPD?</h4><p>Não. Uma divergência é sinal de alerta, não prova de infração. A discussão jurídica aponta pontos de atenção e não substitui análise jurídica do caso concreto. Achados graves serão comunicados antes ao órgão e, se couber, ao CTIR Gov e à ANPD.</p></div>
+        <div class="qa"><h4>Precisa de comitê de ética?</h4><p>No desenho atual, não há pessoas como sujeitos: o objeto são os apps. A dinâmica usa dispositivo e conta próprios, e credenciais, tokens e identificadores pessoais não são publicados.</p></div>
+        <div class="qa"><h4>Por que usar o guia de cookies se o assunto é app?</h4><p>Porque o guia diz que suas orientações valem, de forma geral, para tecnologias semelhantes de rastreamento em dispositivos móveis (p. 6) e pede finalidade específica e informada (p. 14).</p></div>
+      </div>
+
+      <div class="bloco" id="perguntas--revisao">
+        <h3>Revisão e IA</h3>
+        <div class="qa"><h4>Quantos artigos a revisão incluiu?</h4><p>Há 71 propostas de inclusão e 8 de exclusão, registradas até 13/11. Em 21/11 conferi 18 das 79 decisões, com leitura integral e avaliação de qualidade (12 inclusões e 6 exclusões). As outras 61 e os 278 registros em aberto ficam para o início do Capstone II. A Seção 2.7 traz a síntese provisória.</p></div>
+        <div class="qa"><h4>Como as classificações foram feitas e conferidas?</h4><p>A classificação inicial foi organizada em planilhas e scripts, com critérios do protocolo. Conferi 18 propostas de decisão; as outras 61 e os 278 registros ainda precisam ser examinados. O corpus também será conferido antes da coleta. Não apresento etapas pendentes como concluídas.</p></div>
+        <div class="qa"><h4>Por que a ACM saiu da busca?</h4><p>Exportar os resultados exige uma assinatura que a instituição não tem, e os anais da ACM estão em grande parte no Scopus. A mudança está registrada na versão 1.1 do protocolo.</p></div>
+        <div class="qa"><h4>Como sabe que as strings acham o que importa?</h4><p>Onze estudos conhecidos formam um conjunto de controle. As buscas recuperaram os 10 que o Scopus indexa; o 11º não está no Scopus.</p></div>
+        <div class="qa"><h4>Você utilizou inteligência artificial?</h4><p>Sim. ChatGPT e Claude, como apoio na elaboração e depuração dos scripts em Python, no levantamento bibliográfico inicial, na localização de referências metodológicas e na revisão de clareza da redação. As sugestões não substituem as publicações originais nem as verificações do protocolo. As decisões metodológicas e a interpretação são minhas. Está declarado no capítulo 3.</p></div>
+      </div>
+
+      <div class="bloco" id="perguntas--criticas">
+        <h3>Críticas ao trabalho</h3>
+        <div class="qa"><h4>"A revisão tem um revisor só."</h4><p>É uma limitação declarada. A consistência é estimada por uma conferência cega de 125 registros com κ de Cohen; abaixo de 0,6, confiro uma segunda amostra.</p></div>
+        <div class="qa"><h4>"Seu piloto tem só 20 pacotes."</h4><p>Ele não estima taxa nem testa hipótese. Serviu para testar o pipeline e mostrou que os detectores não são equivalentes, o que mudou o desenho.</p></div>
+        <div class="qa"><h4>"A seção 'Segurança dos dados' é autodeclarada."</h4><p>Exatamente por isso ela é confrontada com o que está no pacote. A declaração vem do publicador; só a análise do pacote mostra o que ele contém.</p></div>
+        <div class="qa"><h4>"Por que os números de Samarasinghe não batem com o seu piloto?"</h4><p>Não são comparáveis: outra população, outro método e, no meu caso, 20 pacotes de teste. A síntese é narrativa justamente porque as taxas vêm de detectores e populações diferentes.</p></div>
+        <div class="qa"><h4>"Política genérica vai aparecer como compatível."</h4><p>Por isso há cinco classes e análise de sensibilidade para declarações genéricas. Uma declaração genérica não é tratada como prova de conformidade nem de omissão.</p></div>
+        <div class="qa"><h4>"E se a lacuna já tiver sido preenchida?"</h4><p>A lacuna está delimitada à literatura examinada até agora e será reavaliada após a leitura dos 278 registros e a bola de neve.</p></div>
+      </div>
+    </section>
+
+    <!-- 15 NÚMEROS -->
+    <section class="parte" id="numeros" data-view data-titulo="Números de cor" hidden>
+      <header>
+        <p class="eyebrow">Parte 15</p>
+        <h2>Números de cor</h2>
+        <p class="lead">Os números que aparecem nos slides ou que a banca pode pedir. Releia na terça de manhã.</p>
+      </header>
+      <h3>Corpus</h3>
+      <div class="numeros">
+        <div><b>590</b><span>apps achados na busca (3/9/2026)</span></div>
+        <div><b>396</b><span>candidatos de governo, de 71 publicadores</span></div>
+        <div><b>376</b><span>oficiais após conferência</span></div>
+        <div><b>85 · 199 · 92</b><span>federais · estaduais · municipais</span></div>
+        <div><b>100</b><span>com dado de saúde ou biométrico</span></div>
+        <div><b>20 = 13 + 7</b><span>excluídos: empresas privadas + contas de pessoa física</span></div>
+        <div><b>108 (28,7%)</b><span>divergências de sensibilidade da regra automática</span></div>
+        <div><b>323 (81,6%)</b><span>candidatos com política acessível</span></div>
+        <div><b>26</b><span>apps na menor célula esfera × sensibilidade</span></div>
+        <div><b>21 termos</b><span>de busca, até 30 resultados cada</span></div>
+      </div>
+      <h3>Referência comercial e fontes</h3>
+      <div class="numeros">
+        <div><b>190 → 252</b><span>apps comerciais (contexto)</span></div>
+        <div><b>0 de 376</b><span>governo declara anúncios · IC95% 0% a 1,0%</span></div>
+        <div><b>63 de 190 (33,2%)</b><span>comerciais declaram anúncios · 26,9% a 40,1%</span></div>
+        <div><b>92 de 396 (23,2%)</b><span>governo no AndroZoo</span></div>
+        <div><b>160 de 190 (84,2%)</b><span>comerciais no AndroZoo</span></div>
+        <div><b>0,13</b><span>razão de chances de Mantel–Haenszel (0,07 a 0,24)</span></div>
+      </div>
+      <h3>Piloto</h3>
+      <div class="numeros">
+        <div><b>20</b><span>pacotes de teste</span></div>
+        <div><b>75% · 95% · 80%</b><span>A · B · C (15, 19 e 16 de 20)</span></div>
+        <div><b>0,52 → 0,69</b><span>κ de Fleiss, antes e depois da sensibilidade</span></div>
+        <div><b>88 de 123 (71,5%)</b><span>detecções de B questionadas</span></div>
+        <div><b>432</b><span>rastreadores na base do Exodus (428 código, 260 rede)</span></div>
+        <div><b>518 MB</b><span>para 20 pacotes; ~9,7 GB para 376</span></div>
+      </div>
+      <h3>Revisão</h3>
+      <div class="numeros">
+        <div><b>17</b><span>buscas em 4 bases, 6/11/2026</span></div>
+        <div><b>1.531 → 1.249</b><span>registros, após 282 duplicatas</span></div>
+        <div><b>886</b><span>excluídos na triagem</span></div>
+        <div><b>357</b><span>à leitura completa (214 I + 143 T)</span></div>
+        <div><b>80</b><span>textos obtidos</span></div>
+        <div><b>71 · 8</b><span>propostas de inclusão · de exclusão</span></div>
+        <div><b>18 de 79</b><span>decisões conferidas em 21/11 (12 I e 6 E)</span></div>
+        <div><b>278</b><span>em aberto: 131 + 2 + 2 + 143</span></div>
+        <div><b>22 · 20 · 15 · 10 · 4</b><span>estudos por QR1 a QR5</span></div>
+        <div><b>125</b><span>registros da conferência cega (10%)</span></div>
+        <div><b>11 · 10</b><span>estudos de controle · recuperados no Scopus</span></div>
+      </div>
+      <h3>Literatura</h3>
+      <div class="numeros">
+        <div><b>959 mil</b><span>Binns et al. (2018)</span></div>
+        <div><b>1.166 · 71</b><span>Samarasinghe: apps · países</span></div>
+        <div><b>37% · 27%</b><span>Samarasinghe: Google · dados sensíveis</span></div>
+        <div><b>13.796 · 42,4%</b><span>Andow: apps · com declaração incorreta ou omissa</span></div>
+        <div><b>402 de 595</b><span>Serrano: apps da COVID-19 com rastreador</span></div>
+        <div><b>32</b><span>Carlsson: apps do setor público finlandês</span></div>
+        <div><b>2.121 · 233</b><span>Razaghpanah: serviços · fora das listas</span></div>
+        <div><b>477 · 341</b><span>Slavin: apps · possíveis violações</span></div>
+        <div><b>239.381</b><span>Nguyen: apps; 2.688 de 13.082 (20,54%) violavam o GDPR</span></div>
+      </div>
+    </section>
+
+    <!-- 16 TESTE -->
+    <section class="parte teste" id="teste" data-view data-titulo="Teste-se" hidden>
+      <header>
+        <p class="eyebrow">Parte 16</p>
+        <h2>Teste-se</h2>
+        <p class="lead">Responda em voz alta antes de abrir. Se errar, volte à parte indicada.</p>
+      </header>
+      <h3>Números</h3>
+      <details><summary>Quantos apps oficiais e como se dividem por esfera?</summary><p>376: 85 federais, 199 estaduais e 92 municipais. (Parte 8)</p></details>
+      <details><summary>Quantos apps tratam dado sensível e o que conta como sensível?</summary><p>100, com dado de saúde ou biométrico, como na LGPD, Art. 5º, II. (Partes 7 e 8)</p></details>
+      <details><summary>Quais as taxas do piloto por detector e o κ?</summary><p>A 75%, B 95%, C 80%; κ de Fleiss 0,52, e 0,69 sem os falsos positivos potenciais de B. (Parte 9)</p></details>
+      <details><summary>Qual a cobertura do AndroZoo para governo e comerciais?</summary><p>92 de 396 (23,2%) contra 160 de 190 (84,2%). (Parte 8)</p></details>
+      <details><summary>Quais os números do fluxo da revisão?</summary><p>1.531 → 1.249 → 357 → 80 textos → 71 propostas I e 8 E; 278 em aberto; 18 de 79 conferidas. (Parte 11)</p></details>
+      <details><summary>O que Samarasinghe encontrou?</summary><p>1.166 apps de 71 países; 37% com rastreadores do Google; 27% enviando informações sensíveis a terceiros ou sem criptografia. (Parte 6)</p></details>
+      <h3>Conceitos</h3>
+      <details><summary>Qual a unidade de análise da H1?</summary><p>O par aplicativo–SDK. (Parte 4)</p></details>
+      <details><summary>Quais as cinco classes de declaração?</summary><p>Menção nominal; categoria e finalidade compatíveis; ausência de declaração compatível; informação insuficiente; política indisponível. (Parte 4)</p></details>
+      <details><summary>Quando o texto usa "fluxo não declarado"?</summary><p>Só para transmissão observada na análise dinâmica sem declaração compatível. (Parte 2)</p></details>
+      <details><summary>O que A contra B mede? E B contra C?</summary><p>A contra B: efeito do método, com a base fixa. B contra C: efeito da base, com o método fixo. (Parte 9)</p></details>
+      <details><summary>Por que o MobSF não é um detector independente do Exodus?</summary><p>Ele baixa a base do Exodus e aplica as mesmas assinaturas de código às classes do DEX. (Parte 9)</p></details>
+      <details><summary>O que é soberania de dados no trabalho?</summary><p>A capacidade de o Estado saber e decidir para onde vão os dados gerados nos seus serviços. (Parte 7)</p></details>
+      <details><summary>Quais os quatro resultados possíveis na matriz da LGPD?</summary><p>Documentado, indício de inconsistência, não verificável, não aplicável. (Parte 7)</p></details>
+      <h3>Contas</h3>
+      <details><summary>Como sai o limite de 1,0% para 0 de 376?</summary><p>Wilson com zero casos: z² ÷ (n + z²) = 3,84 ÷ 379,84 = 0,0101. (Parte 10)</p></details>
+      <details><summary>Por que o acordo bruto do piloto (87%) não basta?</summary><p>Porque o acaso já daria 72%, já que quase todo app tem rastreador. κ = (0,867 − 0,722) ÷ (1 − 0,722) = 0,52. (Parte 10)</p></details>
+      <details><summary>Quando a H2 é rejeitada?</summary><p>Quando o limite superior do IC95% da razão de prevalências sensível/não sensível fica abaixo de 1. (Parte 4)</p></details>
+      <details><summary>1.249 é igual a quê?</summary><p>886 excluídos + 6 revisões para a bola de neve + 357 encaminhados. (Parte 11)</p></details>
+      <h3>Por quê</h3>
+      <details><summary>Por que todos os apps na versão atual da Google Play?</summary><p>É a versão que o cidadão instala, e o AndroZoo tinha só 23,2% dos candidatos. O AndroZoo fica para reprodutibilidade e defasagem. (Parte 8)</p></details>
+      <details><summary>Por que a análise dinâmica só numa subamostra?</summary><p>Exige instalar e operar cada app. Compensa porque é o único modo de ver destinos; se não couber no prazo, o 4º objetivo vira limitação. (Parte 8)</p></details>
+      <details><summary>Por que a síntese não tem metanálise?</summary><p>As taxas da literatura vêm de detectores e populações diferentes; juntá-las ignoraria o efeito da ferramenta. (Parte 11)</p></details>
+      <details><summary>Por que Vaz et al. não está entre os 71?</summary><p>É um trabalho de 4 páginas da trilha de pôsteres; o EC6 exclui trabalhos curtos. Aparece só no Problema, como exemplo brasileiro. (Parte 6)</p></details>
+    </section>
+
+    <!-- 17 GLOSSÁRIO -->
+    <section class="parte" id="glossario" data-view data-titulo="Glossário" hidden>
+      <header>
+        <p class="eyebrow">Parte 17</p>
+        <h2>Glossário</h2>
+        <p class="lead">Cada termo em uma ou duas frases, com a parte do guia onde ele aparece.</p>
+      </header>
+      <div class="filtro"><label for="busca-gl">Procurar termo</label><input id="busca-gl" type="search" placeholder="Ex.: kappa, hash, Art. 33" autocomplete="off"></div>
+      <p id="gl-vazio" class="muted" hidden>Nenhum termo encontrado. Tente outra palavra.</p>
+
+      <div class="gl-grupo">
+        <h3>Aplicativos e Android</h3>
+        <dl class="gl">
+          <div><dt>APK</dt><dd>O pacote de instalação de um app Android. É o arquivo que a análise estática examina. <span class="onde">Partes 2 e 9</span></dd></div>
+          <div><dt>DEX</dt><dd>O formato do código compilado dentro do APK. O detector A lista as classes do DEX. <span class="onde">Parte 9</span></dd></div>
+          <div><dt>SDK</dt><dd>Kit de desenvolvimento de outra empresa, com funções prontas (mapas, notificações, análise de uso, anúncios), que roda dentro do app. <span class="onde">Parte 2</span></dd></div>
+          <div><dt>Rastreamento por terceiros</dt><dd>Quando um componente de outra empresa coleta comportamento e permite identificar e acompanhar o usuário em vários serviços. <span class="onde">Parte 6</span></dd></div>
+          <div><dt>Seção "Segurança dos dados"</dt><dd>Rótulo da Google Play em que o próprio desenvolvedor declara que dados coleta, compartilha e para quê. Declara categorias e finalidades, não a lista de SDKs. <span class="onde">Partes 4 e 6</span></dd></div>
+          <div><dt>Política de privacidade</dt><dd>Documento do publicador sobre o tratamento de dados. Uma das duas fontes do confronto da H1. <span class="onde">Parte 4</span></dd></div>
+          <div><dt>Publicador</dt><dd>A conta que publica o app na loja. O nome jurídico em "Sobre o desenvolvedor" foi a evidência de oficialidade. <span class="onde">Parte 8</span></dd></div>
+          <div><dt>Certificate pinning</dt><dd>O app só aceita o certificado do próprio servidor, o que impede ler o tráfego com um proxy. A taxa desse bloqueio será medida na dinâmica. <span class="onde">Parte 8</span></dd></div>
+        </dl>
+      </div>
+
+      <div class="gl-grupo">
+        <h3>Detecção</h3>
+        <dl class="gl">
+          <div><dt>Análise estática</dt><dd>Examina o pacote sem executá-lo. Mostra presença de código, não execução nem envio. <span class="onde">Partes 2 e 6</span></dd></div>
+          <div><dt>Análise dinâmica</dt><dd>Executa o app e observa o tráfego. Mostra envio e destino. Só numa subamostra. <span class="onde">Partes 2 e 8</span></dd></div>
+          <div><dt>Assinatura de código</dt><dd>Padrão nos nomes das classes do app que identifica um rastreador (ex.: o pacote de classes do Firebase Analytics). Usada pelo detector A. <span class="onde">Parte 9</span></dd></div>
+          <div><dt>Assinatura de rede</dt><dd>Padrão nos domínios que o rastreador contata. O detector B a procura nos textos do APK, não no tráfego. <span class="onde">Parte 9</span></dd></div>
+          <div><dt>Exodus Privacy</dt><dd>Base aberta de rastreadores com assinaturas de código e de rede; 432 rastreadores na cópia examinada. <span class="onde">Parte 9</span></dd></div>
+          <div><dt>Disconnect</dt><dd>Lista de domínios classificados por finalidade, mantida por outra organização. Usada no detector C, só em publicidade, análise de uso e impressão digital invasiva. <span class="onde">Parte 9</span></dd></div>
+          <div><dt>MobSF</dt><dd>Mobile Security Framework. Seu módulo de rastreadores usa a base do Exodus, então não é independente dele; entra como verificação de implementação do A. <span class="onde">Parte 9</span></dd></div>
+          <div><dt>Androguard</dt><dd>Biblioteca que extrai classes, textos e recursos do APK. É extrator, não detector. <span class="onde">Parte 9</span></dd></div>
+          <div><dt>Falso positivo potencial</dt><dd>Detecção que a conferência pela evidência considerou provavelmente errada, como "Google Ads" achado por um link do Google Maps. <span class="onde">Parte 9</span></dd></div>
+          <div><dt>Adjudicação</dt><dd>Conferência de cada detecção pela classe ou domínio que a produziu. Não é verdade de referência independente. <span class="onde">Parte 9</span></dd></div>
+          <div><dt>Ofuscação</dt><dd>Transformação do código que muda nomes e estrutura para dificultar a leitura, e por isso atrapalha detectores. <span class="onde">Parte 6</span></dd></div>
+          <div><dt>Checagem do instrumento</dt><dd>Verificação da concordância entre detectores nos mesmos pacotes. Não é hipótese. <span class="onde">Parte 4</span></dd></div>
+        </dl>
+      </div>
+
+      <div class="gl-grupo">
+        <h3>Fontes dos pacotes</h3>
+        <dl class="gl">
+          <div><dt>Google Play</dt><dd>A loja oficial; dá a versão atual, que o cidadão instala, mas muda a cada atualização e pode restringir por região. Fonte de todos os pacotes. <span class="onde">Parte 8</span></dd></div>
+          <div><dt>AndroZoo</dt><dd>Acervo acadêmico com milhões de APKs, cada versão obtida pelo hash. Usado para reprodutibilidade e defasagem. <span class="onde">Parte 8</span></dd></div>
+          <div><dt>Hash SHA-256</dt><dd>Impressão digital do arquivo: qualquer mudança no APK muda o hash. Prova qual versão foi analisada. <span class="onde">Parte 8</span></dd></div>
+          <div><dt>Defasagem</dt><dd>Diferença entre a versão arquivada no AndroZoo e a atual da loja. Medida e reportada. <span class="onde">Parte 8</span></dd></div>
+          <div><dt>google-play-scraper</dt><dd>Biblioteca usada para obter os metadados da loja, com país Brasil e idioma português. <span class="onde">Parte 8</span></dd></div>
+          <div><dt>Referência comercial</dt><dd>Os 252 apps comerciais. Contexto descritivo, não grupo de controle. <span class="onde">Parte 8</span></dd></div>
+        </dl>
+      </div>
+
+      <div class="gl-grupo">
+        <h3>Estatística</h3>
+        <dl class="gl">
+          <div><dt>Prevalência</dt><dd>Proporção com a característica, como apps com ao menos um rastreador. <span class="onde">Parte 10</span></dd></div>
+          <div><dt>IC95%</dt><dd>Intervalo de confiança de 95%: faixa de valores plausíveis para o valor verdadeiro. <span class="onde">Parte 10</span></dd></div>
+          <div><dt>Intervalo de Wilson</dt><dd>Método de IC que funciona com proporções perto de 0% ou 100%. <span class="onde">Parte 10</span></dd></div>
+          <div><dt>Razão de prevalências (RP)</dt><dd>Prevalência de um grupo dividida pela de outro. Medida da H2. <span class="onde">Parte 10</span></dd></div>
+          <div><dt>Poisson com variância robusta</dt><dd>Regressão que estima a RP diretamente para desfecho sim ou não (Zou, 2004). <span class="onde">Parte 10</span></dd></div>
+          <div><dt>Binomial negativa</dt><dd>Modelo para contagens com variância maior que a média (sobredispersão). <span class="onde">Parte 10</span></dd></div>
+          <div><dt>Razão de chances de Mantel–Haenszel</dt><dd>Razão de chances combinada entre estratos, aqui as faixas de instalações: 0,13. <span class="onde">Parte 10</span></dd></div>
+          <div><dt>κ de Fleiss</dt><dd>Concordância entre três ou mais avaliadores, descontado o acaso. Usado nos detectores. <span class="onde">Parte 10</span></dd></div>
+          <div><dt>κ de Cohen</dt><dd>Concordância entre dois avaliadores, descontado o acaso. Usado na triagem cega. <span class="onde">Parte 10</span></dd></div>
+          <div><dt>Acordos positivo e negativo</dt><dd>Concordância separada sobre o "sim" e sobre o "não"; complementam o κ quando a prevalência é extrema. <span class="onde">Parte 10</span></dd></div>
+          <div><dt>τ de Kendall</dt><dd>Concordância na ordem: os detectores ordenam os apps do mesmo jeito pelo número de rastreadores? <span class="onde">Parte 10</span></dd></div>
+          <div><dt>Análise de sensibilidade</dt><dd>Refazer a conta com outra decisão para ver se o resultado se mantém. <span class="onde">Partes 9 e 10</span></dd></div>
+          <div><dt>Plano congelado</dt><dd>Regras e análises fixadas antes da coleta, para ninguém mudar a regra depois de ver o resultado. <span class="onde">Parte 10</span></dd></div>
+        </dl>
+      </div>
+
+      <div class="gl-grupo">
+        <h3>Revisão sistemática</h3>
+        <dl class="gl">
+          <div><dt>Revisão sistemática</dt><dd>Busca e seleção de estudos com protocolo, critérios e registro de cada decisão (Kitchenham). <span class="onde">Parte 11</span></dd></div>
+          <div><dt>PRISMA 2020</dt><dd>Modelo de relato do fluxo da revisão: identificados, triados, avaliados, incluídos. <span class="onde">Parte 11</span></dd></div>
+          <div><dt>Bola de neve</dt><dd>Achar estudos pelas referências dos incluídos (para trás) e por quem os cita (para a frente) (Wohlin). <span class="onde">Parte 11</span></dd></div>
+          <div><dt>QR</dt><dd>Questão da revisão. São cinco, QR1 a QR5. <span class="onde">Parte 11</span></dd></div>
+          <div><dt>Triagem por título e resumo</dt><dd>Primeira seleção, só com título, resumo e palavras-chave. <span class="onde">Parte 11</span></dd></div>
+          <div><dt>Leitura completa</dt><dd>Segunda seleção, com o texto inteiro. <span class="onde">Parte 11</span></dd></div>
+          <div><dt>I, T, E, R</dt><dd>Decisões da triagem: inclui, talvez, exclui, revisão reservada para a bola de neve. <span class="onde">Parte 11</span></dd></div>
+          <div><dt>Não recuperado</dt><dd>Registro cujo texto não foi obtido. Não é exclusão; aparece no PRISMA. <span class="onde">Parte 11</span></dd></div>
+          <div><dt>Conjunto de controle</dt><dd>Os 11 estudos conhecidos que as strings precisam achar (padrão quase-ouro). <span class="onde">Parte 11</span></dd></div>
+          <div><dt>QA1 a QA8</dt><dd>As oito perguntas de qualidade. Descrevem, não excluem. <span class="onde">Parte 11</span></dd></div>
+          <div><dt>Metanálise</dt><dd>Combinação estatística de resultados de vários estudos. Não usada, porque as taxas não são comparáveis. <span class="onde">Parte 11</span></dd></div>
+        </dl>
+      </div>
+
+      <div class="gl-grupo">
+        <h3>LGPD, soberania e ética</h3>
+        <dl class="gl">
+          <div><dt>LGPD</dt><dd>Lei Geral de Proteção de Dados Pessoais, Lei 13.709/2018. <span class="onde">Parte 7</span></dd></div>
+          <div><dt>Dado pessoal sensível</dt><dd>Entre outros, saúde e dado genético ou biométrico (Art. 5º, II). Define o grupo da H2. <span class="onde">Parte 7</span></dd></div>
+          <div><dt>Hipótese legal</dt><dd>A base que autoriza tratar dados (Art. 7º; Art. 11 para sensíveis). <span class="onde">Parte 7</span></dd></div>
+          <div><dt>Finalidade pública</dt><dd>O poder público trata dados para cumprir suas competências (Art. 23). <span class="onde">Parte 7</span></dd></div>
+          <div><dt>Transferência internacional</dt><dd>Envio de dados pessoais a país estrangeiro ou organismo internacional (Art. 5º, XV); só nos casos do Art. 33. <span class="onde">Parte 7</span></dd></div>
+          <div><dt>Coleta internacional</dt><dd>Quando o agente no exterior coleta diretamente do titular; a Resolução CD/ANPD 19/2024 a distingue da transferência. <span class="onde">Parte 7</span></dd></div>
+          <div><dt>ANPD</dt><dd>Agência Nacional de Proteção de Dados (Lei 15.352/2026); autarquia especial desde a Lei 14.460/2022. <span class="onde">Parte 7</span></dd></div>
+          <div><dt>Soberania de dados</dt><dd>No trabalho: capacidade de o Estado saber e decidir para onde vão os dados dos seus serviços. <span class="onde">Parte 7</span></dd></div>
+          <div><dt>Dependência de fornecedores estrangeiros</dt><dd>O que a presença de SDK de empresa estrangeira já permite afirmar. <span class="onde">Parte 7</span></dd></div>
+          <div><dt>CTIR Gov</dt><dd>Centro de Prevenção, Tratamento e Resposta a Incidentes Cibernéticos de Governo. Avisado, se couber, em caso de achado grave. <span class="onde">Parte 12</span></dd></div>
+          <div><dt>GDPR</dt><dd>Regulamento Geral de Proteção de Dados da União Europeia, de 2018. <span class="onde">Parte 6</span></dd></div>
+        </dl>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<script>
+(function(){
+  var partes = Array.prototype.slice.call(document.querySelectorAll('[data-view]'));
+  var ids = partes.map(function(p){ return p.id; });
+  var lista = document.getElementById('lista-partes');
+  var barra = document.getElementById('barra-partes');
+  partes.forEach(function(p){
+    [lista, barra].forEach(function(alvo){
+      if(!alvo) return;
+      var li = document.createElement('li');
+      var a = document.createElement('a');
+      a.href = '#' + p.id; a.textContent = p.getAttribute('data-titulo'); a.setAttribute('data-nav', p.id);
+      li.appendChild(a); alvo.appendChild(li);
+    });
+  });
+  partes.forEach(function(p, i){
+    var nav = document.createElement('nav'); nav.className = 'passos'; nav.setAttribute('aria-label','Navegar entre partes');
+    if(i > 0){ var a = document.createElement('a'); a.href = '#' + ids[i-1]; var s1 = document.createElement('span'); s1.textContent = 'Anterior'; a.appendChild(s1); a.appendChild(document.createTextNode(partes[i-1].getAttribute('data-titulo'))); nav.appendChild(a); }
+    if(i < partes.length - 1){ var b = document.createElement('a'); b.className = 'prox'; b.href = '#' + ids[i+1]; var s2 = document.createElement('span'); s2.textContent = 'Próxima'; b.appendChild(s2); b.appendChild(document.createTextNode(partes[i+1].getAttribute('data-titulo'))); nav.appendChild(b); }
+    p.appendChild(nav);
+  });
+  function mostrar(){
+    var h = '';
+    try { h = decodeURIComponent((location.hash || '').slice(1)); } catch(e) { h = ''; }
+    var parte = h.split('--')[0];
+    if(ids.indexOf(parte) === -1) parte = 'inicio';
+    partes.forEach(function(p){ p.hidden = p.id !== parte; });
+    document.querySelectorAll('[data-nav]').forEach(function(a){
+      var ativo = a.getAttribute('data-nav') === parte;
+      a.classList.toggle('ativo', ativo);
+      if(ativo && a.closest('#barra-partes')){ try{ a.scrollIntoView({block:'nearest', inline:'center'}); }catch(e){} }
+    });
+    var alvo = h.indexOf('--') !== -1 ? document.getElementById(h) : null;
+    if(alvo){ alvo.scrollIntoView(); } else { window.scrollTo(0,0); }
+  }
+  window.addEventListener('hashchange', mostrar);
+  mostrar();
+
+  var campo = document.getElementById('busca-gl');
+  var vazio = document.getElementById('gl-vazio');
+  function norm(s){ return (s||'').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,''); }
+  if(campo){
+    campo.addEventListener('input', function(){
+      var q = norm(campo.value.trim()), total = 0;
+      document.querySelectorAll('.gl-grupo').forEach(function(g){
+        var vis = 0;
+        g.querySelectorAll('.gl > div').forEach(function(item){
+          var ok = !q || norm(item.textContent).indexOf(q) !== -1;
+          item.hidden = !ok; if(ok) vis++;
+        });
+        g.hidden = vis === 0; total += vis;
+      });
+      vazio.hidden = total !== 0;
+    });
+  }
+})();
+</script>

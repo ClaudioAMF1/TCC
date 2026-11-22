@@ -4,11 +4,11 @@ O orientador pediu, em 21/11/2026, para conferir os estudos que o texto descreve
 
 "Escopo conferido em 21/11" quer dizer que o estudo está entre os 18 da auditoria de 21/11 (`dados/revisao/RELATORIO_auditoria_documental_F2_20261121.md`). Mesmo nesses, confira os números exatos.
 
-Comece pelos que aparecem nos slides: Binns, Kollnig, Samarasinghe e Andow. Andow ajuda a contextualizar o limiar operacional de 10% da H2, mas mede um desfecho e uma população diferentes; não se deve comparar diretamente as duas taxas.
+Comece pelos que aparecem nos slides: Binns, Kollnig, Samarasinghe e Andow. Andow ajuda a contextualizar o limiar operacional de 10% da H1, mas mede um desfecho e uma população diferentes; não se deve comparar diretamente as duas taxas.
 
 | Estudo | O que o projeto afirma | Onde no texto | Situação | Conferido |
 |---|---|---|---|---|
-| Andow et al. (2020) | PoliCheck; 13.796 aplicativos; declarações ausentes ou incorretas em até 42,4% dos casos; importância de identificar o destinatário | Seção de hipóteses (H2), referencial e slide 6 | Escopo conferido em 21/11 | |
+| Andow et al. (2020) | PoliCheck; 13.796 aplicativos; declarações ausentes ou incorretas em até 42,4% dos casos; importância de identificar o destinatário | Seção de hipóteses (H1), referencial e slide 6 | Escopo conferido em 21/11 | |
 | Samarasinghe et al. (2022) | 1.166 aplicativos de 71 países; 269 (23,1%) enviaram dados do dispositivo a rastreadores conhecidos; MobSF, LiteRadar, mitmproxy e Monkey; aplicativos com fixação de certificado fora da coleta dinâmica; amostra por links em sites de governo e domínio .gov; Brasil só em exemplos, um dos sete aplicativos que enviavam credenciais sem criptografia; parte não baixada por restrição de região | Introdução, 1.1, 2.5 e slide 3 | Escopo conferido em 21/11 | |
 | Binns et al. (2018) | 959 mil aplicativos da Google Play dos EUA e do Reino Unido; maioria com rastreamento; cauda longa; notícias e infantis entre os que mais embarcam; rastreadores fora da União Europeia | 2.1 e slide 3 | Escopo conferido em 21/11 | |
 | Kollnig et al. (2021a) | Quase dois milhões de aplicativos antes e depois do GDPR; pouca mudança; concentração em poucas empresas | 2.2 e slide 3 | Escopo conferido em 21/11 | |

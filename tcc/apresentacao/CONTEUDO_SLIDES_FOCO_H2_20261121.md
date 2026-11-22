@@ -26,8 +26,8 @@ Serviços essenciais são acessados por aplicativos públicos que podem incorpor
 **Objetivo:** medir a proporção de SDKs de rastreamento de terceiros e de envios de dados sem declaração compatível nos aplicativos móveis governamentais brasileiros, à luz da LGPD. O envio real só pode ser avaliado por análise dinâmica. Confirmar o corpus, identificar SDKs, documentar funções, examinar políticas/rótulos e verificar detectores.
 
 ## 6. Hipóteses e verificações
-- **H1 — principal:** proporção de pares app–SDK com divergência material documentada. Limiar operacional de 10%, com IC95%; não é limiar legal.
-- **H2 — secundária:** prevalência de SDKs em aplicativos do governo que tratam dados sensíveis versus demais.
+- **H1 — principal:** ao menos um em cada dez pares aplicativo–SDK sem declaração compatível, estimado com IC95%. O valor de 10% é um critério de pesquisa, não uma tolerância prevista na LGPD.
+- **H2 — secundária:** aplicativos governamentais que tratam dados sensíveis não apresentam prevalência menor de SDKs do que os demais governamentais.
 - **Comparação comercial:** referência descritiva, sem hipótese numerada ou teste obrigatório.
 - **Checagem do instrumento:** concordância entre detectores (\(\kappa\) de Fleiss), sem numeração como hipótese.
 
@@ -64,7 +64,7 @@ Consulta histórica: 92 de 396 governamentais presentes no AndroZoo (23,2%). A v
 1.531 registros de busca → 1.249 após deduplicação → 357 F2. Dessas, 71 são propostas de inclusão; 8 propostas de exclusão; 278 ainda sem decisão. O autor conferiu 18 das 79 decisões, com leitura integral e avaliação de qualidade. **As notas QA1–QA8 individuais ainda não constam da planilha**. A conclusão dos 278 fica para fevereiro de 2027, conforme aval do orientador.
 
 ## 13. Limitações e cronograma
-Limites: código ≠ tráfego; políticas podem indicar categorias e não SDKs; classificação preliminar; versão e fonte; ferramentas não inteiramente independentes. Próximos passos: revisão com orientador e simulação até 03/12; F2/corpus em fevereiro; coleta e exame documental entre março e abril; análises e redação até junho de 2027.
+Limites: código ≠ tráfego; políticas podem indicar categorias e não SDKs; classificação preliminar; versão e fonte; ferramentas não inteiramente independentes. Próximos passos: incorporar o retorno do orientador e da simulação até 03/12; concluir a leitura dos artigos pendentes e conferir o corpus em fevereiro; coletar os pacotes e confrontar as declarações entre março e abril; concluir as análises e a redação até junho de 2027.
 
 ## 14. Encerramento
 **Problema definido. Método viável. Resultados ainda preliminares.**

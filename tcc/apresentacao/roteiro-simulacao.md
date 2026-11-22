@@ -115,7 +115,7 @@ Sim. Usei ChatGPT e Claude como apoio na elaboração e depuração dos scripts 
 |---|---|
 | 2 a 4 | Seções 1 e 2; Binns et al. (2018b); Kollnig et al. (2021a, 2021b); Samarasinghe et al. (2022) |
 | 5 e 6 | Problema, objetivos, hipóteses e resultados esperados no texto-fonte atualizado |
-| 7 | Seções 3.1 a 3.5 |
-| 8 a 11 | Seção 3.6 |
-| 12 | Seções 2.7 e 3.7 e Figura 1 |
-| 13 | Seções 3.9, 3.12 e 3.13 |
+| 7 | Seções 3.1 a 3.4 |
+| 8 a 11 | Seção 3.5 |
+| 12 | Seções 2.7 e 3.6 e Figura 1 |
+| 13 | Seções 3.8, 3.11 e 3.12 |

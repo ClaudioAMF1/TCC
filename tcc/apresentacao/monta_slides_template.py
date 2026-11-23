@@ -388,7 +388,7 @@ notas_em(s, 13)
 s = nova(3)
 texto(s, 0.9, 1.3, 11.4, 2.2, [P("Problema definido.", 44, True, WHITE), P("Método viável.", 44, True, WHITE), P("Resultados ainda preliminares.", 44, True, NAVY)])
 texto(s, 0.9, 4.0, 10.8, 1.2, [P("O que os aplicativos do governo declaram é compatível com os SDKs identificados e os fluxos observados?", 22, False, WHITE, spacing=1.05)])
-texto(s, 0.9, 5.55, 6.0, 0.6, [P("Obrigado. Perguntas?", 24, True, NAVY)])
+texto(s, 0.9, 5.55, 6.0, 0.6, [P("Obrigado.", 24, True, NAVY)])
 notas_em(s, 14)
 
 # ---------------------------------------------------------------- 16 encerramento institucional (fundo 14)

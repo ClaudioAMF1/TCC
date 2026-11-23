@@ -51,6 +51,8 @@ troca(3, "Binns e colaboradores examinaram aproximadamente 959 mil aplicativos e
       "Binns e colaboradores baixaram cerca de 959 mil aplicativos e procuraram, no código, referências a rastreadores, sem executar os apps; acharam rastreamento na maioria, concentrado em poucas empresas. Kollnig e colegas compararam cerca de um milhão de aplicativos de 2017 com um milhão de 2020, antes e depois do GDPR, e viram pouca mudança, sem que essa comparação prove, sozinha, o efeito da lei. Samarasinghe e colaboradores acharam 1.166 aplicativos de governo de 71 países pelos links da Google Play nos sites oficiais e examinaram os SDKs e os dados enviados:")
 troca(12, "A revisão sistemática seguiu o protocolo de Kitchenham e o relato PRISMA 2020.",
       "A revisão sistemática seguiu o guia de Kitchenham: antes de buscar, escrevi um protocolo com as perguntas, as bases, as strings e os critérios de seleção. O fluxo é relatado no modelo PRISMA 2020, que mostra quantos registros entraram e saíram em cada etapa.")
+troca(12, "Os 1.531 registros viraram 1.249 sem duplicatas; a triagem por título e resumo levou 357 à leitura completa, e há 71 propostas de inclusão. Os 278 registros em aberto e a bola de neve ficam para o Capstone II, como combinado com o orientador.",
+      "Os 1.531 registros viraram 1.249 sem duplicatas, e a triagem por título e resumo levou 357 à leitura completa. Essa leitura está em andamento: até agora conferi 18 decisões lendo o texto inteiro, e o restante, junto com a bola de neve, fica para o início do Capstone II, como combinado com o orientador.")
 # a apresentação segue a ordem do texto: introdução, referencial teórico, procedimentos metodológicos
 notas[1] = ["Vou seguir a mesma ordem do texto do TCC. Na introdução, a motivação, a pergunta, os objetivos e as hipóteses. No referencial teórico, os estudos que servem de base e a lacuna que eles deixam. Nos procedimentos metodológicos, o método, o corpus, os dados preparatórios sobre anúncios, fonte dos pacotes e piloto dos detectores, a revisão sistemática e as limitações com os próximos passos. Fecho com a conclusão e as referências."]
 troca(3, "A literatura oferece três pontos de partida.", "No referencial teórico, a literatura oferece três pontos de partida.")
@@ -357,14 +359,14 @@ for i, (cab, txt) in enumerate(cols):
     texto(s, x0, 0.55, 3.35, 0.4, [P(cab, 16, True, NAVY)])
     texto(s, x0, 0.98, 3.35, 1.55, [P(txt, 14, False, DARK, spacing=1.05)])
 texto(s, 0.5, 2.6, 10.8, 2.27, [P("REVISÃO SISTEMÁTICA", 44, True, WHITE, "c")], anchor="m")
-fluxo = [("1.531", "registros"), ("1.249", "sem duplicatas"), ("357", "à leitura completa"), ("71", "propostas de inclusão")]
+fluxo = [("1.531", "registros"), ("1.249", "sem duplicatas"), ("357", "à leitura completa")]
 for i, (num, leg) in enumerate(fluxo):
-    x0 = 0.9 + i * 2.95
+    x0 = 2.375 + i * 2.95
     texto(s, x0, 5.0, 2.3, 0.65, [P(num, 34, True, NAVY, "c")], anchor="m")
     texto(s, x0, 5.62, 2.3, 0.4, [P(leg, 14, False, GREY, "c")])
-    if i < 3:
+    if i < 2:
         forma(s, x0 + 2.42, 5.17, 0.38, 0.3, MID, MSO_SHAPE.RIGHT_ARROW)
-texto(s, 1.4, 6.25, 10.6, 0.45, [P("Os 278 registros em aberto e a bola de neve ficam para o Capstone II; as 71 são propostas, não inclusões finais.", 13, False, GREY, "c")])
+texto(s, 1.4, 6.25, 10.6, 0.45, [P("A leitura completa dos 357 está em andamento e termina no início do Capstone II, com a bola de neve.", 13, False, GREY, "c")])
 notas_em(s, 12)
 
 # ---------------------------------------------------------------- 14 limitações e próximos passos (fundo 12)

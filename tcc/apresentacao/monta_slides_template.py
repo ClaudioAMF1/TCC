@@ -408,7 +408,7 @@ REFS = [
     ("KITCHENHAM, B.; CHARTERS, S. ", "Guidelines for performing systematic literature reviews in software engineering", ". Keele: Keele University; Durham University, 2007. (Technical Report EBSE-2007-01)."),
     ("KOLLNIG, K. et al. Before and after GDPR: tracking in mobile apps. ", "Internet Policy Review", ", v. 10, n. 4, 2021. DOI: 10.14763/2021.4.1611."),
     ("PAGE, M. J. et al. The PRISMA 2020 statement: an updated guideline for reporting systematic reviews. ", "BMJ", ", v. 372, 2021. Art. n71. DOI: 10.1136/bmj.n71."),
-    ("SAMARASINGHE, N. et al. Et tu, Brute? Privacy analysis of government websites and mobile apps. In: ", "Proceedings of the ACM Web Conference 2022", ". New York: ACM, 2022. p. 564–575. DOI: 10.1145/3485447.3512223. Disponível em: https://users.encs.concordia.ca/~mmannan/publications/govt-privacy-WWW2022.pdf. Acesso em: 22 nov. 2026."),
+    ("SAMARASINGHE, N. et al. Et tu, Brute? Privacy analysis of government websites and mobile apps. In: ", "Proceedings of the ACM Web Conference 2022", ". New York: ACM, 2022. p. 564–575. DOI: 10.1145/3485447.3512223."),
 ]
 s = nova(4)
 titulo(s, "REFERÊNCIAS", x=0.9, y=0.45, size=40)

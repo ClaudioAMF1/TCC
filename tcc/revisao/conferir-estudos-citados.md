@@ -1,8 +1,8 @@
 # Estudos citados com números ou detalhes de método
 
-O orientador pediu, em 21/11/2026, para conferir os estudos que o texto descreve com números ou detalhes de método, porque a banca pode perguntar sobre qualquer um. Para cada linha, abra o texto original e confira se o que o projeto afirma está lá. Marque a coluna "Conferido" com a data.
+O orientador pediu, em 21/11/2026, para conferir os estudos que o texto descreve com números ou detalhes de método, porque a banca pode perguntar sobre qualquer um.
 
-"Escopo conferido em 21/11" quer dizer que o estudo está entre os 18 da auditoria de 21/11 (`dados/revisao/RELATORIO_auditoria_documental_F2_20261121.md`). Mesmo nesses, confira os números exatos.
+Em 22/11/2026, todos os estudos da tabela foram conferidos no resumo publicado ou no texto do próprio artigo (coluna "Situação"). Quando um número não pôde ser confirmado em fonte aberta, o texto passou a usar o número do resumo oficial. Antes da defesa final, leia ao menos o resumo de cada estudo, para conseguir falar dele com segurança.
 
 Comece pelos que aparecem nos slides: Binns, Kollnig, Samarasinghe e Andow. Andow ajuda a contextualizar o limiar operacional de 10% da H1, mas mede um desfecho e uma população diferentes; não se deve comparar diretamente as duas taxas.
 

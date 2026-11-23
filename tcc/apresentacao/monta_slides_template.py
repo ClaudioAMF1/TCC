@@ -37,6 +37,19 @@ for s in atual.slides:
 notas[8] = [t.replace("O gráfico apresenta a distribuição por esfera", "Os círculos mostram a distribuição por esfera") for t in notas[8]]
 assert any("círculos" in t for t in notas[8]), notas[8]
 
+def troca(i, a, b):
+    alvo = [t for t in notas[i] if a in t]
+    assert len(alvo) == 1, (i, a[:40])
+    notas[i] = [t.replace(a, b) for t in notas[i]]
+
+
+troca(10, "Uma adjudicação interna considerou 88 de 123 detecções do B potenciais falsos positivos, principalmente por domínios genéricos. Retirá-las na análise de sensibilidade elevou o kappa a 0,69, mas isso não constitui validação independente por padrão de referência.",
+      "Conferi as detecções uma a uma, olhando a classe ou o domínio que gerou cada uma, e marquei 88 das 123 do B como possíveis falsos positivos, quase todas por domínios genéricos do Google ou do Facebook. Sem elas, o kappa sobe para 0,69, mas isso é só uma análise de sensibilidade: não existe uma referência independente que diga a resposta certa.")
+troca(11, "medir defasagem e possibilitar reprodutibilidade onde os arquivos estiverem disponíveis.",
+      "medir defasagem e possibilitar reprodutibilidade onde os arquivos estiverem disponíveis. Na prática, a coleta usa o apkeep, uma ferramenta aberta da EFF, com uma conta Google criada só para a pesquisa e acesso a partir do Brasil. Para cada aplicativo, registro o hash SHA-256 do arquivo, a versão, a data e, se o download falhar, o motivo; a falha também vira dado. Quando o app vem em pacotes divididos, guardo o APK base, que é onde está o código. Antes do corpus inteiro, testo a coleta em cinco aplicativos.")
+troca(12, "A revisão sistemática seguiu o protocolo de Kitchenham e o relato PRISMA 2020.",
+      "A revisão sistemática seguiu o guia de Kitchenham: antes de buscar, escrevi um protocolo com as perguntas, as bases, as strings e os critérios de seleção. O fluxo é relatado no modelo PRISMA 2020, que mostra quantos registros entraram e saíram em cada etapa.")
+
 
 def nova(fundo):
     """Slide novo com o fundo (imagem) do slide `fundo` (1 a 14) do template."""
@@ -298,12 +311,23 @@ notas_em(s, 10)
 s = nova(2)
 texto(s, 0.9, 0.95, 11.5, 0.85, [P("FONTE DOS APKS", 44, True, WHITE)])
 texto(s, 0.9, 1.8, 11.5, 0.5, [P("Consulta histórica ao AndroZoo, acervo acadêmico de pacotes", 22, False, PALE)])
-for x0, num, cor, leg in [(0.9, "23,2%", WHITE, "governo: 92 de 396 candidatos"), (5.2, "84,2%", MID, "referência inicial: 160 de 190 (contexto)")]:
-    texto(s, x0, 2.7, 4.1, 1.2, [P(num, 72, True, cor)])
-    texto(s, x0, 3.95, 4.1, 0.5, [P(leg, 18, False, PALE)])
-forma(s, 0.9, 4.85, 11.5, 0.03, MID)
-texto(s, 0.9, 5.1, 11.5, 1.4, [P("Fonte principal: versão atual na Google Play, com hash SHA-256, data e falhas registradas.", 19, True, WHITE, after=6),
-                               P("AndroZoo: reprodutibilidade e medida da defasagem entre a versão arquivada e a atual.", 19, False, PALE)])
+for x0, num, cor, leg in [(0.9, "23,2%", WHITE, "governo: 92 de 396 candidatos"), (4.7, "84,2%", MID, "referência inicial: 160 de 190 (contexto)")]:
+    texto(s, x0, 2.45, 3.7, 1.1, [P(num, 66, True, cor)])
+    texto(s, x0, 3.55, 3.7, 0.5, [P(leg, 16, False, PALE)])
+texto(s, 8.75, 2.6, 3.7, 1.5, [P("Fonte principal: versão atual na Google Play", 19, True, WHITE, after=6),
+                               P("AndroZoo: reprodutibilidade e defasagem", 16, False, PALE)])
+forma(s, 0.9, 4.2, 11.5, 0.03, MID)
+texto(s, 0.9, 4.32, 11.5, 0.35, [P("COMO SERÁ A COLETA", 14, True, PALE)])
+passos_c = [("Conta da pesquisa", "Conta Google criada só para o estudo, com acesso a partir do Brasil"),
+            ("Download com apkeep", "Ferramenta aberta da EFF; em pacotes divididos, guarda o APK base"),
+            ("Registro", "SHA-256 do arquivo, versão, data e o motivo de cada falha"),
+            ("Teste primeiro", "Cinco apps em fevereiro; depois o corpus inteiro")]
+for i, (cab, txt) in enumerate(passos_c):
+    x0 = 0.9 + i * 2.92
+    forma(s, x0, 4.72, 2.75, 1.5, LIGHT)
+    texto(s, x0 + 0.18, 4.84, 0.45, 0.45, [P(str(i + 1), 24, True, NAVY)], anchor="m")
+    texto(s, x0 + 0.62, 4.84, 2.0, 0.45, [P(cab, 15, True, NAVY)], anchor="m")
+    texto(s, x0 + 0.18, 5.36, 2.42, 0.85, [P(txt, 13, False, DARK, spacing=1.05)])
 notas_em(s, 11)
 
 # ---------------------------------------------------------------- 13 revisão (fundo 10: faixa central)

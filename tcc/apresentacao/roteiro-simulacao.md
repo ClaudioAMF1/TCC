@@ -1,6 +1,6 @@
 # Roteiro da simulação de defesa
 
-Versão de 23/11/2026, igual às notas da apresentação `apresentacao_TCC1_final.pptx` (no repositório, `simulacao-defesa-rascunho.pptx`), com 17 slides no padrão do template do IDP, na mesma ordem do texto do TCC (introdução, referencial teórico, procedimentos metodológicos, conclusão e referências). São 15 minutos de apresentação e 10 de perguntas. As falas somam cerca de 12 minutos, num ritmo calmo, o que deixa folga para pausas. Ensaie com cronômetro pelo menos três vezes e grave uma delas.
+Versão de 23/11/2026, igual às notas da apresentação `apresentacao_TCC1_final.pptx` (no repositório, `simulacao-defesa-rascunho.pptx`), com 17 slides no padrão do template do IDP, na mesma ordem do texto do TCC (introdução, referencial teórico, procedimentos metodológicos, conclusão e referências). São 15 minutos de apresentação e 10 de perguntas. As falas somam cerca de 13 minutos, num ritmo calmo, o que deixa folga para pausas. Ensaie com cronômetro pelo menos três vezes e grave uma delas.
 
 Não é para decorar palavra por palavra: leia algumas vezes e fale com as suas palavras, mantendo os números exatos.
 
@@ -14,7 +14,7 @@ Vou seguir a mesma ordem do texto do TCC. Na introdução, a motivação, a perg
 
 ## Slide 3. Motivação (40 s)
 
-Boa parte dos serviços públicos passou para o celular. Aplicativos como Meu INSS e Meu SUS Digital são usados por milhões de pessoas e frequentemente constituem a principal porta de entrada para esses serviços. Um aplicativo Android não contém apenas código desenvolvido pelo órgão responsável: ele pode integrar SDKs de mapas, notificações, análise de uso e outros serviços. Alguns componentes podem coletar identificadores ou informações de utilização. Essa possibilidade exige transparência, especialmente no setor público, onde a escolha de prestador pelo cidadão costuma ser limitada. Ressalto que encontrar uma biblioteca instalada não equivale a observar transmissão de dados.
+Boa parte dos serviços públicos passou para o celular. Aplicativos como Meu INSS e Meu SUS Digital passam de 50 milhões de instalações cada e frequentemente constituem a principal porta de entrada para esses serviços. Um aplicativo Android não contém apenas código desenvolvido pelo órgão responsável: ele pode integrar SDKs de mapas, notificações, análise de uso e outros serviços. Alguns componentes podem coletar identificadores ou informações de utilização. Essa possibilidade exige transparência, especialmente no setor público, onde a escolha de prestador pelo cidadão costuma ser limitada. Ressalto que encontrar uma biblioteca instalada não equivale a observar transmissão de dados.
 
 ## Slide 4. Pergunta e objetivos (45 s)
 
@@ -24,9 +24,11 @@ No texto do TCC, a pergunta foi formulada assim: “Em que medida os aplicativos
 
 A H1 é a principal: ao menos 10% dos pares aplicativo–SDK identificados não teriam declaração compatível, considerando categorias de dados e finalidades, e não apenas o nome comercial da biblioteca. O critério utiliza um intervalo de confiança de 95%. O limiar de 10% corresponde a ao menos um par sem declaração compatível em cada dez pares que possam ser avaliados. É uma escolha operacional para o teste, e não uma margem permitida pela LGPD. A H2 é secundária: procura verificar se aplicativos governamentais que tratam dados sensíveis têm prevalência de SDKs menor do que os demais. A hipótese considera que essa prevalência não é menor. Os comerciais ficam como contexto; concordância entre detectores é checagem do instrumento sem hipótese própria.
 
+> **Lembrete, não precisa falar.** Par aplicativo–SDK: cada SDK encontrado em cada app; para cada par, verifico se o que o SDK faz aparece nas declarações do app, pelo nome ou pela categoria e finalidade do dado. IC95% agrupado por app: os SDKs do mesmo app dependem da mesma política, então não são independentes, e o intervalo é calculado agrupando por app. A H1 é rejeitada se o limite superior do intervalo ficar abaixo de 10%. Por que 10%: critério operacional do estudo; Andow et al. (2020) acharam até 42,4% de apps com declaração incorreta ou omitida, mas em outra população e por app, então serve só para mostrar que o problema é comum.
+
 ## Slide 6. O que a literatura já demonstrou (55 s)
 
-No referencial teórico, a literatura oferece três pontos de partida. Binns e colaboradores baixaram cerca de 959 mil aplicativos e procuraram, no código, referências a rastreadores, sem executar os apps; acharam rastreamento na maioria, concentrado em poucas empresas. Kollnig e colegas compararam cerca de um milhão de aplicativos de 2017 com um milhão de 2020, antes e depois do GDPR, e viram pouca mudança, sem que essa comparação prove, sozinha, o efeito da lei. Samarasinghe e colaboradores acharam 1.166 aplicativos de governo de 71 países pelos links da Google Play nos sites oficiais e examinaram os SDKs e os dados enviados: 37% tinham rastreadores do Google, e 27% enviavam informações sensíveis, como identificadores, a terceiros ou sem criptografia. Esses resultados justificam investigar o contexto brasileiro com atenção às declarações de privacidade.
+No referencial teórico, a literatura oferece três pontos de partida. Binns e colaboradores baixaram cerca de 959 mil aplicativos e procuraram, no código, referências a rastreadores, sem executar os apps; acharam rastreamento na maioria, concentrado em poucas empresas. Kollnig e colegas compararam cerca de um milhão de aplicativos de 2017 com um milhão de 2020, antes e depois do GDPR, o regulamento europeu de proteção de dados, e viram pouca mudança, sem que essa comparação prove, sozinha, o efeito da lei. Samarasinghe e colaboradores acharam 1.166 aplicativos de governo de 71 países pelos links da Google Play nos sites oficiais e examinaram os SDKs e os dados enviados: 37% tinham rastreadores do Google, e 27% enviavam informações sensíveis, como identificadores, a terceiros ou sem criptografia. Esses resultados justificam investigar o contexto brasileiro com atenção às declarações de privacidade.
 
 ## Slide 7. Lacuna e contribuição (45 s)
 
@@ -36,9 +38,9 @@ Nenhum dos estudos da revisão mede os SDKs no conjunto dos aplicativos de gover
 
 Nos procedimentos metodológicos, o estudo é quantitativo e observacional. Primeiro, delimitar e conferir os aplicativos oficiais encontrados na Google Play. Segundo, caracterizá-los por esfera e tipo de serviço. Terceiro, obter a versão atual na Google Play quando possível, com data, versão e SHA-256. O AndroZoo será fonte complementar para reprodutibilidade e para medir defasagem entre a versão arquivada e a que o usuário instala. Quarto, aplicar os detectores e examinar suas divergências. Quinto, comparar resultados técnicos com políticas de privacidade e declarações na loja. Sexto, calcular proporções e intervalos e, para uma subamostra, observar fluxos de rede em cenários documentados.
 
-## Slide 9. Corpus (35 s)
+## Slide 9. Corpus (45 s)
 
-A busca inicial produziu 396 aplicativos candidatos. Pela classificação preliminar de seus publicadores, 376 foram mantidos como oficiais: 85 federais, 199 estaduais e 92 municipais. Entre eles, 100 foram classificados preliminarmente como relacionados a serviços que podem tratar dados sensíveis, como saúde ou biometria. Vinte candidatos foram excluídos nesta etapa por divergências de titularidade. Esses números descrevem o corpus preparatório; a classificação ainda será conferida antes da coleta principal. Os círculos mostram a distribuição por esfera, e não uma medida de rastreadores encontrados.
+A busca inicial produziu 396 aplicativos candidatos. Pela classificação preliminar de seus publicadores, 376 foram mantidos como oficiais: 85 federais, 199 estaduais e 92 municipais. Entre eles, 100 foram classificados preliminarmente como relacionados a serviços que podem tratar dados sensíveis, como saúde ou biometria. Vinte candidatos saíram: 13 eram de empresas privadas que publicam com nome de serviço público e 7 estavam numa conta de pessoa física. Em 108 casos, a classificação de dado sensível feita por palavra-chave divergiu da conferência, nos dois sentidos. Esses números descrevem o corpus preparatório; a classificação ainda será conferida antes da coleta principal. Os círculos mostram a distribuição por esfera, e não uma medida de rastreadores encontrados.
 
 ## Slide 10. Anúncios (40 s)
 
@@ -58,9 +60,9 @@ No piloto, utilizei 20 pacotes arquivados no AndroZoo e três detectores. O dete
 
 A revisão sistemática seguiu o guia de Kitchenham: antes de buscar, escrevi um protocolo com as perguntas, as bases, as strings e os critérios de seleção. O fluxo é relatado no modelo PRISMA 2020, que mostra quantos registros entraram e saíram em cada etapa. Fiz 17 buscas em 6 de novembro, em quatro bases: o Scopus, que é a principal, o IEEE Xplore e, para a produção nacional, a SBC OpenLib e a BDTD, com trabalhos de 2015 a 2026, em inglês e português. Cada string tem três blocos: um de aplicativo móvel, um do fenômeno, como rastreador, SDK de terceiros ou política de privacidade, e, quando preciso, um de contexto, como governo, COVID-19 ou Brasil. O bloco de contexto evita ruído: a palavra tracker sozinha traz até rastreador de atividade física. Para validar as strings, usei onze estudos conhecidos como controle, e as buscas recuperaram os dez que o Scopus indexa. Os 1.531 registros viraram 1.249 sem duplicatas, e a triagem por título e resumo levou 357 à leitura completa. Essa leitura está em andamento: até agora conferi 18 decisões lendo o texto inteiro, e o restante, junto com a bola de neve, fica para o início do Capstone II, como combinado com o orientador.
 
-## Slide 14. Limitações e próximos passos (50 s)
+## Slide 14. Limitações e próximos passos (55 s)
 
-Entre as limitações, destaco que uma assinatura de código não prova execução nem transmissão, e que as políticas de privacidade podem declarar categorias de dados e finalidades sem nomear todos os SDKs. Há ainda limitações na seleção da revisão, na classificação do corpus, na disponibilidade de versões e na independência dos detectores. Até a entrega do Capstone I, a prioridade é incorporar o retorno do orientador e da simulação. No Capstone II serão concluídas a leitura e as decisões dos artigos pendentes, além da conferência das classificações do corpus, seguida da coleta das versões atuais, do confronto documental, da análise dinâmica de subamostra, da avaliação estatística e da discussão jurídica fundamentada.
+Entre as limitações, destaco que uma assinatura de código não prova execução nem transmissão, e que as políticas de privacidade podem declarar categorias de dados e finalidades sem nomear todos os SDKs. Há ainda outras: o estudo cobre só Android e a Google Play, e há limitações na seleção da revisão, na classificação do corpus, na disponibilidade de versões e na independência dos detectores. Até a entrega do Capstone I, a prioridade é incorporar o retorno do orientador e da simulação. No Capstone II serão concluídas a leitura e as decisões dos artigos pendentes, além da conferência das classificações do corpus, seguida da coleta das versões atuais, do confronto documental, da análise dinâmica de subamostra, da avaliação estatística e da discussão jurídica fundamentada.
 
 ## Slide 15. Conclusão (35 s)
 
@@ -70,9 +72,33 @@ Para concluir, o Capstone I apresenta um problema delimitado, um desenho metodol
 
 Não é para ler. Depois do obrigado da conclusão, avance para este slide e deixe-o na tela por alguns segundos, ou durante o começo das perguntas. São as obras citadas nos slides e na fala, no mesmo padrão ABNT da lista de referências do texto.
 
+**Cola para as perguntas** (fica nas notas deste slide; não é para ler em voz alta):
+
+- Números: 396 candidatos, 376 oficiais (85 federais, 199 estaduais, 92 municipais); 0 de 376 declaram anúncios, contra 63 de 190 comerciais; κ 0,52, ou 0,69 sem os 88 possíveis falsos positivos do B; AndroZoo com 92 de 396 (23,2%); revisão 1.531, 1.249, 357, 18 decisões conferidas.
+- Por que 10%? Critério operacional do estudo, não da LGPD. Andow achou até 42,4% de apps com declaração incorreta ou omitida, em outra população e por app.
+- κ de 0,52 não é baixo? É, e por isso a concordância entre detectores virou checagem do instrumento, não hipótese.
+- SDK no APK prova envio de dados? Não. O envio só é observado na análise dinâmica de uma subamostra.
+- Por que não comparar com apps comerciais? A coleta deles não foi planejada para um teste justo; ficam só como contexto.
+- Por que só Android? Permite obter e examinar o pacote; a limitação está declarada.
+- Como sabe que o app é oficial? Pelo nome jurídico em “Sobre o desenvolvedor”; a classificação ainda é conferida antes da coleta.
+- Você leu os 71 artigos? Não todos: são propostas de uma primeira leitura, cada uma com a página da informação. Conferi 18 decisões lendo o texto inteiro e confiro as outras em fevereiro, antes de qualquer resultado.
+- Se não souber: “Isso ainda não medi; está previsto para o Capstone II.”
+
 ## Slide 17. Encerramento
 
 Slide institucional do template, sem fala. Deixe na tela durante as perguntas.
+
+**Cola para as perguntas** (fica nas notas deste slide; não é para ler em voz alta):
+
+- Números: 396 candidatos, 376 oficiais (85 federais, 199 estaduais, 92 municipais); 0 de 376 declaram anúncios, contra 63 de 190 comerciais; κ 0,52, ou 0,69 sem os 88 possíveis falsos positivos do B; AndroZoo com 92 de 396 (23,2%); revisão 1.531, 1.249, 357, 18 decisões conferidas.
+- Por que 10%? Critério operacional do estudo, não da LGPD. Andow achou até 42,4% de apps com declaração incorreta ou omitida, em outra população e por app.
+- κ de 0,52 não é baixo? É, e por isso a concordância entre detectores virou checagem do instrumento, não hipótese.
+- SDK no APK prova envio de dados? Não. O envio só é observado na análise dinâmica de uma subamostra.
+- Por que não comparar com apps comerciais? A coleta deles não foi planejada para um teste justo; ficam só como contexto.
+- Por que só Android? Permite obter e examinar o pacote; a limitação está declarada.
+- Como sabe que o app é oficial? Pelo nome jurídico em “Sobre o desenvolvedor”; a classificação ainda é conferida antes da coleta.
+- Você leu os 71 artigos? Não todos: são propostas de uma primeira leitura, cada uma com a página da informação. Conferi 18 decisões lendo o texto inteiro e confiro as outras em fevereiro, antes de qualquer resultado.
+- Se não souber: “Isso ainda não medi; está previsto para o Capstone II.”
 
 ---
 

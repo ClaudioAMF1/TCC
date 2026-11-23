@@ -53,6 +53,18 @@ troca(12, "A revisão sistemática seguiu o protocolo de Kitchenham e o relato P
       "A revisão sistemática seguiu o guia de Kitchenham: antes de buscar, escrevi um protocolo com as perguntas, as bases, as strings e os critérios de seleção. O fluxo é relatado no modelo PRISMA 2020, que mostra quantos registros entraram e saíram em cada etapa.")
 troca(12, "Os 1.531 registros viraram 1.249 sem duplicatas; a triagem por título e resumo levou 357 à leitura completa, e há 71 propostas de inclusão. Os 278 registros em aberto e a bola de neve ficam para o Capstone II, como combinado com o orientador.",
       "Os 1.531 registros viraram 1.249 sem duplicatas, e a triagem por título e resumo levou 357 à leitura completa. Essa leitura está em andamento: até agora conferi 18 decisões lendo o texto inteiro, e o restante, junto com a bola de neve, fica para o início do Capstone II, como combinado com o orientador.")
+
+# notas completadas para dar conta da apresentação só com a visão do apresentador
+troca(2, 'Aplicativos como Meu INSS e Meu SUS Digital são usados por milhões de pessoas e frequentemente constituem',
+      'Aplicativos como Meu INSS e Meu SUS Digital passam de 50 milhões de instalações cada e frequentemente constituem')
+troca(3, 'antes e depois do GDPR, e viram pouca mudança',
+      'antes e depois do GDPR, o regulamento europeu de proteção de dados, e viram pouca mudança')
+troca(8, 'Vinte candidatos foram excluídos nesta etapa por divergências de titularidade.',
+      'Vinte candidatos saíram: 13 eram de empresas privadas que publicam com nome de serviço público e 7 estavam numa conta de pessoa física. Em 108 casos, a classificação de dado sensível feita por palavra-chave divergiu da conferência, nos dois sentidos.')
+troca(13, 'Há ainda limitações na seleção da revisão,',
+      'Há ainda outras: o estudo cobre só Android e a Google Play, e há limitações na seleção da revisão,')
+notas[6] = notas[6] + ['LEMBRETE (não precisa falar). Par aplicativo–SDK: cada SDK encontrado em cada app; para cada par, verifico se o que o SDK faz aparece nas declarações do app, pelo nome ou pela categoria e finalidade do dado. IC95% agrupado por app: os SDKs do mesmo app dependem da mesma política, então não são independentes, e o intervalo é calculado agrupando por app. A H1 é rejeitada se o limite superior do intervalo ficar abaixo de 10%. Por que 10%: critério operacional do estudo; Andow et al. (2020) acharam até 42,4% de apps com declaração incorreta ou omitida, mas em outra população e por app, então serve só para mostrar que o problema é comum.']
+COLA = ['COLA PARA AS PERGUNTAS (não é para ler em voz alta).', 'Números: 396 candidatos, 376 oficiais (85 federais, 199 estaduais, 92 municipais); 0 de 376 declaram anúncios, contra 63 de 190 comerciais; κ 0,52, ou 0,69 sem os 88 possíveis falsos positivos do B; AndroZoo com 92 de 396 (23,2%); revisão 1.531, 1.249, 357, 18 decisões conferidas.', 'Por que 10%? Critério operacional do estudo, não da LGPD. Andow achou até 42,4% de apps com declaração incorreta ou omitida, em outra população e por app.', 'κ de 0,52 não é baixo? É, e por isso a concordância entre detectores virou checagem do instrumento, não hipótese.', 'SDK no APK prova envio de dados? Não. O envio só é observado na análise dinâmica de uma subamostra.', 'Por que não comparar com apps comerciais? A coleta deles não foi planejada para um teste justo; ficam só como contexto.', 'Por que só Android? Permite obter e examinar o pacote; a limitação está declarada.', 'Como sabe que o app é oficial? Pelo nome jurídico em “Sobre o desenvolvedor”; a classificação ainda é conferida antes da coleta.', 'Você leu os 71 artigos? Não todos: são propostas de uma primeira leitura, cada uma com a página da informação. Conferi 18 decisões lendo o texto inteiro e confiro as outras em fevereiro, antes de qualquer resultado.', 'Se não souber: “Isso ainda não medi; está previsto para o Capstone II.”']
 # a apresentação segue a ordem do texto: introdução, referencial teórico, procedimentos metodológicos
 notas[1] = ["Vou seguir a mesma ordem do texto do TCC. Na introdução, a motivação, a pergunta, os objetivos e as hipóteses. No referencial teórico, os estudos que servem de base e a lacuna que eles deixam. Nos procedimentos metodológicos, o método, o corpus, os dados preparatórios sobre anúncios, fonte dos pacotes e piloto dos detectores, a revisão sistemática e as limitações com os próximos passos. Fecho com a conclusão e as referências."]
 troca(3, "A literatura oferece três pontos de partida.", "No referencial teórico, a literatura oferece três pontos de partida.")
@@ -394,6 +406,8 @@ notas_em(s, 14)
 # ---------------------------------------------------------------- 16 encerramento institucional (fundo 14)
 s = nova(14)
 s.notes_slide.notes_text_frame.text = "Slide de encerramento do template. Pode ficar na tela durante as perguntas."
+for linha in COLA:
+    s.notes_slide.notes_text_frame.add_paragraph().text = linha
 
 # ---------------------------------------------------------------- referências (fundo 4: branco)
 # obras citadas nos slides e na fala, no mesmo formato ABNT da lista do texto (abntex2-alf)
@@ -420,6 +434,8 @@ texto(s, 0.9, 1.45, 5.65, 5.0, [ref_par(*r) for r in REFS[:CORTE]])
 texto(s, 6.85, 1.45, 5.65, 5.0, [ref_par(*r) for r in REFS[CORTE:]])
 s.notes_slide.notes_text_frame.text = ("Não é para ler. Depois do obrigado da conclusão, avance para este slide e deixe-o na tela por alguns segundos, "
                                        "ou durante o começo das perguntas. São as obras citadas nos slides e na fala, no mesmo padrão ABNT da lista de referências do texto.")
+for linha in COLA:
+    s.notes_slide.notes_text_frame.add_paragraph().text = linha
 
 # remove os 14 slides de exemplo do template
 lst = prs.slides._sldIdLst

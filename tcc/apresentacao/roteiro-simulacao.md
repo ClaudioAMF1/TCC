@@ -36,17 +36,17 @@ Tenho duas hipóteses. A H1 é a principal: pelo menos 1 em cada 10 pares aplica
 
 > **Lembrete, não precisa falar.** IC95% agrupado por app: os SDKs do mesmo app dependem da mesma política, então o intervalo é calculado por app. A H1 cai se o limite superior do intervalo ficar abaixo de 10%; a H2 cai se o limite superior da razão de prevalências ficar abaixo de 1. Por que 10%: Andow et al. (2020) acharam até 42,4% de apps com declaração incorreta ou omitida, em outra população e por app; serve só para mostrar que o problema é comum.
 
-## Slide 6. O que a literatura já mostrou (50 s)
+## Slide 6. O que a literatura já mostrou (55 s)
 
 *Tópicos:* Binns: 959 mil, código, poucas empresas · Kollnig: antes e depois do GDPR, mudou pouco · Samarasinghe: 1.166 apps de governo, 37% e 27%
 
-No referencial teórico, parto de três estudos. Binns e colegas baixaram cerca de 959 mil aplicativos e procuraram rastreadores no código, sem executar os apps: acharam rastreamento na maioria, concentrado em poucas empresas. Kollnig e colegas compararam cerca de um milhão de aplicativos de 2017 com um milhão de 2020, antes e depois do GDPR, o regulamento europeu de proteção de dados, e viram pouca mudança, o que sozinho não prova efeito da lei. Samarasinghe e colegas analisaram 1.166 aplicativos de governo de 71 países: 37% tinham rastreadores do Google, e 27% enviavam dados sensíveis, como identificadores, a terceiros ou sem criptografia. Ou seja, o problema existe também no governo, e vale olhar o caso brasileiro.
+No referencial teórico, parto de três estudos. Binns e colegas baixaram cerca de 959 mil aplicativos e procuraram rastreadores no código, sem executar os apps: acharam rastreamento na maioria, concentrado em poucas empresas. Kollnig e colegas compararam cerca de um milhão de aplicativos de 2017 com um milhão de 2020, antes e depois do GDPR, o regulamento europeu de proteção de dados, e viram pouca mudança, o que sozinho não prova efeito da lei. Samarasinghe e colegas acharam 1.166 aplicativos de governo de 71 países pelos links nos sites oficiais e examinaram os SDKs e os dados enviados: 37% tinham rastreadores do Google, e 27% enviavam dados sensíveis, como identificadores, a terceiros ou sem criptografia. Ou seja, o problema existe também no governo, e vale olhar o caso brasileiro.
 
-## Slide 7. Lacuna e contribuição (40 s)
+## Slide 7. Lacuna e contribuição (45 s)
 
 *Tópicos:* lacuna: ninguém mediu o governo brasileiro × declarações · 1 corpus brasileiro · 2 transparência · 3 checagem do método · divergência = indício
 
-O que falta nesses estudos: nenhum mede os SDKs no conjunto dos aplicativos do governo brasileiro comparando com o que cada um declara. Essa é a lacuna. A contribuição tem três partes. Primeiro, estudar os aplicativos federais, estaduais e municipais, separando os que tratam dados sensíveis. Segundo, comparar o que os SDKs fazem com o que cada aplicativo declara e, numa parte deles, com o tráfego observado. Terceiro, medir o quanto o resultado muda conforme o detector. E uma divergência não é prova de infração à LGPD; é um indício que merece ser examinado.
+O que falta nesses estudos, pelo menos na literatura que examinei até agora: nenhum mede os SDKs no conjunto dos aplicativos do governo brasileiro comparando com o que cada um declara. Essa é a lacuna. A contribuição tem três partes. Primeiro, estudar os aplicativos federais, estaduais e municipais, separando os que tratam dados sensíveis. Segundo, comparar o que os SDKs fazem com o que cada aplicativo declara e, numa parte deles, com o tráfego observado. Terceiro, medir o quanto o resultado muda conforme o detector. E uma divergência não é prova de infração à LGPD; é um indício que merece ser examinado.
 
 ## Slide 8. Método (45 s)
 
@@ -65,6 +65,8 @@ Na busca, encontrei 396 aplicativos candidatos. Conferindo o nome jurídico de q
 *Tópicos:* 0 de 376 do governo declaram anúncios · comerciais: 63 de 190 (33,2%) · é o que o publicador declara · não diz nada sobre SDKs · comerciais = contexto
 
 Um dado que a própria Google Play mostra é se o aplicativo declara exibir anúncios. Nenhum dos 376 aplicativos do governo declara. Entre os comerciais da referência, foram 63 de 190, ou 33,2%. Mas cuidado: isso é o que o publicador declara, e não diz nada sobre os SDKs de análise ou de rastreamento que estão dentro do aplicativo. E os comerciais servem só de contexto, não de grupo de controle.
+
+> **Lembrete, não precisa falar.** Os intervalos no slide: com 0 em 376, a proporção real de apps do governo que declaram anúncios fica, com 95% de confiança, entre 0% e 1,0%; nos comerciais, entre 26,9% e 40,1%. Valem só para essa declaração, não para os SDKs.
 
 ## Slide 11. Fonte dos APKs (55 s)
 

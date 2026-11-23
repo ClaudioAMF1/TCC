@@ -156,13 +156,12 @@ notas_em(s, 0)
 
 # ---------------------------------------------------------------- 2 agenda (fundo 9)
 s = nova(9)
-texto(s, 0.79, 2.55, 3.4, 0.9, [P("AGENDA", 44, True, GREY)])
-texto(s, 0.79, 3.45, 3.4, 1.2, [P("Na ordem do TCC", 26, False, GREY)])
+texto(s, 1.15, 2.78, 2.34, 0.74, [P("AGENDA", 44, True, GREY)])  # posição ajustada pelo autor
 # um bloco por capítulo do texto; conclusão e referências sem número, como no sumário
 caps = [("1", "INTRODUÇÃO", ["Motivação", "Pergunta, objetivos e hipóteses"]),
         ("2", "REFERENCIAL TEÓRICO", ["Estudos de base", "Lacuna e contribuição"]),
         ("3", "PROCEDIMENTOS METODOLÓGICOS", ["Método e corpus", "Anúncios, fonte dos APKs e piloto", "Revisão sistemática", "Limitações e próximos passos"]),
-        ("", "CONCLUSÃO E REFERÊNCIAS", [])]
+        ("4", "CONCLUSÃO E REFERÊNCIAS", [])]
 y = 0.62
 for num, cab, lista in caps:
     forma(s, 6.0, y, 0.46, 0.46, NAVY if num else MID, MSO_SHAPE.OVAL)
@@ -258,7 +257,6 @@ for x0, blocos, cor in [(0.9, blocos_e, NAVY), (7.05, blocos_d, MID)]:
         texto(s, x0 + 0.3, y0, 5.1, 0.45, [P(cab, 19, True, cor)])
         texto(s, x0 + 0.3, y0 + 0.5, 5.1, 1.2, [P(txt, 17, False, DARK, spacing=1.05)])
         y0 += 2.05
-texto(s, 0.9, 6.35, 11.6, 0.4, [P("Declaração compatível pode ser por categoria e finalidade; SDK no APK não comprova envio de dados.", 13, False, GREY, "c")])
 notas_em(s, 6)
 
 # ---------------------------------------------------------------- 8 procedimentos (fundo 4: branco)

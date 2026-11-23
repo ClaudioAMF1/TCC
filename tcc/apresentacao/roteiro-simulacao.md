@@ -1,103 +1,137 @@
 # Roteiro da simulação de defesa
 
-Versão de 23/11/2026, igual às notas da apresentação `apresentacao_TCC1_final.pptx` (no repositório, `simulacao-defesa-rascunho.pptx`), com 17 slides no padrão do template do IDP, na mesma ordem do texto do TCC (introdução, referencial teórico, procedimentos metodológicos, conclusão e referências). São 15 minutos de apresentação e 10 de perguntas. As falas somam cerca de 13 minutos, num ritmo calmo, o que deixa folga para pausas. Ensaie com cronômetro pelo menos três vezes e grave uma delas.
+Versão de 23/11/2026, igual às notas da apresentação `apresentacao_TCC1_final.pptx` (no repositório, `simulacao-defesa-rascunho.pptx`), com 17 slides no padrão do template do IDP, na mesma ordem do texto do TCC (introdução, referencial teórico, procedimentos metodológicos, conclusão e referências). São 15 minutos de apresentação e 10 de perguntas. As falas somam cerca de 12 minutos, num ritmo calmo, o que deixa folga para pausas. Ensaie com cronômetro pelo menos três vezes e grave uma delas.
 
-Não é para decorar palavra por palavra: leia algumas vezes e fale com as suas palavras, mantendo os números exatos.
+Não é para decorar palavra por palavra. Cada slide começa com os tópicos, para olhar e lembrar; a fala vem logo abaixo, em linguagem simples. Fale com as suas palavras e mantenha os números exatos.
 
-## Slide 1. Abertura (40 s)
+## Slide 1. Abertura (35 s)
 
-Bom dia. Esta é a apresentação do meu projeto de Capstone I, intitulado “Quem mais está dentro do aplicativo?”. A pesquisa se concentra nos aplicativos Android oficiais do governo brasileiro e na transparência sobre os SDKs de terceiros. Quero entender quais desses componentes estão presentes e se o que é informado ao cidadão sobre a coleta e o compartilhamento de dados é compatível com a evidência técnica. O objetivo deste semestre é apresentar um problema bem definido, o método e um piloto de viabilidade. A coleta principal e os testes das hipóteses serão realizados no Capstone II.
+*Tópicos:* nome e orientador · título · código de outras empresas nos apps do governo · o governo avisa? · agora: problema, método e teste
 
-## Slide 2. Agenda (35 s)
+Bom dia. Meu nome é Claudio, e meu orientador é o professor Eduardo Izycki. Meu projeto se chama “Quem mais está dentro do aplicativo?”. Muitos aplicativos do governo trazem, dentro deles, código de outras empresas, que pode coletar dados de quem usa. Eu quero descobrir que código é esse e se o governo avisa o cidadão sobre isso. Neste semestre, apresento o problema, o método e um primeiro teste; a coleta completa fica para o Capstone II.
 
-Vou seguir a mesma ordem do texto do TCC. Na introdução, a motivação, a pergunta, os objetivos e as hipóteses. No referencial teórico, os estudos que servem de base e a lacuna que eles deixam. Nos procedimentos metodológicos, o método, o corpus, os dados preparatórios sobre anúncios, fonte dos pacotes e piloto dos detectores, a revisão sistemática e as limitações com os próximos passos. Fecho com a conclusão e as referências.
+## Slide 2. Agenda (25 s)
+
+*Tópicos:* mesma ordem do TCC · 1 introdução · 2 referencial · 3 procedimentos · 4 conclusão e referências
+
+Vou seguir a mesma ordem do texto do TCC. Primeiro, a introdução: por que o tema importa, a pergunta, os objetivos e as hipóteses. Depois, o referencial teórico: os estudos em que me baseio e o que ainda falta neles. Em seguida, os procedimentos metodológicos: como vou fazer a pesquisa e o que já testei. No fim, a conclusão e as referências.
 
 ## Slide 3. Motivação (40 s)
 
-Boa parte dos serviços públicos passou para o celular. Aplicativos como Meu INSS e Meu SUS Digital passam de 50 milhões de instalações cada e frequentemente constituem a principal porta de entrada para esses serviços. Um aplicativo Android não contém apenas código desenvolvido pelo órgão responsável: ele pode integrar SDKs de mapas, notificações, análise de uso e outros serviços. Alguns componentes podem coletar identificadores ou informações de utilização. Essa possibilidade exige transparência, especialmente no setor público, onde a escolha de prestador pelo cidadão costuma ser limitada. Ressalto que encontrar uma biblioteca instalada não equivale a observar transmissão de dados.
+*Tópicos:* Meu INSS e Meu SUS Digital > 50 milhões · SDKs de outras empresas: mapas, notificações, estatísticas · podem coletar dados · cidadão não troca de app · SDK no app ≠ dado enviado
 
-## Slide 4. Pergunta e objetivos (45 s)
+Hoje muita coisa do governo se resolve pelo celular. O Meu INSS e o Meu SUS Digital, por exemplo, passam de 50 milhões de instalações cada. Só que esses aplicativos não têm só o código do órgão: eles trazem pedaços prontos de outras empresas, os SDKs, para coisas como mapas, notificações e estatísticas de uso. Alguns desses SDKs podem coletar dados de quem usa. No governo isso pesa mais, porque o cidadão não tem como trocar de aplicativo. Mas uma ressalva: o SDK estar dentro do aplicativo não prova que ele enviou dados.
 
-No texto do TCC, a pergunta foi formulada assim: “Em que medida os aplicativos móveis oficiais do governo brasileiro embarcam SDKs de rastreamento de terceiros e enviam dados a terceiros sem que isso esteja declarado em suas políticas de privacidade e na seção Segurança dos dados da Google Play?”. O objetivo geral é medir a proporção de SDKs e de envios sem declaração compatível nos aplicativos governamentais brasileiros, à luz da LGPD. Para isso vou confirmar o corpus, detectar os componentes, comparar as declarações, observar uma subamostra dinamicamente e conferir a concordância dos detectores. A evidência estática e a de tráfego serão apresentadas separadamente.
+## Slide 4. Pergunta e objetivos (40 s)
+
+*Tópicos:* pergunta: em que medida… sem declarar? · objetivo: medir a proporção, à luz da LGPD · 5 passos · código e tráfego separados
+
+A minha pergunta é: em que medida os aplicativos oficiais do governo trazem SDKs de rastreamento e enviam dados a terceiros sem avisar isso na política de privacidade e na seção “Segurança dos dados” da Google Play? O objetivo é medir essa proporção, à luz da LGPD. São cinco passos: conferir quais aplicativos são mesmo oficiais, detectar os SDKs, comparar com o que cada aplicativo declara, observar o tráfego numa parte deles e verificar se os detectores concordam. O que aparece no código e o que aparece no tráfego ficam separados.
 
 ## Slide 5. Hipóteses (50 s)
 
-A H1 é a principal: ao menos 10% dos pares aplicativo–SDK identificados não teriam declaração compatível, considerando categorias de dados e finalidades, e não apenas o nome comercial da biblioteca. O critério utiliza um intervalo de confiança de 95%. O limiar de 10% corresponde a ao menos um par sem declaração compatível em cada dez pares que possam ser avaliados. É uma escolha operacional para o teste, e não uma margem permitida pela LGPD. A H2 é secundária: procura verificar se aplicativos governamentais que tratam dados sensíveis têm prevalência de SDKs menor do que os demais. A hipótese considera que essa prevalência não é menor. Os comerciais ficam como contexto; concordância entre detectores é checagem do instrumento sem hipótese própria.
+*Tópicos:* H1: 1 em cada 10 pares sem declaração · limiar do estudo, não da lei · H2: sensíveis NÃO têm menos SDKs · comerciais = contexto · detectores = checagem
 
-> **Lembrete, não precisa falar.** Par aplicativo–SDK: cada SDK encontrado em cada app; para cada par, verifico se o que o SDK faz aparece nas declarações do app, pelo nome ou pela categoria e finalidade do dado. IC95% agrupado por app: os SDKs do mesmo app dependem da mesma política, então não são independentes, e o intervalo é calculado agrupando por app. A H1 é rejeitada se o limite superior do intervalo ficar abaixo de 10%. Por que 10%: critério operacional do estudo; Andow et al. (2020) acharam até 42,4% de apps com declaração incorreta ou omitida, mas em outra população e por app, então serve só para mostrar que o problema é comum.
+Tenho duas hipóteses. A H1 é a principal: pelo menos 1 em cada 10 pares aplicativo–SDK não tem declaração compatível. Par aplicativo–SDK é cada SDK encontrado em cada aplicativo. E a declaração não precisa citar o nome do SDK: basta dizer que tipo de dado é coletado e para quê. Esse limite de 10% é um critério do estudo, não uma tolerância da LGPD. A H2 é secundária. Seria de esperar que os aplicativos com dados sensíveis, como os de saúde, tivessem menos SDKs; a minha hipótese é que não têm menos. Os aplicativos comerciais ficam só como contexto, e a concordância entre os detectores serve para checar a ferramenta; não é uma hipótese.
 
-## Slide 6. O que a literatura já demonstrou (55 s)
+> **Lembrete, não precisa falar.** IC95% agrupado por app: os SDKs do mesmo app dependem da mesma política, então o intervalo é calculado por app. A H1 cai se o limite superior do intervalo ficar abaixo de 10%; a H2 cai se o limite superior da razão de prevalências ficar abaixo de 1. Por que 10%: Andow et al. (2020) acharam até 42,4% de apps com declaração incorreta ou omitida, em outra população e por app; serve só para mostrar que o problema é comum.
 
-No referencial teórico, a literatura oferece três pontos de partida. Binns e colaboradores baixaram cerca de 959 mil aplicativos e procuraram, no código, referências a rastreadores, sem executar os apps; acharam rastreamento na maioria, concentrado em poucas empresas. Kollnig e colegas compararam cerca de um milhão de aplicativos de 2017 com um milhão de 2020, antes e depois do GDPR, o regulamento europeu de proteção de dados, e viram pouca mudança, sem que essa comparação prove, sozinha, o efeito da lei. Samarasinghe e colaboradores acharam 1.166 aplicativos de governo de 71 países pelos links da Google Play nos sites oficiais e examinaram os SDKs e os dados enviados: 37% tinham rastreadores do Google, e 27% enviavam informações sensíveis, como identificadores, a terceiros ou sem criptografia. Esses resultados justificam investigar o contexto brasileiro com atenção às declarações de privacidade.
+## Slide 6. O que a literatura já mostrou (50 s)
 
-## Slide 7. Lacuna e contribuição (45 s)
+*Tópicos:* Binns: 959 mil, código, poucas empresas · Kollnig: antes e depois do GDPR, mudou pouco · Samarasinghe: 1.166 apps de governo, 37% e 27%
 
-Nenhum dos estudos da revisão mede os SDKs no conjunto dos aplicativos de governo brasileiros confrontando o que cada um declara; essa é a lacuna. A contribuição esperada tem três partes. Primeiro, estudar sistematicamente aplicativos federais, estaduais e municipais brasileiros, distinguindo serviços que podem tratar dados sensíveis. Segundo, confrontar a presença e a função dos SDKs com as categorias de dados e finalidades declaradas na política de privacidade e na seção Segurança dos dados da Google Play. Para uma subamostra, o confronto será ampliado aos fluxos efetivamente observados. Terceiro, verificar as diferenças entre detectores, porque a prevalência reportada pode variar conforme o instrumento. Uma divergência não é prova automática de infração à LGPD; é uma evidência para exame adicional.
+No referencial teórico, parto de três estudos. Binns e colegas baixaram cerca de 959 mil aplicativos e procuraram rastreadores no código, sem executar os apps: acharam rastreamento na maioria, concentrado em poucas empresas. Kollnig e colegas compararam cerca de um milhão de aplicativos de 2017 com um milhão de 2020, antes e depois do GDPR, o regulamento europeu de proteção de dados, e viram pouca mudança, o que sozinho não prova efeito da lei. Samarasinghe e colegas analisaram 1.166 aplicativos de governo de 71 países: 37% tinham rastreadores do Google, e 27% enviavam dados sensíveis, como identificadores, a terceiros ou sem criptografia. Ou seja, o problema existe também no governo, e vale olhar o caso brasileiro.
 
-## Slide 8. Método (40 s)
+## Slide 7. Lacuna e contribuição (40 s)
 
-Nos procedimentos metodológicos, o estudo é quantitativo e observacional. Primeiro, delimitar e conferir os aplicativos oficiais encontrados na Google Play. Segundo, caracterizá-los por esfera e tipo de serviço. Terceiro, obter a versão atual na Google Play quando possível, com data, versão e SHA-256. O AndroZoo será fonte complementar para reprodutibilidade e para medir defasagem entre a versão arquivada e a que o usuário instala. Quarto, aplicar os detectores e examinar suas divergências. Quinto, comparar resultados técnicos com políticas de privacidade e declarações na loja. Sexto, calcular proporções e intervalos e, para uma subamostra, observar fluxos de rede em cenários documentados.
+*Tópicos:* lacuna: ninguém mediu o governo brasileiro × declarações · 1 corpus brasileiro · 2 transparência · 3 checagem do método · divergência = indício
 
-## Slide 9. Corpus (45 s)
+O que falta nesses estudos: nenhum mede os SDKs no conjunto dos aplicativos do governo brasileiro comparando com o que cada um declara. Essa é a lacuna. A contribuição tem três partes. Primeiro, estudar os aplicativos federais, estaduais e municipais, separando os que tratam dados sensíveis. Segundo, comparar o que os SDKs fazem com o que cada aplicativo declara e, numa parte deles, com o tráfego observado. Terceiro, medir o quanto o resultado muda conforme o detector. E uma divergência não é prova de infração à LGPD; é um indício que merece ser examinado.
 
-A busca inicial produziu 396 aplicativos candidatos. Pela classificação preliminar de seus publicadores, 376 foram mantidos como oficiais: 85 federais, 199 estaduais e 92 municipais. Entre eles, 100 foram classificados preliminarmente como relacionados a serviços que podem tratar dados sensíveis, como saúde ou biometria. Vinte candidatos saíram: 13 eram de empresas privadas que publicam com nome de serviço público e 7 estavam numa conta de pessoa física. Em 108 casos, a classificação de dado sensível feita por palavra-chave divergiu da conferência, nos dois sentidos. Esses números descrevem o corpus preparatório; a classificação ainda será conferida antes da coleta principal. Os círculos mostram a distribuição por esfera, e não uma medida de rastreadores encontrados.
+## Slide 8. Método (45 s)
 
-## Slide 10. Anúncios (40 s)
+*Tópicos:* quantitativo e observacional · 1 corpus · 2 caracterização · 3 pacotes atuais com hash · 4 detectores · 5 declarado × detectado · 6 análise com IC95%
 
-Um dado descritivo da Google Play é a declaração de anúncios. Entre os 376 aplicativos governamentais classificados preliminarmente como oficiais, nenhum declarou exibir anúncios. Na primeira referência comercial, a informação aparece em 63 dos 190 aplicativos, ou 33,2%. Os intervalos de confiança mostrados dizem respeito apenas a essa declaração feita pelos publicadores. Não significam que os aplicativos do governo não incorporem SDKs de análise de uso ou de rastreamento. Também não uso a referência comercial como grupo de controle, pois sua coleta não foi planejada para um teste inferencial equivalente.
+Nos procedimentos metodológicos, o estudo é quantitativo e observacional, em seis etapas. Um: conferir quais aplicativos são oficiais. Dois: separar por esfera de governo e tipo de serviço. Três: baixar a versão atual de cada aplicativo na Google Play, registrando o hash, que é a impressão digital do arquivo; o AndroZoo serve para reproduzir a análise e ver a diferença entre versões. Quatro: rodar os detectores e comparar o que cada um encontra. Cinco: comparar o que foi detectado com a política de privacidade e com a declaração na loja. Seis: calcular as proporções com intervalo de confiança e, numa parte dos aplicativos, observar o tráfego de rede.
 
-## Slide 11. Fonte dos APKs (70 s)
+## Slide 9. Corpus (40 s)
 
-Uma limitação prática apareceu na busca por pacotes. O AndroZoo possuía apenas 92 dos 396 candidatos governamentais da consulta histórica, ou 23,2%; na primeira referência comercial eram 160 de 190, ou 84,2%. Isso indica que depender apenas do acervo acadêmico poderia deixar muitos aplicativos oficiais de fora. Por isso o plano prevê coletar as versões atuais disponibilizadas na Google Play, com registro de hash, data e eventuais falhas. O AndroZoo continua relevante para recuperar versões específicas, medir defasagem e possibilitar reprodutibilidade onde os arquivos estiverem disponíveis. Na prática, a coleta usa o apkeep, uma ferramenta aberta da EFF, com uma conta Google criada só para a pesquisa e acesso a partir do Brasil. Para cada aplicativo, registro o hash SHA-256 do arquivo, a versão, a data e, se o download falhar, o motivo; a falha também vira dado. Quando o app vem em pacotes divididos, guardo o APK base, que é onde está o código. Antes do corpus inteiro, testo a coleta em cinco aplicativos.
+*Tópicos:* 396 candidatos → 376 oficiais · 85 / 199 / 92 · 20 saíram: 13 empresas + 7 pessoa física · 100 sensíveis · 108 divergências · ainda preliminar
 
-## Slide 12. Piloto dos detectores (55 s)
+Na busca, encontrei 396 aplicativos candidatos. Conferindo o nome jurídico de quem publica, 376 ficaram como oficiais: 85 federais, 199 estaduais e 92 municipais. Vinte saíram: 13 eram de empresas privadas usando nome de serviço público e 7 estavam em contas de pessoa física. Cem dos 376 podem tratar dados sensíveis, como saúde ou biometria. A marcação automática de dado sensível, por palavra-chave, não bateu com a conferência em 108 casos, para mais e para menos; por isso a classificação ainda vai ser conferida antes da coleta. Os círculos mostram só a divisão por esfera, não rastreadores.
 
-No piloto, utilizei 20 pacotes arquivados no AndroZoo e três detectores. O detector A buscou assinaturas de código na base do Exodus; B procurou assinaturas de rede em textos do pacote usando a mesma base; C utilizou assinaturas da Disconnect sobre os mesmos textos. As proporções de pacotes com detecção foram 75%, 95% e 80%, respectivamente. O kappa de Fleiss foi 0,52. Conferi as detecções uma a uma, olhando a classe ou o domínio que gerou cada uma, e marquei 88 das 123 do B como possíveis falsos positivos, quase todas por domínios genéricos do Google ou do Facebook. Sem elas, o kappa sobe para 0,69, mas isso é só uma análise de sensibilidade: não existe uma referência independente que diga a resposta certa.
+## Slide 10. Anúncios (30 s)
 
-> **Lembrete, não precisa falar.** A, Exodus por código: usa a base do Exodus Privacy e procura, nos nomes das classes do código do app (o arquivo DEX), o pacote de cada SDK conhecido, como com.google.firebase.analytics. Se acha, o código do SDK está dentro do APK. B, Exodus por domínio: mesma base do Exodus, mas procura os endereços de internet dos rastreadores, como google-analytics.com, escritos nos textos do APK. Não é tráfego, é texto dentro do pacote; por isso um link para maps.google.com bastou para apontar Google Ads. C, Disconnect por domínio: mesmo método do B, com outra lista, a da Disconnect, que classifica domínios por finalidade; uso só publicidade, análise de uso e impressão digital. A contra B mostra o efeito do método (mesma base); B contra C mostra o efeito da base (mesmo método).
+*Tópicos:* 0 de 376 do governo declaram anúncios · comerciais: 63 de 190 (33,2%) · é o que o publicador declara · não diz nada sobre SDKs · comerciais = contexto
 
-## Slide 13. Revisão sistemática (85 s)
+Um dado que a própria Google Play mostra é se o aplicativo declara exibir anúncios. Nenhum dos 376 aplicativos do governo declara. Entre os comerciais da referência, foram 63 de 190, ou 33,2%. Mas cuidado: isso é o que o publicador declara, e não diz nada sobre os SDKs de análise ou de rastreamento que estão dentro do aplicativo. E os comerciais servem só de contexto, não de grupo de controle.
 
-A revisão sistemática seguiu o guia de Kitchenham: antes de buscar, escrevi um protocolo com as perguntas, as bases, as strings e os critérios de seleção. O fluxo é relatado no modelo PRISMA 2020, que mostra quantos registros entraram e saíram em cada etapa. Fiz 17 buscas em 6 de novembro, em quatro bases: o Scopus, que é a principal, o IEEE Xplore e, para a produção nacional, a SBC OpenLib e a BDTD, com trabalhos de 2015 a 2026, em inglês e português. Cada string tem três blocos: um de aplicativo móvel, um do fenômeno, como rastreador, SDK de terceiros ou política de privacidade, e, quando preciso, um de contexto, como governo, COVID-19 ou Brasil. O bloco de contexto evita ruído: a palavra tracker sozinha traz até rastreador de atividade física. Para validar as strings, usei onze estudos conhecidos como controle, e as buscas recuperaram os dez que o Scopus indexa. Os 1.531 registros viraram 1.249 sem duplicatas, e a triagem por título e resumo levou 357 à leitura completa. Essa leitura está em andamento: até agora conferi 18 decisões lendo o texto inteiro, e o restante, junto com a bola de neve, fica para o início do Capstone II, como combinado com o orientador.
+## Slide 11. Fonte dos APKs (55 s)
 
-## Slide 14. Limitações e próximos passos (55 s)
+*Tópicos:* AndroZoo: 92 de 396 (23,2%) × 160 de 190 (84,2%) · fonte principal: Google Play atual · apkeep + conta da pesquisa · hash, versão, data, falha · teste com 5 apps
 
-Entre as limitações, destaco que uma assinatura de código não prova execução nem transmissão, e que as políticas de privacidade podem declarar categorias de dados e finalidades sem nomear todos os SDKs. Há ainda outras: o estudo cobre só Android e a Google Play, e há limitações na seleção da revisão, na classificação do corpus, na disponibilidade de versões e na independência dos detectores. Até a entrega do Capstone I, a prioridade é incorporar o retorno do orientador e da simulação. No Capstone II serão concluídas a leitura e as decisões dos artigos pendentes, além da conferência das classificações do corpus, seguida da coleta das versões atuais, do confronto documental, da análise dinâmica de subamostra, da avaliação estatística e da discussão jurídica fundamentada.
+Um problema prático apareceu na hora de buscar os pacotes. O AndroZoo, um acervo acadêmico de aplicativos, tinha só 92 dos 396 do governo, ou 23,2%; dos comerciais, tinha 160 de 190, ou 84,2%. Dependendo só dele, muitos aplicativos do governo ficariam de fora. Por isso a fonte principal vai ser a versão atual da Google Play, que é a que o cidadão instala. O download vai ser feito com o apkeep, uma ferramenta aberta, com uma conta Google criada só para a pesquisa, a partir do Brasil. Para cada aplicativo, registro o hash, a versão, a data e, se falhar, o motivo; a falha também vira dado. O AndroZoo continua útil para reproduzir a análise. Antes do corpus inteiro, testo em cinco aplicativos.
+
+> **Lembrete, não precisa falar.** Quando o app vem dividido em vários pacotes, guardo o APK base, que tem o código. O apkeep é da Electronic Frontier Foundation (EFF). Não redistribuo os pacotes.
+
+## Slide 12. Piloto dos detectores (65 s)
+
+*Tópicos:* 20 pacotes, 3 detectores · A 75% · B 95% · C 80% · κ 0,52 · 88 de 123 do B questionadas · 0,69 sem elas · a ferramenta muda o resultado
+
+Fiz um piloto com 20 pacotes do AndroZoo e três detectores. O A procura no código os SDKs da base do Exodus. O B usa a mesma base, mas procura endereços de internet escritos dentro do pacote. O C faz o mesmo que o B, com outra lista, a da Disconnect. Cada um deu uma taxa diferente: 75%, 95% e 80% dos pacotes com pelo menos um rastreador. A concordância entre eles, medida pelo kappa de Fleiss, em que 1 é concordância total, foi 0,52. Conferi as detecções uma a uma e marquei 88 das 123 do B como possíveis falsos positivos, quase todas por endereços genéricos do Google ou do Facebook. Sem elas, o kappa sobe para 0,69, mas é só uma análise de sensibilidade, porque não há uma referência independente com a resposta certa. Conclusão: a ferramenta escolhida muda o resultado, e é por isso que comparar os detectores faz parte do método.
+
+> **Lembrete, não precisa falar.** A contra B mostra o efeito do método (mesma base); B contra C mostra o efeito da base (mesmo método). B não é tráfego, é texto dentro do pacote: um link para maps.google.com bastou para apontar Google Ads. C usa só as categorias publicidade, análise de uso e impressão digital.
+
+## Slide 13. Revisão sistemática (75 s)
+
+*Tópicos:* Kitchenham (como fazer) + PRISMA 2020 (como relatar) · 4 bases, 17 buscas, 6/11 · buscas em 3 blocos · 10 de 11 controles · 1.531 → 1.249 → 357 · 18 conferidas
+
+Na revisão sistemática, segui o guia de Kitchenham: antes de buscar, escrevi um protocolo com as perguntas, as bases, as buscas e os critérios. E relato o resultado no modelo PRISMA 2020, que mostra quantos estudos entraram e saíram em cada etapa. Fiz 17 buscas em 6 de novembro, em quatro bases: Scopus, que é a principal, IEEE Xplore e, para a produção brasileira, SBC OpenLib e BDTD, de 2015 a 2026, em inglês e português. Cada busca junta três blocos: aplicativo móvel, o tema, como rastreador ou política de privacidade, e, quando precisa, o contexto, como governo ou Brasil. Para testar as buscas, usei onze estudos conhecidos, e elas acharam os dez que o Scopus indexa. Os 1.531 registros viraram 1.249 sem duplicatas, e a triagem por título e resumo levou 357 à leitura completa. Essa leitura está em andamento: já conferi 18 decisões lendo o texto inteiro, e o restante, com a busca nas referências dos estudos, fica para o início do Capstone II, como combinado com o orientador.
+
+> **Lembrete, não precisa falar.** Sem o bloco de contexto, “tracker” traz até rastreador de atividade física. A busca nas referências dos estudos incluídos se chama bola de neve. Os 278 registros sem decisão e as 61 decisões ainda não conferidas ficam para fevereiro.
+
+## Slide 14. Limitações e próximos passos (50 s)
+
+*Tópicos:* SDK no app ≠ envio · só Android e Google Play · políticas não citam SDKs · versões mudam · revisão e classificação em conferência · 03/12 · fev · mar–abr · mai–jun
+
+Sobre as limitações: achar o SDK no código não prova que ele envia dados; o estudo cobre só Android e a Google Play; as políticas costumam falar de tipos de dados, e não do nome de cada SDK; as versões podem mudar entre a coleta e a análise; e a revisão e as classificações ainda estão sendo conferidas. Os próximos passos: até 3 de dezembro, ajustar o texto com o retorno do orientador e desta simulação. Em fevereiro, terminar a revisão e conferir o corpus. Em março e abril, a coleta, a detecção e a comparação com as declarações. Em maio e junho, a análise, a discussão jurídica e a defesa.
 
 ## Slide 15. Conclusão (35 s)
 
-Para concluir, o Capstone I apresenta um problema delimitado, um desenho metodológico e dados preparatórios suficientes para demonstrar viabilidade. O foco não é comparar o governo ao mercado, mas verificar se aquilo que os aplicativos públicos declaram sobre tratamento de dados é compatível com os componentes identificados e, onde houver observação dinâmica, com os fluxos realmente transmitidos. Essa distinção é fundamental para produzir resultados defensáveis sobre privacidade, transparência e dependência de fornecedores. Obrigado. Estou à disposição para as perguntas.
+*Tópicos:* problema definido · método viável · resultados preliminares · o que o governo declara bate com o que o app faz? · obrigado
 
-## Slide 16. Referências (5 s)
+Para concluir: o problema está definido, o método é viável, e os resultados ainda são preliminares. O foco não é comparar o governo com o mercado, mas verificar se o que os aplicativos públicos declaram sobre os dados bate com o que está dentro deles e, onde der para observar, com o que eles realmente enviam. É isso que permite falar com segurança sobre privacidade, transparência e dependência de fornecedores. Obrigado, fico à disposição para as perguntas.
 
-Não é para ler. Depois do obrigado da conclusão, avance para este slide e deixe-o na tela por alguns segundos, ou durante o começo das perguntas. São as obras citadas nos slides e na fala, no mesmo padrão ABNT da lista de referências do texto.
+## Slide 16. Referências (10 s)
+
+Não é para ler. Depois do obrigado, avance para este slide e deixe-o na tela por alguns segundos, ou no começo das perguntas.
 
 **Cola para as perguntas** (fica nas notas deste slide; não é para ler em voz alta):
 
-- Números: 396 candidatos, 376 oficiais (85 federais, 199 estaduais, 92 municipais); 0 de 376 declaram anúncios, contra 63 de 190 comerciais; κ 0,52, ou 0,69 sem os 88 possíveis falsos positivos do B; AndroZoo com 92 de 396 (23,2%); revisão 1.531, 1.249, 357, 18 decisões conferidas.
-- Por que 10%? Critério operacional do estudo, não da LGPD. Andow achou até 42,4% de apps com declaração incorreta ou omitida, em outra população e por app.
-- κ de 0,52 não é baixo? É, e por isso a concordância entre detectores virou checagem do instrumento, não hipótese.
-- SDK no APK prova envio de dados? Não. O envio só é observado na análise dinâmica de uma subamostra.
+- Números: 396 candidatos e 376 oficiais (85 federais, 199 estaduais, 92 municipais) · 0 de 376 declaram anúncios, contra 63 de 190 comerciais · κ 0,52, ou 0,69 sem os 88 possíveis falsos positivos do B · AndroZoo: 92 de 396 (23,2%) · revisão: 1.531, 1.249, 357, 18 decisões conferidas.
+- Por que 10%? É um critério do estudo, não da LGPD. O Andow achou até 42,4% de apps com declaração errada ou omitida, mas em outra população e contando por app.
+- O κ de 0,52 não é baixo? É, e por isso a concordância entre detectores virou checagem do instrumento, e não hipótese.
+- Ter o SDK no app prova que dados foram enviados? Não. O envio só é observado na análise de tráfego de uma parte dos apps.
 - Por que não comparar com apps comerciais? A coleta deles não foi planejada para um teste justo; ficam só como contexto.
-- Por que só Android? Permite obter e examinar o pacote; a limitação está declarada.
-- Como sabe que o app é oficial? Pelo nome jurídico em “Sobre o desenvolvedor”; a classificação ainda é conferida antes da coleta.
-- Você leu os 71 artigos? Não todos: são propostas de uma primeira leitura, cada uma com a página da informação. Conferi 18 decisões lendo o texto inteiro e confiro as outras em fevereiro, antes de qualquer resultado.
+- Por que só Android? Porque dá para obter e examinar o pacote; a limitação está declarada.
+- Como sabe que o app é oficial? Pelo nome jurídico em “Sobre o desenvolvedor”; a classificação ainda vai ser conferida antes da coleta.
+- Você leu os 71 artigos? Não todos. São propostas de uma primeira leitura, cada uma com a página da informação. Conferi 18 decisões lendo o texto inteiro e confiro as outras em fevereiro, antes de qualquer resultado.
 - Se não souber: “Isso ainda não medi; está previsto para o Capstone II.”
 
 ## Slide 17. Encerramento
 
-Slide institucional do template, sem fala. Deixe na tela durante as perguntas.
+Sem fala. Pode ficar na tela durante as perguntas.
 
 **Cola para as perguntas** (fica nas notas deste slide; não é para ler em voz alta):
 
-- Números: 396 candidatos, 376 oficiais (85 federais, 199 estaduais, 92 municipais); 0 de 376 declaram anúncios, contra 63 de 190 comerciais; κ 0,52, ou 0,69 sem os 88 possíveis falsos positivos do B; AndroZoo com 92 de 396 (23,2%); revisão 1.531, 1.249, 357, 18 decisões conferidas.
-- Por que 10%? Critério operacional do estudo, não da LGPD. Andow achou até 42,4% de apps com declaração incorreta ou omitida, em outra população e por app.
-- κ de 0,52 não é baixo? É, e por isso a concordância entre detectores virou checagem do instrumento, não hipótese.
-- SDK no APK prova envio de dados? Não. O envio só é observado na análise dinâmica de uma subamostra.
+- Números: 396 candidatos e 376 oficiais (85 federais, 199 estaduais, 92 municipais) · 0 de 376 declaram anúncios, contra 63 de 190 comerciais · κ 0,52, ou 0,69 sem os 88 possíveis falsos positivos do B · AndroZoo: 92 de 396 (23,2%) · revisão: 1.531, 1.249, 357, 18 decisões conferidas.
+- Por que 10%? É um critério do estudo, não da LGPD. O Andow achou até 42,4% de apps com declaração errada ou omitida, mas em outra população e contando por app.
+- O κ de 0,52 não é baixo? É, e por isso a concordância entre detectores virou checagem do instrumento, e não hipótese.
+- Ter o SDK no app prova que dados foram enviados? Não. O envio só é observado na análise de tráfego de uma parte dos apps.
 - Por que não comparar com apps comerciais? A coleta deles não foi planejada para um teste justo; ficam só como contexto.
-- Por que só Android? Permite obter e examinar o pacote; a limitação está declarada.
-- Como sabe que o app é oficial? Pelo nome jurídico em “Sobre o desenvolvedor”; a classificação ainda é conferida antes da coleta.
-- Você leu os 71 artigos? Não todos: são propostas de uma primeira leitura, cada uma com a página da informação. Conferi 18 decisões lendo o texto inteiro e confiro as outras em fevereiro, antes de qualquer resultado.
+- Por que só Android? Porque dá para obter e examinar o pacote; a limitação está declarada.
+- Como sabe que o app é oficial? Pelo nome jurídico em “Sobre o desenvolvedor”; a classificação ainda vai ser conferida antes da coleta.
+- Você leu os 71 artigos? Não todos. São propostas de uma primeira leitura, cada uma com a página da informação. Conferi 18 decisões lendo o texto inteiro e confiro as outras em fevereiro, antes de qualquer resultado.
 - Se não souber: “Isso ainda não medi; está previsto para o Capstone II.”
 
 ---

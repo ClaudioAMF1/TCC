@@ -1,6 +1,6 @@
 # Roteiro da simulação de defesa
 
-Versão de 23/11/2026, igual às notas da apresentação `apresentacao_TCC1_final.pptx` (no repositório, `simulacao-defesa-rascunho.pptx`), com 16 slides no padrão do template do IDP. São 15 minutos de apresentação e 10 de perguntas. As falas somam cerca de 12 minutos, num ritmo calmo, o que deixa folga para pausas. Ensaie com cronômetro pelo menos três vezes e grave uma delas.
+Versão de 23/11/2026, igual às notas da apresentação `apresentacao_TCC1_final.pptx` (no repositório, `simulacao-defesa-rascunho.pptx`), com 17 slides no padrão do template do IDP, na mesma ordem do texto do TCC (introdução, referencial teórico, procedimentos metodológicos, conclusão e referências). São 15 minutos de apresentação e 10 de perguntas. As falas somam cerca de 12 minutos, num ritmo calmo, o que deixa folga para pausas. Ensaie com cronômetro pelo menos três vezes e grave uma delas.
 
 Não é para decorar palavra por palavra: leia algumas vezes e fale com as suas palavras, mantendo os números exatos.
 
@@ -8,33 +8,33 @@ Não é para decorar palavra por palavra: leia algumas vezes e fale com as suas 
 
 Bom dia. Esta é a apresentação do meu projeto de Capstone I, intitulado “Quem mais está dentro do aplicativo?”. A pesquisa se concentra nos aplicativos Android oficiais do governo brasileiro e na transparência sobre os SDKs de terceiros. Quero entender quais desses componentes estão presentes e se o que é informado ao cidadão sobre a coleta e o compartilhamento de dados é compatível com a evidência técnica. O objetivo deste semestre é apresentar um problema bem definido, o método e um piloto de viabilidade. A coleta principal e os testes das hipóteses serão realizados no Capstone II.
 
-## Slide 2. Agenda (30 s)
+## Slide 2. Agenda (35 s)
 
-Vou apresentar em duas partes. Primeiro, o problema: por que olhar os aplicativos públicos, o que a literatura já mostrou, a lacuna e a pergunta, com os objetivos e as hipóteses. Depois, o método e o que já foi feito: as etapas, os resultados preparatórios do corpus e do piloto, como a revisão bibliográfica foi conduzida e, por fim, as limitações e os próximos passos.
+Vou seguir a mesma ordem do texto do TCC. Na introdução, a motivação, a pergunta, os objetivos e as hipóteses. No referencial teórico, os estudos que servem de base e a lacuna que eles deixam. Nos procedimentos metodológicos, o método, o corpus, os dados preparatórios sobre anúncios, fonte dos pacotes e piloto dos detectores, a revisão sistemática e as limitações com os próximos passos. Fecho com a conclusão e as referências.
 
 ## Slide 3. Motivação (40 s)
 
 Boa parte dos serviços públicos passou para o celular. Aplicativos como Meu INSS e Meu SUS Digital são usados por milhões de pessoas e frequentemente constituem a principal porta de entrada para esses serviços. Um aplicativo Android não contém apenas código desenvolvido pelo órgão responsável: ele pode integrar SDKs de mapas, notificações, análise de uso e outros serviços. Alguns componentes podem coletar identificadores ou informações de utilização. Essa possibilidade exige transparência, especialmente no setor público, onde a escolha de prestador pelo cidadão costuma ser limitada. Ressalto que encontrar uma biblioteca instalada não equivale a observar transmissão de dados.
 
-## Slide 4. O que a literatura já demonstrou (55 s)
-
-A literatura oferece três pontos de partida. Binns e colaboradores baixaram cerca de 959 mil aplicativos e procuraram, no código, referências a rastreadores, sem executar os apps; acharam rastreamento na maioria, concentrado em poucas empresas. Kollnig e colegas compararam cerca de um milhão de aplicativos de 2017 com um milhão de 2020, antes e depois do GDPR, e viram pouca mudança, sem que essa comparação prove, sozinha, o efeito da lei. Samarasinghe e colaboradores acharam 1.166 aplicativos de governo de 71 países pelos links da Google Play nos sites oficiais e examinaram os SDKs e os dados enviados: 37% tinham rastreadores do Google, e 27% enviavam informações sensíveis, como identificadores, a terceiros ou sem criptografia. Esses resultados justificam investigar o contexto brasileiro com atenção às declarações de privacidade.
-
-## Slide 5. Lacuna e contribuição (40 s)
-
-A contribuição esperada tem três partes. Primeiro, estudar sistematicamente aplicativos federais, estaduais e municipais brasileiros, distinguindo serviços que podem tratar dados sensíveis. Segundo, confrontar a presença e a função dos SDKs com as categorias de dados e finalidades declaradas na política de privacidade e na seção Segurança dos dados da Google Play. Para uma subamostra, o confronto será ampliado aos fluxos efetivamente observados. Terceiro, verificar as diferenças entre detectores, porque a prevalência reportada pode variar conforme o instrumento. Uma divergência não é prova automática de infração à LGPD; é uma evidência para exame adicional.
-
-## Slide 6. Pergunta e objetivos (45 s)
+## Slide 4. Pergunta e objetivos (45 s)
 
 No texto do TCC, a pergunta foi formulada assim: “Em que medida os aplicativos móveis oficiais do governo brasileiro embarcam SDKs de rastreamento de terceiros e enviam dados a terceiros sem que isso esteja declarado em suas políticas de privacidade e na seção Segurança dos dados da Google Play?”. O objetivo geral é medir a proporção de SDKs e de envios sem declaração compatível nos aplicativos governamentais brasileiros, à luz da LGPD. Para isso vou confirmar o corpus, detectar os componentes, comparar as declarações, observar uma subamostra dinamicamente e conferir a concordância dos detectores. A evidência estática e a de tráfego serão apresentadas separadamente.
 
-## Slide 7. Hipóteses (50 s)
+## Slide 5. Hipóteses (50 s)
 
 A H1 é a principal: ao menos 10% dos pares aplicativo–SDK identificados não teriam declaração compatível, considerando categorias de dados e finalidades, e não apenas o nome comercial da biblioteca. O critério utiliza um intervalo de confiança de 95%. O limiar de 10% corresponde a ao menos um par sem declaração compatível em cada dez pares que possam ser avaliados. É uma escolha operacional para o teste, e não uma margem permitida pela LGPD. A H2 é secundária: procura verificar se aplicativos governamentais que tratam dados sensíveis têm prevalência de SDKs menor do que os demais. A hipótese considera que essa prevalência não é menor. Os comerciais ficam como contexto; concordância entre detectores é checagem do instrumento sem hipótese própria.
 
+## Slide 6. O que a literatura já demonstrou (55 s)
+
+No referencial teórico, a literatura oferece três pontos de partida. Binns e colaboradores baixaram cerca de 959 mil aplicativos e procuraram, no código, referências a rastreadores, sem executar os apps; acharam rastreamento na maioria, concentrado em poucas empresas. Kollnig e colegas compararam cerca de um milhão de aplicativos de 2017 com um milhão de 2020, antes e depois do GDPR, e viram pouca mudança, sem que essa comparação prove, sozinha, o efeito da lei. Samarasinghe e colaboradores acharam 1.166 aplicativos de governo de 71 países pelos links da Google Play nos sites oficiais e examinaram os SDKs e os dados enviados: 37% tinham rastreadores do Google, e 27% enviavam informações sensíveis, como identificadores, a terceiros ou sem criptografia. Esses resultados justificam investigar o contexto brasileiro com atenção às declarações de privacidade.
+
+## Slide 7. Lacuna e contribuição (45 s)
+
+Nenhum dos estudos da revisão mede os SDKs no conjunto dos aplicativos de governo brasileiros confrontando o que cada um declara; essa é a lacuna. A contribuição esperada tem três partes. Primeiro, estudar sistematicamente aplicativos federais, estaduais e municipais brasileiros, distinguindo serviços que podem tratar dados sensíveis. Segundo, confrontar a presença e a função dos SDKs com as categorias de dados e finalidades declaradas na política de privacidade e na seção Segurança dos dados da Google Play. Para uma subamostra, o confronto será ampliado aos fluxos efetivamente observados. Terceiro, verificar as diferenças entre detectores, porque a prevalência reportada pode variar conforme o instrumento. Uma divergência não é prova automática de infração à LGPD; é uma evidência para exame adicional.
+
 ## Slide 8. Método (40 s)
 
-O método é quantitativo e observacional. Primeiro, delimitar e conferir os aplicativos oficiais encontrados na Google Play. Segundo, caracterizá-los por esfera e tipo de serviço. Terceiro, obter a versão atual na Google Play quando possível, com data, versão e SHA-256. O AndroZoo será fonte complementar para reprodutibilidade e para medir defasagem entre a versão arquivada e a que o usuário instala. Quarto, aplicar os detectores e examinar suas divergências. Quinto, comparar resultados técnicos com políticas de privacidade e declarações na loja. Sexto, calcular proporções e intervalos e, para uma subamostra, observar fluxos de rede em cenários documentados.
+Nos procedimentos metodológicos, o estudo é quantitativo e observacional. Primeiro, delimitar e conferir os aplicativos oficiais encontrados na Google Play. Segundo, caracterizá-los por esfera e tipo de serviço. Terceiro, obter a versão atual na Google Play quando possível, com data, versão e SHA-256. O AndroZoo será fonte complementar para reprodutibilidade e para medir defasagem entre a versão arquivada e a que o usuário instala. Quarto, aplicar os detectores e examinar suas divergências. Quinto, comparar resultados técnicos com políticas de privacidade e declarações na loja. Sexto, calcular proporções e intervalos e, para uma subamostra, observar fluxos de rede em cenários documentados.
 
 ## Slide 9. Corpus (35 s)
 
@@ -44,15 +44,15 @@ A busca inicial produziu 396 aplicativos candidatos. Pela classificação prelim
 
 Um dado descritivo da Google Play é a declaração de anúncios. Entre os 376 aplicativos governamentais classificados preliminarmente como oficiais, nenhum declarou exibir anúncios. Na primeira referência comercial, a informação aparece em 63 dos 190 aplicativos, ou 33,2%. Os intervalos de confiança mostrados dizem respeito apenas a essa declaração feita pelos publicadores. Não significam que os aplicativos do governo não incorporem SDKs de análise de uso ou de rastreamento. Também não uso a referência comercial como grupo de controle, pois sua coleta não foi planejada para um teste inferencial equivalente.
 
-## Slide 11. Piloto dos detectores (55 s)
+## Slide 11. Fonte dos APKs (70 s)
+
+Uma limitação prática apareceu na busca por pacotes. O AndroZoo possuía apenas 92 dos 396 candidatos governamentais da consulta histórica, ou 23,2%; na primeira referência comercial eram 160 de 190, ou 84,2%. Isso indica que depender apenas do acervo acadêmico poderia deixar muitos aplicativos oficiais de fora. Por isso o plano prevê coletar as versões atuais disponibilizadas na Google Play, com registro de hash, data e eventuais falhas. O AndroZoo continua relevante para recuperar versões específicas, medir defasagem e possibilitar reprodutibilidade onde os arquivos estiverem disponíveis. Na prática, a coleta usa o apkeep, uma ferramenta aberta da EFF, com uma conta Google criada só para a pesquisa e acesso a partir do Brasil. Para cada aplicativo, registro o hash SHA-256 do arquivo, a versão, a data e, se o download falhar, o motivo; a falha também vira dado. Quando o app vem em pacotes divididos, guardo o APK base, que é onde está o código. Antes do corpus inteiro, testo a coleta em cinco aplicativos.
+
+## Slide 12. Piloto dos detectores (55 s)
 
 No piloto, utilizei 20 pacotes arquivados no AndroZoo e três detectores. O detector A buscou assinaturas de código na base do Exodus; B procurou assinaturas de rede em textos do pacote usando a mesma base; C utilizou assinaturas da Disconnect sobre os mesmos textos. As proporções de pacotes com detecção foram 75%, 95% e 80%, respectivamente. O kappa de Fleiss foi 0,52. Conferi as detecções uma a uma, olhando a classe ou o domínio que gerou cada uma, e marquei 88 das 123 do B como possíveis falsos positivos, quase todas por domínios genéricos do Google ou do Facebook. Sem elas, o kappa sobe para 0,69, mas isso é só uma análise de sensibilidade: não existe uma referência independente que diga a resposta certa.
 
 > **Lembrete, não precisa falar.** A, Exodus por código: usa a base do Exodus Privacy e procura, nos nomes das classes do código do app (o arquivo DEX), o pacote de cada SDK conhecido, como com.google.firebase.analytics. Se acha, o código do SDK está dentro do APK. B, Exodus por domínio: mesma base do Exodus, mas procura os endereços de internet dos rastreadores, como google-analytics.com, escritos nos textos do APK. Não é tráfego, é texto dentro do pacote; por isso um link para maps.google.com bastou para apontar Google Ads. C, Disconnect por domínio: mesmo método do B, com outra lista, a da Disconnect, que classifica domínios por finalidade; uso só publicidade, análise de uso e impressão digital. A contra B mostra o efeito do método (mesma base); B contra C mostra o efeito da base (mesmo método).
-
-## Slide 12. Fonte dos APKs (70 s)
-
-Uma limitação prática apareceu na busca por pacotes. O AndroZoo possuía apenas 92 dos 396 candidatos governamentais da consulta histórica, ou 23,2%; na primeira referência comercial eram 160 de 190, ou 84,2%. Isso indica que depender apenas do acervo acadêmico poderia deixar muitos aplicativos oficiais de fora. Por isso o plano prevê coletar as versões atuais disponibilizadas na Google Play, com registro de hash, data e eventuais falhas. O AndroZoo continua relevante para recuperar versões específicas, medir defasagem e possibilitar reprodutibilidade onde os arquivos estiverem disponíveis. Na prática, a coleta usa o apkeep, uma ferramenta aberta da EFF, com uma conta Google criada só para a pesquisa e acesso a partir do Brasil. Para cada aplicativo, registro o hash SHA-256 do arquivo, a versão, a data e, se o download falhar, o motivo; a falha também vira dado. Quando o app vem em pacotes divididos, guardo o APK base, que é onde está o código. Antes do corpus inteiro, testo a coleta em cinco aplicativos.
 
 ## Slide 13. Revisão sistemática (85 s)
 
@@ -66,7 +66,11 @@ Entre as limitações, destaco que uma assinatura de código não prova execuç�
 
 Para concluir, o Capstone I apresenta um problema delimitado, um desenho metodológico e dados preparatórios suficientes para demonstrar viabilidade. O foco não é comparar o governo ao mercado, mas verificar se aquilo que os aplicativos públicos declaram sobre tratamento de dados é compatível com os componentes identificados e, onde houver observação dinâmica, com os fluxos realmente transmitidos. Essa distinção é fundamental para produzir resultados defensáveis sobre privacidade, transparência e dependência de fornecedores. Obrigado. Estou à disposição para as perguntas.
 
-## Slide 16. Encerramento
+## Slide 16. Referências (5 s)
+
+Não é para ler. Depois do obrigado da conclusão, avance para este slide e deixe-o na tela por alguns segundos, ou durante o começo das perguntas. São as obras citadas nos slides e na fala, no mesmo padrão ABNT da lista de referências do texto.
+
+## Slide 17. Encerramento
 
 Slide institucional do template, sem fala. Deixe na tela durante as perguntas.
 
@@ -132,11 +136,12 @@ Sim. Usei ChatGPT e Claude como apoio na elaboração e depuração dos scripts 
 
 | Slide | Onde está no projeto |
 |---|---|
-| 2 | Agenda: a ordem dos capítulos 1 a 3 |
-| 3 a 5 | Seções 1 e 2; Binns et al. (2018); Kollnig et al. (2021a, 2021b); Samarasinghe et al. (2022) |
-| 6 e 7 | Seções 1.1 a 1.4 (problema, objetivos e hipóteses) |
-| 8 | Seções 3.1 a 3.4 |
-| 9 a 12 | Seção 3.5 |
+| 2 | Agenda: os capítulos 1 a 3, a conclusão e as referências, como no sumário |
+| 3 a 5 | Capítulo 1, Introdução: abertura, 1.1 a 1.5 (problema, objetivos, hipóteses e justificativa) |
+| 6 e 7 | Capítulo 2, Referencial teórico: Binns et al. (2018b), Kollnig et al. (2021a) e Samarasinghe et al. (2022); lacuna no fim da Seção 2.7 |
+| 8 e 9 | Capítulo 3: abertura e Seções 3.1 a 3.4 |
+| 10 a 12 | Seção 3.5 (anúncios declarados, fonte dos pacotes e piloto dos detectores) |
 | 13 | Seção 3.6, Figura 1 e protocolo da revisão (strings) |
 | 14 | Seções 3.8, 3.11 e 3.12 |
-| 16 | Encerramento do template, sem conteúdo |
+| 16 | Referências do texto: as 11 obras citadas nos slides e na fala |
+| 17 | Encerramento do template, sem conteúdo |

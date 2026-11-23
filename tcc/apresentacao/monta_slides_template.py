@@ -51,6 +51,12 @@ troca(3, "Binns e colaboradores examinaram aproximadamente 959 mil aplicativos e
       "Binns e colaboradores baixaram cerca de 959 mil aplicativos e procuraram, no código, referências a rastreadores, sem executar os apps; acharam rastreamento na maioria, concentrado em poucas empresas. Kollnig e colegas compararam cerca de um milhão de aplicativos de 2017 com um milhão de 2020, antes e depois do GDPR, e viram pouca mudança, sem que essa comparação prove, sozinha, o efeito da lei. Samarasinghe e colaboradores acharam 1.166 aplicativos de governo de 71 países pelos links da Google Play nos sites oficiais e examinaram os SDKs e os dados enviados:")
 troca(12, "A revisão sistemática seguiu o protocolo de Kitchenham e o relato PRISMA 2020.",
       "A revisão sistemática seguiu o guia de Kitchenham: antes de buscar, escrevi um protocolo com as perguntas, as bases, as strings e os critérios de seleção. O fluxo é relatado no modelo PRISMA 2020, que mostra quantos registros entraram e saíram em cada etapa.")
+# a apresentação segue a ordem do texto: introdução, referencial teórico, procedimentos metodológicos
+notas[1] = ["Vou seguir a mesma ordem do texto do TCC. Na introdução, a motivação, a pergunta, os objetivos e as hipóteses. No referencial teórico, os estudos que servem de base e a lacuna que eles deixam. Nos procedimentos metodológicos, o método, o corpus, os dados preparatórios sobre anúncios, fonte dos pacotes e piloto dos detectores, a revisão sistemática e as limitações com os próximos passos. Fecho com a conclusão e as referências."]
+troca(3, "A literatura oferece três pontos de partida.", "No referencial teórico, a literatura oferece três pontos de partida.")
+troca(4, "A contribuição esperada tem três partes.",
+      "Nenhum dos estudos da revisão mede os SDKs no conjunto dos aplicativos de governo brasileiros confrontando o que cada um declara; essa é a lacuna. A contribuição esperada tem três partes.")
+troca(7, "O método é quantitativo e observacional.", "Nos procedimentos metodológicos, o estudo é quantitativo e observacional.")
 
 
 def nova(fundo):
@@ -151,21 +157,23 @@ notas_em(s, 0)
 # ---------------------------------------------------------------- 2 agenda (fundo 9)
 s = nova(9)
 texto(s, 0.79, 2.55, 3.4, 0.9, [P("AGENDA", 44, True, GREY)])
-texto(s, 0.79, 3.45, 3.4, 1.2, [P("O que será apresentado", 26, False, GREY)])
-itens = [("O PROBLEMA", ["Por que olhar os apps públicos", "O que a literatura já mostrou", "Lacuna e contribuição", "Pergunta, objetivos e hipóteses"]),
-         ("O MÉTODO E O QUE JÁ FOI FEITO", ["Etapas, pacotes e detectores", "Corpus, anúncios, piloto e fonte dos APKs", "Onde e como a literatura foi buscada", "Limitações, próximos passos e conclusão"])]
-y = 0.75
-n = 1
-for cab, lista in itens:
-    texto(s, 6.0, y, 6.4, 0.4, [P(cab, 16, True, MID)])
-    y += 0.47
+texto(s, 0.79, 3.45, 3.4, 1.2, [P("Na ordem do TCC", 26, False, GREY)])
+# um bloco por capítulo do texto; conclusão e referências sem número, como no sumário
+caps = [("1", "INTRODUÇÃO", ["Motivação", "Pergunta, objetivos e hipóteses"]),
+        ("2", "REFERENCIAL TEÓRICO", ["Estudos de base", "Lacuna e contribuição"]),
+        ("3", "PROCEDIMENTOS METODOLÓGICOS", ["Método e corpus", "Anúncios, fonte dos APKs e piloto", "Revisão sistemática", "Limitações e próximos passos"]),
+        ("", "CONCLUSÃO E REFERÊNCIAS", [])]
+y = 0.62
+for num, cab, lista in caps:
+    forma(s, 6.0, y, 0.46, 0.46, NAVY if num else MID, MSO_SHAPE.OVAL)
+    if num:
+        texto(s, 6.0, y, 0.46, 0.46, [P(num, 17, True, WHITE, "c")], anchor="m")
+    texto(s, 6.65, y, 5.9, 0.46, [P(cab, 18, True, NAVY if num else MID)], anchor="m")
+    y += 0.52
     for it in lista:
-        forma(s, 6.0, y + 0.04, 0.44, 0.44, NAVY if n <= 4 else MID, MSO_SHAPE.OVAL)
-        texto(s, 6.0, y + 0.04, 0.44, 0.44, [P(str(n), 16, True, WHITE, "c")], anchor="m")
-        texto(s, 6.65, y, 5.8, 0.52, [P(it, 19, False, DARK)], anchor="m")
-        y += 0.56
-        n += 1
-    y += 0.22
+        texto(s, 6.65, y, 5.9, 0.38, [P(it, 17, False, DARK)], anchor="m")
+        y += 0.38
+    y += 0.16
 notas_em(s, 1)
 
 # ---------------------------------------------------------------- 3 motivação + fluxo (fundo 6)
@@ -387,10 +395,45 @@ notas_em(s, 14)
 s = nova(14)
 s.notes_slide.notes_text_frame.text = "Slide de encerramento do template. Pode ficar na tela durante as perguntas."
 
+# ---------------------------------------------------------------- referências (fundo 4: branco)
+# obras citadas nos slides e na fala, no mesmo formato ABNT da lista do texto (abntex2-alf)
+REFS = [
+    ("ALLIX, K. et al. AndroZoo: collecting millions of Android apps for the research community. In: ", "Proceedings of the 13th International Conference on Mining Software Repositories", ". New York: ACM, 2016. p. 468–471. DOI: 10.1145/2901739.2903508."),
+    ("BINNS, R. et al. Third party tracking in the mobile ecosystem. In: ", "Proceedings of the 10th ACM Conference on Web Science", ". New York: ACM, 2018. p. 23–31. DOI: 10.1145/3201064.3201089."),
+    ("BRASIL. ", "Lei nº 13.709, de 14 de agosto de 2018: Lei Geral de Proteção de Dados Pessoais (LGPD)", ". 2018. Diário Oficial da União: seção 1, Brasília, DF, 15 ago. 2018. Disponível em: https://www2.camara.leg.br/legin/fed/lei/2018/lei-13709-14-agosto-2018-787077-normaatualizada-pl.html. Acesso em: 13 nov. 2026."),
+    ("DISCONNECT. ", "Disconnect tracking protection", ". 2026. Lista de serviços de rastreamento, licença CC BY-NC-SA 4.0. Disponível em: https://github.com/disconnectme/disconnect-tracking-protection. Acesso em: 20 out. 2026."),
+    ("ELECTRONIC FRONTIER FOUNDATION. ", "apkeep: a command-line tool for downloading APK files from various sources", ". 2026. Versão 1.1.0. Disponível em: https://github.com/EFForg/apkeep. Acesso em: 23 nov. 2026."),
+    ("EXODUS PRIVACY. ", "εxodus: trackers", ". 2026. Base de assinaturas de rastreadores. Disponível em: https://reports.exodus-privacy.eu.org/en/trackers/. Acesso em: 28 out. 2026."),
+    ("FLEISS, J. L. Measuring nominal scale agreement among many raters. ", "Psychological Bulletin", ", v. 76, n. 5, p. 378–382, 1971. DOI: 10.1037/h0031619."),
+    ("KITCHENHAM, B.; CHARTERS, S. ", "Guidelines for performing systematic literature reviews in software engineering", ". Keele: Keele University; Durham University, 2007. (Technical Report EBSE-2007-01)."),
+    ("KOLLNIG, K. et al. Before and after GDPR: tracking in mobile apps. ", "Internet Policy Review", ", v. 10, n. 4, 2021. DOI: 10.14763/2021.4.1611."),
+    ("PAGE, M. J. et al. The PRISMA 2020 statement: an updated guideline for reporting systematic reviews. ", "BMJ", ", v. 372, 2021. Art. n71. DOI: 10.1136/bmj.n71."),
+    ("SAMARASINGHE, N. et al. Et tu, Brute? Privacy analysis of government websites and mobile apps. In: ", "Proceedings of the ACM Web Conference 2022", ". New York: ACM, 2022. p. 564–575. DOI: 10.1145/3485447.3512223. Disponível em: https://users.encs.concordia.ca/~mmannan/publications/govt-privacy-WWW2022.pdf. Acesso em: 22 nov. 2026."),
+]
+s = nova(4)
+titulo(s, "REFERÊNCIAS", x=0.9, y=0.45, size=40)
+TAM = 12
+def ref_par(pre, neg, pos):
+    return {"runs": [(pre, TAM, False, DARK), (neg, TAM, True, DARK), (pos, TAM, False, DARK)], "align": "l", "spacing": 1.0, "after": 7}
+CORTE = 5
+texto(s, 0.9, 1.45, 5.65, 5.0, [ref_par(*r) for r in REFS[:CORTE]])
+texto(s, 6.85, 1.45, 5.65, 5.0, [ref_par(*r) for r in REFS[CORTE:]])
+s.notes_slide.notes_text_frame.text = ("Não é para ler. Depois do obrigado da conclusão, avance para este slide e deixe-o na tela por alguns segundos, "
+                                       "ou durante o começo das perguntas. São as obras citadas nos slides e na fala, no mesmo padrão ABNT da lista de referências do texto.")
+
 # remove os 14 slides de exemplo do template
 lst = prs.slides._sldIdLst
 for sid in list(lst)[:14]:
     prs.part.drop_rel(sid.rId)
     lst.remove(sid)
+# ordem do texto do TCC: introdução (motivação, pergunta e objetivos, hipóteses), referencial (literatura, lacuna),
+# procedimentos (método, corpus, anúncios, fonte dos APKs, piloto, revisão, limitações), conclusão, referências, encerramento
+ORDEM = [0, 1, 2, 5, 6, 3, 4, 7, 8, 9, 11, 10, 12, 13, 14, 16, 15]
+ids = list(lst)
+assert len(ids) == len(ORDEM) == 17, len(ids)
+for e in ids:
+    lst.remove(e)
+for i in ORDEM:
+    lst.append(ids[i])
 prs.save(SAIDA)
 print("ok", len(prs.slides), "slides")

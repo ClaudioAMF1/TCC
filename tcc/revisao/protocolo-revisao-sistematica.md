@@ -1,6 +1,6 @@
 # Protocolo da revisão sistemática
 
-**Versão 1.7, 15/11/2026.** Segue as diretrizes de Kitchenham e Charters (2007)
+**Versão 1.12, 21/11/2026.** Segue as diretrizes de Kitchenham e Charters (2007)
 para revisões sistemáticas em engenharia de software, com bola de neve conforme
 Wohlin (2014) e relato do fluxo conforme o PRISMA 2020 (PAGE et al., 2021).
 
@@ -11,13 +11,7 @@ busca, toda alteração entra na Seção 12, com data e motivo, e a versão sobe
 
 ## 1 Contexto e objetivo
 
-O projeto de pesquisa apresenta uma lacuna (Seção 1.3 e referencial teórico) e apoia quatro
-hipóteses em resultados de outros trabalhos. A revisão existe para confirmar ou
-corrigir essa lacuna e para dar a cada hipótese a base de comparação que ela
-precisa: como outros detectam rastreadores (checagem do instrumento), que taxas encontram e em que
-populações (contexto e H2), como confrontam o detectado com o declarado (H1) e o
-que já se sabe de aplicativos de governo (H1 e H2). Ela também fornece os
-critérios jurídicos que o plano prevê para a LGPD.
+O projeto tem como eixo a correspondência entre os SDKs de rastreamento encontrados em aplicativos governamentais brasileiros e as informações publicadas ao cidadão. A revisão sustenta a hipótese central H1 (declarações), a hipótese secundária H2 (dados sensíveis) e a checagem dos detectores: identifica métodos de medição, pesquisas sobre declarações de privacidade e evidências disponíveis sobre aplicativos do poder público. A comparação comercial permanece como contexto, sem teste próprio, e a LGPD fornece os critérios jurídicos da discussão.
 
 **Busca exploratória.** Antes deste protocolo, uma busca exploratória achou
 Samarasinghe et al. (2022), que analisaram 1.166 aplicativos Android de governo
@@ -34,7 +28,7 @@ a busca não pode se limitar aos trabalhos já conhecidos.
 |---|---|---|---|
 | QR1 | Como os estudos detectam SDKs de rastreamento e bibliotecas de terceiros em aplicativos Android, e como verificam a validade dessas detecções (verdade de referência, conferência manual, concordância entre ferramentas)? | Checagem do instrumento | S1 |
 | QR2 | Que proporção de aplicativos com ao menos um rastreador os estudos reportam, em que populações, com que fonte de pacotes e contra que linha de base? | Contexto; H2 | S2 |
-| QR3 | Como os estudos confrontam os SDKs ou os fluxos de dados detectados com a política de privacidade ou com os rótulos de privacidade da loja, e que taxas de inconsistência encontram? | H1 | S3 |
+| QR3 | Como os estudos confrontam os SDKs ou os fluxos de dados detectados com a política de privacidade ou com os rótulos de privacidade da loja, e que taxas de inconsistência encontram? | H1 (foco) | S3 |
 | QR4 | Que estudos examinam rastreamento por terceiros ou privacidade em aplicativos publicados por governos, inclusive os de enfrentamento da COVID-19, e o que encontram? | H1, H2, lacuna | S4a, S4b |
 | QR5 | Que trabalhos tratam do rastreamento ou da privacidade em aplicativos no Brasil ou à luz da LGPD, ou da transferência internacional de dados coletados por aplicativos? | Discussão jurídica; critérios dos Arts. 7º, 11 e 33 | S5a, S5b |
 
@@ -44,7 +38,7 @@ a busca não pode se limitar aos trabalhos já conhecidos.
 |---|---|
 | População | Aplicativos móveis, com prioridade para Android |
 | Intervenção | Detecção ou medida de rastreamento por terceiros: SDKs, bibliotecas, domínios, fluxos de dados |
-| Comparação | Entre populações (governo e comercial, categorias), entre ferramentas, entre o declarado e o detectado |
+| Comparação | Entre o declarado e o detectado; entre aplicativos governamentais com e sem dados sensíveis; entre ferramentas; a referência comercial é contextual |
 | Resultados | Prevalência; precisão, revocação e concordância dos detectores; taxa de inconsistência; destinos e jurisdição |
 | Contexto | Estudos publicados de 2015 a 2026, de qualquer país; governo e Brasil com destaque |
 
@@ -467,7 +461,8 @@ Para a entrega do projeto em 03/12, a síntese usa as 71 propostas de inclusão 
 | 21/11/2026 | 1.8 | Conferência pelo autor de 18 das 79 decisões da F2 (12 I e 6 E), com leitura integral e QA1–QA8; Seção 11 atualizada | Registrar a validação feita e separar as 61 decisões ainda não conferidas |
 | 21/11/2026 | 1.9 | Hipóteses renumeradas após a mudança de foco sugerida pelo orientador: a principal (H1) passa a ser o confronto entre o detectado e o declarado; a comparação com aplicativos comerciais vira contexto; a de dado sensível passa a H2 e a de concordância entre detectores, a H3. Coluna "Serve a" da Seção 2 atualizada | Simplificar o desenho: o poder público responde à LGPD e às próprias declarações, e uma amostra comercial sem viés exigiria trabalho desproporcional |
 | 21/11/2026 | 1.10 | A concordância entre detectores deixa de ser hipótese e passa a checagem do instrumento, por sugestão do orientador; ficam duas hipóteses (H1, declaração; H2, dado sensível) | O foco é a aderência às declarações; a concordância mede o instrumento, e não os aplicativos |
-| 22/11/2026 | 1.11 | Conferência dos números e detalhes de método dos estudos citados no texto (`conferir-estudos-citados.md`); em Samarasinghe et al. (2022), de acesso fechado, o texto passa a usar os números do resumo oficial (37% e 27%) e a descrição pública do método | Pedido do orientador em 21/11: a banca pode perguntar sobre qualquer número citado |
+| 21/11/2026 | 1.11 | Esclareceu-se o recorte entre transparência, prevalência sensível e checagem de detector sem alterar as buscas. | Versão intermediária do texto |
+| 21/11/2026 | 1.12 | Uniformização com a versão de submissão: H1 = declarações; H2 = dados sensíveis; comparação comercial apenas contexto; concordância como verificação sem número de hipótese | Solicitação de alinhamento entre PDF do TCC, roteiro e slides |
 
 ### 12.4 Triagem por título e resumo (F1)
 

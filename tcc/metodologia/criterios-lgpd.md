@@ -40,7 +40,7 @@ Use estes quatro resultados, sem transformá-los em uma nota geral de legalidade
 
 ## Aplicação às hipóteses e aos resultados
 
-**H1.** Conte pares aplicativo–SDK entre os aplicativos com detecção confirmada e política recuperada. Informe o numerador, o denominador e a quantidade de políticas indisponíveis. Publique separadamente a ausência de menção nominal e a ausência de qualquer declaração compatível de terceiro/finalidade. Faça análise de sensibilidade para declarações genéricas. Não inclua política indisponível no numerador de “não declarado”. Uma divergência estática será descrita como divergência documental ou ponto a verificar; a expressão “fluxo não declarado” exige evidência do fluxo.
+**H1.** Conte pares aplicativo–SDK com função documentada, detecção confirmada e política recuperada com informação suficiente para julgar categorias de dados e finalidades. Informe o numerador, o denominador e a quantidade de políticas indisponíveis. Publique separadamente a ausência de menção nominal, que não é omissão por si só, a declaração compatível por categoria e finalidade e as divergências materiais justificadas com evidência. Faça análise de sensibilidade para declarações genéricas. Não inclua política indisponível no numerador de “não declarado”. Uma divergência estática será descrita como divergência documental ou ponto a verificar; a expressão “fluxo não declarado” exige evidência do fluxo.
 
 **H2.** A classificação do aplicativo como sensível usa a funcionalidade que trata saúde ou biometria do usuário. Para discutir um envio específico, reavalie a natureza do dado observado. O fato de o aplicativo agendar consultas não prova que o SDK receba o conteúdo da consulta.
 

@@ -47,6 +47,8 @@ troca(10, "Uma adjudicação interna considerou 88 de 123 detecções do B poten
       "Conferi as detecções uma a uma, olhando a classe ou o domínio que gerou cada uma, e marquei 88 das 123 do B como possíveis falsos positivos, quase todas por domínios genéricos do Google ou do Facebook. Sem elas, o kappa sobe para 0,69, mas isso é só uma análise de sensibilidade: não existe uma referência independente que diga a resposta certa.")
 troca(11, "medir defasagem e possibilitar reprodutibilidade onde os arquivos estiverem disponíveis.",
       "medir defasagem e possibilitar reprodutibilidade onde os arquivos estiverem disponíveis. Na prática, a coleta usa o apkeep, uma ferramenta aberta da EFF, com uma conta Google criada só para a pesquisa e acesso a partir do Brasil. Para cada aplicativo, registro o hash SHA-256 do arquivo, a versão, a data e, se o download falhar, o motivo; a falha também vira dado. Quando o app vem em pacotes divididos, guardo o APK base, que é onde está o código. Antes do corpus inteiro, testo a coleta em cinco aplicativos.")
+troca(3, "Binns e colaboradores examinaram aproximadamente 959 mil aplicativos e encontraram referências a rastreadores distribuídas de maneira concentrada em poucas empresas; a medição é principalmente estática. Kollnig e outros autores discutiram o cenário anterior e posterior ao GDPR e os desafios de consentimento, sem que uma comparação temporal prove, isoladamente, o efeito de uma lei. Samarasinghe e colaboradores analisaram 1.166 aplicativos de governo de 71 países:",
+      "Binns e colaboradores baixaram cerca de 959 mil aplicativos e procuraram, no código, referências a rastreadores, sem executar os apps; acharam rastreamento na maioria, concentrado em poucas empresas. Kollnig e colegas compararam cerca de um milhão de aplicativos de 2017 com um milhão de 2020, antes e depois do GDPR, e viram pouca mudança, sem que essa comparação prove, sozinha, o efeito da lei. Samarasinghe e colaboradores acharam 1.166 aplicativos de governo de 71 países pelos links da Google Play nos sites oficiais e examinaram os SDKs e os dados enviados:")
 troca(12, "A revisão sistemática seguiu o protocolo de Kitchenham e o relato PRISMA 2020.",
       "A revisão sistemática seguiu o guia de Kitchenham: antes de buscar, escrevi um protocolo com as perguntas, as bases, as strings e os critérios de seleção. O fluxo é relatado no modelo PRISMA 2020, que mostra quantos registros entraram e saíram em cada etapa.")
 
@@ -187,14 +189,23 @@ notas_em(s, 2)
 
 # ---------------------------------------------------------------- 4 literatura (fundo 5: três colunas)
 s = nova(5)
-cols = [(0.0, "Binns et al. (2018)", "959 mil", "apps da Google Play", "A maioria tem rastreamento de terceiros, concentrado em poucos fornecedores.", NAVY, DARK),
-        (4.44, "Kollnig et al. (2021)", "GDPR", "antes e depois da lei", "A presença de rastreadores mudou pouco; o desenho não prova efeito causal da lei.", WHITE, WHITE),
-        (8.89, "Samarasinghe et al. (2022)", "1.166", "apps de governo, 71 países", "37% com rastreadores do Google; 27% enviavam dados sensíveis a terceiros ou sem criptografia.", WHITE, WHITE)]
-for x0, autor, num, leg, txt, c1, c2 in cols:
-    texto(s, x0 + 0.5, 1.0, 3.45, 0.45, [P(autor, 20, True, c1, "c")])
-    texto(s, x0 + 0.5, 1.75, 3.45, 1.0, [P(num, 54, True, c1, "c")], anchor="m")
-    texto(s, x0 + 0.5, 2.8, 3.45, 0.45, [P(leg, 18, False, c2, "c")])
-    texto(s, x0 + 0.55, 3.65, 3.35, 2.2, [P(txt, 18, False, c2, "c", spacing=1.05)])
+cols = [(0.0, "Binns et al. (2018)", "959 mil", "apps da Google Play",
+         "Baixaram os APKs da Google Play dos EUA e do Reino Unido e procuraram, no código, referências a rastreadores, sem executar os apps.",
+         "A maioria tem rastreamento de terceiros, concentrado em poucos fornecedores.", NAVY, DARK, NAVY),
+        (4.44, "Kollnig et al. (2021)", "GDPR", "antes e depois da lei",
+         "Compararam cerca de 1 milhão de apps de 2017 com 1 milhão de 2020, procurando rastreadores no código.",
+         "A presença de rastreadores mudou pouco; o desenho não prova efeito causal da lei.", WHITE, WHITE, LIGHT),
+        (8.89, "Samarasinghe et al. (2022)", "1.166", "apps de governo, 71 países",
+         "Acharam os apps pelos links da Google Play nos sites de governo e examinaram SDKs e dados enviados.",
+         "37% com rastreadores do Google; 27% enviavam dados sensíveis a terceiros ou sem criptografia.", WHITE, WHITE, PALE)]
+for x0, autor, num, leg, como, achado, c1, c2, c3 in cols:
+    texto(s, x0 + 0.5, 0.7, 3.45, 0.45, [P(autor, 20, True, c1, "c")])
+    texto(s, x0 + 0.5, 1.2, 3.45, 0.95, [P(num, 50, True, c1, "c")], anchor="m")
+    texto(s, x0 + 0.5, 2.15, 3.45, 0.45, [P(leg, 16, False, c2, "c")])
+    texto(s, x0 + 0.5, 2.85, 3.45, 0.32, [P("COMO FIZERAM", 13, True, c3, "c")])
+    texto(s, x0 + 0.55, 3.2, 3.35, 1.3, [P(como, 15, False, c2, "c", spacing=1.05)])
+    texto(s, x0 + 0.5, 4.6, 3.45, 0.32, [P("O QUE ACHARAM", 13, True, c3, "c")])
+    texto(s, x0 + 0.55, 4.95, 3.35, 1.45, [P(achado, 16, False, c2, "c", spacing=1.05)])
 notas_em(s, 3)
 
 # ---------------------------------------------------------------- 5 lacuna (fundo 7: três abas)

@@ -16,9 +16,9 @@ Vou apresentar em duas partes. Primeiro, o problema: por que olhar os aplicativo
 
 Boa parte dos serviços públicos passou para o celular. Aplicativos como Meu INSS e Meu SUS Digital são usados por milhões de pessoas e frequentemente constituem a principal porta de entrada para esses serviços. Um aplicativo Android não contém apenas código desenvolvido pelo órgão responsável: ele pode integrar SDKs de mapas, notificações, análise de uso e outros serviços. Alguns componentes podem coletar identificadores ou informações de utilização. Essa possibilidade exige transparência, especialmente no setor público, onde a escolha de prestador pelo cidadão costuma ser limitada. Ressalto que encontrar uma biblioteca instalada não equivale a observar transmissão de dados.
 
-## Slide 4. O que a literatura já demonstrou (45 s)
+## Slide 4. O que a literatura já demonstrou (55 s)
 
-A literatura oferece três pontos de partida. Binns e colaboradores examinaram aproximadamente 959 mil aplicativos e encontraram referências a rastreadores distribuídas de maneira concentrada em poucas empresas; a medição é principalmente estática. Kollnig e outros autores discutiram o cenário anterior e posterior ao GDPR e os desafios de consentimento, sem que uma comparação temporal prove, isoladamente, o efeito de uma lei. Samarasinghe e colaboradores analisaram 1.166 aplicativos de governo de 71 países: 37% tinham rastreadores do Google, e 27% enviavam informações sensíveis, como identificadores, a terceiros ou sem criptografia. Esses resultados justificam investigar o contexto brasileiro com atenção às declarações de privacidade.
+A literatura oferece três pontos de partida. Binns e colaboradores baixaram cerca de 959 mil aplicativos e procuraram, no código, referências a rastreadores, sem executar os apps; acharam rastreamento na maioria, concentrado em poucas empresas. Kollnig e colegas compararam cerca de um milhão de aplicativos de 2017 com um milhão de 2020, antes e depois do GDPR, e viram pouca mudança, sem que essa comparação prove, sozinha, o efeito da lei. Samarasinghe e colaboradores acharam 1.166 aplicativos de governo de 71 países pelos links da Google Play nos sites oficiais e examinaram os SDKs e os dados enviados: 37% tinham rastreadores do Google, e 27% enviavam informações sensíveis, como identificadores, a terceiros ou sem criptografia. Esses resultados justificam investigar o contexto brasileiro com atenção às declarações de privacidade.
 
 ## Slide 5. Lacuna e contribuição (40 s)
 
@@ -76,6 +76,9 @@ Slide institucional do template, sem fala. Deixe na tela durante as perguntas.
 
 **Como você decide que um aplicativo é oficial? Por que 20 saíram?**
 Pelo nome jurídico do publicador, que a loja mostra em "Sobre o desenvolvedor". Treze eram empresas privadas com nome de serviço público e sete eram contas de pessoa física. A classificação será conferida antes da coleta principal.
+
+**Como Binns, Kollnig e Samarasinghe fizeram as pesquisas?**
+Binns e colegas baixaram cerca de 959 mil APKs da Google Play dos EUA e do Reino Unido e procuraram referências a rastreadores no código, sem executar os apps. Kollnig e colegas compararam cerca de um milhão de apps de 2017 com um milhão de 2020, antes e depois do GDPR, procurando rastreadores no código. Samarasinghe e colegas acharam os apps de governo pelos links da Google Play nos sites oficiais e examinaram os SDKs e os dados enviados. Os dois primeiros mostram presença de código; o terceiro também olha o envio de dados. O meu trabalho mede a presença e a confronta com o que cada app declara.
 
 **O que há de novo em relação a Samarasinghe et al.?**
 O caso brasileiro separado por esfera e por dado sensível, o confronto entre o que cada aplicativo declara e o que ele embarca e envia, e a medida de concordância entre detectores sobre as mesmas versões dos pacotes.

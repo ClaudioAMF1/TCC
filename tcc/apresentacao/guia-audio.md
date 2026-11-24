@@ -58,13 +58,13 @@ Slide cinco. Hipóteses.
 
 Na tela: quatro blocos. À esquerda, a H1, principal, e a H2, secundária. À direita, a referência comercial, que é só contexto, e os detectores, que são uma checagem do instrumento, e não uma hipótese.
 
-A fala: Tenho duas hipóteses. A H1 é a principal: pelo menos 1 em cada 10 pares aplicativo–SDK não tem declaração compatível. Par aplicativo–SDK é cada SDK encontrado em cada aplicativo. E a declaração não precisa citar o nome do SDK: basta dizer que tipo de dado é coletado e para quê. Esse limite de 10% é um critério do estudo, não uma tolerância da LGPD. A H2 é secundária. Seria de esperar que os aplicativos com dados sensíveis, como os de saúde, tivessem menos SDKs; a minha hipótese é que não têm menos. Os aplicativos comerciais ficam só como contexto, e a concordância entre os detectores serve para checar a ferramenta; não é uma hipótese.
+A fala: Tenho duas hipóteses. A H1 é a principal. Dentro de cada aplicativo, eu olho cada SDK encontrado; cada combinação de um aplicativo com um SDK é um par. Para cada par, verifico se o aplicativo avisa o que aquele SDK faz, na política de privacidade ou na seção “Segurança dos dados”. Não precisa citar o nome do SDK: basta dizer que tipo de dado é coletado e para quê. Por exemplo: se um aplicativo tem um SDK de estatísticas de uso e não avisa em lugar nenhum que coleta dados de uso, esse par fica sem declaração. A H1 diz que isso acontece em pelo menos 1 de cada 10 pares. Esse 10% é um critério que eu defini para o estudo, não um limite da LGPD. A H2 é secundária. Seria de esperar que os aplicativos com dados sensíveis, como os de saúde, tivessem menos SDKs; a minha hipótese é que não têm menos. Os aplicativos comerciais ficam só como contexto, e a concordância entre os detectores serve para checar a ferramenta; não é uma hipótese.
 
-Se perguntarem como a H1 é testada: você calcula a proporção de pares sem declaração compatível, com intervalo de confiança de 95%, agrupando por aplicativo, porque os SDKs do mesmo aplicativo dependem da mesma política. A H1 é rejeitada se o limite superior do intervalo ficar abaixo de 10%. A H2 só é rejeitada se os dados mostrarem claramente que os aplicativos sensíveis têm menos SDKs.
+Se perguntarem como a H1 é testada: você calcula a porcentagem de pares sem declaração, com intervalo de confiança de 95%. Os pares do mesmo aplicativo usam a mesma política, então o intervalo é calculado agrupando por aplicativo. A H1 só é rejeitada se até o limite de cima do intervalo ficar abaixo de 10%. A H2 só é rejeitada se os dados mostrarem claramente que os aplicativos sensíveis têm menos SDKs.
 
 Se perguntarem por que 10%: é um critério do estudo, e não da LGPD. Andow e colegas acharam até 42,4% de aplicativos com declaração incorreta ou omitida, mas em outra população e contando por aplicativo. Isso só mostra que o problema é comum.
 
-Para lembrar a frase exata da H1: pelo menos um em cada dez pares aplicativo–SDK sem declaração compatível. É um limiar do estudo, não da lei.
+Para lembrar a H1 numa frase: em pelo menos um de cada dez pares, o aplicativo não avisa o que o SDK faz. É um critério do estudo, não da lei.
 
 ## Slide 6. Literatura
 

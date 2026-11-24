@@ -1,36 +1,26 @@
 # Roteiro da simulação de defesa
 
-Versão de 23/11/2026, igual às notas da apresentação `apresentacao_TCC1_final.pptx` (no repositório, `simulacao-defesa-rascunho.pptx`), com 17 slides no padrão do template do IDP, na mesma ordem do texto do TCC (introdução, referencial teórico, procedimentos metodológicos, conclusão e referências). São 15 minutos de apresentação e 10 de perguntas. As falas somam cerca de 12 minutos, num ritmo calmo, o que deixa folga para pausas. Ensaie com cronômetro pelo menos três vezes e grave uma delas.
+Versão de 24/11/2026, igual às notas do seu arquivo `apresentacao_TCC1.pptx`, editado no Google Slides (no repositório, `simulacao-defesa-rascunho.pptx`), com 17 slides no padrão do template do IDP, na mesma ordem do texto do TCC (introdução, referencial teórico, procedimentos metodológicos, conclusão e referências). São 15 minutos de apresentação e 10 de perguntas. As falas somam cerca de 12 minutos, num ritmo calmo, o que deixa folga para pausas. Ensaie com cronômetro pelo menos três vezes e grave uma delas.
 
-Não é para decorar palavra por palavra. Cada slide começa com os tópicos, para olhar e lembrar; a fala vem logo abaixo, em linguagem simples. Fale com as suas palavras e mantenha os números exatos.
+Não é para decorar palavra por palavra. A fala de cada slide vem primeiro; os lembretes e as explicações para consulta vêm em destaque logo abaixo. Fale com as suas palavras e mantenha os números exatos.
 
-## Slide 1. Abertura (35 s)
+## Slide 1. Abertura (25 s)
 
-*Tópicos:* nome e orientador · título · código de outras empresas nos apps do governo · o governo avisa? · agora: problema, método e teste
-
-Bom dia. Meu nome é Claudio, e meu orientador é o professor Eduardo Izycki. Meu projeto se chama “Quem mais está dentro do aplicativo?”. Muitos aplicativos do governo trazem, dentro deles, código de outras empresas, que pode coletar dados de quem usa. Eu quero descobrir que código é esse e se o governo avisa o cidadão sobre isso. Neste semestre, apresento o problema, o método e um primeiro teste; a coleta completa fica para o Capstone II.
+Bom dia. Meu nome é Claudio, e meu orientador é o professor Eduardo. Meu projeto se chama “Quem mais está dentro do aplicativo?”. Muitos aplicativos do governo trazem, dentro deles, código de outras empresas, que pode coletar dados de quem usa. Eu quero descobrir que código é esse e se o governo avisa o cidadão sobre isso.
 
 ## Slide 2. Agenda (25 s)
-
-*Tópicos:* mesma ordem do TCC · 1 introdução · 2 referencial · 3 procedimentos · 4 conclusão e referências
 
 Vou seguir a mesma ordem do texto do TCC. Primeiro, a introdução: por que o tema importa, a pergunta, os objetivos e as hipóteses. Depois, o referencial teórico: os estudos em que me baseio e o que ainda falta neles. Em seguida, os procedimentos metodológicos: como vou fazer a pesquisa e o que já testei. No fim, a conclusão e as referências.
 
 ## Slide 3. Motivação (40 s)
 
-*Tópicos:* Meu INSS e Meu SUS Digital > 50 milhões · SDKs de outras empresas: mapas, notificações, estatísticas · podem coletar dados · cidadão não troca de app · SDK no app ≠ dado enviado
+Hoje muita coisa do governo se resolve pelo celular. O Meu INSS e o Meu SUS Digital, por exemplo, passam de 50 milhões de instalações cada. Só que esses aplicativos não têm só o código do órgão: eles trazem pedaços prontos de outras empresas, os SDKs, para coisas como mapas, notificações e estatísticas de uso. Alguns desses SDKs podem coletar dados de quem usa. No governo isso pesa mais, porque o cidadão não tem como trocar de aplicativo. e um detalhe importante: o SDK estar dentro do aplicativo não prova que ele enviou dados.
 
-Hoje muita coisa do governo se resolve pelo celular. O Meu INSS e o Meu SUS Digital, por exemplo, passam de 50 milhões de instalações cada. Só que esses aplicativos não têm só o código do órgão: eles trazem pedaços prontos de outras empresas, os SDKs, para coisas como mapas, notificações e estatísticas de uso. Alguns desses SDKs podem coletar dados de quem usa. No governo isso pesa mais, porque o cidadão não tem como trocar de aplicativo. Mas uma ressalva: o SDK estar dentro do aplicativo não prova que ele enviou dados.
+## Slide 4. Pergunta e objetivos (35 s)
 
-## Slide 4. Pergunta e objetivos (40 s)
-
-*Tópicos:* pergunta: em que medida… sem declarar? · objetivo: medir a proporção, à luz da LGPD · 5 passos · código e tráfego separados
-
-A minha pergunta é: em que medida os aplicativos oficiais do governo trazem SDKs de rastreamento e enviam dados a terceiros sem avisar isso na política de privacidade e na seção “Segurança dos dados” da Google Play? O objetivo é medir essa proporção, à luz da LGPD. São cinco passos: conferir quais aplicativos são mesmo oficiais, detectar os SDKs, comparar com o que cada aplicativo declara, observar o tráfego numa parte deles e verificar se os detectores concordam. O que aparece no código e o que aparece no tráfego ficam separados.
+A minha pergunta é: em que medida os aplicativos oficiais do governo trazem SDKs de rastreamento e enviam dados a terceiros sem avisar isso na política de privacidade e na seção “Segurança dos dados” da Google Play? O objetivo é medir essa proporção, à luz da LGPD. São cinco passos: conferir quais aplicativos são mesmo oficiais, detectar os SDKs, comparar com o que cada aplicativo declara, observar o tráfego numa parte deles e verificar se os detectores concordam.
 
 ## Slide 5. Hipóteses (50 s)
-
-*Tópicos:* H1: 1 em cada 10 pares sem declaração · limiar do estudo, não da lei · H2: sensíveis NÃO têm menos SDKs · comerciais = contexto · detectores = checagem
 
 Tenho duas hipóteses. A H1 é a principal: pelo menos 1 em cada 10 pares aplicativo–SDK não tem declaração compatível. Par aplicativo–SDK é cada SDK encontrado em cada aplicativo. E a declaração não precisa citar o nome do SDK: basta dizer que tipo de dado é coletado e para quê. Esse limite de 10% é um critério do estudo, não uma tolerância da LGPD. A H2 é secundária. Seria de esperar que os aplicativos com dados sensíveis, como os de saúde, tivessem menos SDKs; a minha hipótese é que não têm menos. Os aplicativos comerciais ficam só como contexto, e a concordância entre os detectores serve para checar a ferramenta; não é uma hipótese.
 
@@ -38,39 +28,27 @@ Tenho duas hipóteses. A H1 é a principal: pelo menos 1 em cada 10 pares aplica
 
 ## Slide 6. O que a literatura já mostrou (55 s)
 
-*Tópicos:* Binns: 959 mil, código, poucas empresas · Kollnig: antes e depois do GDPR, mudou pouco · Samarasinghe: 1.166 apps de governo, 37% e 27%
-
 No referencial teórico, parto de três estudos. Binns e colegas baixaram cerca de 959 mil aplicativos e procuraram rastreadores no código, sem executar os apps: acharam rastreamento na maioria, concentrado em poucas empresas. Kollnig e colegas compararam cerca de um milhão de aplicativos de 2017 com um milhão de 2020, antes e depois do GDPR, o regulamento europeu de proteção de dados, e viram pouca mudança, o que sozinho não prova efeito da lei. Samarasinghe e colegas acharam 1.166 aplicativos de governo de 71 países pelos links nos sites oficiais e examinaram os SDKs e os dados enviados: 37% tinham rastreadores do Google, e 27% enviavam dados sensíveis, como identificadores, a terceiros ou sem criptografia. Ou seja, o problema existe também no governo, e vale olhar o caso brasileiro.
 
 ## Slide 7. Lacuna e contribuição (45 s)
 
-*Tópicos:* lacuna: ninguém mediu o governo brasileiro × declarações · 1 corpus brasileiro · 2 transparência · 3 checagem do método · divergência = indício
-
 O que falta nesses estudos, pelo menos na literatura que examinei até agora: nenhum mede os SDKs no conjunto dos aplicativos do governo brasileiro comparando com o que cada um declara. Essa é a lacuna. A contribuição tem três partes. Primeiro, estudar os aplicativos federais, estaduais e municipais, separando os que tratam dados sensíveis. Segundo, comparar o que os SDKs fazem com o que cada aplicativo declara e, numa parte deles, com o tráfego observado. Terceiro, medir o quanto o resultado muda conforme o detector. E uma divergência não é prova de infração à LGPD; é um indício que merece ser examinado.
 
-## Slide 8. Método (45 s)
+## Slide 8. Método (40 s)
 
-*Tópicos:* quantitativo e observacional · 1 corpus · 2 caracterização · 3 pacotes atuais com hash · 4 detectores · 5 declarado × detectado · 6 análise com IC95%
+Nos procedimentos metodológicos, o estudo é quantitativo e observacional, em seis etapas. primeira: conferir quais aplicativos são oficiais. segunda: separar por esfera de governo e tipo de serviço. terceira: baixar a versão atual de cada aplicativo na Google Play, registrando o hash, que é a impressão digital do arquivo. quarta: rodar os detectores e comparar o que cada um encontra. quinta: comparar o que foi detectado com a política de privacidade e com a declaração na loja. sexta: calcular as proporções com intervalo de confiança e, numa parte dos aplicativos, observar o tráfego de rede.
 
-Nos procedimentos metodológicos, o estudo é quantitativo e observacional, em seis etapas. Um: conferir quais aplicativos são oficiais. Dois: separar por esfera de governo e tipo de serviço. Três: baixar a versão atual de cada aplicativo na Google Play, registrando o hash, que é a impressão digital do arquivo; o AndroZoo serve para reproduzir a análise e ver a diferença entre versões. Quatro: rodar os detectores e comparar o que cada um encontra. Cinco: comparar o que foi detectado com a política de privacidade e com a declaração na loja. Seis: calcular as proporções com intervalo de confiança e, numa parte dos aplicativos, observar o tráfego de rede.
+## Slide 9. Corpus (30 s)
 
-## Slide 9. Corpus (40 s)
-
-*Tópicos:* 396 candidatos → 376 oficiais · 85 / 199 / 92 · 20 saíram: 13 empresas + 7 pessoa física · 100 sensíveis · 108 divergências · ainda preliminar
-
-Na busca, encontrei 396 aplicativos candidatos. Conferindo o nome jurídico de quem publica, 376 ficaram como oficiais: 85 federais, 199 estaduais e 92 municipais. Vinte saíram: 13 eram de empresas privadas usando nome de serviço público e 7 estavam em contas de pessoa física. Cem dos 376 podem tratar dados sensíveis, como saúde ou biometria. A marcação automática de dado sensível, por palavra-chave, não bateu com a conferência em 108 casos, para mais e para menos; por isso a classificação ainda vai ser conferida antes da coleta. Os círculos mostram só a divisão por esfera, não rastreadores.
+Na busca, encontrei 396 aplicativos candidatos. Conferindo o nome jurídico de quem publica, 376 ficaram como oficiais: 85 federais, 199 estaduais e 92 municipais. Vinte saíram: 13 eram de empresas privadas usando nome de serviço público e 7 estavam em contas de pessoa física. Cem dos 376 podem tratar dados sensíveis, como saúde ou biometria. essa é uma classificação preliminar e ainda vai ser conferida antes da coleta.
 
 ## Slide 10. Anúncios (30 s)
 
-*Tópicos:* 0 de 376 do governo declaram anúncios · comerciais: 63 de 190 (33,2%) · é o que o publicador declara · não diz nada sobre SDKs · comerciais = contexto
-
-Um dado que a própria Google Play mostra é se o aplicativo declara exibir anúncios. Nenhum dos 376 aplicativos do governo declara. Entre os comerciais da referência, foram 63 de 190, ou 33,2%. Mas cuidado: isso é o que o publicador declara, e não diz nada sobre os SDKs de análise ou de rastreamento que estão dentro do aplicativo. E os comerciais servem só de contexto, não de grupo de controle.
+Um dado que a própria Google Play mostra é se o aplicativo declara exibir anúncios. Nenhum dos 376 aplicativos do governo declara. Entre os comerciais da referência, foram 63 de 190, ou 33,2%. isso é o que o publicador declara, e não diz nada sobre os SDKs de análise ou de rastreamento que estão dentro do aplicativo. E os comerciais servem só de contexto, não de grupo de controle.
 
 > **Lembrete, não precisa falar.** Os intervalos no slide: com 0 em 376, a proporção real de apps do governo que declaram anúncios fica, com 95% de confiança, entre 0% e 1,0%; nos comerciais, entre 26,9% e 40,1%. Valem só para essa declaração, não para os SDKs.
 
 ## Slide 11. Fonte dos APKs (55 s)
-
-*Tópicos:* AndroZoo: 92 de 396 (23,2%) × 160 de 190 (84,2%) · fonte principal: Google Play atual · apkeep + conta da pesquisa · hash, versão, data, falha · teste com 5 apps
 
 Um problema prático apareceu na hora de buscar os pacotes. O AndroZoo, um acervo acadêmico de aplicativos, tinha só 92 dos 396 do governo, ou 23,2%; dos comerciais, tinha 160 de 190, ou 84,2%. Dependendo só dele, muitos aplicativos do governo ficariam de fora. Por isso a fonte principal vai ser a versão atual da Google Play, que é a que o cidadão instala. O download vai ser feito com o apkeep, uma ferramenta aberta, com uma conta Google criada só para a pesquisa, a partir do Brasil. Para cada aplicativo, registro o hash, a versão, a data e, se falhar, o motivo; a falha também vira dado. O AndroZoo continua útil para reproduzir a análise. Antes do corpus inteiro, testo em cinco aplicativos.
 
@@ -78,31 +56,25 @@ Um problema prático apareceu na hora de buscar os pacotes. O AndroZoo, um acerv
 
 ## Slide 12. Piloto dos detectores (65 s)
 
-*Tópicos:* 20 pacotes, 3 detectores · A 75% · B 95% · C 80% · κ 0,52 · 88 de 123 do B questionadas · 0,69 sem elas · a ferramenta muda o resultado
-
 Fiz um piloto com 20 pacotes do AndroZoo e três detectores. O A procura no código os SDKs da base do Exodus. O B usa a mesma base, mas procura endereços de internet escritos dentro do pacote. O C faz o mesmo que o B, com outra lista, a da Disconnect. Cada um deu uma taxa diferente: 75%, 95% e 80% dos pacotes com pelo menos um rastreador. A concordância entre eles, medida pelo kappa de Fleiss, em que 1 é concordância total, foi 0,52. Conferi as detecções uma a uma e marquei 88 das 123 do B como possíveis falsos positivos, quase todas por endereços genéricos do Google ou do Facebook. Sem elas, o kappa sobe para 0,69, mas é só uma análise de sensibilidade, porque não há uma referência independente com a resposta certa. Conclusão: a ferramenta escolhida muda o resultado, e é por isso que comparar os detectores faz parte do método.
 
-> **Lembrete, não precisa falar.** A contra B mostra o efeito do método (mesma base); B contra C mostra o efeito da base (mesmo método). B não é tráfego, é texto dentro do pacote: um link para maps.google.com bastou para apontar Google Ads. C usa só as categorias publicidade, análise de uso e impressão digital.
+> **Lembrete, não precisa falar.** A contra B mostra o efeito do método (mesma base); B contra C mostra o efeito da base (mesmo método). B não é tráfego, é texto dentro do pacote: um link para maps.google.com bastou para apontar Google Ads. C usa só as categorias publicidade, análise de uso e impressão digital.Exodus Privacy (εxodus): É uma plataforma sem fins lucrativos que analisa aplicativos Android para identificar rastreadores (trackers de anúncios, telemetria e análise) e permissões perigosas embutidas no código, utilizando assinaturas de SDKs de terceiros. Disconnect: É um catálogo estruturado em formato JSON que classifica milhares de domínios da internet que coletam dados dos usuários, dividindo-os em categorias como Advertising (Publicidade), Analytics (Análise), Social (Redes Sociais), Fingerprinting e Cryptomining.
 
-## Slide 13. Revisão sistemática (95 s)
+## Slide 13. Revisão sistemática (80 s)
 
-*Tópicos:* revisão = busca planejada · Kitchenham = como fazer (protocolo antes de buscar) · PRISMA 2020 = como mostrar (fluxograma) · 4 bases, 17 buscas · 3 blocos · 10 de 11 controles · 1.531 → 1.249 → 357 · 18 conferidas
+Agora, como eu busquei a literatura. Fiz uma revisão sistemática, que é uma busca planejada e documentada, para que a escolha dos artigos não dependa de preferência pessoal. Para fazer a revisão, segui o guia de Kitchenham, que é um passo a passo muito usado em computação: antes de buscar, escrevi um protocolo dizendo quais perguntas quero responder, onde vou buscar, com quais palavras e quais estudos entram ou saem. Para mostrar o resultado, uso o PRISMA 2020, que é um padrão de prestação de contas: um fluxograma com quantos estudos entraram e saíram em cada etapa. Fiz 17 buscas, em quatro bases: Scopus, que é a principal, IEEE Xplore e, para trabalhos brasileiros, SBC OpenLib e BDTD. Cada busca combina três ideias: aplicativo de celular, o tema, como rastreador ou política de privacidade, e, quando precisa, o contexto, como governo ou Brasil. Para testar as buscas, separei antes onze estudos que tinham de aparecer: elas acharam os dez que estão no Scopus, e o décimo primeiro não está nessa base. No fim, os 1.531 resultados viraram 1.249 sem repetidos, e 357 passaram para a leitura completa.
 
-Agora, como eu busquei a literatura. Fiz uma revisão sistemática, que é uma busca planejada e documentada, para que a escolha dos artigos não dependa de preferência pessoal. Para fazer a revisão, segui o guia de Kitchenham, que é um passo a passo muito usado em computação: antes de buscar, escrevi um protocolo dizendo quais perguntas quero responder, onde vou buscar, com quais palavras e quais estudos entram ou saem. Para mostrar o resultado, uso o PRISMA 2020, que é um padrão de prestação de contas: um fluxograma com quantos estudos entraram e saíram em cada etapa, que está na Figura 1 do texto. Fiz 17 buscas, em quatro bases: Scopus, que é a principal, IEEE Xplore e, para trabalhos brasileiros, SBC OpenLib e BDTD. Cada busca combina três ideias: aplicativo de celular, o tema, como rastreador ou política de privacidade, e, quando precisa, o contexto, como governo ou Brasil. Para testar as buscas, separei antes onze estudos que tinham de aparecer: elas acharam os dez que estão no Scopus, e o décimo primeiro não está nessa base. No fim, os 1.531 resultados viraram 1.249 sem repetidos, e 357 passaram para a leitura completa. Essa leitura está em andamento: já conferi 18 decisões lendo o texto inteiro, e o restante fica para o início do Capstone II, como combinado com o orientador.
+> **Para consulta, não precisa falar.** Guia de Kitchenham: Ele divide a pesquisa em três etapas principais: Planejamento, onde se definem as questões de pesquisa e o protocolo com critérios de inclusão e exclusão; Condução, onde os artigos são buscados em bases científicas, filtrados, avaliados quanto à qualidade e têm seus dados extraídos; e Relatório, onde os resultados são sintetizados e apresentados para responder às perguntas iniciais.
 
-> **Lembrete, não precisa falar.** Se perguntarem a diferença: Kitchenham diz como fazer a revisão; o PRISMA diz como relatar o que foi feito. As buscas foram em 6/11/2026, com trabalhos de 2015 a 2026, em inglês e português. O 11º estudo de controle é Zimmeck et al. (2019), da PoPETs, que o Scopus não indexa: é limite da base, não falha da busca; entra pela bola de neve, que é a busca nas referências dos estudos incluídos. Esse teste se chama padrão quase-ouro (Zhang, Babar e Tell, 2011). Sem o bloco de contexto, “tracker” traz até rastreador de atividade física. Os 278 registros sem decisão e as 61 decisões ainda não conferidas ficam para fevereiro.
+> **Para consulta, não precisa falar.** Fluxo PRISMA: padroniza a visualização e o relato das etapas de identificação, triagem e inclusão de estudos em revisões sistemáticas. O processo divide-se no mapeamento inicial de registros e remoção de duplicatas, na avaliação por títulos, resumos e textos completos, e na consolidação final dos estudos incluídos.
 
 ## Slide 14. Limitações e próximos passos (50 s)
 
-*Tópicos:* SDK no app ≠ envio · só Android e Google Play · políticas não citam SDKs · versões mudam · revisão e classificação em conferência · 03/12 · fev · mar–abr · mai–jun
-
 Sobre as limitações: achar o SDK no código não prova que ele envia dados; o estudo cobre só Android e a Google Play; as políticas costumam falar de tipos de dados, e não do nome de cada SDK; as versões podem mudar entre a coleta e a análise; e a revisão e as classificações ainda estão sendo conferidas. Os próximos passos: até 3 de dezembro, ajustar o texto com o retorno do orientador e desta simulação. Em fevereiro, terminar a revisão e conferir o corpus. Em março e abril, a coleta, a detecção e a comparação com as declarações. Em maio e junho, a análise, a discussão jurídica e a defesa.
 
-## Slide 15. Conclusão (35 s)
+## Slide 15. Conclusão (30 s)
 
-*Tópicos:* problema definido · método viável · resultados preliminares · o que o governo declara bate com o que o app faz? · obrigado
-
-Para concluir: o problema está definido, o método é viável, e os resultados ainda são preliminares. O foco não é comparar o governo com o mercado, mas verificar se o que os aplicativos públicos declaram sobre os dados bate com o que está dentro deles e, onde der para observar, com o que eles realmente enviam. É isso que permite falar com segurança sobre privacidade, transparência e dependência de fornecedores. Obrigado, fico à disposição para as perguntas.
+Para concluir: o problema está definido, o método é viável, e os resultados ainda são preliminares. O foco não é comparar o governo com o mercado, mas verificar se o que os aplicativos públicos declaram sobre os dados bate com o que está dentro deles e, onde der para observar, com o que eles realmente enviam. É isso que permite falar com segurança sobre privacidade, transparência e dependência de fornecedores. Obrigado.
 
 ## Slide 16. Referências (10 s)
 

@@ -2,7 +2,7 @@
 
 A entrega do Capstone I é um **projeto de pesquisa**: introdução, referencial teórico e procedimentos metodológicos, com recursos e cronograma. A coleta principal e os testes das hipóteses ficam para o Capstone II. O estado e o que falta estão em [conformidade.md](conformidade.md).
 
-**Revisão de 21/11/2026:** o foco é o confronto entre SDKs identificados em aplicativos governamentais e as declarações de coleta e compartilhamento (H1). H2 examina diferenças entre aplicativos governamentais com e sem dados sensíveis. A comparação comercial é apenas contextual e a concordância entre detectores é checagem do instrumento, sem número de hipótese. O texto-fonte `latex/main.tex`, o roteiro `apresentacao/roteiro-simulacao.md` e o [conteúdo atualizado dos slides](apresentacao/CONTEUDO_SLIDES_FOCO_H2_20261121.md) incorporam o recorte. **Os binários PDF/DOCX/PPTX anteriormente versionados ainda precisam ser recompilados ou substituídos** antes de usados como material final.
+**Revisão de 25/11/2026 (comentários da simulação de defesa):** título sem pergunta; uma única hipótese (H1: ao menos 10% dos pares aplicativo–SDK sem declaração compatível), baseada em Andow et al. (2020), Samarasinghe et al. (2022), Carlsson et al. (2022) e Kollnig et al. (2022); a comparação de dados sensíveis (antiga H2) saiu do projeto. A revisão sistemática passou à versão 2.0 do protocolo, com termo do tema obrigatório no título (552 registros, 413 triados, 210 à leitura completa, 55 propostas de inclusão). O texto ganhou a justificativa do Android, a explicação do κ de Fleiss e quadros de estudos, lacunas, etapas do método e próximos passos. Os slides atuais são [apresentacao/apresentacao-defesa-final.pptx](apresentacao/apresentacao-defesa-final.pptx), com o [roteiro](apresentacao/roteiro-defesa-final.md).
 
 ## Arquivos
 
@@ -15,7 +15,7 @@ A entrega do Capstone I é um **projeto de pesquisa**: introdução, referencial
 | [apresentacao/simulacao-defesa-rascunho.pptx](apresentacao/simulacao-defesa-rascunho.pptx) | 14 slides no modelo do IDP, com a fala de cada slide nas notas |
 | [apresentacao/roteiro-simulacao.md](apresentacao/roteiro-simulacao.md) | Fala de cada slide, tempos e perguntas prováveis |
 | [revisao/protocolo-revisao-sistematica.md](revisao/protocolo-revisao-sistematica.md) | Protocolo e registros da revisão sistemática |
-| [revisao/sintese-F2-propostas.md](revisao/sintese-F2-propostas.md) | As 71 propostas de inclusão por questão de pesquisa, base da síntese da Seção 2 |
+| [revisao/sintese-F2-propostas.md](revisao/sintese-F2-propostas.md) | As propostas de inclusão por questão de pesquisa (lista anterior à versão 2.0, com 71; a síntese atual da Seção 2.7 usa as 55 que continuam após a restrição pelo título) |
 | [revisao/buscas-passo-a-passo.md](revisao/buscas-passo-a-passo.md) | Como as buscas e a triagem foram feitas e como seguir |
 | [metodologia/criterios-lgpd.md](metodologia/criterios-lgpd.md) | Matriz de dez critérios documentais da LGPD |
 | [piloto-passo-a-passo.md](piloto-passo-a-passo.md), [coleta-passo-a-passo.md](coleta-passo-a-passo.md) | Como rodar o piloto e a coleta direta |

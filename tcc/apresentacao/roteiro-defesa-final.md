@@ -1,0 +1,111 @@
+# Roteiro da defesa final (Capstone I)
+
+Mesmo texto das notas do apresentador do arquivo `apresentacao_TCC1_defesa_final.pptx`, slide a slide. As linhas marcadas com LEMBRETE e a cola das perguntas não são para ler em voz alta.
+
+## Slide 1: Rastreamento por terceiros em aplicativos móveis governamentais brasil
+
+Bom dia. Meu nome é Claudio, e meu orientador é o professor Eduardo. Meu trabalho é sobre rastreamento por terceiros nos aplicativos do governo brasileiro. Muitos desses aplicativos trazem, dentro deles, código de outras empresas, que pode coletar dados de quem usa. Eu quero descobrir que código é esse e se o governo avisa o cidadão sobre isso.
+
+## Slide 2: AGENDA
+
+Vou seguir a mesma ordem do texto do TCC. Na introdução, a motivação, o problema, os objetivos e a hipótese. No referencial teórico, os estudos que orientam o projeto e a lacuna que eles deixam. Nos procedimentos metodológicos, as etapas do método, por que escolhi o Android, os aplicativos selecionados, a fonte dos pacotes e o piloto, como leio a concordância entre os detectores, a revisão sistemática, as limitações e os próximos passos. Fecho com a conclusão e as referências.
+
+## Slide 3: MOTIVAÇÃO
+
+Hoje muita coisa do governo se resolve pelo celular. O Meu INSS e o Meu SUS Digital, por exemplo, passam de 50 milhões de instalações cada. Só que esses aplicativos não têm só o código do órgão: eles trazem pedaços prontos de outras empresas, os SDKs, para coisas como mapas, notificações e estatísticas de uso. Alguns desses SDKs podem coletar dados de quem usa. No governo isso pesa mais, porque o cidadão não tem como trocar de aplicativo. E um detalhe importante: o SDK estar dentro do aplicativo não prova que ele enviou dados.
+
+## Slide 4: PROBLEMA E OBJETIVO GERAL
+
+O problema da pesquisa é este: em que medida os SDKs de rastreamento que estão dentro dos aplicativos oficiais do governo estão declarados para o cidadão, na política de privacidade e na seção “Segurança dos dados” da Google Play? O objetivo geral é medir isso como uma proporção, à luz da LGPD. A unidade que eu conto é o par aplicativo–SDK: cada SDK encontrado em cada aplicativo forma um par. Um aplicativo com três SDKs, por exemplo, gera três pares. Para cada par, verifico se o que aquele SDK faz aparece nas declarações do aplicativo.
+
+## Slide 5: OBJETIVOS ESPECÍFICOS
+
+Para chegar lá, são cinco objetivos específicos. Primeiro, revisar um a um os 376 aplicativos que classifiquei como oficiais, pelo nome jurídico de quem publica na Google Play, e medir quanto a classificação automática errou. Segundo, baixar a versão atual de cada aplicativo, registrando o hash, que é a impressão digital do arquivo, e listar os SDKs com três detectores. Terceiro, ler a política de privacidade e a seção “Segurança dos dados” e classificar cada par em uma de cinco categorias: o SDK citado pelo nome; o tipo de dado e a finalidade declarados, sem citar o nome; nenhuma declaração compatível; informação insuficiente; ou política indisponível. É daí que sai a proporção que testa a hipótese. Quarto, instalar uma parte dos aplicativos num celular de teste e registrar para onde os dados vão. Quinto, medir se os três detectores concordam, com o kappa de Fleiss.
+
+## Slide 6: HIPÓTESE
+
+A pesquisa tem uma hipótese só, e ela vem da literatura. Andow e colegas olharam quase 14 mil aplicativos e viram que até 42,4% deles omitiam ou declaravam errado para onde iam dados sensíveis. Samarasinghe e colegas estudaram 1.166 aplicativos de governo de 71 países e viram que 27% enviavam informações sensíveis a terceiros ou sem criptografia. Carlsson e colegas compararam 32 aplicativos do setor público da Finlândia com as políticas deles e acharam divergências. E Kollnig e colegas, em 24 mil aplicativos, apontaram a falta de transparência sobre rastreamento tanto no Android quanto no iPhone. A partir disso, a minha hipótese é: pelo menos 10% dos pares aplicativo–SDK não vão ter declaração compatível. O 10% fica bem abaixo dessas taxas de propósito: esses estudos contam por aplicativo, e eu conto por par, então não dá para comparar direto. Com um patamar baixo, o teste fica mais exigente: se nem 10% dos pares estiverem sem declaração, isso já mostra que os aplicativos brasileiros estão melhores do que a literatura faria esperar.
+
+LEMBRETE (não precisa falar). Como a H1 é testada: calculo a porcentagem de pares sem declaração, com intervalo de confiança de 95%. Os pares do mesmo aplicativo usam a mesma política, então o intervalo é calculado agrupando por aplicativo. A H1 só é rejeitada se até o limite de cima do intervalo ficar abaixo de 10%. O 10% é um critério do estudo, não um limite da LGPD.
+
+## Slide 7: ESTUDOS QUE ORIENTAM O PROJETO (1/2)
+
+No referencial teórico, a revisão sistemática selecionou os estudos que orientam o projeto. Separei seis em duas tabelas, com o que cada um buscava, o que fez, como fez e o que achou. Os três primeiros tratam de rastreamento e declarações. Binns e colegas examinaram 959 mil aplicativos da Google Play procurando rastreadores no código, sem executar os apps, e acharam rastreamento na maioria, concentrado em poucas empresas, como o Google. Kollnig e colegas compararam cerca de um milhão de aplicativos de 2017 com um milhão de 2020, antes e depois do GDPR, o regulamento europeu de proteção de dados, e viram pouca mudança. E Andow e colegas criaram o PoliCheck, que compara o que o aplicativo envia durante o uso com o que a política diz, olhando também quem recebe o dado: até 42,4% dos aplicativos omitiam ou declaravam errado fluxos sensíveis. É desse estudo que vem a ideia de comparar o declarado com o encontrado.
+
+## Slide 8: ESTUDOS QUE ORIENTAM O PROJETO (2/2)
+
+Os outros três estudaram aplicativos de governo. Samarasinghe e colegas examinaram 1.166 aplicativos de 71 países: 37% tinham rastreadores do Google, e 27% enviavam informações sensíveis a terceiros ou sem criptografia, mas o Brasil não aparece separado. Carlsson e colegas compararam o tráfego de 32 aplicativos do setor público finlandês com as políticas: acharam divergências e, em alguns casos, dados indo para fora da Europa quando a política dizia que não. É o estudo mais parecido com o meu. E Serrano e colegas acharam rastreadores em 402 de 595 aplicativos da COVID-19; como eles juntaram pacotes de várias fontes, o estudo mostra por que eu registro a origem e a versão de cada pacote.
+
+## Slide 9: LACUNA E CONTRIBUIÇÃO
+
+Comparando o que já existe com o que falta, aparecem três lacunas, e cada uma vira uma contribuição. No caso brasileiro, já há um estudo internacional de aplicativos de governo e estudos de um aplicativo brasileiro por vez, mas falta medir o conjunto; o trabalho analisa os 376 aplicativos oficiais, federais, estaduais e municipais. No confronto entre o declarado e o encontrado, isso já foi feito em aplicativos comerciais e no setor público da Finlândia, mas não nos aplicativos do governo brasileiro com a seção “Segurança dos dados”; o trabalho classifica cada par e testa a hipótese. E no instrumento, já há comparações de ferramentas que detectam bibliotecas, mas não de detectores de rastreadores nas mesmas versões; o trabalho mede o kappa entre três detectores. Vale lembrar: uma divergência não é prova de infração à LGPD; é um indício que merece ser examinado.
+
+## Slide 10: ETAPAS DO MÉTODO
+
+Nos procedimentos metodológicos, o estudo é quantitativo e observacional, em seis etapas. Na primeira, seleção, reviso a lista dos aplicativos pelo nome jurídico do desenvolvedor. Na segunda, baixo a versão atual de cada um na Google Play, com o apkeep, registrando o hash, a versão e a data. Na terceira, rodo os três detectores e guardo a evidência de cada detecção. Na quarta, leio a política e a seção “Segurança dos dados” e classifico cada par. Na quinta, numa parte dos aplicativos, instalo no celular de teste e registro o tráfego. E na sexta, calculo a proporção de pares sem declaração, com intervalo de confiança, e decido sobre a hipótese. Cada etapa responde a um objetivo específico.
+
+## Slide 11: POR QUE SÓ ANDROID
+
+Uma pergunta natural é: por que só Android? São três motivos. Primeiro, abrangência: segundo a StatCounter, em outubro de 2026 o Android estava em 73,76% dos celulares no Brasil. Segundo, acesso ao código: Kollnig e colegas, que compararam 12 mil aplicativos de cada plataforma, explicam que no iPhone os aplicativos são criptografados pela Apple, não existe ferramenta pública para baixá-los em escala, e decriptar exige um aparelho físico e tem legalidade incerta. No Android, consigo baixar da Google Play, comparar com o AndroZoo e usar bases abertas de rastreadores. Terceiro, a hipótese usa a seção “Segurança dos dados”, que é da Google Play; a Apple tem rótulos de privacidade em outro formato. Isso não quer dizer que o iPhone seja mais seguro: o mesmo estudo achou rastreamento comum nas duas plataformas, sem uma claramente melhor. As versões iOS ficam como trabalho futuro.
+
+## Slide 12: APLICATIVOS
+
+Para montar a lista, busquei 21 termos ligados a serviço público na Google Play e depois todo o catálogo de cada publicador oficial. Encontrei 396 aplicativos candidatos. Conferindo o nome jurídico de quem publica, 376 ficaram como oficiais: 85 federais, 199 estaduais e 92 municipais. Vinte saíram: 13 eram de empresas privadas usando nome de serviço público e 7 estavam em contas de pessoa física. Essa lista ainda vai ser revista antes da coleta, como diz o primeiro objetivo.
+
+## Slide 13: FONTE DOS PACOTES
+
+Um problema prático apareceu na hora de buscar os pacotes. O AndroZoo, um acervo acadêmico de aplicativos, tinha só 92 dos 396 do governo, ou 23,2%; dos comerciais, tinha 160 de 190, ou 84,2%. Dependendo só dele, muitos aplicativos do governo ficariam de fora. Por isso a fonte principal vai ser a versão atual da Google Play, que é a que o cidadão instala. O download vai ser feito com o apkeep, uma ferramenta aberta, com uma conta Google criada só para a pesquisa, a partir do Brasil. Para cada aplicativo, registro o hash, a versão, a data e, se falhar, o motivo; a falha também vira dado. O AndroZoo continua útil para reproduzir a análise. Antes de baixar todos, testo em cinco aplicativos.
+
+LEMBRETE (não precisa falar). Quando o app vem dividido em vários pacotes, guardo o APK base, que tem o código. O apkeep é da Electronic Frontier Foundation (EFF). Não redistribuo os pacotes.
+
+## Slide 14: PILOTO DOS DETECTORES
+
+Fiz um piloto com 20 pacotes do AndroZoo e três detectores. O A procura no código os SDKs da base do Exodus. O B usa a mesma base, mas procura endereços de internet escritos dentro do pacote. O C faz o mesmo que o B, com outra lista, a da Disconnect. Cada um deu uma taxa diferente: 75%, 95% e 80% dos pacotes com pelo menos um rastreador. A concordância entre eles, medida pelo kappa de Fleiss, foi 0,52. Conferi as detecções uma a uma e marquei 88 das 123 do B como possíveis falsos positivos, quase todas por endereços genéricos do Google ou do Facebook. Sem elas, o kappa sobe para 0,69, mas é só uma análise de sensibilidade, porque não há uma referência independente com a resposta certa. Conclusão: a ferramenta escolhida muda o resultado, e é por isso que comparar os detectores faz parte do método. No próximo slide, explico como ler esse número.
+
+LEMBRETE (não precisa falar). A contra B mostra o efeito do método (mesma base); B contra C mostra o efeito da base (mesmo método). B não é tráfego, é texto dentro do pacote: um link para maps.google.com bastou para apontar Google Ads. C usa só as categorias publicidade, análise de uso e impressão digital. Exodus Privacy: base aberta de rastreadores com assinaturas de código e de rede. Disconnect: lista de domínios que coletam dados, separados por categoria.
+
+## Slide 15: COMO LER O κ DE FLEISS
+
+O kappa de Fleiss mede se vários avaliadores concordam, descontando o acordo que aconteceria por acaso. Aqui os avaliadores são os três detectores, e cada um responde se o aplicativo tem ou não tem rastreador. A fórmula compara duas coisas: P o, a concordância observada, e P e, a concordância esperada ao acaso. Para cada aplicativo, vejo quantos pares de detectores deram a mesma resposta: se os três dizem que tem, a concordância é 1; se dois dizem que tem e um diz que não tem, é um terço. P o é a média disso em todos os aplicativos. P e sai da proporção geral de respostas “tem” e “não tem”: é a chance de dois detectores concordarem só por sorte. Por que descontar o acaso? Se quase todo aplicativo tem rastreador, dois detectores que respondem “tem” para tudo concordariam quase sempre sem medir nada. O resultado chega no máximo a 1, que é concordância total; 0 é igual ao acaso. Para interpretar, uso a escala de Landis e Koch: até 0,20 é leve, até 0,40 razoável, até 0,60 moderada, até 0,80 substancial e acima disso quase perfeita. O piloto deu 0,52, moderada, e 0,69, substancial, na análise de sensibilidade. O meu limiar é 0,6, a passagem de moderada para substancial. E concordância alta não prova acerto: os três podem errar do mesmo jeito.
+
+LEMBRETE (não precisa falar). Fórmula por app: P i = soma de n ij vezes (n ij − 1), dividida por n vezes (n − 1), com n = 3 detectores e n ij = quantos deram a resposta j. P e = soma de p j ao quadrado, com p j = proporção de todas as respostas na categoria j. Junto do κ, reporto o IC95% e as concordâncias positiva e negativa, porque o κ fica instável quando quase todos os apps estão na mesma categoria. Na revisão, a conferência cega da triagem usa o κ de Cohen, a versão para dois avaliadores, com a mesma escala.
+
+## Slide 16: ONDE
+
+Agora, como eu busquei a literatura. Fiz uma revisão sistemática, que é uma busca planejada e documentada, para que a escolha dos artigos não dependa de preferência pessoal. Segui o guia de Kitchenham: antes de buscar, escrevi um protocolo com as perguntas, as bases, as palavras de busca e os critérios de entrada e saída. Para mostrar o resultado, uso o PRISMA 2020, que é um fluxograma com quantos estudos entraram e saíram em cada etapa. Fiz 17 buscas em quatro bases: Scopus, IEEE Xplore e, para trabalhos brasileiros, SBC OpenLib e BDTD. Depois da simulação, deixei a busca mais focada: agora o título do artigo precisa ter um termo do tema, como rastreador, SDK, política de privacidade ou governo. Para testar as buscas, separei antes onze estudos que tinham de aparecer: elas acharam os dez que estão no Scopus, e a restrição pelo título manteve os dez. No fim, foram 552 resultados, 413 sem repetidos, e 210 passaram para a leitura completa, que está em andamento.
+
+Guia de Kitchenham: divide a revisão em três etapas. Planejamento, com as questões e o protocolo de inclusão e exclusão; condução, com a busca, a seleção, a avaliação de qualidade e a extração dos dados; e relatório, com a síntese dos resultados.
+
+PRISMA 2020: padroniza o relato da revisão num fluxograma, da identificação dos registros e remoção de duplicatas até a triagem por título e resumo, a leitura completa e os estudos incluídos.
+
+## Slide 17: LIMITAÇÕES
+
+Sobre as limitações, e como cada uma é tratada. Achar o SDK no código não prova que ele envia dados: por isso a análise de tráfego numa parte dos aplicativos. O estudo cobre só Android; os motivos estão justificados, e o iOS fica como trabalho futuro. As políticas costumam falar de tipos de dados, e não do nome de cada SDK: por isso as cinco categorias, e não citar o nome não conta como omissão. As versões mudam: registro o hash, a versão e a data de cada pacote. A revisão e as classificações ainda estão em conferência, e termino em fevereiro, antes de qualquer resultado. E uma divergência não é prova de infração à LGPD; é um indício.
+
+## Slide 18: PRÓXIMOS PASSOS NO CAPSTONE II (2027.1)
+
+Os próximos passos, mês a mês, no Capstone II. Em fevereiro, termino a revisão, com a leitura dos registros em aberto, a bola de neve e a conferência cega da triagem; e reviso a lista de aplicativos, testando o download em cinco deles e definindo com o orientador o detector principal. Em março, baixo todos os aplicativos, rodo os detectores e calculo o kappa. Entre março e abril, classifico as declarações de cada par. Em abril, observo o tráfego da subamostra. Em maio, faço a análise e decido sobre a hipótese; se aparecer algum achado grave, aviso o órgão antes de publicar. E em junho, redação, publicação dos dados e defesa.
+
+## Slide 19: Problema definido.
+
+Para concluir: o problema está definido, o método é viável e a hipótese está pronta para ser testada no Capstone II. O foco não é comparar o governo com o mercado, mas verificar se o que os aplicativos públicos declaram sobre os dados bate com o que está dentro deles e, onde der para observar, com o que eles realmente enviam. Obrigado.
+
+## Slide 20: REFERÊNCIAS (1/5)
+
+Não é para ler. São todas as referências do texto do TCC, em ordem alfabética, no padrão ABNT. Pode passar direto para o slide de encerramento.
+
+## Slide 25: Encerramento
+
+Slide de encerramento do template. Pode ficar na tela durante as perguntas.
+
+## Cola para as perguntas
+
+- Números: 396 candidatos e 376 oficiais (85 federais, 199 estaduais, 92 municipais) · AndroZoo: 92 de 396 (23,2%) · piloto: 75%, 95% e 80% com rastreador; κ 0,52, ou 0,69 sem os 88 possíveis falsos positivos do B · revisão: 552 resultados, 413 sem repetidos, 210 à leitura completa.
+- Por que 10%? Fica bem abaixo da literatura (Andow 42,4%; Samarasinghe 27%), que conta por aplicativo; eu conto por par. Um patamar baixo deixa o teste mais exigente. Não é limite da LGPD.
+- Por que só Android? 73,76% dos celulares no Brasil (StatCounter, out. 2026); no iPhone os apps são criptografados e não há ferramenta pública para baixá-los em escala (Kollnig et al., 2022); a seção “Segurança dos dados” é da Google Play. Não quer dizer que o iPhone seja mais seguro.
+- Por que uma hipótese só? Para concentrar o trabalho no que dá para provar no Capstone II: as declarações. A comparação dos aplicativos com dados sensíveis saiu do projeto.
+- O κ de 0,52 não é baixo? É moderado. Por isso a concordância entre detectores é checagem do instrumento, com limiar de 0,6, e não uma hipótese.
+- Ter o SDK no app prova que dados foram enviados? Não. O envio só é observado na análise de tráfego de uma parte dos apps.
+- Por que a revisão caiu de 1.531 para 552? Passei a exigir um termo do tema no título; os dez estudos de controle continuaram.
+- Você leu todos os artigos? Não. A leitura completa está em andamento: já conferi parte das decisões lendo o texto inteiro e termino o restante em fevereiro, antes de qualquer resultado.
+- Se não souber: “Isso ainda não medi; está previsto para o Capstone II.”

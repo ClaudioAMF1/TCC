@@ -1,6 +1,6 @@
 # TCC — Projeto Capstone I (IDP, 2026.2)
 
-**Quem mais está dentro do aplicativo? Rastreamento por terceiros e soberania de dados em aplicativos móveis governamentais brasileiros.** Ciência da Computação, IDP. Orientador: Prof. Eduardo Arthur Izycki.
+**Rastreamento por terceiros em aplicativos móveis governamentais brasileiros: SDKs embarcados e transparência das declarações de privacidade.** Ciência da Computação, IDP. Orientador: Prof. Eduardo Arthur Izycki.
 
 O projeto de pesquisa (Capstone I) está em [`tcc/`](tcc/README.md). O que falta até a entrega de 03/12 está em [`tcc/conformidade.md`](tcc/conformidade.md).
 
@@ -20,7 +20,7 @@ O projeto de pesquisa (Capstone I) está em [`tcc/`](tcc/README.md). O que falta
 | `dados/n3_corpus_20260917.csv` | Os 396 candidatos, com a classificação preliminar: 376 oficiais, esfera e tratamento de dado sensível |
 | `dados/n3_relatorio_20260917.json` | Metadados da coleta e controle original (190 aplicativos) |
 | `dados/controle_ampliado_20261104.json` | Controle ampliado (252 aplicativos) e cobertura por categoria e faixa |
-| `dados/revisao/` | Exportações das buscas, triagem dos 1.249 registros, leitura completa (F2) e amostra da conferência cega |
+| `dados/revisao/` | Exportações das buscas, triagem, leitura completa (F2), amostra da conferência cega e a restrição pelo título da versão 2.0 (413 registros triados) |
 
 ## Scripts
 

@@ -179,7 +179,7 @@ COLA = [
     "O κ de 0,52 não é baixo? É moderado. Por isso a concordância entre detectores é uma checagem do instrumento, com limiar de 0,6, e não uma hipótese.",
     "Ter o SDK no aplicativo prova que dados foram enviados? Não. O envio só é observado na análise de tráfego de uma parte dos aplicativos.",
     "Por que a revisão caiu de 1.531 para 552? Passei a exigir um termo do tema no título; os dez estudos de controle continuaram.",
-    "Você leu todos os artigos? Não. A leitura completa está em andamento: já conferi parte das decisões lendo o texto inteiro e termino o restante em fevereiro, antes de qualquer resultado.",
+    "Você leu todos os artigos? Não. A leitura completa está em andamento: já confirmei parte das decisões lendo o texto inteiro e termino o restante em fevereiro, antes de qualquer resultado.",
     "Se não souber: “Isso ainda não medi; está previsto para o Capstone II.”",
 ]
 
@@ -233,7 +233,7 @@ for i, (a, b) in enumerate(caixas):
     if i < 2:
         forma(s, 10.4, cy + 0.83, 0.3, 0.26, MID, MSO_SHAPE.DOWN_ARROW)
     cy += 1.14
-texto(s, 8.75, 4.75, 3.6, 0.75, [P("Pergunta: esses SDKs estão declarados ao cidadão?", 15, True, WHITE, "c", spacing=1.05)], anchor="m")
+texto(s, 8.75, 4.75, 3.6, 0.75, [P("Pergunta: em que medida esses SDKs estão declarados ao cidadão?", 15, True, WHITE, "c", spacing=1.05)], anchor="m")
 notas(s, "Hoje muita coisa do governo se resolve pelo celular. O Meu INSS e o Meu SUS Digital, por exemplo, passam de 50 milhões de instalações cada um. Esses aplicativos não têm só o código do órgão: trazem componentes prontos de outras empresas, os SDKs, para mapas, notificações e estatísticas de uso. Alguns desses SDKs coletam dados de quem usa. No governo isso pesa mais, porque o cidadão não tem como trocar de aplicativo. Um cuidado importante: o SDK estar no código não prova que ele enviou dados.")
 
 # ---------------------------------------------------------------- 4 problema e objetivo geral (fundo 13)
@@ -252,18 +252,18 @@ for k, nome in enumerate(["estatísticas", "mapas", "notificações"]):
     forma(s, x0 - 0.33, 5.51, 0.28, 0.24, MID, MSO_SHAPE.RIGHT_ARROW)
     forma(s, x0, 5.3, 1.75, 0.65, WHITE, linha=MID)
     texto(s, x0, 5.3, 1.75, 0.65, [P("SDK de " + nome, 13, True, NAVY, "c")], anchor="m")
-texto(s, 6.27, 5.97, 6.0, 0.3, [P("1 aplicativo com 3 SDKs = 3 pares, cada um conferido nas declarações", 12, False, DARK, "c")])
-notas(s, "O problema da pesquisa é: em que medida os SDKs de rastreamento dos aplicativos oficiais do governo estão declarados ao cidadão, na política de privacidade e na seção “Segurança dos dados” da Google Play? O objetivo geral é medir isso como uma proporção, à luz da LGPD. A unidade é o par aplicativo–SDK: cada SDK encontrado em cada aplicativo forma um par. Um aplicativo com três SDKs gera três pares, e cada par é conferido nas declarações.")
+texto(s, 6.27, 5.97, 6.0, 0.3, [P("1 aplicativo com 3 SDKs = 3 pares, e cada par é classificado", 12, False, DARK, "c")])
+notas(s, "O problema da pesquisa é: em que medida os SDKs de rastreamento dos aplicativos oficiais do governo estão declarados ao cidadão, na política de privacidade e na seção “Segurança dos dados” da Google Play? O objetivo geral é medir isso como uma proporção, à luz da LGPD. A unidade é o par aplicativo–SDK: cada SDK encontrado em cada aplicativo forma um par. Um aplicativo com três SDKs gera três pares, e cada par é classificado de acordo com as declarações.")
 
 # ---------------------------------------------------------------- 5 objetivos específicos (fundo 13)
 s = nova(13)
 barra_titulo(s, "OBJETIVOS ESPECÍFICOS")
 objs = [
-    ["a) Revisar a lista de aplicativos", "Conferir os 376 aplicativos oficiais pelo nome jurídico do desenvolvedor na Google Play", "Lista final e taxa de erro da classificação automática"],
+    ["a) Revisar a lista de aplicativos", "Confirmar o órgão e a esfera de cada um dos 376 aplicativos pelo nome jurídico do desenvolvedor na Google Play", "Lista final e taxa de erro da classificação automática"],
     ["b) Listar os SDKs", "Baixar a versão atual de cada aplicativo e rodar três detectores, com as bases Exodus Privacy e Disconnect", "Pares aplicativo–SDK, com a evidência de cada detecção"],
     ["c) Classificar as declarações", "Ler a política de privacidade e a seção “Segurança dos dados” e classificar cada par", "Proporção de pares sem declaração compatível, que testa a hipótese"],
-    ["d) Observar o tráfego", "Executar uma subamostra em emulador Android e registrar as conexões", "Destinos, país e se estão declarados"],
-    ["e) Comparar os detectores", "Calcular o κ de Fleiss nos mesmos pacotes", "Quanto a taxa depende da ferramenta"],
+    ["d) Registrar o tráfego", "Executar uma subamostra em emulador Android e registrar as conexões", "Destinos, país e se estão declarados"],
+    ["e) Medir a concordância dos detectores", "Calcular o κ de Fleiss nos mesmos pacotes", "Quanto a taxa depende da ferramenta"],
 ]
 tabela(s, 0.75, 1.75, [3.0, 5.6, 3.3], ["Objetivo", "O que será feito", "Resultado"], objs, size=14, alt_h=0.8)
 notas(s, "São cinco objetivos específicos. Primeiro, revisar os 376 aplicativos oficiais e medir quanto a classificação automática errou. Segundo, baixar a versão atual de cada aplicativo e listar os SDKs com três detectores. Terceiro, ler as declarações e classificar cada par; é daí que sai a proporção que testa a hipótese. Quarto, executar uma parte dos aplicativos num emulador Android, no computador, e registrar para onde os dados vão. Quinto, medir se os detectores concordam, com o kappa de Fleiss.")
@@ -352,9 +352,9 @@ notas(s, "Juntando esses estudos, aparecem três lacunas, e cada uma vira uma co
 s = nova(13)
 barra_titulo(s, "ETAPAS DO MÉTODO", sub="Estudo quantitativo e observacional, em seis etapas")
 etapas = [
-    ["1. Seleção dos aplicativos", "Conferir a lista pelo nome jurídico do desenvolvedor na Google Play", "376 aplicativos oficiais, por esfera", "a"],
+    ["1. Seleção dos aplicativos", "Revisar cada aplicativo pelo nome jurídico do desenvolvedor na Google Play", "376 aplicativos oficiais, por esfera", "a"],
     ["2. Obtenção dos pacotes", "Baixar a versão atual com o apkeep; usar o AndroZoo quando tiver o aplicativo", "Pacote com hash SHA-256, versão e data", "b"],
-    ["3. Detecção dos SDKs", "Rodar os detectores A, B e C e comparar as respostas", "Pares aplicativo–SDK; κ de Fleiss", "b, e"],
+    ["3. Detecção dos SDKs", "Rodar os detectores A, B e C nos mesmos pacotes e medir a concordância", "Pares aplicativo–SDK; κ de Fleiss", "b, e"],
     ["4. Classificação das declarações", "Ler a política e a “Segurança dos dados” e classificar cada par", "Matriz de declarações", "c"],
     ["5. Observação do tráfego", "Executar uma subamostra no emulador do Android Studio, com o mitmproxy", "Destinos, país e se estão declarados", "d"],
     ["6. Análise estatística", "Calcular a proporção com IC95% agrupado por aplicativo", "Decisão sobre a hipótese", "c, e"],
@@ -386,13 +386,13 @@ texto(s, 1.0, 0.6, 5.3, 1.3, [P("APLICATIVOS SELECIONADOS", 34, True, MID, spaci
 texto(s, 1.0, 2.0, 5.3, 0.5, [P("396 candidatos, 376 oficiais", 22, False, GREY)])
 texto(s, 1.0, 2.75, 5.0, 3.5, [
     P("Busca por 21 termos na Google Play e pelo catálogo de cada publicador oficial.", 17, False, DARK, after=10),
-    P("Oficialidade conferida pelo nome jurídico em “Sobre o desenvolvedor”.", 17, False, DARK, after=10),
+    P("Oficialidade confirmada pelo nome jurídico em “Sobre o desenvolvedor”.", 17, False, DARK, after=10),
     P("Saíram 20: 13 empresas privadas e 7 contas de pessoa física.", 17, False, DARK, after=10),
     P("A lista será revista antes da coleta (objetivo a).", 15, True, NAVY)])
 texto(s, 6.61, 2.85, 3.61, 1.8, [P("376", 60, True, WHITE, "c"), P("aplicativos oficiais", 18, False, PALE, "c")], anchor="m")
 for (cx, cy), (num, leg) in zip([(10.68, 1.83), (11.63, 3.76), (10.68, 5.72)], [("85", "federais"), ("199", "estaduais"), ("92", "municipais")]):
     texto(s, cx - 0.86, cy - 0.5, 1.72, 1.0, [P(num, 26, True, NAVY, "c"), P(leg, 13, False, DARK, "c")], anchor="m")
-notas(s, "Para montar a lista, busquei 21 termos ligados a serviço público na Google Play e depois o catálogo de cada publicador oficial. Foram 396 candidatos. Conferindo o nome jurídico de quem publica, ficaram 376 oficiais: 85 federais, 199 estaduais e 92 municipais. Saíram 20, de empresas privadas ou de contas de pessoa física. A lista ainda será revista antes da coleta.")
+notas(s, "Para montar a lista, busquei 21 termos ligados a serviço público na Google Play e depois o catálogo de cada publicador oficial. Foram 396 candidatos. Pelo nome jurídico de quem publica, ficaram 376 oficiais: 85 federais, 199 estaduais e 92 municipais. Saíram 20, de empresas privadas ou de contas de pessoa física. A lista ainda será revista antes da coleta.")
 
 # ---------------------------------------------------------------- fonte dos pacotes (fundo 2)
 s = nova(2)
@@ -434,7 +434,7 @@ texto(s, 9.2, 2.4, 3.2, 3.6, [P("κ de Fleiss", 18, True, PALE, "c"),
                              P("0,52", 54, True, WHITE, "c", after=2),
                              P("0,69 na análise de sensibilidade", 15, False, LIGHT, "c", after=14),
                              P("88 de 123 detecções de B marcadas como possíveis falsos positivos, sem referência independente", 14, False, LIGHT, "c", spacing=1.05)], anchor="m")
-notas(s, "No piloto, testei três detectores em 20 pacotes. O A procura no código os SDKs da base do Exodus. O B usa a mesma base, mas procura endereços de internet dentro do pacote. O C faz o mesmo que o B, com a lista da Disconnect. As taxas foram diferentes: 75%, 95% e 80% dos pacotes com rastreador. Conferindo as detecções, 88 das 123 do B pareciam falsos positivos, quase todas por endereços genéricos do Google ou do Facebook. Ou seja, a ferramenta muda o resultado, e por isso a comparação entre detectores faz parte do método.",
+notas(s, "No piloto, testei três detectores em 20 pacotes. O A procura no código os SDKs da base do Exodus. O B usa a mesma base, mas procura endereços de internet dentro do pacote. O C faz o mesmo que o B, com a lista da Disconnect. As taxas foram diferentes: 75%, 95% e 80% dos pacotes com rastreador. Revisando as detecções uma a uma, 88 das 123 do B pareciam falsos positivos, quase todas por endereços genéricos do Google ou do Facebook. Ou seja, a ferramenta muda o resultado, e por isso a comparação entre detectores faz parte do método.",
       "LEMBRETE (não precisa falar). A contra B mostra o efeito do método (mesma base); B contra C mostra o efeito da base (mesmo método). B não é tráfego, é texto dentro do pacote: um link para maps.google.com bastou para apontar Google Ads. C usa só as categorias publicidade, análise de uso e impressão digital. Exodus Privacy: base aberta de rastreadores, com assinaturas de código e de rede. Disconnect: lista de domínios que coletam dados, separados por categoria.")
 
 # ---------------------------------------------------------------- kappa de Fleiss (fundo 13)
@@ -463,7 +463,7 @@ texto(s, 10.25, 2.6 + 4 * 0.47, 2.3, 0.42, [P("← sensibilidade: 0,69", 14, Tru
 forma(s, 6.85, 5.52, 5.6, 0.85, PALE)
 texto(s, 7.0, 5.52, 5.35, 0.85, [P("1 = concordância total; 0 = igual ao acaso. Limiar do estudo: 0,6. Concordância alta não prova acerto: os três podem errar igual.", 13, False, NAVY)], anchor="m")
 notas(s, "Para medir essa concordância, uso o kappa de Fleiss. Ele mede se vários avaliadores concordam, descontando o acordo que aconteceria por acaso; aqui, os avaliadores são os três detectores, e cada um diz se o aplicativo tem ou não rastreador. P o é a concordância observada: em cada aplicativo, a fração dos pares de detectores que concordam; se os três concordam, dá 1; se um discorda, dá um terço. P e é a concordância esperada só por acaso. Descontar o acaso importa porque, se quase todo aplicativo tem rastreador, concordar é fácil. Pela escala de Landis e Koch, o piloto deu 0,52, moderada, e 0,69, substancial, sem os falsos positivos. Meu limiar é 0,6.",
-      "LEMBRETE (não precisa falar). Fórmula por aplicativo: P i = soma de n ij vezes (n ij − 1), dividida por n vezes (n − 1), com n = 3 detectores e n ij = quantos deram a resposta j. P e = soma de p j ao quadrado, com p j = proporção de todas as respostas na categoria j. Junto do κ, reporto o IC95% e as concordâncias positiva e negativa, porque o κ fica instável quando quase todos os aplicativos estão na mesma categoria. Na revisão, a conferência cega da triagem usa o κ de Cohen, a versão para dois avaliadores, com a mesma escala.")
+      "LEMBRETE (não precisa falar). Fórmula por aplicativo: P i = soma de n ij vezes (n ij − 1), dividida por n vezes (n − 1), com n = 3 detectores e n ij = quantos deram a resposta j. P e = soma de p j ao quadrado, com p j = proporção de todas as respostas na categoria j. Junto do κ, reporto o IC95% e as concordâncias positiva e negativa, porque o κ fica instável quando quase todos os aplicativos estão na mesma categoria. Na revisão, a reclassificação às cegas da triagem usa o κ de Cohen, a versão para dois avaliadores, com a mesma escala.")
 
 # ---------------------------------------------------------------- classificação das declarações (fundo 13)
 s = nova(13)
@@ -521,12 +521,12 @@ lims = [["SDK no código não prova envio de dados", "Observação do tráfego n
         ["Versões mudam entre a coleta e a análise", "Hash SHA-256, versão e data de cada pacote"],
         ["Divergência não prova infração à LGPD", "Tratada como indício, com a evidência registrada"]]
 tabela(s, 0.85, 1.75, [5.95, 5.85], ["Limitação", "Como é tratada"], lims, size=15, cab_size=15, alt_h=0.64)
-notas(s, "Sobre as limitações: achar o SDK no código não prova envio de dados, e por isso observo o tráfego numa subamostra. Alguns aplicativos podem não rodar no emulador; nesse caso, registro o motivo. O estudo cobre só Android, pelos motivos que mostrei. As políticas falam de tipos de dados, e não do nome do SDK, então não citar o nome não conta como omissão. Registro a versão de cada pacote, porque eles mudam. E uma divergência não prova infração à LGPD; é um indício.")
+notas(s, "Sobre as limitações: achar o SDK no código não prova envio de dados, e por isso registro o tráfego de uma subamostra no emulador. Alguns aplicativos podem não rodar no emulador; nesse caso, registro o motivo. O estudo cobre só Android, pelos motivos que mostrei. As políticas falam de tipos de dados, e não do nome do SDK, então não citar o nome não conta como omissão. Registro a versão de cada pacote, porque eles mudam. E uma divergência não prova infração à LGPD; é um indício.")
 
 # ---------------------------------------------------------------- próximos passos (fundo 13)
 s = nova(13)
 barra_titulo(s, "PRÓXIMOS PASSOS NO CAPSTONE II (2027.1)")
-passos = [["Fevereiro", "Revisão sistemática", "Ler os registros em aberto, fazer a bola de neve e a conferência cega da triagem", "Estudos incluídos; κ de Cohen"],
+passos = [["Fevereiro", "Revisão sistemática", "Ler os registros em aberto, fazer a bola de neve e reclassificar às cegas 44 registros da triagem", "Estudos incluídos; κ de Cohen"],
           ["Fevereiro", "1. Seleção", "Revisar os 376 aplicativos; testar o download e o emulador; definir o detector principal", "Lista final e plano de análise"],
           ["Março", "2 e 3. Pacotes e detecção", "Baixar todos os aplicativos; rodar os três detectores; calcular o κ de Fleiss", "Pares aplicativo–SDK"],
           ["Mar. e abr.", "4. Declarações", "Ler as declarações de cada aplicativo e classificar cada par", "Matriz de declarações"],
@@ -534,14 +534,14 @@ passos = [["Fevereiro", "Revisão sistemática", "Ler os registros em aberto, fa
           ["Maio", "6. Análise", "Calcular a proporção com IC95% e decidir sobre a hipótese; avisar órgãos de achados graves", "Resultado do teste da H1"],
           ["Junho", "Redação e defesa", "Escrever os resultados e a discussão; publicar dados e scripts", "Texto final e defesa"]]
 tabela(s, 1.05, 1.75, [1.45, 2.4, 5.15, 2.6], ["Quando", "Etapa", "O que será feito", "Produto"], passos, size=13, alt_h=0.6)
-notas(s, "Os próximos passos ficam no Capstone II. Em fevereiro, termino a revisão e reviso a lista de aplicativos, testando o download e o emulador. Em março, baixo os pacotes e rodo os detectores. Entre março e abril, classifico as declarações. Em abril, observo o tráfego da subamostra. Em maio, faço a análise e decido sobre a hipótese, avisando os órgãos se houver achado grave. Em junho, escrevo, publico os dados e defendo.")
+notas(s, "Os próximos passos ficam no Capstone II. Em fevereiro, termino a revisão e reviso a lista de aplicativos, testando o download e o emulador. Em março, baixo os pacotes e rodo os detectores. Entre março e abril, classifico as declarações. Em abril, registro o tráfego da subamostra no emulador. Em maio, faço a análise e decido sobre a hipótese, avisando os órgãos se houver achado grave. Em junho, escrevo, publico os dados e defendo.")
 
 # ================================================================ CONCLUSÃO
 s = nova(3)
 texto(s, 0.9, 1.3, 11.4, 2.2, [P("Problema definido.", 44, True, WHITE), P("Método viável.", 44, True, WHITE), P("Hipótese pronta para o teste.", 44, True, NAVY)])
-texto(s, 0.9, 4.0, 10.8, 1.2, [P("No Capstone II: medir quantos SDKs dos aplicativos do governo não estão declarados ao cidadão.", 22, False, WHITE, spacing=1.05)])
+texto(s, 0.9, 4.0, 10.8, 1.2, [P("No Capstone II: medir a proporção de pares aplicativo–SDK sem declaração compatível.", 22, False, WHITE, spacing=1.05)])
 texto(s, 0.9, 5.55, 6.0, 0.6, [P("Obrigado.", 24, True, NAVY)])
-notas(s, "Para concluir: o problema está definido, o método é viável, e a hipótese está pronta para ser testada no Capstone II. O foco é verificar se o que os aplicativos públicos declaram sobre os dados bate com o que está dentro deles e, onde der para observar, com o que eles enviam. Obrigado.")
+notas(s, "Para concluir: o problema está definido, o método é viável, e a hipótese está pronta para ser testada no Capstone II. O foco é medir o quanto o que os aplicativos públicos declaram sobre os dados bate com o que está dentro deles e, onde der para observar, com o que eles enviam. Obrigado.")
 
 
 # ================================================================ REFERÊNCIAS: todas as do texto (fundo 4)
@@ -555,6 +555,7 @@ def limpa(t):
     t = unicodedata.normalize("NFC", t)
     t = re.sub(r"\\url\{([^}]*)\}", r"\1", t)
     t = t.replace("\\_", "_").replace("\\%", "%").replace("\\#", "#")  # escapes dos endereços
+    t = t.replace("``", "“").replace("''", "”")  # aspas do LaTeX
     t = t.replace("$\\varepsilon$", "ε").replace("\\&", "&").replace("~", " ").replace("--", "–")
     t = t.replace("\\textendash", "–").replace("\\ ", " ")
     t = re.sub(r"\\[a-zA-Z]+\s*", "", t)

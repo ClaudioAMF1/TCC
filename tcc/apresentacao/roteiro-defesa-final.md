@@ -16,7 +16,7 @@ Hoje muita coisa do governo se resolve pelo celular. O Meu INSS e o Meu SUS Digi
 
 ## Slide 4: PROBLEMA E OBJETIVO GERAL
 
-O problema da pesquisa é: em que medida os SDKs de rastreamento dos aplicativos oficiais do governo estão declarados ao cidadão, na política de privacidade e na seção “Segurança dos dados” da Google Play? O objetivo geral é medir isso como uma proporção, à luz da LGPD. A unidade é o par aplicativo–SDK: cada SDK encontrado em cada aplicativo forma um par. Um aplicativo com três SDKs gera três pares, e cada par é conferido nas declarações.
+O problema da pesquisa é: em que medida os SDKs de rastreamento dos aplicativos oficiais do governo estão declarados ao cidadão, na política de privacidade e na seção “Segurança dos dados” da Google Play? O objetivo geral é medir isso como uma proporção, à luz da LGPD. A unidade é o par aplicativo–SDK: cada SDK encontrado em cada aplicativo forma um par. Um aplicativo com três SDKs gera três pares, e cada par é classificado de acordo com as declarações.
 
 ## Slide 5: OBJETIVOS ESPECÍFICOS
 
@@ -50,7 +50,7 @@ Por que só Android? São três motivos. Primeiro, abrangência: segundo a StatC
 
 ## Slide 12: APLICATIVOS SELECIONADOS
 
-Para montar a lista, busquei 21 termos ligados a serviço público na Google Play e depois o catálogo de cada publicador oficial. Foram 396 candidatos. Conferindo o nome jurídico de quem publica, ficaram 376 oficiais: 85 federais, 199 estaduais e 92 municipais. Saíram 20, de empresas privadas ou de contas de pessoa física. A lista ainda será revista antes da coleta.
+Para montar a lista, busquei 21 termos ligados a serviço público na Google Play e depois o catálogo de cada publicador oficial. Foram 396 candidatos. Pelo nome jurídico de quem publica, ficaram 376 oficiais: 85 federais, 199 estaduais e 92 municipais. Saíram 20, de empresas privadas ou de contas de pessoa física. A lista ainda será revista antes da coleta.
 
 ## Slide 13: FONTE DOS PACOTES
 
@@ -60,7 +60,7 @@ LEMBRETE (não precisa falar). Quando o aplicativo vem dividido em vários pacot
 
 ## Slide 14: PILOTO DOS DETECTORES
 
-No piloto, testei três detectores em 20 pacotes. O A procura no código os SDKs da base do Exodus. O B usa a mesma base, mas procura endereços de internet dentro do pacote. O C faz o mesmo que o B, com a lista da Disconnect. As taxas foram diferentes: 75%, 95% e 80% dos pacotes com rastreador. Conferindo as detecções, 88 das 123 do B pareciam falsos positivos, quase todas por endereços genéricos do Google ou do Facebook. Ou seja, a ferramenta muda o resultado, e por isso a comparação entre detectores faz parte do método.
+No piloto, testei três detectores em 20 pacotes. O A procura no código os SDKs da base do Exodus. O B usa a mesma base, mas procura endereços de internet dentro do pacote. O C faz o mesmo que o B, com a lista da Disconnect. As taxas foram diferentes: 75%, 95% e 80% dos pacotes com rastreador. Revisando as detecções uma a uma, 88 das 123 do B pareciam falsos positivos, quase todas por endereços genéricos do Google ou do Facebook. Ou seja, a ferramenta muda o resultado, e por isso a comparação entre detectores faz parte do método.
 
 LEMBRETE (não precisa falar). A contra B mostra o efeito do método (mesma base); B contra C mostra o efeito da base (mesmo método). B não é tráfego, é texto dentro do pacote: um link para maps.google.com bastou para apontar Google Ads. C usa só as categorias publicidade, análise de uso e impressão digital. Exodus Privacy: base aberta de rastreadores, com assinaturas de código e de rede. Disconnect: lista de domínios que coletam dados, separados por categoria.
 
@@ -68,7 +68,7 @@ LEMBRETE (não precisa falar). A contra B mostra o efeito do método (mesma base
 
 Para medir essa concordância, uso o kappa de Fleiss. Ele mede se vários avaliadores concordam, descontando o acordo que aconteceria por acaso; aqui, os avaliadores são os três detectores, e cada um diz se o aplicativo tem ou não rastreador. P o é a concordância observada: em cada aplicativo, a fração dos pares de detectores que concordam; se os três concordam, dá 1; se um discorda, dá um terço. P e é a concordância esperada só por acaso. Descontar o acaso importa porque, se quase todo aplicativo tem rastreador, concordar é fácil. Pela escala de Landis e Koch, o piloto deu 0,52, moderada, e 0,69, substancial, sem os falsos positivos. Meu limiar é 0,6.
 
-LEMBRETE (não precisa falar). Fórmula por aplicativo: P i = soma de n ij vezes (n ij − 1), dividida por n vezes (n − 1), com n = 3 detectores e n ij = quantos deram a resposta j. P e = soma de p j ao quadrado, com p j = proporção de todas as respostas na categoria j. Junto do κ, reporto o IC95% e as concordâncias positiva e negativa, porque o κ fica instável quando quase todos os aplicativos estão na mesma categoria. Na revisão, a conferência cega da triagem usa o κ de Cohen, a versão para dois avaliadores, com a mesma escala.
+LEMBRETE (não precisa falar). Fórmula por aplicativo: P i = soma de n ij vezes (n ij − 1), dividida por n vezes (n − 1), com n = 3 detectores e n ij = quantos deram a resposta j. P e = soma de p j ao quadrado, com p j = proporção de todas as respostas na categoria j. Junto do κ, reporto o IC95% e as concordâncias positiva e negativa, porque o κ fica instável quando quase todos os aplicativos estão na mesma categoria. Na revisão, a reclassificação às cegas da triagem usa o κ de Cohen, a versão para dois avaliadores, com a mesma escala.
 
 ## Slide 16: CLASSIFICAÇÃO DAS DECLARAÇÕES
 
@@ -84,15 +84,15 @@ PRISMA 2020: padroniza o relato da revisão num fluxograma, da identificação d
 
 ## Slide 18: LIMITAÇÕES
 
-Sobre as limitações: achar o SDK no código não prova envio de dados, e por isso observo o tráfego numa subamostra. Alguns aplicativos podem não rodar no emulador; nesse caso, registro o motivo. O estudo cobre só Android, pelos motivos que mostrei. As políticas falam de tipos de dados, e não do nome do SDK, então não citar o nome não conta como omissão. Registro a versão de cada pacote, porque eles mudam. E uma divergência não prova infração à LGPD; é um indício.
+Sobre as limitações: achar o SDK no código não prova envio de dados, e por isso registro o tráfego de uma subamostra no emulador. Alguns aplicativos podem não rodar no emulador; nesse caso, registro o motivo. O estudo cobre só Android, pelos motivos que mostrei. As políticas falam de tipos de dados, e não do nome do SDK, então não citar o nome não conta como omissão. Registro a versão de cada pacote, porque eles mudam. E uma divergência não prova infração à LGPD; é um indício.
 
 ## Slide 19: PRÓXIMOS PASSOS NO CAPSTONE II (2027.1)
 
-Os próximos passos ficam no Capstone II. Em fevereiro, termino a revisão e reviso a lista de aplicativos, testando o download e o emulador. Em março, baixo os pacotes e rodo os detectores. Entre março e abril, classifico as declarações. Em abril, observo o tráfego da subamostra. Em maio, faço a análise e decido sobre a hipótese, avisando os órgãos se houver achado grave. Em junho, escrevo, publico os dados e defendo.
+Os próximos passos ficam no Capstone II. Em fevereiro, termino a revisão e reviso a lista de aplicativos, testando o download e o emulador. Em março, baixo os pacotes e rodo os detectores. Entre março e abril, classifico as declarações. Em abril, registro o tráfego da subamostra no emulador. Em maio, faço a análise e decido sobre a hipótese, avisando os órgãos se houver achado grave. Em junho, escrevo, publico os dados e defendo.
 
 ## Slide 20: Conclusão
 
-Para concluir: o problema está definido, o método é viável, e a hipótese está pronta para ser testada no Capstone II. O foco é verificar se o que os aplicativos públicos declaram sobre os dados bate com o que está dentro deles e, onde der para observar, com o que eles enviam. Obrigado.
+Para concluir: o problema está definido, o método é viável, e a hipótese está pronta para ser testada no Capstone II. O foco é medir o quanto o que os aplicativos públicos declaram sobre os dados bate com o que está dentro deles e, onde der para observar, com o que eles enviam. Obrigado.
 
 ## Slide 21: REFERÊNCIAS (1/5)
 
@@ -112,5 +112,5 @@ Slide de encerramento do template. Pode ficar na tela durante as perguntas.
 - O κ de 0,52 não é baixo? É moderado. Por isso a concordância entre detectores é uma checagem do instrumento, com limiar de 0,6, e não uma hipótese.
 - Ter o SDK no aplicativo prova que dados foram enviados? Não. O envio só é observado na análise de tráfego de uma parte dos aplicativos.
 - Por que a revisão caiu de 1.531 para 552? Passei a exigir um termo do tema no título; os dez estudos de controle continuaram.
-- Você leu todos os artigos? Não. A leitura completa está em andamento: já conferi parte das decisões lendo o texto inteiro e termino o restante em fevereiro, antes de qualquer resultado.
+- Você leu todos os artigos? Não. A leitura completa está em andamento: já confirmei parte das decisões lendo o texto inteiro e termino o restante em fevereiro, antes de qualquer resultado.
 - Se não souber: “Isso ainda não medi; está previsto para o Capstone II.”

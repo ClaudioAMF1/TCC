@@ -7,9 +7,11 @@
   oneside,
   a4paper,
   chapter=TITLE,   % títulos de seção em maiúsculas
-  english,
-  brazil
+  english,         % idioma do abstract
+  brazil           % idioma do trabalho: português do Brasil
 ]{abntex2}
+% "english" e "brazil" são os nomes fixos dos pacotes de idioma do LaTeX:
+% como \section e \begin, não podem ser traduzidos e não aparecem no PDF.
 
 % Fonte Times, como pede o modelo do IDP, com qualquer compilador
 \usepackage{iftex}
@@ -185,7 +187,7 @@ brasileiros: SDKs embarcados e transparência das declarações de privacidade}
 
 \begin{document}
 
-\selectlanguage{brazil}
+\selectlanguage{brazil}  % texto em português do Brasil
 \frenchspacing
 
 % ---------------------------------------------------------------- pré-textuais

@@ -1,14 +1,14 @@
 # O que falta
 
-Atualização: 21/11/2026.
+Atualização: 25/11/2026.
 
 ## O que a disciplina exige
 
 | Exigência | Data | Situação |
 |---|---|---|
-| Simulação de defesa: 15 min de apresentação e 10 de perguntas | terça, 24/11, por volta das 10h30 (confirmado) | Slides aprovados verbalmente pelo orientador em 18/11. Falta ensaiar |
-| Projeto em PDF no Canvas, no modelo do IDP | até 03/12 | Texto-fonte revisado e linguagem aprimorada. Ainda é preciso recompilar PDF/DOCX, sincronizar os slides do repositório e incorporar as observações da professora Patrícia na simulação |
-| Defesa final: 15 min de apresentação e 15 de perguntas | 08/12, 10/12 ou 15/12 | Usa os mesmos slides, atualizados |
+| Simulação de defesa: 15 min de apresentação e 10 de perguntas | terça, 24/11, por volta das 10h30 | Feita. Os comentários da professora Patrícia foram aplicados ao texto e aos slides em 25/11 |
+| Projeto em PDF no Canvas, no modelo do IDP | até 03/12 | Texto reescrito em 25/11 (hipótese única, revisão afunilada, plataforma Android, κ explicado, emulador na análise dinâmica); PDF e DOCX recompilados. Falta enviar ao orientador e entregar |
+| Defesa final: 15 min de apresentação e 15 de perguntas | 08/12, 10/12 ou 15/12 | Slides em `apresentacao/apresentacao-defesa-final.pptx`; falas de cerca de 13 min em `apresentacao/roteiro-defesa-final.md`. Falta ensaiar |
 
 ## Até a simulação (24/11)
 
@@ -38,9 +38,9 @@ Evitar revisões paralelas enquanto o orientador comenta o documento: consolidar
 
 Nada disto é exigido para 03/12. O texto já diz que essas etapas vêm depois.
 
-- Conferência das 61 decisões da leitura completa ainda não conferidas (18 das 79 foram conferidas em 21/11).
-- Leitura dos 278 registros da revisão ainda em aberto, inclusive buscando os textos pela CAPES, e bola de neve.
-- Conferência cega de 125 registros da triagem.
+- Conferência das 46 decisões da leitura completa ainda não conferidas (16 das 62 foram conferidas em 21/11).
+- Leitura dos 148 registros da revisão ainda em aberto, inclusive buscando os textos pela CAPES, e bola de neve.
+- Conferência cega dos 44 registros da amostra que continuam após a restrição pelo título.
 - Conferência da classificação dos 376 aplicativos.
 - Definição, com o orientador, do detector principal e do plano de análise.
-- Teste de coleta direta de cinco aplicativos.
+- Teste de coleta direta de cinco aplicativos e teste da captura de tráfego no emulador do Android Studio (não é preciso celular Android).

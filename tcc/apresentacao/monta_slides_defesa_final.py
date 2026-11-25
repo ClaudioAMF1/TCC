@@ -12,6 +12,7 @@ template; as notas do apresentador cabem em cerca de 14 minutos de fala.
 import copy
 import re
 import sys
+import unicodedata
 
 from lxml import etree
 from pptx import Presentation
@@ -544,9 +545,16 @@ notas(s, "Para concluir: o problema está definido, o método é viável, e a hi
 
 
 # ================================================================ REFERÊNCIAS: todas as do texto (fundo 4)
+ACENTO = {"'": "\u0301", "`": "\u0300", "^": "\u0302", "~": "\u0303", '"': "\u0308"}
+
+
 def limpa(t):
-    t = t.replace("{\\'\\i}", "í").replace("\\'\\i", "í")
+    # acentos do BibTeX ({\'\i}, {\'I}, {\'A}, {\'e}...) viram caracteres acentuados
+    t = re.sub(r"\\i(?![a-zA-Z])", "i", t)
+    t = re.sub(r"\{?\\(['`^~\"])\s*\{?([A-Za-z])\}?\}?", lambda m: m.group(2) + ACENTO[m.group(1)], t)
+    t = unicodedata.normalize("NFC", t)
     t = re.sub(r"\\url\{([^}]*)\}", r"\1", t)
+    t = t.replace("\\_", "_").replace("\\%", "%").replace("\\#", "#")  # escapes dos endereços
     t = t.replace("$\\varepsilon$", "ε").replace("\\&", "&").replace("~", " ").replace("--", "–")
     t = t.replace("\\textendash", "–").replace("\\ ", " ")
     t = re.sub(r"\\[a-zA-Z]+\s*", "", t)
@@ -555,6 +563,8 @@ def limpa(t):
 
 
 bbl = open(BBL, encoding="utf-8").read()
+# "{\mdseries ...}" dentro do negrito (Diário Oficial da União: seção 1) volta a ser texto normal
+bbl = re.sub(r"\\textbf\{([^{}]*)\{\\mdseries([^{}]*)\}\}", r"\\textbf{\1}\2", bbl)
 refs = []
 for m in re.finditer(r"\\bibitem\[.*?\]\{(.*?)\}\s*\\abntrefinfo\{.*?\}\{.*?\}\{.*?\}\s*\{(.*?)\}\s*(?=\\bibitem|\\end\{thebibliography\})", bbl, re.S):
     partes = re.split(r"\\textbf\{((?:[^{}]|\{[^{}]*\})*)\}", m.group(2))

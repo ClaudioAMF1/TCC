@@ -94,11 +94,11 @@ Os próximos passos ficam no Capstone II. Em fevereiro, termino a revisão e rev
 
 Para concluir: o problema está definido, o método é viável, e a hipótese está pronta para ser testada no Capstone II. O foco é verificar se o que os aplicativos públicos declaram sobre os dados bate com o que está dentro deles e, onde der para observar, com o que eles enviam. Obrigado.
 
-## Slide 21: REFERÊNCIAS (1/6)
+## Slide 21: REFERÊNCIAS (1/5)
 
 Não é para ler. São todas as referências do texto do TCC, em ordem alfabética, no padrão ABNT. Pode passar direto para o slide de encerramento.
 
-## Slide 27: Encerramento
+## Slide 26: Encerramento
 
 Slide de encerramento do template. Pode ficar na tela durante as perguntas.
 

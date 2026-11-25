@@ -64,7 +64,7 @@ Os próximos passos ficam no Capstone II. Em fevereiro, termino a revisão e rev
 SLIDE 20 — Conclusão
 Para concluir: o problema está definido, o método é viável, e a hipótese está pronta para ser testada no Capstone II. O foco é verificar se o que os aplicativos públicos declaram sobre os dados bate com o que está dentro deles e, onde der para observar, com o que eles enviam. Obrigado.
 
-SLIDE 21 — REFERÊNCIAS (1/6)
+SLIDE 21 — REFERÊNCIAS (1/5)
 Não é para ler. São todas as referências do texto do TCC, em ordem alfabética, no padrão ABNT. Pode passar direto para o slide de encerramento.
 COLA PARA AS PERGUNTAS (não é para ler em voz alta).
 Números: 396 candidatos e 376 oficiais (85 federais, 199 estaduais, 92 municipais) · AndroZoo: 92 de 396 (23,2%) · piloto: 75%, 95% e 80% com rastreador; κ 0,52, ou 0,69 sem os 88 possíveis falsos positivos do B · políticas acessíveis: 323 de 396 (81,6%) · revisão: 552 resultados, 413 sem repetidos, 210 à leitura completa.
@@ -78,7 +78,7 @@ Por que a revisão caiu de 1.531 para 552? Passei a exigir um termo do tema no t
 Você leu todos os artigos? Não. A leitura completa está em andamento: já conferi parte das decisões lendo o texto inteiro e termino o restante em fevereiro, antes de qualquer resultado.
 Se não souber: “Isso ainda não medi; está previsto para o Capstone II.”
 
-SLIDE 22 — REFERÊNCIAS (2/6)
+SLIDE 22 — REFERÊNCIAS (2/5)
 Não é para ler. São todas as referências do texto do TCC, em ordem alfabética, no padrão ABNT. Pode passar direto para o slide de encerramento.
 COLA PARA AS PERGUNTAS (não é para ler em voz alta).
 Números: 396 candidatos e 376 oficiais (85 federais, 199 estaduais, 92 municipais) · AndroZoo: 92 de 396 (23,2%) · piloto: 75%, 95% e 80% com rastreador; κ 0,52, ou 0,69 sem os 88 possíveis falsos positivos do B · políticas acessíveis: 323 de 396 (81,6%) · revisão: 552 resultados, 413 sem repetidos, 210 à leitura completa.
@@ -92,7 +92,7 @@ Por que a revisão caiu de 1.531 para 552? Passei a exigir um termo do tema no t
 Você leu todos os artigos? Não. A leitura completa está em andamento: já conferi parte das decisões lendo o texto inteiro e termino o restante em fevereiro, antes de qualquer resultado.
 Se não souber: “Isso ainda não medi; está previsto para o Capstone II.”
 
-SLIDE 23 — REFERÊNCIAS (3/6)
+SLIDE 23 — REFERÊNCIAS (3/5)
 Não é para ler. São todas as referências do texto do TCC, em ordem alfabética, no padrão ABNT. Pode passar direto para o slide de encerramento.
 COLA PARA AS PERGUNTAS (não é para ler em voz alta).
 Números: 396 candidatos e 376 oficiais (85 federais, 199 estaduais, 92 municipais) · AndroZoo: 92 de 396 (23,2%) · piloto: 75%, 95% e 80% com rastreador; κ 0,52, ou 0,69 sem os 88 possíveis falsos positivos do B · políticas acessíveis: 323 de 396 (81,6%) · revisão: 552 resultados, 413 sem repetidos, 210 à leitura completa.
@@ -106,7 +106,7 @@ Por que a revisão caiu de 1.531 para 552? Passei a exigir um termo do tema no t
 Você leu todos os artigos? Não. A leitura completa está em andamento: já conferi parte das decisões lendo o texto inteiro e termino o restante em fevereiro, antes de qualquer resultado.
 Se não souber: “Isso ainda não medi; está previsto para o Capstone II.”
 
-SLIDE 24 — REFERÊNCIAS (4/6)
+SLIDE 24 — REFERÊNCIAS (4/5)
 Não é para ler. São todas as referências do texto do TCC, em ordem alfabética, no padrão ABNT. Pode passar direto para o slide de encerramento.
 COLA PARA AS PERGUNTAS (não é para ler em voz alta).
 Números: 396 candidatos e 376 oficiais (85 federais, 199 estaduais, 92 municipais) · AndroZoo: 92 de 396 (23,2%) · piloto: 75%, 95% e 80% com rastreador; κ 0,52, ou 0,69 sem os 88 possíveis falsos positivos do B · políticas acessíveis: 323 de 396 (81,6%) · revisão: 552 resultados, 413 sem repetidos, 210 à leitura completa.
@@ -120,7 +120,7 @@ Por que a revisão caiu de 1.531 para 552? Passei a exigir um termo do tema no t
 Você leu todos os artigos? Não. A leitura completa está em andamento: já conferi parte das decisões lendo o texto inteiro e termino o restante em fevereiro, antes de qualquer resultado.
 Se não souber: “Isso ainda não medi; está previsto para o Capstone II.”
 
-SLIDE 25 — REFERÊNCIAS (5/6)
+SLIDE 25 — REFERÊNCIAS (5/5)
 Não é para ler. São todas as referências do texto do TCC, em ordem alfabética, no padrão ABNT. Pode passar direto para o slide de encerramento.
 COLA PARA AS PERGUNTAS (não é para ler em voz alta).
 Números: 396 candidatos e 376 oficiais (85 federais, 199 estaduais, 92 municipais) · AndroZoo: 92 de 396 (23,2%) · piloto: 75%, 95% e 80% com rastreador; κ 0,52, ou 0,69 sem os 88 possíveis falsos positivos do B · políticas acessíveis: 323 de 396 (81,6%) · revisão: 552 resultados, 413 sem repetidos, 210 à leitura completa.
@@ -134,21 +134,7 @@ Por que a revisão caiu de 1.531 para 552? Passei a exigir um termo do tema no t
 Você leu todos os artigos? Não. A leitura completa está em andamento: já conferi parte das decisões lendo o texto inteiro e termino o restante em fevereiro, antes de qualquer resultado.
 Se não souber: “Isso ainda não medi; está previsto para o Capstone II.”
 
-SLIDE 26 — REFERÊNCIAS (6/6)
-Não é para ler. São todas as referências do texto do TCC, em ordem alfabética, no padrão ABNT. Pode passar direto para o slide de encerramento.
-COLA PARA AS PERGUNTAS (não é para ler em voz alta).
-Números: 396 candidatos e 376 oficiais (85 federais, 199 estaduais, 92 municipais) · AndroZoo: 92 de 396 (23,2%) · piloto: 75%, 95% e 80% com rastreador; κ 0,52, ou 0,69 sem os 88 possíveis falsos positivos do B · políticas acessíveis: 323 de 396 (81,6%) · revisão: 552 resultados, 413 sem repetidos, 210 à leitura completa.
-Por que 10%? Fica bem abaixo da literatura (Andow 42,4%; Samarasinghe 27%), que conta aplicativos; eu conto pares, então é um patamar conservador. Se a H1 for rejeitada, não dá para dizer que o governo é mais transparente que nos outros estudos, só que ficou abaixo do meu patamar. Não é limite da LGPD.
-Por que só Android? 73,76% dos celulares no Brasil (StatCounter, out. 2026); no iPhone os aplicativos são criptografados e não há ferramenta pública para baixá-los em escala (Kollnig et al., 2022); a seção “Segurança dos dados” é da Google Play. Não quer dizer que o iPhone seja mais seguro.
-Como vai observar o tráfego sem celular Android? No emulador do Android Studio, no computador, com o mitmproxy registrando as conexões. Abro cada aplicativo sem login, sem conta pessoal. Se um aplicativo não funcionar no emulador, registro o motivo e reporto quantos foram.
-Por que uma hipótese só? Para concentrar o trabalho no que dá para provar no Capstone II: as declarações. A comparação dos aplicativos com dados sensíveis saiu do projeto.
-O κ de 0,52 não é baixo? É moderado. Por isso a concordância entre detectores é uma checagem do instrumento, com limiar de 0,6, e não uma hipótese.
-Ter o SDK no aplicativo prova que dados foram enviados? Não. O envio só é observado na análise de tráfego de uma parte dos aplicativos.
-Por que a revisão caiu de 1.531 para 552? Passei a exigir um termo do tema no título; os dez estudos de controle continuaram.
-Você leu todos os artigos? Não. A leitura completa está em andamento: já conferi parte das decisões lendo o texto inteiro e termino o restante em fevereiro, antes de qualquer resultado.
-Se não souber: “Isso ainda não medi; está previsto para o Capstone II.”
-
-SLIDE 27 — Encerramento
+SLIDE 26 — Encerramento
 Slide de encerramento do template. Pode ficar na tela durante as perguntas.
 COLA PARA AS PERGUNTAS (não é para ler em voz alta).
 Números: 396 candidatos e 376 oficiais (85 federais, 199 estaduais, 92 municipais) · AndroZoo: 92 de 396 (23,2%) · piloto: 75%, 95% e 80% com rastreador; κ 0,52, ou 0,69 sem os 88 possíveis falsos positivos do B · políticas acessíveis: 323 de 396 (81,6%) · revisão: 552 resultados, 413 sem repetidos, 210 à leitura completa.

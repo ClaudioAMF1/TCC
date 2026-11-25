@@ -1,6 +1,6 @@
 # Protocolo da revisão sistemática
 
-**Versão 1.12, 21/11/2026.** Segue as diretrizes de Kitchenham e Charters (2007)
+**Versão 2.0, 25/11/2026.** Segue as diretrizes de Kitchenham e Charters (2007)
 para revisões sistemáticas em engenharia de software, com bola de neve conforme
 Wohlin (2014) e relato do fluxo conforme o PRISMA 2020 (PAGE et al., 2021).
 
@@ -393,7 +393,7 @@ que sustentam a decisão.
 
 ## 11 Cronograma das etapas pendentes
 
-Situação em 21/11/2026: a F1 tem decisões registradas; a F2 tem **79 propostas em 357 registros: 71 I e 8 E**. Em 21/11, o autor conferiu 18 delas (12 I e 6 E, cinco com ressalvas), com leitura integral e avaliação QA1–QA8; as outras 61 (59 I e 2 E) ainda não foram conferidas. Restam 278 decisões em aberto: 131 por acesso, duas por versão divergente, duas por dúvida de escopo e 143 T cujo tratamento será definido com o orientador. Foram obtidos 80 textos correspondentes. R0375 é a exclusão adicional por duplicidade comprovada em R0192, sem texto próprio obtido. Não houve contato com autores. Desde a versão 1.6, texto não obtido conta como não recuperado, sem exclusão (Seção 6). A revisão sistemática, a extração e a avaliação de qualidade permanecem em andamento. Ver `dados/revisao/LEIA-ME_leitura_F2_20261113.md`, `dados/revisao/RELATORIO_auditoria_documental_F2_20261121.md` e o registro por ID em `dados/revisao/leitura_F2_registro_20261121_validacao_parcial.csv`.
+Situação em 25/11/2026, com a restrição pelo título da versão 2.0: dos 413 registros triados, 210 foram à leitura completa. Há **62 propostas: 55 I e 7 E**; 16 foram conferidas pelo autor em 21/11 (11 I e 5 E) e 46 ainda não. Restam 148 registros em aberto: 78 por acesso, um por versão divergente, um por dúvida de escopo e 68 T cujo tratamento será definido com o orientador. A contagem anterior à versão 2.0 (1.249 triados; 357 à leitura completa; 71 I e 8 E) fica preservada no histórico do repositório e nos arquivos de 13/11 e 21/11.
 
 Para a entrega do projeto em 03/12, a síntese usa as 71 propostas de inclusão registradas até 13/11, 12 delas conferidas pelo autor em 21/11 (Seção 2.7 do projeto). O restante fica para o início do Capstone II:
 
@@ -463,6 +463,7 @@ Para a entrega do projeto em 03/12, a síntese usa as 71 propostas de inclusão 
 | 21/11/2026 | 1.10 | A concordância entre detectores deixa de ser hipótese e passa a checagem do instrumento, por sugestão do orientador; ficam duas hipóteses (H1, declaração; H2, dado sensível) | O foco é a aderência às declarações; a concordância mede o instrumento, e não os aplicativos |
 | 21/11/2026 | 1.11 | Esclareceu-se o recorte entre transparência, prevalência sensível e checagem de detector sem alterar as buscas. | Versão intermediária do texto |
 | 21/11/2026 | 1.12 | Uniformização com a versão de submissão: H1 = declarações; H2 = dados sensíveis; comparação comercial apenas contexto; concordância como verificação sem número de hipótese | Solicitação de alinhamento entre PDF do TCC, roteiro e slides |
+| 25/11/2026 | 2.0 | Restrição pelo título: além da string original, o título do registro precisa conter um termo do fenômeno (tracker, tracking, third-party, SDK, librar*, privacy policy, data safety, privacy label, privacy analysis, privacy compliance, data flow, leak, rastrea*, política de privacidade) ou do contexto (government, e-government, public sector, public administration, public service, governo, setor público, COVID-19, pandemic, contact tracing, Brazil/Brasil, LGPD). Aplicada às exportações de 6/11 com `scripts/revisao_afunilamento_titulo.py`; lista em `dados/revisao/afunilamento_titulo_20261125.csv`. Resultado: 552 identificados, 139 duplicatas, 413 triados, 200 excluídos, 3 revisões, 210 à leitura completa, 55 I e 7 E propostas, 148 em aberto, 16 decisões conferidas (11 I e 5 E). Os 10 estudos de controle recuperados continuam no conjunto. A conferência cega passa a usar os 44 dos 125 registros sorteados que continuam entre os 413 (10,7%). Fica uma única hipótese (H1, declarações); a comparação de dados sensíveis (antiga H2) sai do projeto | Na simulação de defesa (24/11), a banca considerou o volume de 1.531 registros pouco realista para o escopo de um TCC e pediu uma busca mais afunilada e uma única hipótese |
 
 ### 12.4 Triagem por título e resumo (F1)
 

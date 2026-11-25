@@ -1,0 +1,414 @@
+id;titulo;decisao_f1;decisao_f2
+R0004;A Machine Learning based Eye Tracking Framework to Detect Zoom Fatigue;E;
+R0007;A Systematic Assessment on Android Third-Party Library Detection Tools;I;I
+R0011;AI FITNESS TRACKER WITH POSTURE DETECTION AND HEALTH INSIGHTS CHATBOT;E;
+R0013;AirTag-Facilitated Stalking Protection: Evaluating Unwanted Tracking Notifications and Tracker Locating Features;E;
+R0014;AMF-GR: Adaptive Matrix Factorization and Graph Fusion for Android Library Recommendation;E;
+R0015;An Empirical Study on the Robustness of Android Third-Party Library Detection Tools Against Advanced Obfuscation;I;I
+R0017;ASD-SDK: An Android malicious software detection approach associated with sneaky third-party SDK behaviors;E;
+R0019;ATVHunter: Reliable version detection of third-party libraries for vulnerability identification in android applications;I;I
+R0020;Automated Third-Party Library Detection for Android Applications: Are We There Yet?;I;E
+R0021;BLE-Doubt: Smartphone-Based Detection of Malicious Bluetooth Trackers;E;
+R0022;BLeak: Automatically debugging memory leaks in web applications;E;
+R0028;Detecting Inconsistent Privacy Statements Between Mobile Vehicle Apps and Their Third-Party Integrations;I;
+R0030;Detecting third-party libraries in Android applications with high precision and recall;I;I
+R0031;Detection and Privacy Leakage Analysis of Third-Party Libraries in Android Apps;I;
+R0032;Detection of Inconsistencies between Guidance Pages and Actual Data Collection of Third-party SDKs in Android Apps;I;
+R0033;Detection Technology of Mobile Application Third-Party Library Based on Binary Tree Model;I;
+R0036;DroidNative: A Greedy-Constructed Large-Scale Indexing for Android Native Libraries;I;E
+R0037;Drop the Golden Apples: Identifying Third-Party Reuse by DB-Less Software Composition Analysis;T;
+R0038;Dynamic privacy leakage analysis of android third-party libraries;I;
+R0040;eHealth4MS: Problem detection from wearable activity trackers to support the care of multiple sclerosis;E;
+R0043;Evaluating the Privacy Policy of Android Apps: A Privacy Policy Compliance Study for Popular Apps in China and Europe;I;
+R0047;Exploring Covert Third-party Identifiers through External Storage in the Android New Era;I;I
+R0048;Fast Library Recommendation in Software Dependency Graphs with Symmetric Partially Absorbing Random Walks;E;
+R0050;Graph Contrastive Learning with Category Awareness for Third-Party Library Recommendation;E;
+R0051;Graph Structure-based Clustering Algorithm for Android Third-party Libraries;I;
+R0052;Helping Mobile Application Developers Create Accurate Privacy Labels;T;
+R0055;How Does Code Optimization Impact Third-party Library Detection for Android Applications?;I;I
+R0056;Identify and Inspect Libraries in Android Applications;I;
+R0058;Identifying Biomarkers Using a Portable, Home-Based Eye-Tracking System to Predict Short-Term Visual Fatigue Deterioration: Prospective Observational Feasibility Study;E;
+R0064;Large-Scale Third-Party Library Detection in Android Markets;I;I
+R0067;LibD: Scalable and precise third-party library detection in android markets;I;E
+R0068;LibDB: An Effective and Efficient Framework for Detecting Third-Party Libraries in Binaries;T;
+R0069;LibHunter: An Unsupervised Approach for Third-party Library Detection without Prior Knowledge;I;
+R0070;LibiD: Reliable identification of obfuscated third-party android libraries;I;I
+R0071;LibKit: Detecting Third-Party Libraries in iOS Apps;I;I
+R0072;LibPass: An Entropy-Guided Black-Box Adversarial Attack Against Third-Party Library Detection Tools in the Wild;I;
+R0073;Libra: Library Identification in Obfuscated Android Apps;I;
+R0074;LibRadar: Fast and accurate detection of third-party libraries in Android apps;I;E
+R0076;LibScan: Towards More Precise Third-Party Library Identification for Android Applications;I;I
+R0077;LibSift: Automated detection of third-party libraries in android applications;I;I
+R0078;LibSleuth: Semantic-Aware and Lightweight Third-Party Library Detection for Android Software Supply Chain Security;I;
+R0082;Multi-View Contrastive and Similarity-Supervised Graph Collaborative Filtering for Third-Party Library Recommendation;E;
+R0084;Navigating Developers' Quagmire: LLM-Enabled Privacy Compliance Analysis for SDK Integrations;I;
+R0085;Navigating the Privacy Compliance Maze: Understanding Risks with Privacy-Configurable Mobile SDKs;I;I
+R0089;Obfuscation-resilient detection of Android third-party libraries using multi-scale code dependency fusion;I;
+R0091;On the Identification of Third-Party Library Usage Patterns for Android Applications;T;
+R0092;Opportunistic Permission Exploitation of Third-Party Libraries in Android Apps;I;I
+R0093;ORLIS: Obfuscation-resilient library detection for Android;I;I
+R0094;Pay Your Attention on Lib! Android Third-Party Library Detection via Feature Language Model;I;I
+R0095;Performance evaluation of the smartphone-based AI cough monitoring app - Hyfe Cough Tracker against solicited respiratory sounds;E;
+R0096;PIChecker: Automatic Privacy Detector for Third Party Libraries in Android Apps;I;
+R0097;Plug and Analyze: Usable Dynamic Taint Tracker for Android Apps;T;
+R0101;Privacy Leakage and Protection of InputConnection Interface in Android;E;
+R0102;Re-checking app behavior against app description in the context of third-party libraries;I;E
+R0105;Reliable third-party library detection in Android and its security applications;I;I
+R0109;Scalably Detecting Third-Party Android Libraries With Two-Stage Bloom Filtering;I;I
+R0110;Scratching the Iceberg: Unveiling the Outdated Third-Party Native Libraries in Android Apps;T;
+R0111;Securing android applications via edge assistant third-party library detection;I;
+R0113;Shrunk, Yet Complete: Code Shrinking-Resilient Android Third-Party Library Detection;I;
+R0115;Succeeding with prolonged usage of consumer-based activity trackers in clinical studies: A mixed methods approach;E;
+R0116;Testing Android Third Party Libraries with LLMs to Detect Incompatible APIs;E;
+R0119;The Price to Play: A Privacy Analysis of Free and Paid Games in the Android Ecosystem;I;
+R0120;Third-Party Service Categories in Android Mobile Gaming Apps: A Static Empirical Analysis;I;I
+R0121;Towards Fast Detection of Suspicious Bluetooth Trackers using Anomaly Detection;E;
+R0122;Towards Global Matches for Third-Party Library Detection in Android;I;
+R0124;TPL-Benchmark: A Comprehensive Benchmark for Third-Party Library Detection in Android Applications;I;
+R0125;Understanding and Conquering the Difficulties in Identifying Third-Party Libraries From Millions of Android Apps;I;
+R0129;Version-level Third-Party Library Detection in Android Applications via Class Structural Similarity;I;I
+R0134;A Comprehensive Study on Third-Party User Tracking in Mobile Applications;I;
+R0136;A fait accompli? An empirical study into the absence of consent to third-party tracking in Android apps;I;I
+R0139;A look at the security and privacy of Fitbit as a health activity tracker;T;
+R0142;A privacy-preserving location tracking system for smartphones based on cloud storage;E;
+R0144;A room of one’s own?: Using period trackers to escape menstrual stigma;E;
+R0148;Accelerating eye movement research via accurate and affordable smartphone eye tracking;E;
+R0152;Activity Trackers for Raising Guide Dogs: Challenges and Opportunities;E;
+R0154;AI-Driven Personalized Fitness Workout Assistance and Tracker Using YOLOv8 Algorithm;E;
+R0156;Alde: Privacy risk analysis of analytics libraries in the android ecosystem;E;
+R0157;Algorithmic self‐tracking for health: User perspectives on risk awareness and coping strategies;E;
+R0159;An Analysis of Web Tracking Domains in Mobile Applications;I;
+R0160;An Empirical Assessment of Global COVID-19 Contact Tracing Applications;I;
+R0163;Analysis of Permissions and Trackers in Android Apps Targeting Children Under Thirteen;I;
+R0164;Analyzing the individual factors determining the usage duration of an active GPS tracker app using a joint binary-ordered probit model;E;
+R0165;ANDetect: A Third-party Ad Network Libraries Detection Framework for Android Applications;I;
+R0166;Android smartphone third party advertising library data leak analysis;I;
+R0168;Apps, Trackers, Privacy, and Regulators A Global Study of the Mobile Tracking Ecosystem;I;I
+R0169;Are Our Animals Leaking Information about Us? Security and Privacy Evaluation of Animal-related Apps;I;
+R0170;Assessing and Mitigating the Privacy Implications of Eye Tracking on Handheld Mobile Devices;E;
+R0178;Before and after GDPR: Tracking in mobile apps;I;I
+R0179;Block Me if You Can: A Large-Scale Study of Tracker-Blocking Tools;I;
+R0180;BreakMi: Reversing, Exploiting and Fixing Xiaomi Fitness Tracking Ecosystem;T;
+R0183;Changing emotional engagement with running through communal self-tracking: the implications of ‘teleoaffective shaping’ for public health;E;
+R0184;Characterizing Location-based Mobile Tracking in Mobile Ad Networks;I;I
+R0186;CogTrack: A Proof of Concept for Cognition Tracker;E;
+R0187;College bus tracker andriod application using java and google firbase;E;
+R0191;Contact Tracing App for Containing Diseases Spread;E;
+R0192;COVID-19 Mobile Applications: A Study of Trackers and Data Leaks;I;I
+R0193;COVID-19 One Year on-Security and Privacy Review of Contact Tracing Mobile Apps;I;
+R0194;COVTrac: Covid-19 Tracker and Social Distancing App;E;
+R0195;Cross-sectional Study on Health-seeking Behavior and Barriers to Perceived Usability of Medication Tracker among Middle-aged Adults in a Community in Marikina City;E;
+R0200;Data Management and Privacy Policy of COVID-19 Contact-Tracing Apps: Systematic Review and Content Analysis;I;
+R0202;Decentralized Trajectory Matching for Revealing Unauthorized Stalking by Bluetooth Trackers;E;
+R0203;Deep dive into why consumers stick with or ditch fitness trackers: implications for wearable fitness industry;E;
+R0207;Detecting IP-tracking proof interfaces by looking for NATs;E;
+R0209;Detection of Android ad library focusing on HTTP connections and view object redraw behaviors;I;I
+R0216;Dissecting contact tracing apps in the Android platform;I;I
+R0222;Effectiveness of Digital Forced-Choice Nudges for Voluntary Data Donation by Health Self-trackers in Germany:Web-Based Experiment;E;
+R0224;Efficient privilege de-escalation for ad libraries in mobile apps;T;
+R0226;Empirical security and privacy analysis of mobile symptom checking apps on google play;I;
+R0228;ESC working group on e-cardiology position paper: Use of commercially available wearable technology for heart rate and activity tracking in primary and secondary cardiovascular prevention - In collaboration with the European Heart Rhythm Association, European Association of Preventive Cardiology, Association of Cardiovascular Nursing and Allied Professionals, Patient Forum, and the Digital Health Committee;E;
+R0229;Et tu, Brute? Privacy Analysis of Government Websites and Mobile Apps;I;I
+R0235;Experiences of users of period tracking apps: which app, frequency of use, data input and output and attitudes;E;
+R0236;Exploiting eye tracking for smartphone authentication;E;
+R0237;Exploration of Reproductive Health Apps’ Data Privacy Policies and the Risks Posed to Users: Qualitative Content Analysis;T;
+R0238;Exploring the Eastern Frontier: A First Look at Mobile App Tracking in China;I;
+R0239;Exposing Android social applications: linking data leakage to privacy policies;I;
+R0240;Facilitating Experimental Privacy Research with APT: The Android Privacy Tracker;T;
+R0241;Factors Influencing Intention to use the COVID-19 Contact Tracing Application;E;
+R0243;Fingerprinting SDKs for Mobile Apps and Where to Find Them: Understanding the Market for Device Fingerprinting;I;
+R0245;Fitness tracker information and privacy management: Empirical study;E;
+R0248;Free for All! Assessing User Data Exposure to Advertising Libraries on Android;I;I
+R0249;Freely Given Consent?: Studying Consent Notice of Third-Party Tracking and Its Violations of GDPR in Android Apps;I;I
+R0251;Gazenum: unlock your phone with gaze tracking viewing numbers for authentication;E;
+R0252;Generating heat maps of popular routes online from massive mobile sports tracking application data in milliseconds while respecting privacy;E;
+R0254;Goodbye Tracking? Impact of iOS App Tracking Transparency and Privacy Labels;I;
+R0257;Health information privacy of activity trackers;T;
+R0260;Heimdall: Illuminating the hidden depths of third-party tracking in android applications;I;
+R0263;Human Factors and Requirements of People with Cognitive Impairment, Their Caregivers, and Healthcare Professionals for mHealth Apps including Reminders, Games, and Geolocation Tracking: A Survey-Questionnaire Study;E;
+R0266;“I Deleted It Afer the Overturn of Roe v. Wade”: Understanding Women's Privacy Concerns Toward Period-Tracking Apps in the Post Roe v. Wade Era;E;
+R0275;Intimate Data Sharing: Enhancing Transparency and Control in Fertility Tracking;T;
+R0277;Irish Attitudes Toward COVID Tracker App & Privacy: Sentiment Analysis on Twitter and Survey Data;E;
+R0292;Measuring third-party tracker power across web and mobile;I;I
+R0295;MHealth wearables and smartphone health tracking apps: A changing privacy landscape;T;
+R0298;Mobile applications: Analyzing private data leakage using third party connections;I;
+R0306;New Parent App: A Mobile based Baby Growth and Milestone Tracker with Chatbot Support;E;
+R0308;No Salvation from Trackers: Privacy Analysis of Religious Websites and Mobile Apps;I;
+R0311;Nursling: Intelligent Symptom Tracker and Appointment System for Infant Healthcare;E;
+R0312;Obfuscation-Resilient Privacy Leak Detection for Mobile Apps Through Differential Analysis;I;I
+R0314;One year of digital contact tracing: Who was more likely to install the NHS COVID-19 app? Results from a tracker survey in England and Wales;E;
+R0319;Paranoid Operating System: Wearable Trackers;E;
+R0320;Paranoid OS: Wearable Trackers;E;
+R0324;Personal informatics for everyday life: How users without prior self-tracking experience engage with personal data;E;
+R0329;Privacy Assessment of Fitness Tracker Devices;T;
+R0330;Privacy attitudes and data valuation among fitness tracker users;E;
+R0332;Privacy in Times of COVID-19: A Pilot Study in the Republic of Ireland;E;
+R0333;Privacy issues in Android applications: the cases of GPS navigators and fitness trackers;I;
+R0335;Privacy-preserving Identity Broadcast for Contact Tracing Applications;E;
+R0337;Privacy risk analysis and mitigation of analytics libraries in the android ecosystem;I;
+R0338;Public attitudes towards privacy in COVID-19 times in the Republic of Ireland: A pilot study;E;
+R0339;Readability and Accessibility of Terms of Service and Privacy Policies for Menstruation-Tracking Smartphone Applications;T;
+R0340;Reciprocal reinforcement between wearable activity trackers and social network services in influencing physical activity behaviors;E;
+R0342;Reimagining the cycle: interaction in self-tracking period apps and menstrual empowerment;E;
+R0347;Scoping review of data privacy risks in COVID-19 apps with digital vaccination certifications;R;
+R0349;Secure Android Location Tracking Application with Privacy Enhanced Technique;E;
+R0351;Securing the invisible thread: a comprehensive analysis of BLE tracker security in Apple airtags and Samsung smarttags;E;
+R0352;Self-Tracking Practices and Digital (Re)productive Labour;E;
+R0354;Sentiment analysis of user feedback on the HSE’s Covid-19 contact tracing app;E;
+R0356;Short: A measurement study of tracking in paid mobile applications;T;
+R0358;"Situating conventions of health: Transformations, inaccuracies, and the limits of measuring in the field of self-tracking; [Situierung von Gesundheitskonventionen: Transformationen, Unge-nauigkeiten und die Grenzen des Messens auf dem Gebiet des Self-Trackings]";E;
+R0359;Smartphone gaze-tracking for accessible psychiatric assessment;E;
+R0362;Taking a Bite out of the Forbidden Fruit: Characterizing Third-Party Iranian iOS App Stores;E;
+R0363;Tales from the porn: A comprehensive privacy analysis of the web porn ecosystem;E;
+R0364;The benefits and harms of using a period tracking app: A qualitative study of women's experiences;E;
+R0366;The Dutch COVID-19 contact tracing app (the CoronaMelder): Usability study;E;
+R0370;The messiness of the menstruator: assessing personas and functionalities of menstrual tracking apps;E;
+R0373;The self-tracking information literacy practices of LGBTQ+ students: Empowerment through self-knowledge;E;
+R0375;Third-Party Trackers in COVID-19 Mobile Applications Can Enable Privacy Leaks;I;E
+R0376;Third party tracking in the mobile ecosystem;I;I
+R0382;Tracking the Trackers: ‘Menstruapp’ Privacy Policies Following the Dobbs Decision;T;
+R0383;"""Tracking the Trackers"" of children's first personal data in mobile applications: Using static analysis and privacy policy evaluation to explore the data-sharing capabilities and practices of baby apps";I;
+R0384;Trade-Offs in Privacy-Preserving Eye Tracking Through Iris Obfuscation: A Benchmarking Study;E;
+R0386;Typologies of Mobile Privacy Behavior and Attitude: A Case Study Comparing German and American Library and Information Science Students;E;
+R0387;Uncovering privacy leakage in BLE network traffic of wearable fitness trackers;E;
+R0392;Understanding the responsiveness of mobile app developers to software library updates;E;
+R0395;User acceptance of wrist-worn activity trackers among community-dwelling older adults: Mixed method study;E;
+R0396;User experience with pregnancy tracker mobile apps: Findings from comment-based qualitative study;E;
+R0398;Users Can Deduce Sensitive Locations Protected by Privacy Zones on Fitness Tracking Apps;E;
+R0399;Using ad-related network behavior to distinguish ad libraries;I;I
+R0405;Watching you watch: The tracking ecosystem of over-the-top TV streaming devices;E;
+R0406;We are family: Relating information-flow trackers;T;
+R0409;WhisperTest: A Voice-Control-based Library for iOS UI Automation;E;
+R0411;Wi-Tracker: Monitoring Breathing Airflow with Acoustic Signals;E;
+R0412;Withdrawing is believing? Detecting Inconsistencies between Withdrawal Choices and Third-party Data Collections in Mobile Apps;I;
+R0414;WTDetect: a third-party website tracking detection framework for android applications;I;I
+R0417;A comparative study of android and iOS mobile applications’ data handling practices versus compliance to privacy policy;I;I
+R0418;A Comprehensive Analysis of Privacy Protection Techniques Developed for COVID-19 Pandemic;T;
+R0420;A comprehensive easy-to-use techno-human solution for the resource-constrained nations in the fight against communicable disease like the coronavirus pandemic;E;
+R0422;A European approach to COVID-19 apps? A landscape analysis of apps stores in the initial stages of the health crisis;I;
+R0423;A first look at Android applications in Google Play related to COVID-19;I;I
+R0424;A First Look at Privacy Analysis of COVID-19 Contact-Tracing Mobile Applications;I;
+R0425;A First Look at Privacy Compliance of Zoom Apps;T;
+R0429;A License to Prey: Investigating the Impact of Digital Loan App Regulations on Permission Requests and Privacy Policies in the Kenyan Market;T;
+R0432;A Platform for Citizen Cooperation during the COVID-19 Pandemic in RN, Brazil;T;
+R0433;A privacy and security analysis of early-deployed COVID-19 contact tracing Android apps;I;I
+R0435;A Sensitive Data Leakage Detection and Privacy Policy Analyzing Application for Android Systems (PriVot);I;
+R0437;A Study on Contact Tracing Apps for Covid-19: Privacy and Security Perspective;I;
+R0440;“Aarogya Setu”: The mobile application that monitors and mitigates the risks of COVID-19 pandemic spread in India;T;
+R0441;Abandon All Hope Ye Who Enter Here: A Dynamic, Longitudinal Investigation of Android's Data Safety Section;I;
+R0442;Actions speak louder than words: Entity-sensitive privacy policy and data flow analysis with policheck;I;I
+R0443;Active Privacy-Preserving Contact Tracing Scheme for Infectious Diseases in Cloud Environment;E;
+R0446;Aligning Declarations and Practices: Evaluating Privacy Policy Consistency with App Permissions Using Generative AI;T;
+R0447;An analysis of privacy policies of public COVID-19 apps: Evidence from India;I;
+R0450;An evaluation of privacy policies used in digital contact tracing apps for COVID-19;I;
+R0453;Analyzing privacy policies through syntax-driven semantic analysis of information types;T;
+R0455;Android application development for GPS-based tree location tracker;E;
+R0462;Are You Aware of Your Data Privacy? The Case of Digital Contact Tracing Applications (MySejahtera);E;
+R0463;Aspect-Based Sentiment Analysis on Public Service Reviews using a Hybrid Rule-Based and Bidirectional Encoder Representations from Transformers (BERT) Approach;E;
+R0464;Assessing Privacy Disclosure Compliance of Android Third-Party SDKs;I;
+R0469;AUTOMATING ACCOUNTABILITY? PRIVACY POLICIES, DATA TRANSPARENCY, AND THE THIRD PARTY PROBLEM;T;
+R0470;Automating the Generation of Privacy Policies for Context-Sharing Applications;E;
+R0471;Balancing privacy at the time of pandemic: global observation;I;I
+R0472;BECT: Beacon-based Contact Tracing for Detecting Direct & Indirect Contacts;E;
+R0475;Checking Contact Tracing App Implementations;E;
+R0476;Checking Contact Tracing App Implementations with Bespoke Static Analysis;I;I
+R0478;Cloud Computing Challenges and Needs in Higher Education Institutions in Post-COVID-19 Times: A Case of a Japanese Survey;E;
+R0480;Comparison of surveillance systems for monitoring COVID-19 in England: a retrospective observational study;E;
+R0484;Contextual Acceptance of COVID-19 Mitigation Mobile Apps in the United States: Mixed Methods Survey Study on Postpandemic Data Privacy;E;
+R0485;Contextual Privacy Policies for Mobile Applications and An Approach Toward Automated Generation;T;
+R0486;COVI-TRACK: The COVID-19 info tracer;E;
+R0487;Covid-19 digital Contact-tracing: A doorway to well-being or a backdoor to security vulnerabilities?;I;
+R0488;Covid 19 tracker using REST API android app;E;
+R0489;COVID-19 what have we learned? The rise of social machines and connected devices in pandemic management following the concepts of predictive, preventive and personalized medicine;E;
+R0490;CRITICAL ANALYSIS OF SCOTTISH LOCAL AUTHORITIES BULKY WASTE SERVICES: IMPLICATIONS FOR LEAKS IN THE CIRCULAR ECONOMY MODEL;E;
+R0491;Crowd Safety Sensing (CroSS) for the Post Pandemic Era;E;
+R0492;Crowdsourced Mobile Applications for Disaster Relief: A Case Study of Landslide Tracker and Amrita Kripa App Deployments in Sikkim Schools;E;
+R0493;DAPA: Degradation-aware privacy analysis of Android apps;T;
+R0494;Data Security and Privacy in Apps for Dementia: An Analysis of Existing Privacy Policies;T;
+R0499;Demo: VaxPass-A Scalable and Verifiable Platform for COVID-19 Records;E;
+R0500;Demystifying Privacy Policy of Third-Party Libraries in Mobile Apps;I;I
+R0504;Detecting the Inconsistency between Android Apps’ Data Collection and Google Play’s Data Safety Using Static Analysis;I;I
+R0505;Detection the places of the heat energy leak on the underground thermal pipelines using the computer system;E;
+R0507;Digital Health Innovation: Exploring Adoption of COVID-19 Digital Contact Tracing Apps;E;
+R0510;Digital tracking of Migrants' Children Health Status by using Face Recognition Systems;E;
+R0513;Do as You Say: Consistency Detection of Data Practice in Program Code and Privacy Policy in Mini-App;I;
+R0514;E-Governance and Privacy in Pandemic Times;T;
+R0517;eGLU-Box Mobile: A Smartphone App for Usability Testing by Italian Public Administration Webmasters;E;
+R0518;Enabling User-centered Privacy Controls for Mobile Applications: COVID-19 Perspective;E;
+R0520;Enhancing the Description-to-Behavior Fidelity in Android Apps with Privacy Policy;T;
+R0523;Eunomia: A Real-time Privacy Compliance Firewall for Alexa Skills;E;
+R0528;Financial Solace: Malaysian Credit Counselling and Debt Management Agency Responses to COVID-19 Challenges;E;
+R0530;From Pandemic Control to Data-Driven Governance: The Case of China’s Health Code;T;
+R0531;GDPR Compliance in Privacy Policies of Mobile Apps: An Overview of the State-of-Practice;I;
+R0534;GUILeak: Tracing Privacy Policy Claims on User Input Data for Android Applications;I;
+R0537;How COVID-19 lockdown and reopening affected daily steps: evidence based on 164,630 person-days of prospectively collected data from Shanghai, China;E;
+R0539;How fair is the privacy policy of courier apps in China? A content analysis based on justice theory;T;
+R0541;How private is your mental health app data? An empirical study of mental health app privacy policies and practices;I;
+R0545;Intelligent analysis of android application privacy policy and permission consistency;I;I
+R0547;Investigating Citizens’ Acceptance of Contact Tracing Apps: Quantitative Study of the Role of Trust and Privacy;E;
+R0548;IoTPrivComp: A Measurement Study of Privacy Compliance in IoT Apps;I;
+R0550;Is Your Surveillance Camera App Watching You? A Privacy Analysis;T;
+R0552;Lalaine: Measuring and Characterizing Non-Compliance of Apple Privacy Labels;I;I
+R0553;Large language models: a new approach for privacy policy analysis at scale;T;
+R0555;Lattice Cryptography-Based Geo-Encrypted Contact Tracing for Infection Detection;E;
+R0556;Legal Protection of Personal Data Security in Indonesian Local Government Apps: Al Farabi's Perspective;I;
+R0560;Measuring Compliance Implications of Third-party Libraries’ Privacy Label Disclosure Guidelines;I;
+R0571;Natural language processing for mobile app privacy compliance;I;
+R0574;Network-Based Contact Tracing for Detection of Covid-19 Contagions: A Privacy-Preserving Approach;E;
+R0575;New digital public health tools: privacy by design in contact tracing mobile apps for COVID-19;T;
+R0576;NLP-Based Detecting Privacy Policy and Behavior Inconsistencies in Android Apps;I;
+R0581;On the (Un)Reliability of Privacy Policies in Android Apps;I;I
+R0582;Perceived Interruptions to HIV Prevention and Treatment Services Associated with COVID-19 for Gay, Bisexual, and Other Men Who Have Sex with Men in 20 Countries;E;
+R0584;Personal Information Protection and Privacy Policy Compliance of Health Code Apps in China: Scale Development and Content Analysis;I;I
+R0585;Physical activity behavior before, during, and after COVID-19 restrictions: Longitudinal smartphone-tracking study of adults in the United Kingdom;E;
+R0588;Practical Exploration and Research on AI-Based Privacy Compliance Testing for Automotive Apps;I;
+R0589;Preferences in the Intention to Download a COVID Tracing App: A Discrete Choice Experiment Study in the Netherlands and Turkey;E;
+R0590;PriAgent: A Collaborative Multi-Agent Framework for Auditing Android Privacy Compliance;I;
+R0591;PriLabel: Toward Comprehensively Uncovering Omitted Disclosures in Privacy Labels of Android Apps on a Large Scale;I;
+R0592;Privacy Analysis of COVID-19 Contact Tracing Apps in the EU;I;
+R0596;Privacy policies of e-governance initiatives: Evidence from India;I;
+R0597;Privacy-preserving COVID-19 contact tracing solution based on blockchain;E;
+R0598;Privacy-preserving COVID-19 Contact Tracing using Blockchain;E;
+R0600;PrivacyFlash Pro: Automating Privacy Policy Generation for Mobile Apps;I;I
+R0601;PRIVATT - A Closer Look at People's Data Privacy Attitudes in Times of COVID-19;E;
+R0602;Public Attitudes Regarding Trade-offs between the Functional Aspects of a Contact-Confirming App for COVID-19 Infection Control and the Benefits to Individuals and Public Health: Cross-sectional Survey;E;
+R0604;Public Sector Use of Private Sector Personal Data: Towards Best Practices;E;
+R0605;Public Trust in Covid-19 Tracking Technology: A Survey of Attitudes About Hong Kong’s LeaveHomeSafe Mobile App;E;
+R0607;Quarantine Perimeter Breach Monitoring System on Smartphone for COVID-19 Self Quarantine Patient;E;
+R0616;SDKPrivacyLens: Automated Detection of SDK Privacy Compliance in Apps via LLM-KG Fusion;I;
+R0617;Security Testing of Android Based Covid Tracer Applications;I;
+R0631;State of the art in adoption of contact tracing apps and recommendations regarding privacy protection and public health: Systematic review;R;
+R0632;Survey of Citizens’ Preferences for Combined Contact Tracing App Features During a Pandemic: Conjoint Analysis;E;
+R0635;Temporal trends in personal protective equipment (PPE) debris during the COVID-19 pandemic in Çanakkale (Turkey);E;
+R0637;The Adoption of a COVID-19 Contact-Tracing App: Cluster Analysis;E;
+R0638;The corona crisis, data protection and tracking apps in the EU: The Czech and Austrian COVID-19 mobile phone apps in the battle against the virus;I;
+R0640;Three models of big data governance: A comparative analysis of privacy policies of contact tracing apps in China, Singapore, and Germany;I;
+R0641;Toward a framework for detecting privacy policy violations in android application code;I;I
+R0644;Tracing the Tracing Apps: A Technical Response to Covid in Cultural Comparison;I;
+R0645;Transparency and Consent Challenges in mHealth Apps: An Interdisciplinary Study of Privacy Policies, Data Sharing, and Dark Patterns;I;
+R0652;Understanding of blockchain-based identity management system adoption in the public sector;E;
+R0655;Understanding the Penetration Test Workflow: a security test with Tramonto in an e-Government application;T;
+R0657;Utilizing sentence embedding for dangerous permissions detection in android apps' privacy policies;T;
+R0660;Vulnerabilities in Government Mobile Applications: Evaluating the Security of Mobile Apps in Indonesia and Malaysia;I;
+R0661;Wearable fitness trackers and smartphone pedometer apps: Their effect on transport mode choice in a transit-oriented city;E;
+R0662;Where Does Your Data Go? Comparing Network Traffic and Privacy Policies of Public Sector Mobile Applications;I;I
+R0667;A document analysis of international data transfer terms in smartwatch privacy policies: inadequacies and recommendations for improvements;I;
+R0668;A Māori data governance assessment of the NZ COVID Tracer app;I;I
+R0676;Analyzing the essential attributes of nationally issued COVID-19 contact tracing apps: Open-source intelligence approach and content analysis;I;
+R0677;App-based symptom tracking to optimize SARS-CoV-2 testing strategy using machine learning;E;
+R0681;Between surveillance and technological solutionism: A critique of privacy-preserving apps for COVID-19 contact-tracing;T;
+R0690;COVID-19 and the Data Governance Gap;T;
+R0691;Data is different, and that’s why the world needs a new approach to governing cross-border data flows;T;
+R0693;Data practices in apps from Brazil: What do privacy policies inform us about?;I;I
+R0699;Digital sovereignty or sovereignism? Investigating the political discourse on digital contact tracing apps in France;T;
+R0705;Extraction-by-design: Auditing infrastructures of datafication in baby-tracking apps;I;I
+R0712;How optimistic do citizens feel about digital contact tracing? – Perspectives from developing countries;E;
+R0713;Implementation of a remote control application for elderly people in Brazil: Analysis of the factors involved in the use of a technological innovation related to telecare;E;
+R0714;Indigenous Peoples' Data During COVID-19: From External to Internal;E;
+R0716;Is It a Trap? A Large-scale Empirical Study And Comprehensive Assessment of Online Automated Privacy Policy Generators for Mobile Apps;I;
+R0720;Minimizing the Communication Gap between Citizens and Municipal Authorities: An AI-Based Case Study in Cana a Dos Carajás, Brazil;E;
+R0723;Mobile health technologies for the management of spine disorders: A systematic review of mHealth applications in Brazil;E;
+R0727;Online teaching, quality of life and anxiety of Brazilian dental professors during the COVID-19 outbreak;E;
+R0730;Perceptions of Daily and On-Demand HIV Pre-Exposure Prophylaxis and Digital Adherence-Support Needs Among Cisgender Men in Brazil: Qualitative Interview and Focus Group Study;E;
+R0740;"Sexting in young adults’ social networks in Brazil: an exploratory study on the circulation of nudes; [Jovens adultos usuários de redes sociais no Brasil: um estudo exploratório sobre a circulação de nudes]";E;
+R0741;SIEM-Based Security Monitoring Framework in a Hybrid Cloud Enterprise Environment: A Case of the Oman Government;E;
+R0743;Smart Pandemic Surveillance?: A Neo-Materialist Analysis of the “Monitora Covid-19” Application in Brazil;I;I
+R0744;Smartphone Apps for Containing the COVID-19 Pandemic in Germany: Qualitative Interview Study With Experts Based on Grounded Theory;E;
+R0745;Solar tracker development based on a POF bundle and Fresnel lens applied to environment illumination and microalgae cultivation;E;
+R0757;TOURIST2 – Tracking of urgent risks in swiss travellers to the 6 main travel destinations – Feasibility and ethical considerations of a smartphone application-based study;E;
+R0763;Where in the World Are My Trackers? Mapping Web Tracking Flow Across Diverse Geographic Regions;E;
+R0765;A Black Box Approach to Inferring, Characterizing, and Breaking Native Device Tracking Autonomy;E;
+R0777;A Geo-Tagged AI and Blockchain Framework for Transparent NGO Donation Tracking with Fraud Detection and Real-Time Impact Visualization;E;
+R0779;A Human-Centered Activity Tracking System: Toward a Healthier Workplace;E;
+R0783;A Novel Patient Monitoring System Using Photoplethysmography and IOT in the Age of COVID-19;E;
+R0788;A Privacy Leak Detection Mechanism based on Service Binding;T;
+R0793;A Survey on Digital Certificates Approaches for the COVID-19 Pandemic;E;
+R0797;A Testbed for Security and Privacy Analysis of IoT Devices;E;
+R0801;ActiveTracker: Uncovering the Trajectory of App Activities over Encrypted Internet Traffic Streams;E;
+R0802;Actual Quantification of 3PL (Third-Party Logistics) Costs in Food Distribution of QSR’s (Quick Service Restaurants) in Quezon City;E;
+R0810;AI-Enabled Automation for Completeness Checking of Privacy Policies;T;
+R0814;An Analysis of Malware Detection and Control through Covid-19 Pandemic;E;
+R0819;An Empirical Analysis of Information Leakage of File Operations on Android External Storage;E;
+R0823;An Empirical Study of Privacy Leakage Vulnerability in Third-Party Android Logs Libraries;I;
+R0829;An information security framework for ubiquitous services in e-government structures: a peruvian local government experience;E;
+R0834;Analysis of Data's Privacy and Anonymity Aspects of Contact Tracing Apps via Smartphones - A Use Case of COVID-19;T;
+R0837;Analytics Using Activity Trackers in the Field of Education;E;
+R0838;Analyzing Security and Privacy Concerns of Contact Tracing Applications;I;
+R0841;Android Malware Detection Amid COVID-19;E;
+R0845;AndroLibZoo: A Reliable Dataset of Libraries Based on Software Dependency Analysis;I;I
+R0858;Automated Multi-Layered Bytecode Generation for Preventing Sensitive Information Leaks From Android Applications;E;
+R0860;Automatic User Authentication for Privacy-Aware Human Activity Tracking Using Bluetooth Beacons;E;
+R0862;Barriers to Developing M-Government Websites: Citizen Engagement, Security, and Data Privacy;E;
+R0866;BLEB: Bluetooth Low Energy Botnet for large scale individual tracking;E;
+R0867;Blockchain, AI & IoT Based COVID-19 Contact Tracing and Distancing Framework;E;
+R0868;Blue Is the New Black (Market): Privacy Leaks and Re-Victimization from Police-Auctioned Cellphones;E;
+R0876;Characterizing Human Aspects in Reviews of COVID-19 Apps;E;
+R0878;CHIVID: A Rapid Deployment of Community and Home Isolation During COVID-19 Pandemics;E;
+R0880;Clockwork: Tracking Remote Timing Attacks;E;
+R0886;Comparing Privacy Label Disclosures of Apps Published in both the App Store and Google Play Stores;T;
+R0896;COVID-19 Antibody Test/Vaccination Certification: There's an App for That;E;
+R0897;Covid-19 Pandemic: A New Era Of Cyber Security Threat And Holistic Approach To Overcome;E;
+R0898;COVID-Themed Android Malware Analysis and Detection Framework Based on Permissions;E;
+R0900;Cross2OH: Enabling Seamless Porting of C/C++ Software Libraries to OpenHarmony;E;
+R0903;Cryptophyle: The Cryptocurrency News Tracker App;E;
+R0920;Design and Implement a GPS Car Tracker on Google Maps Using Arduino;E;
+R0935;Digital Linearization of Wideband Envelope Tracking Power Amplifiers for Mobile Terminals;E;
+R0936;Digital Twin COVID Tracker Using Wastewater Data: A Middle-School Led Study Within the U.S. NSF National Research Traineeship Program Framework;E;
+R0939;Do Developers Update Third-Party Libraries in Mobile Apps?;E;
+R0941;Does the Vulnerability Threaten Our Projects? Automated Vulnerable API Detection for Third-Party Libraries;E;
+R0955;Energy Optimization of Online Tracker for Mobile Devices;E;
+R0963;Evaluating Taint Specification Generators for Identifying Taint Sources in Relation to Data Safety Section;T;
+R0966;Explicit Secrecy: A Policy for Taint Tracking;E;
+R0974;Fitness Trackers: Fit for Health but Unfit for Security and Privacy;T;
+R0981;Fts App: Towards Explainable AI-Driven Adaptive Weight Tracking;E;
+R0987;Green Trace : AI Carbon Tracker And Carbon Credit Exchange;E;
+R0993;How can data from fitness trackers be obtained and analyzed with a forensic approach?;E;
+R0999;Identifying and Mitigating Humanitarian Challenges to COVID-19 Contact Tracing;E;
+R1029;LibDX: A Cross-Platform and Accurate System to Detect Third-Party Libraries in Binary Code;T;
+R1031;LoRaWAN based GPS tracking of city-buses for smart public transport system;E;
+R1043;MiniTracker: Large-Scale Sensitive Information Tracking in Mini Apps;T;
+R1045;Mobile App Third-Party Library traffic discovery method based on short text classification and clustering;I;
+R1054;Monitoring Leaked Confidential Data;E;
+R1062;Neural Library Recommendation by Embedding Project-Library Knowledge Graph;E;
+R1069;OSSDetector: Towards a More Accurate Approach for C/C++ Third-Party Library Detection;T;
+R1074;PMD-Track: Portable Medical Devices’ Real-time Inventory and Tracking;E;
+R1079;Privacy Analysis in Mobile Apps and Social Networks Using AI Techniques;T;
+R1080;Privacy at Risk: An Investigation of Data Collection Practices and Tracking Scripts on Government Websites in Java;E;
+R1084;Privacy in time of a pandemic;E;
+R1085;Privacy Leakage From Dynamic Prices: Trip Purpose Mining as an Example;E;
+R1091;Privacy scoring and users' awareness for Web tracking;E;
+R1092;Private Fitness Tracking from Wearable Sensors with Zero-Knowledge Machine Learning;E;
+R1094;PTDETECTOR: An Automated JavaScript Front-end Library Detector;E;
+R1099;Real Time AI Powered Fitness Tracking System Using Media Pipe Pose Estimation and Computer Vision;E;
+R1107;Revolutionizing Diet and Fitness Tracking with AI: A User-Centric Approach to Nutrition and Wellness;E;
+R1121;Security and Privacy Analysis of Wearable Health Device;T;
+R1131;Smart Expiry Tracker and Product Recommender using Google ML Kit OCR Engine;E;
+R1138;SmarTracker: Leveraging LLMs to Automate User Behavior Tracking in Mobile Apps;T;
+R1145;Studying Ad Library Integration Strategies of Top Free-to-Download Apps;I;I
+R1148;SurgeScan: Enforcing security policies on untrusted third-party Android libraries;T;
+R1150;Suspicious Permissions Detection of Covid-19 Themed Malicious Android Applications;E;
+R1163;The Impact of Using Smart Applications in Improving E-government Services in the Public Sector;E;
+R1165;The Irregulars: Third-Party Cyber Actors and Digital Resistance Movements in the Ukraine Conflict;E;
+R1167;The Privacy Paradox - Investigating People's Attitude Towards Privacy in a Time of COVID-19;E;
+R1168;The Rings of Tracking: Evaluating Security and Privacy in the Smart Ring Ecosystem;T;
+R1171;Too Quiet in the Library: An Empirical Study of Security Updates in Android Apps' Native Code;E;
+R1173;Towards a Taxonomy for Evaluating Societal Concerns of Contact Tracing Apps;T;
+R1175;Towards Secure Mobile Process Tracking Using Wearable Computing in mGovernment Applications;T;
+R1176;Trash Tracker: IoT Based Garbage Monitoring System Using Raspberry PI;E;
+R1178;“Trust Me Over My Privacy Policy”: Privacy Discrepancies in Romantic AI Chatbot Apps;I;
+R1186;Unveiling the Ownership: An Empirical Study of Android App Associations via SDK IDs;E;
+R1189;User-centered representation of data flows in mHealth applications;T;
+R1191;User Privacy and Data Flow Control for Android Apps: Systematic Literature Review;R;
+R1200;Web Tracking Cartography with DNS Records;E;
+R1228;Limites do controle do empregado em teletrabalho : direitos da personalidade e aplicação da Lei Geral de Proteção de Dados Pessoais (LGPD);T;
+R1231;O papel dos rastreadores de atividade física na prática de corrida de rua entre atletas amadores;E;
+R1233;Proposta de arquitetura para um rastreador veicular com criptografia ponta-a-ponta;E;
+R1234;Proteção de dados e concorrência nas plataformas digitais: uma análise comparativa entre Alemanha e Brasil a partir do caso Facebook - Case B6-22/16;T;
+R1237;Whatsapp na escola e a lei geral de proteção de dados pessoais (LGPD);T;
+R1238;Adequa: Processo para Adequação de Sistemas à Lei Geral de Proteção de Dados Pessoais (LGPD);T;
+R1239;Avaliação dos Termos de Uso, Política de Privacidade e Coleta de Dados do Conecte SUS;I;E
+R1241;Desafios do Tratamento de Dados da LGPD em Aplicações Web;T;
+R1243;Developer Tracker App: Uma Ferramenta para Visualizar o Trabalho dos Desenvolvedores;E;
+R1245;Information System for Scheduling 4.0: Characterization, UX and LGPD;T;
+R1246;Modelagem de ameaças à privacidade e à segurança em aplicativos móveis: uma abordagem orientada à LGPD;T;
+R1247;Privacy and Security in Smartphones: Usability Barriers, Behavioral Nudges, and Compliance with the LGPD;T;

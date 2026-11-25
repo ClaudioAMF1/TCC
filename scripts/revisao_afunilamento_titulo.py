@@ -7,8 +7,10 @@ as exportações de 6/11 dá o mesmo resultado que refazer as buscas com a restr
 título (TITLE no Scopus, Document Title no IEEE Xplore, título na BDTD e na SOL).
 
 Uso:  python scripts/revisao_afunilamento_titulo.py
-Saída: dados/revisao/afunilamento_titulo_20261125.csv (ids mantidos) e as contagens
-       do fluxograma PRISMA na tela.
+Saída: dados/revisao/afunilamento_titulo_20261125.csv (registros mantidos),
+       dados/revisao/afunilamento_titulo_20261125_removidos.csv (registros retirados,
+       com o motivo e as decisões que tinham antes da restrição) e as contagens do
+       fluxograma PRISMA na tela.
 """
 import collections
 import csv
@@ -55,6 +57,22 @@ def main():
         d2 = {x["id"]: (x["decisao"] or "").strip() for x in f2}
         for r in sel:
             w.writerow([r["id"], r["titulo"], rt.decisao(r.get("decisao_f1")), d2.get(r["id"], "")])
+    d2_todos = {x["id"]: (x["decisao"] or "").strip() for x in csv.DictReader(
+        open(RAIZ / "leitura_F2_registro_20261113.csv", encoding="utf-8-sig"), delimiter=";")}
+    conf_todos = {v["id"]: v.get("validacao_pessoal") or "" for v in csv.DictReader(
+        open(RAIZ / "leitura_F2_registro_20261121_validacao_parcial.csv", encoding="utf-8-sig"), delimiter=";")}
+    fora = [r for r in linhas if r["id"] not in ids]
+    with open(RAIZ / "afunilamento_titulo_20261125_removidos.csv", "w", newline="", encoding="utf-8") as fh:
+        w = csv.writer(fh, delimiter=";")
+        w.writerow(["id", "titulo", "decisao_f1", "decisao_f2", "validacao_pessoal", "motivo"])
+        for r in fora:
+            w.writerow([r["id"], r["titulo"], rt.decisao(r.get("decisao_f1")), d2_todos.get(r["id"], ""),
+                        conf_todos.get(r["id"], ""),
+                        "título sem termo do fenômeno nem do contexto (protocolo v2.0, 25/11/2026)"])
+    f2_fora = collections.Counter(d2_todos.get(r["id"], "") for r in fora)
+    print("Registros retirados pela restrição do título:", len(fora),
+          "| decisões F1:", dict(collections.Counter(rt.decisao(r.get("decisao_f1")) for r in fora)),
+          "| propostas F2 retiradas:", {k: v for k, v in f2_fora.items() if k})
     total = sum(bruto.values())
     print("Identificados por base:", dict(bruto), "| total", total)
     print("Duplicatas removidas:", total - len(sel), "| registros únicos triados:", len(sel))

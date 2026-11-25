@@ -12,7 +12,7 @@ A apresentação segue a ordem do texto. Começo pela introdução, com o proble
 
 ## Slide 3: MOTIVAÇÃO
 
-Hoje muita coisa do governo se resolve pelo celular. O Meu INSS e o Meu SUS Digital, por exemplo, passam de 50 milhões de instalações cada um. Esses aplicativos não têm só o código do órgão: trazem componentes prontos de outras empresas, os SDKs, para mapas, notificações e estatísticas de uso. Alguns desses SDKs coletam dados de quem usa. No governo isso pesa mais, porque o cidadão não tem como trocar de aplicativo. Um cuidado importante: o SDK estar no código não prova que ele enviou dados.
+Hoje muita coisa do governo se resolve pelo celular. O Meu INSS e o Meu SUS Digital, por exemplo, passam de 50 milhões de instalações cada um. Esses aplicativos não têm só o código do órgão: trazem componentes prontos de outras empresas, os SDKs, para mapas, notificações e estatísticas de uso. Alguns desses SDKs coletam dados de quem usa. No governo isso pesa mais, porque o cidadão muitas vezes não tem outro aplicativo para usar. Um cuidado importante: o SDK estar no código não prova que ele enviou dados.
 
 ## Slide 4: PROBLEMA E OBJETIVO GERAL
 
@@ -20,13 +20,13 @@ O problema da pesquisa é: em que medida os SDKs de rastreamento dos aplicativos
 
 ## Slide 5: OBJETIVOS ESPECÍFICOS
 
-São cinco objetivos específicos. Primeiro, revisar os 376 aplicativos oficiais e medir quanto a classificação automática errou. Segundo, baixar a versão atual de cada aplicativo e listar os SDKs com três detectores. Terceiro, ler as declarações e classificar cada par; é daí que saem o teste da hipótese e a proporção de pares sem declaração. Quarto, executar uma parte dos aplicativos num emulador Android, no computador, e registrar para onde os dados vão. Quinto, medir se os detectores concordam, com o kappa de Fleiss.
+São cinco objetivos específicos. Primeiro, revisar os 376 aplicativos oficiais e medir quanto a classificação automática errou. Segundo, baixar a versão atual de cada aplicativo e listar os SDKs com três detectores. Terceiro, ler as declarações e classificar cada par; é daí que sai a proporção que testa a hipótese. Quarto, executar uma parte dos aplicativos num emulador Android, no computador, e registrar para onde os dados vão. Quinto, medir se os detectores concordam, com o kappa de Fleiss.
 
 ## Slide 6: HIPÓTESE
 
-A pesquisa tem uma hipótese só, construída a partir da literatura. Andow e colegas analisaram quase 14 mil aplicativos e viram que até 42,4% omitiam ou declaravam errado para onde iam dados sensíveis. Samarasinghe e colegas, em 1.166 aplicativos de governo, viram que 27% enviavam informações sensíveis a terceiros ou sem criptografia. Carlsson e colegas acharam divergências entre as políticas e o tráfego de aplicativos públicos da Finlândia. E Kollnig e colegas apontaram falta de transparência sobre rastreamento no Android e no iPhone. Daí a hipótese: parte dos pares aplicativo–SDK não terá declaração compatível. Ela é confirmada se eu encontrar pares sem declaração compatível, e refutada se todos os SDKs estiverem declarados, pelo nome ou por categoria. Além dessa decisão, o resultado principal é a proporção desses pares.
+A pesquisa tem uma hipótese só, construída a partir da literatura. Andow e colegas analisaram quase 14 mil aplicativos e viram que até 42,4% omitiam ou declaravam errado para onde iam dados sensíveis. Samarasinghe e colegas, em 1.166 aplicativos de governo, viram que 27% enviavam informações sensíveis a terceiros ou sem criptografia. Carlsson e colegas acharam divergências entre as políticas e o tráfego de aplicativos públicos da Finlândia. E Kollnig e colegas apontaram falta de transparência sobre rastreamento no Android e no iPhone. Daí a hipótese: pelo menos 10% dos pares aplicativo–SDK não terão declaração compatível. Ela se confirma se a proporção que eu encontrar for de 10% ou mais. O 10% fica bem abaixo dessas taxas de propósito: elas contam aplicativos, e eu conto pares, então escolhi um patamar conservador.
 
-LEMBRETE (não precisa falar). Por que não há percentual: os estudos contam aplicativos, e eu conto pares, então as taxas deles não servem de limite para o meu caso. Só entram no teste os pares com detecção confirmada e documentos disponíveis; os demais ficam à parte. Um par sem declaração é um indício, não prova de infração à LGPD.
+LEMBRETE (não precisa falar). Como analiso todos os aplicativos oficiais, e não uma amostra, a decisão usa a proporção encontrada. O intervalo de confiança de 95% só mostra a precisão; ele é calculado agrupando por aplicativo, porque os pares do mesmo aplicativo usam a mesma política. Se der menos de 10%, só dá para dizer que ficou abaixo do meu patamar, não que o governo é mais transparente que nos outros estudos. O 10% é um critério do estudo, não um limite da LGPD.
 
 ## Slide 7: ESTUDOS QUE ORIENTAM O PROJETO (1/2)
 
@@ -38,7 +38,7 @@ Os outros três estudaram aplicativos de governo. Samarasinghe e colegas examina
 
 ## Slide 9: LACUNA E CONTRIBUIÇÃO
 
-Juntando esses estudos, aparecem três lacunas, e cada uma vira uma contribuição. Primeiro, o caso brasileiro: há estudos de um aplicativo por vez, mas ninguém mediu o conjunto; o trabalho analisa os 376 aplicativos oficiais, das três esferas. Segundo, o confronto entre o declarado e o encontrado já foi feito em outros contextos, mas não aqui; o trabalho classifica cada par e testa a hipótese. Terceiro, o instrumento: o trabalho mede quanto o resultado depende do detector. E uma divergência não prova infração à LGPD; é um indício a ser examinado.
+Juntando esses estudos, aparecem três lacunas, e cada uma vira uma contribuição. Primeiro, o caso brasileiro: há estudos de um aplicativo por vez, mas ninguém mediu o conjunto; o trabalho analisa os 376 aplicativos classificados como oficiais, das três esferas. Segundo, o confronto entre o declarado e o encontrado já foi feito em outros contextos, mas não aqui; o trabalho classifica cada par e testa a hipótese. Terceiro, o instrumento: o trabalho mede quanto o resultado depende do detector. E uma divergência não prova infração à LGPD; é um indício a ser examinado.
 
 ## Slide 10: ETAPAS DO MÉTODO
 
@@ -50,7 +50,7 @@ Por que só Android? São três motivos. Primeiro, abrangência: segundo a StatC
 
 ## Slide 12: APLICATIVOS SELECIONADOS
 
-Para montar a lista, busquei 21 termos ligados a serviço público na Google Play e depois o catálogo de cada publicador oficial. Foram 396 candidatos. Pelo nome jurídico de quem publica, ficaram 376 oficiais: 85 federais, 199 estaduais e 92 municipais. Saíram 20, de empresas privadas ou de contas de pessoa física. A lista ainda será revista antes da coleta.
+Para montar a lista, busquei 21 termos ligados a serviço público na Google Play e depois o catálogo de cada publicador oficial. Foram 396 candidatos. Pelo nome jurídico de quem publica, ficaram 376 oficiais: 85 federais, 199 estaduais e 92 municipais. Saíram 20, de empresas privadas ou de contas de pessoa física. A lista é preliminar e será revista antes da coleta.
 
 ## Slide 13: FONTE DOS PACOTES
 
@@ -72,7 +72,7 @@ LEMBRETE (não precisa falar). Fórmula por aplicativo: P i = soma de n ij vezes
 
 ## Slide 16: CLASSIFICAÇÃO DAS DECLARAÇÕES
 
-Esta é a parte central do teste. Para cada par, leio a política de privacidade e a seção “Segurança dos dados” e escolho uma de cinco situações: o SDK é citado pelo nome; o tipo de dado e a finalidade estão declarados, mesmo sem o nome; não há declaração compatível; a informação é genérica demais; ou a política não está disponível. A hipótese é confirmada se houver pares na terceira situação, e a proporção é a terceira dividida pelas três primeiras. As duas últimas ficam à parte, para não inflar nem esconder o problema. Não citar o nome do SDK, sozinho, não conta como omissão.
+Esta é a parte central do teste. Para cada par, leio a política de privacidade e a seção “Segurança dos dados” e escolho uma de cinco situações: o SDK é citado pelo nome; o tipo de dado e a finalidade estão declarados, mesmo sem o nome; não há declaração compatível; a informação é genérica demais; ou a política não está disponível. A proporção é a terceira situação dividida pelas três primeiras; se der 10% ou mais, a hipótese se confirma. As duas últimas ficam à parte, para não inflar nem esconder o problema. Não citar o nome do SDK, sozinho, não conta como omissão.
 
 ## Slide 17: Revisão sistemática
 
@@ -104,9 +104,9 @@ Slide de encerramento do template. Pode ficar na tela durante as perguntas.
 
 ## Cola para as perguntas
 
-- Números: 396 candidatos e 376 oficiais (85 federais, 199 estaduais, 92 municipais) · AndroZoo: 92 de 396 (23,2%) · piloto: 75%, 95% e 80% com rastreador; κ 0,52, ou 0,69 sem os 88 possíveis falsos positivos do B · políticas acessíveis: 323 de 396 (81,6%) · revisão: 552 resultados, 413 sem repetidos, 210 à leitura completa.
-- Por que a hipótese não tem um percentual? Os estudos contam aplicativos, e eu conto pares; as taxas deles não servem de limite para o meu caso. A proporção que eu medir é o resultado principal. E não existe limite desse tipo na LGPD.
-- A hipótese não é fácil demais? Ela segue o que a literatura achou em outros países, mas isso nunca foi medido nos aplicativos do governo brasileiro. Além de confirmar ou não, o trabalho mostra quantos pares estão sem declaração e em quais aplicativos.
+- Números: 396 candidatos e 376 oficiais (85 federais, 199 estaduais, 92 municipais) · AndroZoo: 92 de 396 (23,2%) · piloto: 75%, 95% e 80% com rastreador; κ 0,52, ou 0,69 sem os 88 possíveis falsos positivos do B · políticas acessíveis: 323 de 396 (81,6%) · revisão: 552 resultados, 413 sem repetidos, 210 à leitura completa, 55 propostas de inclusão (11 já confirmadas).
+- Por que 10%? Fica bem abaixo da literatura (Andow 42,4%; Samarasinghe 27%), que conta aplicativos; eu conto pares, então é um patamar conservador. Se ficar abaixo, não dá para dizer que o governo é mais transparente que nos outros estudos, só que ficou abaixo do meu patamar. Não é limite da LGPD.
+- Por que decidir pela proporção, e não pelo intervalo de confiança? Porque analiso todos os aplicativos oficiais, e não uma amostra. O intervalo mostra a precisão e entra como ressalva se incluir os 10%.
 - Por que só Android? 73,76% dos celulares no Brasil (StatCounter, out. 2026); no iPhone os aplicativos são criptografados e não há ferramenta pública para baixá-los em escala (Kollnig et al., 2022); a seção “Segurança dos dados” é da Google Play. Não quer dizer que o iPhone seja mais seguro.
 - Como vai observar o tráfego sem celular Android? No emulador do Android Studio, no computador, com o mitmproxy registrando as conexões. Abro cada aplicativo sem login, sem conta pessoal. Se um aplicativo não funcionar no emulador, registro o motivo e reporto quantos foram.
 - Por que uma hipótese só? Para concentrar o trabalho no que dá para provar no Capstone II: as declarações. A comparação dos aplicativos com dados sensíveis saiu do projeto.

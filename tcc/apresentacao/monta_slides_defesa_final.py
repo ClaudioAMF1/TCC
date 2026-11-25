@@ -172,7 +172,8 @@ def tabela(sl, x, y, larguras, cab, linhas, size=13, cab_size=13, alt_h=0.6, cab
 COLA = [
     "COLA PARA AS PERGUNTAS (não é para ler em voz alta).",
     "Números: 396 candidatos e 376 oficiais (85 federais, 199 estaduais, 92 municipais) · AndroZoo: 92 de 396 (23,2%) · piloto: 75%, 95% e 80% com rastreador; κ 0,52, ou 0,69 sem os 88 possíveis falsos positivos do B · políticas acessíveis: 323 de 396 (81,6%) · revisão: 552 resultados, 413 sem repetidos, 210 à leitura completa.",
-    "Por que 10%? Fica bem abaixo da literatura (Andow 42,4%; Samarasinghe 27%), que conta aplicativos; eu conto pares, então é um patamar conservador. Se a H1 for rejeitada, não dá para dizer que o governo é mais transparente que nos outros estudos, só que ficou abaixo do meu patamar. Não é limite da LGPD.",
+    "Por que a hipótese não tem um percentual? Os estudos contam aplicativos, e eu conto pares; as taxas deles não servem de limite para o meu caso. A proporção que eu medir é o resultado principal. E não existe limite desse tipo na LGPD.",
+    "A hipótese não é fácil demais? Ela segue o que a literatura achou em outros países, mas isso nunca foi medido nos aplicativos do governo brasileiro. Além de confirmar ou não, o trabalho mostra quantos pares estão sem declaração e em quais aplicativos.",
     "Por que só Android? 73,76% dos celulares no Brasil (StatCounter, out. 2026); no iPhone os aplicativos são criptografados e não há ferramenta pública para baixá-los em escala (Kollnig et al., 2022); a seção “Segurança dos dados” é da Google Play. Não quer dizer que o iPhone seja mais seguro.",
     "Como vai observar o tráfego sem celular Android? No emulador do Android Studio, no computador, com o mitmproxy registrando as conexões. Abro cada aplicativo sem login, sem conta pessoal. Se um aplicativo não funcionar no emulador, registro o motivo e reporto quantos foram.",
     "Por que uma hipótese só? Para concentrar o trabalho no que dá para provar no Capstone II: as declarações. A comparação dos aplicativos com dados sensíveis saiu do projeto.",
@@ -261,21 +262,21 @@ barra_titulo(s, "OBJETIVOS ESPECÍFICOS")
 objs = [
     ["a) Revisar a lista de aplicativos", "Confirmar o órgão e a esfera de cada um dos 376 aplicativos pelo nome jurídico do desenvolvedor na Google Play", "Lista final e taxa de erro da classificação automática"],
     ["b) Listar os SDKs", "Baixar a versão atual de cada aplicativo e rodar três detectores, com as bases Exodus Privacy e Disconnect", "Pares aplicativo–SDK, com a evidência de cada detecção"],
-    ["c) Classificar as declarações", "Ler a política de privacidade e a seção “Segurança dos dados” e classificar cada par", "Proporção de pares sem declaração compatível, que testa a hipótese"],
+    ["c) Classificar as declarações", "Ler a política de privacidade e a seção “Segurança dos dados” e classificar cada par", "Pares sem declaração compatível e sua proporção: o teste da hipótese"],
     ["d) Registrar o tráfego", "Executar uma subamostra em emulador Android e registrar as conexões", "Destinos, país e se estão declarados"],
     ["e) Medir a concordância dos detectores", "Calcular o κ de Fleiss nos mesmos pacotes", "Quanto a taxa depende da ferramenta"],
 ]
 tabela(s, 0.75, 1.75, [3.0, 5.6, 3.3], ["Objetivo", "O que será feito", "Resultado"], objs, size=14, alt_h=0.8)
-notas(s, "São cinco objetivos específicos. Primeiro, revisar os 376 aplicativos oficiais e medir quanto a classificação automática errou. Segundo, baixar a versão atual de cada aplicativo e listar os SDKs com três detectores. Terceiro, ler as declarações e classificar cada par; é daí que sai a proporção que testa a hipótese. Quarto, executar uma parte dos aplicativos num emulador Android, no computador, e registrar para onde os dados vão. Quinto, medir se os detectores concordam, com o kappa de Fleiss.")
+notas(s, "São cinco objetivos específicos. Primeiro, revisar os 376 aplicativos oficiais e medir quanto a classificação automática errou. Segundo, baixar a versão atual de cada aplicativo e listar os SDKs com três detectores. Terceiro, ler as declarações e classificar cada par; é daí que saem o teste da hipótese e a proporção de pares sem declaração. Quarto, executar uma parte dos aplicativos num emulador Android, no computador, e registrar para onde os dados vão. Quinto, medir se os detectores concordam, com o kappa de Fleiss.")
 
 # ---------------------------------------------------------------- 6 hipótese (fundo 13)
 s = nova(13)
 barra_titulo(s, "HIPÓTESE")
 forma(s, 0.9, 1.75, 5.6, 2.55, NAVY)
 texto(s, 1.15, 1.9, 5.1, 2.3, [P("H1", 30, True, PALE, after=4),
-                               P("Ao menos 10% dos pares aplicativo–SDK de rastreamento não terão declaração compatível na política de privacidade nem na seção “Segurança dos dados” da Google Play.", 18, True, WHITE, spacing=1.05)])
-texto(s, 0.9, 4.5, 5.6, 0.35, [P("CRITÉRIO DE REJEIÇÃO", 13, True, MID)])
-texto(s, 0.9, 4.85, 5.6, 1.3, [P("A H1 é rejeitada se o limite superior do IC95% da proporção ficar abaixo de 10%. O intervalo considera que um aplicativo pode ter vários SDKs.", 15, False, DARK, spacing=1.05)])
+                               P("Parte dos pares aplicativo–SDK de rastreamento não terá declaração compatível na política de privacidade nem na seção “Segurança dos dados” da Google Play.", 18, True, WHITE, spacing=1.05)])
+texto(s, 0.9, 4.5, 5.6, 0.35, [P("CRITÉRIO DE DECISÃO", 13, True, MID)])
+texto(s, 0.9, 4.85, 5.6, 1.3, [P("Confirmada se houver pares sem declaração compatível; refutada se todos os SDKs estiverem declarados, pelo nome ou por categoria.", 15, False, DARK, spacing=1.05)])
 texto(s, 6.95, 1.75, 5.5, 0.35, [P("BASE NA LITERATURA", 13, True, MID)])
 base = [("Andow et al. (2020)", "13.796 aplicativos: até 42,4% omitiam ou declaravam errado fluxos de dados sensíveis"),
         ("Samarasinghe et al. (2022)", "1.166 aplicativos de governo: 27% enviavam informações sensíveis a terceiros ou sem criptografia"),
@@ -286,9 +287,9 @@ for k, (aut, txt) in enumerate(base):
     forma(s, 6.95, y0, 0.07, 0.78, MID)
     texto(s, 7.15, y0, 5.3, 0.85, [P(aut, 14, True, NAVY), P(txt, 13, False, DARK)])
 forma(s, 6.95, 5.68, 5.5, 0.62, PALE)
-texto(s, 7.1, 5.68, 5.25, 0.62, [P("Por que 10%? As taxas acima contam aplicativos, e não pares; por isso, um patamar bem mais baixo e conservador.", 12, False, NAVY)], anchor="m")
-notas(s, "A pesquisa tem uma hipótese só, construída a partir da literatura. Andow e colegas analisaram quase 14 mil aplicativos e viram que até 42,4% omitiam ou declaravam errado para onde iam dados sensíveis. Samarasinghe e colegas, em 1.166 aplicativos de governo, viram que 27% enviavam informações sensíveis a terceiros ou sem criptografia. Carlsson e colegas acharam divergências entre as políticas e o tráfego de aplicativos públicos da Finlândia. E Kollnig e colegas apontaram falta de transparência sobre rastreamento no Android e no iPhone. Daí a hipótese: pelo menos 10% dos pares aplicativo–SDK não terão declaração compatível. O 10% fica bem abaixo dessas taxas de propósito: elas contam aplicativos, e eu conto pares, então escolhi um patamar conservador.",
-      "LEMBRETE (não precisa falar). Como a H1 é testada: calculo a porcentagem de pares sem declaração, com intervalo de confiança de 95%. Os pares do mesmo aplicativo usam a mesma política, então o intervalo é calculado agrupando por aplicativo. A H1 só é rejeitada se até o limite de cima do intervalo ficar abaixo de 10%. Se isso acontecer, só dá para dizer que a falta de declaração ficou abaixo do meu patamar; não dá para dizer que o governo é mais transparente que nos outros estudos, porque eles contam aplicativos e eu conto pares. O 10% é um critério do estudo, não um limite da LGPD.")
+texto(s, 7.1, 5.68, 5.25, 0.62, [P("Sem percentual mínimo: os estudos acima contam aplicativos, e não pares. A proporção medida é o resultado principal.", 12, False, NAVY)], anchor="m")
+notas(s, "A pesquisa tem uma hipótese só, construída a partir da literatura. Andow e colegas analisaram quase 14 mil aplicativos e viram que até 42,4% omitiam ou declaravam errado para onde iam dados sensíveis. Samarasinghe e colegas, em 1.166 aplicativos de governo, viram que 27% enviavam informações sensíveis a terceiros ou sem criptografia. Carlsson e colegas acharam divergências entre as políticas e o tráfego de aplicativos públicos da Finlândia. E Kollnig e colegas apontaram falta de transparência sobre rastreamento no Android e no iPhone. Daí a hipótese: parte dos pares aplicativo–SDK não terá declaração compatível. Ela é confirmada se eu encontrar pares sem declaração compatível, e refutada se todos os SDKs estiverem declarados, pelo nome ou por categoria. Além dessa decisão, o resultado principal é a proporção desses pares.",
+      "LEMBRETE (não precisa falar). Por que não há percentual: os estudos contam aplicativos, e eu conto pares, então as taxas deles não servem de limite para o meu caso. Só entram no teste os pares com detecção confirmada e documentos disponíveis; os demais ficam à parte. Um par sem declaração é um indício, não prova de infração à LGPD.")
 
 # ================================================================ REFERENCIAL TEÓRICO
 CAB_EST = ["Estudo", "O que buscavam", "O que foi feito", "Como foi feito", "Resultados"]
@@ -357,7 +358,7 @@ etapas = [
     ["3. Detecção dos SDKs", "Rodar os detectores A, B e C nos mesmos pacotes e medir a concordância", "Pares aplicativo–SDK; κ de Fleiss", "b, e"],
     ["4. Classificação das declarações", "Ler a política e a “Segurança dos dados” e classificar cada par", "Matriz de declarações", "c"],
     ["5. Observação do tráfego", "Executar uma subamostra no emulador do Android Studio, com o mitmproxy", "Destinos, país e se estão declarados", "d"],
-    ["6. Análise estatística", "Calcular a proporção com IC95% agrupado por aplicativo", "Decisão sobre a hipótese", "c, e"],
+    ["6. Análise estatística", "Contar os pares sem declaração compatível e calcular as proporções por esfera", "Decisão sobre a hipótese", "c, e"],
 ]
 tabela(s, 0.65, 2.22, [2.75, 5.0, 3.1, 1.15], ["Etapa", "O que será feito e como", "O que entrega", "Objetivo"], etapas, size=13, alt_h=0.62)
 notas(s, "O estudo é quantitativo e observacional, em seis etapas, e cada uma atende a um objetivo. Primeiro, a seleção dos aplicativos. Depois, o download da versão atual, com o hash, que é a impressão digital do arquivo. Em seguida, a detecção dos SDKs com três detectores e a classificação das declarações. A quinta etapa observa o tráfego de uma parte dos aplicativos num emulador Android, com o mitmproxy, que registra as conexões. Por fim, a análise estatística decide a hipótese.")
@@ -482,13 +483,13 @@ for k, (nome, desc, fundo_c, c_nome, c_desc) in enumerate(situacoes):
     texto(s, 4.45, y0, 3.95, 0.73, [P(desc, 13, False, c_desc)], anchor="m")
 forma(s, 8.85, 2.22, 3.75, 2.4, NAVY)
 texto(s, 9.05, 2.3, 3.35, 2.25, [P("TESTE DA HIPÓTESE", 13, True, PALE, "c", after=6),
-                                P("proporção = (3) ÷ [(1) + (2) + (3)]", 17, True, WHITE, "c", after=8),
-                                P("IC95% agrupado por aplicativo", 13, False, LIGHT, "c", after=4),
-                                P("H1 rejeitada se o limite superior ficar abaixo de 10%", 13, False, LIGHT, "c")], anchor="m")
+                                P("H1 confirmada se houver pares na situação (3)", 16, True, WHITE, "c", after=8),
+                                P("proporção = (3) ÷ [(1) + (2) + (3)]", 14, False, LIGHT, "c", after=4),
+                                P("resultado principal, por esfera de governo", 13, False, LIGHT, "c")], anchor="m")
 forma(s, 8.85, 4.77, 3.75, 0.85, LIGHT)
 texto(s, 9.0, 4.77, 3.45, 0.85, [P("(4) e (5): reportados à parte e nas análises de sensibilidade", 13, False, NAVY, "c")], anchor="m")
 texto(s, 8.85, 5.75, 3.75, 0.55, [P("Já verificado: 323 dos 396 candidatos (81,6%) têm política acessível.", 12, False, GREY, "c")], anchor="m")
-notas(s, "Esta é a parte central do teste. Para cada par, leio a política de privacidade e a seção “Segurança dos dados” e escolho uma de cinco situações: o SDK é citado pelo nome; o tipo de dado e a finalidade estão declarados, mesmo sem o nome; não há declaração compatível; a informação é genérica demais; ou a política não está disponível. A hipótese usa a terceira situação, dividida pelas três primeiras. As duas últimas ficam à parte, para não inflar nem esconder o problema. Não citar o nome do SDK, sozinho, não conta como omissão.")
+notas(s, "Esta é a parte central do teste. Para cada par, leio a política de privacidade e a seção “Segurança dos dados” e escolho uma de cinco situações: o SDK é citado pelo nome; o tipo de dado e a finalidade estão declarados, mesmo sem o nome; não há declaração compatível; a informação é genérica demais; ou a política não está disponível. A hipótese é confirmada se houver pares na terceira situação, e a proporção é a terceira dividida pelas três primeiras. As duas últimas ficam à parte, para não inflar nem esconder o problema. Não citar o nome do SDK, sozinho, não conta como omissão.")
 
 # ---------------------------------------------------------------- revisão sistemática (fundo 10)
 s = nova(10)
@@ -531,7 +532,7 @@ passos = [["Fevereiro", "Revisão sistemática", "Ler os registros em aberto, fa
           ["Março", "2 e 3. Pacotes e detecção", "Baixar todos os aplicativos; rodar os três detectores; calcular o κ de Fleiss", "Pares aplicativo–SDK"],
           ["Mar. e abr.", "4. Declarações", "Ler as declarações de cada aplicativo e classificar cada par", "Matriz de declarações"],
           ["Abril", "5. Tráfego", "Executar a subamostra no emulador e registrar o tráfego", "Destinos e países"],
-          ["Maio", "6. Análise", "Calcular a proporção com IC95% e decidir sobre a hipótese; avisar órgãos de achados graves", "Resultado do teste da H1"],
+          ["Maio", "6. Análise", "Contar os pares sem declaração, calcular as proporções e decidir sobre a hipótese; avisar órgãos de achados graves", "Resultado do teste da H1"],
           ["Junho", "Redação e defesa", "Escrever os resultados e a discussão; publicar dados e scripts", "Texto final e defesa"]]
 tabela(s, 1.05, 1.75, [1.45, 2.4, 5.15, 2.6], ["Quando", "Etapa", "O que será feito", "Produto"], passos, size=13, alt_h=0.6)
 notas(s, "Os próximos passos ficam no Capstone II. Em fevereiro, termino a revisão e reviso a lista de aplicativos, testando o download e o emulador. Em março, baixo os pacotes e rodo os detectores. Entre março e abril, classifico as declarações. Em abril, registro o tráfego da subamostra no emulador. Em maio, faço a análise e decido sobre a hipótese, avisando os órgãos se houver achado grave. Em junho, escrevo, publico os dados e defendo.")

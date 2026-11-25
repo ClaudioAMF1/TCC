@@ -4,7 +4,7 @@ O orientador pediu, em 21/11/2026, para conferir os estudos que o texto descreve
 
 Em 22/11/2026, todos os estudos da tabela foram conferidos no resumo publicado ou no texto do próprio artigo (coluna "Situação"). Quando um número não pôde ser confirmado em fonte aberta, o texto passou a usar o número do resumo oficial. Antes da defesa final, leia ao menos o resumo de cada estudo, para conseguir falar dele com segurança.
 
-Comece pelos que aparecem nos slides: Binns, Kollnig, Samarasinghe e Andow. Andow ajuda a contextualizar o limiar operacional de 10% da H1, mas mede um desfecho e uma população diferentes; não se deve comparar diretamente as duas taxas.
+Comece pelos que aparecem nos slides: Binns, Kollnig, Samarasinghe e Andow. Andow é a principal base da H1, mas mede um desfecho e uma população diferentes; por isso a hipótese não fixa percentual e as duas taxas não devem ser comparadas diretamente.
 
 | Estudo | O que o projeto afirma | Onde no texto | Situação | Conferido |
 |---|---|---|---|---|

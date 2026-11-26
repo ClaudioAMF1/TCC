@@ -76,7 +76,7 @@ Esta é a parte central do teste. Para cada par, leio a política de privacidade
 
 ## Slide 17: Revisão sistemática
 
-Para a literatura, fiz uma revisão sistemática: uma busca planejada e documentada, para que a escolha dos artigos não dependa de preferência pessoal. Segui o guia de Kitchenham: antes de buscar, escrevi um protocolo com as perguntas, as bases, as palavras de busca e os critérios. O resultado segue o PRISMA 2020, um fluxograma do que entrou e saiu em cada etapa. Foram 17 buscas em quatro bases, exigindo um termo do tema no título. Para testar as buscas, separei onze estudos que tinham de aparecer, e elas acharam os dez que estão no Scopus. Foram 552 resultados, 413 sem repetidos, e 210 seguiram para a leitura completa, que está em andamento.
+Para a literatura, fiz uma revisão sistemática: uma busca planejada e documentada, para que a escolha dos artigos não dependa de preferência pessoal. Segui o guia de Kitchenham: antes de buscar, escrevi um protocolo com as perguntas, as bases, as palavras de busca e os critérios. O resultado segue o PRISMA 2020, um fluxograma do que entrou e saiu em cada etapa. Foram 15 buscas em quatro bases, de 2018 a 2026, exigindo um termo do tema no título. Para testar as buscas, separei estudos que tinham de aparecer: dos nove dentro do escopo, elas acharam os oito que estão no Scopus. Foram 396 resultados, 312 sem repetidos, e 148 seguiram para a leitura completa, que está em andamento.
 
 Guia de Kitchenham: divide a revisão em planejamento (questões e protocolo), condução (busca, seleção, avaliação de qualidade e extração dos dados) e relatório (síntese dos resultados).
 
@@ -94,17 +94,17 @@ Os próximos passos ficam no Capstone II. Em fevereiro, termino a revisão e rev
 
 Para concluir: o problema está definido, o método é viável, e a hipótese está pronta para ser testada no Capstone II. O foco é medir o quanto o que os aplicativos públicos declaram sobre os dados bate com o que está dentro deles e, onde der para observar, com o que eles enviam. Obrigado.
 
-## Slide 21: REFERÊNCIAS (1/5)
+## Slide 21: REFERÊNCIAS (1/4)
 
 Não é para ler. São todas as referências do texto do TCC, em ordem alfabética, no padrão ABNT. Pode passar direto para o slide de encerramento.
 
-## Slide 26: Encerramento
+## Slide 25: Encerramento
 
 Slide de encerramento do template. Pode ficar na tela durante as perguntas.
 
 ## Cola para as perguntas
 
-- Números: 396 candidatos e 376 oficiais (85 federais, 199 estaduais, 92 municipais) · AndroZoo: 92 de 396 (23,2%) · piloto: 75%, 95% e 80% com rastreador; κ 0,52, ou 0,69 sem os 88 possíveis falsos positivos do B · políticas acessíveis: 323 de 396 (81,6%) · revisão: 552 resultados, 413 sem repetidos, 210 à leitura completa, 55 propostas de inclusão (11 já confirmadas).
+- Números: 396 candidatos e 376 oficiais (85 federais, 199 estaduais, 92 municipais) · AndroZoo: 92 de 396 (23,2%) · piloto: 75%, 95% e 80% com rastreador; κ 0,52, ou 0,69 sem os 88 possíveis falsos positivos do B · políticas acessíveis: 323 de 396 (81,6%) · revisão: 396 resultados, 312 sem repetidos, 148 à leitura completa, 31 propostas de inclusão (8 já confirmadas).
 - Por que 10%? Fica bem abaixo da literatura (Andow 42,4%; Samarasinghe 27%), que conta aplicativos; eu conto pares, então é um patamar conservador. Se ficar abaixo, não dá para dizer que o governo é mais transparente que nos outros estudos, só que ficou abaixo do meu patamar. Não é limite da LGPD.
 - Por que decidir pela proporção, e não pelo intervalo de confiança? Porque analiso todos os aplicativos oficiais, e não uma amostra. O intervalo mostra a precisão e entra como ressalva se incluir os 10%.
 - Onde a LGPD obriga o órgão a declarar? Transparência (Art. 6º, VI); informação sobre o uso compartilhado e a finalidade (Art. 9º, V); e, no poder público, informar a previsão legal, a finalidade e as práticas, em veículos de fácil acesso (Art. 23, I). A lei não exige o nome do SDK; exige informar o tratamento e o compartilhamento.
@@ -113,6 +113,6 @@ Slide de encerramento do template. Pode ficar na tela durante as perguntas.
 - Por que uma hipótese só? Para concentrar o trabalho no que dá para provar no Capstone II: as declarações. A comparação dos aplicativos com dados sensíveis saiu do projeto.
 - O κ de 0,52 não é baixo? É moderado. Por isso a concordância entre detectores é uma checagem do instrumento, com limiar de 0,6, e não uma hipótese.
 - Ter o SDK no aplicativo prova que dados foram enviados? Não. O envio só é observado na análise de tráfego de uma parte dos aplicativos.
-- Por que a revisão caiu de 1.531 para 552? Passei a exigir um termo do tema no título; os dez estudos de controle continuaram.
+- Por que a revisão caiu de 1.531 para 396? Exigi um termo do tema no título, comecei em 2018, quando o GDPR passou a valer e a LGPD foi sancionada, e tirei a questão sobre detecção de bibliotecas, que ficou como fundo no referencial. Os estudos de controle dentro desse escopo continuaram sendo achados.
 - Você leu todos os artigos? Não. A leitura completa está em andamento: já confirmei parte das decisões lendo o texto inteiro e termino o restante em fevereiro, antes de qualquer resultado.
 - Se não souber: “Isso ainda não medi; está previsto para o Capstone II.”

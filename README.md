@@ -20,7 +20,7 @@ O projeto de pesquisa (Capstone I) está em [`tcc/`](tcc/README.md). O que falta
 | `dados/n3_corpus_20260917.csv` | Os 396 candidatos, com a classificação preliminar: 376 oficiais, esfera e tratamento de dado sensível |
 | `dados/n3_relatorio_20260917.json` | Metadados da coleta e controle original (190 aplicativos) |
 | `dados/controle_ampliado_20261104.json` | Controle ampliado (252 aplicativos) e cobertura por categoria e faixa |
-| `dados/revisao/` | Exportações das buscas, triagem, leitura completa (F2), amostra da conferência cega e a restrição pelo título da versão 2.0 (413 registros triados) |
+| `dados/revisao/` | Exportações das buscas, triagem, leitura completa (F2), amostra da conferência cega e as restrições das versões 2.0 e 2.1 do protocolo (312 registros triados na 2.1) |
 
 ## Scripts
 

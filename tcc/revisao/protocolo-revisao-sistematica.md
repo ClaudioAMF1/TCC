@@ -1,6 +1,6 @@
 # Protocolo da revisão sistemática
 
-**Versão 2.0, 25/11/2026.** Segue as diretrizes de Kitchenham e Charters (2007)
+**Versão 2.1, 26/11/2026.** Segue as diretrizes de Kitchenham e Charters (2007)
 para revisões sistemáticas em engenharia de software, com bola de neve conforme
 Wohlin (2014) e relato do fluxo conforme o PRISMA 2020 (PAGE et al., 2021).
 
@@ -32,6 +32,8 @@ a busca não pode se limitar aos trabalhos já conhecidos.
 | QR4 | Que estudos examinam rastreamento por terceiros ou privacidade em aplicativos publicados por governos, inclusive os de enfrentamento da COVID-19, e o que encontram? | H1, H2, lacuna | S4a, S4b |
 | QR5 | Que trabalhos tratam do rastreamento ou da privacidade em aplicativos no Brasil ou à luz da LGPD, ou da transferência internacional de dados coletados por aplicativos? | Discussão jurídica; critérios dos Arts. 7º, 11 e 33 | S5a, S5b |
 
+**Versão 2.1 (26/11/2026).** A QR1 saiu do escopo: a comparação entre detectores é uma verificação do instrumento, e não uma pergunta da revisão, e se apoia na literatura de detecção citada como fundo no referencial do TCC (Seção 2.3), com Zhan et al. (2022). A string S1 deixa de ser executada. No texto do TCC, as demais questões foram renumeradas: QR2 → QR1, QR3 → QR2, QR4 → QR3 e QR5 → QR4; os identificadores das strings (S2 a S5b) não mudam.
+
 **PICOC** (KITCHENHAM; CHARTERS, 2007):
 
 | Elemento | Definição |
@@ -40,7 +42,7 @@ a busca não pode se limitar aos trabalhos já conhecidos.
 | Intervenção | Detecção ou medida de rastreamento por terceiros: SDKs, bibliotecas, domínios, fluxos de dados |
 | Comparação | Entre o declarado e o detectado; entre aplicativos governamentais com e sem dados sensíveis; entre ferramentas; a referência comercial é contextual |
 | Resultados | Prevalência; precisão, revocação e concordância dos detectores; taxa de inconsistência; destinos e jurisdição |
-| Contexto | Estudos publicados de 2015 a 2026, de qualquer país; governo e Brasil com destaque |
+| Contexto | Estudos publicados de 2018 a 2026 (de 2015 a 2026 até a versão 2.0), de qualquer país; governo e Brasil com destaque |
 
 ---
 
@@ -96,7 +98,7 @@ Toda string do Scopus termina com o filtro **F**:
 AND PUBYEAR > 2014 AND PUBYEAR < 2027 AND ( DOCTYPE ( ar ) OR DOCTYPE ( cp ) OR DOCTYPE ( re ) ) AND ( LANGUAGE ( english ) OR LANGUAGE ( portuguese ) )
 ```
 
-**S1, métodos de detecção (QR1):**
+**S1, métodos de detecção (QR1; não é executada desde a versão 2.1):**
 
 ```
 TITLE-ABS-KEY ( ( android OR app OR apps OR "mobile application*" ) AND ( "third-party librar*" OR "third-party SDK*" OR "third-party component*" OR "third-party track*" OR "tracking librar*" OR "tracking SDK*" OR ( tracker* W/3 ( detect* OR identif* ) ) OR "librar* detection" OR "SDK detection" ) AND ( detect* OR identif* OR recogni* ) AND ( evaluat* OR compar* OR accura* OR precision OR recall OR "ground truth" OR benchmark* OR agreement OR "false positive*" OR reliab* ) )
@@ -213,6 +215,8 @@ achados na busca exploratória.
 | C10 | Serrano, Betarte e Campo (2023), LADC | S4a, S4b |
 | C11 | Serrano, Betarte e Campo (2024), JISA | S4b |
 
+Na versão 2.1, C06 (Zhan et al., 2020, da QR1) e C08 (Slavin et al., 2016, anterior a 2018) ficam fora do escopo; os demais nove continuam valendo, e C07 segue sem indexação no Scopus.
+
 **Regra.** Depois da busca, o script `scripts/revisao_triagem.py controle`
 mostra quais estudos de controle foram recuperados e por qual string. Para cada
 estudo não recuperado:
@@ -247,7 +251,7 @@ Um registro é incluído quando atende a **todos** os critérios de inclusão e 
 | IC1 | Estudo primário que mede, detecta ou analisa rastreamento por terceiros, bibliotecas ou SDKs de terceiros, ou fluxos de dados pessoais em aplicativos móveis (QR1 a QR4); ou trabalho que analisa a LGPD ou a transferência internacional de dados aplicada a aplicativos ou serviços digitais (QR5) |
 | IC2 | Publicado em periódico ou evento com revisão por pares, ou tese ou dissertação defendida |
 | IC3 | Escrito em inglês ou português |
-| IC4 | Publicado de 2015 a 2026 (vale para a busca nas bases; ver 7.4) |
+| IC4 | Publicado de 2018 a 2026 (vale para a busca nas bases; ver 7.4). Até a versão 2.0, de 2015 a 2026 |
 
 | Código | Critério de exclusão |
 |---|---|
@@ -257,6 +261,7 @@ Um registro é incluído quando atende a **todos** os critérios de inclusão e 
 | EC4 | Usa a detecção de bibliotecas só como meio para outro fim (malware, reempacotamento, clones), sem medir rastreamento e sem avaliar a detecção |
 | EC5 | Mede só a percepção ou a intenção de uso das pessoas (questionário, entrevista, modelo de aceitação), sem nenhuma medida sobre os aplicativos |
 | EC6 | Resumo, pôster, artigo curto de até 4 páginas, editorial, tutorial ou palestra; preprint sem revisão por pares (exceção: 7.4) |
+| EC8 | Trata só de métodos de detecção de bibliotecas (identificação, versão, ofuscação, conjuntos de dados de bibliotecas), sem medir rastreamento nem confrontar declarações. Criado na versão 2.1, com a saída da QR1 |
 
 Texto completo não obtido não é critério de exclusão. O texto é procurado pelos
 links da planilha, pelo Portal de Periódicos da CAPES (Acesso CAFe) e por cópias
@@ -393,15 +398,15 @@ que sustentam a decisão.
 
 ## 11 Cronograma das etapas pendentes
 
-Situação em 25/11/2026, com a restrição pelo título da versão 2.0: dos 413 registros triados, 210 foram à leitura completa. Há **62 propostas: 55 I e 7 E**; 16 foram conferidas pelo autor em 21/11 (11 I e 5 E) e 46 ainda não. Restam 148 registros em aberto: 78 por acesso, um por versão divergente, um por dúvida de escopo e 68 T cujo tratamento será definido com o orientador. A contagem anterior à versão 2.0 (1.249 triados; 357 à leitura completa; 71 I e 8 E) fica preservada no histórico do repositório e nos arquivos de 13/11 e 21/11.
+Situação em 26/11/2026, com as restrições da versão 2.1 (termo do tema no título, período de 2018 a 2026 e saída da QR1): dos 312 registros triados, 148 foram à leitura completa. Há **35 propostas: 31 I e 4 E**; 9 foram conferidas pelo autor em 21/11 (8 I e 1 E) e 26 ainda não. Restam 113 registros em aberto: 60 por acesso, um por versão divergente, um por dúvida de escopo e 51 T cujo tratamento será definido com o orientador. As contagens vêm de `scripts/revisao_afunilamento_v21.py`. As contagens anteriores (versão 2.0: 413 triados, 210 à leitura completa, 55 I e 7 E; antes dela: 1.249 triados, 357 à leitura completa, 71 I e 8 E) ficam preservadas no histórico do repositório e nos arquivos de 13/11, 21/11 e 25/11.
 
-Para a entrega do projeto em 03/12, a síntese usa as 71 propostas de inclusão registradas até 13/11, 12 delas conferidas pelo autor em 21/11 (Seção 2.7 do projeto). O restante fica para o início do Capstone II:
+Para a entrega do projeto em 03/12, a síntese usa as 31 propostas de inclusão da versão 2.1 (Seção 2.7 do projeto). O restante fica para o início do Capstone II:
 
 | Prazo previsto | Atividade |
 |---|---|
-| Fevereiro de 2027 | Conferir as 61 decisões da F2 ainda não conferidas, com leitura integral e avaliação QA1–QA8 |
-| Fevereiro de 2027 | Buscar pelo Portal de Periódicos da CAPES os textos não obtidos e ler os 278 registros em aberto, inclusive os 143 T |
-| Fevereiro de 2027 | Conferência cega dos 125 registros (Seção 7.2) |
+| Fevereiro de 2027 | Conferir as 26 decisões da F2 ainda não conferidas, com leitura integral e avaliação QA1–QA8 |
+| Fevereiro de 2027 | Buscar pelo Portal de Periódicos da CAPES os textos não obtidos e ler os 113 registros em aberto, inclusive os 51 T |
+| Fevereiro de 2027 | Conferência cega dos 32 registros da amostra: 23 dos 125 sorteados em 13/11 que continuam na versão 2.1 e 9 sorteados em 26/11 (Seção 7.2) |
 | Fevereiro de 2027 | Bola de neve a partir dos estudos selecionados e atualização da síntese e do fluxograma PRISMA |
 
 ---
@@ -464,6 +469,7 @@ Para a entrega do projeto em 03/12, a síntese usa as 71 propostas de inclusão 
 | 21/11/2026 | 1.11 | Esclareceu-se o recorte entre transparência, prevalência sensível e checagem de detector sem alterar as buscas. | Versão intermediária do texto |
 | 21/11/2026 | 1.12 | Uniformização com a versão de submissão: H1 = declarações; H2 = dados sensíveis; comparação comercial apenas contexto; concordância como verificação sem número de hipótese | Solicitação de alinhamento entre PDF do TCC, roteiro e slides |
 | 25/11/2026 | 2.0 | Restrição pelo título: além da string original, o título do registro precisa conter um termo do fenômeno (tracker, tracking, third-party, SDK, librar*, privacy policy, data safety, privacy label, privacy analysis, privacy compliance, data flow, leak, rastrea*, política de privacidade) ou do contexto (government, e-government, public sector, public administration, public service, governo, setor público, COVID-19, pandemic, contact tracing, Brazil/Brasil, LGPD). Aplicada às exportações de 6/11 com `scripts/revisao_afunilamento_titulo.py`; registros mantidos em `dados/revisao/afunilamento_titulo_20261125.csv` e registros retirados, com o motivo e as decisões que tinham antes, em `dados/revisao/afunilamento_titulo_20261125_removidos.csv` (836 registros: 686 E, 72 I, 75 T e 3 R na F1; 16 propostas I e 1 E na F2). Resultado: 552 identificados, 139 duplicatas, 413 triados, 200 excluídos, 3 revisões, 210 à leitura completa, 55 I e 7 E propostas, 148 em aberto, 16 decisões conferidas (11 I e 5 E). Os 10 estudos de controle recuperados continuam no conjunto. A conferência cega passa a usar os 44 dos 125 registros sorteados que continuam entre os 413 (10,7%). Fica uma única hipótese (H1, declarações); a comparação de dados sensíveis (antiga H2) sai do projeto | Na simulação de defesa (24/11), a banca considerou o volume de 1.531 registros pouco realista para o escopo de um TCC e pediu uma busca mais afunilada e uma única hipótese |
+| 26/11/2026 | 2.1 | Período de 2018 a 2026 (IC4) e saída da QR1: a S1 deixa de ser executada e o EC8 exclui os estudos que tratam só de detecção de bibliotecas. Aplicada às exportações de 6/11 com `scripts/revisao_afunilamento_v21.py`; registros mantidos em `dados/revisao/afunilamento_v21_20261126.csv` e registros da versão 2.0 retirados, com o motivo, em `dados/revisao/afunilamento_v21_20261126_removidos.csv` (101 registros; 22 propostas I). Su et al. (2018) e Liu et al. (2025), recuperados pela S2, passam de I para E (EC8). Resultado: 396 identificados, 84 duplicatas, 312 triados, 161 excluídos, 3 revisões, 148 à leitura completa, 31 I e 4 E propostas, 113 em aberto, 9 decisões conferidas (8 I e 1 E). Dos 11 estudos de controle, C06 (QR1) e C08 (2016) ficam fora do escopo; os 8 dos 9 restantes indexados pelo Scopus continuam recuperados (C07 não está no Scopus). A amostra da conferência cega fica com 23 dos 125 registros sorteados e recebe 9 sorteados entre os demais 312 (semente 20261126), em `dados/revisao/reteste_F1_complemento_20261126.csv`, somando 32 (10,3%) | Pedido do autor, após a simulação de defesa, de afunilar mais a revisão; 2018 é o ano em que o GDPR passou a ser aplicado e a LGPD foi sancionada, e a detecção de bibliotecas é meio, e não objeto, da hipótese |
 
 ### 12.4 Triagem por título e resumo (F1)
 
@@ -481,7 +487,7 @@ Entre as versões armazenadas, 148 decisões mudaram (11,8%), 125 de E para T; o
 
 ### 12.5 Preparação da conferência cega
 
-Em 13/11/2026, foram produzidos o XLSX, o CSV cego e o manifesto de `reteste_F1_20261116`, preparados como reteste e usados, desde a versão 1.7, como conferência cega por amostra (Seção 7.2). Fonte: commit `236470418f16b979606bb115375fdab03fcc0039`, com 1.249 registros. Os 125 campos de decisão estão vazios. κ: **não calculado**. A preparação não altera as decisões da F1.
+Em 13/11/2026, foram produzidos o XLSX, o CSV cego e o manifesto de `reteste_F1_20261116`, preparados como reteste e usados, desde a versão 1.7, como conferência cega por amostra (Seção 7.2). Fonte: commit `236470418f16b979606bb115375fdab03fcc0039`, com 1.249 registros. Os 125 campos de decisão estão vazios. κ: **não calculado**. A preparação não altera as decisões da F1. Na versão 2.1 (26/11/2026), 23 desses 125 registros continuam no conjunto triado; o complemento de 9 registros, sorteado entre os outros 289 registros triados com a semente 20261126 por `scripts/revisao_afunilamento_v21.py`, está em `dados/revisao/reteste_F1_complemento_20261126.csv`, com os campos de decisão vazios.
 
 ---
 

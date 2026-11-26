@@ -1,0 +1,102 @@
+id;titulo;ano;buscas;decisao_f1;decisao_f2_v20;motivo
+R0004;A Machine Learning based Eye Tracking Framework to Detect Zoom Fatigue;2022;S1;E;;recuperado só pela busca S1, da QR1, retirada no protocolo v2.1
+R0007;A Systematic Assessment on Android Third-Party Library Detection Tools;2022;S1|S1;I;I;recuperado só pela busca S1, da QR1, retirada no protocolo v2.1
+R0011;AI FITNESS TRACKER WITH POSTURE DETECTION AND HEALTH INSIGHTS CHATBOT;2026;S1;E;;recuperado só pela busca S1, da QR1, retirada no protocolo v2.1
+R0013;AirTag-Facilitated Stalking Protection: Evaluating Unwanted Tracking Notifications and Tracker Locating Features;2025;S1;E;;recuperado só pela busca S1, da QR1, retirada no protocolo v2.1
+R0014;AMF-GR: Adaptive Matrix Factorization and Graph Fusion for Android Library Recommendation;2026;S1|S1;E;;recuperado só pela busca S1, da QR1, retirada no protocolo v2.1
+R0015;An Empirical Study on the Robustness of Android Third-Party Library Detection Tools Against Advanced Obfuscation;2026;S1;I;I;recuperado só pela busca S1, da QR1, retirada no protocolo v2.1
+R0017;ASD-SDK: An Android malicious software detection approach associated with sneaky third-party SDK behaviors;2026;S1;E;;recuperado só pela busca S1, da QR1, retirada no protocolo v2.1
+R0019;ATVHunter: Reliable version detection of third-party libraries for vulnerability identification in android applications;2021;S1|S1;I;I;recuperado só pela busca S1, da QR1, retirada no protocolo v2.1
+R0020;Automated Third-Party Library Detection for Android Applications: Are We There Yet?;2020;S1|S1;I;E;recuperado só pela busca S1, da QR1, retirada no protocolo v2.1
+R0022;BLeak: Automatically debugging memory leaks in web applications;2018;S1;E;;recuperado só pela busca S1, da QR1, retirada no protocolo v2.1
+R0030;Detecting third-party libraries in Android applications with high precision and recall;2018;S1|S1;I;I;recuperado só pela busca S1, da QR1, retirada no protocolo v2.1
+R0031;Detection and Privacy Leakage Analysis of Third-Party Libraries in Android Apps;2023;S1;I;;recuperado só pela busca S1, da QR1, retirada no protocolo v2.1
+R0033;Detection Technology of Mobile Application Third-Party Library Based on Binary Tree Model;2023;S1|S1;I;;recuperado só pela busca S1, da QR1, retirada no protocolo v2.1
+R0036;DroidNative: A Greedy-Constructed Large-Scale Indexing for Android Native Libraries;2025;S1|S1;I;E;recuperado só pela busca S1, da QR1, retirada no protocolo v2.1
+R0037;Drop the Golden Apples: Identifying Third-Party Reuse by DB-Less Software Composition Analysis;2025;S1;T;;recuperado só pela busca S1, da QR1, retirada no protocolo v2.1
+R0040;eHealth4MS: Problem detection from wearable activity trackers to support the care of multiple sclerosis;2021;S1;E;;recuperado só pela busca S1, da QR1, retirada no protocolo v2.1
+R0048;Fast Library Recommendation in Software Dependency Graphs with Symmetric Partially Absorbing Random Walks;2022;S1;E;;recuperado só pela busca S1, da QR1, retirada no protocolo v2.1
+R0050;Graph Contrastive Learning with Category Awareness for Third-Party Library Recommendation;2026;S1;E;;recuperado só pela busca S1, da QR1, retirada no protocolo v2.1
+R0051;Graph Structure-based Clustering Algorithm for Android Third-party Libraries;2020;S1;I;;recuperado só pela busca S1, da QR1, retirada no protocolo v2.1
+R0055;How Does Code Optimization Impact Third-party Library Detection for Android Applications?;2024;S1|S1;I;I;recuperado só pela busca S1, da QR1, retirada no protocolo v2.1
+R0056;Identify and Inspect Libraries in Android Applications;2018;S1;I;;recuperado só pela busca S1, da QR1, retirada no protocolo v2.1
+R0058;Identifying Biomarkers Using a Portable, Home-Based Eye-Tracking System to Predict Short-Term Visual Fatigue Deterioration: Prospective Observational Feasibility Study;2026;S1;E;;recuperado só pela busca S1, da QR1, retirada no protocolo v2.1
+R0064;Large-Scale Third-Party Library Detection in Android Markets;2020;S1|S1;I;I;recuperado só pela busca S1, da QR1, retirada no protocolo v2.1
+R0067;LibD: Scalable and precise third-party library detection in android markets;2017;S1|S1;I;E;publicado antes de 2018 (protocolo v2.1)
+R0068;LibDB: An Effective and Efficient Framework for Detecting Third-Party Libraries in Binaries;2022;S1|S1;T;;recuperado só pela busca S1, da QR1, retirada no protocolo v2.1
+R0069;LibHunter: An Unsupervised Approach for Third-party Library Detection without Prior Knowledge;2022;S1|S1;I;;recuperado só pela busca S1, da QR1, retirada no protocolo v2.1
+R0070;LibiD: Reliable identification of obfuscated third-party android libraries;2019;S1;I;I;recuperado só pela busca S1, da QR1, retirada no protocolo v2.1
+R0071;LibKit: Detecting Third-Party Libraries in iOS Apps;2023;S1;I;I;recuperado só pela busca S1, da QR1, retirada no protocolo v2.1
+R0072;LibPass: An Entropy-Guided Black-Box Adversarial Attack Against Third-Party Library Detection Tools in the Wild;2026;S1|S1;I;;recuperado só pela busca S1, da QR1, retirada no protocolo v2.1
+R0073;Libra: Library Identification in Obfuscated Android Apps;2023;S1;I;;recuperado só pela busca S1, da QR1, retirada no protocolo v2.1
+R0074;LibRadar: Fast and accurate detection of third-party libraries in Android apps;2016;S1|S1;I;E;publicado antes de 2018 (protocolo v2.1)
+R0076;LibScan: Towards More Precise Third-Party Library Identification for Android Applications;2023;S1;I;I;recuperado só pela busca S1, da QR1, retirada no protocolo v2.1
+R0077;LibSift: Automated detection of third-party libraries in android applications;2016;S1|S1;I;I;publicado antes de 2018 (protocolo v2.1)
+R0078;LibSleuth: Semantic-Aware and Lightweight Third-Party Library Detection for Android Software Supply Chain Security;2026;S1|S1;I;;recuperado só pela busca S1, da QR1, retirada no protocolo v2.1
+R0082;Multi-View Contrastive and Similarity-Supervised Graph Collaborative Filtering for Third-Party Library Recommendation;2026;S1|S1;E;;recuperado só pela busca S1, da QR1, retirada no protocolo v2.1
+R0085;Navigating the Privacy Compliance Maze: Understanding Risks with Privacy-Configurable Mobile SDKs;2024;S1;I;I;recuperado só pela busca S1, da QR1, retirada no protocolo v2.1
+R0089;Obfuscation-resilient detection of Android third-party libraries using multi-scale code dependency fusion;2025;S1;I;;recuperado só pela busca S1, da QR1, retirada no protocolo v2.1
+R0091;On the Identification of Third-Party Library Usage Patterns for Android Applications;2022;S1;T;;recuperado só pela busca S1, da QR1, retirada no protocolo v2.1
+R0093;ORLIS: Obfuscation-resilient library detection for Android;2018;S1|S1;I;I;recuperado só pela busca S1, da QR1, retirada no protocolo v2.1
+R0094;Pay Your Attention on Lib! Android Third-Party Library Detection via Feature Language Model;2025;S1|S1;I;I;recuperado só pela busca S1, da QR1, retirada no protocolo v2.1
+R0095;Performance evaluation of the smartphone-based AI cough monitoring app - Hyfe Cough Tracker against solicited respiratory sounds;2023;S1;E;;recuperado só pela busca S1, da QR1, retirada no protocolo v2.1
+R0101;Privacy Leakage and Protection of InputConnection Interface in Android;2021;S1|S1;E;;recuperado só pela busca S1, da QR1, retirada no protocolo v2.1
+R0102;Re-checking app behavior against app description in the context of third-party libraries;2018;S1;I;E;recuperado só pela busca S1, da QR1, retirada no protocolo v2.1
+R0105;Reliable third-party library detection in Android and its security applications;2016;S1;I;I;publicado antes de 2018 (protocolo v2.1)
+R0109;Scalably Detecting Third-Party Android Libraries With Two-Stage Bloom Filtering;2023;S1|S1;I;I;recuperado só pela busca S1, da QR1, retirada no protocolo v2.1
+R0110;Scratching the Iceberg: Unveiling the Outdated Third-Party Native Libraries in Android Apps;2026;S1|S1;T;;recuperado só pela busca S1, da QR1, retirada no protocolo v2.1
+R0111;Securing android applications via edge assistant third-party library detection;2019;S1;I;;recuperado só pela busca S1, da QR1, retirada no protocolo v2.1
+R0113;Shrunk, Yet Complete: Code Shrinking-Resilient Android Third-Party Library Detection;2025;S1|S1;I;;recuperado só pela busca S1, da QR1, retirada no protocolo v2.1
+R0115;Succeeding with prolonged usage of consumer-based activity trackers in clinical studies: A mixed methods approach;2020;S1;E;;recuperado só pela busca S1, da QR1, retirada no protocolo v2.1
+R0116;Testing Android Third Party Libraries with LLMs to Detect Incompatible APIs;2025;S1|S1;E;;recuperado só pela busca S1, da QR1, retirada no protocolo v2.1
+R0120;Third-Party Service Categories in Android Mobile Gaming Apps: A Static Empirical Analysis;2026;S1;I;I;recuperado só pela busca S1, da QR1, retirada no protocolo v2.1
+R0121;Towards Fast Detection of Suspicious Bluetooth Trackers using Anomaly Detection;2026;S1;E;;recuperado só pela busca S1, da QR1, retirada no protocolo v2.1
+R0122;Towards Global Matches for Third-Party Library Detection in Android;2026;S1;I;;recuperado só pela busca S1, da QR1, retirada no protocolo v2.1
+R0124;TPL-Benchmark: A Comprehensive Benchmark for Third-Party Library Detection in Android Applications;2026;S1|S1;I;;recuperado só pela busca S1, da QR1, retirada no protocolo v2.1
+R0125;Understanding and Conquering the Difficulties in Identifying Third-Party Libraries From Millions of Android Apps;2022;S1|S1;I;;recuperado só pela busca S1, da QR1, retirada no protocolo v2.1
+R0129;Version-level Third-Party Library Detection in Android Applications via Class Structural Similarity;2025;S1;I;I;recuperado só pela busca S1, da QR1, retirada no protocolo v2.1
+R0142;A privacy-preserving location tracking system for smartphones based on cloud storage;2015;S2;E;;publicado antes de 2018 (protocolo v2.1)
+R0156;Alde: Privacy risk analysis of analytics libraries in the android ecosystem;2017;S2;E;;publicado antes de 2018 (protocolo v2.1)
+R0166;Android smartphone third party advertising library data leak analysis;2015;S2;I;;publicado antes de 2018 (protocolo v2.1)
+R0179;Block Me if You Can: A Large-Scale Study of Tracker-Blocking Tools;2017;S2|S2;I;;publicado antes de 2018 (protocolo v2.1)
+R0209;Detection of Android ad library focusing on HTTP connections and view object redraw behaviors;2015;S2|S2;I;I;publicado antes de 2018 (protocolo v2.1)
+R0224;Efficient privilege de-escalation for ad libraries in mobile apps;2015;S2;T;;publicado antes de 2018 (protocolo v2.1)
+R0236;Exploiting eye tracking for smartphone authentication;2015;S2;E;;publicado antes de 2018 (protocolo v2.1)
+R0248;Free for All! Assessing User Data Exposure to Advertising Libraries on Android;2016;S2;I;I;publicado antes de 2018 (protocolo v2.1)
+R0252;Generating heat maps of popular routes online from massive mobile sports tracking application data in milliseconds while respecting privacy;2015;S2;E;;publicado antes de 2018 (protocolo v2.1)
+R0257;Health information privacy of activity trackers;2017;S2;T;;publicado antes de 2018 (protocolo v2.1)
+R0298;Mobile applications: Analyzing private data leakage using third party connections;2015;S2|S2;I;;publicado antes de 2018 (protocolo v2.1)
+R0312;Obfuscation-Resilient Privacy Leak Detection for Mobile Apps Through Differential Analysis;2017;S2;I;I;publicado antes de 2018 (protocolo v2.1)
+R0324;Personal informatics for everyday life: How users without prior self-tracking experience engage with personal data;2016;S2;E;;publicado antes de 2018 (protocolo v2.1)
+R0340;Reciprocal reinforcement between wearable activity trackers and social network services in influencing physical activity behaviors;2016;S2;E;;publicado antes de 2018 (protocolo v2.1)
+R0356;Short: A measurement study of tracking in paid mobile applications;2015;S2|S5a;T;;publicado antes de 2018 (protocolo v2.1)
+R0387;Uncovering privacy leakage in BLE network traffic of wearable fitness trackers;2016;S2;E;;publicado antes de 2018 (protocolo v2.1)
+R0395;User acceptance of wrist-worn activity trackers among community-dwelling older adults: Mixed method study;2017;S2;E;;publicado antes de 2018 (protocolo v2.1)
+R0406;We are family: Relating information-flow trackers;2017;S2;T;;publicado antes de 2018 (protocolo v2.1)
+R0455;Android application development for GPS-based tree location tracker;2015;S4a;E;;publicado antes de 2018 (protocolo v2.1)
+R0470;Automating the Generation of Privacy Policies for Context-Sharing Applications;2015;S3|S3;E;;publicado antes de 2018 (protocolo v2.1)
+R0493;DAPA: Degradation-aware privacy analysis of Android apps;2016;S3;T;;publicado antes de 2018 (protocolo v2.1)
+R0494;Data Security and Privacy in Apps for Dementia: An Analysis of Existing Privacy Policies;2017;S4a;T;;publicado antes de 2018 (protocolo v2.1)
+R0641;Toward a framework for detecting privacy policy violations in android application code;2016;S3|S3;I;I;publicado antes de 2018 (protocolo v2.1)
+R0779;A Human-Centered Activity Tracking System: Toward a Healthier Workplace;2017;S2;E;;publicado antes de 2018 (protocolo v2.1)
+R0788;A Privacy Leak Detection Mechanism based on Service Binding;2024;S1;T;;recuperado só pela busca S1, da QR1, retirada no protocolo v2.1
+R0797;A Testbed for Security and Privacy Analysis of IoT Devices;2016;S2;E;;publicado antes de 2018 (protocolo v2.1)
+R0829;An information security framework for ubiquitous services in e-government structures: a peruvian local government experience;2016;S4a;E;;publicado antes de 2018 (protocolo v2.1)
+R0837;Analytics Using Activity Trackers in the Field of Education;2015;S2;E;;publicado antes de 2018 (protocolo v2.1)
+R0845;AndroLibZoo: A Reliable Dataset of Libraries Based on Software Dependency Analysis;2024;S1;I;I;recuperado só pela busca S1, da QR1, retirada no protocolo v2.1
+R0866;BLEB: Bluetooth Low Energy Botnet for large scale individual tracking;2017;S2;E;;publicado antes de 2018 (protocolo v2.1)
+R0900;Cross2OH: Enabling Seamless Porting of C/C++ Software Libraries to OpenHarmony;2025;S1;E;;recuperado só pela busca S1, da QR1, retirada no protocolo v2.1
+R0941;Does the Vulnerability Threaten Our Projects? Automated Vulnerable API Detection for Third-Party Libraries;2024;S1;E;;recuperado só pela busca S1, da QR1, retirada no protocolo v2.1
+R0966;Explicit Secrecy: A Policy for Taint Tracking;2016;S2;E;;publicado antes de 2018 (protocolo v2.1)
+R0974;Fitness Trackers: Fit for Health but Unfit for Security and Privacy;2017;S2;T;;publicado antes de 2018 (protocolo v2.1)
+R1029;LibDX: A Cross-Platform and Accurate System to Detect Third-Party Libraries in Binary Code;2020;S1;T;;recuperado só pela busca S1, da QR1, retirada no protocolo v2.1
+R1045;Mobile App Third-Party Library traffic discovery method based on short text classification and clustering;2020;S1;I;;recuperado só pela busca S1, da QR1, retirada no protocolo v2.1
+R1062;Neural Library Recommendation by Embedding Project-Library Knowledge Graph;2024;S1;E;;recuperado só pela busca S1, da QR1, retirada no protocolo v2.1
+R1069;OSSDetector: Towards a More Accurate Approach for C/C++ Third-Party Library Detection;2025;S1;T;;recuperado só pela busca S1, da QR1, retirada no protocolo v2.1
+R1091;Privacy scoring and users' awareness for Web tracking;2015;S2;E;;publicado antes de 2018 (protocolo v2.1)
+R1094;PTDETECTOR: An Automated JavaScript Front-end Library Detector;2023;S1;E;;recuperado só pela busca S1, da QR1, retirada no protocolo v2.1
+R1138;SmarTracker: Leveraging LLMs to Automate User Behavior Tracking in Mobile Apps;2026;S1;T;;recuperado só pela busca S1, da QR1, retirada no protocolo v2.1
+R1148;SurgeScan: Enforcing security policies on untrusted third-party Android libraries;2017;S2;T;;publicado antes de 2018 (protocolo v2.1)
+R1171;Too Quiet in the Library: An Empirical Study of Security Updates in Android Apps' Native Code;2021;S1;E;;recuperado só pela busca S1, da QR1, retirada no protocolo v2.1
+R1175;Towards Secure Mobile Process Tracking Using Wearable Computing in mGovernment Applications;2016;S4a;T;;publicado antes de 2018 (protocolo v2.1)
+R1186;Unveiling the Ownership: An Empirical Study of Android App Associations via SDK IDs;2026;S1;E;;recuperado só pela busca S1, da QR1, retirada no protocolo v2.1

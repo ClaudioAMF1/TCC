@@ -39,7 +39,7 @@ Evitar revisões paralelas enquanto o orientador comenta o documento: consolidar
 Nada disto é exigido para 03/12. O texto já diz que essas etapas vêm depois.
 
 - Conferência das 46 decisões da leitura completa ainda não conferidas (16 das 62 foram conferidas em 21/11).
-- Leitura dos 148 registros da revisão ainda em aberto, inclusive buscando os textos pela CAPES, e bola de neve.
+- Leitura dos 113 registros da revisão ainda em aberto (versão 2.1 do protocolo), inclusive buscando os textos pela CAPES, conferência cega dos 32 registros da amostra e bola de neve.
 - Conferência cega dos 44 registros da amostra que continuam após a restrição pelo título.
 - Conferência da classificação dos 376 aplicativos.
 - Definição, com o orientador, do detector principal e do plano de análise.

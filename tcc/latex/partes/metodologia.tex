@@ -1,0 +1,183 @@
+\label{sec:metodologia}
+
+O estudo seguirá uma abordagem quantitativa e observacional: a análise parte dos pacotes Android e dos documentos publicados pelos responsáveis pelos aplicativos, sem modificar o código nem os serviços examinados. A unidade de análise da hipótese é o par aplicativo--SDK, formado por cada SDK de rastreamento encontrado em cada aplicativo; um aplicativo com três SDKs gera, portanto, três pares.
+
+O trabalho foi organizado em seis etapas. A primeira é a seleção e a revisão dos aplicativos oficiais (Seção~\ref{sec:selecao}); a segunda, a obtenção dos pacotes (Seção~\ref{sec:pacotes}); a terceira, a detecção dos SDKs e a medida da concordância entre os detectores (Seção~\ref{sec:deteccao}); a quarta, a classificação das declarações (Seção~\ref{sec:declaracoes}); a quinta, a observação do tráfego de uma subamostra (Seção~\ref{sec:trafego}); e a sexta, a análise estatística (Seção~\ref{sec:analise}). A seleção dos aplicativos e um piloto do download e da detecção, com 20 pacotes, já foram realizados, e seus resultados são apresentados na Seção~\ref{sec:res-preliminares}. Os scripts em Python e os registros das decisões serão mantidos junto aos dados, para que cada passo possa ser reproduzido. Antes das etapas, a Seção~\ref{sec:plataforma} justifica a escolha da plataforma; depois delas, as Seções~\ref{sec:revisao} a~\ref{sec:cronograma} tratam do protocolo da revisão sistemática, dos aspectos éticos, dos recursos e do cronograma.
+
+\subsecao{Escolha da plataforma Android}\label{sec:plataforma}
+
+O estudo analisa apenas aplicativos Android, por três motivos. O primeiro é a abrangência: em outubro de 2026, o Android respondia por 73,76\% dos sistemas operacionais de celulares em uso no Brasil \cite{statcounter2026}. Estudar essa plataforma é, portanto, estudar a usada pela maior parte dos cidadãos que acessam os serviços.
+
+O segundo motivo é a viabilidade técnica. Kollnig et al.~\cite{kollnig2022ios} compararam 24 mil aplicativos de 2020, 12 mil de cada plataforma, e explicam por que há menos pesquisas de privacidade sobre o iOS: faltam ferramentas públicas de análise, os aplicativos são criptografados e a legalidade de decriptá-los é incerta. Segundo os autores, a proteção FairPlay da Apple torna o acesso ao código mais difícil que no Android, a decriptação exige um aparelho físico e tempo, e não existem ferramentas públicas e escaláveis para baixar aplicativos da App Store, ao contrário do que ocorre com a Google Play. No Android, os pacotes podem ser baixados da Google Play \cite{apkeep2026}, comparados com o acervo do AndroZoo \cite{allix2016} e examinados com bases abertas de rastreadores \cite{exodus2026,disconnect2026}.
+
+O terceiro motivo é a comparabilidade das declarações. A hipótese confronta os SDKs com a seção ``Segurança dos dados'', que é própria da Google Play; a App Store usa rótulos de privacidade em outro formato \cite{xiao2023}, e misturar as duas fontes exigiria dois critérios de classificação para a mesma hipótese.
+
+A restrição não pressupõe que o iOS seja mais seguro. Kollnig et al.~\cite{kollnig2022ios} encontraram rastreamento por terceiros e compartilhamento de identificadores únicos generalizados nas duas plataformas e concluíram que nenhuma delas é claramente melhor que a outra em privacidade. Os resultados deste projeto valerão para as versões Android dos aplicativos, e a análise das versões iOS fica como trabalho futuro.
+
+\subsecao{Seleção dos aplicativos}\label{sec:selecao}
+
+Os metadados foram obtidos na Google Play com a biblioteca \texttt{google-\allowbreak{}play-\allowbreak{}scraper} \cite{jomingyu2024}, com país Brasil e idioma português. Em 3 de setembro de 2026, foram feitas buscas por 21 termos ligados a serviço público, com até 30 resultados por termo: ``gov.br'', ``governo federal'', ``governo do estado'', ``prefeitura'', ``ministério da saúde'', ``receita federal'', ``INSS'', ``SUS'', ``detran'', ``tribunal'', ``SERPRO'', ``Dataprev'', ``carteira digital'', ``cadastro único'', ``meu INSS'', ``secretaria estadual'', ``secretaria municipal'', ``defensoria'', ``polícia militar'', ``corpo de bombeiros'' e ``procon''.
+
+Um aplicativo foi considerado candidato quando o nome do publicador contém um sinal de órgão público, como ``prefeitura'', ``secretaria'', ``tribunal'', ``ministério'' ou ``detran'', ou quando o publicador consta de uma lista de órgãos conhecidos cujo nome não tem esses sinais. Essa lista é necessária porque o publicador do portal gov.br federal, responsável pelo Meu INSS e pelo Meu SUS Digital, chama-se ``Serviços e Informações do Brasil'', e empresas públicas de tecnologia, como a Celepar, do Paraná, e a Prodam, do município de São Paulo, também não têm sinal no nome. O casamento é feito por palavra inteira, para evitar falsos positivos com sinais contidos em outras palavras. Para cada publicador classificado como oficial, buscou-se ainda o seu nome exato, de modo a recuperar todo o catálogo: a busca por termo encontra uma amostra; a busca pelo publicador, o catálogo completo.
+
+Em 17 de setembro de 2026, a ficha completa dos candidatos foi obtida na Google Play. Cada aplicativo recebeu duas classificações automáticas: a esfera de governo, atribuída pelo nome do publicador, testando primeiro os sinais municipais, depois os estaduais e por último os federais; e a faixa de instalações, dada pela ordem de grandeza do número mínimo informado pela loja.
+
+A revisão manual de 4 de novembro de 2026 examinou 30 aplicativos sorteados sistematicamente e dois casos adicionais. Como a amostra encontrou publicadores privados (Seção~\ref{sec:res-selecao}), todos os candidatos foram revistos, com o nome jurídico que a Google Play mostra em ``Sobre o desenvolvedor'' como evidência. Os aplicativos confirmados como oficiais formam a população do estudo, que será revista mais uma vez antes da coleta principal, conforme o primeiro objetivo específico.
+
+Para dar contexto a dois resultados preparatórios, a cobertura do AndroZoo (Seção~\ref{sec:res-androzoo}) e a declaração de anúncios (Seção~\ref{sec:res-declaracoes}), foi montada uma referência de aplicativos comerciais. Para cada categoria da loja presente entre os aplicativos governamentais, foram buscados até oito aplicativos comerciais, no máximo dois por faixa de instalações, e a busca foi complementada por aplicativos de publicadores não oficiais encontrados na busca inicial. A primeira referência tem 190 aplicativos, 22 deles vindos desse complemento; em 4 de novembro de 2026, ela foi ampliada para 252, para cobrir faixas de instalações com aplicativo governamental e menos de dois comerciais. Como parte da referência veio de buscas com termos ligados a governo, ela não é uma amostra aleatória do mercado e não entra em nenhum teste: a referência principal do projeto é a LGPD e o que cada aplicativo do governo declara.
+
+\subsecao{Obtenção dos pacotes}\label{sec:pacotes}
+
+O acesso acadêmico ao AndroZoo foi concedido em 17 de setembro de 2026; a chave é individual e não é compartilhada. Antes da escolha da fonte dos pacotes, a cobertura do acervo foi medida nos candidatos governamentais e na referência comercial, com a razão de chances de Mantel e Haenszel~\cite{mantel1959}, que compara os dois grupos dentro da mesma faixa de instalações.
+
+Como o acervo contém apenas parte dos aplicativos do governo (Seção~\ref{sec:res-androzoo}), e para analisar a versão que o cidadão instala, todos os aplicativos serão baixados na versão atual da Google Play com o apkeep, ferramenta aberta para baixar pacotes Android \cite{apkeep2026}, a partir do Brasil e com uma conta Google criada só para a pesquisa. Para cada aplicativo, serão registrados o hash SHA-256, a versão, a data e o motivo de eventuais falhas; quando o aplicativo for distribuído em pacotes divididos, será analisado o APK base, que contém o código principal. O AndroZoo servirá para a reprodutibilidade, nos aplicativos que ele tiver, e para medir a defasagem entre a versão arquivada e a atual. Repositórios alternativos não garantem que o pacote seja o publicado pelo desenvolvedor e não serão usados. A coleta será testada em cinco aplicativos antes de ser aplicada a todos.
+
+\subsecao{Detecção dos SDKs}\label{sec:deteccao}
+
+A proposta original previa três ferramentas para identificar rastreadores: o MobSF, o Androguard e o Exodus Privacy. Antes do piloto, o código de cada uma foi examinado para saber se elas são, de fato, detectores independentes. No MobSF 4.5.3 \cite{mobsf2026}, o módulo de rastreadores baixa a base do Exodus Privacy, lista as classes de cada arquivo de código compilado (DEX) e aplica a elas as expressões regulares de assinatura de código dessa base; usa, portanto, a mesma base e a mesma regra de casamento do Exodus. A cópia da base distribuída com o pacote tem 432 rastreadores, 428 com assinatura de código e 260 com assinatura de rede, e comparar MobSF e Exodus mediria apenas diferenças de implementação. O Androguard \cite{androguard2026}, por sua vez, extrai classes, textos e recursos de um pacote, mas não tem base de rastreadores: é o extrator sobre o qual os detectores trabalham.
+
+Para separar o efeito da base de assinaturas do efeito do método de detecção, o instrumento foi redefinido com os três detectores da Tabela~\ref{tab:detectores}. A diferença entre A e B mede o efeito do método com a base fixa; a diferença entre B e C mede o efeito da base com o método fixo; e o MobSF entra como verificação da implementação do detector A.
+
+\begin{table}[htbp]
+\centering
+\small
+\caption{Detectores usados no piloto}\label{tab:detectores}
+\begin{tabularx}{\textwidth}{|l|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|}
+\hline
+\textbf{Detector} & \textbf{Base} & \textbf{Método} \\
+\hline
+A & Exodus Privacy & assinatura de código nas classes do DEX \\ \hline
+B & Exodus Privacy & assinatura de rede nos domínios presentes nos textos do pacote \\ \hline
+C & Disconnect, mantida por outra organização & lista de domínios aplicada aos mesmos textos de B \\ \hline
+\end{tabularx}
+\fonte{Elaborado pelo autor (2026).}
+\end{table}
+
+A lista da Disconnect é usada nas categorias de publicidade, análise de uso e impressão digital invasiva. As categorias de conteúdo e de redes sociais ficam de fora porque incluem domínios de uso geral, como \texttt{google.\allowbreak{}com} e \texttt{facebook.\allowbreak{}com}, que gerariam falso positivo em quase todo aplicativo; essa escolha é um parâmetro do script e será reportada, porque afeta a taxa. Como o detector A procura o próprio código do SDK, ele é o candidato a medida principal; C serve de comparação com outra base, e B, para examinar o efeito do método. A escolha será confirmada com o orientador antes da coleta.
+
+O piloto do download e da detecção usou 20 aplicativos do AndroZoo. Para cada detecção, o script registra a classe ou o domínio que a produziu, o que permite revisar cada uma pela evidência que a gerou; os resultados do piloto estão na Seção~\ref{sec:res-piloto}.
+
+A concordância entre os detectores será medida pelo $\kappa$ de Fleiss \cite{fleiss1971}, indicado quando mais de dois avaliadores classificam os mesmos itens em categorias. Aqui, os avaliadores são os três detectores; os itens, os aplicativos; e as categorias, ``tem'' e ``não tem'' rastreador, comparação que também será feita para cada SDK. A porcentagem simples de acordo não basta, porque parte do acordo acontece por acaso: se quase todos os aplicativos têm rastreador, detectores que respondem ``tem'' para tudo concordam quase sempre, sem medir nada. O $\kappa$ desconta esse acordo esperado ao acaso:
+\[
+\kappa = \frac{P_o - P_e}{1 - P_e},
+\]
+em que $P_o$ é a concordância observada e $P_e$, a concordância esperada ao acaso. Para obter $P_o$, calcula-se, em cada aplicativo, a fração dos pares de detectores que deram a mesma resposta e tira-se a média entre os aplicativos: se os três detectores respondem ``tem'', a fração é 1; se dois respondem ``tem'' e um ``não tem'', é 1/3. $P_e$ é a soma dos quadrados das proporções gerais de cada resposta, isto é, a chance de dois detectores concordarem apenas por acaso. O $\kappa$ vale 1 quando a concordância é perfeita, 0 quando ela é igual à esperada ao acaso e fica negativo quando é pior que o acaso.
+
+A interpretação seguirá a escala de Landis e Koch~\cite{landis1977}: abaixo de 0, concordância pobre; de 0 a 0,20, leve; de 0,21 a 0,40, razoável; de 0,41 a 0,60, moderada; de 0,61 a 0,80, substancial; e de 0,81 a 1, quase perfeita. O limiar de 0,6, que marca a passagem de moderada para substancial, será o critério operacional: abaixo dele, a lista de SDKs depende demais da ferramenta, e isso será discutido junto com o resultado da hipótese. Como o $\kappa$ fica instável quando quase todos os itens estão na mesma categoria, ele será reportado com IC95\% e com as concordâncias positiva e negativa, isto é, o acordo nos casos em que algum detector aponta presença e nos casos em que algum aponta ausência. Complementarmente, o $\tau$ de Kendall \cite{kendall1938} comparará a ordem dos aplicativos pelo número de SDKs que cada detector encontra. Concordância alta, porém, não prova acurácia, porque os três detectores podem errar da mesma forma.
+
+\subsecao{Classificação das declarações}\label{sec:declaracoes}
+
+As declarações serão lidas em duas fontes: a política de privacidade indicada na página do aplicativo e a seção ``Segurança dos dados'' da Google Play, na qual o publicador informa que tipos de dados o aplicativo coleta e compartilha e com que finalidade. A disponibilidade das políticas foi verificada antes de qualquer download (Seção~\ref{sec:res-declaracoes}).
+
+Para cada par aplicativo--SDK, a função do componente será registrada com base na documentação do fornecedor e nas categorias da base do Exodus, e o par será classificado em uma de cinco situações. Há menção nominal quando a política cita o SDK ou a empresa que o fornece. Há declaração compatível por categoria quando a política ou a seção ``Segurança dos dados'' declara a coleta ou o compartilhamento do tipo de dado que o SDK trata, para a finalidade correspondente, ainda que sem citar o nome. Há ausência de declaração compatível quando os documentos estão disponíveis e nenhum deles cobre o tipo de dado ou a finalidade do SDK. A informação é insuficiente quando os documentos existem, mas são genéricos demais para permitir a decisão. Por fim, a política é indisponível quando não pôde ser obtida. A ausência do nome comercial de um SDK, por si só, não caracteriza omissão.
+
+O teste da hipótese e a proporção principal incluirão apenas os pares com detecção confirmada, função identificada e documentos que permitam avaliar a compatibilidade, ou seja, os das três primeiras situações. Os pares com informação insuficiente ou política indisponível serão informados à parte e considerados em análises de sensibilidade. Nessas análises, também se verificará quanto o resultado muda quando as declarações genéricas, que mencionam o compartilhamento com parceiros sem dizer quais dados nem para quê, são tratadas como compatíveis ou como ausentes.
+
+Além dessa classificação, que é a base do teste da hipótese, a discussão jurídica usará uma matriz documental associada à evidência técnica de cada versão do aplicativo, com três eixos: a hipótese legal indicada para a operação com dados pessoais (Art. 7º), o enquadramento específico quando houver dado sensível (Art. 11) e a caracterização e o mecanismo de eventual transferência internacional (Art. 33) \cite{brasil2018}. O consentimento não será exigido indistintamente de todas as operações do poder público. A finalidade do serviço, a competência do órgão e os compartilhamentos serão examinados com apoio no guia da ANPD para o poder público \cite{anpd2023} e no guia sobre cookies e tecnologias semelhantes \cite{anpd2022}, e a base legal do tratamento e o mecanismo de transferência serão registrados em campos separados, conforme a Resolução CD/ANPD nº 19/2024 \cite{anpd2024}.
+
+Cada item da matriz receberá um de quatro resultados, acompanhado da evidência e da justificativa: documentado, indício de inconsistência, não verificável ou não aplicável. Documento ausente ou inacessível será marcado como não verificável, sem presumir a inexistência de base legal ou de contrato, e um resultado documentado não certifica a conformidade integral do aplicativo. Nenhuma dessas classificações, isoladamente, constitui prova de infração à LGPD. A matriz é uma proposta a validar com o orientador antes da coleta principal.
+
+\subsecao{Observação do tráfego}\label{sec:trafego}
+
+A análise estática mostra que o código de um SDK está no pacote, mas não que ele é executado nem que envia dados. Para observar os envios, uma subamostra de aplicativos será executada no emulador Android do Android Studio \cite{androidemulador2026}, em computador, o que dispensa um aparelho físico. O emulador permite usar uma imagem de sistema com acesso administrativo, necessário para instalar o certificado do mitmproxy, ferramenta aberta que intercepta e registra o tráfego cifrado pelo protocolo HTTPS \cite{mitmproxy2026} e que também foi usada por Samarasinghe et al.~\cite{samarasinghe2022}.
+
+Cada aplicativo será instalado a partir do pacote baixado na etapa de obtenção, aberto sem login e usado, por um tempo fixo definido no teste do protocolo, nas telas acessíveis sem conta. Não serão usadas contas pessoais, como a do gov.br. Esse recorte observa o que o aplicativo envia antes de qualquer consentimento, situação estudada por Kollnig et al.~\cite{kollnig2021fait}, e evita o registro de dados pessoais. Para cada conexão, serão registrados o domínio, a empresa responsável, o país do servidor e se o destino aparece nas declarações do aplicativo. A expressão ``fluxo não declarado'' será reservada à transmissão efetivamente observada e sem declaração compatível.
+
+País do servidor, país da empresa destinatária e local documentado de tratamento serão campos distintos, porque a nacionalidade do fornecedor e a localização de um servidor não demonstram, isoladamente, uma transferência internacional. A matriz separará transferência, coleta internacional direta e situação indeterminada, observando as distinções da Resolução CD/ANPD nº 19/2024 \cite{anpd2024}. Aplicativos que detectarem o emulador, exigirem serviços indisponíveis ou usarem fixação de certificado (\emph{certificate pinning}), recurso que impede a leitura do tráfego, terão o motivo registrado, e a proporção desses casos será reportada. O tamanho da subamostra será definido com o orientador no início do Projeto Capstone II, de acordo com o tempo disponível; se a etapa não puder ser concluída, o quarto objetivo específico será apresentado como limitação.
+
+\subsecao{Análise estatística}\label{sec:analise}
+
+A hipótese será decidida pela proporção de pares sem declaração compatível entre os pares avaliáveis (Seção~\ref{sec:declaracoes}): confirmada se for de pelo menos 10\% e refutada se for menor. Como os pares de um mesmo aplicativo dependem dos mesmos documentos, o IC95\% dessa proporção será calculado com agrupamento por aplicativo. Também serão apresentadas a proporção de aplicativos com ao menos um SDK sem declaração compatível e a lista das divergências de cada aplicativo.
+
+As análises de sensibilidade incluirão os pares com informação insuficiente ou política indisponível, os dois tratamentos das declarações genéricas e o uso de cada detector como fonte da lista de SDKs. De forma descritiva, sem teste de hipótese, serão apresentadas a proporção de aplicativos com ao menos um SDK de rastreamento e a quantidade de SDKs por aplicativo, por esfera de governo, com IC95\% pelo método de Wilson~\cite{wilson1927}, além da defasagem entre as versões do AndroZoo e da Google Play. Os aplicativos comerciais aparecerão apenas na descrição do contexto.
+
+O detector principal e as regras para versões e declarações genéricas serão definidos com o orientador e registrados no repositório da pesquisa antes da coleta, distinguindo os ajustes motivados pelo piloto. O relatório apresentará as contagens, as proporções com seus IC95\%, os pacotes não obtidos e os casos sem documentação suficiente.
+
+\subsecao{Protocolo da revisão sistemática}\label{sec:revisao}
+
+A revisão segue as diretrizes de Kitchenham e Charters~\cite{kitchenham2007}, relata o fluxo conforme o \emph{Preferred Reporting Items for Systematic Reviews and Meta-Analyses} (PRISMA) 2020 \cite{page2021} e inclui a bola de neve \cite{wohlin2014}, que é a busca de estudos nas referências dos trabalhos incluídos e nos trabalhos que os citam. O protocolo, mantido no repositório da pesquisa, registra as strings, os critérios e cada alteração, com data e motivo. A revisão cobre aplicativos de governo de qualquer país, e suas strings são validadas contra um conjunto de estudos que precisam ser recuperados.
+
+São quatro questões de revisão (QR): QR1, sobre a prevalência de rastreadores, que dá o contexto; QR2, sobre o confronto entre o declarado e o detectado, base da hipótese; QR3, sobre aplicativos de governo, inclusive os da COVID-19, base da hipótese e da lacuna; e QR4, sobre o Brasil, a LGPD e a transferência internacional de dados, para a discussão jurídica. Uma quinta questão, sobre métodos de detecção de bibliotecas, saiu na versão 2.1 do protocolo: a comparação entre detectores é uma verificação do instrumento, e não uma pergunta da revisão, e se apoia na literatura apresentada na Seção~\ref{sec:ref-deteccao}.
+
+O Scopus é a base principal; o IEEE Xplore recebe as strings das QR1 a QR3; a SBC OpenLib e a Biblioteca Digital Brasileira de Teses e Dissertações (BDTD) cobrem a produção nacional. A ACM Digital Library estava prevista, mas saiu na versão 1.1 do protocolo, porque a exportação dos resultados exige uma assinatura que a instituição não tem e os anais da ACM são, em grande parte, indexados pelo Scopus. São 15 buscas, de 2018 a 2026, em inglês e português. Cada string combina um bloco de aplicativo móvel, um bloco do fenômeno, como rastreador, SDK de terceiros ou política de privacidade, e, quando o fenômeno sozinho traz ruído, um bloco de contexto, como governo, COVID-19 ou Brasil; o termo \emph{tracker} sozinho, por exemplo, recupera também rastreadores de atividade física. Além disso, o título do registro precisa conter um termo do fenômeno ou do contexto. Essa exigência entrou na versão 2.0 do protocolo, em 25 de novembro de 2026. Na versão 2.1, de 26 de novembro, o período passou a começar em 2018, ano em que o GDPR passou a ser aplicado e a LGPD foi sancionada, e saiu a questão sobre detecção de bibliotecas. As restrições das duas versões foram aplicadas às exportações feitas em 6 de novembro; os scripts que as aplicam e as listas dos registros mantidos e retirados, com o motivo de cada retirada, acompanham os dados da revisão.
+
+Estudos conhecidos formam um conjunto de controle, na linha do padrão quase-ouro de Zhang et al.~\cite{zhang2011}: cada string tem de recuperar os estudos de controle que a base indexa e, se não recuperar, o termo que faltou é acrescentado e a busca é refeita. Dos onze estudos de controle do protocolo, nove continuam no escopo da versão 2.1; as buscas recuperaram os oito indexados pelo Scopus, e o nono não está nessa base.
+
+Há quatro critérios de inclusão e sete de exclusão, entre eles o EC8, criado na versão 2.1 para os estudos que tratam só de detecção de bibliotecas. A triagem é feita por título e resumo e depois pelo texto completo, e cada exclusão leva o código do critério que a motivou. Texto completo não obtido não é motivo de exclusão: o registro é contado como não recuperado no fluxograma. A qualidade de cada estudo é avaliada por oito perguntas, das quais duas, sobre a reprodutibilidade e a validação da detecção, tratam do que a comparação entre detectores discute; a nota não exclui estudos.
+
+Como a seleção é feita por um único revisor, uma amostra aleatória de 125 registros foi sorteada, antes das restrições pelo título e pelo período, para verificar a consistência da triagem; 23 deles continuam entre os 312 registros triados, e outros 9, sorteados em 26 de novembro, completam a amostra de verificação, com 32 registros (10,3\%). No início do Projeto Capstone II, esses registros serão classificados de novo por título e resumo, sem consulta às decisões registradas, e as duas classificações serão comparadas pelo $\kappa$ de Cohen \cite{cohen1960}, versão do $\kappa$ para dois avaliadores, com o mesmo limiar de 0,6. Se o $\kappa$ ficar abaixo desse limiar, outros 32 registros serão sorteados e reclassificados. A síntese será narrativa e organizada por questão, sem metanálise, porque as taxas da literatura vêm de detectores e populações diferentes.
+
+\subsecao{Aspectos éticos}\label{sec:etica}
+
+Até esta etapa, foram consultados metadados públicos da Google Play e políticas disponibilizadas pelos publicadores. Os pacotes do piloto vieram do AndroZoo e foram examinados estaticamente, respeitando as condições de uso do acervo. Não há participação de pessoas como sujeitos de pesquisa: o objeto de estudo são os aplicativos e os componentes que eles incorporam. Na observação do tráfego, não haverá login em contas pessoais, e credenciais, tokens e identificadores serão retirados de qualquer material publicado. Os pacotes analisados não serão redistribuídos.
+
+Achados graves atribuíveis a um órgão, como o envio de dados sensíveis sem proteção, serão comunicados ao órgão responsável e, se couber, ao Centro de Prevenção, Tratamento e Resposta a Incidentes Cibernéticos de Governo (CTIR Gov) e à ANPD antes de qualquer publicação, com prazo definido com o orientador.
+
+Ferramentas de inteligência artificial generativa, o ChatGPT, da OpenAI, e o Claude, da Anthropic, foram usadas como apoio na elaboração e na depuração dos scripts em Python, no levantamento bibliográfico inicial, na organização das referências e na revisão da clareza da redação. As sugestões dessas ferramentas não foram tratadas como fonte: as informações bibliográficas são conferidas nas publicações originais, e a escolha do problema, da hipótese e dos procedimentos, assim como a interpretação dos resultados, é de responsabilidade do autor.
+
+\subsecao{Recursos necessários}\label{sec:recursos}
+
+A execução requer recursos humanos, computacionais e de acesso às fontes, listados na Tabela~\ref{tab:recursos}. O planejamento prevê o uso de um computador pessoal e de programas de código aberto; não se pressupõe a compra de equipamentos nem a contratação de serviços pagos, e eventuais despesas serão combinadas com o orientador antes de qualquer contratação.
+
+\begin{table}[htbp]
+\centering
+\small
+\caption{Recursos necessários e situação de acesso}\label{tab:recursos}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}p{2.8cm}|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|}
+\hline
+\textbf{Recurso} & \textbf{Finalidade} & \textbf{Situação e previsão} \\ \hline
+Pesquisador e orientação & Leitura, classificação, coleta, análise e revisão metodológica & Trabalho individual; encontros e validação das decisões pelo orientador, conforme o calendário da disciplina \\ \hline
+Computador e armazenamento & Executar os scripts e o emulador, extrair os pacotes e guardar resultados e cópias de segurança & Capacidade a confirmar no teste de coleta; dados brutos, resultados e cópia de segurança em locais separados \\ \hline
+Emulador Android & Executar a subamostra e registrar o tráfego & Emulador gratuito do Android Studio, em computador pessoal, sem necessidade de celular Android; versão do sistema e limitações registradas \\ \hline
+Programas de análise & Python, apkeep, Androguard, MobSF, bases Exodus e Disconnect, mitmproxy e Git & Versões e hashes das bases fixados antes da coleta principal; licenças e condições de uso observadas \\ \hline
+Fontes bibliográficas & Scopus, IEEE Xplore, SBC OpenLib, BDTD e textos completos & Portal de Periódicos da CAPES, pelo acesso CAFe, e repositórios abertos; textos não obtidos registrados como não recuperados \\ \hline
+Pacotes e metadados & Google Play na região brasileira, para a versão atual, e AndroZoo, para a reprodutibilidade e a defasagem & Acesso acadêmico ao AndroZoo obtido; coleta na Google Play testada em cinco aplicativos no início do Capstone II \\ \hline
+Documentação e edição & Planilhas, leitor de PDF, editor de LaTeX e repositório & Decisões guardadas por identificador estável, com histórico de versões; sem publicação de credenciais nem de tráfego identificável \\ \hline
+\end{tabularx}
+\fonte{Planejamento da pesquisa (2026).}
+\end{table}
+
+O piloto ocupou aproximadamente 518 MB para 20 pacotes. Uma extrapolação, feita apenas para dimensionamento, resulta em cerca de 9,7 GB de pacotes para os 376 aplicativos governamentais, ou 16,3 GB se a referência comercial de 252 aplicativos também for baixada, antes de extração, registros e cópias. Prevê-se reservar inicialmente 100 GB livres e uma cópia de segurança separada, revendo a estimativa após o teste de coleta, no qual também serão registrados o uso de memória, o tempo de processamento e o desempenho do emulador.
+
+\subsecao{Cronograma e riscos}\label{sec:cronograma}
+
+A Tabela~\ref{tab:cronograma} detalha o que será feito em cada mês do Projeto Capstone II, a etapa do método correspondente e o produto esperado de cada atividade.
+
+\begin{table}[htbp]
+\centering
+\footnotesize
+\caption{Cronograma do Projeto Capstone II (2027.1)}\label{tab:cronograma}
+\begin{tabularx}{\textwidth}{|l|>{\raggedright\arraybackslash}p{2.6cm}|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}p{3.8cm}|}
+\hline
+\textbf{Mês} & \textbf{Etapa} & \textbf{O que será feito} & \textbf{Produto} \\ \hline
+Fevereiro & Revisão sistemática & Ler os 113 registros em aberto; reler na íntegra as 26 decisões ainda não confirmadas; fazer a bola de neve; reclassificar às cegas os 32 registros da amostra & Lista final de estudos incluídos e $\kappa$ de Cohen da triagem \\ \hline
+Fevereiro & Seleção dos aplicativos & Revisar os 376 aplicativos pelo nome jurídico do desenvolvedor; testar o download em cinco aplicativos e a captura de tráfego no emulador; definir com o orientador o detector principal e as regras de classificação & Lista final de aplicativos e plano de análise registrado antes da coleta \\ \hline
+Março & Obtenção dos pacotes e detecção dos SDKs & Baixar a versão atual de cada aplicativo e, quando houver, a do AndroZoo; rodar os três detectores; calcular o $\kappa$ de Fleiss & Pacotes com hash, versão e data; pares aplicativo--SDK; concordância entre detectores \\ \hline
+Março e abril & Classificação das declarações & Ler a política de privacidade e a seção ``Segurança dos dados'' de cada aplicativo e classificar cada par & Matriz de declarações por par aplicativo--SDK \\ \hline
+Abril & Observação do tráfego & Executar a subamostra no emulador e registrar o tráfego, anotando os casos bloqueados & Destinos contatados, país e se estão declarados \\ \hline
+Maio & Análise estatística & Contar os pares sem declaração compatível, calcular as proporções e decidir sobre a hipótese, com o patamar de 10\%; descrever os resultados por esfera; comunicar achados graves aos órgãos & Resultado do teste da hipótese e tabelas da discussão \\ \hline
+Junho & Redação e defesa & Escrever os resultados e a discussão à luz da LGPD; publicar o conjunto de dados e os scripts; apresentar à banca & Texto final, conjunto de dados e defesa \\ \hline
+\end{tabularx}
+\fonte{Elaborado pelo autor (2026).}
+\end{table}
+
+Os principais riscos dessa execução e as contingências previstas estão na Tabela~\ref{tab:riscos}.
+
+\begin{table}[htbp]
+\centering
+\small
+\caption{Riscos e contingências}\label{tab:riscos}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|}
+\hline
+\textbf{Risco} & \textbf{Efeito} & \textbf{Contingência} \\
+\hline
+Cobertura baixa do AndroZoo (ocorreu: 23,2\% do governo) & Outro pesquisador só obtém o mesmo arquivo de parte dos aplicativos & Versão atual de todos os aplicativos coletada na loja, com SHA-256 registrado; AndroZoo usado onde houver, com a defasagem medida \\ \hline
+Bloqueio ou limitação do download na Google Play & Parte dos aplicativos sem pacote para analisar & Teste da coleta em cinco aplicativos em fevereiro; registro dos não obtidos; uso da versão do AndroZoo, com a defasagem informada \\ \hline
+Aplicativo que não funciona no emulador ou impede a leitura do tráfego & Parte da subamostra sem tráfego observável & Registro do motivo; substituição por outro aplicativo sorteado; proporção de casos reportada \\ \hline
+Prevalência muito alta ou muito baixa & $\kappa$ instável mesmo com acordo alto & Concordâncias positiva e negativa reportadas junto do $\kappa$ \\ \hline
+Política de privacidade genérica ou indisponível & Teste da hipótese inconclusivo para parte dos aplicativos & Separação das cinco situações de declaração; análises de sensibilidade \\ \hline
+Achado grave atribuível a um órgão & Risco ao cidadão se publicado antes da correção & Comunicação prévia ao órgão e, se couber, ao CTIR Gov e à ANPD, com prazo definido com o orientador \\ \hline
+Muitos textos completos não recuperados & Revisão incompleta e possível viés de seleção & Busca pelo Portal de Periódicos da CAPES e por cópias dos autores; registros não recuperados listados e discutidos como limitação \\ \hline
+\end{tabularx}
+\fonte{Elaborado pelo autor (2026).}
+\end{table}

@@ -1,0 +1,72 @@
+\label{sec:introducao}
+
+O celular tornou-se uma porta de entrada para muitos serviços públicos brasileiros. Benefícios previdenciários, registros de vacinação, documentos e agendamentos de saúde podem ser consultados em aplicativos de órgãos federais, estaduais e municipais. Na coleta feita em setembro de 2026, por exemplo, o Meu INSS e o Meu SUS Digital apareciam na Google Play com mais de 50 milhões de instalações cada um.
+
+Esses aplicativos podem conter kits de desenvolvimento de software (SDKs), componentes criados por outras empresas para oferecer funções prontas, como mapas, notificações e estatísticas de uso. Parte desses componentes coleta identificadores e informações sobre o uso do aplicativo, o que caracteriza o rastreamento por terceiros \cite{binns2018}. Esse rastreamento é comum em aplicativos comerciais \cite{binns2018,kollnig2021before} e também aparece no setor público: em 1.166 aplicativos governamentais de 71 países, Samarasinghe et al.~\cite{samarasinghe2022} encontraram rastreadores do Google em 37\% deles e, em 27\%, o envio de informações sensíveis, como identificadores do usuário ou do dispositivo, a terceiros ou por conexões sem criptografia. Nos estudos examinados até agora, não há medição equivalente para o conjunto dos aplicativos governamentais brasileiros, nem a comparação entre os SDKs encontrados e o que cada aplicativo declara ao cidadão.
+
+Esta pesquisa se concentra nesse ponto: identificar os SDKs de rastreamento presentes nos aplicativos oficiais e medir em que proporção a coleta e o compartilhamento de dados feitos por esses componentes estão declarados nos documentos publicados pelos próprios órgãos. A referência para essa medição não é a comparação com aplicativos comerciais, mas aquilo que cada serviço declara, examinado à luz da Lei Geral de Proteção de Dados Pessoais (LGPD). A dependência de fornecedores estrangeiros também será discutida, sem que a simples presença de um SDK seja tratada como transferência internacional de dados.
+
+O objetivo geral é medir a proporção de pares aplicativo--SDK de rastreamento sem declaração compatível, isto é, de combinações entre um aplicativo e um SDK nele encontrado cuja coleta de dados não aparece nas declarações do aplicativo. Com base na literatura, a hipótese é que essa proporção chega a pelo menos 10\%. Para testá-la, o trabalho seguirá seis etapas: a revisão, um a um, dos 376 aplicativos já classificados como oficiais, pelo nome jurídico do desenvolvedor; o download da versão atual de cada um na Google Play, com o registro do hash do arquivo; a identificação dos SDKs por três detectores, cuja concordância será medida pelo $\kappa$ de Fleiss; a leitura da política de privacidade e da seção ``Segurança dos dados'' de cada aplicativo, para classificar cada par; a observação do tráfego de rede de uma subamostra executada em emulador; e a contagem dos pares sem declaração compatível, com o cálculo da sua proporção.
+
+O estudo se limita ao Android, que concentra a maior parte dos celulares em uso no Brasil e cujos pacotes podem ser obtidos e analisados com ferramentas abertas, o que não ocorre no iOS. A seleção dos aplicativos e um piloto com 20 pacotes já foram realizados, assim como as buscas e a triagem inicial da revisão sistemática da literatura, cuja leitura completa está em andamento; a coleta completa e o teste da hipótese ocorrerão no Projeto Capstone II. Ao final, espera-se obter a proporção de pares sem declaração compatível, a lista das divergências encontradas em cada aplicativo, a medida de concordância entre os detectores e um conjunto de dados reprodutível.
+
+\subsecao{Problema de pesquisa}\label{sec:problema}
+
+Em que medida os SDKs de rastreamento de terceiros embarcados nos aplicativos Android oficiais do governo brasileiro estão declarados nas políticas de privacidade e na seção ``Segurança dos dados'' da Google Play?
+
+Para responder a essa pergunta, a pesquisa separa duas evidências que não são equivalentes: o SDK identificado no código do pacote e o tráfego de fato observado durante a execução, que será examinado em uma subamostra. Encontrar um componente no código não basta para afirmar que ele enviou dados, e muito menos que houve infração à LGPD.
+
+Os trabalhos brasileiros localizados estudam aplicativos específicos, como o Monitora Covid-19 \cite{lemos2022} e o Conecte SUS \cite{vaz2022}, ou analisam políticas de privacidade à luz da LGPD sem examinar o comportamento dos aplicativos \cite{reis2023}. A referência internacional mais próxima, Samarasinghe et al.~\cite{samarasinghe2022}, não apresenta resultados separados para o Brasil nem compara detectores aplicados às mesmas versões dos pacotes. Essa lacuna é discutida na Seção~\ref{sec:ref-sintese}.
+
+\subsecao{Justificativa}\label{sec:1.3}
+
+Quem precisa consultar um benefício do Instituto Nacional do Seguro Social (INSS) ou acessar um serviço público de saúde nem sempre pode escolher outro fornecedor para realizar a mesma tarefa. Por isso, é especialmente importante saber quais empresas participam do funcionamento dos aplicativos oficiais e que informações elas podem receber. A relevância desse exame tem três dimensões: jurídica, de soberania de dados e metodológica.
+
+Do ponto de vista jurídico, a LGPD define como sensível o dado referente à saúde e o dado biométrico (Art. 5º, II), restringe as hipóteses de tratamento desses dados (Art. 11), vincula o tratamento feito pelo poder público à sua finalidade pública (Art. 23) e limita a transferência internacional de dados pessoais a casos específicos (Art. 33) \cite{brasil2018}. Se um aplicativo de saúde publicado por um órgão público envia identificadores a um terceiro, a base legal desse envio precisa existir e ser demonstrável. Quando o envio não aparece na política publicada pelo próprio órgão, a divergência é um sinal de alerta, ainda que não prove, sozinha, a falta de base legal.
+
+Quanto à soberania de dados, o rastreamento em aplicativos se concentra em poucas grandes empresas estrangeiras, como Google e Facebook \cite{binns2018,kollnig2021before}. Dados gerados pelo cidadão no uso de um serviço público podem, por uma dependência técnica assumida por padrão no desenvolvimento Android, ser processados sob outra jurisdição. A presença de SDKs de empresas estrangeiras já permite falar em dependência de fornecedores estrangeiros; afirmar que dados foram enviados ao exterior, porém, exige observar o tráfego, o que está previsto para uma subamostra (Seção~\ref{sec:trafego}). Medir a extensão dessa dependência é condição para discuti-la.
+
+Há, por fim, uma razão metodológica. Duas ferramentas podem examinar o mesmo pacote e indicar quantidades diferentes de rastreadores. Antes de interpretar uma taxa como característica dos aplicativos, é preciso saber quanto ela depende do detector utilizado, e por isso o estudo compara detectores aplicados aos mesmos pacotes.
+
+\subsecao{Objetivos}\label{sec:objetivos}
+
+\subsubsecao{Objetivo geral}\label{sec:objetivo-geral}
+
+Medir a proporção de pares aplicativo--SDK de rastreamento de terceiros sem declaração compatível nos aplicativos Android governamentais brasileiros, comparando os SDKs encontrados no código dos pacotes com a política de privacidade e a seção ``Segurança dos dados'' da Google Play, à luz da LGPD.
+
+\subsubsecao{Objetivos específicos}\label{sec:1.4}
+
+Para alcançar o objetivo geral, são propostos os seguintes objetivos específicos:
+
+\begin{enumerate}[a)]
+\item revisar, um a um, os 376 aplicativos classificados como oficiais, confirmando o órgão responsável e a esfera de governo pelo nome jurídico do desenvolvedor exibido na Google Play, e calcular a taxa de erro da classificação automática;
+\item baixar a versão atual de cada aplicativo na Google Play, com o registro do hash SHA-256, da versão e da data, e listar os SDKs de rastreamento de cada pacote com três detectores baseados nas listas abertas Exodus Privacy e Disconnect;
+\item ler a política de privacidade e a seção ``Segurança dos dados'' de cada aplicativo, classificar cada par aplicativo--SDK quanto ao que está declarado e calcular a proporção de pares sem declaração compatível;
+\item executar uma subamostra de aplicativos em um emulador Android, registrar o tráfego de rede e identificar os domínios contatados, o país de destino e se esses destinos aparecem nas declarações;
+\item calcular a concordância entre os três detectores pelo $\kappa$ de Fleiss e medir quanto a proporção de aplicativos com rastreador muda conforme o detector escolhido.
+\end{enumerate}
+
+\subsecao{Hipótese}\label{sec:1.5}
+
+A pesquisa tem uma única hipótese, que será testada no Projeto Capstone II e se apoia em quatro resultados da literatura, discutidos na Seção~\ref{sec:revisao-bibliografica}. Andow et al.~\cite{andow2020} confrontaram os fluxos de dados de 13.796 aplicativos Android com as respectivas políticas de privacidade, considerando também quem recebia cada dado, e verificaram que até 42,4\% dos aplicativos omitiam ou declaravam de forma incorreta seus fluxos de dados sensíveis. No setor público, Samarasinghe et al.~\cite{samarasinghe2022} observaram, em 27\% de 1.166 aplicativos governamentais, o envio de informações sensíveis a terceiros ou por conexões sem criptografia, e Carlsson et al.~\cite{carlsson2022}, ao comparar o tráfego de 32 aplicativos do setor público finlandês com suas políticas, encontraram divergências entre o que elas diziam e os dados enviados a serviços de análise de terceiros. Por fim, Kollnig et al.~\cite{kollnig2022ios} apontaram, em 24 mil aplicativos Android e iOS, a persistente falta de transparência sobre o rastreamento. Esses estudos indicam que a ausência de declaração compatível aparece em parte relevante dos aplicativos analisados, inclusive nos públicos, o que leva à hipótese apresentada na Tabela~\ref{tab:hipotese}.
+
+\begin{table}[htbp]
+\centering
+\small
+\caption{Hipótese e critério de decisão}\label{tab:hipotese}
+\begin{tabularx}{\textwidth}{|l|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|}
+\hline
+\textbf{Hipótese} & \textbf{Enunciado} & \textbf{Critério de decisão} \\
+\hline
+H1 & Ao menos 10\% dos pares aplicativo--SDK de rastreamento detectados nos aplicativos Android governamentais brasileiros não terão declaração compatível na política de privacidade nem na seção ``Segurança dos dados'' da Google Play, consideradas as categorias de dados e as finalidades. & A H1 é confirmada se a proporção de pares sem declaração compatível, entre os pares avaliáveis, for de pelo menos 10\%, e refutada se for menor. Pares sem documentos disponíveis ou com informação insuficiente são reportados à parte. \\ \hline
+\end{tabularx}
+\fonte{Elaborado pelo autor (2026), com base em Andow et al.~\cite{andow2020}, Samarasinghe et al.~\cite{samarasinghe2022}, Carlsson et al.~\cite{carlsson2022} e Kollnig et al.~\cite{kollnig2022ios}.}
+\end{table}
+
+O patamar de 10\% foi fixado bem abaixo das taxas da literatura porque os estudos citados usam outras populações e contam aplicativos, e não pares aplicativo--SDK; por isso, a hipótese é conservadora. Como serão examinados todos os aplicativos oficiais identificados, e não uma amostra, a decisão usa a proporção observada, e o intervalo de confiança de 95\% (IC95\%) indicará a precisão da estimativa, com ressalva na conclusão se incluir o patamar. Uma proporção abaixo de 10\% indicará ausência de declaração compatível menos frequente que o patamar desta pesquisa, sem permitir concluir que os aplicativos governamentais são mais transparentes do que as populações dos estudos anteriores. O patamar é um critério da pesquisa, e não uma tolerância prevista na LGPD.
+
+As regras de classificação serão fixadas com o orientador antes da coleta principal, e o piloto não será usado como teste da hipótese. A concordância entre os detectores, objeto do quinto objetivo específico, não constitui uma segunda hipótese: trata-se de uma verificação do instrumento, que indica o quanto a lista de SDKs usada no teste depende da ferramenta escolhida (Seção~\ref{sec:deteccao}).
+
+\subsecao{Estrutura do trabalho}\label{sec:estrutura}
+
+Este trabalho está organizado em cinco seções. Após esta introdução, a Seção~\ref{sec:revisao-bibliografica} reúne a fundamentação teórica e os trabalhos correlatos, incluindo os estudos com proposta de inclusão na revisão sistemática. A Seção~\ref{sec:metodologia} descreve a metodologia: as etapas do estudo, o protocolo da revisão sistemática, os aspectos éticos, os recursos e o cronograma. A Seção~\ref{sec:resultados} apresenta os resultados preliminares obtidos na preparação do estudo, os resultados esperados e as limitações, e a Seção~\ref{sec:conclusao} traz as considerações finais e os próximos passos no Projeto Capstone II.

@@ -1,9 +1,8 @@
-% Referências do TCC I, no formato do abntex2cite (ABNT, autor-data).
+% Referências do TCC I. O modelo do Capstone do IDP usa o estilo IEEE
+% (classe configs/idp-model.cls, com o pacote cite e o IEEEtran): as
+% referências são numeradas na ordem em que aparecem no texto.
 % Os nomes dos campos (author, title, journal, year...) são fixos do BibTeX e
-% não aparecem no PDF; os títulos de obras em inglês ficam no idioma original,
-% como pede a NBR 6023.
-% Os dois artigos de Kollnig de 2021 e os dois de Binns de 2018 levam 'a' e 'b' no ano: a ABNT
-% pede a letra também na lista, e o abntex2-alf só a põe na citação.
+% não aparecem no PDF; os títulos de obras em inglês ficam no idioma original.
 
 @inproceedings{alecci2024,
   author    = {Alecci, Marco and others},
@@ -13,7 +12,7 @@
   publisher = {ACM},
   year      = {2024},
   pages     = {389--393},
-  note       = {DOI: 10.1145/3643991.3644863}
+  note       = {doi: 10.1145/3643991.3644863}
 }
 
 @inproceedings{allix2016,
@@ -24,16 +23,15 @@
   publisher = {ACM},
   year      = {2016},
   pages     = {468--471},
-  note       = {DOI: 10.1145/2901739.2903508}
+  note       = {doi: 10.1145/2901739.2903508}
 }
 
 @misc{androguard2026,
-  author        = {{ANDROGUARD}},
+  author        = {{Androguard}},
   title         = {Androguard},
-  note          = {Versão 4.1.4},
+  note          = {Versão 4.1.4. Acesso em: 20 out. 2026},
   year          = {2026},
-  url           = {https://pypi.org/project/androguard/4.1.4/},
-  urlaccessdate = {20 out. 2026}
+  url           = {https://pypi.org/project/androguard/4.1.4/}
 }
 
 @inproceedings{binns2018,
@@ -42,39 +40,37 @@
   booktitle = {Proceedings of the 10th ACM Conference on Web Science},
   address   = {New York},
   publisher = {ACM},
-  year      = {2018b},
+  year      = {2018},
   pages     = {23--31},
-  note       = {DOI: 10.1145/3201064.3201089}
+  note       = {doi: 10.1145/3201064.3201089}
 }
 
 @article{brasil2018,
-  author        = {{BRASIL}},
+  author        = {{Brasil}},
   title         = {{Lei nº 13.709, de 14 de agosto de 2018. Lei Geral de Proteção de Dados Pessoais (LGPD)}},
-  journal       = {Diário Oficial da União{\mdseries: seção 1}},
+  journal       = {Diário Oficial da União, seção 1},
   address       = {Brasília, DF},
   pages         = {59},
   month         = {15 ago.},
   year          = {2018},
   url           = {https://www2.camara.leg.br/legin/fed/lei/2018/lei-13709-14-agosto-2018-787077-normaatualizada-pl.html},
-  urlaccessdate = {13 nov. 2026}
+  note          = {Acesso em: 13 nov. 2026}
 }
 
 @misc{disconnect2026,
-  author        = {{DISCONNECT}},
+  author        = {{Disconnect}},
   title         = {Disconnect tracking protection},
-  note          = {Lista de serviços de rastreamento, licença CC BY-NC-SA 4.0},
+  note          = {Lista de serviços de rastreamento, licença CC BY-NC-SA 4.0. Acesso em: 20 out. 2026},
   year          = {2026},
-  url           = {https://github.com/disconnectme/disconnect-tracking-protection},
-  urlaccessdate = {20 out. 2026}
+  url           = {https://github.com/disconnectme/disconnect-tracking-protection}
 }
 
 @misc{exodus2026,
-  author        = {{EXODUS PRIVACY}},
+  author        = {{Exodus Privacy}},
   title         = {$\varepsilon$xodus: trackers},
-  note          = {Base de assinaturas de rastreadores},
+  note          = {Base de assinaturas de rastreadores. Acesso em: 28 out. 2026},
   year          = {2026},
-  url           = {https://reports.exodus-privacy.eu.org/en/trackers/},
-  urlaccessdate = {28 out. 2026}
+  url           = {https://reports.exodus-privacy.eu.org/en/trackers/}
 }
 
 @article{fleiss1971,
@@ -85,16 +81,15 @@
   number  = {5},
   pages   = {378--382},
   year    = {1971},
-  note     = {DOI: 10.1037/h0031619}
+  note     = {doi: 10.1037/h0031619}
 }
 
 @misc{jomingyu2024,
-  author        = {{JOMINGYU}},
+  author        = {{JoMingyu}},
   title         = {google-play-scraper},
-  note          = {Versão 1.2.7},
+  note          = {Versão 1.2.7. Acesso em: 20 out. 2026},
   year          = {2024},
-  url           = {https://pypi.org/project/google-play-scraper/},
-  urlaccessdate = {20 out. 2026}
+  url           = {https://pypi.org/project/google-play-scraper/}
 }
 
 @article{kendall1938,
@@ -105,16 +100,16 @@
   number  = {1-2},
   pages   = {81--93},
   year    = {1938},
-  note     = {DOI: 10.1093/biomet/30.1-2.81}
+  note     = {doi: 10.1093/biomet/30.1-2.81}
 }
 
-@book{kitchenham2007,
-  author    = {Kitchenham, Barbara and Charters, Stuart},
-  title     = {Guidelines for performing systematic literature reviews in software engineering},
-  publisher = {Keele University; Durham University},
-  address   = {Keele},
-  series    = {Technical Report EBSE-2007-01},
-  year      = {2007}
+@techreport{kitchenham2007,
+  author      = {Kitchenham, Barbara and Charters, Stuart},
+  title       = {Guidelines for performing systematic literature reviews in software engineering},
+  institution = {Keele University e Durham University},
+  address     = {Keele},
+  number      = {EBSE-2007-01},
+  year        = {2007}
 }
 
 @article{kollnig2021before,
@@ -123,8 +118,8 @@
   journal = {Internet Policy Review},
   volume  = {10},
   number  = {4},
-  year    = {2021a},
-  note     = {DOI: 10.14763/2021.4.1611}
+  year    = {2021},
+  note     = {doi: 10.14763/2021.4.1611}
 }
 
 @inproceedings{kollnig2021fait,
@@ -133,7 +128,7 @@
   booktitle = {Proceedings of the 17th Symposium on Usable Privacy and Security},
   address   = {Berkeley},
   publisher = {USENIX Association},
-  year      = {2021b},
+  year      = {2021},
   pages     = {181--196}
 }
 
@@ -145,25 +140,23 @@
   number  = {4},
   pages   = {719--748},
   year    = {1959},
-  note    = {DOI: 10.1093/jnci/22.4.719}
+  note    = {doi: 10.1093/jnci/22.4.719}
 }
 
 @misc{apkeep2026,
-  author        = {{ELECTRONIC FRONTIER FOUNDATION}},
+  author        = {{Electronic Frontier Foundation}},
   title         = {apkeep: a command-line tool for downloading {APK} files from various sources},
-  note          = {Versão 1.1.0},
+  note          = {Versão 1.1.0. Acesso em: 23 nov. 2026},
   year          = {2026},
-  url           = {https://github.com/EFForg/apkeep},
-  urlaccessdate = {23 nov. 2026}
+  url           = {https://github.com/EFForg/apkeep}
 }
 
 @misc{mobsf2026,
-  author        = {{MOBSF}},
+  author        = {{MobSF}},
   title         = {Mobile Security Framework ({MobSF})},
-  note          = {Versão 4.5.3},
+  note          = {Versão 4.5.3. Acesso em: 20 out. 2026},
   year          = {2026},
-  url           = {https://pypi.org/project/mobsf/4.5.3/},
-  urlaccessdate = {20 out. 2026}
+  url           = {https://pypi.org/project/mobsf/4.5.3/}
 }
 
 @inproceedings{nguyen2022,
@@ -174,7 +167,7 @@
   publisher = {ACM},
   year      = {2022},
   pages     = {2369--2383},
-  note       = {DOI: 10.1145/3548606.3560564}
+  note       = {doi: 10.1145/3548606.3560564}
 }
 
 @inproceedings{razaghpanah2018,
@@ -184,7 +177,7 @@
   address   = {Reston},
   publisher = {Internet Society},
   year      = {2018},
-  note       = {DOI: 10.14722/ndss.2018.23353}
+  note       = {doi: 10.14722/ndss.2018.23353}
 }
 
 @article{wilson1927,
@@ -195,7 +188,7 @@
   number  = {158},
   pages   = {209--212},
   year    = {1927},
-  note     = {DOI: 10.1080/01621459.1927.10502953}
+  note     = {doi: 10.1080/01621459.1927.10502953}
 }
 @article{cohen1960,
   author  = {Cohen, Jacob},
@@ -205,7 +198,7 @@
   number  = {1},
   pages   = {37--46},
   year    = {1960},
-  note     = {DOI: 10.1177/001316446002000104}
+  note     = {doi: 10.1177/001316446002000104}
 }
 @article{page2021,
   author  = {Page, Matthew J. and others},
@@ -213,7 +206,7 @@
   journal = {BMJ},
   volume  = {372},
   year    = {2021},
-  note     = {Art. n71. DOI: 10.1136/bmj.n71}
+  note     = {Art. n71, doi: 10.1136/bmj.n71}
 }
 @inproceedings{samarasinghe2022,
   author    = {Samarasinghe, Nayanamana and others},
@@ -223,7 +216,7 @@
   publisher = {ACM},
   year      = {2022},
   pages     = {564--575},
-  note       = {DOI: 10.1145/3485447.3512223}
+  note       = {doi: 10.1145/3485447.3512223}
 }
 @inproceedings{wohlin2014,
   author    = {Wohlin, Claes},
@@ -233,7 +226,7 @@
   publisher = {ACM},
   year      = {2014},
   pages     = {1--10},
-  note       = {DOI: 10.1145/2601248.2601268}
+  note       = {doi: 10.1145/2601248.2601268}
 }
 @article{zhang2011,
   author  = {Zhang, He and Babar, Muhammad Ali and Tell, Paolo},
@@ -243,7 +236,7 @@
   number  = {6},
   pages   = {625--637},
   year    = {2011},
-  note     = {DOI: 10.1016/j.infsof.2010.12.010}
+  note     = {doi: 10.1016/j.infsof.2010.12.010}
 }
 
 @inproceedings{zhan2020,
@@ -254,7 +247,7 @@
   publisher = {ACM},
   year      = {2020},
   pages     = {919--930},
-  note      = {DOI: 10.1145/3324884.3416582}
+  note      = {doi: 10.1145/3324884.3416582}
 }
 
 @article{zimmeck2019,
@@ -265,7 +258,7 @@
   number  = {3},
   pages   = {66--86},
   year    = {2019},
-  note    = {DOI: 10.2478/popets-2019-0037}
+  note    = {doi: 10.2478/popets-2019-0037}
 }
 
 @inproceedings{slavin2016,
@@ -276,7 +269,7 @@
   publisher = {ACM},
   year      = {2016},
   pages     = {25--36},
-  note      = {DOI: 10.1145/2884781.2884855}
+  note      = {doi: 10.1145/2884781.2884855}
 }
 
 @inproceedings{serrano2023,
@@ -287,7 +280,7 @@
   publisher = {ACM},
   year      = {2023},
   pages     = {80--89},
-  note      = {DOI: 10.1145/3615366.3615426}
+  note      = {doi: 10.1145/3615366.3615426}
 }
 
 @article{serrano2024,
@@ -298,44 +291,44 @@
   number  = {1},
   pages   = {139--159},
   year    = {2024},
-  note    = {DOI: 10.5753/jisa.2024.3882}
+  note    = {doi: 10.5753/jisa.2024.3882}
 }
 
 @misc{anpd2023,
- author={{AUTORIDADE NACIONAL DE PROTEÇÃO DE DADOS}},
+ author={{Autoridade Nacional de Proteção de Dados}},
  title={Tratamento de dados pessoais pelo Poder Público: guia orientativo},
- address={Brasília, DF}, publisher={ANPD}, year={2023}, note={Versão 2.0},
- url={https://www.gov.br/anpd/pt-br/centrais-de-conteudo/materiais-educativos-e-publicacoes/guia-poder-publico-anpd-versao-final.pdf},
- urlaccessdate={13 nov. 2026}
+ address={Brasília, DF}, publisher={ANPD}, year={2023}, note={Versão 2.0. Acesso em: 13 nov. 2026},
+ url={https://www.gov.br/anpd/pt-br/centrais-de-conteudo/materiais-educativos-e-publicacoes/guia-poder-publico-anpd-versao-final.pdf}
 }
 @article{anpd2024,
-  author        = {{AUTORIDADE NACIONAL DE PROTEÇÃO DE DADOS}},
+  author        = {{Autoridade Nacional de Proteção de Dados}},
   title         = {{Resolução CD/ANPD nº 19, de 23 de agosto de 2024. Aprova o Regulamento de Transferência Internacional de Dados e o conteúdo das cláusulas-padrão contratuais}},
   journal       = {Diário Oficial da União},
   address       = {Brasília, DF},
   month         = {23 ago.},
   year          = {2024},
   url           = {https://www.gov.br/anpd/pt-br/acesso-a-informacao/institucional/atos-normativos/regulamentacoes_anpd/resolucao-cd-anpd-no-19-de-23-de-agosto-de-2024},
-  urlaccessdate = {13 nov. 2026}
+  note          = {Acesso em: 13 nov. 2026}
 }
 @inproceedings{andow2020,
  author={Andow, Benjamin and Mahmud, Samin Yaseer and Whitaker, Justin and Enck, William and Reaves, Bradley and Singh, Kapil and Egelman, Serge},
  title={Actions speak louder than words: entity-sensitive privacy policy and data flow analysis with {PoliCheck}},
  booktitle={29th USENIX Security Symposium}, year={2020}, address={Berkeley}, publisher={USENIX Association}, pages={985--1002},
- url={https://www.usenix.org/conference/usenixsecurity20/presentation/andow}, urlaccessdate={13 nov. 2026}
+ url={https://www.usenix.org/conference/usenixsecurity20/presentation/andow},
+  note          = {Acesso em: 13 nov. 2026}
 }
 @article{pohle2020,
- author={Pohle, Julia and Thiel, Thorsten}, title={Digital sovereignty}, journal={Internet Policy Review}, volume={9}, number={4}, year={2020}, note={DOI: 10.14763/2020.4.1532}
+ author={Pohle, Julia and Thiel, Thorsten}, title={Digital sovereignty}, journal={Internet Policy Review}, volume={9}, number={4}, year={2020}, note={doi: 10.14763/2020.4.1532}
 }
 @article{zhan2022,
  author={Zhan, Xian and others},
- title={A systematic assessment on {Android} third-party library detection tools}, journal={IEEE Transactions on Software Engineering}, volume={48}, number={11}, pages={4249--4273}, year={2022}, note={DOI: 10.1109/tse.2021.3115506}
+ title={A systematic assessment on {Android} third-party library detection tools}, journal={IEEE Transactions on Software Engineering}, volume={48}, number={11}, pages={4249--4273}, year={2022}, note={doi: 10.1109/tse.2021.3115506}
 }
 @article{zou2004,
- author={Zou, Guangyong}, title={A modified {Poisson} regression approach to prospective studies with binary data}, journal={American Journal of Epidemiology}, volume={159}, number={7}, pages={702--706}, year={2004}, note={DOI: 10.1093/aje/kwh090}
+ author={Zou, Guangyong}, title={A modified {Poisson} regression approach to prospective studies with binary data}, journal={American Journal of Epidemiology}, volume={159}, number={7}, pages={702--706}, year={2004}, note={doi: 10.1093/aje/kwh090}
 }
 
-% ---- Estudos com proposta de inclusão na revisão sistemática (Seção 2.7)
+% ---- Estudos com proposta de inclusão na revisão sistemática (Seção 2.2.4)
 
 @inproceedings{pan2026,
   author    = {Pan, Dahan and others},
@@ -345,7 +338,7 @@
   publisher = {ACM},
   year      = {2026},
   pages     = {1854--1866},
-  note      = {DOI: 10.1145/3744916.3773231}
+  note      = {doi: 10.1145/3744916.3773231}
 }
 
 @inproceedings{zhan2021,
@@ -356,7 +349,7 @@
   publisher = {IEEE},
   year      = {2021},
   pages     = {1695--1707},
-  note      = {DOI: 10.1109/icse43902.2021.00150}
+  note      = {doi: 10.1109/icse43902.2021.00150}
 }
 
 @inproceedings{zhang2018,
@@ -367,7 +360,7 @@
   publisher = {IEEE},
   year      = {2018},
   pages     = {141--152},
-  note      = {DOI: 10.1109/saner.2018.8330204}
+  note      = {doi: 10.1109/saner.2018.8330204}
 }
 
 @inproceedings{xie2024,
@@ -378,7 +371,7 @@
   publisher = {ACM},
   year      = {2024},
   pages     = {1919--1931},
-  note      = {DOI: 10.1145/3691620.3695554}
+  note      = {doi: 10.1145/3691620.3695554}
 }
 
 @article{li2020,
@@ -389,7 +382,7 @@
   number  = {9},
   pages   = {981--1003},
   year    = {2020},
-  note    = {DOI: 10.1109/tse.2018.2872958}
+  note    = {doi: 10.1109/tse.2018.2872958}
 }
 
 @inproceedings{zhang2019,
@@ -400,7 +393,7 @@
   publisher = {ACM},
   year      = {2019},
   pages     = {55--65},
-  note      = {DOI: 10.1145/3293882.3330563}
+  note      = {doi: 10.1145/3293882.3330563}
 }
 
 @inproceedings{dominguezalvarez2023,
@@ -411,7 +404,7 @@
   publisher = {ACM},
   year      = {2023},
   pages     = {1407--1418},
-  note      = {DOI: 10.1145/3611643.3616344}
+  note      = {doi: 10.1145/3611643.3616344}
 }
 
 @inproceedings{wu2023,
@@ -432,7 +425,7 @@
   publisher = {IEEE},
   year      = {2016},
   pages     = {41--48},
-  note      = {DOI: 10.1109/apsec.2016.017}
+  note      = {doi: 10.1109/apsec.2016.017}
 }
 
 @inproceedings{feichtner2019,
@@ -443,7 +436,7 @@
   publisher = {ACM},
   year      = {2019},
   pages     = {1--10},
-  note      = {DOI: 10.1145/3339252.3339260}
+  note      = {doi: 10.1145/3339252.3339260}
 }
 
 @inproceedings{wang2018,
@@ -454,7 +447,7 @@
   publisher = {ACM},
   year      = {2018},
   pages     = {13--23},
-  note      = {DOI: 10.1145/3197231.3197248}
+  note      = {doi: 10.1145/3197231.3197248}
 }
 
 @inproceedings{pan2025,
@@ -465,7 +458,7 @@
   publisher = {IEEE},
   year      = {2025},
   pages     = {217--228},
-  note      = {DOI: 10.1109/saner64311.2025.00028}
+  note      = {doi: 10.1109/saner64311.2025.00028}
 }
 
 @inproceedings{backes2016,
@@ -476,7 +469,7 @@
   publisher = {ACM},
   year      = {2016},
   pages     = {356--367},
-  note      = {DOI: 10.1145/2976749.2978333}
+  note      = {doi: 10.1145/2976749.2978333}
 }
 
 @article{huang2023,
@@ -487,7 +480,7 @@
   number  = {4},
   pages   = {2272--2284},
   year    = {2023},
-  note    = {DOI: 10.1109/tse.2022.3215628}
+  note    = {doi: 10.1109/tse.2022.3215628}
 }
 
 @inproceedings{zhou2025,
@@ -498,7 +491,7 @@
   publisher = {ACM},
   year      = {2025},
   pages     = {604--615},
-  note      = {DOI: 10.1145/3756681.3756933}
+  note      = {doi: 10.1145/3756681.3756933}
 }
 
 @inproceedings{kajiwara2015,
@@ -509,7 +502,7 @@
   publisher = {IEEE},
   year      = {2015},
   pages     = {104--109},
-  note      = {DOI: 10.1109/icoin.2015.7057865}
+  note      = {doi: 10.1109/icoin.2015.7057865}
 }
 
 @inproceedings{continella2017,
@@ -519,7 +512,7 @@
   address   = {Reston},
   publisher = {Internet Society},
   year      = {2017},
-  note      = {DOI: 10.14722/ndss.2017.23465}
+  note      = {doi: 10.14722/ndss.2017.23465}
 }
 
 @article{su2018,
@@ -529,7 +522,7 @@
   volume  = {8},
   number  = {10},
   year    = {2018},
-  note    = {Art. 1852. DOI: 10.3390/app8101852}
+  note    = {Art. 1852, doi: 10.3390/app8101852}
 }
 
 @article{liu2025,
@@ -539,7 +532,7 @@
   volume  = {8},
   number  = {1},
   year    = {2025},
-  note    = {Art. 96. DOI: 10.1186/s42400-025-00391-4}
+  note    = {Art. 96, doi: 10.1186/s42400-025-00391-4}
 }
 
 @inproceedings{samhi2024,
@@ -550,7 +543,7 @@
   publisher = {ACM},
   year      = {2024},
   pages     = {32--36},
-  note      = {DOI: 10.1145/3643991.3644866}
+  note      = {doi: 10.1145/3643991.3644866}
 }
 
 @inproceedings{rubin2015,
@@ -561,7 +554,7 @@
   publisher = {IEEE},
   year      = {2015},
   pages     = {647--657},
-  note      = {DOI: 10.1109/ase.2015.66}
+  note      = {doi: 10.1109/ase.2015.66}
 }
 
 @inproceedings{dong2024,
@@ -582,7 +575,7 @@
   publisher = {ACM},
   year      = {2016},
   pages     = {105--110},
-  note      = {DOI: 10.1145/2873587.2873597}
+  note      = {doi: 10.1145/2873587.2873597}
 }
 
 @inproceedings{liu2024,
@@ -612,7 +605,7 @@
   volume  = {7},
   number  = {5},
   year    = {2026},
-  note    = {Art. 500. DOI: 10.1007/s42979-026-05054-w}
+  note    = {Art. 500, doi: 10.1007/s42979-026-05054-w}
 }
 
 @article{aljedaani2026,
@@ -622,7 +615,7 @@
   volume  = {18},
   number  = {10},
   year    = {2026},
-  note    = {Art. 505. DOI: 10.3390/fi18100505}
+  note    = {Art. 505, doi: 10.3390/fi18100505}
 }
 
 @inproceedings{ikram2017,
@@ -633,7 +626,7 @@
   publisher = {IEEE},
   year      = {2017},
   pages     = {1--8},
-  note      = {DOI: 10.1109/nca.2017.8171376}
+  note      = {doi: 10.1109/nca.2017.8171376}
 }
 
 @inproceedings{hu2019,
@@ -644,7 +637,7 @@
   publisher = {IEEE},
   year      = {2019},
   pages     = {223--231},
-  note      = {DOI: 10.1109/cns.2019.8802632}
+  note      = {doi: 10.1109/cns.2019.8802632}
 }
 
 @inproceedings{demetriou2016,
@@ -654,7 +647,7 @@
   address   = {Reston},
   publisher = {Internet Society},
   year      = {2016},
-  note      = {DOI: 10.14722/ndss.2016.23082}
+  note      = {doi: 10.14722/ndss.2016.23082}
 }
 
 @article{binns2018b,
@@ -664,8 +657,8 @@
   volume  = {18},
   number  = {4},
   pages   = {1--22},
-  year    = {2018a},
-  note    = {DOI: 10.1145/3176246}
+  year    = {2018},
+  note    = {doi: 10.1145/3176246}
 }
 
 @inproceedings{saini2022,
@@ -676,7 +669,7 @@
   publisher = {IEEE},
   year      = {2022},
   pages     = {1--11},
-  note      = {DOI: 10.1109/pst55820.2022.9851975}
+  note      = {doi: 10.1109/pst55820.2022.9851975}
 }
 
 @article{iwaya2023,
@@ -686,7 +679,7 @@
   volume  = {28},
   number  = {1},
   year    = {2023},
-  note    = {Art. 2. DOI: 10.1007/s10664-022-10236-0}
+  note    = {Art. 2, doi: 10.1007/s10664-022-10236-0}
 }
 
 @article{huckvale2015,
@@ -696,7 +689,7 @@
   volume  = {13},
   number  = {1},
   year    = {2015},
-  note    = {Art. 214. DOI: 10.1186/s12916-015-0444-y}
+  note    = {Art. 214, doi: 10.1186/s12916-015-0444-y}
 }
 
 @article{pybus2026,
@@ -706,7 +699,7 @@
   volume  = {15},
   number  = {1},
   year    = {2026},
-  note    = {DOI: 10.14763/2026.1.2087}
+  note    = {doi: 10.14763/2026.1.2087}
 }
 
 @article{ahasanuzzaman2022,
@@ -717,7 +710,7 @@
   number  = {1},
   pages   = {209--224},
   year    = {2022},
-  note    = {DOI: 10.1109/tse.2020.2983399}
+  note    = {doi: 10.1109/tse.2020.2983399}
 }
 
 @inproceedings{cory2024,
@@ -728,7 +721,7 @@
   publisher = {IEEE},
   year      = {2024},
   pages     = {24--31},
-  note      = {DOI: 10.1109/eurospw61312.2024.00010}
+  note      = {doi: 10.1109/eurospw61312.2024.00010}
 }
 
 @inproceedings{kununka2018,
@@ -739,7 +732,7 @@
   publisher = {Springer},
   year      = {2018},
   pages     = {301--313},
-  note      = {(IFIP Advances in Information and Communication Technology). DOI: 10.1007/978-3-319-92925-5\_20}
+  note      = {(IFIP Advances in Information and Communication Technology), doi: 10.1007/978-3-319-92925-5\_20}
 }
 
 @article{khedkar2026,
@@ -749,7 +742,7 @@
   volume  = {33},
   number  = {2},
   year    = {2026},
-  note    = {Art. 45. DOI: 10.1007/s10515-025-00589-3}
+  note    = {Art. 45, doi: 10.1007/s10515-025-00589-3}
 }
 
 @inproceedings{fan2020,
@@ -760,7 +753,7 @@
   publisher = {IEEE},
   year      = {2020},
   pages     = {253--264},
-  note      = {DOI: 10.1109/issre5003.2020.00032}
+  note      = {doi: 10.1109/issre5003.2020.00032}
 }
 
 @inproceedings{zimmeck2017,
@@ -770,7 +763,7 @@
   address   = {Reston},
   publisher = {Internet Society},
   year      = {2017},
-  note      = {DOI: 10.14722/ndss.2017.23034}
+  note      = {doi: 10.14722/ndss.2017.23034}
 }
 
 @inproceedings{zhao2023,
@@ -781,7 +774,7 @@
   publisher = {IEEE},
   year      = {2023},
   pages     = {1583--1595},
-  note      = {DOI: 10.1109/icse48619.2023.00137}
+  note      = {doi: 10.1109/icse48619.2023.00137}
 }
 
 @article{baalous2025,
@@ -792,7 +785,7 @@
   number  = {1},
   pages   = {110--125},
   year    = {2025},
-  note    = {DOI: 10.2478/cait-2025-0007}
+  note    = {doi: 10.2478/cait-2025-0007}
 }
 
 @article{achilleos2023,
@@ -802,7 +795,7 @@
   volume  = {12},
   number  = {5},
   year    = {2023},
-  note    = {Art. 1247. DOI: 10.3390/electronics12051247}
+  note    = {Art. 1247, doi: 10.3390/electronics12051247}
 }
 
 @article{tu2024,
@@ -812,7 +805,7 @@
   volume  = {57},
   number  = {7},
   year    = {2024},
-  note    = {Art. 172. DOI: 10.1007/s10462-024-10798-z}
+  note    = {Art. 172, doi: 10.1007/s10462-024-10798-z}
 }
 
 @inproceedings{xiao2023,
@@ -833,7 +826,7 @@
   publisher = {IEEE},
   year      = {2020},
   pages     = {1--9},
-  note      = {DOI: 10.1109/ijcnn48605.2020.9206660}
+  note      = {doi: 10.1109/ijcnn48605.2020.9206660}
 }
 
 @inproceedings{zimmeck2021,
@@ -843,7 +836,7 @@
   address   = {Reston},
   publisher = {Internet Society},
   year      = {2021},
-  note      = {DOI: 10.14722/ndss.2021.24100}
+  note      = {doi: 10.14722/ndss.2021.24100}
 }
 
 @inproceedings{jain2023,
@@ -854,7 +847,7 @@
   publisher = {IEEE},
   year      = {2023},
   pages     = {258--277},
-  note      = {DOI: 10.1109/eurosp57164.2023.00024}
+  note      = {doi: 10.1109/eurosp57164.2023.00024}
 }
 
 @article{jiang2023,
@@ -863,7 +856,7 @@
   journal = {JMIR mHealth and uHealth},
   volume  = {11},
   year    = {2023},
-  note    = {Art. e48714. DOI: 10.2196/48714}
+  note    = {Art. e48714, doi: 10.2196/48714}
 }
 
 @inproceedings{carlsson2022,
@@ -874,7 +867,7 @@
   publisher = {Springer},
   year      = {2022},
   pages     = {214--225},
-  note      = {(Lecture Notes in Networks and Systems). DOI: 10.1007/978-3-031-04826-5\_21}
+  note      = {(Lecture Notes in Networks and Systems), doi: 10.1007/978-3-031-04826-5\_21}
 }
 
 @article{lemos2022,
@@ -885,7 +878,7 @@
   number  = {1},
   pages   = {82--99},
   year    = {2022},
-  note    = {DOI: 10.24908/ss.v20i1.14282}
+  note    = {doi: 10.24908/ss.v20i1.14282}
 }
 
 @article{kouliaridis2021,
@@ -895,7 +888,7 @@
   volume  = {16},
   number  = {5},
   year    = {2021},
-  note    = {Art. e0251867. DOI: 10.1371/journal.pone.0251867}
+  note    = {Art. e0251867, doi: 10.1371/journal.pone.0251867}
 }
 
 @article{samhi2021,
@@ -905,7 +898,7 @@
   volume  = {26},
   number  = {4},
   year    = {2021},
-  note    = {Art. 57. DOI: 10.1007/s10664-021-09943-x}
+  note    = {Art. 57, doi: 10.1007/s10664-021-09943-x}
 }
 
 @article{hatamian2021,
@@ -915,7 +908,7 @@
   volume  = {26},
   number  = {3},
   year    = {2021},
-  note    = {Art. 36. DOI: 10.1007/s10664-020-09934-4}
+  note    = {Art. 36, doi: 10.1007/s10664-020-09934-4}
 }
 
 @article{jordanoski2023,
@@ -926,7 +919,7 @@
   number  = {3},
   pages   = {1232},
   year    = {2023},
-  note    = {DOI: 10.11591/ijphs.v12i3.21480}
+  note    = {doi: 10.11591/ijphs.v12i3.21480}
 }
 
 @article{flood2022,
@@ -936,7 +929,7 @@
   volume  = {3},
   number  = {6},
   year    = {2022},
-  note    = {Art. 496. DOI: 10.1007/s42979-022-01357-w}
+  note    = {Art. 496, doi: 10.1007/s42979-022-01357-w}
 }
 
 @article{reis2023,
@@ -947,7 +940,7 @@
   number  = {1},
   pages   = {1--8},
   year    = {2023},
-  note    = {DOI: 10.5753/jis.2023.2954}
+  note    = {doi: 10.5753/jis.2023.2954}
 }
 
 @article{rodrigues2025,
@@ -958,7 +951,7 @@
   number  = {1},
   pages   = {1--26},
   year    = {2025},
-  note    = {DOI: 10.69881/rcaap.v29i1.52360}
+  note    = {doi: 10.69881/rcaap.v29i1.52360}
 }
 
 @article{sterling2024,
@@ -968,7 +961,7 @@
   volume  = {4},
   number  = {1},
   year    = {2024},
-  note    = {Art. 32. DOI: 10.1007/s44155-024-00092-2}
+  note    = {Art. 32, doi: 10.1007/s44155-024-00092-2}
 }
 
 @article{jia2020,
@@ -978,7 +971,7 @@
   volume  = {9},
   number  = {3},
   year    = {2020},
-  note    = {DOI: 10.14763/2020.3.1502}
+  note    = {doi: 10.14763/2020.3.1502}
 }
 
 @inproceedings{vaz2022,
@@ -989,39 +982,38 @@
   publisher = {Sociedade Brasileira de Computação},
   year      = {2022},
   pages     = {100--103},
-  note      = {DOI: 10.5753/ihc\_estendido.2022.224873}
+  note      = {doi: 10.5753/ihc\_estendido.2022.224873}
 }
 
 @misc{anpd2022,
- author={{AUTORIDADE NACIONAL DE PROTEÇÃO DE DADOS}},
+ author={{Autoridade Nacional de Proteção de Dados}},
  title={Cookies e proteção de dados pessoais: guia orientativo},
- address={Brasília, DF}, publisher={ANPD}, year={2022}, note={Versão 1.0},
- url={https://www.gov.br/anpd/pt-br/centrais-de-conteudo/materiais-educativos-e-publicacoes/guia-orientativo-cookies-e-protecao-de-dados-pessoais.pdf},
- urlaccessdate={21 nov. 2026}
+ address={Brasília, DF}, publisher={ANPD}, year={2022}, note={Versão 1.0. Acesso em: 21 nov. 2026},
+ url={https://www.gov.br/anpd/pt-br/centrais-de-conteudo/materiais-educativos-e-publicacoes/guia-orientativo-cookies-e-protecao-de-dados-pessoais.pdf}
 }
 
 @article{brasil2026,
-  author        = {{BRASIL}},
+  author        = {{Brasil}},
   title         = {{Lei nº 15.352, de 25 de fevereiro de 2026. Transforma cargos no âmbito do Poder Executivo federal; altera a Lei nº 13.709, de 14 de agosto de 2018 (Lei Geral de Proteção de Dados Pessoais), para dispor sobre a Agência Nacional de Proteção de Dados (ANPD) [...]; e dá outras providências}},
-  journal       = {Diário Oficial da União{\mdseries: seção 1, ed. extra B}},
+  journal       = {Diário Oficial da União, seção 1, ed. extra B},
   address       = {Brasília, DF},
   pages         = {1},
   month         = {25 fev.},
   year          = {2026},
   url           = {https://www2.camara.leg.br/legin/fed/lei/2026/lei-15352-25-fevereiro-2026-798731-publicacaooriginal-178208-pl.html},
-  urlaccessdate = {22 nov. 2026}
+  note          = {Acesso em: 22 nov. 2026}
 }
 
 @article{brasil2022,
-  author        = {{BRASIL}},
+  author        = {{Brasil}},
   title         = {{Lei nº 14.460, de 25 de outubro de 2022. Transforma a Autoridade Nacional de Proteção de Dados (ANPD) em autarquia de natureza especial e transforma cargos comissionados; altera as Leis nºs 13.709, de 14 de agosto de 2018 (Lei Geral de Proteção de Dados Pessoais), e 13.844, de 18 de junho de 2019; e revoga dispositivos da Lei nº 13.853, de 8 de julho de 2019}},
-  journal       = {Diário Oficial da União{\mdseries: seção 1}},
+  journal       = {Diário Oficial da União, seção 1},
   address       = {Brasília, DF},
   pages         = {3},
   month         = {26 out.},
   year          = {2022},
   url           = {https://www2.camara.leg.br/legin/fed/lei/2022/lei-14460-25-outubro-2022-793355-publicacaooriginal-166348-pl.html},
-  urlaccessdate = {22 nov. 2026}
+  note          = {Acesso em: 22 nov. 2026}
 }
 
 @article{kollnig2022ios,
@@ -1032,7 +1024,7 @@
   number  = {2},
   pages   = {6--24},
   year    = {2022},
-  note    = {DOI: 10.2478/popets-2022-0033}
+  note    = {doi: 10.2478/popets-2022-0033}
 }
 
 @article{landis1977,
@@ -1043,32 +1035,29 @@
   number  = {1},
   pages   = {159--174},
   year    = {1977},
-  note    = {DOI: 10.2307/2529310}
+  note    = {doi: 10.2307/2529310}
 }
 
 @misc{statcounter2026,
-  author        = {{STATCOUNTER}},
+  author        = {{StatCounter}},
   title         = {Mobile operating system market share Brazil},
-  note          = {StatCounter Global Stats. Dados de outubro de 2026},
+  note          = {StatCounter Global Stats. Dados de outubro de 2026. Acesso em: 25 nov. 2026},
   year          = {2026},
-  url           = {https://gs.statcounter.com/os-market-share/mobile/brazil},
-  urlaccessdate = {25 nov. 2026}
+  url           = {https://gs.statcounter.com/os-market-share/mobile/brazil}
 }
 
 @misc{androidemulador2026,
-  author        = {{GOOGLE}},
+  author        = {{Google}},
   title         = {Run apps on the {Android} Emulator},
-  note          = {Android Developers. Documentação do emulador do Android Studio},
+  note          = {Android Developers. Documentação do emulador do Android Studio. Acesso em: 25 nov. 2026},
   year          = {2026},
-  url           = {https://developer.android.com/studio/run/emulator},
-  urlaccessdate = {25 nov. 2026}
+  url           = {https://developer.android.com/studio/run/emulator}
 }
 
 @misc{mitmproxy2026,
-  author        = {{MITMPROXY}},
+  author        = {{mitmproxy}},
   title         = {mitmproxy: an interactive {HTTPS} proxy},
-  note          = {Ferramenta livre e de código aberto},
+  note          = {Ferramenta livre e de código aberto. Acesso em: 25 nov. 2026},
   year          = {2026},
-  url           = {https://mitmproxy.org/},
-  urlaccessdate = {25 nov. 2026}
+  url           = {https://mitmproxy.org/}
 }

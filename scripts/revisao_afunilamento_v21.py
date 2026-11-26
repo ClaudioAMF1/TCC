@@ -8,7 +8,7 @@ e acrescenta duas restrições, pedidas para concentrar a revisão no problema d
 2. Sem a QR1 (métodos de detecção de bibliotecas): as buscas S1 deixam de ser
    executadas, e os estudos que tratam só de detecção de bibliotecas, sem medir
    rastreamento nem confrontar declarações, passam a ser excluídos pelo EC8. A
-   detecção continua no referencial como fundo (Seção 2.3), com Zhan et al. (2022).
+   detecção continua na revisão bibliográfica como fundo (Seção 2.1.2), com Zhan et al. (2022).
 
 Como as restrições só estreitam a busca original, aplicá-las às exportações de
 6/11/2026 dá o mesmo resultado que refazer as buscas com elas.

@@ -1,6 +1,6 @@
 # Piloto do AndroZoo: passo a passo
 
-**Concluído.** Os resultados estão na Seção 3.6 do projeto. Este guia fica como registro de como o piloto foi feito e para refazê-lo.
+**Concluído.** Os resultados estão na Seção 4.1.3 do projeto. Este guia fica como registro de como o piloto foi feito e para refazê-lo.
 
 O piloto não rodou no ambiente onde o texto foi escrito: lá não há acesso ao
 `androzoo.uni.lu` nem à API do Exodus. Ele roda no seu computador, com os
@@ -184,7 +184,7 @@ para comparar.
   positivo antes de você marcar);
 - depois da marcação, a saída de `concordancia --conferencia`.
 
-Os resultados estão na Seção 3.6 do projeto.
+Os resultados estão na Seção 4.1.3 do projeto.
 
 **APK, lista do AndroZoo e bases ficam só no seu computador.** O `.gitignore`
 já os deixa de fora; do `dados/` só entram no repositório as planilhas e os

@@ -1,0 +1,78 @@
+\label{sec:resultados}
+
+Como este trabalho corresponde ao Projeto Capstone I, a hipótese ainda não foi testada: a coleta principal e a classificação das declarações estão previstas para o Projeto Capstone II (Seção~\ref{sec:cronograma}). Esta seção apresenta os resultados preliminares obtidos na preparação do estudo e discute o que eles implicam para o método (Seção~\ref{sec:res-preliminares}); em seguida, descreve os resultados esperados (Seção~\ref{sec:1.6}) e as limitações do estudo (Seção~\ref{sec:1.7}).
+
+\subsecao{Resultados preliminares}\label{sec:res-preliminares}
+
+Os resultados preliminares vêm da seleção dos aplicativos, da consulta ao AndroZoo, do piloto com 20 pacotes, da verificação das declarações e do andamento da revisão sistemática.
+
+\subsubsecao{Seleção dos aplicativos}\label{sec:res-selecao}
+
+As buscas por termo e pelos catálogos dos publicadores resultaram em 590 aplicativos distintos, dos quais 396, de 71 publicadores, tinham publicador classificado como órgão público. Nesses 396 candidatos, a regra automática de esfera produziu 85 aplicativos federais, 206 estaduais, 95 municipais e 10 indeterminados (2,5\%); dois aplicativos não informam instalações.
+
+Na revisão manual, 2 dos 30 aplicativos sorteados eram de publicadores privados (6,7\%), o que levou à revisão de todos os 396 candidatos. Ficaram 376 aplicativos oficiais: 85 federais, 199 estaduais e 92 municipais. Saíram 20: 13 de empresas privadas que publicam com nome de serviço público e 7 publicados em uma conta registrada em nome de pessoa física. Entre os 376, a esfera atribuída na revisão difere da regra automática em 18 casos, 7 deles indeterminados pela regra. O nome do publicador, sozinho, não basta para classificar um aplicativo como oficial, e por isso a revisão pelo nome jurídico do desenvolvedor integra o primeiro objetivo específico.
+
+\subsubsecao{Cobertura do AndroZoo}\label{sec:res-androzoo}
+
+Na consulta histórica, o AndroZoo continha 92 dos 396 candidatos governamentais (23,2\%), contra 160 dos 190 aplicativos da primeira referência comercial (84,2\%). Considerando a mesma faixa de instalações, a razão de chances de um aplicativo governamental estar no acervo é de 0,13 (IC95\% de 0,07 a 0,24). Depender apenas do acervo deixaria de fora a maioria dos aplicativos do governo; por isso, a fonte principal dos pacotes passou a ser a versão atual da Google Play, e o AndroZoo ficou para a reprodutibilidade e para a medida da defasagem entre versões (Seção~\ref{sec:pacotes}).
+
+\subsubsecao{Piloto dos detectores}\label{sec:res-piloto}
+
+O piloto, feito com 20 aplicativos do AndroZoo, já mostrou um efeito de método. Na base do Exodus, a assinatura de rede do rastreador ``Google Ads'' é a expressão \texttt{\textbackslash{}.\allowbreak{}google\textbackslash{}.\allowbreak{}com}, que casa com qualquer subdomínio do Google: em um dos pacotes, um link para \texttt{maps.\allowbreak{}google.\allowbreak{}com} bastou para o detector B apontar ``Google Ads'', enquanto o detector A não encontrou o SDK. A proporção de aplicativos com ao menos um rastreador foi de 75\%, 95\% e 80\% nos detectores A, B e C, respectivamente. A revisão manual das 223 detecções, uma a uma, segundo a evidência que as produziu, classificou 88 das 123 detecções do detector B (71,5\%) como falsos positivos potenciais, sobretudo por assinaturas amplas que também casam com domínios de uso geral do Google ou do Facebook. Essa revisão usa a evidência dos próprios detectores e não constitui uma referência independente.
+
+No piloto, o $\kappa$ de Fleiss entre os três detectores foi de 0,52, uma concordância moderada; desconsideradas as detecções de B classificadas como falsos positivos potenciais, em uma análise de sensibilidade, passou a 0,69, substancial. Com 20 pacotes, esses valores servem apenas para testar o instrumento: o piloto não estima a concordância na população nem é usado no teste da hipótese. A diferença entre A e B, que usam a mesma base, mostra que o método de casamento altera a taxa de aplicativos com rastreador; por isso, o detector A, que procura o próprio código do SDK, é o candidato a medida principal (Seção~\ref{sec:deteccao}).
+
+\subsubsecao{Políticas de privacidade e declaração de anúncios}\label{sec:res-declaracoes}
+
+Na verificação de viabilidade, feita antes de qualquer download, 323 dos 396 candidatos (81,6\%) tinham política de privacidade acessível; os aplicativos que continuarem sem política na coleta entrarão na situação de política indisponível (Seção~\ref{sec:declaracoes}). Os limites dessas declarações também apareceram na preparação do estudo. Nenhum dos 376 aplicativos oficiais declara exibir anúncios na Google Play (IC95\% de 0\% a 1,0\%), contra 33,2\% dos 190 aplicativos da primeira referência comercial (IC95\% de 26,9\% a 40,1\%), com os intervalos calculados pelo método de Wilson~\cite{wilson1927}. A declaração é feita pelo próprio publicador e trata apenas de anúncios: não indica quais SDKs o aplicativo embarca nem para onde os dados vão. Somente a análise do pacote mostra o que ele contém, e é esse confronto que a hipótese mede.
+
+\subsubsecao{Andamento da revisão sistemática}\label{sec:res-revisao}
+
+As 15 buscas, com as restrições aplicadas às exportações de 6 de novembro de 2026, somam 396 registros; sem as 84 duplicatas, restam 312. A triagem por título e resumo excluiu 161, reservou 3 revisões para a bola de neve e encaminhou 148 à leitura completa. Dos 148, 35 tiveram o texto lido: 31 receberam proposta de inclusão, 3 de exclusão e 1 segue em aberto, por dúvida de escopo. Uma quarta exclusão foi proposta para a versão preliminar de um estudo cuja versão ampliada está entre os lidos. Das 35 decisões propostas, 31 de inclusão e 4 de exclusão, 9 (8 e 1) foram confirmadas em 21 de novembro, com leitura integral e avaliação de qualidade. As outras 26 decisões e os 113 registros ainda em aberto, a maioria sem texto obtido, ficam para o início do Projeto Capstone II; os textos que continuarem indisponíveis serão relatados como não recuperados. A Figura~\ref{fig:prisma} resume o fluxo.
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[
+  font=\footnotesize,
+  caixa/.style={draw, rectangle, align=left, text width=7.2cm, inner sep=4pt},
+  lateral/.style={draw, rectangle, align=left, text width=6.2cm, inner sep=4pt},
+  seta/.style={-{Stealth[length=2mm]}, semithick},
+  node distance=5mm and 7mm]
+\node[caixa] (id) {Registros identificados em 15 buscas em quatro bases, de 2018 a 2026, com termo do tema no título (n = 396): Scopus 259; IEEE Xplore 123; SBC OpenLib 9; BDTD 5};
+\node[lateral, right=of id] (dup) {Duplicatas removidas (n = 84)};
+\node[caixa, below=of id] (tri) {Registros triados por título, resumo e palavras-chave (n = 312)};
+\node[lateral, right=of tri] (exc1) {Excluídos (n = 161): IC1 56; EC3 43; EC5 41; EC2 17; EC4 2; EC1 1; EC6 1\\Revisões reservadas para a bola de neve (n = 3)};
+\node[caixa, below=of tri, yshift=-7mm] (busca) {Encaminhados à avaliação integral (n = 148): 97 I e 51 T da triagem};
+\node[lateral, right=of busca] (nr) {Em aberto (n = 113): 60 sem texto; 1 versão divergente; 1 dúvida de escopo entre os textos obtidos; 51 T};
+\node[caixa, below=of busca, yshift=-4mm] (aval) {Textos obtidos (n = 35): 31 propostas I, 3 E e 1 dúvida de escopo, que segue em aberto};
+\node[lateral, right=of aval] (exc2) {Exclusões propostas (n = 4): 3 com texto (2 EC8 e 1 EC6); 1 EC1 por versão posterior};
+\node[caixa, below=of aval] (inc) {Propostas de inclusão (n = 31), síntese na Seção~\ref{sec:ref-sintese}};
+\draw[seta] (id) -- (tri);
+\draw[seta] (tri) -- (busca);
+\draw[seta] (busca) -- (aval);
+\draw[seta] (aval) -- (inc);
+\draw[seta] (id) -- (dup);
+\draw[seta] (tri) -- (exc1);
+\draw[seta] (busca) -- (nr);
+\draw[seta] (aval) -- (exc2);
+\end{tikzpicture}
+\caption{Fluxo parcial da revisão sistemática (PRISMA 2020)}\label{fig:prisma}
+\fonte{Elaborado pelo autor (2026), com o modelo de Page et al.~\cite{page2021}. Situação em 26 nov. 2026.}
+\nota{I: inclusão; E: exclusão; T: talvez, registro com dúvida na triagem; IC e EC: critérios de inclusão e de exclusão do protocolo. Os 148 registros encaminhados se dividem em 113 em aberto, 31 propostas de inclusão e 4 de exclusão. A dúvida de escopo está entre os 35 textos obtidos e também entre os 113 em aberto.}
+\end{figure}
+
+\subsubsecao{Discussão dos resultados preliminares}\label{sec:res-discussao}
+
+Esses resultados não antecipam a decisão sobre a hipótese, que depende da classificação dos pares aplicativo--SDK no Projeto Capstone II, mas já orientaram o método: a baixa cobertura do AndroZoo levou à coleta na Google Play; a diferença entre os detectores levou ao registro da evidência de cada detecção e à medida da concordância; e os limites das declarações levaram à classificação em cinco situações, que separa a ausência de declaração compatível dos casos sem informação suficiente.
+
+\subsecao{Resultados esperados}\label{sec:1.6}
+
+Ao final do Projeto Capstone II, espera-se obter a proporção de pares aplicativo--SDK sem declaração compatível, com a decisão sobre a hipótese; a lista das divergências entre o declarado e o encontrado em cada aplicativo, para a discussão à luz da LGPD; a proporção de aplicativos governamentais com rastreadores, por esfera de governo; os destinos dos dados na subamostra observada, inclusive os situados no exterior; a medida de concordância entre os detectores e o efeito da ferramenta sobre a taxa reportada; e um conjunto de dados reprodutível, com a lista dos aplicativos, os hashes dos pacotes analisados e os scripts de coleta e análise.
+
+\subsecao{Limitações}\label{sec:1.7}
+
+A principal limitação decorre do tipo de evidência. A análise estática mostra que o código de um SDK está presente no pacote, não que ele é executado nem que transmite dados. A observação do tráfego mede essa diferença apenas na subamostra e apenas nas telas acessíveis sem login, e aplicativos que detectam o emulador ou fixam certificados podem ficar sem tráfego observável. Além disso, as políticas de privacidade e a seção ``Segurança dos dados'' declaram, em geral, categorias de dados e finalidades, e não a lista de SDKs; por isso, uma declaração genérica não é tratada nem como prova de conformidade nem como omissão.
+
+O estudo cobre apenas aplicativos Android distribuídos pela Google Play, pelos motivos da Seção~\ref{sec:plataforma}, e seus resultados não autorizam conclusões sobre as versões iOS. Todos os aplicativos serão analisados na versão atual da loja, mas quem repetir o estudo só conseguirá obter o mesmo arquivo dos que estão no AndroZoo, que continha 92 dos 396 candidatos governamentais; para esses, a defasagem entre versões será medida e reportada.
+
+A referência comercial não é amostra aleatória do mercado e serve apenas de contexto, e a declaração de anúncios na Google Play é feita pelo próprio publicador. A seleção da revisão sistemática tem um único revisor, cuja consistência é estimada por amostra, e textos não recuperados podem deixar estudos relevantes de fora. Por fim, a discussão jurídica identifica pontos de atenção à luz da LGPD, mas não substitui a análise jurídica de cada caso concreto.

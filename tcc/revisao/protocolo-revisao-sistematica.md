@@ -390,7 +390,7 @@ taxas produzidas por detectores diferentes seria ignorar o efeito da ferramenta.
 | QR4 | Tabela dos estudos de governo: países, número de aplicativos, método, principais achados, o que fica em aberto |
 | QR5 | Lista dos artigos da LGPD discutidos e dos critérios propostos, que alimenta a matriz de critérios da LGPD |
 
-O último produto é o confronto com a lacuna da Seção 1.2 do projeto: cada um
+O último produto é o confronto com a lacuna da Seção 2.2.4 do projeto: cada um
 dos pontos que ela afirma em aberto é confirmado ou corrigido, com os estudos
 que sustentam a decisão.
 
@@ -400,7 +400,7 @@ que sustentam a decisão.
 
 Situação em 26/11/2026, com as restrições da versão 2.1 (termo do tema no título, período de 2018 a 2026 e saída da QR1): dos 312 registros triados, 148 foram à leitura completa. Há **35 propostas: 31 I e 4 E**; 9 foram conferidas pelo autor em 21/11 (8 I e 1 E) e 26 ainda não. Restam 113 registros em aberto: 60 por acesso, um por versão divergente, um por dúvida de escopo e 51 T cujo tratamento será definido com o orientador. As contagens vêm de `scripts/revisao_afunilamento_v21.py`. As contagens anteriores (versão 2.0: 413 triados, 210 à leitura completa, 55 I e 7 E; antes dela: 1.249 triados, 357 à leitura completa, 71 I e 8 E) ficam preservadas no histórico do repositório e nos arquivos de 13/11, 21/11 e 25/11.
 
-Para a entrega do projeto em 03/12, a síntese usa as 31 propostas de inclusão da versão 2.1 (Seção 2.7 do projeto). O restante fica para o início do Capstone II:
+Para a entrega do projeto em 03/12, a síntese usa as 31 propostas de inclusão da versão 2.1 (Seção 2.2.4 do projeto). O restante fica para o início do Capstone II:
 
 | Prazo previsto | Atividade |
 |---|---|

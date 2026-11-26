@@ -1,0 +1,44 @@
+% incluir seus pacotes aqui
+% obs: cuidado para não conflitar com os pacotes inclusos neste template.
+
+% ---------------------------------------------------------------- pacotes
+\usepackage{amsmath}                       % fórmula do kappa de Fleiss
+\usepackage{tabularx}                      % tabelas com colunas de largura automática
+\usepackage[shortlabels]{enumitem}         % objetivos específicos como a), b), c)...
+\usepackage{microtype}                     % ajuste fino do espaçamento das linhas
+\usetikzlibrary{positioning,arrows.meta}   % fluxograma da revisão (o TikZ vem da classe)
+
+% ---------------------------------------------------------------- ajustes
+% links sem moldura colorida e metadados do PDF
+\hypersetup{
+  hidelinks,
+  pdftitle={Rastreamento por terceiros em aplicativos móveis governamentais brasileiros},
+  pdfauthor={Claudio da Aparecida Meireles Filho}
+}
+
+% folga extra para evitar linhas que ultrapassam a margem
+\setlength{\emergencystretch}{1.5em}
+
+% sem hifenizar "discussão": o título da Seção 4 fica numa linha só
+\babelhyphenation[portuguese]{discussão}
+
+% fonte e nota abaixo de tabelas e figuras
+\newcommand{\fonte}[1]{\par\vspace{0.6ex}{\centering\footnotesize Fonte: #1\par}}
+\newcommand{\nota}[1]{\par\vspace{0.4ex}{\footnotesize\noindent Nota: #1\par}}
+
+% rótulos fixos da classe em português (folha de rosto, folha de aprovação e
+% referências); para voltar aos rótulos originais, em inglês, comente a linha abaixo
+\input{pacotes/rotulos-em-portugues}
+
+% correção: no sumário, o número da subsubseção ficava colado ao título, porque
+% a classe escreve "\thesubsubsecnum #1" e o espaço depois do comando se perde;
+% o restante repete a definição de configs/idp-model.cls
+\renewcommand{\subsubsecao}[1]{%
+  \refstepcounter{subsubsecnum}
+  \par\vspace{1.2ex}
+  \phantomsection
+  \addcontentsline{toc}{subsubsection}{\thesubsubsecnum\ #1}
+
+  {\normalsize\noindent\color{fundo_idp}\bfseries\thesubsubsecnum\quad #1}\par
+  \vspace{0.5ex}
+}

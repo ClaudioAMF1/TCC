@@ -8,7 +8,7 @@ Bom dia. Meu nome é Claudio, e meu orientador é o professor Eduardo. Meu traba
 
 ## Slide 2: Agenda
 
-A apresentação segue a ordem do texto. Começo pela introdução, com o problema, os objetivos e a hipótese. Depois vem o referencial teórico, com os estudos de base e a lacuna. Em seguida, os procedimentos metodológicos. No fim, a conclusão.
+A apresentação segue as cinco seções do texto, no modelo do Capstone. Começo pela introdução, com o problema, os objetivos e a hipótese. Depois vem a revisão bibliográfica, com os estudos de base e a lacuna. Em seguida, a metodologia, os resultados preliminares e as limitações. No fim, a conclusão e os próximos passos.
 
 ## Slide 3: MOTIVAÇÃO
 
@@ -48,39 +48,39 @@ O estudo é quantitativo e observacional, em seis etapas, e cada uma atende a um
 
 Por que só Android? São três motivos. Primeiro, abrangência: segundo a StatCounter, o Android está em 73,76% dos celulares no Brasil. Segundo, acesso ao código: Kollnig e colegas explicam que, no iPhone, os aplicativos são criptografados, não há ferramenta pública para baixá-los em escala, e decriptar exige um aparelho físico e tem legalidade incerta. Terceiro, a hipótese usa a seção “Segurança dos dados”, que só existe na Google Play. Isso não quer dizer que o iPhone seja mais seguro: o mesmo estudo achou rastreamento nas duas plataformas. O iOS fica como trabalho futuro.
 
-## Slide 12: APLICATIVOS SELECIONADOS
+## Slide 12: COMO LER O κ DE FLEISS
 
-Para montar a lista, busquei 21 termos ligados a serviço público na Google Play e depois o catálogo de cada publicador oficial. Foram 396 candidatos. Pelo nome jurídico de quem publica, ficaram 376 oficiais: 85 federais, 199 estaduais e 92 municipais. Saíram 20, de empresas privadas ou de contas de pessoa física. A lista é preliminar e será revista antes da coleta.
-
-## Slide 13: FONTE DOS PACOTES
-
-Na hora de buscar os pacotes, apareceu um problema. O AndroZoo, um acervo acadêmico, tinha só 92 dos 396 aplicativos do governo, 23,2%, contra 84,2% dos comerciais. Dependendo só dele, a maioria ficaria de fora. Por isso, a fonte principal será a versão atual da Google Play, que é a que o cidadão instala, baixada com o apkeep, uma ferramenta aberta, com uma conta criada só para a pesquisa. Registro o hash, a versão, a data e o motivo de cada falha. O AndroZoo fica para a reprodutibilidade.
-
-LEMBRETE (não precisa falar). Quando o aplicativo vem dividido em vários pacotes, guardo o APK base, que tem o código. O apkeep é da Electronic Frontier Foundation (EFF). Não redistribuo os pacotes.
-
-## Slide 14: PILOTO DOS DETECTORES
-
-No piloto, testei três detectores em 20 pacotes. O A procura no código os SDKs da base do Exodus. O B usa a mesma base, mas procura endereços de internet dentro do pacote. O C faz o mesmo que o B, com a lista da Disconnect. As taxas foram diferentes: 75%, 95% e 80% dos pacotes com rastreador. Revisando as detecções uma a uma, 88 das 123 do B pareciam falsos positivos, quase todas por endereços genéricos do Google ou do Facebook. Ou seja, a ferramenta muda o resultado, e por isso a comparação entre detectores faz parte do método.
-
-LEMBRETE (não precisa falar). A contra B mostra o efeito do método (mesma base); B contra C mostra o efeito da base (mesmo método). B não é tráfego, é texto dentro do pacote: um link para maps.google.com bastou para apontar Google Ads. C usa só as categorias publicidade, análise de uso e impressão digital. Exodus Privacy: base aberta de rastreadores, com assinaturas de código e de rede. Disconnect: lista de domínios que coletam dados, separados por categoria.
-
-## Slide 15: COMO LER O κ DE FLEISS
-
-Para medir essa concordância, uso o kappa de Fleiss. Ele mede se vários avaliadores concordam, descontando o acordo que aconteceria por acaso; aqui, os avaliadores são os três detectores, e cada um diz se o aplicativo tem ou não rastreador. P o é a concordância observada: em cada aplicativo, a fração dos pares de detectores que concordam; se os três concordam, dá 1; se um discorda, dá um terço. P e é a concordância esperada só por acaso. Descontar o acaso importa porque, se quase todo aplicativo tem rastreador, concordar é fácil. Pela escala de Landis e Koch, o piloto deu 0,52, moderada, e 0,69, substancial, sem os falsos positivos. Meu limiar é 0,6.
+Para medir a concordância entre os detectores, uso o kappa de Fleiss. Ele mede se vários avaliadores concordam, descontando o acordo que aconteceria por acaso; aqui, os avaliadores são os três detectores, e cada um diz se o aplicativo tem ou não rastreador. P o é a concordância observada: em cada aplicativo, a fração dos pares de detectores que concordam; se os três concordam, dá 1; se um discorda, dá um terço. P e é a concordância esperada só por acaso. Descontar o acaso importa porque, se quase todo aplicativo tem rastreador, concordar é fácil. Para ler o resultado, uso a escala de Landis e Koch, e meu limiar é 0,6, a passagem de moderada para substancial. O valor do piloto aparece nos resultados.
 
 LEMBRETE (não precisa falar). Fórmula por aplicativo: P i = soma de n ij vezes (n ij − 1), dividida por n vezes (n − 1), com n = 3 detectores e n ij = quantos deram a resposta j. P e = soma de p j ao quadrado, com p j = proporção de todas as respostas na categoria j. Junto do κ, reporto o IC95% e as concordâncias positiva e negativa, porque o κ fica instável quando quase todos os aplicativos estão na mesma categoria. Na revisão, a reclassificação às cegas da triagem usa o κ de Cohen, a versão para dois avaliadores, com a mesma escala.
 
-## Slide 16: CLASSIFICAÇÃO DAS DECLARAÇÕES
+## Slide 13: CLASSIFICAÇÃO DAS DECLARAÇÕES
 
 Esta é a parte central do teste. Para cada par, leio a política de privacidade e a seção “Segurança dos dados” e escolho uma de cinco situações: o SDK é citado pelo nome; o tipo de dado e a finalidade estão declarados, mesmo sem o nome; não há declaração compatível; a informação é genérica demais; ou a política não está disponível. A proporção é a terceira situação dividida pelas três primeiras; se der 10% ou mais, a hipótese se confirma. As duas últimas ficam à parte, para não inflar nem esconder o problema. Não citar o nome do SDK, sozinho, não conta como omissão.
 
-## Slide 17: Revisão sistemática
+## Slide 14: Revisão sistemática
 
 Para a literatura, fiz uma revisão sistemática: uma busca planejada e documentada, para que a escolha dos artigos não dependa de preferência pessoal. Segui o guia de Kitchenham: antes de buscar, escrevi um protocolo com as perguntas, as bases, as palavras de busca e os critérios. O resultado segue o PRISMA 2020, um fluxograma do que entrou e saiu em cada etapa. Foram 15 buscas em quatro bases, de 2018 a 2026, exigindo um termo do tema no título. Para testar as buscas, separei estudos que tinham de aparecer: dos nove dentro do escopo, elas acharam os oito que estão no Scopus. Foram 396 resultados, 312 sem repetidos, e 148 seguiram para a leitura completa, que está em andamento.
 
 Guia de Kitchenham: divide a revisão em planejamento (questões e protocolo), condução (busca, seleção, avaliação de qualidade e extração dos dados) e relatório (síntese dos resultados).
 
 PRISMA 2020: padroniza o relato da revisão num fluxograma, da identificação dos registros e remoção de duplicatas até a triagem, a leitura completa e os estudos incluídos.
+
+## Slide 15: APLICATIVOS SELECIONADOS
+
+Agora, os resultados preliminares, da preparação do estudo. Para montar a lista, busquei 21 termos ligados a serviço público na Google Play e depois o catálogo de cada publicador oficial. Foram 396 candidatos. Pelo nome jurídico de quem publica, ficaram 376 oficiais: 85 federais, 199 estaduais e 92 municipais. Saíram 20, de empresas privadas ou de contas de pessoa física. A lista é preliminar e será revista antes da coleta.
+
+## Slide 16: FONTE DOS PACOTES
+
+Na hora de buscar os pacotes, apareceu um problema. O AndroZoo, um acervo acadêmico, tinha só 92 dos 396 aplicativos do governo, 23,2%, contra 84,2% dos comerciais. Dependendo só dele, a maioria ficaria de fora. Por isso, a fonte principal será a versão atual da Google Play, que é a que o cidadão instala, baixada com o apkeep, uma ferramenta aberta, com uma conta criada só para a pesquisa. Registro o hash, a versão, a data e o motivo de cada falha. O AndroZoo fica para a reprodutibilidade.
+
+LEMBRETE (não precisa falar). Quando o aplicativo vem dividido em vários pacotes, guardo o APK base, que tem o código. O apkeep é da Electronic Frontier Foundation (EFF). Não redistribuo os pacotes.
+
+## Slide 17: PILOTO DOS DETECTORES
+
+No piloto, testei três detectores em 20 pacotes. O A procura no código os SDKs da base do Exodus. O B usa a mesma base, mas procura endereços de internet dentro do pacote. O C faz o mesmo que o B, com a lista da Disconnect. As taxas foram diferentes: 75%, 95% e 80% dos pacotes com rastreador. Revisando as detecções uma a uma, 88 das 123 do B pareciam falsos positivos, quase todas por endereços genéricos do Google ou do Facebook. Ou seja, a ferramenta muda o resultado. O kappa de Fleiss entre os três foi 0,52, uma concordância moderada pela escala que mostrei; sem os possíveis falsos positivos do B, sobe para 0,69, substancial. Com só 20 pacotes, isso testa o instrumento, e não a hipótese.
+
+LEMBRETE (não precisa falar). A contra B mostra o efeito do método (mesma base); B contra C mostra o efeito da base (mesmo método). B não é tráfego, é texto dentro do pacote: um link para maps.google.com bastou para apontar Google Ads. C usa só as categorias publicidade, análise de uso e impressão digital. Exodus Privacy: base aberta de rastreadores, com assinaturas de código e de rede. Disconnect: lista de domínios que coletam dados, separados por categoria.
 
 ## Slide 18: LIMITAÇÕES
 
@@ -96,7 +96,7 @@ Para concluir: o problema está definido, o método é viável, e a hipótese es
 
 ## Slide 21: REFERÊNCIAS (1/4)
 
-Não é para ler. São todas as referências do texto do TCC, em ordem alfabética, no padrão ABNT. Pode passar direto para o slide de encerramento.
+Não é para ler. São todas as referências do texto do TCC, numeradas na ordem em que aparecem no texto, no padrão IEEE do modelo do Capstone. Pode passar direto para o slide de encerramento.
 
 ## Slide 25: Encerramento
 
@@ -115,4 +115,5 @@ Slide de encerramento do template. Pode ficar na tela durante as perguntas.
 - Ter o SDK no aplicativo prova que dados foram enviados? Não. O envio só é observado na análise de tráfego de uma parte dos aplicativos.
 - Por que a revisão caiu de 1.531 para 396? Exigi um termo do tema no título, comecei em 2018, quando o GDPR passou a valer e a LGPD foi sancionada, e tirei a questão sobre detecção de bibliotecas, que ficou como fundo no referencial. Os estudos de controle dentro desse escopo continuaram sendo achados.
 - Você leu todos os artigos? Não. A leitura completa está em andamento: já confirmei parte das decisões lendo o texto inteiro e termino o restante em fevereiro, antes de qualquer resultado.
+- Por que o texto mudou de formato? A disciplina pede o modelo LaTeX do Capstone do IDP: cinco seções e citações numeradas no padrão IEEE. O conteúdo é o mesmo; os resultados da preparação passaram para a seção de resultados.
 - Se não souber: “Isso ainda não medi; está previsto para o Capstone II.”

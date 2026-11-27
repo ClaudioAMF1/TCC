@@ -8,7 +8,7 @@ Atualização: 27/11/2026.
 |---|---|---|
 | Simulação de defesa: 15 min de apresentação e 10 de perguntas | terça, 24/11, por volta das 10h30 | Feita. Os comentários da professora Patrícia foram aplicados ao texto e aos slides em 25/11 |
 | Projeto em PDF no Canvas, no modelo do IDP | até 03/12 | Texto reescrito em 25/11 (hipótese única, revisão afunilada, plataforma Android, κ explicado, emulador na análise dinâmica) e passado em 26/11 para o modelo LaTeX oficial do Capstone (cinco seções, XeLaTeX, citações IEEE); PDF recompilado. Em 27/11, o projeto compilou no Overleaf e recebeu correções de diagramação (títulos sozinhos no pé da página, tabelas isoladas, endereços e hifenização das referências, "SDKs" na capa e siglas por extenso) e passou de 70 para 63 referências, com 36 artigos sobre o tema; PDF com 52 páginas. Falta enviar ao orientador e entregar |
-| Defesa final: 15 min de apresentação e 15 de perguntas | 08/12, 10/12 ou 15/12 | Slides em `apresentacao/apresentacao-defesa-final.pptx`; falas de cerca de 13 min em `apresentacao/roteiro-defesa-final.md`. Falta ensaiar |
+| Defesa final: 15 min de apresentação e 15 de perguntas | 08/12, 10/12 ou 15/12 | Slides em `apresentacao/apresentacao-defesa-final.pptx`, refeitos em 27/11 na ordem das seções do texto, no mesmo template do IDP, com divisórias por seção, gráficos e figuras dos artigos citados; falas de cerca de 13 min em `apresentacao/roteiro-defesa-final.md`. Falta ensaiar de novo, porque a ordem mudou |
 
 ## Até a simulação (24/11)
 

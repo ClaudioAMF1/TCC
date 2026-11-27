@@ -174,11 +174,10 @@ def barra_titulo(sl, t, sub=None, num=None):
         texto(sl, 0.9, 1.88, 11.6, 0.4, [P(sub, 18, False, GREY)])
 
 
-def titulo_livre(sl, t, num=None, cor=MID, x=1.0, y=0.55, w=6.0):
-    """Título grande sem barra (fundos brancos 4 e 6), com o número da subseção em cima."""
-    if num:
-        texto(sl, x, y, w, 0.4, [P(num, 18, True, NAVY)])
-    texto(sl, x, y + 0.38, w, 0.85, [P(t, 40, True, cor)])
+def titulo_livre(sl, t, num=None, cor=MID, cor_num=NAVY, x=1.0, y=0.62, w=11.3):
+    """Título grande sem barra (fundos 2, 4 e 6), com o número da subseção na mesma linha."""
+    runs = ([(num + "  ", 40, True, cor_num)] if num else []) + [(t, 40, True, cor)]
+    texto(sl, x, y, w, 0.85, [R(runs)], anchor="m")
 
 
 def notas(sl, *paragrafos):
@@ -218,6 +217,12 @@ def tabela(sl, x, y, larguras, cab, linhas, size=13, cab_size=13, alt_h=0.6, cab
             c.text_frame.word_wrap = True
             p.alignment = PP_ALIGN.LEFT
             _run(p, conteudo, tam, neg, cor)
+            tcPr = c._tc.get_or_add_tcPr()
+            for tag in ("a:lnB", "a:lnT", "a:lnR", "a:lnL"):
+                ln = etree.Element(qn(tag), w="9525", cap="flat", cmpd="sng", algn="ctr")
+                sf = etree.SubElement(ln, qn("a:solidFill"))
+                etree.SubElement(sf, qn("a:srgbClr"), val="FFFFFF" if i == 0 else "C9D3DF")
+                tcPr.insert(0, ln)
     return tbl
 
 
@@ -228,6 +233,34 @@ def _fonte(tf, tam, neg, cor):
             r.font.size = Pt(tam)
             r.font.bold = neg
             r.font.color.rgb = cor
+
+
+_SEM_FUNDO = ('<c:spPr xmlns:c="http://schemas.openxmlformats.org/drawingml/2006/chart" '
+              'xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main"><a:noFill/><a:ln><a:noFill/></a:ln></c:spPr>')
+
+
+def sem_fundo(ch):
+    """Área do gráfico e área de plotagem transparentes, sem borda e sem cantos arredondados."""
+    cs = ch._chartSpace
+    graf = cs.find(qn("c:chart"))
+    for pai, depois in ((cs, graf), (graf.find(qn("c:plotArea")), None)):
+        velho = pai.find(qn("c:spPr"))
+        if velho is not None:
+            pai.remove(velho)
+        novo = etree.fromstring(_SEM_FUNDO)
+        if depois is not None:
+            depois.addnext(novo)
+        else:
+            ext = pai.find(qn("c:extLst"))
+            ext.addprevious(novo) if ext is not None else pai.append(novo)
+    rc = cs.find(qn("c:roundedCorners"))
+    if rc is None:
+        rc = etree.Element(qn("c:roundedCorners"))
+        ancora = cs.find(qn("c:lang"))
+        if ancora is None:
+            ancora = cs.find(qn("c:date1904"))
+        ancora.addnext(rc) if ancora is not None else cs.insert(0, rc)
+    rc.set("val", "0")
 
 
 def barras(sl, x, y, w, h, cats, vals, cores, rotulos, horizontal=True, maximo=None, tam_cat=15, tam_rot=15,
@@ -272,6 +305,7 @@ def barras(sl, x, y, w, h, cats, vals, cores, rotulos, horizontal=True, maximo=N
     ca.tick_labels.font.color.rgb = cor_txt
     if horizontal:
         ca.reverse_order = True
+    sem_fundo(ch)
     return ch
 
 
@@ -292,6 +326,7 @@ def rosca(sl, x, y, d, vals, cores, buraco=66):
         pt.format.line.color.rgb = WHITE
     hs = plot._element.find(qn("c:holeSize"))
     hs.set("val", str(buraco))
+    sem_fundo(ch)
     return ch
 
 
@@ -304,8 +339,12 @@ def divisoria(num, titulo, itens):
     s = nova(2, f"{num} {titulo}", "divisoria")
     texto(s, 0.7, 0.9, 3.5, 4.9, [P(num, 250, True, MID, "c")], anchor="m")
     texto(s, 4.45, 1.55, 8.3, 1.0, [P(titulo, 44, True, WHITE)], anchor="b")
-    paras = [R([(f"{n}   " if n else "", 20, True, MID), (t, 20, False, PALE)], after=10) for n, t in itens]
-    texto(s, 4.45, 2.85, 8.3, 3.4, paras)
+    xt = 5.45 if any(n for n, _ in itens) else 4.45  # sem números, o texto alinha com o título
+    for k, (n, t) in enumerate(itens):
+        y0 = 2.85 + k * 0.5
+        if n:
+            texto(s, 4.45, y0, 1.0, 0.45, [P(n, 20, True, MID)], anchor="m")
+        texto(s, xt, y0, 12.75 - xt, 0.45, [P(t, 20, False, PALE)], anchor="m")
     notas(s, f"LEMBRETE (não precisa falar). Divisória da Seção {num}: {titulo.lower()}. Passe direto para o próximo slide.")
     return s
 
@@ -396,8 +435,8 @@ divisoria("1", "INTRODUÇÃO", [("", "Motivação"), ("1.1", "Problema de pesqui
 
 # ---------------------------------------------------------------- motivação (fundo 6)
 s = nova(6, "Motivação")
-titulo_livre(s, "MOTIVAÇÃO", "1", cor=GREY)
-texto(s, 1.0, 1.8, 6.9, 0.5, [P("Serviços públicos no celular", 22, False, GREY)])
+titulo_livre(s, "MOTIVAÇÃO", "1", cor=GREY, w=7.2)
+texto(s, 1.0, 1.55, 6.9, 0.5, [P("Serviços públicos no celular", 22, False, GREY)])
 texto(s, 1.0, 2.5, 6.6, 1.0, [R([("50 mi+", 54, True, NAVY)])], anchor="m")
 texto(s, 1.0, 3.45, 6.6, 0.6, [P("instalações do Meu INSS e do Meu SUS Digital, cada um, na Google Play", 16, False, DARK)])
 for k, (ic, txt) in enumerate([("sdk", "Os aplicativos embutem SDKs de outras empresas, que podem coletar identificadores e dados de uso."),
@@ -452,7 +491,7 @@ colj = [(0.55, 3.6, "lei", "marinho", NAVY, DARK, "Jurídica",
 for x0, w0, ic, cic, ccab, ctxt, cab, txt in colj:
     icone(s, ic, cic, x0, 1.95, 0.85)
     texto(s, x0, 3.0, w0, 0.55, [P(cab, 24, True, ccab)])
-    texto(s, x0, 3.65, w0, 2.6, [P(txt, 16, False, ctxt, spacing=1.05)])
+    texto(s, x0, 3.65, w0, 2.65, [P(txt, 17, False, ctxt, spacing=1.05)])
 notas(s, "Por que isso importa? Primeiro, pela lei e pelo cidadão: a LGPD protege dados sensíveis, como os de saúde, cobra finalidade pública, e o cidadão nem sempre tem alternativa ao aplicativo oficial. Segundo, pela soberania de dados: o rastreamento se concentra em poucas empresas estrangeiras. Terceiro, por uma razão de método: ferramentas diferentes acham quantidades diferentes de rastreadores, e é preciso medir isso.")
 
 # ---------------------------------------------------------------- 1.3 objetivos (fundo 13)
@@ -472,10 +511,11 @@ for k, (letra, nome, ic, faz, res) in enumerate(objs):
     x0 = 0.9 + k * (CWo + GPo)
     forma(s, x0, 3.35, CWo, 0.78, NAVY)
     texto(s, x0 + 0.12, 3.35, CWo - 0.2, 0.78, [R([(letra + " ", 15, True, MID), (nome, 15, True, WHITE)], spacing=0.95)], anchor="m")
-    forma(s, x0, 4.13, CWo, 2.17, WHITE, linha=SILVER)
-    icone(s, ic, "marinho", x0 + 0.12, 4.25, 0.42)
-    texto(s, x0 + 0.12, 4.75, CWo - 0.24, 0.95, [P(faz, 14, False, DARK, spacing=0.95)])
-    texto(s, x0 + 0.12, 5.68, CWo - 0.24, 0.6, [P(res, 14, True, NAVY, spacing=0.95)], anchor="m")
+    forma(s, x0, 4.13, CWo, 2.07, WHITE, linha=SILVER)
+    icone(s, ic, "marinho", x0 + 0.12, 4.2, 0.4)
+    texto(s, x0 + 0.12, 4.66, CWo - 0.24, 0.95, [P(faz, 14, False, DARK, spacing=0.92)])
+    forma(s, x0 + 0.12, 5.66, CWo - 0.24, 0.015, SILVER)
+    texto(s, x0 + 0.12, 5.72, CWo - 0.24, 0.45, [P(res, 14, True, NAVY, spacing=0.92)])
 notas(s, "O objetivo geral é medir a proporção de pares aplicativo–SDK sem declaração compatível, à luz da LGPD. São cinco objetivos específicos. Primeiro, revisar os 376 aplicativos oficiais e medir quanto a classificação automática errou. Segundo, baixar a versão atual de cada aplicativo e listar os SDKs com três detectores. Terceiro, ler as declarações e classificar cada par; é daí que sai a proporção que testa a hipótese. Quarto, registrar o tráfego de uma parte dos aplicativos num emulador. Quinto, medir se os detectores concordam, com o kappa de Fleiss.")
 
 # ---------------------------------------------------------------- 1.4 hipótese (fundo 13)
@@ -484,10 +524,10 @@ barra_titulo(s, "HIPÓTESE", num="1.4")
 forma(s, 0.9, 1.95, 5.75, 2.35, NAVY)
 texto(s, 1.15, 2.07, 5.3, 2.15, [P("H1", 30, True, MID, after=4),
                                  P("Ao menos 10% dos pares aplicativo–SDK de rastreamento não terão declaração compatível na política de privacidade nem na seção “Segurança dos dados” da Google Play.", 18, True, WHITE, spacing=1.05)])
-texto(s, 0.9, 4.45, 5.75, 0.32, [P("CRITÉRIO DE DECISÃO", 13, True, MID)])
-texto(s, 0.9, 4.77, 5.75, 0.8, [P("Confirmada se a proporção de pares sem declaração compatível for de 10% ou mais; refutada se for menor. O IC95% mostra a precisão.", 15, False, DARK, spacing=1.0)])
-forma(s, 1.5, 5.62, 5.15, 0.72, PALE)
-texto(s, 1.65, 5.62, 4.9, 0.72, [R([("Por que 10%? ", 14, True, NAVY), ("As taxas da literatura contam aplicativos, e não pares; por isso, um patamar bem mais baixo e conservador.", 14, False, NAVY)], spacing=0.95)], anchor="m")
+texto(s, 0.9, 4.42, 5.75, 0.32, [P("CRITÉRIO DE DECISÃO", 13, True, MID)])
+texto(s, 0.9, 4.72, 5.75, 0.7, [P("Confirmada se a proporção de pares sem declaração compatível for de 10% ou mais; refutada se for menor. O IC95% mostra a precisão.", 15, False, DARK, spacing=1.0)])
+forma(s, 0.9, 5.45, 5.75, 0.72, PALE)
+texto(s, 1.05, 5.45, 5.5, 0.72, [R([("Por que 10%? ", 14, True, NAVY), ("As taxas da literatura contam aplicativos, e não pares; por isso, um patamar bem mais baixo e conservador.", 14, False, NAVY)], spacing=0.95)], anchor="m")
 texto(s, 7.05, 1.95, 5.4, 0.32, [P("BASE NA LITERATURA (% DE APLICATIVOS)", 13, True, MID)])
 barras(s, 6.95, 2.25, 5.5, 2.15, [f"Andow et al. {ref('andow2020')}", f"Samarasinghe et al. {ref('samarasinghe2022')}", "Patamar da H1 (pares)"],
        [42.4, 27.0, 10.0], [NAVY, NAVY, MID], ["42,4%", "27%", "10%"], maximo=60, tam_cat=14, tam_rot=16, gap=45)
@@ -544,12 +584,12 @@ est1 = [
 est2 = [
     [f"Samarasinghe et al. {ref('samarasinghe2022')}", "Avaliar a privacidade de sites e aplicativos de governo", "1.166 aplicativos de governo de 71 países", "Análise estática dos SDKs e observação do tráfego", "37% com rastreadores do Google; 27% enviavam informações sensíveis; Brasil não separado"],
     [f"Carlsson et al. {ref('carlsson2022')}", "Comparar tráfego e políticas em aplicativos públicos", "32 aplicativos do setor público finlandês", "Captura do tráfego e leitura das políticas", "Divergências entre políticas e dados enviados; parte para fora da Europa"],
-    [f"Serrano et al. {ref('serrano2024')}", "Caracterizar rastreadores em aplicativos da COVID-19", "595 aplicativos de várias fontes", "Assinaturas do Exodus e análise do código", "Rastreadores em 402 dos 595; origem e versão precisam ser registradas"],
+    [f"Serrano et al. {ref('serrano2024')}", "Caracterizar rastreadores em aplicativos da COVID\u201119", "595 aplicativos de várias fontes", "Assinaturas do Exodus e análise do código", "Rastreadores em 402 dos 595; origem e versão precisam ser registradas"],
 ]
 for parte, sub, linhas in [(1, "Rastreamento e declarações", est1), (2, "Aplicativos de governo", est2)]:
     s = nova(13, f"2.2 Trabalhos correlatos ({parte}/2)")
     barra_titulo(s, f"TRABALHOS CORRELATOS ({parte}/2)", sub=sub, num="2.2")
-    tabela(s, 0.65, 2.42, LARG_EST, CAB_EST, linhas, size=15, cab_size=15, alt_h=1.15)
+    tabela(s, 0.65, 2.35, LARG_EST, CAB_EST, linhas, size=15, cab_size=15, alt_h=1.1)
     if parte == 1:
         notas(s, "Nos trabalhos correlatos, separei seis estudos, com o que cada um buscava, o que fez, como fez e o que achou. Binns e colegas acharam rastreamento na maioria de 959 mil aplicativos, concentrado em poucas empresas. Kollnig e colegas compararam aplicativos de antes e de depois do GDPR, o regulamento europeu, e viram pouca mudança. E Andow e colegas compararam o que os aplicativos enviam com o que as políticas dizem: até 42,4% omitiam ou declaravam errado. É dessa linha que vem o meu método.")
     else:
@@ -586,7 +626,7 @@ eixos = [("governo", "Caso brasileiro",
          ("comparar", "Declarado × encontrado",
           ["Comparação entre política e dados em aplicativos comerciais e no setor público finlandês",
            "Comparar cada SDK com a política e a “Segurança dos dados” no Brasil",
-           "Classifica cada par aplicativo–SDK e testa a H1"]),
+           "Classifica cada par de aplicativo e SDK e testa a H1"]),
          ("scan", "Instrumento",
           ["Comparações de ferramentas que detectam bibliotecas",
            "Concordância entre detectores de rastreadores nas mesmas versões",
@@ -616,7 +656,7 @@ s = nova(13, "3 Etapas do método")
 barra_titulo(s, "ETAPAS DO MÉTODO", num="3", sub="Estudo quantitativo e observacional, em seis etapas; cada uma atende a um objetivo")
 etapas = [("governo", "Seleção dos aplicativos", "Revisar cada aplicativo pelo nome jurídico do desenvolvedor", "376 aplicativos oficiais, por esfera", "a"),
           ("download", "Obtenção dos pacotes", "Versão atual com o apkeep; AndroZoo quando houver", "Pacote com hash SHA-256, versão e data", "b"),
-          ("scan", "Detecção dos SDKs", "Detectores A, B e C e a concordância entre eles", "Pares aplicativo–SDK; κ de Fleiss", "b, e"),
+          ("scan", "Detecção dos SDKs", "Detectores A, B e C e a concordância entre eles", "Lista de pares e κ de Fleiss", "b, e"),
           ("documento", "Classificação das declarações", "Ler a política e a “Segurança dos dados”; classificar cada par", "Matriz de declarações", "c"),
           ("rede", "Observação do tráfego", "Subamostra no emulador do Android Studio, com o mitmproxy", "Destinos, país e se estão declarados", "d"),
           ("grafico", "Análise estatística", "Proporção de pares sem declaração, comparada com 10%", "Decisão sobre a hipótese", "c, e")]
@@ -627,11 +667,11 @@ for k, (ic, nome, faz, ent, ob) in enumerate(etapas):
     icone(s, ic, "branco", x0 + 0.12, 2.52, 0.4)
     texto(s, x0 + 0.6, 2.47, CWe - 0.65, 0.4, [P(str(k + 1), 22, True, MID)], anchor="m")
     texto(s, x0 + 0.12, 2.92, CWe - 0.2, 0.55, [P(nome, 14, True, WHITE, spacing=0.92)], anchor="m")
-    forma(s, x0, 3.47, CWe, 2.88, WHITE, linha=SILVER)
+    forma(s, x0, 3.47, CWe, 2.73, WHITE, linha=SILVER)
     texto(s, x0 + 0.12, 3.57, CWe - 0.24, 1.25, [P(faz, 14, False, DARK, spacing=0.95)])
     texto(s, x0 + 0.12, 4.82, CWe - 0.24, 0.3, [P("ENTREGA", 11, True, MID)])
     texto(s, x0 + 0.12, 5.1, CWe - 0.24, 0.8, [P(ent, 14, True, NAVY, spacing=0.95)])
-    texto(s, x0 + 0.12, 5.95, CWe - 0.24, 0.32, [R([("objetivo ", 12, False, GREY), (ob, 12, True, NAVY)])])
+    texto(s, x0 + 0.12, 5.83, CWe - 0.24, 0.32, [R([("objetivo ", 12, False, GREY), (ob, 12, True, NAVY)])])
     if k < 5:
         forma(s, x0 + CWe + 0.02, 2.8, GPe - 0.04, 0.3, MID, MSO_SHAPE.CHEVRON)
 notas(s, "O estudo é quantitativo e observacional, em seis etapas, e cada uma atende a um objetivo. Primeiro, a seleção dos aplicativos. Depois, o download da versão atual, com o hash, que é a impressão digital do arquivo. Em seguida, a detecção dos SDKs com três detectores e a classificação das declarações. A quinta etapa observa o tráfego de uma parte dos aplicativos num emulador Android, com o mitmproxy, que registra as conexões. Por fim, a análise estatística decide a hipótese.")
@@ -650,8 +690,8 @@ for k, (ic, cab, txt) in enumerate(mot):
     icone(s, ic, "branco", 4.1, y0 + 0.15, 0.5, NAVY)
     texto(s, 4.75, y0 + 0.13, 3.4, 0.5, [P(cab, 16, True, NAVY)], anchor="m")
     texto(s, 4.15, y0 + 0.7, 3.95, 0.85, [P(txt, 13, False, DARK, spacing=0.95)])
-forma(s, 1.45, 5.55, 6.8, 0.8, LIGHT)
-texto(s, 1.6, 5.55, 6.55, 0.8, [R([("Não quer dizer que o iPhone seja mais seguro: ", 14, True, NAVY), ("há rastreamento nas duas plataformas (figura). As versões iOS ficam como trabalho futuro.", 14, False, DARK)], spacing=0.95)], anchor="m")
+forma(s, 0.9, 5.42, 7.35, 0.75, LIGHT)
+texto(s, 1.05, 5.42, 7.1, 0.75, [R([("Não quer dizer que o iPhone seja mais seguro: ", 14, True, NAVY), ("há rastreamento nas duas plataformas (figura). As versões iOS ficam como trabalho futuro.", 14, False, DARK)], spacing=0.95)], anchor="m")
 w, h = figura(s, "kollnig2022_fig6", 8.65, 1.95, h=3.75)
 texto(s, 8.5, 5.78, 3.95, 0.6, [P(f"Rastreamento no iOS e no Android, por empresa e país: concentrado em empresas dos EUA. Fonte: Kollnig et al. {ref('kollnig2022ios')}, Fig. 6.", 12, False, GREY, spacing=1.0)])
 notas(s, "Por que só Android? São três motivos. Primeiro, abrangência: segundo a StatCounter, o Android está em 73,76% dos celulares no Brasil. Segundo, acesso ao código: no iPhone, os aplicativos são criptografados e não há ferramenta pública para baixá-los em escala. Terceiro, a hipótese usa a seção “Segurança dos dados”, que só existe na Google Play. Isso não quer dizer que o iPhone seja mais seguro: a figura de Kollnig e colegas mostra rastreamento nas duas plataformas. O iOS fica como trabalho futuro.")
@@ -718,7 +758,7 @@ for k, (cab, txt) in enumerate(fases):
     x0 = 1.55 + k * 3.75
     forma(s, x0, 5.15, 3.4, 1.05, NAVY if k == 1 else PALE, MSO_SHAPE.CHEVRON if k else MSO_SHAPE.PENTAGON)
     ct = WHITE if k == 1 else NAVY
-    texto(s, x0 + 0.45, 5.15, 2.55, 1.05, [P(cab, 16, True, ct, "c"), P(txt, 12, False, ct, "c", spacing=0.95)], anchor="m")
+    texto(s, x0 + 0.62, 5.15, 2.2, 1.05, [P(cab, 16, True, ct, "c"), P(txt, 12, False, ct, "c", spacing=0.95)], anchor="m")
 notas(s, "Para a literatura, fiz uma revisão sistemática, uma busca planejada e documentada. Segui o guia de Kitchenham: antes de buscar, escrevi um protocolo com as perguntas, as bases, as palavras de busca e os critérios; e o resultado segue o PRISMA 2020. Foram 15 buscas em quatro bases, de 2018 a 2026, exigindo um termo do tema no título. Para testar as buscas, separei estudos que tinham de aparecer: dos nove dentro do escopo, elas acharam os oito que estão no Scopus.",
       "Guia de Kitchenham: divide a revisão em planejamento (questões e protocolo), condução (busca, seleção, avaliação de qualidade e extração dos dados) e relatório (síntese dos resultados).",
       "PRISMA 2020: padroniza o relato da revisão num fluxograma, da identificação dos registros e remoção de duplicatas até a triagem, a leitura completa e os estudos incluídos.")
@@ -729,7 +769,7 @@ barra_titulo(s, "CRONOGRAMA DO CAPSTONE II (2027.1)", num="3.11")
 meses = ["Fev", "Mar", "Abr", "Mai", "Jun"]
 XL, WL, XM, WM, XP = 0.9, 3.05, 4.05, 1.08, 9.55
 WP = 12.45 - XP
-YC, HL = 2.0, 0.55
+YC, HL = 1.95, 0.54
 forma(s, XL, YC, 12.45 - XL, 0.42, NAVY)
 texto(s, XL + 0.12, YC, WL, 0.42, [P("Etapa", 15, True, WHITE)], anchor="m")
 for k, m in enumerate(meses):
@@ -742,25 +782,26 @@ crono = [("Revisão sistemática", 0, 1, "Estudos incluídos; κ de Cohen"),
          ("5. Tráfego no emulador", 2, 3, "Destinos e países"),
          ("6. Análise e teste da H1", 3, 4, "Resultado do teste da H1"),
          ("Redação e defesa", 4, 5, "Texto final e defesa")]
+for i in range(len(crono)):
+    forma(s, XL, YC + 0.42 + i * HL, 12.45 - XL, HL, PALE if i % 2 == 0 else WHITE)
+for k in range(6):
+    forma(s, XM + k * WM - 0.005, YC + 0.42, 0.01, HL * len(crono), SILVER)
 for i, (et, ini, fim, prod) in enumerate(crono):
     y0 = YC + 0.42 + i * HL
-    forma(s, XL, y0, 12.45 - XL, HL, PALE if i % 2 == 0 else WHITE)
     texto(s, XL + 0.12, y0, WL, HL, [P(et, 15, True, NAVY)], anchor="m")
     barra = forma(s, XM + ini * WM + 0.06, y0 + 0.12, (fim - ini) * WM - 0.12, HL - 0.24, MID if i == 0 else NAVY, MSO_SHAPE.ROUNDED_RECTANGLE)
     barra.adjustments[0] = 0.5
     texto(s, XP + 0.12, y0, WP - 0.12, HL, [P(prod, 14, False, DARK)], anchor="m")
-for k in range(6):
-    forma(s, XM + k * WM - 0.005, YC + 0.42, 0.01, HL * len(crono), SILVER)
 notas(s, "A execução fica para o Capstone II. Em fevereiro, termino a revisão e reviso a lista de aplicativos, testando o download e o emulador. Em março, baixo os pacotes e rodo os detectores. Entre março e abril, classifico as declarações. Em abril, registro o tráfego da subamostra no emulador. Em maio, faço a análise e decido sobre a hipótese, avisando os órgãos se houver achado grave. Em junho, escrevo, publico os dados e defendo.")
 
 # ================================================================ 4 RESULTADOS E DISCUSSÃO
 divisoria("4", "RESULTADOS E DISCUSSÃO", [("4.1.1", "Aplicativos selecionados"), ("4.1.2", "Fonte dos pacotes"),
                                           ("4.1.3", "Piloto dos detectores"), ("4.1.5", "Andamento da revisão sistemática"),
-                                          ("4.2 e 4.3", "Resultados esperados e limitações")])
+                                          ("4.2–4.3", "Resultados esperados e limitações")])
 
 # ---------------------------------------------------------------- 4.1.1 aplicativos selecionados (fundo 4)
 s = nova(4, "4.1.1 Aplicativos selecionados")
-titulo_livre(s, "APLICATIVOS SELECIONADOS", "4.1.1", w=11.0)
+titulo_livre(s, "APLICATIVOS SELECIONADOS", "4.1.1")
 funil = [(590, "590", "aplicativos distintos", "21 termos na Google Play e catálogos dos publicadores", PALE, NAVY),
          (396, "396", "candidatos", "publicador classificado como órgão público (71 publicadores)", MID, WHITE),
          (376, "376", "oficiais", "nome jurídico conferido em “Sobre o desenvolvedor”", NAVY, WHITE)]
@@ -783,23 +824,22 @@ notas(s, "Agora, os resultados preliminares, da preparação do estudo. Para mon
 
 # ---------------------------------------------------------------- 4.1.2 fonte dos pacotes (fundo 2)
 s = nova(2, "4.1.2 Fonte dos pacotes")
-texto(s, 0.9, 0.55, 11.5, 0.4, [P("4.1.2", 18, True, MID)])
-texto(s, 0.9, 0.9, 11.5, 0.8, [P("FONTE DOS PACOTES", 40, True, WHITE)])
-texto(s, 0.9, 1.7, 6.5, 0.45, [P("Aplicativos presentes no AndroZoo, acervo acadêmico de pacotes Android", 17, False, PALE)])
-barras(s, 0.75, 2.2, 5.0, 2.55, ["Governo", "Comerciais"], [23.2, 84.2], [MID, PALE], ["23,2%", "84,2%"], horizontal=False,
-       maximo=100, tam_cat=16, tam_rot=22, gap=70, cor_txt=WHITE, cor_rot=WHITE)
-texto(s, 0.9, 4.8, 5.0, 0.6, [P("92 de 396 candidatos do governo × 160 de 190 comerciais (só como contexto)", 13, False, PALE, spacing=1.0)])
-texto(s, 6.4, 2.35, 6.0, 2.2, [P("Fonte principal: versão atual na Google Play", 22, True, WHITE, after=8),
-                               P("É a versão que o cidadão instala. O AndroZoo fica para a reprodutibilidade e para medir a defasagem entre versões.", 16, False, PALE, spacing=1.05)])
-texto(s, 1.45, 5.45, 11.0, 0.32, [P("COMO SERÁ A COLETA", 13, True, PALE)])
-passos_c = [("usuarios", "Conta da pesquisa", "criada só para o estudo, no Brasil"),
-            ("download", "Download com apkeep", f"ferramenta aberta da EFF {ref('apkeep2026')}"),
-            ("hash", "Registro", "hash SHA-256, versão, data e falhas"),
-            ("ok", "Teste primeiro", "cinco aplicativos em fevereiro")]
+titulo_livre(s, "FONTE DOS PACOTES", "4.1.2", cor=WHITE, cor_num=MID, x=0.9)
+texto(s, 0.9, 1.55, 11.5, 0.45, [P("Aplicativos presentes no AndroZoo, acervo acadêmico de pacotes Android", 17, False, PALE)])
+barras(s, 0.75, 2.15, 5.3, 3.1, ["Governo", "Comerciais"], [23.2, 84.2], [MID, PALE], ["23,2%", "84,2%"], horizontal=False,
+       maximo=100, tam_cat=16, tam_rot=24, gap=70, cor_txt=WHITE, cor_rot=WHITE)
+texto(s, 0.9, 5.3, 5.2, 0.6, [P("92 de 396 candidatos do governo × 160 de 190 comerciais (só como contexto)", 13, False, PALE, spacing=1.0)])
+texto(s, 6.6, 2.15, 5.85, 1.45, [P("Fonte principal: versão atual na Google Play", 21, True, WHITE, after=6),
+                                P("É a versão que o cidadão instala. O AndroZoo fica para a reprodutibilidade e a defasagem.", 15, False, PALE, spacing=1.0)])
+texto(s, 6.6, 3.65, 5.85, 0.32, [P("COMO SERÁ A COLETA", 13, True, MID)])
+passos_c = [("usuarios", "Conta da pesquisa", "criada só para o estudo, com acesso a partir do Brasil"),
+            ("download", "Download com apkeep", f"ferramenta aberta da EFF {ref('apkeep2026')}; guarda o APK base"),
+            ("hash", "Registro", "hash SHA-256, versão, data e o motivo de cada falha"),
+            ("ok", "Teste primeiro", "cinco aplicativos em fevereiro; depois, todos")]
 for k, (ic, cab, txt) in enumerate(passos_c):
-    x0 = 1.45 + k * 2.78
-    icone(s, ic, "branco", x0, 5.82, 0.5, MID)
-    texto(s, x0 + 0.6, 5.78, 2.1, 0.6, [P(cab, 14, True, WHITE), P(txt, 12, False, PALE, spacing=0.95)])
+    y0 = 4.02 + k * 0.56
+    icone(s, ic, "branco", 6.6, y0, 0.46, MID)
+    texto(s, 7.2, y0 - 0.03, 5.25, 0.52, [R([(cab + ": ", 15, True, WHITE), (txt, 14, False, PALE)], spacing=0.95)], anchor="m")
 notas(s, "Na hora de buscar os pacotes, apareceu um problema. O AndroZoo, um acervo acadêmico, tinha só 92 dos 396 aplicativos do governo, 23,2%, contra 84,2% dos comerciais. Dependendo só dele, a maioria ficaria de fora. Por isso, a fonte principal será a versão atual da Google Play, que é a que o cidadão instala, baixada com o apkeep, uma ferramenta aberta, com uma conta criada só para a pesquisa. Registro o hash, a versão, a data e o motivo de cada falha. O AndroZoo fica para a reprodutibilidade.",
       "LEMBRETE (não precisa falar). Na mesma faixa de instalações, a razão de chances de um aplicativo do governo estar no acervo é 0,13 (IC95% de 0,07 a 0,24). Quando o aplicativo vem dividido em vários pacotes, guardo o APK base, que tem o código. O apkeep é da Electronic Frontier Foundation (EFF). Não redistribuo os pacotes.")
 
@@ -826,10 +866,10 @@ fluxo = [(396, "registros nas 15 buscas"), (312, "sem duplicatas, triados por t�
          (35, "textos lidos até agora"), (31, "propostas de inclusão (8 já confirmadas)")]
 for k, (v, txt) in enumerate(fluxo):
     y0 = 2.4 + k * 0.78
-    wb = max(1.25, 5.0 * v / 396)
+    wb = max(1.25, 4.2 * v / 396)
     forma(s, 0.9, y0, wb, 0.66, NAVY if k == 4 else (MID if k else PALE))
     texto(s, 0.9, y0, 1.25, 0.66, [P(str(v), 22, True, NAVY if k == 0 else WHITE, "c")], anchor="m")
-    texto(s, 0.9 + wb + 0.15, y0, 7.0 - wb - 0.15, 0.66, [P(txt, 14, False, DARK)], anchor="m")
+    texto(s, 0.9 + wb + 0.15, y0, 6.2 - wb - 0.15, 0.66, [P(txt, 14, False, DARK, spacing=0.95)], anchor="m")
 texto(s, 7.55, 2.3, 4.9, 0.32, [P("31 PROPOSTAS POR QUESTÃO DA REVISÃO", 13, True, MID)])
 barras(s, 7.4, 2.62, 5.1, 2.75, ["QR1", "QR2", "QR3", "QR4"], [11, 8, 10, 2], [NAVY, NAVY, NAVY, MID], ["11", "8", "10", "2"],
        horizontal=False, maximo=13.5, tam_cat=15, tam_rot=16, gap=60)

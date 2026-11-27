@@ -25,7 +25,8 @@ headheight=1.8cm]{geometry}
 \bibliographystyle{IEEEtran} % Estilo de bibliografia IEEE
 
 
-\RequirePackage[english]{babel}
+% português como idioma principal; o inglês fica carregado para o abstract
+\RequirePackage[english,portuguese]{babel}
 
 \onehalfspacing
 
@@ -98,6 +99,10 @@ headheight=1.8cm]{geometry}
   \renewcommand{\funcaomembrobancaii}{#2}%
   \renewcommand{\instbancaii}{#3}%
 }
+
+% Tipo de trabalho (folha de rosto e folha de aprovação); pode ser trocado no main.tex
+\newcommand{\tipotrabalhoVal}{Trabalho de Conclusão de Curso apresentado}
+\newcommand{\tipotrabalho}[1]{\renewcommand{\tipotrabalhoVal}{#1}}
 
 % Data de aprovação
 \newcommand{\dataaprovacaoVal}{} % valor físico
@@ -208,15 +213,15 @@ headheight=1.8cm]{geometry}
 
         \vspace*{3cm}
 
-        \noindent{Undergraduate Thesis submitted in partial fulfillment of the
-        requirements for the degree of Bachelor of \nomecursoingles{} at the
-        Brazilian Institute of Education, Development and Research (IDP).}
+        \noindent{\tipotrabalhoVal{} como requisito parcial para a
+        obtenção do título de bacharel em \nomecurso{} no Instituto Brasileiro de
+        Ensino, Desenvolvimento e Pesquisa (IDP).}
 
         \vspace*{3cm}
 
         {\bfseries\color{fundo_idp}
-        \iforientadora Advisor
-        \else Advisor
+        \iforientadora Orientadora
+        \else Orientador
         \fi}\\
         {\nomeorientador}
 
@@ -237,24 +242,24 @@ headheight=1.8cm]{geometry}
     \end{flushleft}
         \vspace*{2cm}
 
-        \noindent{Undergraduate Thesis submitted in partial fulfillment of the
-        requirements for the degree of Bachelor of \nomecursoingles{} at the
-        Brazilian Institute of Education, Development and Research (IDP).}
+        \noindent{\tipotrabalhoVal{} como requisito parcial para a
+        obtenção do título de bacharel em \nomecurso{} no Instituto Brasileiro de
+        Ensino, Desenvolvimento e Pesquisa (IDP).}
 
     \begin{flushleft}
 
         \vspace*{2cm}
-        {Approved on \dataaprovacaoVal}
+        {Aprovado em \dataaprovacaoVal}
 
         \vspace*{1cm}
-        {\bfseries\color{fundo_idp}Examining Committee}
+        {\bfseries\color{fundo_idp}Banca examinadora}
 
 
         {
         \vspace*{2cm}
         % \rule{\linewidth}{0.4pt}
         \vspace{1em}
-        {\nomeorientador\ (\iforientadora Advisor\else Advisor\fi) - \instorientador}
+        {\nomeorientador\ (\iforientadora Orientadora\else Orientador\fi) - \instorientador}
 
         \vspace*{2cm}
         % \rule{\linewidth}{0.4pt}
@@ -271,7 +276,7 @@ headheight=1.8cm]{geometry}
 \newcommand{\agradecimentos}{
     \clearpage
      \begin{flushleft}
-    {\Large\bfseries\color{fundo_idp}\MakeUppercase{Acknowledgments}}
+    {\Large\bfseries\color{fundo_idp}\MakeUppercase{Agradecimentos}}
     \end{flushleft}
     \vspace{1em}
     \input{partes/agradecimentos}
@@ -280,7 +285,7 @@ headheight=1.8cm]{geometry}
 \newcommand{\dedicatoria}{
     \clearpage
      \begin{flushleft}
-    {\Large\bfseries\color{fundo_idp}\MakeUppercase{Dedication}}
+    {\Large\bfseries\color{fundo_idp}\MakeUppercase{Dedicatória}}
     \end{flushleft}
     \vspace{1em}
     \input{partes/dedicatoria}
@@ -434,13 +439,13 @@ headheight=1.8cm]{geometry}
     \vspace*{\fill}
     \begin{center}
 
-    {\fontsize{60}{0}\bfseries\MakeUppercase{References}}
+    {\fontsize{60}{0}\bfseries\MakeUppercase{Referências}}
     \end{center}
     \vspace*{\fill}
 
     \refstepcounter{secnum}
     \phantomsection
-    \addcontentsline{toc}{section}{References}
+    \addcontentsline{toc}{section}{Referências}
 
     \color{black}
 
@@ -455,7 +460,7 @@ headheight=1.8cm]{geometry}
 
 \addto\captionsportuguese{
   \renewcommand{\refname}{%
-    \color{titulos}\bfseries\MakeUppercase{References}
+    \color{titulos}\bfseries\MakeUppercase{Referências}
   }
 }
 
@@ -627,12 +632,12 @@ headheight=1.8cm]{geometry}
         \clearpage
         \stepcounter{apendicecount}%
         \ifnum\value{apendicecount}=1
-                \capaapendice{Appendices}
+                \capaapendice{Apêndices}
         \fi
         \phantomsection
-        \addcontentsline{toc}{section}{Appendix \MakeUppercase{\alph{apendicecount}} - #2}
+        \addcontentsline{toc}{section}{Apêndice \MakeUppercase{\alph{apendicecount}} -- #2}
         \begin{center}
-                {\color{fundo_idp}\Large{Appendix \MakeUppercase{\alph{apendicecount}} - #2}}
+                {\color{fundo_idp}\Large{Apêndice \MakeUppercase{\alph{apendicecount}} -- #2}}
         \end{center}
         \ifx&#1&%
                 \edef\tempaplabel{ap:\alph{apendicecount}}%
@@ -653,12 +658,12 @@ headheight=1.8cm]{geometry}
         \clearpage
         \stepcounter{anexocount}%
         \ifnum\value{anexocount}=1
-        \capaapendice{Annexes}
+        \capaapendice{Anexos}
         \fi
         \phantomsection
         \addcontentsline{toc}{subsection}{\MakeUppercase{\alph{anexocount}}\hspace{1em} #1}
         \begin{center}
-        {\color{fundo_idp}\Large{Annex \MakeUppercase{\alph{anexocount}}} - {#1}}
+        {\color{fundo_idp}\Large{Anexo \MakeUppercase{\alph{anexocount}}} -- {#1}}
         \end{center}
 
         \input{#2}

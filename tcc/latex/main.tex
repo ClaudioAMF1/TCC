@@ -2,10 +2,9 @@
 % Compilar com XeLaTeX (no Overleaf: File > Settings > Compiler > XeLaTeX;
 % o arquivo latexmkrc já faz o Overleaf usar o XeLaTeX).
 
-% Idioma do trabalho: português. "portuguese" é o nome fixo do idioma no pacote
-% babel e não aparece no PDF; esta linha precisa vir antes de \documentclass.
-\PassOptionsToPackage{main=portuguese}{babel}
-
+% A classe (configs/idp-model.cls) está traduzida para o português: idioma
+% principal, folha de rosto, folha de aprovação e referências. O abstract e as
+% keywords continuam em inglês, antes do resumo e das palavras-chave.
 \documentclass{configs/idp-model}
 \input{pacotes/pacotes}
 
@@ -17,11 +16,14 @@
 % Utilizar um dos dois cursos abaixo
 \cienciadacomputacao
 %\engenhariadesoftware
-\computerscience  % nome do curso em inglês, usado só pelos rótulos originais do modelo
+\computerscience  % nome do curso em inglês (a classe traduzida não o usa mais)
 
 
 \titulo{Rastreamento por terceiros em aplicativos móveis governamentais brasileiros: \SDKs{} embarcados e transparência das declarações de privacidade}
 \ano{2026}
+
+% Tipo de trabalho, na folha de rosto e na folha de aprovação
+\tipotrabalho{Projeto de pesquisa apresentado à disciplina Projeto Capstone I}
 
 % Usar orientador ou orientadora
 % - Argumento opcional caso o orientador seja de uma instituição diferente

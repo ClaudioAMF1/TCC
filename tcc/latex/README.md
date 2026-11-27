@@ -39,3 +39,15 @@ versão de 1º/7/2026; a classe é a mesma do [modelo no Overleaf](https://pt.ov
   do modelo, basta comentar a linha `\input{pacotes/rotulos-em-portugues}` em `pacotes/pacotes.tex`.
 - No sumário, a classe deixava o número da subsubseção colado ao título; `pacotes/pacotes.tex`
   repete a definição de `\subsubsecao` com o espaço corrigido.
+- Na classe, o título de subseção e de subsubseção podia ficar sozinho no pé da página;
+  `pacotes/pacotes.tex` repete as definições de `\subsecao` e `\subsubsecao` com `\Needspace`
+  (pacote `needspace`), que leva o título para a página seguinte quando não cabe texto
+  depois dele.
+- Tabelas grandes ficam no alto de uma página com texto, e não sozinhas e centralizadas numa
+  página só de tabelas (`\floatpagefraction` e `\@fptop` em `pacotes/pacotes.tex`).
+- A classe põe a capa, a folha de rosto, a folha de aprovação e os títulos de subseção em
+  caixa alta. Para "SDKs" não virar "SDKS", o título usa o comando `\SDKs`, definido em
+  `pacotes/pacotes.tex`.
+- Nas referências, o pacote `xurl` deixa os endereços longos quebrarem em qualquer ponto, e a
+  hifenização é a do inglês, língua de quase todas elas; as referências em português têm o
+  campo `language = {portuguese}` no `referencias.bib`.

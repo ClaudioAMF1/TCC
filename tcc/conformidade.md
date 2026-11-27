@@ -1,13 +1,13 @@
 # O que falta
 
-Atualização: 26/11/2026.
+Atualização: 27/11/2026.
 
 ## O que a disciplina exige
 
 | Exigência | Data | Situação |
 |---|---|---|
 | Simulação de defesa: 15 min de apresentação e 10 de perguntas | terça, 24/11, por volta das 10h30 | Feita. Os comentários da professora Patrícia foram aplicados ao texto e aos slides em 25/11 |
-| Projeto em PDF no Canvas, no modelo do IDP | até 03/12 | Texto reescrito em 25/11 (hipótese única, revisão afunilada, plataforma Android, κ explicado, emulador na análise dinâmica) e passado em 26/11 para o modelo LaTeX oficial do Capstone (cinco seções, XeLaTeX, citações IEEE); PDF recompilado. Falta criar o projeto no Overleaf, enviar ao orientador e entregar |
+| Projeto em PDF no Canvas, no modelo do IDP | até 03/12 | Texto reescrito em 25/11 (hipótese única, revisão afunilada, plataforma Android, κ explicado, emulador na análise dinâmica) e passado em 26/11 para o modelo LaTeX oficial do Capstone (cinco seções, XeLaTeX, citações IEEE); PDF recompilado. Em 27/11, o projeto compilou no Overleaf e recebeu correções de diagramação (títulos sozinhos no pé da página, tabelas isoladas, endereços e hifenização das referências, "SDKs" na capa e siglas por extenso); PDF com 52 páginas. Falta enviar ao orientador e entregar |
 | Defesa final: 15 min de apresentação e 15 de perguntas | 08/12, 10/12 ou 15/12 | Slides em `apresentacao/apresentacao-defesa-final.pptx`; falas de cerca de 13 min em `apresentacao/roteiro-defesa-final.md`. Falta ensaiar |
 
 ## Até a simulação (24/11)
@@ -27,7 +27,7 @@ Atualização: 26/11/2026.
 | # | O quê | Até |
 |---|---|---|
 | 1 | Consolidar os comentários do orientador e revisar o texto; se não chegarem até 27/11, enviar lembrete | 27/11 |
-| 1a | Criar no Overleaf o projeto com o zip no modelo do Capstone (compilador XeLaTeX) e avisar o orientador da mudança de modelo e da versão 2.1 da revisão | 27/11 |
+| 1a | ~~Criar no Overleaf o projeto com o zip no modelo do Capstone (compilador XeLaTeX)~~ Feito em 27/11. Falta avisar o orientador da mudança de modelo e da versão 2.1 da revisão | 27/11 |
 | 2 | Registrar as perguntas da simulação e incorporar os ajustes pertinentes | 25/11 |
 | 3 | Decidir com o orientador se a Caixa fica no corpus (com uma frase explicando o critério) ou sai | com os comentários |
 | 4 | Se a disciplina informar o terceiro examinador, passar o nome para a folha de aprovação; se não, a linha fica em branco | 01/12 |

@@ -6,6 +6,8 @@
 \usepackage{tabularx}                      % tabelas com colunas de largura automática
 \usepackage[shortlabels]{enumitem}         % objetivos específicos como a), b), c)...
 \usepackage{microtype}                     % ajuste fino do espaçamento das linhas
+\usepackage{needspace}                     % título de subseção não fica sozinho no fim da página
+\usepackage{xurl}                          % endereços longos das referências quebram em qualquer ponto
 \usetikzlibrary{positioning,arrows.meta}   % fluxograma da revisão (o TikZ vem da classe)
 
 % ---------------------------------------------------------------- ajustes
@@ -19,8 +21,31 @@
 % folga extra para evitar linhas que ultrapassam a margem
 \setlength{\emergencystretch}{1.5em}
 
-% sem hifenizar "discussão": o título da Seção 4 fica numa linha só
-\babelhyphenation[portuguese]{discussão}
+% sem hifenizar "discussão" (o título da Seção 4 fica numa linha só) nem os
+% nomes próprios que as regras do português dividiam errado ("Go-ogle")
+\babelhyphenation[portuguese]{discussão Google AndroZoo}
+
+% as referências, quase todas em inglês, usam a hifenização do inglês (evita
+% divisões como "Procee-dings" e "IEE-E"); as referências em português têm o
+% campo language = {portuguese} no referencias.bib, e o título delas mantém a
+% hifenização do português
+\AtBeginEnvironment{thebibliography}{\language=\csname l@english\endcsname\relax}
+
+% "SDKs" com o s minúsculo nos títulos que a classe põe em caixa alta (capa,
+% folha de rosto, folha de aprovação e título da Seção 3.4); nos marcadores do
+% PDF, o comando vira o texto simples
+\protected\def\SDKs{SDKs}
+\pdfstringdefDisableCommands{\def\SDKs{SDKs}}
+
+% tabelas grandes ficam no alto de uma página com texto, e não sozinhas e
+% centralizadas numa página só de tabelas; se uma página só de tabelas for
+% necessária, a tabela fica no alto dela
+\renewcommand{\topfraction}{0.85}
+\renewcommand{\textfraction}{0.1}
+\renewcommand{\floatpagefraction}{0.8}
+\makeatletter
+\setlength{\@fptop}{0pt}
+\makeatother
 
 % fonte e nota abaixo de tabelas e figuras
 \newcommand{\fonte}[1]{\par\vspace{0.6ex}{\centering\footnotesize Fonte: #1\par}}
@@ -30,15 +55,34 @@
 % referências); para voltar aos rótulos originais, em inglês, comente a linha abaixo
 \input{pacotes/rotulos-em-portugues}
 
-% correção: no sumário, o número da subsubseção ficava colado ao título, porque
-% a classe escreve "\thesubsubsecnum #1" e o espaço depois do comando se perde;
-% o restante repete a definição de configs/idp-model.cls
+% correção: na classe, o título de subseção e de subsubseção podia ficar sozinho
+% no pé da página, com o texto começando na página seguinte; \Needspace passa o
+% título para a próxima página quando não cabem ele e algumas linhas de texto, e
+% \nopagebreak impede a quebra logo depois do título. O restante repete a
+% definição de configs/idp-model.cls
+\renewcommand{\subsecao}[1]{%
+  \par\Needspace{6\baselineskip}%
+  \refstepcounter{subsecnum}
+  \par\vspace{1.5ex}
+
+      \phantomsection
+      \addcontentsline{toc}{subsection}{\arabic{secnum}.\arabic{subsecnum} #1}
+
+  {\large\noindent\color{fundo_idp}\bfseries\MakeUppercase{\thesubsecnum\quad #1}}\par
+  \nopagebreak
+  \vspace{1ex}
+}
+
+% na subsubseção, além disso, o número ficava colado ao título no sumário,
+% porque a classe escreve "\thesubsubsecnum #1" e o espaço depois do comando se perde
 \renewcommand{\subsubsecao}[1]{%
+  \par\Needspace{5\baselineskip}%
   \refstepcounter{subsubsecnum}
   \par\vspace{1.2ex}
   \phantomsection
   \addcontentsline{toc}{subsubsection}{\thesubsubsecnum\ #1}
 
   {\normalsize\noindent\color{fundo_idp}\bfseries\thesubsubsecnum\quad #1}\par
+  \nopagebreak
   \vspace{0.5ex}
 }

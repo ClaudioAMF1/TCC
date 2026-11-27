@@ -1,0 +1,4 @@
+# O modelo do Capstone do IDP precisa do XeLaTeX (usa a fonte Arial pelo pacote
+# fontspec). Esta linha faz o Overleaf usar o XeLaTeX mesmo que o compilador
+# escolhido nas configurações do projeto seja o pdfLaTeX.
+$pdflatex = 'xelatex %O %S';

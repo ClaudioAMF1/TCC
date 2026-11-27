@@ -24,7 +24,7 @@ A entrega do Capstone I é um **projeto de pesquisa** no modelo LaTeX oficial do
 
 ## Compilação
 
-No Overleaf: compacte a pasta `latex/` (sem o `main.pdf`), use Novo projeto > Enviar projeto e escolha Menu > Compilador > **XeLaTeX**. O modelo usa a fonte Arial e não compila com pdfLaTeX.
+No Overleaf: compacte a pasta `latex/` (sem o `main.pdf`), use New Project > Upload Project e escolha o compilador **XeLaTeX** em File > Settings > Compiler. O modelo usa a fonte Arial e não compila com pdfLaTeX; o arquivo `latex/latexmkrc` força o XeLaTeX mesmo que o compilador escolhido seja outro.
 
 No computador: `make` dentro de `latex/` (XeLaTeX e BibTeX), com o TeX Live e a fonte Arial instalados.
 

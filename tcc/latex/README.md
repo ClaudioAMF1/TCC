@@ -6,8 +6,10 @@ versão de 1º/7/2026; a classe é a mesma do [modelo no Overleaf](https://pt.ov
 
 ## Como compilar
 
-- **No Overleaf:** criar um projeto a partir do zip com estes arquivos e escolher
-  Menu > Compilador > **XeLaTeX** (o modelo usa a fonte Arial e não compila com pdfLaTeX).
+- **No Overleaf:** criar um projeto a partir do zip com estes arquivos e escolher o compilador
+  **XeLaTeX** em File > Settings > Compiler (ou no ícone de engrenagem, no canto inferior
+  esquerdo). O modelo usa a fonte Arial e não compila com pdfLaTeX; por garantia, o arquivo
+  `latexmkrc` faz o Overleaf chamar o XeLaTeX mesmo que o compilador escolhido seja o pdfLaTeX.
 - **No computador:** `make` (XeLaTeX e BibTeX), com o TeX Live e a fonte Arial instalados.
 
 ## Organização
@@ -24,6 +26,7 @@ versão de 1º/7/2026; a classe é a mesma do [modelo no Overleaf](https://pt.ov
 | `referencias.bib` | referências, no estilo IEEE definido pela classe do modelo |
 | `pacotes/pacotes.tex` | pacotes extras e ajustes deste trabalho |
 | `pacotes/rotulos-em-portugues.tex` | textos fixos da classe (folha de rosto, folha de aprovação, referências) em português |
+| `latexmkrc` | faz a compilação usar o XeLaTeX, que o modelo exige |
 | `configs/` | arquivos do modelo, **sem nenhuma alteração** |
 
 ## O que foi ajustado sem mexer em `configs/`
